@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="RSTACK FUSION" Height="450" Width="800">
     <Viewbox>
-    <Grid>
+        <Grid>
         
             
        
-    </Grid>
+        </Grid>
     </Viewbox>
 </Window>

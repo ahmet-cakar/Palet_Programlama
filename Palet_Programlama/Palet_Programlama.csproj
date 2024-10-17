@@ -67,7 +67,15 @@
       <DependentUpon>Anasayfa.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="KullaniciGiris.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Anasayfa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ArkaPlan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -77,6 +85,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KullaniciGiris.xaml.cs">
+      <DependentUpon>KullaniciGiris.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -101,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Rstackwallpaper.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

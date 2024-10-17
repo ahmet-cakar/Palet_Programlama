@@ -24,5 +24,10 @@ namespace Palet_Programlama
         {
             InitializeComponent();
         }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainFrame.Navigate(new KullaniciGiris());
+        }
     }
 }

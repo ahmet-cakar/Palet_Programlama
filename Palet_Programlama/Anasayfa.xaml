@@ -6,11 +6,10 @@
         xmlns:local="clr-namespace:Palet_Programlama"
         mc:Ignorable="d"
         Title="RSTACK FUSION" Height="450" Width="800">
-    <Viewbox>
-        <Grid>
-        
-            
+    <Grid>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+        <Image Source="pack://application:,,,/images/Rstackwallpaper.png" 
+     Style="{StaticResource backgroundstyle}" MouseDown="Image_MouseDown"/>
        
-        </Grid>
-    </Viewbox>
+    </Grid>
 </Window>

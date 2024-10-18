@@ -28,6 +28,7 @@ namespace Palet_Programlama
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MainFrame.Navigate(new KullaniciGiris());
+//sdljfgmsdf
         }
     }
 }

@@ -2,13 +2,15 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Palet_Programlama"
-             StartupUri="Anasayfa.xaml">
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
          
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Stiller/UrunEkle.xaml" />
                 <ResourceDictionary Source="Stiller/ArkaPlan.xaml" />
+                <ResourceDictionary Source="Stiller/Anasayfa.xaml" />
+
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -67,25 +67,32 @@
       <DependentUpon>Anasayfa.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="KullaniciGiris.xaml">
+    <Page Include="Sayfalar\Bekleme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\Anasayfa.xaml">
+    <Page Include="Sayfalar\KullaniciGiris.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\ArkaPlan.xaml">
+    <Page Include="Stiller\Anasayfa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\UrunEkle.xaml">
+    <Page Include="Stiller\ArkaPlan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stiller\UrunEkle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KullaniciGiris.xaml.cs">
+    <Compile Include="Sayfalar\Bekleme.xaml.cs">
+      <DependentUpon>Bekleme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sayfalar\KullaniciGiris.xaml.cs">
       <DependentUpon>KullaniciGiris.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -114,10 +121,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\background.png" />
+    <Resource Include="Resimler\background.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\Rstackwallpaper.png" />
+    <Resource Include="Resimler\Rstackwallpaper.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

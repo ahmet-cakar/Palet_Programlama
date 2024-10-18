@@ -1,5 +1,4 @@
-﻿using Palet_Programlama.Sayfalar;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,18 +13,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Palet_Programlama
+namespace Palet_Programlama.Sayfalar
 {
     /// <summary>
-    /// MainWindow.xaml etkileşim mantığı
+    /// Interaction logic for Bekleme.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Bekleme : Page
     {
-        public MainWindow()
+        private Frame MainFrame;
+        public Bekleme(Frame Main)
         {
             InitializeComponent();
-            MainFrame.Navigate(new Bekleme(MainFrame));
+            this.MainFrame = Main;
+        }
 
+        private void img_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MainFrame.Navigate(new KullaniciGiris());
         }
 
        

@@ -7,8 +7,8 @@
          
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles/UrunEkle.xaml" />
-                <ResourceDictionary Source="Styles/ArkaPlan.xaml" />
+                <ResourceDictionary Source="Stiller/UrunEkle.xaml" />
+                <ResourceDictionary Source="Stiller/ArkaPlan.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

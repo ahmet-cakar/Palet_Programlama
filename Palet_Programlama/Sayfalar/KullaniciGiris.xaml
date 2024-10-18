@@ -9,7 +9,7 @@
       Title="KullaniciGiris">
 
     <Grid>
-        <Image Source="pack://application:,,,/images/background.png" 
+        <Image Source="pack://application:,,,/Resimler/background.png" 
      Style="{StaticResource backgroundstyle}"/>
         <Border Background="White"
             Opacity="0.5"

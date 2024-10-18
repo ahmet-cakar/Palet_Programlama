@@ -1,0 +1,29 @@
+﻿<Window x:Class="Palet_Programlama.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Palet_Programlama"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Title="Window1" Height="450" Width="800">
+    <Grid >
+        
+        <!-- Arka plan cam efekti için Blur efekt -->
+        <Border Background="#66FFFFFF" CornerRadius="15" Padding="20" Margin="20">
+            <Border.Effect>
+                <BlurEffect Radius="10"/>
+            </Border.Effect>
+        </Border>
+        <StackPanel Width="200" Height="60" >
+            <TextBlock Text="Proje Başlığı" FontSize="24" Foreground="White"/>
+            <TextBlock Text="İçerik buraya gelecek..." FontSize="16" Foreground="White"/>
+            <StackPanel.Effect>
+                <BlurEffect Radius="1"/>
+            </StackPanel.Effect>
+        </StackPanel>
+    </Grid>
+
+</Window>

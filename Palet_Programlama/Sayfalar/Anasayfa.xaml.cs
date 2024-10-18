@@ -16,22 +16,13 @@ using System.Windows.Shapes;
 namespace Palet_Programlama.Sayfalar
 {
     /// <summary>
-    /// Interaction logic for Bekleme.xaml
+    /// Interaction logic for Anasayfa.xaml
     /// </summary>
-    public partial class Bekleme : Page
+    public partial class Anasayfa : Page
     {
-        private Frame MainFrame;
-        public Bekleme(Frame Main)
+        public Anasayfa()
         {
             InitializeComponent();
-            this.MainFrame = Main;
         }
-
-        private void img_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MainFrame.Navigate(new Anasayfa());
-        }
-
-       
     }
 }

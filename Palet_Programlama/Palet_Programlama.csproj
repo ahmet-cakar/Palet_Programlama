@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +70,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Sayfalar\Anasayfa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Sayfalar\Bekleme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -75,20 +82,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Stiller\Anasayfa.xaml">
+    <Page Include="Stiller\Anasayfa_style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Stiller\ArkaPlan.xaml">
+    <Page Include="Stiller\ArkaPlan_style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Stiller\UrunEkle.xaml">
+    <Page Include="Stiller\UrunEkle_style.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sayfalar\Anasayfa.xaml.cs">
+      <DependentUpon>Anasayfa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sayfalar\Bekleme.xaml.cs">
       <DependentUpon>Bekleme.xaml</DependentUpon>
     </Compile>
@@ -125,6 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resimler\Rstackwallpaper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\settings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,28 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Palet_Programlama.Sayfalar
+namespace Palet_Programlama
 {
     /// <summary>
-    /// Interaction logic for Bekleme.xaml
+    /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Bekleme : Page
+    public partial class Window1 : Window
     {
-        private Frame MainFrame;
-        public Bekleme(Frame Main)
+        public Window1()
         {
             InitializeComponent();
-            this.MainFrame = Main;
         }
-
-        private void img_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MainFrame.Navigate(new Anasayfa());
-        }
-
-       
     }
 }

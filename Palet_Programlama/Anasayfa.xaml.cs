@@ -27,6 +27,7 @@ namespace Palet_Programlama
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            img.Visibility = Visibility.Hidden;
             MainFrame.Navigate(new KullaniciGiris());
         }
     }

@@ -8,7 +8,7 @@
         Title="RSTACK FUSION" Height="450" Width="800">
     <Grid>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
-        <Image Source="pack://application:,,,/images/Rstackwallpaper.png" 
+        <Image Name="img" Source="pack://application:,,,/images/Rstackwallpaper.png" 
      Style="{StaticResource backgroundstyle}" MouseDown="Image_MouseDown"/>
        
     </Grid>

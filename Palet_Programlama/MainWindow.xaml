@@ -7,8 +7,12 @@
         mc:Ignorable="d"
         Title="RSTACK FUSION" Height="768" Width="1366">
     <Grid>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
-       
-       
+        
+        <Image Panel.ZIndex="-1" Source="pack://application:,,,/Resimler/background.png" 
+            Style="{StaticResource backgroundstyle}"/>
+        <Viewbox >
+        <Frame  Panel.ZIndex="1" x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+        </Viewbox>
+
     </Grid>
 </Window>

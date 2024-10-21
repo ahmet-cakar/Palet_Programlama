@@ -22,46 +22,39 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-
+        
+        
+        
  
          <!--USER VE BİLDİRİM İCON BAŞLANGIÇ-->
         <Grid  Grid.Row="0"  Grid.Column="3" >
 
-            <Grid>
-                <!-- Grid with 3 equal columns -->
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <!-- İlk sütun: Eşit genişlik -->
-                    <ColumnDefinition Width="*"/>
-                    <!-- İkinci sütun: Eşit genişlik -->
-                    
-                </Grid.ColumnDefinitions>
-
-                <!-- Buttons in each column -->
-                <Button Style="{StaticResource transparan_button}"
-                        Grid.Column="0" >
-
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <!-- Icon inside the Button -->
-                        <Image Margin="30"
-                               Source="pack://application:,,,/Resimler/notification.png"/>
-                        <!-- Text inside the Button -->
-                    </StackPanel>
-                </Button>
-                <Button Style="{StaticResource transparan_button}"
-                    Grid.Column="1">
-                    <StackPanel HorizontalAlignment="Center" 
-                                Orientation="Horizontal">
-                        <!-- Icon inside the Button -->
-                        <Image  
-                               Margin="30"
-                               Source="pack://application:,,,/Resimler/profile-user.png"/>
-                        <!-- Text inside the Button -->
-                    </StackPanel>
-                </Button>
+            <StackPanel Margin="0" Orientation="Horizontal">
                 
-            </Grid>
+                <!-- Buttons in each column -->
+                <Button  Style="{StaticResource transparan_button}">
+                    <StackPanel>
+                        <!-- Icon inside the Button -->
+                        <Image Margin="0"
+                               MaxHeight="65"
+                               MaxWidth="65"
+                               Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+                        <!-- Text inside the Button -->
+                    </StackPanel>
+                </Button>
+                <Button  Style="{StaticResource transparan_button}"
+                    >
+                    <StackPanel>
+                        <!-- Icon inside the Button -->
+                        <Image 
+                            MaxHeight="65"
+                            MaxWidth="65"
+                               Source="pack://application:,,,/Resimler/Anasayfa/Icon/kullanici_icon.png"/>
+                        <!-- Text inside the Button -->
+                    </StackPanel>
+                </Button>
 
+            </StackPanel>
 
         </Grid> 
         <!--USER VE BİLDİRİM İCON BİTİŞ-->

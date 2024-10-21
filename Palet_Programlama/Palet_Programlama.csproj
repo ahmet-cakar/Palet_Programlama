@@ -149,7 +149,7 @@
     <Resource Include="Resimler\test.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resimler\Anasayfa\Icon\" />
+    <Resource Include="Resimler\Anasayfa\Icon\bildirim_zili_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resimler\Anasayfa\Beyaz\1.png" />
@@ -182,6 +182,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resimler\gradient_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Anasayfa\Icon\kullanici_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,7 +10,7 @@
                 <ResourceDictionary Source="Stiller/UrunEkle_style.xaml" />
                 <ResourceDictionary Source="Stiller/ArkaPlan_style.xaml" />
                 <ResourceDictionary Source="Stiller/Anasayfa_style.xaml" />
-
+                <ResourceDictionary Source="Stiller/Kullanici_style.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

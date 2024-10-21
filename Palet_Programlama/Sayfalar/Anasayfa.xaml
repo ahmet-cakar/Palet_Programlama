@@ -40,21 +40,21 @@
                 <!-- Buttons in each column -->
                 <Button Style="{StaticResource transparan_button}"
                         Grid.Column="0" >
-                        
-                    <StackPanel Orientation="Horizontal">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <!-- Icon inside the Button -->
-                        <Image VerticalAlignment="Center" HorizontalAlignment="Center" 
-                               Width="75"  
+                        <Image Margin="25"
                                Source="pack://application:,,,/Resimler/notification.png"/>
                         <!-- Text inside the Button -->
                     </StackPanel>
                 </Button>
                 <Button Style="{StaticResource transparan_button}"
                     Grid.Column="1">
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel HorizontalAlignment="Center" 
+                                Orientation="Horizontal">
                         <!-- Icon inside the Button -->
-                        <Image VerticalAlignment="Center" HorizontalAlignment="Center" 
-                            Width="75"  
+                        <Image  
+                               Margin="25"
                                Source="pack://application:,,,/Resimler/profile-user.png"/>
                         <!-- Text inside the Button -->
                     </StackPanel>
@@ -109,7 +109,7 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
                             <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/1.png" 
-                                     Margin="70"  />
+                                      Margin="60"  />
                         </StackPanel>
                     </DockPanel>
 
@@ -138,7 +138,7 @@
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
                                 <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/2.png" 
-                                        Stretch="Fill"   Margin="70" />
+                                        Stretch="Fill"    Margin="60" />
                             </StackPanel>
                         </DockPanel>
                     </Border>
@@ -166,7 +166,7 @@
                      HorizontalAlignment="Center"
                      VerticalAlignment="Center">
                                 <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/3.png" 
-                                          Margin="70" />
+                                           Margin="60" />
                             </StackPanel>
                         </DockPanel>
                     </Border>
@@ -194,7 +194,7 @@
                          HorizontalAlignment="Center"
                          VerticalAlignment="Center">
                                 <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/4.png" 
-                                          Margin="70" />
+                                           Margin="60" />
                             </StackPanel>
                         </DockPanel>
                     </Border>
@@ -245,7 +245,7 @@
                      HorizontalAlignment="Center"
                      VerticalAlignment="Center">
                             <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/5.png" 
-                                      Margin="70" />
+                                       Margin="60" />
                         </StackPanel>
                     </DockPanel>
                     </Border>
@@ -276,7 +276,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                             <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/6.png" 
-                                      Margin="70" />
+                                       Margin="60" />
                         </StackPanel>
                     </DockPanel>
                     </Border>
@@ -308,7 +308,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                             <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/7.png" 
-                                      Margin="70" />
+                                       Margin="60" />
                         </StackPanel>
                     </DockPanel>
                     </Border>
@@ -338,7 +338,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                             <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/8.png" 
-                                      Margin="70" />
+                                       Margin="60" />
                                             </StackPanel>
                     </DockPanel>
 

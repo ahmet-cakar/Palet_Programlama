@@ -89,4 +89,13 @@
     </Style>
     <!--Image style bitiş-->
 
+
+    <!--Menu Icon style başlangıç-->
+    <Style x:Key="icon_style" TargetType="Image">
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="Margin" Value="60"/>
+
+    </Style>
+    <!--Menu Icon style bitiş-->
+
 </ResourceDictionary>

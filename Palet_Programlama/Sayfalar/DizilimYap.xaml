@@ -21,19 +21,86 @@
             </Border>
         </Grid>
         <Grid Grid.Row="1" >
-            <Border CornerRadius="40"   Background="Green">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
 
-            </Border>
+                </Grid.ColumnDefinitions>
+                <Viewbox>
+                    <Border CornerRadius="15" Grid.Column="0" Margin="25,0,5,5"  Background="#191919">
+                        <StackPanel Margin="30,10" Orientation="Horizontal"  VerticalAlignment="Center">
+                            <TextBlock Foreground="White" FontSize="25">Aynalama (kapalı)</TextBlock>
+                            <CheckBox  Margin="30,0" Style="{StaticResource checkbox_siyah}" ></CheckBox>
+                            <TextBlock Foreground="White" Margin="80,0,20,0" FontSize="30">X:</TextBlock>
+                            <CheckBox  Style="{StaticResource checkbox_siyah}"></CheckBox>
+                            <TextBlock Foreground="White" Margin="80,0,20,0" FontSize="30">Y:</TextBlock>
+                            <CheckBox  Style="{StaticResource checkbox_siyah}"></CheckBox>
+                        </StackPanel>
+                    </Border>
+                </Viewbox>
+                <Viewbox Grid.Column="1">
+                    <Border CornerRadius="15"  Margin="5,0,25,7"  Background="#191919">
+                        <StackPanel Margin="10,8"
+                                    Orientation="Vertical"
+                                    VerticalAlignment="Center">
+
+                            <StackPanel  Margin="3"
+                                            Orientation="Horizontal">
+                                <TextBlock FontSize="20" 
+                                               Foreground="White" Text="Ürün Özellikleri:   ">
+                                </TextBlock>
+                                <TextBlock 
+                                    FontSize="20" Width="250" 
+                                    Foreground="White" 
+                                    >Yumoş 200 ml</TextBlock>
+                                <TextBlock FontSize="20" Margin="10,0,0,0" Width="250" 
+                                    Foreground="White">280 mm X 360 mm</TextBlock>
+                                <TextBlock FontSize="20" Width="200" 
+                                Foreground="White" Text="Ürün Adedi: 0"></TextBlock>
+                            </StackPanel>
+                            <StackPanel  Margin="3"
+                                            Orientation="Horizontal">
+                                <TextBlock FontSize="20" 
+                                               Foreground="White" Text="Palet Özellikleri:   ">
+                                </TextBlock>
+                                <TextBlock 
+                                    FontSize="20" 
+                                    Foreground="White" Width="250"> Euro Palet</TextBlock>
+                                <TextBlock FontSize="20" Margin="10,0,0,0"
+                                    Foreground="White">800 mm X 1200 mm</TextBlock>
+
+
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Viewbox>
+            </Grid>
+            
         </Grid>
 
 
-        <Grid Grid.Row="2">
-            <Border CornerRadius="40"  Margin="5" Background="Blue">
+        <Grid Grid.Row="2" Margin="25,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="*"/>
+                
+
+            </Grid.ColumnDefinitions>
+            <Border CornerRadius="40" Margin="5,0"   Background="Blue">
+               
+            </Border>
+            <Border CornerRadius="40" Margin="5,0"  Grid.Column="1"   Background="Purple">
 
             </Border>
+            <Border CornerRadius="40" Margin="5,0"  Grid.Column="2"   Background="Gray">
+
+            </Border>
+
         </Grid>
         <Grid Grid.Row="3" >
-            <Border CornerRadius="40"  Margin="5" Background="Yellow">
+            <Border CornerRadius="40"  Margin="25,10" Background="Yellow">
 
             </Border>
         </Grid>

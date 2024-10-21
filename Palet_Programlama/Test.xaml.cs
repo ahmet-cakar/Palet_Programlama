@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,28 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Palet_Programlama.Sayfalar
+namespace Palet_Programlama
 {
     /// <summary>
-    /// Interaction logic for Bekleme.xaml
+    /// Interaction logic for Test.xaml
     /// </summary>
-    public partial class Bekleme : Page
+    public partial class Test : Window
     {
-        private Frame MainFrame;
-        public Bekleme(Frame Main)
+        public Test()
         {
             InitializeComponent();
-            this.MainFrame = Main;
         }
-
-        private void img_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MainFrame.Navigate(new DizilimYap());
-        }
-
-       
     }
 }

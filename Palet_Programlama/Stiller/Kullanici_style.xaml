@@ -2,12 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style x:Key="RoundedTextBox" TargetType="TextBox">
         <Setter Property="Width" Value="380"/>
-        <Setter Property="Height" Value="60"/>
+        <Setter Property="Height" Value="50"/>
         <Setter Property="Margin" Value="5"/>
         <Setter Property="Padding" Value="10"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="20"/>
-        <Setter Property="FontFamily" Value="Garet"/>
+        <Setter Property="FontFamily" Value="Roboto"/>
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Template">
@@ -22,7 +22,7 @@
     </Style>
     <Style x:Key="RoundedPasswordBox" TargetType="PasswordBox">
         <Setter Property="Width" Value="380"/>
-        <Setter Property="Height" Value="60"/>
+        <Setter Property="Height" Value="50"/>
         <Setter Property="Margin" Value="5"/>
         <Setter Property="Padding" Value="10"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>

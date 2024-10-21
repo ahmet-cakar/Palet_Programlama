@@ -55,12 +55,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Sayfalar\Dizilim_Yap.xaml.cs">
+      <DependentUpon>Dizilim_Yap.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sayfalar\Kullanici.xaml.cs">
       <DependentUpon>Kullanici.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
+    <Page Include="Sayfalar\Dizilim_Yap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Sayfalar\Kullanici.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,16 +146,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resimler\notification.png" />
-    <Resource Include="Resimler\profile-user.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resimler\test.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resimler\Anasayfa\Icon\bildirim_zili_icon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -179,9 +176,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resimler\genel_background.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resimler\gradient_background.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resimler\Anasayfa\Icon\kullanici_icon.png" />

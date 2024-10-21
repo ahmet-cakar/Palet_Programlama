@@ -24,5 +24,6 @@ namespace Palet_Programlama.Sayfalar
         {
             InitializeComponent();
         }
+
     }
 }

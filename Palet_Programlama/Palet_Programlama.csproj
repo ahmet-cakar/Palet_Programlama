@@ -148,10 +148,34 @@
     <Resource Include="Resimler\settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\rstack-fusion-logo.png" />
+    <Resource Include="Resimler\notification.png" />
+    <Resource Include="Resimler\profile-user.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resimler\video.mp4" />
+    <Resource Include="Resimler\test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resimler\Anasayfa\Icon\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Anasayfa\Beyaz\1.png" />
+    <Resource Include="Resimler\Anasayfa\Beyaz\2.png" />
+    <Resource Include="Resimler\Anasayfa\Beyaz\3.png" />
+    <Resource Include="Resimler\Anasayfa\Beyaz\4.png" />
+    <Resource Include="Resimler\Anasayfa\Beyaz\5.png" />
+    <Resource Include="Resimler\Anasayfa\Beyaz\6.png" />
+    <Resource Include="Resimler\Anasayfa\Beyaz\7.png" />
+    <Resource Include="Resimler\Anasayfa\Beyaz\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Anasayfa\Siyah\1.png" />
+    <Resource Include="Resimler\Anasayfa\Siyah\2.png" />
+    <Resource Include="Resimler\Anasayfa\Siyah\3.png" />
+    <Resource Include="Resimler\Anasayfa\Siyah\4.png" />
+    <Resource Include="Resimler\Anasayfa\Siyah\5.png" />
+    <Resource Include="Resimler\Anasayfa\Siyah\6.png" />
+    <Resource Include="Resimler\Anasayfa\Siyah\7.png" />
+    <Resource Include="Resimler\Anasayfa\Siyah\8.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

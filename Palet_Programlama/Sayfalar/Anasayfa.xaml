@@ -5,11 +5,12 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Palet_Programlama.Sayfalar"
       mc:Ignorable="d" 
-      d:DesignHeight="768" d:DesignWidth="1366"
+      d:DesignHeight="768" d:DesignWidth="1368"
+      Background="Transparent"
       Title="Anasayfa">
 
-
-    <Grid>
+    
+    <Grid  >
         <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="4*"/>
@@ -22,18 +23,58 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-        <Image Source="pack://application:,,,/Resimler/background.png"
-            Grid.RowSpan="5"
-            Grid.ColumnSpan="5"
-            />
+ 
+         <!--USER VE BİLDİRİM İCON BAŞLANGIÇ-->
+        <Grid  Grid.Row="0"  Grid.Column="3" >
 
+            <Grid>
+                <!-- Grid with 3 equal columns -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <!-- İlk sütun: Eşit genişlik -->
+                    <ColumnDefinition Width="*"/>
+                    <!-- İkinci sütun: Eşit genişlik -->
+                    
+                </Grid.ColumnDefinitions>
+
+                <!-- Buttons in each column -->
+                <Button Style="{StaticResource transparan_button}"
+                        Grid.Column="0" >
+                        
+                    <StackPanel Orientation="Horizontal">
+                        <!-- Icon inside the Button -->
+                        <Image VerticalAlignment="Center" HorizontalAlignment="Center" 
+                               Width="75"  
+                               Source="pack://application:,,,/Resimler/notification.png"/>
+                        <!-- Text inside the Button -->
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource transparan_button}"
+                    Grid.Column="1">
+                    <StackPanel Orientation="Horizontal">
+                        <!-- Icon inside the Button -->
+                        <Image VerticalAlignment="Center" HorizontalAlignment="Center" 
+                            Width="75"  
+                               Source="pack://application:,,,/Resimler/profile-user.png"/>
+                        <!-- Text inside the Button -->
+                    </StackPanel>
+                </Button>
+                
+            </Grid>
+
+
+        </Grid> 
+        <!--USER VE BİLDİRİM İCON BİTİŞ-->
+
+
+        <!--MENU BAŞLANGIÇ -->
         <Grid  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
             <!-- üst menü başlangıç -->
-            <Border x:Name="UstMenu"  Grid.Row="0">
+            <Border  x:Name="UstMenu"   Grid.Row="0">
                     <!-- Menü üst 4lü -->
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -44,85 +85,119 @@
                         </Grid.ColumnDefinitions>
 
                     <!-- Card yapısı -->
-                    <Border x:Name="Card1" Grid.Column="0" Margin="5" Background="#d4d4d4" CornerRadius="30" Padding="10" BorderBrush="Gray" BorderThickness="1">
-                        <DockPanel>
-                            <!-- Sağ altta buton -->
-                            <Button Content="Devam" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,10,5,0" Width="75" Height="50" Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                    <Border x:Name="Card1" 
+                            Grid.Column="0" 
+                            Style="{StaticResource border_template}">
+                    
+                    <DockPanel Grid.Row="0" Grid.Column="0">
+                        <!-- Sağ altta buton -->
+                        <Button  Content="Devam" 
+                                Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
-                            <!-- Sol alttaki açıklama -->
-                            <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,-50">
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="FMCG" />
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="Projeleri" />
-                            </StackPanel>
-                           
+                        <!-- Sol alttaki açıklama -->
+                        <StackPanel  DockPanel.Dock="Bottom"
+                                    VerticalAlignment="Bottom" 
+                                    HorizontalAlignment="Left"
+                                    Margin="20,0,0,-45">
+                            <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
+                            <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
+                        </StackPanel>
 
-                            <!-- Ortadaki icon (örnek bir icon) -->
-                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Image  Source="pack://application:,,,/Resimler/settings.png" Width="80" Height="80" Margin="0,10" />
-                            </StackPanel>
-                        </DockPanel>
+
+                        <!-- Ortadaki icon (örnek bir icon) -->
+                        <StackPanel 
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                            <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/1.png" 
+                                     Margin="70"  />
+                        </StackPanel>
+                    </DockPanel>
+
                     </Border>
-                        
-                        
-                    <Border x:Name="Card2" Grid.Column="1" Margin="5" Background="#d4d4d4" CornerRadius="30" Padding="10" BorderBrush="Gray" BorderThickness="1">
-                        <DockPanel>
+                    <Border x:Name="Card2" 
+                            Grid.Column="1" 
+                            Style="{StaticResource border_template}">
+
+                        <DockPanel Grid.Row="0" Grid.Column="1">
                             <!-- Sağ altta buton -->
-                            <Button Content="Devam" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,10,5,0" Width="75" Height="50" Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                            <Button  Content="Devam" 
+                                Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
                             <!-- Sol alttaki açıklama -->
-                            <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,-50">
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="FMCG" />
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="Projeleri" />
-                            </StackPanel>
-
-
-                            <!-- Ortadaki icon (örnek bir icon) -->
-                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Image  Source="pack://application:,,,/Resimler/settings.png" Width="80" Height="80" Margin="0,10" />
-                            </StackPanel>
-                        </DockPanel>
-                    </Border>
-
-                    <Border x:Name="Card3" Grid.Column="2" Margin="5" Background="#d4d4d4" CornerRadius="30" Padding="10" BorderBrush="Gray" BorderThickness="1">
-                        <DockPanel>
-                            <!-- Sağ altta buton -->
-                            <Button Content="Devam" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,10,5,0" Width="75" Height="50" Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
-
-                            <!-- Sol alttaki açıklama -->
-                            <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,-50">
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="FMCG" />
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="Projeleri" />
+                            <StackPanel  DockPanel.Dock="Bottom"
+                                    VerticalAlignment="Bottom" 
+                                    HorizontalAlignment="Left"
+                                    Margin="20,0,0,-45">
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
                             </StackPanel>
 
 
                             <!-- Ortadaki icon (örnek bir icon) -->
-                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Image  Source="pack://application:,,,/Resimler/settings.png" Width="80" Height="80" Margin="0,10" />
+                            <StackPanel 
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                                <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/2.png" 
+                                        Stretch="Fill"   Margin="70" />
                             </StackPanel>
                         </DockPanel>
                     </Border>
+                    <Border x:Name="Card3" 
+                     Grid.Column="2" 
+                     Style="{StaticResource border_template}">
 
-                    <Border x:Name="Card4" Grid.Column="3" Margin="5" Background="#d4d4d4" CornerRadius="30" Padding="10" BorderBrush="Gray" BorderThickness="1">
-                        <DockPanel>
+                        <DockPanel Grid.Row="0" Grid.Column="2">
                             <!-- Sağ altta buton -->
-                            <Button Content="Devam" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,10,5,0" Width="75" Height="50" Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                            <Button  Content="Devam" 
+                         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
                             <!-- Sol alttaki açıklama -->
-                            <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,-50">
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="FMCG" />
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="Projeleri" />
+                            <StackPanel  DockPanel.Dock="Bottom"
+                             VerticalAlignment="Bottom" 
+                             HorizontalAlignment="Left"
+                             Margin="20,0,0,-45">
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
                             </StackPanel>
 
 
                             <!-- Ortadaki icon (örnek bir icon) -->
-                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Image  Source="pack://application:,,,/Resimler/settings.png" Width="80" Height="80" Margin="0,10" />
+                            <StackPanel 
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center">
+                                <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/3.png" 
+                                          Margin="70" />
                             </StackPanel>
                         </DockPanel>
                     </Border>
+                    <Border x:Name="Card4" 
+                         Grid.Column="3" 
+                         Style="{StaticResource border_template}">
+
+                        <DockPanel Grid.Row="0" Grid.Column="3">
+                            <!-- Sağ altta buton -->
+                            <Button  Content="Devam" 
+                         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+
+                            <!-- Sol alttaki açıklama -->
+                            <StackPanel  DockPanel.Dock="Bottom"
+                             VerticalAlignment="Bottom" 
+                             HorizontalAlignment="Left"
+                             Margin="20,0,0,-45">
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
+                            </StackPanel>
 
 
-
+                            <!-- Ortadaki icon (örnek bir icon) -->
+                            <StackPanel 
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center">
+                                <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/4.png" 
+                                          Margin="70" />
+                            </StackPanel>
+                        </DockPanel>
+                    </Border>
                 </Grid>
                 
                     
@@ -142,83 +217,132 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- Card yapısı -->
-                    <Border x:Name="Card5" Grid.Column="0" Margin="5" Background="#d4d4d4" CornerRadius="30" Padding="10" BorderBrush="Gray" BorderThickness="1">
-                        <DockPanel>
-                            <!-- Sağ altta buton -->
-                            <Button Content="Devam" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,10,5,0" Width="75" Height="50" Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
-
-                            <!-- Sol alttaki açıklama -->
-                            <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,-50">
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="FMCG" />
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="Projeleri" />
-                            </StackPanel>
 
 
-                            <!-- Ortadaki icon (örnek bir icon) -->
-                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Image  Source="pack://application:,,,/Resimler/settings.png" Width="80" Height="80" Margin="0,10" />
-                            </StackPanel>
-                        </DockPanel>
+
+                    <Border x:Name="Card5" 
+                     Grid.Row="1"
+                     Grid.Column="0"
+                     Style="{StaticResource border_template}">
+                    
+                    <DockPanel Grid.Row="1" Grid.Column="0">
+                        <!-- Sağ altta buton -->
+                        <Button  Content="Devam" 
+                         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+
+                        <!-- Sol alttaki açıklama -->
+                        <StackPanel  DockPanel.Dock="Bottom"
+                             VerticalAlignment="Bottom" 
+                             HorizontalAlignment="Left"
+                             Margin="20,0,0,-45">
+                            <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
+                            <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
+                        </StackPanel>
+
+
+                        <!-- Ortadaki icon (örnek bir icon) -->
+                        <StackPanel 
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center">
+                            <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/5.png" 
+                                      Margin="70" />
+                        </StackPanel>
+                    </DockPanel>
                     </Border>
 
 
-                    <Border x:Name="Card6" Grid.Column="1" Margin="5" Background="#d4d4d4" CornerRadius="30" Padding="10" BorderBrush="Gray" BorderThickness="1">
-                        <DockPanel>
-                            <!-- Sağ altta buton -->
-                            <Button Content="Devam" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,10,5,0" Width="75" Height="50" Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
-                            <!-- Sol alttaki açıklama -->
-                            <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,-50">
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="FMCG" />
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="Projeleri" />
-                            </StackPanel>
+                    <Border x:Name="Card6" 
+                         Grid.Row="1"
+                         Grid.Column="1" 
+                         Style="{StaticResource border_template}">
+                    <DockPanel Grid.Row="1" Grid.Column="1">
+                        <!-- Sağ altta buton -->
+                        <Button  Content="Devam" 
+                            Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+
+                        <!-- Sol alttaki açıklama -->
+                        <StackPanel  DockPanel.Dock="Bottom"
+                                VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Left"
+                                Margin="20,0,0,-45">
+                            <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
+                            <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
+                        </StackPanel>
 
 
-                            <!-- Ortadaki icon (örnek bir icon) -->
-                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Image  Source="pack://application:,,,/Resimler/settings.png" Width="80" Height="80" Margin="0,10" />
-                            </StackPanel>
-                        </DockPanel>
+                        <!-- Ortadaki icon (örnek bir icon) -->
+                        <StackPanel 
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                            <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/6.png" 
+                                      Margin="70" />
+                        </StackPanel>
+                    </DockPanel>
                     </Border>
 
-                    <Border x:Name="Card7" Grid.Column="2" Margin="5" Background="#d4d4d4" CornerRadius="30" Padding="10" BorderBrush="Gray" BorderThickness="1">
-                        <DockPanel>
-                            <!-- Sağ altta buton -->
-                            <Button Content="Devam" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,10,5,0" Width="75" Height="50" Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
-
-                            <!-- Sol alttaki açıklama -->
-                            <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,-50">
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="FMCG" />
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="Projeleri" />
-                            </StackPanel>
 
 
-                            <!-- Ortadaki icon (örnek bir icon) -->
-                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Image  Source="pack://application:,,,/Resimler/settings.png" Width="80" Height="80" Margin="0,10" />
-                            </StackPanel>
-                        </DockPanel>
+                    <Border x:Name="Card7" 
+                         Grid.Row="1"
+                         Grid.Column="2" 
+                         Style="{StaticResource border_template}">
+                                       
+                    <DockPanel Grid.Row="1" Grid.Column="2">
+                        <!-- Sağ altta buton -->
+                        <Button  Content="Devam" 
+                            Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+
+                        <!-- Sol alttaki açıklama -->
+                        <StackPanel  DockPanel.Dock="Bottom"
+                                VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Left"
+                                Margin="20,0,0,-45">
+                            <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
+                            <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
+                        </StackPanel>
+
+
+                        <!-- Ortadaki icon (örnek bir icon) -->
+                        <StackPanel 
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                            <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/7.png" 
+                                      Margin="70" />
+                        </StackPanel>
+                    </DockPanel>
                     </Border>
 
-                    <Border x:Name="Card8" Grid.Column="3" Margin="5" Background="#d4d4d4" CornerRadius="30" Padding="10" BorderBrush="Gray" BorderThickness="1">
-                        <DockPanel>
-                            <!-- Sağ altta buton -->
-                            <Button Content="Devam" DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,10,5,0" Width="75" Height="50" Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
-                            <!-- Sol alttaki açıklama -->
-                            <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,-50">
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="FMCG" />
-                                <TextBlock  FontSize="16" FontWeight="Bold" Foreground="Black" Text="Projeleri" />
-                            </StackPanel>
+                    <Border x:Name="Card8" 
+                         Grid.Row="1"
+                         Grid.Column="3" 
+                         Style="{StaticResource border_template}">
+                     <DockPanel Grid.Row="1" Grid.Column="3">
+                                            <!-- Sağ altta buton -->
+                                            <Button  Content="Devam" 
+                            Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+
+                                            <!-- Sol alttaki açıklama -->
+                                            <StackPanel  DockPanel.Dock="Bottom"
+                                VerticalAlignment="Bottom" 
+                                HorizontalAlignment="Left"
+                                Margin="20,0,0,-45">
+                                                <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
+                                                <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
+                                            </StackPanel>
 
 
-                            <!-- Ortadaki icon (örnek bir icon) -->
-                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Image  Source="pack://application:,,,/Resimler/settings.png" Width="80" Height="80" Margin="0,10" />
-                            </StackPanel>
-                        </DockPanel>
+                                            <!-- Ortadaki icon (örnek bir icon) -->
+                                            <StackPanel 
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                            <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/8.png" 
+                                      Margin="70" />
+                                            </StackPanel>
+                    </DockPanel>
+
                     </Border>
-
 
 
                 </Grid>
@@ -229,10 +353,20 @@
                  <!-- Alt menü bitiş -->
 
         </Grid>
+        <!--MENU BİTİŞ -->
 
- 
+        <!--Rstack Icon  BAŞLANGIÇ--><!--
+        <Grid  Grid.Row="3"  Grid.Column="3" >
+            <Border>
+                --><!-- Icon inside the Button --><!--
+                <Image Source="pack://application:,,,/Resimler/Rstackwallpaper.png"
+                          Margin="10"/>
+                --><!-- Text inside the Button --><!--
+            </Border>
+        </Grid>-->
+        <!--Rstack IconBİTİŞ-->
 
-        </Grid>
+    </Grid>
     
     
 </Page>

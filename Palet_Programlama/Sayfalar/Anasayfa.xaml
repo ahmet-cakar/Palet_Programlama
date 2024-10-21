@@ -271,7 +271,7 @@
                         </StackPanel>
 
 
-                        <!-- Ortadaki icon (örnek bir icon) -->
+                        <!-- Ortadaki icon (örnek bir icon)  -->
                         <StackPanel 
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">

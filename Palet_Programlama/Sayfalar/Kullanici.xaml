@@ -15,29 +15,34 @@
         </Grid>
 
         <StackPanel HorizontalAlignment="Center"  VerticalAlignment="Center" >
-            <Image Source="pack://application:,,,/Resimler/Kullanıcı/logo-sade.png" Width="500" Margin="0,0,0,50"/>
+            <Image Source="pack://application:,,,/Resimler/Kullanıcı/logo-sade.png" Width="375" Margin="0,0,0,50"/>
             <!-- Kullanıcı Adı TextBox -->
             <Grid>
-            <TextBox x:Name="kullanici_textbox" Style="{StaticResource RoundedTextBox}" 
+            <TextBox  x:Name="kullanici_textbox" Style="{StaticResource RoundedTextBox}" 
                      Tag="Kullanıcı Adı"
+                     CaretBrush="White"
                      GotFocus="TextBox_GotFocus"
                      TextChanged="TextBox_TextChanged"
+                      
                      LostFocus="TextBox_LostFocus"/>
-
+                     
                 <TextBlock x:Name="KullaniciPlaceholder"
                 Text="Kullanıcı Adı"
                 VerticalAlignment="Center"
-                Margin="90,0,0,0"
+                Margin="37,0,0,0"
+                
                 Foreground="White"
                 IsHitTestVisible="False"
+                
                 FontSize="20"
-                Opacity="0.4" />
+                Opacity="0.4" Cursor="Help" />
             </Grid>
             <Grid>
             <!-- Şifre TextBox -->
             <PasswordBox x:Name="passwordBox" 
-                         
                          Tag="Şifre" 
+                         CaretBrush="White"
+                         
                          GotFocus="PasswordBox_GotFocus" 
                          LostFocus="PasswordBox_LostFocus"
                          PasswordChanged="PasswordBox_PasswordChanged"
@@ -45,17 +50,19 @@
                 <TextBlock x:Name="passwordPlaceholder"
                            Text="Şifre"
                            VerticalAlignment="Center"
-                           Margin="90,0,0,0"
+                           Margin="37,0,0,0"
                            Foreground="White"
                            IsHitTestVisible="False"
                            FontSize="20"
-                           Opacity="0.4" />
-                          
+                           Opacity="0.4" ForceCursor="True" >
+                   
+                </TextBlock>
+
             </Grid>
             <Grid>
                 <Button x:Name="giris_button" Style="{StaticResource button_template}"
                         Background="{StaticResource button_background}" Content="Giriş" 
-                        Width="170" Click="giris_button_Click" Height="40" Margin="0,20,170,0"
+                        Width="170" Click="giris_button_Click" Height="40" Margin="0,20,100,0"
                         FontSize="20"/>
             </Grid>
          

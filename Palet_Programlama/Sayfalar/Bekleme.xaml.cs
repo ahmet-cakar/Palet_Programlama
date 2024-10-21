@@ -30,7 +30,7 @@ namespace Palet_Programlama.Sayfalar
 
         private void img_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MainFrame.Navigate(new DizilimYap());
+            MainFrame.Navigate(new Kullanici());
         }
 
        

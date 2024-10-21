@@ -41,4 +41,12 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="TextBoxStyle" TargetType="TextBox">
+        <Style.Triggers>
+            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                <Setter Property="CaretBrush" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

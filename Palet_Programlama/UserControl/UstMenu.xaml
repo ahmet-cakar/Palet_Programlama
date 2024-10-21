@@ -11,10 +11,10 @@
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="Width" Value="450"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="#d4d4d4"/>
             <Setter Property="Height" Value="35"/>
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="FontWeight" Value="Thin"/>
+            <Setter Property="FontWeight" Value="Regular"/>
             <Setter Property="FontSize" Value="30"/>
             <Setter Property="FontFamily" Value="Roboto"/>
             <Setter Property="Template">

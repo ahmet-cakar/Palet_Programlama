@@ -11,10 +11,10 @@
             <Image Panel.ZIndex="-1" Source="pack://application:,,,/Resimler/genel_background.png" 
                 Style="{StaticResource backgroundstyle}"/>
         <Frame 
+                    x:Name="MainFrame"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
                     Panel.ZIndex="1"
-                    x:Name="MainFrame"
                     NavigationUIVisibility="Hidden"
                     />
          </Grid>

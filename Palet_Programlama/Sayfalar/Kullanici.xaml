@@ -9,7 +9,10 @@
       Title="Kullanici">
 
     <Grid>
-        
+        <Grid>
+            <Image Source="pack://application:,,,/Resimler/Kullanıcı/dil_turkce_kapali.png" HorizontalAlignment="Right" 
+                   VerticalAlignment="Top" Height="150" Width="150" Margin="0,0,20,0"/>
+        </Grid>
 
         <StackPanel HorizontalAlignment="Center"  VerticalAlignment="Center" >
             <Image Source="pack://application:,,,/Resimler/Kullanıcı/logo-sade.png" Width="500" Margin="0,0,0,50"/>

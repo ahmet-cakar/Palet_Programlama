@@ -4,16 +4,15 @@
         <Setter Property="Width" Value="380"/>
         <Setter Property="Height" Value="50"/>
         <Setter Property="Margin" Value="5"/>
-        <Setter Property="Padding" Value="10"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="30,0,0,0" />
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontFamily" Value="Roboto"/>
-        <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="White"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
-                    <Border Background="#d4d4d4" CornerRadius="30" BorderBrush="#d4d4d4" BorderThickness="1" Opacity="0.4">
+                    <Border Background="#676767" CornerRadius="30" BorderBrush="#676767" BorderThickness="1">
                         <ScrollViewer Margin="0" x:Name="PART_ContentHost" />
                     </Border>
                 </ControlTemplate>
@@ -24,18 +23,18 @@
         <Setter Property="Width" Value="380"/>
         <Setter Property="Height" Value="50"/>
         <Setter Property="Margin" Value="5"/>
-        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Padding" Value="30,0,0,0" />
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="20"/>
-        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="PasswordBox">
-                    <Border Background="#d4d4d4" 
+                    <Border Background="#676767" 
                             CornerRadius="30" 
-                            BorderBrush="#d4d4d4" 
-                            BorderThickness="1" Opacity="0.4">
+                            BorderBrush="#676767" 
+                            BorderThickness="1" >
                         <ScrollViewer Margin="0" x:Name="PART_ContentHost" />
                     </Border>
                 </ControlTemplate>

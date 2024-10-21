@@ -9,7 +9,7 @@
       Title="Bekleme">
 
     <Grid>
-        <Image Name="img" Source="pack://application:,,,/Resimler/Rstackwallpaper.png" 
+        <Image Name="img" Source="pack://application:,,,/Resimler/bekleme-ekranı.png" 
          Style="{StaticResource backgroundstyle}" MouseDown="img_MouseDown"/>
     </Grid>
 </Page>

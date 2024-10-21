@@ -8,7 +8,7 @@
         Title="RSTACK FUSION" Height="768" Width="1366">
     
         <Grid>
-            <Image Panel.ZIndex="-1" Source="pack://application:,,,/Resimler/background.png" 
+            <Image Panel.ZIndex="-1" Source="pack://application:,,,/Resimler/genel_background.png" 
                 Style="{StaticResource backgroundstyle}"/>
         <Frame 
                     HorizontalAlignment="Stretch"

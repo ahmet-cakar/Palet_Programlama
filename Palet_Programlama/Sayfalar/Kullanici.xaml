@@ -9,9 +9,9 @@
       Title="Kullanici">
 
     <Grid>
-        <Image Source="pack://application:,,,/Resimler/background.png"/>
+        
         <StackPanel HorizontalAlignment="Center"  VerticalAlignment="Center" >
-            <Image Source="pack://application:,,,/Resimler/rstack-fusion-logo.png" Width="700" Margin="0,0,0,50"/>
+            <Image Source="pack://application:,,,/Resimler/Kullanıcı/logo-sade.png" Width="700" Margin="0,0,0,50"/>
             <!-- Kullanıcı Adı TextBox -->
             <Grid>
             <TextBox x:Name="kullanici_textbox" Style="{StaticResource RoundedTextBox}" 
@@ -23,12 +23,12 @@
                 <TextBlock x:Name="KullaniciPlaceholder"
                 Text="Kullanıcı Adı"
                 VerticalAlignment="Center"
-                Margin="180,0,0,0"
-                Foreground="Black"
+                Margin="175,0,0,0"
+                Foreground="White"
                 IsHitTestVisible="False"
                 FontSize="20"
                 FontWeight="Bold"
-                Opacity="0.6" />
+                Opacity="0.4" />
             </Grid>
             <Grid>
             <!-- Şifre TextBox -->
@@ -42,18 +42,18 @@
                 <TextBlock x:Name="passwordPlaceholder"
                            Text="Şifre"
                            VerticalAlignment="Center"
-                           Margin="180,0,0,0"
-                           Foreground="Black"
+                           Margin="175,0,0,0"
+                           Foreground="White"
                            IsHitTestVisible="False"
                            FontSize="20"
                            FontWeight="Bold"
-                           Opacity="0.6" />
+                           Opacity="0.4" />
                           
             </Grid>
             <Grid>
                 <Button x:Name="giris_button" Style="{StaticResource button_template}"
                         Background="{StaticResource button_background}" Content="Giriş" 
-                        Width="170" Click="giris_button_Click" Height="35" Margin="0,20,0,0"/>
+                        Width="170" Click="giris_button_Click" Height="35" Margin="0,20,270,0"/>
             </Grid>
          
         </StackPanel>

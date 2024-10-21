@@ -139,12 +139,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\background.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resimler\Rstackwallpaper.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resimler\settings.png" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +170,18 @@
     <Resource Include="Resimler\Anasayfa\Siyah\6.png" />
     <Resource Include="Resimler\Anasayfa\Siyah\7.png" />
     <Resource Include="Resimler\Anasayfa\Siyah\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Kullanıcı\logo-sade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\bekleme-ekranı.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\genel_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\gradient_background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

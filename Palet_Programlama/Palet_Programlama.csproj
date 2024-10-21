@@ -55,13 +55,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Sayfalar\Dizilim_Yap.xaml.cs">
-      <DependentUpon>Dizilim_Yap.xaml</DependentUpon>
+    <Compile Include="Sayfalar\DizilimYap.xaml.cs">
+      <DependentUpon>DizilimYap.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sayfalar\Kullanici.xaml.cs">
       <DependentUpon>Kullanici.xaml</DependentUpon>
     </Compile>
-    <Page Include="Sayfalar\Dizilim_Yap.xaml">
+    <Compile Include="UserControl\UstMenu.xaml.cs">
+      <DependentUpon>UstMenu.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Sayfalar\DizilimYap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -86,6 +89,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Sayfalar\Bekleme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stiller\UstMenu_stylexaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\UstMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,6 +186,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resimler\Kullanıcı\dil_turkce_kapali.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\UserControlUstMenu\geri_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\UserControlUstMenu\ana_sayfa_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

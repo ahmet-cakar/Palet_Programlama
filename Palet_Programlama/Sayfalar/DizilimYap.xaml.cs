@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Palet_Programlama.Sayfalar
 {
     /// <summary>
-    /// Interaction logic for Dizilim_Yap.xaml
+    /// Interaction logic for DizilimYap.xaml
     /// </summary>
-    public partial class Dizilim_Yap : Page
+    public partial class DizilimYap : Page
     {
-        public Dizilim_Yap()
+        public DizilimYap()
         {
             InitializeComponent();
         }

@@ -9,8 +9,9 @@
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="Width" Value="75"/>
-            <Setter Property="Margin" Value="0,0,0,0"/>
-            <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+        <Setter Property="FontFamily" Value="Roboto"/>
+        <Setter Property="Height" Value="50"/>
             <Setter Property="DockPanel.Dock" Value="Bottom"/>
             <Setter Property="HorizontalAlignment" Value="Right"/>
             
@@ -23,8 +24,17 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-
-        </Style>
+        <Style.Triggers>
+            <!-- Hover efekti için cursor değişimi -->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Opacity" Value="0.9" />
+                <!-- Hover arka planı (isteğe bağlı) -->
+            </Trigger>
+            
+        </Style.Triggers>
+  
+    </Style>
         <!-- Button Background Brush -->
         <RadialGradientBrush x:Key="button_background" RadiusX="0.55" RadiusY="5" GradientOrigin="0.5,0.5" Center="0.5,0.5">
         <GradientStop Color="#F09701" Offset="0"/>

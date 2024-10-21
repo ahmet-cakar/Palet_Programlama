@@ -180,5 +180,8 @@
   <ItemGroup>
     <Resource Include="Resimler\Anasayfa\Icon\kullanici_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Kullanıcı\dil_turkce_kapali.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

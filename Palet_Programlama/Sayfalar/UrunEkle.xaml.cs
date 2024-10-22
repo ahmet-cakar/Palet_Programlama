@@ -20,14 +20,16 @@ namespace Palet_Programlama.Sayfalar
     /// </summary>
     public partial class UrunEkle : Page
     {
+        private Frame MainFrame;
         private List<TextBox> textBoxes;
         private List<TextBlock> placeholders;
 
-        public UrunEkle()
+        public UrunEkle(Frame Main)
         {
             InitializeComponent();
             textBoxes = new List<TextBox> { myTextBox, myTextBox1, myTextBox2, myTextBox3, myTextBox4, myTextBox5, myTextBox6, myTextBox7, myTextBox8, myTextBox9 };
             placeholders = new List<TextBlock> { myPlace, myPlace1, myPlace2, myPlace3, myPlace4, myPlace5, myPlace6, myPlace7, myPlace8, myPlace9 };
+            this.MainFrame = Main;
         }
         private void myTextBox_Loaded(object sender, RoutedEventArgs e)
         {

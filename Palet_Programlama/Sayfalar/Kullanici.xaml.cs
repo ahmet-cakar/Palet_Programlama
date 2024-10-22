@@ -81,7 +81,7 @@ namespace Palet_Programlama.Sayfalar
 
         private void giris_button_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Anasayfa());
+            MainFrame.Navigate(new Anasayfa(MainFrame));
         }
     }
 }

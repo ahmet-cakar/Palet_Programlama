@@ -91,8 +91,8 @@
                     
                     <DockPanel Grid.Row="0" Grid.Column="0">
                         <!-- Sağ altta buton -->
-                        <Button  Content="Devam" 
-                                Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                        <Button  Content="Devam" x:Name="UrunEklePage" 
+                                Background="{StaticResource button_background}" Style="{StaticResource button_template}" Click="UrunEklePage_Click" />
 
                         <!-- Sol alttaki açıklama -->
                         <StackPanel  DockPanel.Dock="Bottom"
@@ -120,8 +120,8 @@
 
                         <DockPanel Grid.Row="0" Grid.Column="1">
                             <!-- Sağ altta buton -->
-                            <Button  Content="Devam" 
-                                Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                            <Button  Content="Devam" x:Name="DizilimPage" 
+                                Background="{StaticResource button_background}" Style="{StaticResource button_template}" Click="DizilimPage_Click" />
 
                             <!-- Sol alttaki açıklama -->
                             <StackPanel  DockPanel.Dock="Bottom"

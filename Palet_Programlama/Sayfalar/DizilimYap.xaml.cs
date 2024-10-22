@@ -20,9 +20,11 @@ namespace Palet_Programlama.Sayfalar
     /// </summary>
     public partial class DizilimYap : Page
     {
-        public DizilimYap()
+        private Frame MainFrame;
+        public DizilimYap(Frame Main)
         {
             InitializeComponent();
+            this.MainFrame = Main;
         }
     }
 }

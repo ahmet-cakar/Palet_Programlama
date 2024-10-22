@@ -20,10 +20,21 @@ namespace Palet_Programlama.Sayfalar
     /// </summary>
     public partial class Anasayfa : Page
     {
-        public Anasayfa()
+        private Frame MainFrame;
+        public Anasayfa(Frame Main)
         {
             InitializeComponent();
+            this.MainFrame = Main;
         }
 
+        private void UrunEklePage_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new UrunEkle(MainFrame));
+        }
+
+        private void DizilimPage_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new DizilimYap(MainFrame));
+        }
     }
 }

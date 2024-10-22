@@ -44,7 +44,7 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <!-- Icon inside the Button -->
                         <Image Margin="30"
-                               Source="pack://application:,,,/Resimler/notification.png"/>
+                               Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
                         <!-- Text inside the Button -->
                     </StackPanel>
                 </Button>
@@ -55,7 +55,7 @@
                         <!-- Icon inside the Button -->
                         <Image  
                                Margin="30"
-                               Source="pack://application:,,,/Resimler/profile-user.png"/>
+                               Source="pack://application:,,,/Resimler//Anasayfa/Icon/kullanici_icon.png"/>
                         <!-- Text inside the Button -->
                     </StackPanel>
                 </Button>

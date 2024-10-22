@@ -30,7 +30,7 @@
                     <ColumnDefinition Width="*"/>
 
                 </Grid.ColumnDefinitions>
-
+                <!-- Aynalama  ve x y checkbox alanı başlangıç -->
                 <Border CornerRadius="15" Grid.Column="0" Margin="10"  Background="#191919">
                     <Viewbox>
                         <StackPanel  Margin="30,0" Orientation="Horizontal"  VerticalAlignment="Center">
@@ -43,7 +43,9 @@
                         </StackPanel>
                     </Viewbox>
                 </Border>
+                <!-- Aynalama  ve x y checkbox alanı bitiş -->
 
+                <!-- ürün palet özellikleri alanı başlangıç -->
 
                 <Border Grid.Column="1" CornerRadius="15"  Margin="10"  Background="#191919">
                     <Viewbox>
@@ -80,6 +82,8 @@
                         </StackPanel>
                     </Viewbox>
                 </Border>
+                <!-- ürün palet özellikleri alanı bitiş -->
+
             </Grid>
 
         </Grid>
@@ -100,87 +104,144 @@
                         <RowDefinition Height="2*"/>
                         <RowDefinition Height="2.25*"/>
                     </Grid.RowDefinitions>
-
+                    <!-- Kat kopyalama alanı başlangıç -->
                     <Border Grid.Row="0" Margin="10,10"
                             CornerRadius="15" 
                             Background="#191919"
                              >
                         <Viewbox>
-                        <StackPanel Margin="40,0"  VerticalAlignment="Center" >
-                            <TextBlock  Foreground="White" FontSize="30">Kat Kopyala</TextBlock>
+                            <StackPanel Margin="40,0"  VerticalAlignment="Center" >
+                                <TextBlock  Foreground="White" FontSize="30">Kat Kopyala</TextBlock>
 
-                            <StackPanel   Margin="0,5"
+                                <StackPanel   Margin="0,5"
                                     Orientation="Horizontal" VerticalAlignment="Center">
 
-                                <TextBlock FontSize="25" VerticalAlignment="Center"
+                                    <TextBlock FontSize="25" VerticalAlignment="Center"
                                  Foreground="White" Text="Kopyala:   ">
-                                </TextBlock>
+                                    </TextBlock>
 
-                                <Button VerticalAlignment="Center" Margin="10,0,25,0" Width="35" Height="35" Style="{StaticResource transparan_button}">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <!-- Icon inside the Button -->
-                                        <Image 
+                                    <Button VerticalAlignment="Center" Margin="10,0,25,0" Width="35" Height="35" Style="{StaticResource transparan_button}">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <!-- Icon inside the Button -->
+                                            <Image 
                                                 Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
-                                        <!-- Text inside the Button -->
-                                    </StackPanel>
+                                            <!-- Text inside the Button -->
+                                        </StackPanel>
 
-                                </Button>
+                                    </Button>
 
-                                <TextBlock FontSize="25" VerticalAlignment="Center" Width="35" 
+                                    <TextBlock FontSize="25" VerticalAlignment="Center" Width="35" 
                                      Foreground="White" Text="17">
-                                </TextBlock>
+                                    </TextBlock>
 
-                                <Button Margin="15,0,50,0" Width="60" Height="35" Style="{StaticResource transparan_button}">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <!-- Icon inside the Button -->
-                                        <Image 
+                                    <Button Margin="15,0,50,0" Width="60" Height="35" Style="{StaticResource transparan_button}">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <!-- Icon inside the Button -->
+                                            <Image 
                                                 Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
-                                        <!-- Text inside the Button -->
-                                    </StackPanel>
+                                            <!-- Text inside the Button -->
+                                        </StackPanel>
 
-                                </Button>
+                                    </Button>
 
 
-                                <TextBlock FontSize="25" VerticalAlignment="Center"
+                                    <TextBlock FontSize="25" VerticalAlignment="Center"
                                  Foreground="White" Text="Yapıştır:   ">
-                                </TextBlock>
+                                    </TextBlock>
 
-                                <Button Margin="10,0,25,0" Width="35" Height="35" Style="{StaticResource transparan_button}">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <!-- Icon inside the Button -->
-                                        <Image 
+                                    <Button Margin="10,0,25,0" Width="35" Height="35" Style="{StaticResource transparan_button}">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <!-- Icon inside the Button -->
+                                            <Image 
                                                 Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
-                                        <!-- Text inside the Button -->
-                                    </StackPanel>
+                                            <!-- Text inside the Button -->
+                                        </StackPanel>
 
-                                </Button>
+                                    </Button>
 
-                                <TextBlock VerticalAlignment="Center" FontSize="25" Width="35" 
+                                    <TextBlock VerticalAlignment="Center" FontSize="25" Width="35" 
                                      Foreground="White" Text="17">
-                                </TextBlock>
+                                    </TextBlock>
 
-                                <Button Margin="15,0,50,0" Width="60" Height="35" Style="{StaticResource transparan_button}">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <!-- Icon inside the Button -->
-                                        <Image 
+                                    <Button Margin="15,0,50,0" Width="60" Height="35" Style="{StaticResource transparan_button}">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <!-- Icon inside the Button -->
+                                            <Image 
                                                 Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
-                                        <!-- Text inside the Button -->
-                                    </StackPanel>
+                                            <!-- Text inside the Button -->
+                                        </StackPanel>
 
-                                </Button>
+                                    </Button>
 
-                                <Button  Content="Kopyala"  Width="150" 
+                                    <Button  Content="Kopyala"  Width="150" 
                                         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                                </StackPanel>
+
+
                             </StackPanel>
-
-
-                        </StackPanel>
                         </Viewbox>
                     </Border>
+                    <!-- Kat kopyalama alanı bitiş -->
 
                     <Border Grid.Row="1"
-                            CornerRadius="20" Margin="5" 
-                            Background="#191919"></Border>
+                            CornerRadius="20" Margin="10" 
+                            Background="#191919">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Viewbox>
+                                <StackPanel  Margin="20,10,0,25" Grid.Column="0">
+                                    <TextBlock  Foreground="White"  FontSize="25">Pozisyon seçimi</TextBlock>
+                                    <StackPanel  Margin="0,40,0,0"  VerticalAlignment="Center" Orientation="Horizontal">
+                                        <StackPanel  Width="25" Height="25" VerticalAlignment="Top">
+                                            <Image 
+                                        Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+                                        </StackPanel>
+                                        <StackPanel  Orientation="Vertical">
+                                            <TextBlock  Foreground="White" FontSize="14">Ürünün hangi</TextBlock>
+                                            <TextBlock  Foreground="White" FontSize="14">pozisyonda</TextBlock>
+                                            <TextBlock  Foreground="White" FontSize="14">ekleneceğini seçin.</TextBlock>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Viewbox>
+                            <Viewbox Grid.Column="1" Grid.ColumnSpan="2">
+                            <StackPanel  Margin="40,20,0,0" Grid.Column="1"  Orientation="Vertical" Grid.ColumnSpan="2" >
+                                <StackPanel   Orientation="Horizontal" >
+                                    <TextBlock  Width="180" Foreground="White" FontSize="20" VerticalAlignment="Top" 
+                                                HorizontalAlignment="Center">Dikey</TextBlock>
+                                    <TextBlock  Width="100" Foreground="White" FontSize="20"  VerticalAlignment="Top" 
+                                        HorizontalAlignment="Center">Yatay</TextBlock>
+                                </StackPanel>
+
+                                <StackPanel   Orientation="Horizontal"  Margin="0,10,0,20" >
+                                    <Border BorderBrush="Red"  Width="80" Height="120"
+                                            BorderThickness="2" HorizontalAlignment="Center">
+                                        <Image  VerticalAlignment="Center"
+                                Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+                                    </Border>
+                                    <Border BorderBrush="Red"  Margin="100,0,0,0"  Width="120" Height="80"
+                                            BorderThickness="2" HorizontalAlignment="Center">
+                                        <Image  VerticalAlignment="Center"
+                                Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+                                    </Border>
+                                </StackPanel>
+
+
+                            </StackPanel>
+                            </Viewbox>
+                        </Grid>
+
+
+
+
+
+
+
+                    </Border>
                     <Border Grid.Row="2"
                             CornerRadius="20" Margin="5" 
                             Background="#191919"></Border>

@@ -61,6 +61,9 @@
     <Compile Include="Sayfalar\Kullanici.xaml.cs">
       <DependentUpon>Kullanici.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sayfalar\UrunEkle.xaml.cs">
+      <DependentUpon>UrunEkle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Test.xaml.cs">
       <DependentUpon>Test.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Sayfalar\Bekleme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sayfalar\UrunEkle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

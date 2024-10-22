@@ -1,22 +1,112 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style x:Key="PrimaryButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="#007ACC" />
-        <Setter Property="Foreground" Value="White" />
-        <Setter Property="FontSize" Value="16" />
-        <Setter Property="FontWeight" Value="Bold" />
-        <Setter Property="Padding" Value="10,5" />
-        <Setter Property="Margin" Value="5" />
-        <Setter Property="BorderBrush" Value="#005A9E" />
-        <Setter Property="BorderThickness" Value="2" />
-       
-        <!-- Mouse üzerine gelindiğinde arka plan rengini değiştirme -->
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#005A9E" />
-                <Setter Property="Cursor" Value="Hand" />
-            </Trigger>
-        </Style.Triggers>
+    <Style x:Key="listbox_template_urunekle" TargetType="ListBox">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Width" Value="265" />
+        <Setter Property="Height" Value="610" />
+        <Setter Property="Margin" Value="10,20,0,0" />
+        <Setter Property="FontFamily" Value="Roboto" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBox">
+                    <Grid>
+                        <!-- Opak Arka Plan -->
+                        <Border Background="Black" 
+                                CornerRadius="10" 
+                                BorderThickness="0" 
+                                BorderBrush="Black"
+                                Opacity="0.4" />
+
+                        <!-- Öğeler için ScrollViewer -->
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto"  
+                                      VerticalScrollBarVisibility="Auto">
+                            <ItemsPresenter Margin="0,20,0,0" />
+                            <!-- Üstten boşluk eklendi -->
+                        </ScrollViewer>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!-- ItemsPanelTemplate ile Öğelerin Dikey Dizilimi -->
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
+    <!-- ListBoxItem Stili -->
+    <Style TargetType="ListBoxItem">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontFamily" Value="Roboto" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Margin" Value="10,30,0,0" />
+        <!-- Öğeler arasında boşluk -->
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style x:Key="border_template_urunekle" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="Black" Opacity="0.4" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Height" Value="450" />
+        <Setter Property="Width" Value="445" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="Padding" Value="20" />
+        <Setter Property="Margin" Value="10,0,0,0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+    <Style x:Key="textblock_template_urunekle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="FontFamily" Value="Roboto"/>
+        <Setter Property="Panel.ZIndex" Value="4"/>
+    </Style>
+    <Style x:Key="TextBox_templete_urunekle" TargetType="TextBox">
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontFamily" Value="Roboto"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Panel.ZIndex" Value="4"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Focusable" Value="True"/>
+        <Setter Property="IsHitTestVisible" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <!-- PART_ContentHost burada tanımlanır -->
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                  Margin="0"
+                                  HorizontalScrollBarVisibility="Hidden"
+                                  VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="textblock_place_urunekle" TargetType="TextBlock">
+        <Setter Property="IsHitTestVisible" Value="False"/>
+        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontFamily" Value="Roboto"/>
+    </Style>
 </ResourceDictionary>

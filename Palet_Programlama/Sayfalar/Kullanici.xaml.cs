@@ -20,9 +20,11 @@ namespace Palet_Programlama.Sayfalar
     /// </summary>
     public partial class Kullanici : Page
     {
-        public Kullanici()
+        private Frame MainFrame;
+        public Kullanici(Frame Main)
         {
             InitializeComponent();
+            this.MainFrame = Main;
         }
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -79,7 +81,7 @@ namespace Palet_Programlama.Sayfalar
 
         private void giris_button_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Navigate(new Anasayfa());
         }
     }
 }

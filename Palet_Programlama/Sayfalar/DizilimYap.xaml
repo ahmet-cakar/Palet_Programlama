@@ -15,11 +15,14 @@
             <RowDefinition Height="7*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <!-- Header item control başlangıç -->
         <Grid Grid.Row="0">
             <Border VerticalAlignment="Center">
-            <local:UstMenu/>
+                <local:UstMenu/>
             </Border>
         </Grid>
+        <!-- Header item control bitiş -->
+
         <Grid Grid.Row="1" >
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -27,28 +30,30 @@
                     <ColumnDefinition Width="*"/>
 
                 </Grid.ColumnDefinitions>
-                <Viewbox>
-                    <Border CornerRadius="15" Grid.Column="0" Margin="25,0,5,5"  Background="#191919">
-                        <StackPanel Margin="30,10" Orientation="Horizontal"  VerticalAlignment="Center">
-                            <TextBlock Foreground="White" FontSize="25">Aynalama (kapalı)</TextBlock>
-                            <CheckBox  Margin="30,0" Style="{StaticResource checkbox_siyah}" ></CheckBox>
-                            <TextBlock Foreground="White" Margin="80,0,20,0" FontSize="30">X:</TextBlock>
+
+                <Border CornerRadius="15" Grid.Column="0" Margin="10"  Background="#191919">
+                    <Viewbox>
+                        <StackPanel  Margin="30,0" Orientation="Horizontal"  VerticalAlignment="Center">
+                            <TextBlock VerticalAlignment="Center"  Foreground="White" FontSize="24">Aynalama (kapalı)</TextBlock>
+                            <CheckBox  Margin="30,0,20,0" Style="{StaticResource checkbox_siyah}" ></CheckBox>
+                            <TextBlock VerticalAlignment="Center" Foreground="White" Margin="80,0,10,0" FontSize="24">X:</TextBlock>
                             <CheckBox  Style="{StaticResource checkbox_siyah}"></CheckBox>
-                            <TextBlock Foreground="White" Margin="80,0,20,0" FontSize="30">Y:</TextBlock>
+                            <TextBlock VerticalAlignment="Center" Foreground="White" Margin="60,0,10,0" FontSize="24">Y:</TextBlock>
                             <CheckBox  Style="{StaticResource checkbox_siyah}"></CheckBox>
                         </StackPanel>
-                    </Border>
-                </Viewbox>
-                <Viewbox Grid.Column="1">
-                    <Border CornerRadius="15"  Margin="5,0,25,7"  Background="#191919">
-                        <StackPanel Margin="10,8"
+                    </Viewbox>
+                </Border>
+
+
+                <Border Grid.Column="1" CornerRadius="15"  Margin="10"  Background="#191919">
+                    <Viewbox>
+                        <StackPanel Margin="30,0"
                                     Orientation="Vertical"
                                     VerticalAlignment="Center">
-
-                            <StackPanel  Margin="3"
+                            <StackPanel Margin="0,5"
                                             Orientation="Horizontal">
                                 <TextBlock FontSize="20" 
-                                               Foreground="White" Text="Ürün Özellikleri:   ">
+                                               Foreground="White" FontWeight="SemiBold" Text="Ürün Özellikleri:   ">
                                 </TextBlock>
                                 <TextBlock 
                                     FontSize="20" Width="250" 
@@ -59,10 +64,10 @@
                                 <TextBlock FontSize="20" Width="200" 
                                 Foreground="White" Text="Ürün Adedi: 0"></TextBlock>
                             </StackPanel>
-                            <StackPanel  Margin="3"
+                            <StackPanel  Margin="0,5"
                                             Orientation="Horizontal">
                                 <TextBlock FontSize="20" 
-                                               Foreground="White" Text="Palet Özellikleri:   ">
+                                               Foreground="White" FontWeight="SemiBold" Text="Palet Özellikleri:   ">
                                 </TextBlock>
                                 <TextBlock 
                                     FontSize="20" 
@@ -73,23 +78,113 @@
 
                             </StackPanel>
                         </StackPanel>
-                    </Border>
-                </Viewbox>
+                    </Viewbox>
+                </Border>
             </Grid>
-            
+
         </Grid>
 
 
-        <Grid Grid.Row="2" Margin="25,0">
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="8*"/>
                 <ColumnDefinition Width="7*"/>
                 <ColumnDefinition Width="*"/>
-                
+
 
             </Grid.ColumnDefinitions>
-            <Border CornerRadius="40" Margin="5,0"   Background="Blue">
-               
+            <Border>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2.25*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" Margin="10,10"
+                            CornerRadius="15" 
+                            Background="#191919"
+                             >
+                        <Viewbox>
+                        <StackPanel Margin="40,0"  VerticalAlignment="Center" >
+                            <TextBlock  Foreground="White" FontSize="30">Kat Kopyala</TextBlock>
+
+                            <StackPanel   Margin="0,5"
+                                    Orientation="Horizontal" VerticalAlignment="Center">
+
+                                <TextBlock FontSize="25" VerticalAlignment="Center"
+                                 Foreground="White" Text="Kopyala:   ">
+                                </TextBlock>
+
+                                <Button VerticalAlignment="Center" Margin="10,0,25,0" Width="35" Height="35" Style="{StaticResource transparan_button}">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <!-- Icon inside the Button -->
+                                        <Image 
+                                                Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+                                        <!-- Text inside the Button -->
+                                    </StackPanel>
+
+                                </Button>
+
+                                <TextBlock FontSize="25" VerticalAlignment="Center" Width="35" 
+                                     Foreground="White" Text="17">
+                                </TextBlock>
+
+                                <Button Margin="15,0,50,0" Width="60" Height="35" Style="{StaticResource transparan_button}">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <!-- Icon inside the Button -->
+                                        <Image 
+                                                Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+                                        <!-- Text inside the Button -->
+                                    </StackPanel>
+
+                                </Button>
+
+
+                                <TextBlock FontSize="25" VerticalAlignment="Center"
+                                 Foreground="White" Text="Yapıştır:   ">
+                                </TextBlock>
+
+                                <Button Margin="10,0,25,0" Width="35" Height="35" Style="{StaticResource transparan_button}">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <!-- Icon inside the Button -->
+                                        <Image 
+                                                Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+                                        <!-- Text inside the Button -->
+                                    </StackPanel>
+
+                                </Button>
+
+                                <TextBlock VerticalAlignment="Center" FontSize="25" Width="35" 
+                                     Foreground="White" Text="17">
+                                </TextBlock>
+
+                                <Button Margin="15,0,50,0" Width="60" Height="35" Style="{StaticResource transparan_button}">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <!-- Icon inside the Button -->
+                                        <Image 
+                                                Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+                                        <!-- Text inside the Button -->
+                                    </StackPanel>
+
+                                </Button>
+
+                                <Button  Content="Kopyala"  Width="150" 
+                                        Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                            </StackPanel>
+
+
+                        </StackPanel>
+                        </Viewbox>
+                    </Border>
+
+                    <Border Grid.Row="1"
+                            CornerRadius="20" Margin="5" 
+                            Background="#191919"></Border>
+                    <Border Grid.Row="2"
+                            CornerRadius="20" Margin="5" 
+                            Background="#191919"></Border>
+                </Grid>
             </Border>
             <Border CornerRadius="40" Margin="5,0"  Grid.Column="1"   Background="Purple">
 
@@ -104,5 +199,5 @@
 
             </Border>
         </Grid>
-            </Grid>
+    </Grid>
 </Page>

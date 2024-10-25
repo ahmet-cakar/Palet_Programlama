@@ -45,6 +45,36 @@ namespace Palet_Programlama.Sayfalar
             myTextBox9.CaretBrush = Brushes.White;
 
         }
+        #region TextBox Controlleri
+        private void TextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            string currentText = textBox.Text.Insert(textBox.SelectionStart, e.Text);
+
+            // Sadece sayılar ve tek bir nokta içeren sayısal formatı kontrol eden regex
+            var regex = new System.Text.RegularExpressions.Regex(@"^\d*\.?\d*$");
+            e.Handled = !regex.IsMatch(currentText);
+        }
+        private void TextBox_Pasting(object sender, DataObjectPastingEventArgs e)
+        {
+            if (e.DataObject.GetDataPresent(DataFormats.Text))
+            {
+                string pastedText = (string)e.DataObject.GetData(DataFormats.Text);
+                TextBox textBox = sender as TextBox;
+                string newText = textBox.Text.Insert(textBox.SelectionStart, pastedText);
+
+                var regex = new System.Text.RegularExpressions.Regex(@"^\d*\.?\d*$");
+                if (!regex.IsMatch(newText))
+                {
+                    e.CancelCommand();
+                }
+            }
+            else
+            {
+                e.CancelCommand();
+            }
+        }
+        #endregion
         private void UrunPalet_GotFocus(object sender, RoutedEventArgs e)
         {
             UpdatePlaceholder();

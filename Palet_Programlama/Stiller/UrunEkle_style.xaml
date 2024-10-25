@@ -50,8 +50,8 @@
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Margin" Value="10,30,0,0" />
-        <!-- Öğeler arasında boşluk -->
         <Setter Property="Background" Value="Transparent" />
+        
     </Style>
     <Style x:Key="border_template_urunekle" TargetType="Border">
         <Setter Property="Background">

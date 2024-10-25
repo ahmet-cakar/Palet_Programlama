@@ -72,19 +72,12 @@
                 >
                     <StackPanel Orientation="Horizontal">
                         <!-- Butonlarla menü elemanları -->
-                        <Button  Content="Bir başlık ekleyin" />
-                        <Button  Content="Bir başlık ekleyin" />
-                        <Button  Content="Bir başlık ekleyin" />
-                        <Button  Content="Bir başlık ekleyin" />
-                        <Button  Content="Bir başlık ekleyin" />
-                        <Button  Content="Bir başlık ekleyin" />
-                        <Button  Content="Bir başlık ekleyin" />
+                        <Button Margin="40,0,0,0" Style="{StaticResource ustmenu_button_style}"  Content="Ürün/Palet Ekle" />
+                        <Button Style="{StaticResource ustmenu_button_style}"  Content="Dizilim oluştur" />
+                        <Button Style="{StaticResource ustmenu_button_style}"  Content="Hız Ayarları" />
+                        <Button Style="{StaticResource ustmenu_button_style}"  Content="Gruplama Oluştur" />
+                        <Button Margin="200,0,50,0" Style="{StaticResource ustmenu_button_style}"  Content="Programlar" />
 
-                        <Button  Content="Bir başlık ekleyin" />
-                        <Button  Content="Bir başlık ekleyin" />
-                        <Button  Content="Bir başlık ekleyin" />
-                        <Button  Content="Bir başlık ekleyin" />
-                        <Button  Content="Bir başlık ekleyin" />
                     </StackPanel>
                 </ScrollViewer>
             </Border>

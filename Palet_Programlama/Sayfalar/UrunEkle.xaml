@@ -45,40 +45,45 @@
                         <!--Ürün Bilgileri Border-->
                         <Border Style="{StaticResource border_template_urunekle}" Panel.ZIndex="3">
                             <StackPanel>
+                                <!--Ürün Adı StackPanel-->
                                 <StackPanel Orientation="Horizontal" >
                                     <TextBlock Text="Ürün Adı" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
                                     <TextBox Name="myTextBox" Margin="180,35,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
                                     <TextBlock x:Name="myPlace" Text="Ürün Adı Giriniz..." Style="{StaticResource textblock_place_urunekle}" Margin="-150,40,0,0"/>
                                 </StackPanel>
+                                <!--Ürün Genişlik StackPanel-->
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="Genişlik/En (mm)" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox1"  Margin="120,35,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="myTextBox1"  Margin="120,35,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
                                     <TextBlock x:Name="myPlace1" Text="Ürün En Giriniz..." Style="{StaticResource textblock_place_urunekle}" Margin="-150,40,0,0"/>
                                 </StackPanel>
+                                <!--Ürün Uzunluk StackPanel-->
                                 <StackPanel>
                                     <TextBlock Text="Uzunluk/Boy (mm)" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox2"  Margin="240,-25,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="myTextBox2"  Margin="240,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
                                     <TextBlock x:Name="myPlace2" Text="Ürün Boy Giriniz..." Style="{StaticResource textblock_place_urunekle}" Margin="245,-30,0,0"/>
-
                                 </StackPanel>
+                                <!--Ürün Yükseklik StackPanel-->
                                 <StackPanel>
                                     <TextBlock Text="Yükseklik (mm)" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox3"  Margin="240,-25,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="myTextBox3"  Margin="240,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
                                     <TextBlock x:Name="myPlace3" Text="Ürün Yükseklik Giriniz..." Style="{StaticResource textblock_place_urunekle}" Margin="245,-30,0,0"/>
                                 </StackPanel>
+                                <!--Ürün Ağırlık StackPanel-->
                                 <StackPanel>
                                     <TextBlock Text="Ağırlık (kg)" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox4"  Margin="240,-25,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="myTextBox4"  Margin="240,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
                                     <TextBlock x:Name="myPlace4" Text="Ürün Ağırlık Giriniz..." Style="{StaticResource textblock_place_urunekle}" Margin="245,-30,0,0"/>
                                 </StackPanel>
+                                <!--Ürün Basınç StackPanel-->
                                 <StackPanel>
-                                    <TextBlock Text="Ürün Basıncı" Style="{StaticResource textblock_template_urunekle}"  Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox5"  Margin="240,-25,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBlock Text="Ürün Basıncı (bar)" Style="{StaticResource textblock_template_urunekle}"  Margin="0,40,0,0"/>
+                                    <TextBox Name="myTextBox5"  Margin="240,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
                                     <TextBlock x:Name="myPlace5" Text="Ürün Basınç Giriniz..." Style="{StaticResource textblock_place_urunekle}" Margin="245,-30,0,0"/>
                                 </StackPanel>
@@ -91,29 +96,32 @@
                         <!--Palet Bilgileri Border-->
                         <Border Style="{StaticResource border_template_urunekle}">
                             <StackPanel>
+                                <!--Palet Adı StackPanel-->
                                 <StackPanel>
                                     <TextBlock Text="Palet Adı" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
                                     <TextBox Name="myTextBox6" Margin="180,-25,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
-                                             TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
+                                             TextChanged="UrunPalet_Changed"  GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
                                     <TextBlock x:Name="myPlace6" Text="Palet Adı Giriniz..." Style="{StaticResource textblock_place_urunekle}" Margin="220,-30,0,0"/>
                                 </StackPanel>
+                                <!--Palet Genişlik StackPanel-->
                                 <StackPanel>
                                     <TextBlock Text="Genişlik/En (mm)" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox7" Margin="180,-25,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="myTextBox7" Margin="180,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
                                     <TextBlock x:Name="myPlace7" Text="Palet En Giriniz..." Style="{StaticResource textblock_place_urunekle}" Margin="220,-30,0,0"/>
 
                                 </StackPanel>
+                                <!--Palet Uzunluk StackPanel-->
                                 <StackPanel>
                                     <TextBlock Text="Uzunluk/Boy (mm)" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox8" Margin="180,-25,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="myTextBox8" Margin="180,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
                                     <TextBlock x:Name="myPlace8" Text="Palet Boy Giriniz..." Style="{StaticResource textblock_place_urunekle}" Margin="220,-30,0,0"/>
 
                                 </StackPanel>
                                 <StackPanel>
                                     <TextBlock Text="Yükseklik (mm)" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox9" Margin="180,-25,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded" 
+                                    <TextBox Name="myTextBox9" Margin="180,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded" 
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
                                     <TextBlock x:Name="myPlace9" Text="Palet Yükseklik Giriniz..." Style="{StaticResource textblock_place_urunekle}" Margin="220,-30,0,0"/>
 

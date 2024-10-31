@@ -32,6 +32,7 @@ namespace Palet_Programlama.Sayfalar
             string User = KullanıciClass.kullaniciadi;
             
             
+            
         }
 
         private void UrunEklePage_Click(object sender, RoutedEventArgs e)

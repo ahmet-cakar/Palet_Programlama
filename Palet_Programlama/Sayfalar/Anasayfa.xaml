@@ -3,12 +3,14 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Palet_Programlama.Sayfalar"
+      xmlns:local="clr-namespace:Palet_Programlama.Sınıflar"
       mc:Ignorable="d" 
       d:DesignHeight="768" d:DesignWidth="1366"
       Background="Transparent"
       Title="Anasayfa">
-
+    <Page.Resources>
+        <local:LanguageConverter x:Key="LanguageConverter"/>
+    </Page.Resources>
     
     <Grid  >
         <Grid.RowDefinitions>
@@ -91,7 +93,7 @@
                     
                     <DockPanel Grid.Row="0" Grid.Column="0">
                         <!-- Sağ altta buton -->
-                        <Button  Content="Devam" x:Name="UrunEklePage" 
+                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" x:Name="UrunEklePage" 
                                 Background="{StaticResource button_background}" Style="{StaticResource button_template}" Click="UrunEklePage_Click" />
 
                         <!-- Sol alttaki açıklama -->
@@ -99,8 +101,8 @@
                                     VerticalAlignment="Bottom" 
                                     HorizontalAlignment="Left"
                                     Margin="20,0,0,-45">
-                            <TextBlock x:Name="textblokurun"  Style="{StaticResource textblock_template}" Text="Ürün/Palet" />
-                                <TextBlock  Style="{StaticResource textblock_template}"/>
+                                <TextBlock Style="{StaticResource textblock_template}"  Text="{Binding Source='Anasayfa.textblokurun',Converter={StaticResource LanguageConverter}}"/>
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='Anasayfa.textblokurun2',Converter={StaticResource LanguageConverter}}"/>
                             </StackPanel>
 
 
@@ -120,7 +122,7 @@
 
                         <DockPanel Grid.Row="0" Grid.Column="1">
                             <!-- Sağ altta buton -->
-                            <Button  Content="Devam" x:Name="DizilimPage" 
+                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" x:Name="DizilimPage" 
                                 Background="{StaticResource button_background}" Style="{StaticResource button_template}" Click="DizilimPage_Click" />
 
                             <!-- Sol alttaki açıklama -->
@@ -128,8 +130,8 @@
                                     VerticalAlignment="Bottom" 
                                     HorizontalAlignment="Left"
                                     Margin="20,0,0,-45">
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="Dizilim" />
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="Oluştur" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='Anasayfa.dizilim1',Converter={StaticResource LanguageConverter}}" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='Anasayfa.dizilim2',Converter={StaticResource LanguageConverter}}" />
                             </StackPanel>
 
 
@@ -148,7 +150,7 @@
 
                         <DockPanel Grid.Row="0" Grid.Column="2">
                             <!-- Sağ altta buton -->
-                            <Button  Content="Devam" 
+                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}"
                          Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
                             <!-- Sol alttaki açıklama -->
@@ -156,8 +158,8 @@
                              VerticalAlignment="Bottom" 
                              HorizontalAlignment="Left"
                              Margin="20,0,0,-45">
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="Hızları " />
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="Düzenle" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='Anasayfa.hiz1',Converter={StaticResource LanguageConverter}}" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='Anasayfa.hiz2',Converter={StaticResource LanguageConverter}}" />
                             </StackPanel>
 
 
@@ -176,7 +178,7 @@
 
                         <DockPanel Grid.Row="0" Grid.Column="3">
                             <!-- Sağ altta buton -->
-                            <Button  Content="Devam" 
+                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" 
                          Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
                             <!-- Sol alttaki açıklama -->
@@ -184,8 +186,8 @@
                              VerticalAlignment="Bottom" 
                              HorizontalAlignment="Left"
                              Margin="20,0,0,-45">
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="Gruplama" />
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="Oluştur" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='Anasayfa.gruplama1',Converter={StaticResource LanguageConverter}}" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='Anasayfa.gruplama2',Converter={StaticResource LanguageConverter}}" />
                             </StackPanel>
 
 
@@ -227,7 +229,7 @@
                     
                     <DockPanel Grid.Row="1" Grid.Column="0">
                         <!-- Sağ altta buton -->
-                        <Button  Content="Devam" 
+                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" 
                          Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
                         <!-- Sol alttaki açıklama -->
@@ -235,7 +237,7 @@
                              VerticalAlignment="Bottom" 
                              HorizontalAlignment="Left"
                              Margin="20,0,0,-45">
-                            <TextBlock  Style="{StaticResource textblock_template}" Text="Programlar" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='Anasayfa.program',Converter={StaticResource LanguageConverter}}" />
                             <TextBlock  Style="{StaticResource textblock_template}" Text="" />
                         </StackPanel>
 
@@ -258,7 +260,7 @@
                          Style="{StaticResource border_template}">
                     <DockPanel Grid.Row="1" Grid.Column="1">
                         <!-- Sağ altta buton -->
-                        <Button  Content="Devam" 
+                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}"
                             Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
                         <!-- Sol alttaki açıklama -->
@@ -266,7 +268,7 @@
                                 VerticalAlignment="Bottom" 
                                 HorizontalAlignment="Left"
                                 Margin="20,0,0,-45">
-                            <TextBlock  Style="{StaticResource textblock_template}" Text="Alarmlar" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='Anasayfa.Alarm',Converter={StaticResource LanguageConverter}}" />
                             <TextBlock  Style="{StaticResource textblock_template}" Text="" />
                         </StackPanel>
 
@@ -290,7 +292,7 @@
                                        
                     <DockPanel Grid.Row="1" Grid.Column="2">
                         <!-- Sağ altta buton -->
-                        <Button  Content="Devam" 
+                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" 
                             Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
                         <!-- Sol alttaki açıklama -->
@@ -298,7 +300,7 @@
                                 VerticalAlignment="Bottom" 
                                 HorizontalAlignment="Left"
                                 Margin="20,0,0,-45">
-                            <TextBlock  Style="{StaticResource textblock_template}" Text="İzleme" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='Anasayfa.izleme',Converter={StaticResource LanguageConverter}}" />
                             <TextBlock  Style="{StaticResource textblock_template}" Text="" />
                         </StackPanel>
 
@@ -320,7 +322,7 @@
                          Style="{StaticResource border_template}">
                      <DockPanel Grid.Row="1" Grid.Column="3">
                                             <!-- Sağ altta buton -->
-                                            <Button  Content="Devam" 
+                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}"
                             Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
                                             <!-- Sol alttaki açıklama -->
@@ -328,7 +330,7 @@
                                 VerticalAlignment="Bottom" 
                                 HorizontalAlignment="Left"
                                 Margin="20,0,0,-45">
-                                                <TextBlock  Style="{StaticResource textblock_template}" Text="Komutlar" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='Anasayfa.Komut',Converter={StaticResource LanguageConverter}}" />
                                                 <TextBlock  Style="{StaticResource textblock_template}" Text="" />
                                             </StackPanel>
 

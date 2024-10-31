@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
 using System.Xml.Linq;
 using Newtonsoft.Json.Linq;
 namespace Palet_Programlama.Sınıflar
 {
-    public static class LanguageConverter
+    public class LanguageConverter : IValueConverter
     {
-        public static JObject languageData;
+        private static JObject _languageData;
+        public LanguageConverter() { }
 
+        // Dil dosyasını yüklemek için kullanılan metod
         public static void LoadLanguage(string languageCode)
         {
             string filePath = $"C:\\Users\\yunusemre.kara\\source\\repos\\Palet_Programlama\\Palet_Programlama\\Dil_Paketleri\\{languageCode}.json";
@@ -19,7 +23,7 @@ namespace Palet_Programlama.Sınıflar
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
-                languageData = JObject.Parse(json);
+                _languageData = JObject.Parse(json);
             }
             else
             {
@@ -27,10 +31,16 @@ namespace Palet_Programlama.Sınıflar
             }
         }
 
+        // Çeviriyi almak için kullanılan metod
         public static string GetString(string key)
         {
-            var tokens = key.Split('.'); // "Anasayfa.textblokurun" gibi anahtarları parçalara ayırır
-            JToken currentToken = languageData;
+            if (_languageData == null)
+            {
+                LoadLanguage("tr");
+            }
+
+            var tokens = key.Split('.'); // Anahtarları parçalara ayırıyoruz
+            JToken currentToken = _languageData;
 
             foreach (var token in tokens)
             {
@@ -46,5 +56,21 @@ namespace Palet_Programlama.Sınıflar
 
             return currentToken.ToString();
         }
+
+        // IValueConverter'ın Convert metodunu uygulayın
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is string key)
+            {
+                return GetString(key);
+            }
+            return value;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
     }
+
 }

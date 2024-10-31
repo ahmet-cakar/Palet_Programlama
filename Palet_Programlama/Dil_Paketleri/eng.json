@@ -1,6 +1,18 @@
 {
   "Anasayfa": {
-    "textblokurun": "TEST1",
-    "textblokurun2": "TEST2"
+    "textblokurun": "Add",
+    "textblokurun2": "Product/Pallet",
+    "dizilim1":"Create",
+    "dizilim2":"Array",
+    "hiz1":"Edit",
+    "hiz2":"Speeds",
+    "gruplama1":"Create",
+    "gruplama2":"Grouping",
+    "program":"Programs",
+    "Alarm":"Alarms",
+    "izleme":"Monitoring",
+    "Komut":"Commands",
+    "buttonC":"Continue"
+    
   }
 }

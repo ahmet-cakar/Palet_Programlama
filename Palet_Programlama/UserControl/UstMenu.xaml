@@ -41,7 +41,7 @@
 
         <!-- GERİ icon menü başlangıç-->
         <StackPanel Grid.Column="0">
-            <Button  Style="{StaticResource transparan_button}">
+            <Button  Style="{StaticResource transparan_button}" x:Name="AnasayfaBtn" Click="AnasayfaBtn_Click">
                 <StackPanel>
                     <!-- Icon inside the Button -->
                     <Image 
@@ -72,8 +72,8 @@
                 >
                     <StackPanel Orientation="Horizontal">
                         <!-- Butonlarla menü elemanları -->
-                        <Button Margin="40,0,0,0" Style="{StaticResource ustmenu_button_style}"  Content="Ürün/Palet Ekle" />
-                        <Button Style="{StaticResource ustmenu_button_style}"  Content="Dizilim oluştur" />
+                        <Button x:Name="UrunEklePageBtn" Margin="40,0,0,0" Style="{StaticResource ustmenu_button_style}"  Content="Ürün/Palet Ekle" Click="UrunEklePageBtn_Click" />
+                        <Button x:Name="DizilimPageBtn" Style="{StaticResource ustmenu_button_style}"  Content="Dizilim oluştur" Click="DizilimPageBtn_Click" />
                         <Button Style="{StaticResource ustmenu_button_style}"  Content="Hız Ayarları" />
                         <Button Style="{StaticResource ustmenu_button_style}"  Content="Gruplama Oluştur" />
                         <Button Margin="200,0,50,0" Style="{StaticResource ustmenu_button_style}"  Content="Programlar" />
@@ -86,7 +86,7 @@
 
         <!-- EV icon menü başlangıç-->
         <StackPanel Grid.Column="2">
-            <Button  Style="{StaticResource transparan_button}">
+            <Button  Style="{StaticResource transparan_button}" x:Name="LogOutBtn" Click="LogOutBtn_Click">
                 <StackPanel>
                     <!-- Icon inside the Button -->
                     <Image 

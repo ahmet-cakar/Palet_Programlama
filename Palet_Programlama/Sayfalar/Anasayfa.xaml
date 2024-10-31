@@ -55,7 +55,7 @@
                         <!-- Icon inside the Button -->
                         <Image  
                                Margin="30"
-                               Source="pack://application:,,,/Resimler/Anasayfa/Icon/kullanici_icon.png"/>
+                               Source="pack://application:,,,/Resimler/Anasayfa/Icon/kullanici_icon.png" x:Name="Kullaniciicon" MouseDown="Kullaniciicon_MouseDown"/>
                         <!-- Text inside the Button -->
                     </StackPanel>
                 </Button>
@@ -99,9 +99,9 @@
                                     VerticalAlignment="Bottom" 
                                     HorizontalAlignment="Left"
                                     Margin="20,0,0,-45">
-                            <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
-                            <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
-                        </StackPanel>
+                            <TextBlock x:Name="textblokurun"  Style="{StaticResource textblock_template}" Text="Ürün/Palet" />
+                                <TextBlock  Style="{StaticResource textblock_template}"/>
+                            </StackPanel>
 
 
                         <!-- Ortadaki icon (örnek bir icon) -->
@@ -128,8 +128,8 @@
                                     VerticalAlignment="Bottom" 
                                     HorizontalAlignment="Left"
                                     Margin="20,0,0,-45">
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="Dizilim" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="Oluştur" />
                             </StackPanel>
 
 
@@ -156,8 +156,8 @@
                              VerticalAlignment="Bottom" 
                              HorizontalAlignment="Left"
                              Margin="20,0,0,-45">
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="Hızları " />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="Düzenle" />
                             </StackPanel>
 
 
@@ -184,8 +184,8 @@
                              VerticalAlignment="Bottom" 
                              HorizontalAlignment="Left"
                              Margin="20,0,0,-45">
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="Gruplama" />
+                                <TextBlock  Style="{StaticResource textblock_template}" Text="Oluştur" />
                             </StackPanel>
 
 
@@ -235,8 +235,8 @@
                              VerticalAlignment="Bottom" 
                              HorizontalAlignment="Left"
                              Margin="20,0,0,-45">
-                            <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
-                            <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
+                            <TextBlock  Style="{StaticResource textblock_template}" Text="Programlar" />
+                            <TextBlock  Style="{StaticResource textblock_template}" Text="" />
                         </StackPanel>
 
 
@@ -266,8 +266,8 @@
                                 VerticalAlignment="Bottom" 
                                 HorizontalAlignment="Left"
                                 Margin="20,0,0,-45">
-                            <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
-                            <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
+                            <TextBlock  Style="{StaticResource textblock_template}" Text="Alarmlar" />
+                            <TextBlock  Style="{StaticResource textblock_template}" Text="" />
                         </StackPanel>
 
 
@@ -298,8 +298,8 @@
                                 VerticalAlignment="Bottom" 
                                 HorizontalAlignment="Left"
                                 Margin="20,0,0,-45">
-                            <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
-                            <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
+                            <TextBlock  Style="{StaticResource textblock_template}" Text="İzleme" />
+                            <TextBlock  Style="{StaticResource textblock_template}" Text="" />
                         </StackPanel>
 
 
@@ -328,8 +328,8 @@
                                 VerticalAlignment="Bottom" 
                                 HorizontalAlignment="Left"
                                 Margin="20,0,0,-45">
-                                                <TextBlock  Style="{StaticResource textblock_template}" Text="FMCG" />
-                                                <TextBlock  Style="{StaticResource textblock_template}" Text="Projeleri" />
+                                                <TextBlock  Style="{StaticResource textblock_template}" Text="Komutlar" />
+                                                <TextBlock  Style="{StaticResource textblock_template}" Text="" />
                                             </StackPanel>
 
 

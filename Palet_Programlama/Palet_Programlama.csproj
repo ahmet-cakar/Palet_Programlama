@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -55,6 +58,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Sınıflar\LanguageConverter.cs" />
+    <Compile Include="Sınıflar\Kullanıci_DilClass.cs" />
     <Compile Include="Sayfalar\DizilimYap.xaml.cs">
       <DependentUpon>DizilimYap.xaml</DependentUpon>
     </Compile>
@@ -155,6 +160,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Dil_Paketleri\eng.json" />
+    <None Include="Dil_Paketleri\tr.json" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -210,5 +218,18 @@
   <ItemGroup>
     <Resource Include="Resimler\Icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\gradient_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Kullanıcı\dil_turkce_Acik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Kullanıcı\dil_eng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Kullanıcı\dil_eng_Acik.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

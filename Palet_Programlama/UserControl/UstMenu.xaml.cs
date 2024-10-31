@@ -23,11 +23,12 @@ namespace Palet_Programlama.Sayfalar
         private bool _isMouseDown = false;
         private Point _startPoint;
         private double _scrollStartOffset;
+
         public UstMenu()
         {
             InitializeComponent();
         }
-
+        
         private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             // Fare tekerleği ile kaydırma işlemi
@@ -70,6 +71,46 @@ namespace Palet_Programlama.Sayfalar
             // Fare bırakıldığında kaydırmayı bitir
             _isMouseDown = false;
             myScrollViewer.ReleaseMouseCapture();
+        }
+
+        private void UrunEklePageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
+            {
+                // Frame'in içeriğini değiştirme 
+                mainWindow.MainFrame.Content = new UrunEkle(mainWindow.MainFrame);  
+            }
+        }
+
+        private void DizilimPageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
+            {
+                // Frame'in içeriğini değiştirme 
+                mainWindow.MainFrame.Content = new DizilimYap(mainWindow.MainFrame);
+            }
+        }
+
+        private void AnasayfaBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
+            {
+                // Frame'in içeriğini değiştirme 
+                mainWindow.MainFrame.Content = new Anasayfa(mainWindow.MainFrame);
+            }
+        }
+
+        private void LogOutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
+            {
+                // Frame'in içeriğini değiştirme 
+                mainWindow.MainFrame.Content = new Kullanici(mainWindow.MainFrame);
+            }
         }
     }
 }

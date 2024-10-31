@@ -9,9 +9,10 @@
       Title="Kullanici">
 
     <Grid>
+        <Image Source="pack://application:,,,/Resimler/gradient_background.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="UniformToFill"/>
         <Grid>
             <Image Source="pack://application:,,,/Resimler/Kullanıcı/dil_turkce_kapali.png" HorizontalAlignment="Right" 
-                   VerticalAlignment="Top" Height="150" Width="150" Margin="0,0,20,0"/>
+                   VerticalAlignment="Top" Height="150" Width="130"  Margin="0,0,20,0" x:Name="DilBtn" MouseDown="DilBtn_MouseDown" Stretch="UniformToFill"/>
         </Grid>
 
         <StackPanel HorizontalAlignment="Center"  VerticalAlignment="Center" >

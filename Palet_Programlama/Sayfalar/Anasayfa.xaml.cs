@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Palet_Programlama.Sınıflar;
 namespace Palet_Programlama.Sayfalar
 {
     /// <summary>
@@ -21,10 +22,16 @@ namespace Palet_Programlama.Sayfalar
     public partial class Anasayfa : Page
     {
         private Frame MainFrame;
+        
         public Anasayfa(Frame Main)
         {
+            string Dil = KullanıciClass.Dil;
+            LanguageConverter.LoadLanguage($"{Dil}");
             InitializeComponent();
             this.MainFrame = Main;
+            string User = KullanıciClass.kullaniciadi;
+            
+            
         }
 
         private void UrunEklePage_Click(object sender, RoutedEventArgs e)
@@ -35,6 +42,10 @@ namespace Palet_Programlama.Sayfalar
         private void DizilimPage_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new DizilimYap(MainFrame));
+        }
+
+        private void Kullaniciicon_MouseDown(object sender, MouseButtonEventArgs e)
+        {
         }
     }
 }

@@ -21,6 +21,7 @@ namespace Palet_Programlama.Sayfalar
     public partial class Kullanici : Page
     {
         private Frame MainFrame;
+
         public Kullanici(Frame Main)
         {
             InitializeComponent();
@@ -81,7 +82,93 @@ namespace Palet_Programlama.Sayfalar
 
         private void giris_button_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Anasayfa(MainFrame));
+            if ((kullanici_textbox.Text == "admin" || kullanici_textbox.Text == "Admin") && passwordBox.Password == "1234")
+            {
+                KullanıciClass.kullaniciadi = "Admin";
+                ImageSource currentImage = DilBtn.Source;
+                string currentUri = currentImage.ToString();
+                if (currentUri.Contains("eng"))
+                {
+                    KullanıciClass.Dil = "eng";
+                }
+                else if (currentUri.Contains("turkce"))
+                {
+                    KullanıciClass.Dil = "tr";
+                }
+                MainFrame.Navigate(new Anasayfa(MainFrame));
+            }
+
         }
+
+        private void DilBtn_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ImageSource currentImage = DilBtn.Source;
+            // DilBtn'in mevcut kaynağını BitmapImage olarak al
+            
+            string currentUri = currentImage.ToString();
+            // Eğer kaynak geçerli değilse işlem yapma
+            if (currentImage == null) return;
+
+            // Kaynağın URI'sini string olarak al
+            
+            
+
+            // Yeni URI'yi hesaplayacak bir değişken
+            string newUri = string.Empty;
+
+            // Mevcut duruma göre yeni URI belirle
+            switch (currentUri)
+            {
+                case "pack://application:,,,/Resimler/Kullanıcı/dil_turkce_kapali.png":
+                    newUri = "pack://application:,,,/Resimler/Kullanıcı/dil_turkce_Acik.png";
+                    break;
+
+                case "pack://application:,,,/Resimler/Kullanıcı/dil_turkce_Acik.png":
+                case "pack://application:,,,/Resimler/Kullanıcı/dil_eng_Acik.png":
+                    // Tıklama konumunu al
+                    Point clickPoint = e.GetPosition(DilBtn);
+                    double imageHeight = DilBtn.ActualHeight;
+
+                    // Üst tarafa tıklanmışsa
+                    if (clickPoint.Y < imageHeight / 2)
+                    {
+                        newUri = (currentUri.Contains("turkce"))
+                                 ? "pack://application:,,,/Resimler/Kullanıcı/dil_turkce_kapali.png"
+                                 : "pack://application:,,,/Resimler/Kullanıcı/dil_eng.png";
+                    }
+                    // Alt tarafa tıklanmışsa
+                    else
+                    {
+                        newUri = (currentUri.Contains("turkce"))
+                                 ? "pack://application:,,,/Resimler/Kullanıcı/dil_eng.png"
+                                 : "pack://application:,,,/Resimler/Kullanıcı/dil_turkce_kapali.png";
+                    }
+                    break;
+
+                case "pack://application:,,,/Resimler/Kullanıcı/dil_eng.png":
+                    newUri = "pack://application:,,,/Resimler/Kullanıcı/dil_eng_Acik.png";
+                    break;
+            }
+
+            // Eğer yeni bir URI belirlendiyse kaynağı güncelle
+            if (!string.IsNullOrEmpty(newUri))
+            {
+                DilBtn.Source = new BitmapImage(new Uri(newUri));
+            }
+            if (newUri.Contains("eng"))
+            {
+                KullaniciPlaceholder.Text = "User";
+                passwordPlaceholder.Text = "Password";
+                giris_button.Content = "Login";
+            }
+            else if (newUri.Contains("turkce_kapali"))
+            {
+                KullaniciPlaceholder.Text = "Kullanıcı";
+                passwordPlaceholder.Text = "Şifre";
+                giris_button.Content = "Giriş";
+            }
+
+        }
+    
     }
 }

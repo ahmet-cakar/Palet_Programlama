@@ -74,8 +74,8 @@
 
                 <!-- ürün palet özellikleri alanı başlangıç -->
 
-                <Border Grid.Column="1" CornerRadius="15"  Margin="10"  Background="#191919">
-                    <Viewbox>
+                <Border Grid.Column="1" CornerRadius="15"  Margin="0,0,40,0"  Background="#191919">
+                    
                         <StackPanel Margin="30,0"
                                     Orientation="Vertical"
                                     VerticalAlignment="Center">
@@ -107,7 +107,7 @@
 
                             </StackPanel>
                         </StackPanel>
-                    </Viewbox>
+                   
                 </Border>
                 <!-- ürün palet özellikleri alanı bitiş -->
 
@@ -210,6 +210,8 @@
                     </Border>
                     <!-- Kat kopyalama alanı bitiş -->
 
+
+                   <!-- Pozisyon seçimi alanı başlangıç-->
                     <Border Grid.Row="1"
                             CornerRadius="20" Margin="50,10,10,0" 
                             Background="#191919">
@@ -217,7 +219,7 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="1.2*"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                                 <StackPanel Margin="40,10,0,25" Grid.Column="0">
                                 <TextBlock  Foreground="White"  FontSize="28" Text="Pozisyon seçimi"></TextBlock>
@@ -233,21 +235,21 @@
                                         </StackPanel>
                                     </StackPanel>
                                 </StackPanel>
-                                <StackPanel  Margin="40,20,0,0" Grid.Column="1"  Orientation="Vertical" Grid.ColumnSpan="2" >
+                                <StackPanel  Margin="60,20,0,0" Grid.Column="1"  Orientation="Vertical" Grid.ColumnSpan="2" >
                                     <StackPanel   Orientation="Horizontal" >
                                         <TextBlock  Width="180" Foreground="White" FontSize="20" VerticalAlignment="Top" 
                                                 HorizontalAlignment="Center">Dikey</TextBlock>
-                                        <TextBlock  Width="100" Foreground="White" FontSize="20"  VerticalAlignment="Top" 
+                                        <TextBlock Margin="15,0,0,0" Width="100" Foreground="White" FontSize="20"  VerticalAlignment="Top" 
                                         HorizontalAlignment="Center">Yatay</TextBlock>
                                     </StackPanel>
 
-                                    <StackPanel   Orientation="Horizontal"  Margin="0,10,0,20" >
-                                        <Border BorderBrush="Red"  Width="80" Height="120"
+                                    <StackPanel   Orientation="Horizontal"   Margin="0,10,0,20" >
+                                        <Border BorderBrush="Red"  Width="100" Height="150"
                                             BorderThickness="2" HorizontalAlignment="Center">
                                             <Image  VerticalAlignment="Center"
                                 Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
                                         </Border>
-                                        <Border BorderBrush="Red"  Margin="100,0,0,0"  Width="120" Height="80"
+                                        <Border BorderBrush="Red"  Margin="100,0,0,0"  Width="150" Height="100"
                                             BorderThickness="2" HorizontalAlignment="Center">
                                             <Image  VerticalAlignment="Center"
                                 Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
@@ -265,23 +267,276 @@
 
 
                     </Border>
-                    <Border Grid.Row="2"
-                            CornerRadius="20" Margin="5" 
-                            Background="#191919"></Border>
+                    <!-- Pozisyon seçimi alanı bitiş-->
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0"
+                             CornerRadius="20" Margin="50,10,10,10" 
+                             Background="#191919">
+                            <!-- MOD seçimi alanı başlangıç-->
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel  Margin="30,10,0,0"  Orientation="Vertical">
+                                    <TextBlock Margin="0,20,0,0" VerticalAlignment="Center" 
+                                       Foreground="White"
+                                       FontSize="24"
+                                       Text="Çoklu Ekleme Modu (Kapalı) "></TextBlock>
+
+                                    <TextBlock VerticalAlignment="Center" Margin="0,30,0,0"
+                                       Foreground="White"
+                                       FontSize="24"
+                                       Text="Hizalama Modu (Kapalı) "></TextBlock>
+
+                                    <TextBlock VerticalAlignment="Center" Margin="0,30,0,0"
+                                     Foreground="White"
+                                     FontSize="24"
+                                     Text="Palet Taşıma Modu (Kapalı) "></TextBlock>
+
+                                    <TextBlock VerticalAlignment="Center" Margin="0,30,0,0"
+                                      Foreground="White"
+                                      FontSize="24"
+                                      Text="Palet Taşıma Modu (Kapalı) "></TextBlock>
+
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Orientation="Vertical" Margin="0,15,0,0" >
+                                    <CheckBox Margin="0,20,0,0"  Style="{StaticResource checkbox_siyah}" ></CheckBox>
+                                    <CheckBox Margin="0,30,0,0"  Style="{StaticResource checkbox_siyah}" ></CheckBox>
+                                    <CheckBox Margin="0,30,0,0"  Style="{StaticResource checkbox_siyah}" ></CheckBox>
+                                    <CheckBox Margin="0,30,0,0"  Style="{StaticResource checkbox_siyah}" ></CheckBox>
+
+
+
+                                </StackPanel>
+                            </Grid>
+                            <!-- MOD seçimi alanı bitiş-->
+
+                        </Border>
+
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="4*"/>
+                            </Grid.RowDefinitions>
+                            <!-- 10 mm alanı başlangıç-->
+
+                            <Border Grid.Row="0"
+                             CornerRadius="20" Margin="0,10,10,0" 
+                             Background="#191919">
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="*"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Border HorizontalAlignment="Center"  Margin="5">
+                                        <Button VerticalAlignment="Center" Width="40" Height="50" Style="{StaticResource transparan_button}">
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <Image 
+                                                 Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+
+                                            </StackPanel>
+
+                                        </Button>
+                                    </Border>
+
+                                    <Border   HorizontalAlignment="Center" Grid.Column="2" Margin="5">
+                                        <Button VerticalAlignment="Center" Width="40" Height="50" Style="{StaticResource transparan_button}">
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+
+                                                <Image 
+                                            Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+
+
+                                            </StackPanel>
+
+                                        </Button>
+                                    </Border>
+
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Grid.Column="1"  >
+                                        <TextBox FontSize="25" VerticalAlignment="Center" Foreground="White" Text="10"
+                                                 Background="Transparent" BorderThickness="0" ></TextBox>
+
+
+                                        <TextBlock Margin="5" FontSize="20" VerticalAlignment="Center"  
+                                                Foreground="White" Text="mm"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                            <!-- 10 mm alanı bitiş-->
+
+
+                            <!-- yön butonları alanı başlangıç-->
+
+                            <Border Grid.Row="1"
+                                CornerRadius="20" Margin="0,10,10,10" 
+                                Background="#191919">
+
+                                <Grid Margin="60,10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Button Grid.Row="0" Grid.Column="1" Width="60" Height="35" Style="{StaticResource transparan_button}">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <!-- Icon inside the Button -->
+                                            <Image 
+                                                    Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+                                            <!-- Text inside the Button -->
+                                        </StackPanel>
+
+                                    </Button>
+                                    <Button Grid.Row="1" Grid.Column="0"  Width="60" Height="35" Style="{StaticResource transparan_button}">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <!-- Icon inside the Button -->
+                                            <Image 
+                                                    Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+                                            <!-- Text inside the Button -->
+                                        </StackPanel>
+
+                                    </Button>
+                                    <Button Grid.Row="1" Grid.Column="2"  Width="60" Height="35" Style="{StaticResource transparan_button}">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <!-- Icon inside the Button -->
+                                            <Image 
+                                                 Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+                                            <!-- Text inside the Button -->
+                                        </StackPanel>
+
+                                    </Button>
+                                    <Button Grid.Row="2" Grid.Column="1"  Width="60" Height="35" Style="{StaticResource transparan_button}">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <!-- Icon inside the Button -->
+                                            <Image 
+                                                Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+                                            <!-- Text inside the Button -->
+                                        </StackPanel>
+
+                                    </Button>
+                                </Grid>
+                            </Border>
+
+                            <!-- yön butonları alanı bitiş-->
+
+                        </Grid>
+
+                    </Grid> 
+                   
                 </Grid>
             </Border>
-            <Border CornerRadius="40" Margin="5,0"  Grid.Column="1"   Background="Purple">
+            
+            <!--Urun dizme alanı başlangıç-->
+            <Border CornerRadius="20" Margin="5,10,35,10"  Grid.Column="1"   Background="#191919">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5*"/>
 
-            </Border>
-            <Border CornerRadius="40" Margin="5,0"  Grid.Column="2"   Background="Gray">
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5*"/>
 
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="2"  >
+
+                    </Grid>
+                    <Grid Grid.Row="0"  Grid.Column="0" Grid.RowSpan="2" >
+                        <TextBlock Margin="50,5,5,5" VerticalAlignment="Top"  FontWeight="SemiBold" FontSize="32" Height="40" Foreground="White" Text="X"></TextBlock>
+                        <TextBlock Margin="5,50,5,5" VerticalAlignment="Top"  FontWeight="SemiBold" FontSize="32" Height="40" Foreground="White" Text="Y"></TextBlock>
+
+
+                    </Grid>
+
+
+
+
+
+                    <Border Grid.Column="1" Grid.Row="1"></Border>                    
+                   
+                </Grid>
             </Border>
+            <!--Urun dizme alanı başlangıç-->
+
+            <!--Kat arttırma azaltma alanı başlangıç-->
+            <Border CornerRadius="20" Margin="-20,10,40,10" Background="#191919"  Grid.Column="2">
+                <Grid Margin="0,40,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="*"/>
+                       
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0">
+
+                        <TextBlock Margin="0,50,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"
+                         Foreground="White"
+                         FontSize="30"
+                         Text="Kat"></TextBlock>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Orientation="Vertical">
+                        <Button Margin="0,80,0,0" Style="{StaticResource transparan_button}" x:Name="AnasayfaBtn">
+                            <StackPanel>
+                                <Image 
+                                  MaxHeight="60"
+                                  MaxWidth="60"
+                                  Source="pack://application:,,,/Resimler/UserControlUstMenu/geri_icon.png"/>
+                                                    </StackPanel>
+                        </Button>
+                        <TextBlock Margin="0,20,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"
+                        Foreground="White"
+                        FontSize="30"
+                        Text="1"></TextBlock>
+                        <Button Margin="0,20,0,0" Style="{StaticResource transparan_button}" >
+                            <StackPanel>
+                                <Image 
+                           MaxHeight="60"
+                           MaxWidth="60"
+                           Source="pack://application:,,,/Resimler/UserControlUstMenu/geri_icon.png"/>
+                            </StackPanel>
+                        </Button>
+
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <!--Kat arttırma azaltma alanı bitiş-->
 
         </Grid>
+        <!--Alt buttonlar Footer başlangıç-->
         <Grid Grid.Row="3" >
-            <Border CornerRadius="40"  Margin="25,10" Background="Yellow">
-
+            <Border CornerRadius="20"  Margin="50,0,40,10" Background="#191919">
+                <StackPanel Orientation="Horizontal">
+                    <Button  Content="{Binding Source='DizilimYap.kopyalabtn',Converter={StaticResource LanguageConverter}}" Width="240" 
+                                Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                    <Button  Content="{Binding Source='DizilimYap.kopyalabtn',Converter={StaticResource LanguageConverter}}" Width="240"  Margin="10,0,0,0"
+            Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                    <Button  Content="{Binding Source='DizilimYap.kopyalabtn',Converter={StaticResource LanguageConverter}}" Width="240" Margin="10,0,0,0"
+            Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                    <Button  Content="{Binding Source='DizilimYap.kopyalabtn',Converter={StaticResource LanguageConverter}}" Width="240" Margin="10,0,0,0"
+            Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                </StackPanel>
             </Border>
         </Grid>
+        <!--Alt buttonlar Footer bitiş-->
+
     </Grid>
 </Page>

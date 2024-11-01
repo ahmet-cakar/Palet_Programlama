@@ -24,10 +24,10 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+     
 
- 
-         <!--USER VE BİLDİRİM İCON BAŞLANGIÇ-->
+        <!--USER VE BİLDİRİM İCON BAŞLANGIÇ-->
         <Grid  Grid.Row="0"  Grid.Column="3" >
 
             <Grid>
@@ -151,7 +151,7 @@
 
                         <DockPanel Grid.Row="0" Grid.Column="2">
                             <!-- Sağ altta buton -->
-                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}"
+                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" Click="Button_Click"
                          Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
                             <!-- Sol alttaki açıklama -->

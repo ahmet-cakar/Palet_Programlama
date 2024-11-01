@@ -70,10 +70,10 @@
     <Compile Include="Sayfalar\UrunEkle.xaml.cs">
       <DependentUpon>UrunEkle.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Test.xaml.cs">
-      <DependentUpon>Test.xaml</DependentUpon>
+    <Compile Include="UserController\BildirimKutusu.xaml.cs">
+      <DependentUpon>BildirimKutusu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControl\UstMenu.xaml.cs">
+    <Compile Include="UserController\UstMenu.xaml.cs">
       <DependentUpon>UstMenu.xaml</DependentUpon>
     </Compile>
     <Page Include="Sayfalar\DizilimYap.xaml">
@@ -112,11 +112,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Test.xaml">
+    <Page Include="UserController\BildirimKutusu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControl\UstMenu.xaml">
+    <Page Include="UserController\UstMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

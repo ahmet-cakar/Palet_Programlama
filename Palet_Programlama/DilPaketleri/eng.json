@@ -58,5 +58,10 @@
     "izle":"Monitoring",
     "komut":"Commands"
     
+  },
+  "MesajKutusu":{
+    "uyari":"Warning Screen",
+    "mesaj":"There was a Problem Adding a Product! Please Try Again",
+    "btncon1":"Tamam"
   }
 }

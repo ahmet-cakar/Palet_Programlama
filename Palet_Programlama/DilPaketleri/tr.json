@@ -57,6 +57,10 @@
     "alarm":"Alarmlar",
     "izle":"İzleme",
     "komut":"Komutlar"
-    
+  },
+  "MesajKutusu":{
+    "uyari":"Uyarı Ekranı",
+    "mesaj":"Ürün Eklenmesinde Bir Problem Yaşandı! Lütfen Tekrar Deneyiniz",
+    "btncon1":"Tamam"
   }
 }

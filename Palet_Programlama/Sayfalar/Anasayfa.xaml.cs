@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Palet_Programlama.Sınıflar;
+using Palet_Programlama.UserController;
 namespace Palet_Programlama.Sayfalar
 {
     /// <summary>
@@ -45,6 +46,14 @@ namespace Palet_Programlama.Sayfalar
 
         private void Kullaniciicon_MouseDown(object sender, MouseButtonEventArgs e)
         {
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            BildirimKutusu kutusu=new BildirimKutusu();
+            kutusu.Show();
+            kutusu.MesajGonder("MesajKutusu.btncon1", "MesajKutusu.mesaj");
+            
         }
     }
 }

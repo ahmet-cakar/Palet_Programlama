@@ -18,7 +18,7 @@ namespace Palet_Programlama.Sayfalar
     /// <summary>
     /// Interaction logic for UstMenu.xaml
     /// </summary>
-    public partial class UstMenu : UserControl
+    public partial class UstMenu : System.Windows.Controls.UserControl
     {
         private bool _isMouseDown = false;
         private Point _startPoint;

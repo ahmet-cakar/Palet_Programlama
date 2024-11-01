@@ -1,0 +1,30 @@
+{
+  "Anasayfa": {
+    "textblokurun": "Add",
+    "textblokurun2": "Product/Pallet",
+    "dizilim1": "Create",
+    "dizilim2": "Array",
+    "hiz1": "Edit",
+    "hiz2": "Speeds",
+    "gruplama1": "Create",
+    "gruplama2": "Grouping",
+    "program": "Programs",
+    "Alarm": "Alarms",
+    "izleme": "Monitoring",
+    "Komut": "Commands",
+    "buttonC": "Continue"
+  },
+  "DizilimYap": {
+    "urunozellik": "Product Features:  ",
+    "paletozellik": "Pallet Features:  ",
+    "kopyala": "Copy  ",
+    "yapistir": "Paste  ",
+    "urunadet": "Product Quantity: 0",
+    "kopyalabtn": "Copy",
+    "katkopyala":"Copy Floor",
+    "pozsecimi":"Position Selection"
+  },
+  "UrunEkle":{
+    
+  }
+}

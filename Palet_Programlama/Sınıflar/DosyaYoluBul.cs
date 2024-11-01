@@ -17,5 +17,11 @@ namespace Palet_Programlama.Sınıflar
             string result = Path.Combine(uygulamaDizini3, klasorAdi + "\\" + dosyaAdi); //Data klasorunun icindeki dosya  yolu
             return result;
         }
+        public static string DosyaGetir2(string klasorAdi, string dosyaAdi)
+        {
+            string uygulamaDizini = Directory.GetCurrentDirectory(); //uygulama dizini 
+            string result = Path.Combine(uygulamaDizini,"Palet_Programlama"+"\\"+ klasorAdi + "\\" + dosyaAdi); //Data klasorunun icindeki dosya  yolu
+            return result;
+        }
     }
 }

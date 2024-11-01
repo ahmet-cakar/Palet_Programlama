@@ -82,9 +82,9 @@ namespace Palet_Programlama.Sayfalar
 
         private void giris_button_Click(object sender, RoutedEventArgs e)
         {
-            if ((kullanici_textbox.Text == "admin" || kullanici_textbox.Text == "Admin") && passwordBox.Password == "1234")
+            if ((kullanici_textbox.Text == "" || kullanici_textbox.Text == "Admin") && passwordBox.Password == "")
             {
-                KullanıciClass.kullaniciadi = "Admin";
+                KullanıciClass.kullaniciadi = "";
                 ImageSource currentImage = DilBtn.Source;
                 string currentUri = currentImage.ToString();
                 if (currentUri.Contains("eng"))

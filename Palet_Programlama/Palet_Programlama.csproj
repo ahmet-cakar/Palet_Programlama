@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Sınıflar\DosyaYoluBul.cs" />
     <Compile Include="Sınıflar\LanguageConverter.cs" />
     <Compile Include="Sınıflar\Kullanıci_DilClass.cs" />
     <Compile Include="Sayfalar\DizilimYap.xaml.cs">

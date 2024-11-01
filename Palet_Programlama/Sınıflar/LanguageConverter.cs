@@ -18,7 +18,7 @@ namespace Palet_Programlama.Sınıflar
         // Dil dosyasını yüklemek için kullanılan metod
         public static void LoadLanguage(string languageCode)
         {
-            string filePath = $"C:\\Users\\yunusemre.kara\\source\\repos\\Palet_Programlama\\Palet_Programlama\\Dil_Paketleri\\{languageCode}.json";
+            string filePath = DosyaYoluBul.DosyaGetir("Dil_Paketleri",$"{languageCode}.json");
 
             if (File.Exists(filePath))
             {

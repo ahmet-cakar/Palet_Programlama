@@ -9,8 +9,9 @@
       d:DesignHeight="768" d:DesignWidth="1366"
       Title="Dizilim_Yap">
     <Page.Resources>
-        <sınıflar:LanguageConverter x:Key="LanguageConverter"/>
+        <sınıflar:LanguageConverter  x:Key="LanguageConverter" />
     </Page.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -34,17 +35,40 @@
 
                 </Grid.ColumnDefinitions>
                 <!-- Aynalama  ve x y checkbox alanı başlangıç -->
-                <Border CornerRadius="15" Grid.Column="0" Margin="10"  Background="#191919">
-                    <Viewbox>
-                        <StackPanel  Margin="30,0" Orientation="Horizontal"  VerticalAlignment="Center">
-                            <TextBlock VerticalAlignment="Center"  Foreground="White" FontSize="24">Aynalama (kapalı)</TextBlock>
-                            <CheckBox  Margin="30,0,20,0" Style="{StaticResource checkbox_siyah}" ></CheckBox>
-                            <TextBlock VerticalAlignment="Center" Foreground="White" Margin="80,0,10,0" FontSize="24">X:</TextBlock>
-                            <CheckBox  Style="{StaticResource checkbox_siyah}"></CheckBox>
-                            <TextBlock VerticalAlignment="Center" Foreground="White" Margin="60,0,10,0" FontSize="24">Y:</TextBlock>
-                            <CheckBox  Style="{StaticResource checkbox_siyah}"></CheckBox>
+                <Border CornerRadius="15" Grid.Column="0" Margin="50,0,10,0"  Background="#191919">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition  Width="*"/>
+                            <!--<ColumnDefinition  Width="*"/>-->
+                        </Grid.ColumnDefinitions>
+                        <StackPanel  Orientation="Horizontal" Grid.Column="0" Margin="40,10">
+                            <TextBlock VerticalAlignment="Center" 
+                                       Foreground="White"
+                                       FontSize="24"
+                                       Text="Aynalama (kapalı)"></TextBlock>
+                            <CheckBox Margin="50,0,0,0"  Style="{StaticResource checkbox_siyah}" ></CheckBox>
                         </StackPanel>
-                    </Viewbox>
+                        <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="10">
+                            <TextBlock VerticalAlignment="Center" 
+                            Foreground="White"
+                            FontSize="24"
+                            Text="X Ekseni"></TextBlock>
+                            <CheckBox Margin="15,0,0,0"  Style="{StaticResource checkbox_siyah}" ></CheckBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Column="2" Margin="10">
+                            <TextBlock VerticalAlignment="Center" 
+                            Foreground="White"
+                            FontSize="24"
+                            Text="Y Ekseni"></TextBlock>
+                            <CheckBox Margin="15,0,0,0"  Style="{StaticResource checkbox_siyah}" ></CheckBox>
+                        </StackPanel>
+
+                    </Grid>
+
+
+
                 </Border>
                 <!-- Aynalama  ve x y checkbox alanı bitiş -->
 
@@ -67,7 +91,7 @@
                                 <TextBlock FontSize="20" Margin="10,0,0,0" Width="250" 
                                     Foreground="White">280 mm X 360 mm</TextBlock>
                                 <TextBlock FontSize="20" Width="200" 
-                                Foreground="White" Text="{Binding Source='DizilimYap.urunadet',Converter={StaticResource LanguageConverter}}"></TextBlock>
+                                Foreground="White" Text="{ Binding Source='DizilimYap.urunadet',Converter={StaticResource LanguageConverter}}"></TextBlock>
                             </StackPanel>
                             <StackPanel  Margin="0,5"
                                             Orientation="Horizontal">
@@ -108,18 +132,18 @@
                         <RowDefinition Height="2.25*"/>
                     </Grid.RowDefinitions>
                     <!-- Kat kopyalama alanı başlangıç -->
-                    <Border Grid.Row="0" Margin="10,10"
+                    <Border Grid.Row="0" Margin="50,10,10,0"
                             CornerRadius="15" 
                             Background="#191919"
                              >
-                        <Viewbox>
+                        
                             <StackPanel Margin="40,0"  VerticalAlignment="Center" >
-                                <TextBlock  Foreground="White" FontSize="30" Text="Kat Kopyala"></TextBlock>
+                                <TextBlock  Foreground="White" FontSize="28" Text="Kat Kopyala"></TextBlock>
 
                                 <StackPanel   Margin="0,5"
                                     Orientation="Horizontal" VerticalAlignment="Center">
 
-                                    <TextBlock FontSize="25" VerticalAlignment="Center"
+                                    <TextBlock FontSize="24" VerticalAlignment="Center"
                                  Foreground="White" Text="{Binding Source='DizilimYap.kopyala',Converter={StaticResource LanguageConverter}}">
                                     </TextBlock>
 
@@ -133,7 +157,7 @@
 
                                     </Button>
 
-                                    <TextBlock FontSize="25" VerticalAlignment="Center" Width="35" 
+                                    <TextBlock FontSize="24" VerticalAlignment="Center" Width="35" 
                                      Foreground="White" Text="17">
                                     </TextBlock>
 
@@ -148,7 +172,7 @@
                                     </Button>
 
 
-                                    <TextBlock FontSize="25" VerticalAlignment="Center"
+                                    <TextBlock FontSize="24" VerticalAlignment="Center"
                                  Foreground="White" Text="{Binding Source='DizilimYap.yapistir',Converter={StaticResource LanguageConverter}}">
                                     </TextBlock>
 
@@ -162,7 +186,7 @@
 
                                     </Button>
 
-                                    <TextBlock VerticalAlignment="Center" FontSize="25" Width="35" 
+                                    <TextBlock VerticalAlignment="Center" FontSize="24" Width="35" 
                                      Foreground="White" Text="17">
                                     </TextBlock>
 
@@ -182,12 +206,12 @@
 
 
                             </StackPanel>
-                        </Viewbox>
+                        
                     </Border>
                     <!-- Kat kopyalama alanı bitiş -->
 
                     <Border Grid.Row="1"
-                            CornerRadius="20" Margin="10" 
+                            CornerRadius="20" Margin="50,10,10,0" 
                             Background="#191919">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -195,47 +219,43 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="1.2*"/>
                             </Grid.ColumnDefinitions>
-                            <Viewbox>
-                                <StackPanel  Margin="20,10,0,25" Grid.Column="0">
-                                    <TextBlock  Foreground="White"  FontSize="25">Pozisyon seçimi</TextBlock>
+                                <StackPanel Margin="40,10,0,25" Grid.Column="0">
+                                <TextBlock  Foreground="White"  FontSize="28" Text="Pozisyon seçimi"></TextBlock>
                                     <StackPanel  Margin="0,40,0,0"  VerticalAlignment="Center" Orientation="Horizontal">
                                         <StackPanel  Width="25" Height="25" VerticalAlignment="Top">
                                             <Image 
                                         Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
                                         </StackPanel>
                                         <StackPanel  Orientation="Vertical">
-                                            <TextBlock  Foreground="White" FontSize="14">Ürünün hangi</TextBlock>
-                                            <TextBlock  Foreground="White" FontSize="14">pozisyonda</TextBlock>
-                                            <TextBlock  Foreground="White" FontSize="14">ekleneceğini seçin.</TextBlock>
+                                            <TextBlock Margin="5,0,0,0" Foreground="White" FontSize="18">Ürünün hangi</TextBlock>
+                                            <TextBlock Margin="5,0,0,0" Foreground="White" FontSize="18">pozisyonda</TextBlock>
+                                            <TextBlock Margin="5,0,0,0" Foreground="White" FontSize="18">ekleneceğini seçin.</TextBlock>
                                         </StackPanel>
                                     </StackPanel>
                                 </StackPanel>
-                            </Viewbox>
-                            <Viewbox Grid.Column="1" Grid.ColumnSpan="2">
-                            <StackPanel  Margin="40,20,0,0" Grid.Column="1"  Orientation="Vertical" Grid.ColumnSpan="2" >
-                                <StackPanel   Orientation="Horizontal" >
-                                    <TextBlock  Width="180" Foreground="White" FontSize="20" VerticalAlignment="Top" 
+                                <StackPanel  Margin="40,20,0,0" Grid.Column="1"  Orientation="Vertical" Grid.ColumnSpan="2" >
+                                    <StackPanel   Orientation="Horizontal" >
+                                        <TextBlock  Width="180" Foreground="White" FontSize="20" VerticalAlignment="Top" 
                                                 HorizontalAlignment="Center">Dikey</TextBlock>
-                                    <TextBlock  Width="100" Foreground="White" FontSize="20"  VerticalAlignment="Top" 
+                                        <TextBlock  Width="100" Foreground="White" FontSize="20"  VerticalAlignment="Top" 
                                         HorizontalAlignment="Center">Yatay</TextBlock>
-                                </StackPanel>
+                                    </StackPanel>
 
-                                <StackPanel   Orientation="Horizontal"  Margin="0,10,0,20" >
-                                    <Border BorderBrush="Red"  Width="80" Height="120"
+                                    <StackPanel   Orientation="Horizontal"  Margin="0,10,0,20" >
+                                        <Border BorderBrush="Red"  Width="80" Height="120"
                                             BorderThickness="2" HorizontalAlignment="Center">
-                                        <Image  VerticalAlignment="Center"
+                                            <Image  VerticalAlignment="Center"
                                 Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
-                                    </Border>
-                                    <Border BorderBrush="Red"  Margin="100,0,0,0"  Width="120" Height="80"
+                                        </Border>
+                                        <Border BorderBrush="Red"  Margin="100,0,0,0"  Width="120" Height="80"
                                             BorderThickness="2" HorizontalAlignment="Center">
-                                        <Image  VerticalAlignment="Center"
+                                            <Image  VerticalAlignment="Center"
                                 Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
-                                    </Border>
+                                        </Border>
+                                    </StackPanel>
+
+
                                 </StackPanel>
-
-
-                            </StackPanel>
-                            </Viewbox>
                         </Grid>
 
 

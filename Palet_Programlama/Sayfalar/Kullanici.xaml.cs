@@ -163,7 +163,7 @@ namespace Palet_Programlama.Sayfalar
             }
             else if (newUri.Contains("turkce_kapali"))
             {
-                KullaniciPlaceholder.Text = "Kullanıcı";
+                KullaniciPlaceholder.Text = "Kullanıcı Adı";
                 passwordPlaceholder.Text = "Şifre";
                 giris_button.Content = "Giriş";
             }

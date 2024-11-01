@@ -4,10 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Palet_Programlama.Sayfalar"
+      xmlns:sınıflar="clr-namespace:Palet_Programlama.Sınıflar"
       mc:Ignorable="d" 
       d:DesignHeight="768" d:DesignWidth="1366"
       Title="Dizilim_Yap">
-
+    <Page.Resources>
+        <sınıflar:LanguageConverter x:Key="LanguageConverter"/>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -55,7 +58,7 @@
                             <StackPanel Margin="0,5"
                                             Orientation="Horizontal">
                                 <TextBlock FontSize="20" 
-                                               Foreground="White" FontWeight="SemiBold" Text="Ürün Özellikleri:   ">
+                                               Foreground="White" FontWeight="SemiBold" Text="{Binding Source='DizilimYap.urunozellik',Converter={StaticResource LanguageConverter}}">
                                 </TextBlock>
                                 <TextBlock 
                                     FontSize="20" Width="250" 
@@ -64,12 +67,12 @@
                                 <TextBlock FontSize="20" Margin="10,0,0,0" Width="250" 
                                     Foreground="White">280 mm X 360 mm</TextBlock>
                                 <TextBlock FontSize="20" Width="200" 
-                                Foreground="White" Text="Ürün Adedi: 0"></TextBlock>
+                                Foreground="White" Text="{Binding Source='DizilimYap.urunadet',Converter={StaticResource LanguageConverter}}"></TextBlock>
                             </StackPanel>
                             <StackPanel  Margin="0,5"
                                             Orientation="Horizontal">
                                 <TextBlock FontSize="20" 
-                                               Foreground="White" FontWeight="SemiBold" Text="Palet Özellikleri:   ">
+                                               Foreground="White" FontWeight="SemiBold" Text="{Binding Source='DizilimYap.paletozellik',Converter={StaticResource LanguageConverter}}">
                                 </TextBlock>
                                 <TextBlock 
                                     FontSize="20" 
@@ -111,13 +114,13 @@
                              >
                         <Viewbox>
                             <StackPanel Margin="40,0"  VerticalAlignment="Center" >
-                                <TextBlock  Foreground="White" FontSize="30">Kat Kopyala</TextBlock>
+                                <TextBlock  Foreground="White" FontSize="30" Text="Kat Kopyala"></TextBlock>
 
                                 <StackPanel   Margin="0,5"
                                     Orientation="Horizontal" VerticalAlignment="Center">
 
                                     <TextBlock FontSize="25" VerticalAlignment="Center"
-                                 Foreground="White" Text="Kopyala:   ">
+                                 Foreground="White" Text="{Binding Source='DizilimYap.kopyala',Converter={StaticResource LanguageConverter}}">
                                     </TextBlock>
 
                                     <Button VerticalAlignment="Center" Margin="10,0,25,0" Width="35" Height="35" Style="{StaticResource transparan_button}">
@@ -146,7 +149,7 @@
 
 
                                     <TextBlock FontSize="25" VerticalAlignment="Center"
-                                 Foreground="White" Text="Yapıştır:   ">
+                                 Foreground="White" Text="{Binding Source='DizilimYap.yapistir',Converter={StaticResource LanguageConverter}}">
                                     </TextBlock>
 
                                     <Button Margin="10,0,25,0" Width="35" Height="35" Style="{StaticResource transparan_button}">
@@ -173,7 +176,7 @@
 
                                     </Button>
 
-                                    <Button  Content="Kopyala"  Width="150" 
+                                    <Button  Content="{Binding Source='DizilimYap.kopyalabtn',Converter={StaticResource LanguageConverter}}"  Width="150" 
                                         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
                                 </StackPanel>
 

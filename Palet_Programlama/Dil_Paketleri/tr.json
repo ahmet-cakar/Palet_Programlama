@@ -2,16 +2,29 @@
   "Anasayfa": {
     "textblokurun": "Ürün/Palet",
     "textblokurun2": "Ekle",
-    "dizilim1":"Dizilim",
-    "dizilim2":"Oluştur",
-    "hiz1":"Hızları",
-    "hiz2":"Düzenle",
-    "gruplama1":"Gruplama",
-    "gruplama2":"Oluştur",
-    "program":"Programlar",
-    "Alarm":"Alarmlar",
-    "izleme":"İzleme",
-    "Komut":"Komutlar",
-    "buttonC":"Devam"
+    "dizilim1": "Dizilim",
+    "dizilim2": "Oluştur",
+    "hiz1": "Hızları",
+    "hiz2": "Düzenle",
+    "gruplama1": "Gruplama",
+    "gruplama2": "Oluştur",
+    "program": "Programlar",
+    "Alarm": "Alarmlar",
+    "izleme": "İzleme",
+    "Komut": "Komutlar",
+    "buttonC": "Devam"
+  },
+  "DizilimYap": {
+    "urunozellik": "Ürün Özellikleri:  ",
+    "paletozellik": "Palet Özellikleri:  ",
+    "kopyala": "Kopyala  ",
+    "yapistir": "Yapıştır  ",
+    "urunadet": "Ürün Adedi: 0",
+    "kopyalabtn": "Kopyala",
+    "katkopyala":"Kat Kopyala",
+    "pozsecimi":"Pozisyon Seçimi"
+  },
+  "UrunEkle":{
+    
   }
 }

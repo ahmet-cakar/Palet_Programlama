@@ -20,7 +20,7 @@ namespace Palet_Programlama.Sayfalar
     /// </summary>
     public partial class Kullanici : Page
     {
-        private Frame MainFrame;
+        private readonly Frame MainFrame;
 
         public Kullanici(Frame Main)
         {
@@ -84,16 +84,16 @@ namespace Palet_Programlama.Sayfalar
         {
             if ((kullanici_textbox.Text == "" || kullanici_textbox.Text == "Admin") && passwordBox.Password == "")
             {
-                KullanıciClass.kullaniciadi = "";
+                KullaniciDil.Kullaniciadi = "";
                 ImageSource currentImage = DilBtn.Source;
                 string currentUri = currentImage.ToString();
                 if (currentUri.Contains("eng"))
                 {
-                    KullanıciClass.Dil = "eng";
+                    KullaniciDil.Dil = "eng";
                 }
                 else if (currentUri.Contains("turkce"))
                 {
-                    KullanıciClass.Dil = "tr";
+                    KullaniciDil.Dil = "tr";
                 }
                 MainFrame.Navigate(new Anasayfa(MainFrame));
             }

@@ -60,7 +60,7 @@
     </ApplicationDefinition>
     <Compile Include="Sınıflar\DosyaYoluBul.cs" />
     <Compile Include="Sınıflar\LanguageConverter.cs" />
-    <Compile Include="Sınıflar\Kullanıci_DilClass.cs" />
+    <Compile Include="Sınıflar\KullaniciDil.cs" />
     <Compile Include="Sayfalar\DizilimYap.xaml.cs">
       <DependentUpon>DizilimYap.xaml</DependentUpon>
     </Compile>
@@ -161,8 +161,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Dil_Paketleri\eng.json" />
-    <None Include="Dil_Paketleri\tr.json" />
+    <None Include="DilPaketleri\eng.json" />
+    <None Include="DilPaketleri\tr.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

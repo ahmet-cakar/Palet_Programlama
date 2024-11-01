@@ -21,17 +21,15 @@ namespace Palet_Programlama.Sayfalar
     /// </summary>
     public partial class Anasayfa : Page
     {
-        private Frame MainFrame;
+        private readonly Frame MainFrame;
         
         public Anasayfa(Frame Main)
         {
-            string Dil = KullanıciClass.Dil;
+            string Dil = KullaniciDil.Dil;
             LanguageConverter.LoadLanguage($"{Dil}");
             InitializeComponent();
             this.MainFrame = Main;
-            string User = KullanıciClass.kullaniciadi;
-            
-            
+            //string User = KullaniciDil.Kullaniciadi; 
             
         }
 

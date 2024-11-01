@@ -25,6 +25,27 @@
     "pozsecimi":"Pozisyon Seçimi"
   },
   "UrunEkle":{
-    
+    "onizle": "Ön İzleme",
+    "urunblg": "Ürün Bilgileri",
+    "paletblg": "Palet Bilgileri",
+    "urunad": "Ürün Adı",
+    "paletad": "Palet Adı",
+    "urunadgir": "Ürün Adı Giriniz...",
+    "paletadgir": "Palet Adı Giriniz...",
+    "genislik": "Genişlik/En (mm)",
+    "urungenislikgir": "Ürün En Giriniz...",
+    "paletgenislikgir": "Palet En Giriniz...",
+    "uzunluk":"Uzunluk/Boy (mm)",
+    "urunuzunlukgir":"Ürün Boy Giriniz...",
+    "paletuzunlukgir":"Palet Boy Giriniz...",
+    "yukseklik":"Yükseklik (mm)",
+    "urunyukseklikgir":"Ürün Yükseklik Giriniz...",
+    "paletyukseklikgir":"Palet Yükseklik Giriniz...",
+    "agirlik":"Ağırık (kg)",
+    "urunagirliklikgir":"Ürün Ağırlık Giriniz...",
+    "basinc":"Basınç (bar)",
+    "urunbasincgir":"Ürün Basınç Giriniz...",
+    "urunlist":"Ürün Listesi",
+    "paletlist":"Palet Listesi"
   }
 }

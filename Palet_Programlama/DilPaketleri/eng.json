@@ -25,6 +25,27 @@
     "pozsecimi":"Position Selection"
   },
   "UrunEkle":{
-    
+    "onizle": "Preview",
+    "urunblg": "Product Information",
+    "paletblg": "Pallet Information",
+    "urunad": "Product Name",
+    "paletad": "Pallet Name",
+    "urunadgir": "Enter Product Name...",
+    "paletadgir": "Enter Pallet Name...",
+    "genislik": "Width (mm)",
+    "urungenislikgir": "Enter Product Width...",
+    "paletgenislikgir": "Enter Pallet Width...",
+    "uzunluk":"Length (mm)",
+    "urunuzunlukgir":"Enter Product Length...",
+    "paletuzunlukgir":"Enter Pallet Length...",
+    "yukseklik":"Height (mm)",
+    "urunyukseklikgir":"Enter Product Height...",
+    "paletyukseklikgir":"Enter Pallet Height...",
+    "agirlik":"Weight (kg)",
+    "urunagirliklikgir":"Enter Product Weight...",
+    "basinc":"Pressure (bar)",
+    "urunbasincgir":"Enter Product Pressure...",
+    "urunlist":"Product List",
+    "paletlist":"Pallet List"
   }
 }

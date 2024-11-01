@@ -42,10 +42,21 @@
     "urunyukseklikgir":"Ürün Yükseklik Giriniz...",
     "paletyukseklikgir":"Palet Yükseklik Giriniz...",
     "agirlik":"Ağırık (kg)",
-    "urunagirliklikgir":"Ürün Ağırlık Giriniz...",
+    "urunagirlikgir":"Ürün Ağırlık Giriniz...",
     "basinc":"Basınç (bar)",
     "urunbasincgir":"Ürün Basınç Giriniz...",
     "urunlist":"Ürün Listesi",
     "paletlist":"Palet Listesi"
+  },
+  "UserControl":{
+    "urunekle":"Ürün/Palet Ekle",
+    "dizilimekle":"Dizilim Oluştur",
+    "hizayar":"Hız Ayarları",
+    "grupekle":"Gruplama Oluştur",
+    "program":"Programlar",
+    "alarm":"Alarmlar",
+    "izle":"İzleme",
+    "komut":"Komutlar"
+    
   }
 }

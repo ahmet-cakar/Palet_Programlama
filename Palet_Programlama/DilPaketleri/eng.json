@@ -3,9 +3,9 @@
     "textblokurun": "Add",
     "textblokurun2": "Product/Pallet",
     "dizilim1": "Create",
-    "dizilim2": "Array",
-    "hiz1": "Edit",
-    "hiz2": "Speeds",
+    "dizilim2": "Sequence",
+    "hiz1": "Speed",
+    "hiz2": "Settings",
     "gruplama1": "Create",
     "gruplama2": "Grouping",
     "program": "Programs",
@@ -42,10 +42,21 @@
     "urunyukseklikgir":"Enter Product Height...",
     "paletyukseklikgir":"Enter Pallet Height...",
     "agirlik":"Weight (kg)",
-    "urunagirliklikgir":"Enter Product Weight...",
+    "urunagirlikgir":"Enter Product Weight...",
     "basinc":"Pressure (bar)",
     "urunbasincgir":"Enter Product Pressure...",
     "urunlist":"Product List",
     "paletlist":"Pallet List"
+  },
+  "UserControl":{
+    "urunekle":"Add Product/Pallet",
+    "dizilimekle":"Create Sequence",
+    "hizayar":"Speed Settings",
+    "grupekle":"Create Grouping",
+    "program":"Programs",
+    "alarm":"Alarms",
+    "izle":"Monitoring",
+    "komut":"Commands"
+    
   }
 }

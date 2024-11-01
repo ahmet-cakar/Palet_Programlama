@@ -231,6 +231,8 @@
   <ItemGroup>
     <Resource Include="Resimler\Kullanıcı\dil_eng_Acik.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resimler\DizilimYap\referans_eksenler.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

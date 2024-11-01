@@ -41,7 +41,7 @@
 
         <!-- GERİ icon menü başlangıç-->
         <StackPanel Grid.Column="0">
-            <Button  Style="{StaticResource transparan_button}" x:Name="AnasayfaBtn" Click="AnasayfaBtn_Click">
+            <Button Margin="0,6,0,0" Style="{StaticResource transparan_button}" x:Name="AnasayfaBtn" Click="AnasayfaBtn_Click">
                 <StackPanel>
                     <!-- Icon inside the Button -->
                     <Image 
@@ -56,7 +56,7 @@
 
         <!-- Kaydırma menü başlangıç-->
         <StackPanel Grid.Column="1" Margin="0,6,0,0">
-            <Border  Height="50"
+            <Border  Height="70"
                      CornerRadius="20" 
                      Background="#191919">
                 <!-- ScrollViewer ile kaydırılabilir alan oluşturuluyor -->
@@ -85,7 +85,7 @@
         <!--Kaydırma menü bitiş-->
 
         <!-- EV icon menü başlangıç-->
-        <StackPanel Grid.Column="2">
+        <StackPanel Margin="0,6,0,0" Grid.Column="2">
             <Button  Style="{StaticResource transparan_button}" x:Name="LogOutBtn" Click="LogOutBtn_Click">
                 <StackPanel>
                     <!-- Icon inside the Button -->

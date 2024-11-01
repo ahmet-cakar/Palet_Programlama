@@ -1,0 +1,77 @@
+﻿<Page x:Class="Palet_Programlama.Sayfalar.HizAyarları"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Palet_Programlama.Sayfalar"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1366"
+      Title="HizAyarları">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <local:UstMenu Margin="0,15,0,0"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <!--Hız TextBoxlar ve Border-->
+            <Grid Grid.Column="0">
+                <Border Style="{StaticResource border_template_urunekle}" Width="400" Height="580" Margin="45,30,0,0">
+                    <StackPanel Orientation="Vertical" Height="Auto">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Bir Başlık Ekleyin" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
+                            <TextBox Style="{StaticResource RoundedTextBoxHiz}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                            <TextBlock Text="Bir Başlık Ekleyin" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
+                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                            <TextBlock Text="Bir Başlık Ekleyin" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
+                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                            <TextBlock Text="Bir Başlık Ekleyin" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
+                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                            <TextBlock Text="Bir Başlık Ekleyin" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
+                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                            <TextBlock Text="Bir Başlık Ekleyin" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
+                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                            <TextBlock Text="Bir Başlık Ekleyin" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
+                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                            <TextBlock Text="Bir Başlık Ekleyin" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
+                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                            <TextBlock Text="Bir Başlık Ekleyin" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
+                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top"/>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                </Border>
+            </Grid>
+            <!--Hız Görsel ve Border-->
+            <Grid Grid.Column="1">
+                <Border Style="{StaticResource border_template_urunekle}" Width="1025" Margin="20,30,0,0" Height="580">
+                    
+                </Border>
+                
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

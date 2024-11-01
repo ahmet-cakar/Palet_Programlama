@@ -50,9 +50,11 @@ namespace Palet_Programlama.Sayfalar
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            BildirimKutusu kutusu=new BildirimKutusu();
-            kutusu.Show();
-            kutusu.MesajGonder("MesajKutusu.btncon1", "MesajKutusu.mesaj");
+
+            MainFrame.Navigate(new HizAyarları(MainFrame));
+            //BildirimKutusu kutusu=new BildirimKutusu();
+            //kutusu.Show();
+            //kutusu.MesajGonder("MesajKutusu.btncon1", "MesajKutusu.mesaj");
             
         }
     }

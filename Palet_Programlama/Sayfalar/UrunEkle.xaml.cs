@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Palet_Programlama.Sınıflar;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,7 @@ namespace Palet_Programlama.Sayfalar
         private Frame MainFrame;
         private List<TextBox> textBoxes;
         private List<TextBlock> placeholders;
-
+        
         public UrunEkle(Frame Main)
         {
             InitializeComponent();
@@ -74,20 +75,41 @@ namespace Palet_Programlama.Sayfalar
                 e.CancelCommand();
             }
         }
+
         #endregion
+        private readonly Dictionary<string, Tuple<string, string>> textBoxData = new Dictionary<string, Tuple<string, string>>
+{
+    { "myTextBox1", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/en-preview.png", "UrunEkle.preview1") },
+    { "myTextBox2", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/boy-preview.png", "UrunEkle.preview2") },
+    { "myTextBox3", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/yukseklik-preview.png", "UrunEkle.preview3") }
+};
         private void UrunPalet_GotFocus(object sender, RoutedEventArgs e)
         {
+            if (sender is TextBox triggeredTextBox && textBoxData.TryGetValue(triggeredTextBox.Name, out var data))
+            {
+                // Resim kaynağını değiştir
+                onizleımage.Source = new BitmapImage(new Uri(data.Item1));
+
+                // TextBlock metnini güncelle
+                priviewtextblock.Text = LanguageConverter.GetString(data.Item2);
+            }
+
             UpdatePlaceholder();
         }
 
         private void UrunPalet_LostFocus(object sender, RoutedEventArgs e)
         {
+            
             UpdatePlaceholder();
         }
 
+       
+        
         private void UrunPalet_Changed(object sender, RoutedEventArgs e)
         {
             UpdatePlaceholder();
+            //var newImageSource = new BitmapImage(new Uri("pack://application:,,,/Resimler/UrunEkle/boy-preview.png"));
+            //onizleımage.Source = newImageSource;
         }
         private void UpdatePlaceholder()
         {

@@ -51,7 +51,10 @@
     "paletlist":"Pallet List",
     "uruneklebtn":"Add Product",
     "urunduzenlebtn":"Edit Product",
-    "urunsilbtn":"Product Delete"
+    "urunsilbtn":"Product Delete",
+    "preview1":"Width",
+    "preview2":"Length",
+    "preview3":"Height"
   },
   "UserControl":{
     "urunekle":"Add Product/Pallet",

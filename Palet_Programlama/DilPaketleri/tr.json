@@ -51,7 +51,10 @@
     "paletlist":"Palet Listesi",
     "uruneklebtn":"Ürün Ekle",
     "urunduzenlebtn":"Ürün Düzenle",
-    "urunsilbtn":"Ürün Sil"
+    "urunsilbtn":"Ürün Sil",
+    "preview1":"Genişlik",
+    "preview2":"Uzunluk",
+    "preview3":"Yükseklik"
   },
   "UserControl":{
     "urunekle":"Ürün/Palet Ekle",

@@ -253,5 +253,13 @@
     <Resource Include="Resimler\Anasayfa\Icon\changeaccount.png" />
     <Resource Include="Resimler\Anasayfa\Icon\logout.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Hiz\buble_referance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\UrunEkle\boy-preview.png" />
+    <Resource Include="Resimler\UrunEkle\en-preview.png" />
+    <Resource Include="Resimler\UrunEkle\yukseklik-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

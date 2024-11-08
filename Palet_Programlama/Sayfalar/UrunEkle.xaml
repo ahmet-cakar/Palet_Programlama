@@ -35,8 +35,15 @@
                 <Grid Grid.Row="0">
                     <!--Ön İzleme Border-->
                     <TextBlock Text="{Binding Source='UrunEkle.onizle',Converter={StaticResource LanguageConverter}}" Foreground="White" Margin="60,30,0,0" Panel.ZIndex="1" FontSize="24" FontFamily="Roboto" FontWeight="Bold"></TextBlock>
-                    <Border Background="Black" CornerRadius="10" Width="1100" Height="250" HorizontalAlignment="Left"
-                            Margin="40,20,0,0" VerticalAlignment="Top" Opacity="0.4"></Border>
+                    <Border Background="#66000000" CornerRadius="10" Width="1100" Height="250" HorizontalAlignment="Left"
+                    Margin="40,20,0,0" VerticalAlignment="Top">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Width="150" x:Name="priviewtextblock" Text="Yükseklik" Foreground="White" FontSize="22" FontFamily="Roboto" 
+                            Margin="20,0,0,20" VerticalAlignment="Bottom" Opacity="1" />
+                            <Image x:Name="onizleımage"  Width="250" Source="pack://application:,,,/Resimler/UrunEkle/boy-preview.png" Margin="280,0,0,0"></Image>
+                           
+                        </StackPanel>
+                    </Border>
                 </Grid>
                 <Grid Grid.Row="1">
                     <!--Alt Alan-->

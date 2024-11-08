@@ -12,7 +12,9 @@
     "Alarm": "Alarms",
     "izleme": "Monitoring",
     "Komut": "Commands",
-    "buttonC": "Continue"
+    "buttonC": "Continue",
+    "userborder1":"Change\nAccount",
+    "userborder2":"Exit"
   },
   "DizilimYap": {
     "urunozellik": "Product Features:  ",
@@ -46,7 +48,10 @@
     "basinc":"Pressure (bar)",
     "urunbasincgir":"Enter Product Pressure...",
     "urunlist":"Product List",
-    "paletlist":"Pallet List"
+    "paletlist":"Pallet List",
+    "uruneklebtn":"Add Product",
+    "urunduzenlebtn":"Edit Product",
+    "urunsilbtn":"Product Delete"
   },
   "UserControl":{
     "urunekle":"Add Product/Pallet",
@@ -63,5 +68,21 @@
     "uyari":"Warning Screen",
     "mesaj":"There was a Problem Adding a Product! Please Try Again",
     "btncon1":"Tamam"
+  },
+  "global":{
+    "btnkaydet":"Save"
+  },
+  "Hiz":{
+    "v1":"Location 1",
+    "v2":"Location 2",
+    "v3":"Location 3",
+    "v4":"Location 4",
+    "v5":"Location 5",
+    "v6":"Location 6",
+    "v7":"Location 7",
+    "v8":"Location 8",
+    "v9":"Location 9",
+    "v10":"Location 10",
+    "v11":"Location 11"
   }
 }

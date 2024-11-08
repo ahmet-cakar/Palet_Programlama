@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style x:Key="listbox_template_urunekle" TargetType="ListBox">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Width" Value="265" />
-        <Setter Property="Height" Value="610" />
+        <Setter Property="Width" Value="365" />
+        <Setter Property="Height" Value="810" />
         <Setter Property="Margin" Value="10,20,0,0" />
         <Setter Property="FontFamily" Value="Roboto" />
         <Setter Property="HorizontalAlignment" Value="Left" />
@@ -60,9 +60,9 @@
             </Setter.Value>
         </Setter>
         <Setter Property="CornerRadius" Value="10" />
-        <Setter Property="Height" Value="450" />
-        <Setter Property="Width" Value="445" />
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Height" Value="550" />
+        <Setter Property="Width" Value="545" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="BorderBrush" Value="Black" />
         <Setter Property="Padding" Value="20" />
         <Setter Property="Margin" Value="10,0,0,0" />
@@ -71,14 +71,14 @@
     </Style>
     <Style x:Key="textblock_template_urunekle" TargetType="TextBlock">
         <Setter Property="Foreground" Value="White"/>
-        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="FontSize" Value="19"/>
         <Setter Property="FontFamily" Value="Roboto"/>
         <Setter Property="Panel.ZIndex" Value="4"/>
     </Style>
     <Style x:Key="TextBox_templete_urunekle" TargetType="TextBox">
         <Setter Property="Width" Value="150"/>
         <Setter Property="Height" Value="30"/>
-        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontSize" Value="19"/>
         <Setter Property="FontFamily" Value="Roboto"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Background" Value="Transparent"/>
@@ -106,7 +106,8 @@
     <Style x:Key="textblock_place_urunekle" TargetType="TextBlock">
         <Setter Property="IsHitTestVisible" Value="False"/>
         <Setter Property="Foreground" Value="Gray"/>
-        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontSize" Value="18"/>
         <Setter Property="FontFamily" Value="Roboto"/>
+        
     </Style>
 </ResourceDictionary>

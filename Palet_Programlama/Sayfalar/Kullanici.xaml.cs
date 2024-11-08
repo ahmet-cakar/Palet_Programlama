@@ -84,7 +84,7 @@ namespace Palet_Programlama.Sayfalar
         {
             if ((kullanici_textbox.Text == "" || kullanici_textbox.Text == "Admin") && passwordBox.Password == "")
             {
-                KullaniciDil.Kullaniciadi = "";
+                KullaniciDil.Kullaniciadi = "Admin";
                 ImageSource currentImage = DilBtn.Source;
                 string currentUri = currentImage.ToString();
                 if (currentUri.Contains("eng"))

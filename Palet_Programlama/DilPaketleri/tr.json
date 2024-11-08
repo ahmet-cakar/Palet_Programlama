@@ -12,7 +12,9 @@
     "Alarm": "Alarmlar",
     "izleme": "İzleme",
     "Komut": "Komutlar",
-    "buttonC": "Devam"
+    "buttonC": "Devam",
+    "userborder1":"Hesap\nDeğiştir",
+    "userborder2":"Çıkış"
   },
   "DizilimYap": {
     "urunozellik": "Ürün Özellikleri:  ",
@@ -46,7 +48,10 @@
     "basinc":"Basınç (bar)",
     "urunbasincgir":"Ürün Basınç Giriniz...",
     "urunlist":"Ürün Listesi",
-    "paletlist":"Palet Listesi"
+    "paletlist":"Palet Listesi",
+    "uruneklebtn":"Ürün Ekle",
+    "urunduzenlebtn":"Ürün Düzenle",
+    "urunsilbtn":"Ürün Sil"
   },
   "UserControl":{
     "urunekle":"Ürün/Palet Ekle",
@@ -62,5 +67,21 @@
     "uyari":"Uyarı Ekranı",
     "mesaj":"Ürün Eklenmesinde Bir Problem Yaşandı! Lütfen Tekrar Deneyiniz",
     "btncon1":"Tamam"
+  },
+  "global":{
+    "btnkaydet":"Kaydet"
+  },
+  "Hiz":{
+    "v1":"Konum 1",
+    "v2":"Konum 2",
+    "v3":"Konum 3",
+    "v4":"Konum 4",
+    "v5":"Konum 5",
+    "v6":"Konum 6",
+    "v7":"Konum 7",
+    "v8":"Konum 8",
+    "v9":"Konum 9",
+    "v10":"Konum 10",
+    "v11":"Konum 11"
   }
 }

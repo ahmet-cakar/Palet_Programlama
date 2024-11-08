@@ -245,5 +245,13 @@
   <ItemGroup>
     <Resource Include="Resimler\DizilimYap\referans_eksenler.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Anasayfa\Icon\admin_pp2.png" />
+    <Resource Include="Resimler\Anasayfa\Icon\admin_pp3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Anasayfa\Icon\changeaccount.png" />
+    <Resource Include="Resimler\Anasayfa\Icon\logout.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

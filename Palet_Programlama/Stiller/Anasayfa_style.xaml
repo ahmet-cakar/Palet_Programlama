@@ -44,6 +44,22 @@
         <GradientStop Color="#F09701" Offset="0"/>
         <GradientStop Color="#FACE00" Offset="1.1"/>
     </RadialGradientBrush>
+    <RadialGradientBrush x:Key="button_backgroundgreen" 
+                         RadiusX="0.55" 
+                         RadiusY="5"
+                         GradientOrigin="0.5,0.5" 
+                         Center="0.5,0.5">
+        <GradientStop Color="#0c9f04" Offset="0"/>
+        <GradientStop Color="#25e432" Offset="1.1"/>
+    </RadialGradientBrush>
+    <RadialGradientBrush x:Key="button_backgroundred" 
+                      RadiusX="0.55" 
+                      RadiusY="5"
+                      GradientOrigin="0.5,0.5" 
+                      Center="0.5,0.5">
+        <GradientStop Color="#b92020" Offset="0"/>
+        <GradientStop Color="#ff0000" Offset="1.1"/>
+    </RadialGradientBrush>
     <!--Button style bitiş-->
 
 
@@ -133,5 +149,14 @@
         </Style.Triggers>
     </Style>
     <!--Menu Icon style bitiş-->
-
+    <Style x:Key="HoverUnderlineTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Cursor" Value="Arrow" />
+        <Setter Property="TextDecorations" Value="None" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="TextDecorations" Value="Underline" />
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

@@ -31,7 +31,8 @@ namespace Palet_Programlama.Sayfalar
             InitializeComponent();
             this.MainFrame = Main;
             //string User = KullaniciDil.Kullaniciadi; 
-            
+            userpanelborder1.Visibility = Visibility.Hidden;
+            userpanelborder2.Visibility = Visibility.Hidden;
         }
 
         private void UrunEklePage_Click(object sender, RoutedEventArgs e)
@@ -46,6 +47,17 @@ namespace Palet_Programlama.Sayfalar
 
         private void Kullaniciicon_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            textuser.Text = KullaniciDil.Kullaniciadi;
+            if (userpanelborder1.Visibility==Visibility.Hidden)
+            {
+                userpanelborder1.Visibility = Visibility.Visible;
+                userpanelborder2.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                userpanelborder1.Visibility = Visibility.Hidden;
+                userpanelborder2.Visibility = Visibility.Hidden;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -56,6 +68,11 @@ namespace Palet_Programlama.Sayfalar
             //kutusu.Show();
             //kutusu.MesajGonder("MesajKutusu.btncon1", "MesajKutusu.mesaj");
             
+        }
+
+        private void textlogout_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MainFrame.Navigate(new Kullanici(MainFrame));
         }
     }
 }

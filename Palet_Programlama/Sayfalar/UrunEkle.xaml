@@ -40,16 +40,20 @@
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Width="150" x:Name="priviewtextblock" Text="Yükseklik" Foreground="White" FontSize="22" FontFamily="Roboto" 
                             Margin="20,0,0,20" VerticalAlignment="Bottom" Opacity="1" />
-                            <Image x:Name="onizleımage"  Width="250" Source="pack://application:,,,/Resimler/UrunEkle/boy-preview.png" Margin="280,0,0,0"></Image>
+                            <Image x:Name="onizleımage"  Width="250" Margin="280,0,0,0"></Image>
                            
                         </StackPanel>
                     </Border>
                 </Grid>
                 <Grid Grid.Row="1">
                     <!--Alt Alan-->
+                    <StackPanel Panel.ZIndex="4">
                     <TextBlock Text="{Binding Source='UrunEkle.urunblg',Converter={StaticResource LanguageConverter}}" Foreground="White" Margin="60,25,0,0" Panel.ZIndex="1" FontSize="24" FontFamily="Roboto" FontWeight="Bold"/>
+                    </StackPanel>
+                    <StackPanel Panel.ZIndex="4">
                     <TextBlock Text="{Binding Source='UrunEkle.paletblg',Converter={StaticResource LanguageConverter}}" Foreground="White" Margin="615,25,0,0" Panel.ZIndex="1" FontSize="24" FontFamily="Roboto" FontWeight="Bold"/>
-                    
+                    </StackPanel>
+
 
                     <StackPanel Orientation="Horizontal" Margin="30,10,0,0" Panel.ZIndex="2">
                         
@@ -98,7 +102,14 @@
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
                                     <TextBlock x:Name="myPlace5" Text="{Binding Source='UrunEkle.urunbasincgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="280,-30,0,0"/>
                                 </StackPanel>
-
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_backgroundgreen}"
+                                    Margin="0,30,0,0" Content="{Binding Source='UrunEkle.uruneklebtn',Converter={StaticResource LanguageConverter}}"/>
+                                    <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
+                                    Margin="20,30,0,0" Content="{Binding Source='UrunEkle.urunduzenlebtn',Converter={StaticResource LanguageConverter}}"/>
+                                    <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
+                                    Margin="20,30,0,0" Content="{Binding Source='UrunEkle.urunsilbtn',Converter={StaticResource LanguageConverter}}"/>
+                                </StackPanel>
 
                             </StackPanel>
                             
@@ -137,6 +148,14 @@
                                     <TextBlock x:Name="myPlace9" Text="{Binding Source='UrunEkle.paletyukseklikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="268,-30,0,0"/>
 
                                 </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_backgroundgreen}"
+                                    Margin="0,170,0,0" Content="{Binding Source='UrunEkle.uruneklebtn',Converter={StaticResource LanguageConverter}}"/>
+                                    <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
+                                    Margin="20,170,0,0" Content="{Binding Source='UrunEkle.urunduzenlebtn',Converter={StaticResource LanguageConverter}}"/>
+                                    <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
+                                 Margin="20,170,0,0" Content="{Binding Source='UrunEkle.urunsilbtn',Converter={StaticResource LanguageConverter}}"/>
+                                </StackPanel>
                             </StackPanel>
                         </Border>
                     </StackPanel>
@@ -144,8 +163,12 @@
             </Grid>
             <Grid Grid.Column="1">
                 <!--Sağ Taraf Komple Border-->
+                <StackPanel Panel.ZIndex="7">
                 <TextBlock Text="{Binding Source='UrunEkle.paletlist',Converter={StaticResource LanguageConverter}}" Foreground="White" Margin="405,30,0,0" Panel.ZIndex="1" FontSize="24" FontFamily="Roboto" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+                <StackPanel Panel.ZIndex="7">
                 <TextBlock Text="{Binding Source='UrunEkle.urunlist',Converter={StaticResource LanguageConverter}}" Foreground="White" Margin="30,30,0,0" Panel.ZIndex="1" FontSize="24" FontFamily="Roboto" FontWeight="Bold"></TextBlock>
+                </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Panel.ZIndex="6">
                     <!--Ürün Listesi Listbox-->
@@ -165,12 +188,9 @@
         <Grid Grid.Row="2">
             <Border>
                 <StackPanel Orientation="Horizontal">
-                    <Button Style="{StaticResource button_template}" Height="45" Width="200"  Background="{StaticResource button_backgroundgreen}"
-                            Margin="40,20,0,0" Content="{Binding Source='UrunEkle.uruneklebtn',Converter={StaticResource LanguageConverter}}"/>
-                    <Button Style="{StaticResource button_template}" Height="45" Width="200"  Background="{StaticResource button_background}"
-        Margin="20,20,0,0" Content="{Binding Source='UrunEkle.urunduzenlebtn',Converter={StaticResource LanguageConverter}}"/>
-                    <Button Style="{StaticResource button_template}" Height="45" Width="200"  Background="{StaticResource button_background}"
-        Margin="20,20,0,0" Content="{Binding Source='UrunEkle.urunsilbtn',Converter={StaticResource LanguageConverter}}"/>
+                    
+                   
+                    
                 </StackPanel>
             </Border>
         </Grid>

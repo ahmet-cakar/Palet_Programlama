@@ -79,11 +79,11 @@ namespace Palet_Programlama.Sayfalar
 
         #endregion
         private readonly Dictionary<string, Tuple<string, string>> textBoxData = new Dictionary<string, Tuple<string, string>>
-{
-    { "myTextBox1", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/en-preview.png", "UrunEkle.preview1") },
-    { "myTextBox2", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/boy-preview.png", "UrunEkle.preview2") },
-    { "myTextBox3", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/yukseklik-preview.png", "UrunEkle.preview3") }
-};
+        {
+            { "myTextBox1", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/en-preview.png", "UrunEkle.preview1") },
+            { "myTextBox2", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/boy-preview.png", "UrunEkle.preview2") },
+            { "myTextBox3", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/yukseklik-preview.png", "UrunEkle.preview3") }
+        };
         private void UrunPalet_GotFocus(object sender, RoutedEventArgs e)
         {
             if (sender is TextBox triggeredTextBox && textBoxData.TryGetValue(triggeredTextBox.Name, out var data))
@@ -109,8 +109,6 @@ namespace Palet_Programlama.Sayfalar
         private void UrunPalet_Changed(object sender, RoutedEventArgs e)
         {
             UpdatePlaceholder();
-            //var newImageSource = new BitmapImage(new Uri("pack://application:,,,/Resimler/UrunEkle/boy-preview.png"));
-            //onizleımage.Source = newImageSource;
         }
         private void UpdatePlaceholder()
         {

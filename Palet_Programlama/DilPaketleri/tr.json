@@ -1,5 +1,4 @@
 {
-
   "Anasayfa": {
     "textblokurun": "Ürün/Palet",
     "textblokurun2": "Ekle",
@@ -16,16 +15,6 @@
     "buttonC": "Devam",
     "userborder1":"Hesap\nDeğiştir",
     "userborder2":"Çıkış"
-  },
-  "DizilimYap": {
-    "urunozellik": "Ürün Özellikleri:  ",
-    "paletozellik": "Palet Özellikleri:  ",
-    "kopyala": "Kopyala  ",
-    "yapistir": "Yapıştır  ",
-    "urunadet": "Ürün Adedi: 0",
-    "kopyalabtn": "Kopyala",
-    "katkopyala":"Kat Kopyala",
-    "pozsecimi":"Pozisyon Seçimi"
   },
   "UrunEkle":{
     "onizle": "Ön İzleme",
@@ -85,23 +74,7 @@
     "v10":"Konum 10",
     "v11":"Konum 11"
   },
-
-    "Anasayfa": {
-        "textblokurun": "Ürün/Palet",
-        "textblokurun2": "Ekle",
-        "dizilim1": "Dizilim",
-        "dizilim2": "Oluştur",
-        "hiz1": "Hızları",
-        "hiz2": "Düzenle",
-        "gruplama1": "Gruplama",
-        "gruplama2": "Oluştur",
-        "program": "Programlar",
-        "Alarm": "Alarmlar",
-        "izleme": "İzleme",
-        "Komut": "Komutlar",
-        "buttonC": "Devam"
-    },
-    "DizilimYap": {
+  "DizilimYap": {
         "urunozellik": "Ürün Özellikleri:  ",
         "paletozellik": "Palet Özellikleri:  ",
         "kopyala": "Kopyala  ",
@@ -133,31 +106,6 @@
 
 
 
-    },
-    "UrunEkle": {
-        "onizle": "Ön İzleme",
-        "urunblg": "Ürün Bilgileri",
-        "paletblg": "Palet Bilgileri",
-        "urunad": "Ürün Adı",
-        "paletad": "Palet Adı",
-        "urunadgir": "Ürün Adı Giriniz...",
-        "paletadgir": "Palet Adı Giriniz...",
-        "genislik": "Genişlik/En (mm)",
-        "urungenislikgir": "Ürün En Giriniz...",
-        "paletgenislikgir": "Palet En Giriniz...",
-        "uzunluk": "Uzunluk/Boy (mm)",
-        "urunuzunlukgir": "Ürün Boy Giriniz...",
-        "paletuzunlukgir": "Palet Boy Giriniz...",
-        "yukseklik": "Yükseklik (mm)",
-        "urunyukseklikgir": "Ürün Yükseklik Giriniz...",
-        "paletyukseklikgir": "Palet Yükseklik Giriniz...",
-        "agirlik": "Ağırık (kg)",
-        "urunagirliklikgir": "Ürün Ağırlık Giriniz...",
-        "basinc": "Basınç (bar)",
-        "urunbasincgir": "Ürün Basınç Giriniz...",
-        "urunlist": "Ürün Listesi",
-        "paletlist": "Palet Listesi"
     }
-
-
+ 
 }

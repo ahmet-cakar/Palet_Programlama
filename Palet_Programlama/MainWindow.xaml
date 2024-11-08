@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Palet_Programlama"
         mc:Ignorable="d"
+        WindowState="Maximized"
         Icon="pack://application:,,,/Resimler/Icon.ico"
         Title="RSTACK FUSION" Height="768" Width="1366">
     

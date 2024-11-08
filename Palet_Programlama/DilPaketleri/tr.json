@@ -16,16 +16,6 @@
     "userborder1":"Hesap\nDeğiştir",
     "userborder2":"Çıkış"
   },
-  "DizilimYap": {
-    "urunozellik": "Ürün Özellikleri:  ",
-    "paletozellik": "Palet Özellikleri:  ",
-    "kopyala": "Kopyala  ",
-    "yapistir": "Yapıştır  ",
-    "urunadet": "Ürün Adedi: 0",
-    "kopyalabtn": "Kopyala",
-    "katkopyala":"Kat Kopyala",
-    "pozsecimi":"Pozisyon Seçimi"
-  },
   "UrunEkle":{
     "onizle": "Ön İzleme",
     "urunblg": "Ürün Bilgileri",
@@ -86,5 +76,39 @@
     "v9":"Konum 9",
     "v10":"Konum 10",
     "v11":"Konum 11"
-  }
+  },
+  "DizilimYap": {
+        "urunozellik": "Ürün Özellikleri:  ",
+        "paletozellik": "Palet Özellikleri:  ",
+        "kopyala": "Kopyala  ",
+        "yapistir": "Yapıştır  ",
+        "urunadet": "Ürün Adedi: 0",
+        "kopyalabtn": "Kopyala",
+        "btnKatTemizle": "Bu Katı Temizle",
+        "btnDizilimiKaydet": "Dizilimi Kaydet",
+        "btnPaletTemizle": "Paleti Temizle",
+        "btnSeciliUrunuSil": "Seçili Ürünü Sil",
+        "katkopyala": "Kat Kopyala",
+        "pozsecimi": "Pozisyon Seçimi",
+
+        "txtAynalama": "Aynalama (KAPALI)",
+        "txtXeksen": "X Ekseni",
+        "txtYeksen": "Y Ekseni",
+        "txtKatKopyala": "Kat Kopyala",
+        "txtPozisyonSecimi": "Pozisyon seçimi",
+        "txtDikey": "Dikey",
+        "txtYatay": "Yatay",
+        "txtYazi1": "Ürünün hangi",
+        "txtYazi2": "pozisyonda",
+        "txtYazi3": "ekleneceğini seçin.",
+        "txtCokluEkleMod": "Çoklu Ekleme Modu (Kapalı)",
+        "txtHizalamaMod": "Hizalama Modu (Kapalı)",
+        "txtPaletTasimaMod": "Palet Taşıma Modu (Kapalı) ",
+        "txtKatTasimaMod": "Kat Taşıma Modu (Kapalı) ",
+        "txtKat": "Kat"
+
+
+
+    }
+ 
 }

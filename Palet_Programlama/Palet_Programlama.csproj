@@ -246,6 +246,34 @@
     <Resource Include="Resimler\DizilimYap\referans_eksenler.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resimler\DizilimYap\secili_dikey_kutu.png" />
+    <Resource Include="Resimler\DizilimYap\dikey_kutu.png" />
+    <Resource Include="Resimler\DizilimYap\palet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\DizilimYap\asagi_ok.png" />
+    <Resource Include="Resimler\DizilimYap\saga_ok.png" />
+    <Resource Include="Resimler\DizilimYap\sola_ok.png" />
+    <Resource Include="Resimler\DizilimYap\yukari_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\DizilimYap\arti.png" />
+    <Resource Include="Resimler\DizilimYap\eksi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\DizilimYap\yatay_kutu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\DizilimYap\secili_yatay_kutu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\DizilimYap\info-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\DizilimYap\asagi_icon.png" />
+    <Resource Include="Resimler\DizilimYap\yukari_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Resimler\Anasayfa\Icon\admin_pp2.png" />
     <Resource Include="Resimler\Anasayfa\Icon\admin_pp3.png" />
   </ItemGroup>

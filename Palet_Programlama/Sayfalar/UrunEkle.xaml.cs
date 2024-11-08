@@ -46,6 +46,7 @@ namespace Palet_Programlama.Sayfalar
             myTextBox9.CaretBrush = Brushes.White;
 
         }
+
         #region TextBox Controlleri
         private void TextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {

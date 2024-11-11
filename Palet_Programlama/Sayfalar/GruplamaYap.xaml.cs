@@ -20,9 +20,12 @@ namespace Palet_Programlama.Sayfalar
     /// </summary>
     public partial class GruplamaYap : Page
     {
-        public GruplamaYap()
+        private readonly Frame MainFrame;
+
+        public GruplamaYap(Frame Main)
         {
             InitializeComponent();
+            this.MainFrame = Main;
         }
     }
 }

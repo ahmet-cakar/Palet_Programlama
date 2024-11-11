@@ -62,7 +62,8 @@
         "btncon1": "Tamam"
     },
     "global": {
-        "btnkaydet": "Kaydet"
+      "btnkaydet": "Kaydet",
+      "btnsil": "Sil"
     },
     "Hiz": {
         "v1": "Konum 1",
@@ -135,7 +136,7 @@
         
 
 
-    }
+    
   },
   "Program": {
     "btnrecededuzen": "Reçete Düzenle",

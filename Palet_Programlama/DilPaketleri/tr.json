@@ -118,7 +118,21 @@
         "txtAgirlik": "Ağırlık: ",
         "txtGruplandirma": "Gruplandırma",
         "txtUrunSecimi": "Ürün Seçimi",
-        "txtDizilimSecimi": "Dizilim Seçimi"
+        "txtDizilimSecimi": "Dizilim Seçimi",
+        "txtGruplamaSecimi": "Gruplama Seçimi",
+        "txtKatNo": "Kat No: ",
+        "txtGrupNo": "Grup No: ",
+        "btnAyarlar": "Ayarlar",
+        "btnAyir": "Ayır",
+        "btnBirlestir": "Birleştir",
+        "btnKaydet": "Kaydet",
+        "btnGruplariTemizle": "Grupları Temizle",
+        "btnManuelDiz": "Manuel Diz",
+        "btnDizilimListesi": "DizilimListesi"
+
+
+
+
 
 
     }

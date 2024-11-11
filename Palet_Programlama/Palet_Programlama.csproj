@@ -58,6 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Sayfalar\GruplamaYap.xaml.cs">
+      <DependentUpon>GruplamaYap.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sayfalar\HizAyarları.xaml.cs">
       <DependentUpon>HizAyarları.xaml</DependentUpon>
     </Compile>
@@ -83,6 +86,10 @@
       <DependentUpon>UstMenu.xaml</DependentUpon>
     </Compile>
     <Page Include="Sayfalar\DizilimYap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sayfalar\GruplamaYap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

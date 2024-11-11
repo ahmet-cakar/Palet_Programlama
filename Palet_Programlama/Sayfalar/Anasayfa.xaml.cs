@@ -78,5 +78,10 @@ namespace Palet_Programlama.Sayfalar
         {
             MainFrame.Navigate(new Kullanici(MainFrame));
         }
+
+        private void btnGruplamaYap_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new GruplamaYap(MainFrame));
+        }
     }
 }

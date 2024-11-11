@@ -180,8 +180,8 @@
 
                         <DockPanel Grid.Row="0" Grid.Column="3">
                             <!-- Sağ altta buton -->
-                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" 
-                         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                            <Button x:Name="btnGruplamaYap"  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" 
+                         Background="{StaticResource button_background}" Style="{StaticResource button_template}" Click="btnGruplamaYap_Click" />
 
                             <!-- Sol alttaki açıklama -->
                             <StackPanel  DockPanel.Dock="Bottom"

@@ -133,9 +133,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Stiller\Hiz_style.xaml">
+    <Page Include="Stiller\GruplamaYap_style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stiller\Hiz_style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UserController\BildirimKutusu.xaml">
       <SubType>Designer</SubType>
@@ -302,6 +306,9 @@
     <Resource Include="Resimler\UrunEkle\boy-preview.png" />
     <Resource Include="Resimler\UrunEkle\en-preview.png" />
     <Resource Include="Resimler\UrunEkle\yukseklik-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\UserControlUstMenu\ileri_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

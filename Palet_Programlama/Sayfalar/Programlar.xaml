@@ -64,7 +64,8 @@
                 </Grid>
                 <!--Program Notu Kısımı-->
                 <Grid Grid.Row="1">
-                    <Border Style="{StaticResource border_template_urunekle}" Width="915" Height="620" Margin="15,15,0,0"></Border>
+                    <Border Style="{StaticResource border_template_urunekle}" Width="770" Height="620" Margin="15,15,0,0"></Border>
+                    <Border Style="{StaticResource border_template_urunekle}" Width="130" Height="620" Margin="800,15,0,0"></Border>
                 </Grid>
             </Grid>
         </Grid>

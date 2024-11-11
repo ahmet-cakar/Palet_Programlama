@@ -15,10 +15,10 @@
                     <Grid>
                         <!-- Opak Arka Plan -->
                         <Border Background="Black" 
-                                CornerRadius="10" 
+                                CornerRadius="15" 
                                 BorderThickness="0" 
                                 BorderBrush="Black"
-                                Opacity="0.4" />
+                                Opacity="0.24" />
 
                         <!-- Öğeler için ScrollViewer -->
                         <ScrollViewer HorizontalScrollBarVisibility="Auto"  
@@ -56,10 +56,10 @@
     <Style x:Key="border_template_urunekle" TargetType="Border">
         <Setter Property="Background">
             <Setter.Value>
-                <SolidColorBrush Color="Black" Opacity="0.4" />
+                <SolidColorBrush Color="Black" Opacity="0.24" />
             </Setter.Value>
         </Setter>
-        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="CornerRadius" Value="15" />
         <Setter Property="Height" Value="550" />
         <Setter Property="Width" Value="545" />
         <Setter Property="BorderThickness" Value="0" />

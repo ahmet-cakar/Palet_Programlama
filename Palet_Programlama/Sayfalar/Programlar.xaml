@@ -16,7 +16,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <local:UstMenu Margin="0,15,0,0"/>
@@ -38,19 +37,66 @@
                     </Grid.ColumnDefinitions>
                     <!--Palet Özellikler Kısımı-->
                     <Grid Grid.Column="0">
-                        <Border Style="{StaticResource border_template_urunekle}" Margin="50,50,0,0" Width="430" Height="270"></Border>
+                        <Border Style="{StaticResource border_template_urunekle}" Margin="50,30,0,0" Width="430" Height="270"></Border>
                         <StackPanel>
                             
                         </StackPanel>
                     </Grid>
                     <!--Ürün Özellikler Kısımı-->
                     <Grid Grid.Column="1">
-                        <Border Style="{StaticResource border_template_urunekle}"  Margin="15,50,0,0" Width="430" Height="270"></Border>
+                        <Border Style="{StaticResource border_template_urunekle}"  Margin="15,30,0,0" Width="430" Height="270"></Border>
                     </Grid>
                 </Grid>
                 <!--Mevcut Program Listesi Kısımı-->
                 <Grid Grid.Row="1">
-                    <Border Style="{StaticResource border_template_urunekle}" Width="880" Height="450" Margin="50,15,0,0"></Border>
+                    
+                    <Border Style="{StaticResource border_template_urunekle}" Width="880" Height="490" Margin="50,15,0,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="{Binding Source='Program.listtext',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" 
+                                               FontSize="25" Margin="15,5,0,0"></TextBlock>
+                                    <ListBox Background="Transparent" BorderThickness="0"  Height="400" Margin="-60,0,0,0" Width="350">
+                                        <ListBox.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel />
+                                            </ItemsPanelTemplate>
+                                        </ListBox.ItemsPanel>
+
+                                        <ListBox.ItemContainerStyle>
+                                            <Style TargetType="ListBoxItem">
+                                                <Setter Property="Margin" Value="0,20,0,0" />
+                                                <Setter Property="Foreground" Value="White" />
+                                                <Setter Property="FontSize" Value="18" />
+                                            </Style>
+                                        </ListBox.ItemContainerStyle>
+
+                                        <ListBoxItem Content="X Programı"/>
+                                        <ListBoxItem Content="Y Programı"/>
+                                        <ListBoxItem Content="Z Programı"/>
+                                    </ListBox>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <StackPanel Orientation="Vertical">
+                                    <Button FontSize="24"   Content="{Binding Source='Program.btnrecededuzen',Converter={StaticResource LanguageConverter}}" Width="240" 
+                                Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                                    <TextBlock HorizontalAlignment="Right"  Style="{StaticResource textblock_template_urunekle}" Text="Program ID:" Margin="0,100,50,0" FontSize="25"/>
+                                    <TextBlock HorizontalAlignment="Right"  Style="{StaticResource textblock_template_urunekle}" Text="3454" Margin="0,20,90,0" FontSize="25"/>
+                                    <Button FontSize="24"   Content="{Binding Source='Program.btnCalistir',Converter={StaticResource LanguageConverter}}" Width="240" Margin="0,100,0,0"
+                                    Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                                    <Button FontSize="24"   Content="{Binding Source='global.btnsil',Converter={StaticResource LanguageConverter}}" Width="240" Margin="0,15,0,0"
+                                    Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+
+                    </Border>
                 </Grid>
             </Grid>
             <Grid Grid.Column="1">
@@ -58,20 +104,79 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <!--Dizilim Gösterme Kısımı-->
-                <Grid Grid.Row="0">
-                    <Border Style="{StaticResource border_template_urunekle}" Width="915" Height="100" Margin="15,50,0,0"></Border>
-                </Grid>
                 <!--Program Notu Kısımı-->
+                <Grid Grid.Row="0">
+                    <Border Style="{StaticResource border_template_urunekle}" Width="930" Height="100" Margin="15,30,0,0">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Source='Program.not',Converter={StaticResource LanguageConverter}}"
+                                       Style="{StaticResource textblock_template_urunekle}" Margin="0,0,0,0"></TextBlock>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <!--Dizilim Gösterme Kısımı-->
                 <Grid Grid.Row="1">
-                    <Border Style="{StaticResource border_template_urunekle}" Width="770" Height="620" Margin="15,15,0,0"></Border>
-                    <Border Style="{StaticResource border_template_urunekle}" Width="130" Height="620" Margin="800,15,0,0"></Border>
+                    <Border Style="{StaticResource border_template_urunekle}" Width="810" Height="660" Margin="15,15,0,0">
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel HorizontalAlignment="Left"  >
+                                <Image  Margin="10,0,0,0"
+                                   MaxHeight="250"
+                                   MaxWidth="250"
+                                   Source="pack://application:,,,/Resimler/DizilimYap/referans_eksenler.png"/>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"  >
+                            <Image Margin="-135,100,0,0"
+                                MaxHeight="600"
+                                MaxWidth="600"
+                                Source="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
+                        </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border Style="{StaticResource border_template_urunekle}" Width="100" Height="660" Margin="840,15,0,0">
+                        <StackPanel  Orientation="Vertical">
+                            <TextBlock Margin="0,50,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"
+                             Foreground="White"
+                             FontSize="30"
+                             Text="{Binding Source='DizilimYap.txtKat',Converter={StaticResource LanguageConverter}}"/>
+                            <Button Margin="0,120,0,0" Style="{StaticResource transparan_button}" x:Name="AnasayfaBtn">
+                                <StackPanel>
+                                    <Image 
+                                          MaxHeight="50"
+                                          MaxWidth="50"
+                                          Source="pack://application:,,,/Resimler/DizilimYap/yukari_icon.png"/> 
+                                </StackPanel>
+                            </Button>
+                            <TextBlock Margin="0,20,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                Foreground="White"
+                                FontSize="30"
+                                Text="1"></TextBlock>       
+                            <Button Margin="0,20,0,0" Style="{StaticResource transparan_button}" >
+                                <StackPanel>
+                                    <Image 
+                                       MaxHeight="50"
+                                       MaxWidth="50"
+                                       Source="pack://application:,,,/Resimler/DizilimYap/asagi_icon.png"/> 
+                                </StackPanel>
+                            </Button>
+
+                        </StackPanel>
+                    </Border>
                 </Grid>
             </Grid>
         </Grid>
         <!--Alt Kısım-->
         <Grid Grid.Row="2">
-            <Border Style="{StaticResource border_template_urunekle}" Margin="50,15,0,0" Width="1550" Height="100"></Border>
+            <Border  Margin="-260,25,0,0" Width="1550" Height="50">
+                <!--<StackPanel Orientation="Horizontal">
+                    <Button FontSize="24"  Content="{Binding Source='global.btnkaydet',Converter={StaticResource LanguageConverter}}" Width="240" 
+                    Background="{StaticResource button_background_green}" Style="{StaticResource button_template}" />
+                    <Button FontSize="24"   Content="{Binding Source='DizilimYap.btnKatTemizle',Converter={StaticResource LanguageConverter}}" Width="240"  Margin="10,0,0,0"
+                    Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                    <Button FontSize="24"   Content="{Binding Source='DizilimYap.btnPaletTemizle',Converter={StaticResource LanguageConverter}}" Width="240" Margin="10,0,0,0"
+                    Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                    <Button FontSize="24"   Content="{Binding Source='DizilimYap.btnSeciliUrunuSil',Converter={StaticResource LanguageConverter}}" Width="240" Margin="10,0,0,0"
+                    Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                </StackPanel>-->
+            </Border>
         </Grid>
     </Grid>
 </Page>

@@ -62,7 +62,8 @@
     "btncon1":"Tamam"
   },
   "global":{
-    "btnkaydet":"Kaydet"
+    "btnkaydet": "Kaydet",
+    "btnsil": "Sil"
   },
   "Hiz":{
     "v1":"Konum 1",
@@ -78,37 +79,44 @@
     "v11":"Konum 11"
   },
   "DizilimYap": {
-        "urunozellik": "Ürün Özellikleri:  ",
-        "paletozellik": "Palet Özellikleri:  ",
-        "kopyala": "Kopyala  ",
-        "yapistir": "Yapıştır  ",
-        "urunadet": "Ürün Adedi: 0",
-        "kopyalabtn": "Kopyala",
-        "btnKatTemizle": "Bu Katı Temizle",
-        "btnDizilimiKaydet": "Dizilimi Kaydet",
-        "btnPaletTemizle": "Paleti Temizle",
-        "btnSeciliUrunuSil": "Seçili Ürünü Sil",
-        "katkopyala": "Kat Kopyala",
-        "pozsecimi": "Pozisyon Seçimi",
+    "urunozellik": "Ürün Özellikleri:  ",
+    "paletozellik": "Palet Özellikleri:  ",
+    "kopyala": "Kopyala  ",
+    "yapistir": "Yapıştır  ",
+    "urunadet": "Ürün Adedi: 0",
+    "kopyalabtn": "Kopyala",
+    "btnKatTemizle": "Bu Katı Temizle",
+    "btnDizilimiKaydet": "Dizilimi Kaydet",
+    "btnPaletTemizle": "Paleti Temizle",
+    "btnSeciliUrunuSil": "Seçili Ürünü Sil",
+    "katkopyala": "Kat Kopyala",
+    "pozsecimi": "Pozisyon Seçimi",
 
-        "txtAynalama": "Aynalama (KAPALI)",
-        "txtXeksen": "X Ekseni",
-        "txtYeksen": "Y Ekseni",
-        "txtKatKopyala": "Kat Kopyala",
-        "txtPozisyonSecimi": "Pozisyon seçimi",
-        "txtDikey": "Dikey",
-        "txtYatay": "Yatay",
-        "txtYazi1": "Ürünün hangi",
-        "txtYazi2": "pozisyonda",
-        "txtYazi3": "ekleneceğini seçin.",
-        "txtCokluEkleMod": "Çoklu Ekleme Modu (Kapalı)",
-        "txtHizalamaMod": "Hizalama Modu (Kapalı)",
-        "txtPaletTasimaMod": "Palet Taşıma Modu (Kapalı) ",
-        "txtKatTasimaMod": "Kat Taşıma Modu (Kapalı) ",
-        "txtKat": "Kat"
+    "txtAynalama": "Aynalama (KAPALI)",
+    "txtXeksen": "X Ekseni",
+    "txtYeksen": "Y Ekseni",
+    "txtKatKopyala": "Kat Kopyala",
+    "txtPozisyonSecimi": "Pozisyon seçimi",
+    "txtDikey": "Dikey",
+    "txtYatay": "Yatay",
+    "txtYazi1": "Ürünün hangi",
+    "txtYazi2": "pozisyonda",
+    "txtYazi3": "ekleneceğini seçin.",
+    "txtCokluEkleMod": "Çoklu Ekleme Modu (Kapalı)",
+    "txtHizalamaMod": "Hizalama Modu (Kapalı)",
+    "txtPaletTasimaMod": "Palet Taşıma Modu (Kapalı) ",
+    "txtKatTasimaMod": "Kat Taşıma Modu (Kapalı) ",
+    "txtKat": "Kat"
 
 
 
-    }
+  },
+  "Program": {
+    "btnrecededuzen": "Reçete Düzenle",
+    "btnCalistir": "Çalıştır",
+    "not": "Program Notu:",
+    "listtext": "Mevcut Program Listesi"
+
+  }
  
 }

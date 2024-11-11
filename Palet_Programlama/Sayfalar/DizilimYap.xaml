@@ -22,7 +22,7 @@
         <!-- Header item control başlangıç -->
         <Grid Grid.Row="0">
             <Border VerticalAlignment="Center">
-                <local:UstMenu/>
+                <local:UstMenu Margin="0,5,0,0"/>
             </Border>
         </Grid>
         <!-- Header item control bitiş -->
@@ -35,7 +35,7 @@
 
                 </Grid.ColumnDefinitions>
                 <!-- Aynalama  ve x y checkbox alanı başlangıç -->
-                <Border CornerRadius="15" Grid.Column="0" Margin="50,0,10,0"  Background="#191919">
+                <Border CornerRadius="15" Grid.Column="0" Margin="50,20,10,0"  Background="#191919">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1.5*"/>
@@ -74,7 +74,7 @@
 
                 <!-- ürün palet özellikleri alanı başlangıç -->
 
-                <Border Grid.Column="1" CornerRadius="15"  Margin="0,0,40,0"  Background="#191919">
+                <Border Grid.Column="1" CornerRadius="15"  Margin="0,20,40,0"  Background="#191919">
 
                     <Grid>
                         <Grid.RowDefinitions>
@@ -549,7 +549,7 @@
         </Grid>
         <!--Alt buttonlar Footer başlangıç-->
         <Grid Grid.Row="3" >
-            <Border CornerRadius="20"  Margin="50,0,40,10" Background="#191919">
+            <Border CornerRadius="20"  Margin="50,0,40,10" Background="Transparent">
                 <StackPanel Orientation="Horizontal">
                     <Button FontSize="24"  Content="{Binding Source='DizilimYap.btnDizilimiKaydet',Converter={StaticResource LanguageConverter}}" Width="240" 
                                 Background="{StaticResource button_background_green}" Style="{StaticResource button_template}" />

@@ -46,7 +46,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <StackPanel  Orientation="Horizontal" Grid.Column="0" Margin="40,10">
+                        <StackPanel  Orientation="Horizontal" Grid.Column="0" Margin="40,20,40,0">
                             <TextBlock VerticalAlignment="Center" 
                                     Foreground="White"
                                     FontSize="22"
@@ -57,7 +57,8 @@
                                 Text="280 mm"></TextBlock>
                         </StackPanel>
 
-                        <StackPanel  Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="40,10">
+                        <StackPanel  Orientation="Horizontal" Grid.Row="1"
+                                     Grid.Column="0" Margin="40,10">
                             <TextBlock VerticalAlignment="Center" 
                                 Foreground="White"
                                 FontSize="22"
@@ -67,7 +68,7 @@
                             FontSize="24"
                             Text="280 mm"></TextBlock>
                         </StackPanel>
-                        <StackPanel  Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="40,10">
+                        <StackPanel  Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="40,20,40,0">
                             <TextBlock VerticalAlignment="Center" 
                              Foreground="White"
                              FontSize="22"
@@ -112,15 +113,15 @@
                             <TextBlock  VerticalAlignment="Center" 
                                     HorizontalAlignment="Center"
                           Foreground="White"
-                          FontSize="24"
+                          FontSize="28"
                           Text="{Binding Source='GruplamaYap.txtGruplandirma',Converter={StaticResource LanguageConverter}}"></TextBlock>
                         </StackPanel>
                         <StackPanel Margin="30,0,0,0" Grid.Column="1" Orientation="Horizontal">
                             <Button Margin="0,0,80,0" Style="{StaticResource transparan_button}">
                                 <StackPanel>
                                     <Image 
-                                       MaxHeight="50"
-                                       MaxWidth="50"
+                                       MaxHeight="60"
+                                       MaxWidth="60"
                                        Source="pack://application:,,,/Resimler/UserControlUstMenu/geri_icon.png"/>
                                 </StackPanel>
                             </Button>
@@ -128,13 +129,13 @@
                                         Margin="0,0,80,0"
                                         HorizontalAlignment="Center"
                                      Foreground="White"
-                                     FontSize="30"
+                                     FontSize="34"
                                      Text="1"></TextBlock>
                             <Button  Style="{StaticResource transparan_button}" >
                                 <StackPanel>
                                     <Image 
-                                MaxHeight="50"
-                                MaxWidth="50"
+                                MaxHeight="60"
+                                MaxWidth="60"
                                 Source="pack://application:,,,/Resimler/UserControlUstMenu/ileri_icon.png"/>
                                 </StackPanel>
                             </Button>

@@ -76,8 +76,8 @@
                         <!-- Butonlarla menü elemanları -->
                         <Button x:Name="UrunEklePageBtn" Margin="40,0,0,0" Style="{StaticResource ustmenu_button_style}"  Content="{Binding Source='UserControl.urunekle',Converter={StaticResource LanguageConverter}}" Click="UrunEklePageBtn_Click" />
                         <Button x:Name="DizilimPageBtn" Style="{StaticResource ustmenu_button_style}"  Content="{Binding Source='UserControl.dizilimekle',Converter={StaticResource LanguageConverter}}" Click="DizilimPageBtn_Click" />
-                        <Button Style="{StaticResource ustmenu_button_style}"  Content="{Binding Source='UserControl.hizayar',Converter={StaticResource LanguageConverter}}" x:Name="hizayarlari" Click="hizayarlari_Click" />
-                        <Button Style="{StaticResource ustmenu_button_style}"  Content="{Binding Source='UserControl.grupekle',Converter={StaticResource LanguageConverter}}" />
+                        <Button x:Name="hizayarlari" Style="{StaticResource ustmenu_button_style}"  Content="{Binding Source='UserControl.hizayar',Converter={StaticResource LanguageConverter}}"  Click="hizayarlari_Click" />
+                        <Button x:Name="Gruplama" Style="{StaticResource ustmenu_button_style}"  Content="{Binding Source='UserControl.grupekle',Converter={StaticResource LanguageConverter}}" Click="Gruplama_Click"/>
                         <Button  Style="{StaticResource ustmenu_button_style}"  Content="{Binding Source='UserControl.program',Converter={StaticResource LanguageConverter}}" Click="ProgramPageBtn_Click" />
                         <Button Style="{StaticResource ustmenu_button_style}"  Content="{Binding Source='UserControl.alarm',Converter={StaticResource LanguageConverter}}" />
                         <Button Style="{StaticResource ustmenu_button_style}"  Content="{Binding Source='UserControl.izle',Converter={StaticResource LanguageConverter}}" />

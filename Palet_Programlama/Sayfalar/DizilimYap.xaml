@@ -406,7 +406,7 @@
                                 CornerRadius="20" Margin="0,10,10,10" 
                                 Background="#191919">
 
-                                <Grid Margin="60,10">
+                                <Grid Margin="90,10">
                                     <Grid.RowDefinitions>
                                         <RowDefinition/>
                                         <RowDefinition/>
@@ -418,7 +418,7 @@
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
 
-                                    <Button Grid.Row="0" Grid.Column="1" Width="60" Height="40" Style="{StaticResource transparan_button}">
+                                    <Button Grid.Row="0" Grid.Column="1" Width="60" Height="60" Style="{StaticResource transparan_button}">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <!-- Icon inside the Button -->
                                             <Image 
@@ -427,7 +427,7 @@
                                         </StackPanel>
 
                                     </Button>
-                                    <Button Grid.Row="1" Grid.Column="0"  Width="60" Height="35" Style="{StaticResource transparan_button}">
+                                    <Button Grid.Row="1" Grid.Column="0"   Width="60" Height="50" Style="{StaticResource transparan_button}">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <!-- Icon inside the Button -->
                                             <Image 
@@ -436,7 +436,7 @@
                                         </StackPanel>
 
                                     </Button>
-                                    <Button Grid.Row="1" Grid.Column="2"  Width="60" Height="35" Style="{StaticResource transparan_button}">
+                                    <Button Grid.Row="1" Grid.Column="2"  Width="60" Height="50" Style="{StaticResource transparan_button}">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <!-- Icon inside the Button -->
                                             <Image 
@@ -445,7 +445,7 @@
                                         </StackPanel>
 
                                     </Button>
-                                    <Button Grid.Row="2" Grid.Column="1"  Width="60" Height="40" Style="{StaticResource transparan_button}">
+                                    <Button Grid.Row="2" Grid.Column="1"  Width="60" Height="60" Style="{StaticResource transparan_button}">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                             <!-- Icon inside the Button -->
                                             <Image 
@@ -549,7 +549,7 @@
         </Grid>
         <!--Alt buttonlar Footer başlangıç-->
         <Grid Grid.Row="3" >
-            <Border CornerRadius="20"  Margin="50,0,40,10" Background="#191919">
+            <Border CornerRadius="20"  Margin="50,0,300,10" Background="#191919">
                 <StackPanel Orientation="Horizontal">
                     <Button FontSize="24"  Content="{Binding Source='DizilimYap.btnDizilimiKaydet',Converter={StaticResource LanguageConverter}}" Width="240" 
                                 Background="{StaticResource button_background_green}" Style="{StaticResource button_template}" />

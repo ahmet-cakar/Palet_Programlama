@@ -1,22 +1,22 @@
 {
-  "Anasayfa": {
-    "textblokurun": "Add",
-    "textblokurun2": "Product/Pallet",
-    "dizilim1": "Create",
-    "dizilim2": "Sequence",
-    "hiz1": "Speed",
-    "hiz2": "Settings",
-    "gruplama1": "Create",
-    "gruplama2": "Grouping",
-    "program": "Programs",
-    "Alarm": "Alarms",
-    "izleme": "Monitoring",
-    "Komut": "Commands",
-    "buttonC": "Continue",
-    "userborder1":"Change\nAccount",
-    "userborder2":"Exit"
-  },
-  "DizilimYap": {
+    "Anasayfa": {
+        "textblokurun": "Add",
+        "textblokurun2": "Product/Pallet",
+        "dizilim1": "Create",
+        "dizilim2": "Sequence",
+        "hiz1": "Speed",
+        "hiz2": "Settings",
+        "gruplama1": "Create",
+        "gruplama2": "Grouping",
+        "program": "Programs",
+        "Alarm": "Alarms",
+        "izleme": "Monitoring",
+        "Komut": "Commands",
+        "buttonC": "Continue",
+        "userborder1": "Change\nAccount",
+        "userborder2": "Exit"
+    },
+    "DizilimYap": {
         "urunozellik": "Product Features:  ",
         "paletozellik": "Pallet Features:  ",
         "kopyala": "Copy  ",
@@ -45,56 +45,56 @@
         "txtKat": "Layer",
         "txtKatTasimaMod": "Layer Move Mode (OFF)"
     },
-  "UrunEkle":{
-    "onizle": "Preview",
-    "urunblg": "Product Information",
-    "paletblg": "Pallet Information",
-    "urunad": "Product Name",
-    "paletad": "Pallet Name",
-    "urunadgir": "Enter Product Name...",
-    "paletadgir": "Enter Pallet Name...",
-    "genislik": "Width (mm)",
-    "urungenislikgir": "Enter Product Width...",
-    "paletgenislikgir": "Enter Pallet Width...",
-    "uzunluk":"Length (mm)",
-    "urunuzunlukgir":"Enter Product Length...",
-    "paletuzunlukgir":"Enter Pallet Length...",
-    "yukseklik":"Height (mm)",
-    "urunyukseklikgir":"Enter Product Height...",
-    "paletyukseklikgir":"Enter Pallet Height...",
-    "agirlik":"Weight (kg)",
-    "urunagirlikgir":"Enter Product Weight...",
-    "basinc":"Pressure (bar)",
-    "urunbasincgir":"Enter Product Pressure...",
-    "urunlist":"Product List",
-    "paletlist":"Pallet List",
-    "uruneklebtn":"Add Product",
-    "urunduzenlebtn":"Edit Product",
-    "urunsilbtn":"Product Delete",
-    "preview1":"Width",
-    "preview2":"Length",
-    "preview3":"Height"
-  },
-  "UserControl":{
-    "urunekle":"Add Product/Pallet",
-    "dizilimekle":"Create Sequence",
-    "hizayar":"Speed Settings",
-    "grupekle":"Create Grouping",
-    "program":"Programs",
-    "alarm":"Alarms",
-    "izle":"Monitoring",
-    "komut":"Commands"
-    
-  },
-  "MesajKutusu":{
-    "uyari":"Warning Screen",
-    "mesaj":"There was a Problem Adding a Product! Please Try Again",
-    "btncon1":"Tamam"
-  },
-  "global":{
-    "btnkaydet":"Save"
-  },
-  "Hiz": {
+    "UrunEkle": {
+        "onizle": "Preview",
+        "urunblg": "Product Information",
+        "paletblg": "Pallet Information",
+        "urunad": "Product Name",
+        "paletad": "Pallet Name",
+        "urunadgir": "Enter Product Name...",
+        "paletadgir": "Enter Pallet Name...",
+        "genislik": "Width (mm)",
+        "urungenislikgir": "Enter Product Width...",
+        "paletgenislikgir": "Enter Pallet Width...",
+        "uzunluk": "Length (mm)",
+        "urunuzunlukgir": "Enter Product Length...",
+        "paletuzunlukgir": "Enter Pallet Length...",
+        "yukseklik": "Height (mm)",
+        "urunyukseklikgir": "Enter Product Height...",
+        "paletyukseklikgir": "Enter Pallet Height...",
+        "agirlik": "Weight (kg)",
+        "urunagirlikgir": "Enter Product Weight...",
+        "basinc": "Pressure (bar)",
+        "urunbasincgir": "Enter Product Pressure...",
+        "urunlist": "Product List",
+        "paletlist": "Pallet List",
+        "uruneklebtn": "Add Product",
+        "urunduzenlebtn": "Edit Product",
+        "urunsilbtn": "Product Delete",
+        "preview1": "Width",
+        "preview2": "Length",
+        "preview3": "Height"
+    },
+    "UserControl": {
+        "urunekle": "Add Product/Pallet",
+        "dizilimekle": "Create Sequence",
+        "hizayar": "Speed Settings",
+        "grupekle": "Create Grouping",
+        "program": "Programs",
+        "alarm": "Alarms",
+        "izle": "Monitoring",
+        "komut": "Commands"
+
+    },
+    "MesajKutusu": {
+        "uyari": "Warning Screen",
+        "mesaj": "There was a Problem Adding a Product! Please Try Again",
+        "btncon1": "Tamam"
+    },
+    "global": {
+        "btnkaydet": "Save"
+    },
+    "Hiz": {
         "v1": "Location 1",
         "v2": "Location 2",
         "v3": "Location 3",
@@ -106,7 +106,26 @@
         "v9": "Location 9",
         "v10": "Location 10",
         "v11": "Location 11"
+    },
+    "GruplamaYap": {
+        "txtEn": "Width: ",
+        "txtBoy": "Length: ",
+        "txtYukseklik": "Height: ",
+        "txtAgirlik": "Weight: ",
+        "txtGruplandirma": "Grouping",
+        "txtUrunSecimi": "Product Selection",
+        "txtDizilimSecimi": "Sequence Selection",
+        "txtGruplamaSecimi": "Grouping Selection",
+        "txtKatNo": "Floor No: ",
+        "txtGrupNo": "Group No: ",
+        "btnAyarlar": "Settings",
+        "btnAyir": "Separate",
+        "btnBirlestir": "Merge",
+        "btnKaydet": "Save",
+        "btnGruplariTemizle": "Clear Groups",
+        "btnManuelDiz": "Manual Sequence",
+        "btnDizilimListesi": "Sequence List"
     }
 
-    
+
 }

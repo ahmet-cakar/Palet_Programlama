@@ -44,6 +44,10 @@ namespace Palet_Programlama.Sayfalar
         {
             MainFrame.Navigate(new DizilimYap(MainFrame));
         }
+        private void btn_program_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Programlar(MainFrame));
+        }
 
         private void Kullaniciicon_MouseDown(object sender, MouseButtonEventArgs e)
         {

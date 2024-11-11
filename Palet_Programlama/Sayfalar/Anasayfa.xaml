@@ -232,7 +232,7 @@
                     <DockPanel Grid.Row="1" Grid.Column="0">
                         <!-- Sağ altta buton -->
                             <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" 
-                         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                         Background="{StaticResource button_background}" Style="{StaticResource button_template}" Click="btn_program_Click" />
 
                         <!-- Sol alttaki açıklama -->
                         <StackPanel  DockPanel.Dock="Bottom"

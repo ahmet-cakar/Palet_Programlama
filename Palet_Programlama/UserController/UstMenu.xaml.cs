@@ -122,5 +122,14 @@ namespace Palet_Programlama.Sayfalar
                 mainWindow.MainFrame.Content = new HizAyarları(mainWindow.MainFrame);
             }
         }
+        private void ProgramPageBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
+            {
+                // Frame'in içeriğini değiştirme 
+                mainWindow.MainFrame.Content = new Programlar(mainWindow.MainFrame);
+            }
+        }
     }
 }

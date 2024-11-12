@@ -39,25 +39,49 @@
                     <Grid Grid.Column="0">
                         <Border Style="{StaticResource border_template_urunekle}" Margin="50,30,0,0" Width="430" Height="270"></Border>
                         <StackPanel Orientation="Vertical">
+                            <StackPanel>
+                                <Image Source="pack://application:,,,/Resimler/DizilimYap/info-icon.png" Width="20" Margin="400,50,0,0"/>
+                            </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,55,0,0"/>
-                            <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,55,0,0"/>
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}"
+                                           Text="{Binding Source='UrunEkle.urunad',Converter={StaticResource LanguageConverter}}"
+                                            Width="155" Margin="70,10,0,0"/>
+                            <TextBlock Style="{StaticResource textblock_template_urunekle}" Width="180" Text="Robentex Ürün 1" Margin="70,10,0,0"/>
                         </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
-                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" 
+                                           Text="{Binding Source='UrunEkle.genislik',Converter={StaticResource LanguageConverter}}" 
+                                           Width="155" Margin="70,13,0,0"/>
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}"
+                                            Width="180" Text="200" Margin="70,13,0,0"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
-                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}"
+                                           Text="{Binding Source='UrunEkle.uzunluk',Converter={StaticResource LanguageConverter}}" 
+                                           Width="155" Margin="70,13,0,0"/>
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" 
+                                           Width="180" Text="300" Margin="70,13,0,0"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
-                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}"
+                                           Text="{Binding Source='UrunEkle.yukseklik',Converter={StaticResource LanguageConverter}}" 
+                                           Width="155" Margin="70,13,0,0"/>
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" 
+                                           Width="180" Text="30" Margin="70,13,0,0"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
-                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" 
+                                           Text="{Binding Source='UrunEkle.agirlik',Converter={StaticResource LanguageConverter}}"
+                                           Width="155" Margin="70,13,0,0"/>
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" 
+                                           Width="180" Text="8" Margin="70,13,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" 
+                                Text="{Binding Source='UrunEkle.basinc',Converter={StaticResource LanguageConverter}}"
+                                           Width="155" Margin="70,13,0,0"/>
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" 
+                                           Width="180" Text="30" Margin="70,13,0,0"/>
                             </StackPanel>
                         </StackPanel>
                     </Grid>
@@ -65,26 +89,39 @@
                     <Grid Grid.Column="1">
                         <Border Style="{StaticResource border_template_urunekle}"  Margin="15,30,0,0" Width="430" Height="270">
                             <StackPanel Orientation="Vertical">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="0,5,0,0"/>
-                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,5,0,0"/>
+                                <StackPanel>
+                                    <Image Source="pack://application:,,,/Resimler/DizilimYap/info-icon.png" Width="20" Margin="350,0,0,0"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="0,20,0,0"/>
-                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" 
+                                               Text="{Binding Source='UrunEkle.paletad',Converter={StaticResource LanguageConverter}}"
+                                               Width="155" Margin="0,5,0,0"/>
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" 
+                                               Width="180" Text="Robentex Palet 1" Margin="70,5,0,0"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="0,20,0,0"/>
-                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" 
+                                               Text="{Binding Source='UrunEkle.genislik',Converter={StaticResource LanguageConverter}}"
+                                               Width="155" Margin="0,20,0,0"/>
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" 
+                                               Width="180" Text="800" 
+                                                Margin="70,20,0,0"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="0,20,0,0"/>
-                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" 
+                                               Text="{Binding Source='UrunEkle.uzunluk',Converter={StaticResource LanguageConverter}}"
+                                               Width="155" Margin="0,20,0,0"/>
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" 
+                                               Width="180" Text="1200" Margin="70,20,0,0"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="0,20,0,0"/>
-                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}"
+                                               Text="{Binding Source='UrunEkle.yukseklik',Converter={StaticResource LanguageConverter}}"
+                                               Width="155" Margin="0,20,0,0"/>
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" 
+                                               Width="180" Text="50" Margin="70,20,0,0"/>
                                 </StackPanel>
+                               
                             </StackPanel>
                         </Border>
                     </Grid>
@@ -149,9 +186,15 @@
                 <!--Program Notu Kısımı-->
                 <Grid Grid.Row="0">
                     <Border Style="{StaticResource border_template_urunekle}" Width="930" Height="100" Margin="15,30,0,0">
+                        <StackPanel Orientation="Horizontal">
                         <StackPanel>
                             <TextBlock Text="{Binding Source='Program.not',Converter={StaticResource LanguageConverter}}"
                                        Style="{StaticResource textblock_template_urunekle}" Margin="0,0,0,0"></TextBlock>
+                        </StackPanel>
+                        <StackPanel>
+                                <TextBlock Text="Bu Bir Test Programıdır."
+                                Style="{StaticResource textblock_template_urunekle}" Margin="10,0,0,0"></TextBlock>
+                        </StackPanel>
                         </StackPanel>
                     </Border>
                 </Grid>

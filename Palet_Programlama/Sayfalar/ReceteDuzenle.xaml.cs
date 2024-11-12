@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace Palet_Programlama.Sayfalar
 {
     /// <summary>
-    /// Interaction logic for Programlar.xaml
+    /// Interaction logic for ReceteDuzenle.xaml
     /// </summary>
-    public partial class Programlar : Page
+    public partial class ReceteDuzenle : Page
     {
-        private readonly Frame MainFrame;
-        public Programlar(Frame Main)
+        public ReceteDuzenle()
         {
             InitializeComponent();
-            this.MainFrame = Main;
-        }
-        private void recededuzenle_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(new ReceteDuzenle());
-
         }
     }
 }

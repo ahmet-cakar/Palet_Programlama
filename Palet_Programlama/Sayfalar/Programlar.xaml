@@ -163,7 +163,7 @@
                             <Grid Grid.Column="1">
                                 <StackPanel Orientation="Vertical">
                                     <Button FontSize="24"   Content="{Binding Source='Program.btnrecededuzen',Converter={StaticResource LanguageConverter}}" Width="240" 
-                                Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+                                Background="{StaticResource button_background}" Style="{StaticResource button_template}" Click="recededuzenle_Click" />
                                     <TextBlock HorizontalAlignment="Right"  Style="{StaticResource textblock_template_urunekle}" Text="Program ID:" Margin="0,100,50,0" FontSize="25"/>
                                     <TextBlock HorizontalAlignment="Right"  Style="{StaticResource textblock_template_urunekle}" Text="3454" Margin="0,20,90,0" FontSize="25"/>
                                     <Button FontSize="24"   Content="{Binding Source='Program.btnCalistir',Converter={StaticResource LanguageConverter}}" Width="240" Margin="0,100,0,0"

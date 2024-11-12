@@ -67,6 +67,9 @@
     <Compile Include="Sayfalar\Programlar.xaml.cs">
       <DependentUpon>Programlar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sayfalar\ReceteDuzenle.xaml.cs">
+      <DependentUpon>ReceteDuzenle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sınıflar\DosyaYoluBul.cs" />
     <Compile Include="Sınıflar\LanguageConverter.cs" />
     <Compile Include="Sınıflar\KullaniciDil.cs" />
@@ -122,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Sayfalar\Programlar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sayfalar\ReceteDuzenle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -82,6 +82,10 @@
     <Compile Include="Sayfalar\UrunEkle.xaml.cs">
       <DependentUpon>UrunEkle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sınıflar\Urun-PaletMethod\Palet.cs" />
+    <Compile Include="Sınıflar\Urun-PaletMethod\PaletIslemler.cs" />
+    <Compile Include="Sınıflar\Urun-PaletMethod\Urun.cs" />
+    <Compile Include="Sınıflar\Urun-PaletMethod\UrunIslemler.cs" />
     <Compile Include="UserController\BildirimKutusu.xaml.cs">
       <DependentUpon>BildirimKutusu.xaml</DependentUpon>
     </Compile>
@@ -316,6 +320,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resimler\UserControlUstMenu\ileri_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

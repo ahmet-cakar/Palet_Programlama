@@ -1,0 +1,18 @@
+[
+  {
+    "UrunAdi": "Yumoş",
+    "UrunEn": 200.0,
+    "UrunBoy": 300.0,
+    "UrunYukseklik": 400.0,
+    "UrunAgirlik": 5.0,
+    "UrunBasinc": 5
+  },
+  {
+    "UrunAdi": "Yumoş2",
+    "UrunEn": 200.0,
+    "UrunBoy": 300.0,
+    "UrunYukseklik": 400.0,
+    "UrunAgirlik": 5.0,
+    "UrunBasinc": 5
+  }
+]

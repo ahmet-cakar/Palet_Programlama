@@ -35,7 +35,7 @@
                 <Grid Grid.Row="0">
                     <!--Ön İzleme Border-->
                     <TextBlock Text="{Binding Source='UrunEkle.onizle',Converter={StaticResource LanguageConverter}}" Foreground="White" Margin="60,30,0,0" Panel.ZIndex="1" FontSize="24" FontFamily="Roboto" FontWeight="Bold"></TextBlock>
-                    <Border Background="#66000000" CornerRadius="10" Width="1100" Height="250" HorizontalAlignment="Left"
+                    <Border Background="#191919" CornerRadius="10" Width="1100" Height="250" HorizontalAlignment="Left"
                     Margin="40,20,0,0" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Width="150" x:Name="priviewtextblock" Text="Yükseklik" Foreground="White" FontSize="22" FontFamily="Roboto" 
@@ -104,7 +104,7 @@
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                                     <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_backgroundgreen}"
-                                    Margin="0,30,0,0" Content="{Binding Source='UrunEkle.uruneklebtn',Converter={StaticResource LanguageConverter}}"/>
+                                    Margin="0,30,0,0" Content="{Binding Source='UrunEkle.uruneklebtn',Converter={StaticResource LanguageConverter}}" Click="UrunEkleBtn_Click"/>
                                     <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
                                     Margin="20,30,0,0" Content="{Binding Source='UrunEkle.urunduzenlebtn',Converter={StaticResource LanguageConverter}}"/>
                                     <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"

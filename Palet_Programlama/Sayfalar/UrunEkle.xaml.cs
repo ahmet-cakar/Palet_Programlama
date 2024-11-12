@@ -24,7 +24,8 @@ namespace Palet_Programlama.Sayfalar
         private Frame MainFrame;
         private List<TextBox> textBoxes;
         private List<TextBlock> placeholders;
-        
+        UrunIslemler urunIslemler=new UrunIslemler();
+        PaletIslemler paletIslemler=new PaletIslemler();
         public UrunEkle(Frame Main)
         {
             InitializeComponent();
@@ -123,6 +124,11 @@ namespace Palet_Programlama.Sayfalar
                     placeholders[i].Visibility = Visibility.Collapsed; // Placeholder gizlenir
                 }
             }
+        }
+        private void UrunEkleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            urunIslemler.UrunKaydet("Yumoş2",200,300,400,5,5);
+            paletIslemler.PaletKaydet("Euro Palet 2",800,1200,400);
         }
     }
 }

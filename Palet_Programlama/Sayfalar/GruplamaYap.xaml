@@ -9,197 +9,197 @@
       
       d:DesignHeight="768" d:DesignWidth="1366"
       Title="GruplamaYap">
-    <Page.Resources>
-        <sınıflar:LanguageConverter  x:Key="LanguageConverter" />
-    </Page.Resources>
+  <Page.Resources>
+    <sınıflar:LanguageConverter  x:Key="LanguageConverter" />
+  </Page.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="7*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <!-- Header item control başlangıç -->
-        <Grid Grid.Row="0">
-            <Border VerticalAlignment="Center">
-                <local:UstMenu/>
-            </Border>
-        </Grid>
-        <!-- Header item control bitiş -->
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="7*"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <!-- Header item control başlangıç -->
+    <Grid Grid.Row="0">
+      <Border VerticalAlignment="Center">
+        <local:UstMenu/>
+      </Border>
+    </Grid>
+    <!-- Header item control bitiş -->
 
-        <Grid Grid.Row="1" >
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+    <Grid Grid.Row="1" >
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
 
-                </Grid.ColumnDefinitions>
-                <!-- Ürün En-Boy alanı başlangıç -->
-                <Border CornerRadius="15" Grid.Column="0" Margin="50,0,10,0"  Background="#191919">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition  Width="1.4*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <StackPanel  Orientation="Horizontal" Grid.Column="0" Margin="40,20,40,0">
-                            <TextBlock VerticalAlignment="Center" 
+        </Grid.ColumnDefinitions>
+        <!-- Ürün En-Boy alanı başlangıç -->
+        <Border CornerRadius="15" Grid.Column="0" Margin="50,0,10,0"  Background="#191919">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition  Width="1.4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel  Orientation="Horizontal" Grid.Column="0" Margin="40,20,40,0">
+              <TextBlock VerticalAlignment="Center" 
                                     Foreground="White"
                                     FontSize="22"
                                     Text="{Binding Source='GruplamaYap.txtEn',Converter={StaticResource LanguageConverter}}"></TextBlock>
-                            <TextBlock VerticalAlignment="Center" 
+              <TextBlock VerticalAlignment="Center" 
                                 Foreground="White"
                                 FontSize="24"
                                 Text="280 mm"></TextBlock>
-                        </StackPanel>
+            </StackPanel>
 
-                        <StackPanel  Orientation="Horizontal" Grid.Row="1"
+            <StackPanel  Orientation="Horizontal" Grid.Row="1"
                                      Grid.Column="0" Margin="40,10">
-                            <TextBlock VerticalAlignment="Center" 
+              <TextBlock VerticalAlignment="Center" 
                                 Foreground="White"
                                 FontSize="22"
                                 Text="{Binding Source='GruplamaYap.txtBoy',Converter={StaticResource LanguageConverter}}"></TextBlock>
-                            <TextBlock VerticalAlignment="Center" 
+              <TextBlock VerticalAlignment="Center" 
                             Foreground="White"
                             FontSize="24"
                             Text="280 mm"></TextBlock>
-                        </StackPanel>
-                        <StackPanel  Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="40,20,40,0">
-                            <TextBlock VerticalAlignment="Center" 
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="40,20,40,0">
+              <TextBlock VerticalAlignment="Center" 
                              Foreground="White"
                              FontSize="22"
                              Text="{Binding Source='GruplamaYap.txtYukseklik',Converter={StaticResource LanguageConverter}}"></TextBlock>
-                            <TextBlock VerticalAlignment="Center" 
+              <TextBlock VerticalAlignment="Center" 
                          Foreground="White"
                          FontSize="24"
                          Text="280 mm"></TextBlock>
-                        </StackPanel>
-                        <StackPanel  Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="40,10">
-                            <TextBlock VerticalAlignment="Center" 
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="40,10">
+              <TextBlock VerticalAlignment="Center" 
                               Foreground="White"
                               FontSize="22"
                               Text="{Binding Source='GruplamaYap.txtAgirlik',Converter={StaticResource LanguageConverter}}"></TextBlock>
-                            <TextBlock VerticalAlignment="Center" 
+              <TextBlock VerticalAlignment="Center" 
                           Foreground="White"
                           FontSize="24"
                           Text="13 kg"></TextBlock>
-                        </StackPanel>
+            </StackPanel>
 
 
 
 
-                    </Grid>
+          </Grid>
 
 
 
-                </Border>
-                <!-- Ürün En-Bot alanı bitiş -->
+        </Border>
+        <!-- Ürün En-Bot alanı bitiş -->
 
-                <!-- Gruplandırma alanı başlangıç -->
+        <!-- Gruplandırma alanı başlangıç -->
 
-                <Border Grid.Column="1" CornerRadius="15"  Margin="0,0,40,0"  Background="#191919">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel VerticalAlignment="Center" 
+        <Border Grid.Column="1" CornerRadius="15"  Margin="0,0,40,0"  Background="#191919">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Center" 
                                     Grid.Column="0">
 
-                            <TextBlock  VerticalAlignment="Center" 
+              <TextBlock  VerticalAlignment="Center" 
                                     HorizontalAlignment="Center"
                           Foreground="White"
                           FontSize="28"
                           Text="{Binding Source='GruplamaYap.txtGruplandirma',Converter={StaticResource LanguageConverter}}"></TextBlock>
-                        </StackPanel>
-                        <StackPanel Margin="30,0,0,0" Grid.Column="1" Orientation="Horizontal">
-                            <Button Margin="0,0,80,0" Style="{StaticResource transparan_button}">
-                                <StackPanel>
-                                    <Image 
+            </StackPanel>
+            <StackPanel Margin="30,0,0,0" Grid.Column="1" Orientation="Horizontal">
+              <Button Margin="0,0,80,0" Style="{StaticResource transparan_button}">
+                <StackPanel>
+                  <Image 
                                        MaxHeight="60"
                                        MaxWidth="60"
                                        Source="pack://application:,,,/Resimler/UserControlUstMenu/geri_icon.png"/>
-                                </StackPanel>
-                            </Button>
-                            <TextBlock  VerticalAlignment="Center"
+                </StackPanel>
+              </Button>
+              <TextBlock  VerticalAlignment="Center"
                                         Margin="0,0,80,0"
                                         HorizontalAlignment="Center"
                                      Foreground="White"
                                      FontSize="34"
                                      Text="1"></TextBlock>
-                            <Button  Style="{StaticResource transparan_button}" >
-                                <StackPanel>
-                                    <Image 
+              <Button  Style="{StaticResource transparan_button}" >
+                <StackPanel>
+                  <Image 
                                 MaxHeight="60"
                                 MaxWidth="60"
                                 Source="pack://application:,,,/Resimler/UserControlUstMenu/ileri_icon.png"/>
-                                </StackPanel>
-                            </Button>
+                </StackPanel>
+              </Button>
 
-                        </StackPanel>
-                    </Grid>
-                </Border>
-                <!-- Gruplandırma  alanı bitiş -->
+            </StackPanel>
+          </Grid>
+        </Border>
+        <!-- Gruplandırma  alanı bitiş -->
 
-            </Grid>
+      </Grid>
 
-        </Grid>
-
-
-        <Grid Grid.Row="2">
+    </Grid>
 
 
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="8*"/>
-                <ColumnDefinition Width="7*"/>
-                <ColumnDefinition Width="*"/>
-
-
-            </Grid.ColumnDefinitions>
+    <Grid Grid.Row="2">
 
 
 
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="8*"/>
+        <ColumnDefinition Width="7*"/>
+        <ColumnDefinition Width="*"/>
 
-            <Border>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="3*"/>
 
-                    </Grid.RowDefinitions>
-                    <!-- Ürün Dizilim seçim alanı başlangıç -->
-                    <Border Grid.Row="0" Margin="50,10,10,10"
+      </Grid.ColumnDefinitions>
+
+
+
+
+      <Border>
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+
+          </Grid.RowDefinitions>
+          <!-- Ürün Dizilim seçim alanı başlangıç -->
+          <Border Grid.Row="0" Margin="50,10,10,10"
                          CornerRadius="15" 
                          Background="#191919"
                           >
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
 
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
 
-                            </Grid.RowDefinitions>
-                            <TextBlock Margin="40,0,0,0"
+              </Grid.RowDefinitions>
+              <TextBlock Margin="40,0,0,0"
                                        VerticalAlignment="Center"
                                        Grid.Column="0" Grid.Row="0"
                                        Foreground="White"
                                        FontSize="26" Text="{Binding Source='GruplamaYap.txtUrunSecimi',Converter={StaticResource LanguageConverter}}"></TextBlock>
-                            <TextBlock Margin="40,0,0,0"
+              <TextBlock Margin="40,0,0,0"
                                    VerticalAlignment="Top"
                                    Grid.Column="0" Grid.Row="1"
                                    Foreground="White"
                                    FontSize="26" Text="{Binding Source='GruplamaYap.txtDizilimSecimi',Converter={StaticResource LanguageConverter}}"></TextBlock>
 
-                            <ComboBox  Grid.Column="1" Grid.Row="1"
+              <ComboBox  Grid.Column="1" Grid.Row="1"
                                 FontSize="20"
                                 Style="{DynamicResource theComboBox}"
                                 Background="#d4d4d4"
@@ -213,15 +213,15 @@
                                 SelectedIndex="0"
                                 ItemContainerStyle="{DynamicResource theComboBoxItem}"
 >
-                                <ComboBoxItem>Yumos 220ml</ComboBoxItem>
-                                <ComboBoxItem>Busy</ComboBoxItem>
-                                <ComboBoxItem>On Duty</ComboBoxItem>
-                                <ComboBoxItem>On Meeting</ComboBoxItem>
-                                <ComboBoxItem>On Vacation</ComboBoxItem>
-                                <ComboBoxItem>On Weekend</ComboBoxItem>
-                            </ComboBox>
+                <ComboBoxItem>Yumos 220ml</ComboBoxItem>
+                <ComboBoxItem>Busy</ComboBoxItem>
+                <ComboBoxItem>On Duty</ComboBoxItem>
+                <ComboBoxItem>On Meeting</ComboBoxItem>
+                <ComboBoxItem>On Vacation</ComboBoxItem>
+                <ComboBoxItem>On Weekend</ComboBoxItem>
+              </ComboBox>
 
-                            <ComboBox  Grid.Column="1" Grid.Row="0"
+              <ComboBox  Grid.Column="1" Grid.Row="0"
                                 FontSize="20"
                                 Style="{DynamicResource theComboBox}"
                                 Background="#d4d4d4"
@@ -236,134 +236,124 @@
 
                                 ItemContainerStyle="{DynamicResource theComboBoxItem}"
 >
-                                <ComboBoxItem>Yumos_1</ComboBoxItem>
-                                <ComboBoxItem>Busy</ComboBoxItem>
-                                <ComboBoxItem>On Duty</ComboBoxItem>
-                                <ComboBoxItem>On Meeting</ComboBoxItem>
-                                <ComboBoxItem>On Vacation</ComboBoxItem>
-                                <ComboBoxItem>On Weekend</ComboBoxItem>
-                            </ComboBox>
-                        </Grid>
-                    </Border>
-                    <!-- Gruplama seçimi alanı başlangıç -->
-                    <Border  Grid.Column="0"  Margin="50,10,10,10" Grid.Row="1"
+                <ComboBoxItem>Yumos_1</ComboBoxItem>
+                <ComboBoxItem>Busy</ComboBoxItem>
+                <ComboBoxItem>On Duty</ComboBoxItem>
+                <ComboBoxItem>On Meeting</ComboBoxItem>
+                <ComboBoxItem>On Vacation</ComboBoxItem>
+                <ComboBoxItem>On Weekend</ComboBoxItem>
+              </ComboBox>
+            </Grid>
+          </Border>
+          <!-- Gruplama seçimi alanı başlangıç -->
+          <Border  Grid.Column="0"  Margin="50,10,10,10" Grid.Row="1"
                              CornerRadius="15" 
                         Background="#191919">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <StackPanel Orientation="Vertical" Margin="0,10,0,0">
-                                <TextBlock Margin="40,0,0,20"
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+              <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                <TextBlock Margin="40,0,0,0"
                                VerticalAlignment="Top"
                                Grid.Column="0" Grid.Row="1"
                                Foreground="White"
                                FontSize="26" Text="{Binding Source='GruplamaYap.txtGruplamaSecimi',Converter={StaticResource LanguageConverter}}"></TextBlock>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Margin="40,0,0,0"
-                                    VerticalAlignment="Top"
-                                    Grid.Column="0" Grid.Row="1"
-                                    Foreground="White"
-                                    FontSize="26" Text="{Binding Source='GruplamaYap.txtKatNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
-                                    <TextBlock 
-                                    VerticalAlignment="Top"
-                                    Grid.Column="0" Grid.Row="1"
-                                    Foreground="White"
-                                    FontSize="26" Text="1,"></TextBlock>
 
-                                    <TextBlock Margin="20,0,0,0"
-                                    VerticalAlignment="Top"
-                                    Grid.Column="0" Grid.Row="1"
-                                    Foreground="White"
-                                    FontSize="26" Text="{Binding Source='GruplamaYap.txtGrupNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
+                <ListBox Background="Transparent" BorderThickness="0"  Height="400" Margin="35,0,0,0" >
+                  <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                      <StackPanel />
+                    </ItemsPanelTemplate>
+                  </ListBox.ItemsPanel>
 
-                                    <TextBlock 
-                                    VerticalAlignment="Top"
-                                    Grid.Column="0" Grid.Row="1"
-                                    Foreground="White"
-                                    FontSize="26" Text="1"></TextBlock>
-                                </StackPanel>
+                  <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                      <Setter Property="Margin" Value="0,10,0,0" />
+                      <Setter Property="Foreground" Value="White" />
+                      <Setter Property="FontSize" Value="20" />
+                    </Style>
+                  </ListBox.ItemContainerStyle>
+
+                  <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                      <TextBlock 
+                       Foreground="White"
+                       FontSize="20" Text="{Binding Source='GruplamaYap.txtKatNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
+                      <TextBlock 
+                           Grid.Column="0" Grid.Row="1"
+                           Foreground="White"
+                           FontSize="20" Text="1,"></TextBlock>
+                      <TextBlock 
+                           Foreground="White"
+                           FontSize="20" Text="{Binding Source='GruplamaYap.txtGrupNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
+                      <TextBlock 
+                       Foreground="White"
+                          FontSize="20" Text="1"></TextBlock>
+                    </StackPanel>
+                  </ListBoxItem>
+
+                  <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                      <TextBlock 
+      Foreground="White"
+      FontSize="20" Text="{Binding Source='GruplamaYap.txtKatNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
+                      <TextBlock 
+          Grid.Column="0" Grid.Row="1"
+          Foreground="White"
+          FontSize="20" Text="1,"></TextBlock>
+                      <TextBlock 
+          Foreground="White"
+          FontSize="20" Text="{Binding Source='GruplamaYap.txtGrupNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
+                      <TextBlock 
+      Foreground="White"
+         FontSize="20" Text="2"></TextBlock>
+                    </StackPanel>
+                  </ListBoxItem>
 
 
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Margin="40,0,0,0"
-                                   VerticalAlignment="Top"
-                                   Grid.Column="0" Grid.Row="1"
-                                   Foreground="White"
-                                   FontSize="26" Text="{Binding Source='GruplamaYap.txtKatNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
-                                    <TextBlock 
-                                   VerticalAlignment="Top"
-                                   Grid.Column="0" Grid.Row="1"
-                                   Foreground="White"
-                                   FontSize="26" Text="1,"></TextBlock>
-
-                                    <TextBlock Margin="20,0,0,0"
-                                   VerticalAlignment="Top"
-                                   Grid.Column="0" Grid.Row="1"
-                                   Foreground="White"
-                                   FontSize="26" Text="{Binding Source='GruplamaYap.txtGrupNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
-
-                                    <TextBlock 
-                                   VerticalAlignment="Top"
-                                   Grid.Column="0" Grid.Row="1"
-                                   Foreground="White"
-                                   FontSize="26" Text="2"></TextBlock>
-                                </StackPanel>
-
-
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Margin="40,0,0,0"
-                                   VerticalAlignment="Top"
-                                   Grid.Column="0" Grid.Row="1"
-                                   Foreground="White"
-                                   FontSize="26" Text="{Binding Source='GruplamaYap.txtKatNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
-                                    <TextBlock 
-                                   VerticalAlignment="Top"
-                                   Grid.Column="0" Grid.Row="1"
-                                   Foreground="White"
-                                   FontSize="26" Text="2,"></TextBlock>
-
-                                    <TextBlock Margin="20,0,0,0"
-                                   VerticalAlignment="Top"
-                                   Grid.Column="0" Grid.Row="1"
-                                   Foreground="White"
-                                   FontSize="26" Text="{Binding Source='GruplamaYap.txtGrupNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
-
-                                    <TextBlock 
-                                   VerticalAlignment="Top"
-                                   Grid.Column="0" Grid.Row="1"
-                                   Foreground="White"
-                                   FontSize="26" Text="1"></TextBlock>
-                                </StackPanel>
+                  <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                      <TextBlock 
+                          Foreground="White"
+                          FontSize="20" Text="{Binding Source='GruplamaYap.txtKatNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
+                      <TextBlock 
+                              Grid.Column="0" Grid.Row="1"
+                              Foreground="White"
+                              FontSize="20" Text="2,"></TextBlock>
+                      <TextBlock 
+                              Foreground="White"
+                              FontSize="20" Text="{Binding Source='GruplamaYap.txtGrupNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
+                      <TextBlock 
+                          Foreground="White"
+                             FontSize="20" Text="1"></TextBlock>
+                    </StackPanel>
+                  </ListBoxItem>
 
 
 
 
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Margin="40,0,0,0"
-                                   VerticalAlignment="Top"
-                                   Grid.Column="0" Grid.Row="1"
-                                   Foreground="White"
-                                   FontSize="26" Text="{Binding Source='GruplamaYap.txtKatNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
-                                    <TextBlock 
-                                   VerticalAlignment="Top"
-                                   Grid.Column="0" Grid.Row="1"
-                                   Foreground="White"
-                                   FontSize="26" Text="2,"></TextBlock>
+                  <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                      <TextBlock 
+                        Foreground="White"
+                        FontSize="20" Text="{Binding Source='GruplamaYap.txtKatNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
+                      <TextBlock 
+                            Grid.Column="0" Grid.Row="1"
+                            Foreground="White"
+                            FontSize="20" Text="2,"></TextBlock>
+                      <TextBlock 
+                            Foreground="White"
+                            FontSize="20" Text="{Binding Source='GruplamaYap.txtGrupNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
+                      <TextBlock 
+                        Foreground="White"
+                           FontSize="20" Text="2"></TextBlock>
+                    </StackPanel>
+                  </ListBoxItem>
 
-                                    <TextBlock Margin="20,0,0,0"
-                                   VerticalAlignment="Top"
-                                   Grid.Column="0" Grid.Row="1"
-                                   Foreground="White"
-                                   FontSize="26" Text="{Binding Source='GruplamaYap.txtGrupNo',Converter={StaticResource LanguageConverter}}"></TextBlock>
 
-                                    <TextBlock 
-                                   VerticalAlignment="Top"
-                                   Grid.Column="0" Grid.Row="1"
-                                   Foreground="White"
-                                   FontSize="26" Text="2"></TextBlock>
-                                </StackPanel>
+                </ListBox>
 
 
 
@@ -371,150 +361,150 @@
 
 
 
-                            </StackPanel>
-                            <StackPanel
+              </StackPanel>
+              <StackPanel
                                 Grid.Column="1"
                                 Margin="0,20,0,10"
                                 Orientation="Vertical">
-                                <Button FontSize="24" 
+                <Button FontSize="24" 
                                 HorizontalAlignment="Center"
                                 Content="{Binding Source='GruplamaYap.btnAyarlar',Converter={StaticResource LanguageConverter}}" Width="200"  Margin="10,0,0,0"
                                 Background="{StaticResource button_background}" 
                                 Style="{StaticResource button_template}" />
 
 
-                                <Button FontSize="24" 
+                <Button FontSize="24" 
                                  HorizontalAlignment="Center"
                                  Content="{Binding Source='GruplamaYap.btnAyir',Converter={StaticResource LanguageConverter}}" Width="200"  Margin="10,250,0,0"
                                  Background="{StaticResource button_background}" 
                                  Style="{StaticResource button_template}" />
 
-                                <Button FontSize="24" 
+                <Button FontSize="24" 
                                   HorizontalAlignment="Center"
                                   Content="{Binding Source='GruplamaYap.btnBirlestir',Converter={StaticResource LanguageConverter}}" Width="200"  Margin="10,10,0,0"
                                   Background="{StaticResource button_background}" 
                                   Style="{StaticResource button_template}" />
-                            </StackPanel>
-                        </Grid>
+              </StackPanel>
+            </Grid>
 
 
-                    </Border>
-                    <!-- Gruplama seçimi alanı bitiş -->
+          </Border>
+          <!-- Gruplama seçimi alanı bitiş -->
 
 
-                    <Grid Grid.Row="2">
-                        <Border Grid.Row="0" Margin="50,10,10,10">
+          <Grid Grid.Row="2">
+            <Border Grid.Row="0" Margin="50,10,10,10">
 
-                        </Border>
-                    </Grid>
-
-                </Grid>
             </Border>
+          </Grid>
 
-            <!--Urun dizme alanı başlangıç-->
-            <Border CornerRadius="20" Margin="5,10,35,10"  Grid.Column="1"   Background="#191919">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="6*"/>
+        </Grid>
+      </Border>
 
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="8*"/>
+      <!--Urun dizme alanı başlangıç-->
+      <Border CornerRadius="20" Margin="5,10,35,10"  Grid.Column="1"   Background="#191919">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
 
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" >
-                        <StackPanel HorizontalAlignment="Left"  >
-                            <Image  Margin="40,25,0,0"
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="8*"/>
+
+          </Grid.ColumnDefinitions>
+          <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" >
+            <StackPanel HorizontalAlignment="Left"  >
+              <Image  Margin="40,25,0,0"
                            MaxHeight="250"
                            MaxWidth="250"
                            Source="pack://application:,,,/Resimler/DizilimYap/referans_eksenler.png"/>
-                        </StackPanel>
-                    </Grid>
+            </StackPanel>
+          </Grid>
 
-                    <Border Grid.Column="1" Grid.Row="1">
-                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"  >
-                            <Image 
+          <Border Grid.Column="1" Grid.Row="1">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"  >
+              <Image 
                          MaxHeight="600"
                          MaxWidth="600"
                          Source="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
-                        </StackPanel>
-                    </Border>
+            </StackPanel>
+          </Border>
 
-                </Grid>
-            </Border>
-            <!--Urun dizme alanı başlangıç-->
+        </Grid>
+      </Border>
+      <!--Urun dizme alanı başlangıç-->
 
-            <!--Kat arttırma azaltma alanı başlangıç-->
-            <Border CornerRadius="20" Margin="-20,10,40,10" Background="#191919"  Grid.Column="2">
-                <Grid Margin="0,40,0,0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="3*"/>
-                        <RowDefinition Height="*"/>
+      <!--Kat arttırma azaltma alanı başlangıç-->
+      <Border CornerRadius="20" Margin="-20,10,40,10" Background="#191919"  Grid.Column="2">
+        <Grid Margin="0,40,0,0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
 
-                    </Grid.RowDefinitions>
+          </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Row="0">
+          <StackPanel Grid.Row="0">
 
-                        <TextBlock Margin="0,50,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"
+            <TextBlock Margin="0,50,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"
                       Foreground="White"
                       FontSize="30"
                       Text="{Binding Source='DizilimYap.txtKat',Converter={StaticResource LanguageConverter}}"></TextBlock>
-                    </StackPanel>
+          </StackPanel>
 
-                    <StackPanel Grid.Row="1" Orientation="Vertical">
-                        <Button Margin="0,80,0,0" Style="{StaticResource transparan_button}" x:Name="AnasayfaBtn">
-                            <StackPanel>
-                                <Image 
+          <StackPanel Grid.Row="1" Orientation="Vertical">
+            <Button Margin="0,80,0,0" Style="{StaticResource transparan_button}" x:Name="AnasayfaBtn">
+              <StackPanel>
+                <Image 
                                MaxHeight="50"
                                MaxWidth="50"
                                Source="pack://application:,,,/Resimler/DizilimYap/yukari_icon.png"/>
-                            </StackPanel>
-                        </Button>
-                        <TextBlock Margin="0,20,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"
+              </StackPanel>
+            </Button>
+            <TextBlock Margin="0,20,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"
                      Foreground="White"
                      FontSize="30"
                      Text="1"></TextBlock>
-                        <Button Margin="0,20,0,0" Style="{StaticResource transparan_button}" >
-                            <StackPanel>
-                                <Image 
+            <Button Margin="0,20,0,0" Style="{StaticResource transparan_button}" >
+              <StackPanel>
+                <Image 
                         MaxHeight="50"
                         MaxWidth="50"
                         Source="pack://application:,,,/Resimler/DizilimYap/asagi_icon.png"/>
-                            </StackPanel>
-                        </Button>
+              </StackPanel>
+            </Button>
 
-                    </StackPanel>
-                </Grid>
-            </Border>
-            <!--Kat arttırma azaltma alanı bitiş-->
-
-
-
-
+          </StackPanel>
         </Grid>
+      </Border>
+      <!--Kat arttırma azaltma alanı bitiş-->
 
 
 
-
-        <!--Alt buttonlar Footer başlangıç-->
-        <Grid Grid.Row="3" >
-            <Border CornerRadius="20"  Margin="50,0,300,10" Background="#191919">
-                <StackPanel Orientation="Horizontal">
-                    <Button FontSize="24"  Content="{Binding Source='GruplamaYap.btnKaydet',Converter={StaticResource LanguageConverter}}" Width="240" 
-                             Background="{StaticResource button_background_green}" Style="{StaticResource button_template}" />
-                    <Button FontSize="24"   Content="{Binding Source='GruplamaYap.btnGruplariTemizle',Converter={StaticResource LanguageConverter}}" Width="240"  Margin="10,0,0,0"
-         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
-                    <Button FontSize="24"   Content="{Binding Source='GruplamaYap.btnManuelDiz',Converter={StaticResource LanguageConverter}}" Width="240" Margin="10,0,0,0"
-         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
-                    <Button FontSize="24"   Content="{Binding Source='GruplamaYap.btnDizilimListesi',Converter={StaticResource LanguageConverter}}" Width="240" Margin="10,0,0,0"
-         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
-                </StackPanel>
-            </Border>
-        </Grid>
-        <!--Alt buttonlar Footer bitiş-->
 
     </Grid>
+
+
+
+
+    <!--Alt buttonlar Footer başlangıç-->
+    <Grid Grid.Row="3" >
+      <Border CornerRadius="20"  Margin="50,0,300,10" Background="#191919">
+        <StackPanel Orientation="Horizontal">
+          <Button FontSize="24"  Content="{Binding Source='GruplamaYap.btnKaydet',Converter={StaticResource LanguageConverter}}" Width="240" 
+                             Background="{StaticResource button_background_green}" Style="{StaticResource button_template}" />
+          <Button FontSize="24"   Content="{Binding Source='GruplamaYap.btnGruplariTemizle',Converter={StaticResource LanguageConverter}}" Width="240"  Margin="10,0,0,0"
+         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+          <Button FontSize="24"   Content="{Binding Source='GruplamaYap.btnManuelDiz',Converter={StaticResource LanguageConverter}}" Width="240" Margin="10,0,0,0"
+         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+          <Button FontSize="24"   Content="{Binding Source='GruplamaYap.btnDizilimListesi',Converter={StaticResource LanguageConverter}}" Width="240" Margin="10,0,0,0"
+         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+        </StackPanel>
+      </Border>
+    </Grid>
+    <!--Alt buttonlar Footer bitiş-->
+
+  </Grid>
 </Page>

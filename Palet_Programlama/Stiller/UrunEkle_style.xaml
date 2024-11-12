@@ -59,7 +59,7 @@
                 <SolidColorBrush Color="Black" Opacity="0.24" />
             </Setter.Value>
         </Setter>
-        <Setter Property="CornerRadius" Value="15" />
+        <Setter Property="CornerRadius" Value="20" />
         <Setter Property="Height" Value="550" />
         <Setter Property="Width" Value="545" />
         <Setter Property="BorderThickness" Value="0" />

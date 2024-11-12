@@ -37,7 +37,7 @@
                     </Grid.ColumnDefinitions>
                     <!--Palet Özellikler Kısımı-->
                     <Grid Grid.Column="0">
-                        <Border Style="{StaticResource border_template_urunekle}" Margin="50,30,0,0" Width="430" Height="270"></Border>
+                        <Border Style="{StaticResource border_template_urunekle}" Margin="50,30,0,0" Width="440" Height="270"></Border>
                         <StackPanel Orientation="Vertical">
                             <StackPanel>
                                 <Image Source="pack://application:,,,/Resimler/DizilimYap/info-icon.png" Width="20" Margin="400,50,0,0"/>
@@ -87,7 +87,7 @@
                     </Grid>
                     <!--Ürün Özellikler Kısımı-->
                     <Grid Grid.Column="1">
-                        <Border Style="{StaticResource border_template_urunekle}"  Margin="15,30,0,0" Width="430" Height="270">
+                        <Border Style="{StaticResource border_template_urunekle}"  Margin="15,30,0,0" Width="440" Height="270">
                             <StackPanel Orientation="Vertical">
                                 <StackPanel>
                                     <Image Source="pack://application:,,,/Resimler/DizilimYap/info-icon.png" Width="20" Margin="350,0,0,0"/>
@@ -129,7 +129,7 @@
                 <!--Mevcut Program Listesi Kısımı-->
                 <Grid Grid.Row="1">
                     
-                    <Border Style="{StaticResource border_template_urunekle}" Width="880" Height="490" Margin="50,15,0,0">
+                    <Border Style="{StaticResource border_template_urunekle}" Width="900" Height="490" Margin="50,15,0,0">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -185,7 +185,7 @@
                 </Grid.RowDefinitions>
                 <!--Program Notu Kısımı-->
                 <Grid Grid.Row="0">
-                    <Border Style="{StaticResource border_template_urunekle}" Width="930" Height="100" Margin="15,30,0,0">
+                    <Border Style="{StaticResource border_template_urunekle}" Width="930" Height="80" Margin="10,30,0,0">
                         <StackPanel Orientation="Horizontal">
                         <StackPanel>
                             <TextBlock Text="{Binding Source='Program.not',Converter={StaticResource LanguageConverter}}"
@@ -200,25 +200,25 @@
                 </Grid>
                 <!--Dizilim Gösterme Kısımı-->
                 <Grid Grid.Row="1">
-                    <Border Style="{StaticResource border_template_urunekle}" Width="810" Height="660" Margin="15,15,0,0">
+                    <Border Style="{StaticResource border_template_urunekle}" Width="810" Height="685" Margin="10,10,0,0">
                         <StackPanel Orientation="Horizontal">
                             <StackPanel HorizontalAlignment="Left"  >
-                                <Image  Margin="10,0,0,0"
+                                <Image  Margin="25,5,0,0"
                                    MaxHeight="250"
                                    MaxWidth="250"
                                    Source="pack://application:,,,/Resimler/DizilimYap/referans_eksenler.png"/>
                             </StackPanel>
                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"  >
-                            <Image Margin="-135,100,0,0"
+                            <Image Margin="-137,95,0,0"
                                 MaxHeight="600"
                                 MaxWidth="600"
                                 Source="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
                         </StackPanel>
                         </StackPanel>
                     </Border>
-                    <Border Style="{StaticResource border_template_urunekle}" Width="100" Height="660" Margin="840,15,0,0">
+                    <Border Style="{StaticResource border_template_urunekle}" Width="100" Height="685" Margin="835,10,0,0">
                         <StackPanel  Orientation="Vertical">
-                            <TextBlock Margin="0,50,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"
+                            <TextBlock Margin="0,70,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"
                              Foreground="White"
                              FontSize="30"
                              Text="{Binding Source='DizilimYap.txtKat',Converter={StaticResource LanguageConverter}}"/>

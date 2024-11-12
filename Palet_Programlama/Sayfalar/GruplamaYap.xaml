@@ -23,7 +23,7 @@
     <!-- Header item control başlangıç -->
     <Grid Grid.Row="0">
       <Border VerticalAlignment="Center">
-        <local:UstMenu/>
+        <local:UstMenu Margin="0,5,0,0"/>
       </Border>
     </Grid>
     <!-- Header item control bitiş -->
@@ -36,7 +36,7 @@
 
         </Grid.ColumnDefinitions>
         <!-- Ürün En-Boy alanı başlangıç -->
-        <Border CornerRadius="15" Grid.Column="0" Margin="50,0,10,0"  Background="#191919">
+        <Border CornerRadius="15" Grid.Column="0" Margin="50,20,10,0"  Background="#191919">
           <Grid>
             <Grid.ColumnDefinitions>
               <ColumnDefinition Width="*"/>
@@ -46,7 +46,7 @@
               <RowDefinition Height="*"/>
               <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <StackPanel  Orientation="Horizontal" Grid.Column="0" Margin="40,20,40,0">
+            <StackPanel  Orientation="Horizontal" Grid.Column="0" Margin="40,10,40,0">
               <TextBlock VerticalAlignment="Center" 
                                     Foreground="White"
                                     FontSize="22"
@@ -58,7 +58,7 @@
             </StackPanel>
 
             <StackPanel  Orientation="Horizontal" Grid.Row="1"
-                                     Grid.Column="0" Margin="40,10">
+                                     Grid.Column="0" Margin="40,5">
               <TextBlock VerticalAlignment="Center" 
                                 Foreground="White"
                                 FontSize="22"
@@ -68,7 +68,7 @@
                             FontSize="24"
                             Text="280 mm"></TextBlock>
             </StackPanel>
-            <StackPanel  Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="40,20,40,0">
+            <StackPanel  Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="40,10,40,0">
               <TextBlock VerticalAlignment="Center" 
                              Foreground="White"
                              FontSize="22"
@@ -78,7 +78,7 @@
                          FontSize="24"
                          Text="280 mm"></TextBlock>
             </StackPanel>
-            <StackPanel  Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="40,10">
+            <StackPanel  Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="40,5">
               <TextBlock VerticalAlignment="Center" 
                               Foreground="White"
                               FontSize="22"
@@ -101,7 +101,7 @@
 
         <!-- Gruplandırma alanı başlangıç -->
 
-        <Border Grid.Column="1" CornerRadius="15"  Margin="0,0,40,0"  Background="#191919">
+        <Border Grid.Column="1" CornerRadius="15"  Margin="0,20,40,0"  Background="#191919">
           <Grid>
             <Grid.ColumnDefinitions>
               <ColumnDefinition Width="*"/>
@@ -491,7 +491,7 @@
 
     <!--Alt buttonlar Footer başlangıç-->
     <Grid Grid.Row="3" >
-      <Border CornerRadius="20"  Margin="50,0,300,10" Background="#191919">
+      <Border CornerRadius="20"  Margin="50,0,300,10" Background="Transparent">
         <StackPanel Orientation="Horizontal">
           <Button FontSize="24"  Content="{Binding Source='GruplamaYap.btnKaydet',Converter={StaticResource LanguageConverter}}" Width="240" 
                              Background="{StaticResource button_background_green}" Style="{StaticResource button_template}" />

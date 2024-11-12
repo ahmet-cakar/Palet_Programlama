@@ -38,13 +38,55 @@
                     <!--Palet Özellikler Kısımı-->
                     <Grid Grid.Column="0">
                         <Border Style="{StaticResource border_template_urunekle}" Margin="50,30,0,0" Width="430" Height="270"></Border>
-                        <StackPanel>
-                            
+                        <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,55,0,0"/>
+                            <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,55,0,0"/>
+                        </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                            </StackPanel>
                         </StackPanel>
                     </Grid>
                     <!--Ürün Özellikler Kısımı-->
                     <Grid Grid.Column="1">
-                        <Border Style="{StaticResource border_template_urunekle}"  Margin="15,30,0,0" Width="430" Height="270"></Border>
+                        <Border Style="{StaticResource border_template_urunekle}"  Margin="15,30,0,0" Width="430" Height="270">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="0,5,0,0"/>
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,5,0,0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="0,20,0,0"/>
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="0,20,0,0"/>
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="0,20,0,0"/>
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="0,20,0,0"/>
+                                    <TextBlock Style="{StaticResource textblock_template_urunekle}" Text="Ürün Adı:" Margin="70,20,0,0"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
                     </Grid>
                 </Grid>
                 <!--Mevcut Program Listesi Kısımı-->

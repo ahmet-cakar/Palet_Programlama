@@ -1,26 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
+using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
+using System;
+using System.Linq;
+using System.Collections.Generic;
 using System.Windows.Shapes;
 
-namespace Palet_Programlama.Sayfalar
+namespace Palet_Programlama
 {
-    /// <summary>
-    /// Interaction logic for DizilimYap.xaml
-    /// </summary>
-    public partial class DizilimYap : Page
+    public partial class Window1 : Window
     {
-
         private bool surukleniyor = false;
         private Point tiklamaOffset;
         Rectangle suruklenenKutu; // Hareket ettirilen Rectangle
@@ -37,14 +27,9 @@ namespace Palet_Programlama.Sayfalar
         TextBlock ustMesafe = new TextBlock { Foreground = Brushes.Magenta, FontSize = 20 };
         TextBlock altMesafe = new TextBlock { Foreground = Brushes.Magenta, FontSize = 20 };
 
-
-
-        private Frame MainFrame;
-
-        public DizilimYap(Frame Main)
+        public Window1()
         {
             InitializeComponent();
-            this.MainFrame = Main;
 
             // Çizgileri ve metinleri Canvas'a ekle
             myCanvas.Children.Add(solCizgi);
@@ -56,7 +41,6 @@ namespace Palet_Programlama.Sayfalar
             myCanvas.Children.Add(sagMesafe);
             myCanvas.Children.Add(ustMesafe);
             myCanvas.Children.Add(altMesafe);
-
         }
 
         // MouseDown olayında sürükleme başlat
@@ -275,22 +259,6 @@ namespace Palet_Programlama.Sayfalar
                 ustMesafe.Visibility = Visibility.Collapsed;
                 altMesafe.Visibility = Visibility.Collapsed;
             }
-        }
-
-        private void dikeyKutu_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            dikeyKutu.StrokeThickness = 1;
-            yatayKutu.StrokeThickness = 0;
-            dikeyKutu.Stroke = Brushes.Red;
-            yatayKutu.Stroke = Brushes.Transparent;
-        }
-
-        private void yatayKutu_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            dikeyKutu.StrokeThickness = 0;
-            yatayKutu.StrokeThickness = 1;
-            dikeyKutu.Stroke = Brushes.Transparent;
-            yatayKutu.Stroke = Brushes.Red;
         }
     }
 }

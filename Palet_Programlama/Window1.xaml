@@ -1,0 +1,62 @@
+﻿<Window x:Class="Palet_Programlama.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Palet_Programlama.Sayfalar"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="Test" Height="768" Width="1366">
+  <Grid>
+    <Canvas Name="myCanvas" Width="600" Height="400">
+      <Canvas.Background>
+        <ImageBrush ImageSource="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
+      </Canvas.Background>
+
+      <!-- Rectangle: Sürüklenebilir öğe -->
+      <Rectangle Name="draggableRectangle" Width="100" Height="150"
+                 Stroke="Transparent" StrokeThickness="0"
+                 MouseDown="Rectangle_MouseDown"
+                 MouseMove="Rectangle_MouseMove"
+                 MouseUp="Rectangle_MouseUp">
+        <Rectangle.Fill>
+          <ImageBrush ImageSource="/Resimler/DizilimYap/dikey_kutu.png"/>
+        </Rectangle.Fill>
+      </Rectangle>
+
+      <!-- Rectangle: Sürüklenebilir öğe -->
+      <Rectangle Name="draggableRectangle1" Width="100" Height="150" Canvas.Left="210"
+                 Stroke="Transparent" StrokeThickness="0"
+                 MouseDown="Rectangle_MouseDown"
+                 MouseMove="Rectangle_MouseMove"
+                 MouseUp="Rectangle_MouseUp">
+        <Rectangle.Fill>
+          <ImageBrush ImageSource="/Resimler/DizilimYap/dikey_kutu.png"/>
+        </Rectangle.Fill>
+      </Rectangle>
+
+      <!-- Rectangle: Sürüklenebilir öğe -->
+      <Rectangle Name="draggableRectangle2" Width="100" Height="150" Canvas.Left="150" Canvas.Top="200"
+                 Stroke="Transparent" StrokeThickness="0"
+                 MouseDown="Rectangle_MouseDown"
+                 MouseMove="Rectangle_MouseMove"
+                 MouseUp="Rectangle_MouseUp">
+        <Rectangle.Fill>
+          <ImageBrush ImageSource="/Resimler/DizilimYap/dikey_kutu.png"/>
+        </Rectangle.Fill>
+      </Rectangle>
+
+      <!-- Rectangle: Sürüklenebilir öğe -->
+      <Rectangle Name="draggableRectangle3" Width="100" Height="150" Canvas.Left="300" Canvas.Top="200"
+                 Stroke="Transparent" StrokeThickness="0"
+                 MouseDown="Rectangle_MouseDown"
+                 MouseMove="Rectangle_MouseMove"
+                 MouseUp="Rectangle_MouseUp">
+        <Rectangle.Fill>
+          <ImageBrush ImageSource="/Resimler/DizilimYap/dikey_kutu.png"/>
+        </Rectangle.Fill>
+      </Rectangle>
+
+    </Canvas>
+  </Grid>
+</Window>

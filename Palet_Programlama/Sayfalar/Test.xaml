@@ -1,0 +1,21 @@
+﻿<Window x:Class="Palet_Programlama.Sayfalar.Test"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Palet_Programlama.Sayfalar"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="Test" Height="1536" Width="2732">
+    <Grid>
+    <Canvas Width="1200" Height="800">
+
+
+
+      <Canvas.Background>
+        <ImageBrush ImageSource="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
+      </Canvas.Background>
+    </Canvas>
+
+  </Grid>
+</Window>

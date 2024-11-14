@@ -502,13 +502,17 @@
             </StackPanel>
           </Grid>
 
+          <!--Palet Başlangıç-->
           <Canvas Grid.Column="1" Grid.Row="1" Name="myCanvas" Width="600" Height="400">
             <Canvas.Background>
               <ImageBrush ImageSource="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
             </Canvas.Background>
 
             <!-- Rectangle: Sürüklenebilir öğe -->
-            <Rectangle Name="draggableRectangle" Width="100" Height="150"
+            <Rectangle Name="draggableRectangle" 
+              Width="100" 
+              Height="150"
+              Canvas.Left="0" Canvas.Top="0"
               Stroke="Transparent" StrokeThickness="0"
               MouseDown="Rectangle_MouseDown"
               MouseMove="Rectangle_MouseMove"
@@ -519,7 +523,23 @@
             </Rectangle>
 
             <!-- Rectangle: Sürüklenebilir öğe -->
-            <Rectangle Name="draggableRectangle1" Width="100" Height="150" Canvas.Left="210"
+            <Rectangle Name="draggableRectangle1" 
+              Width="100" 
+              Height="150" 
+             Canvas.Left="210" Canvas.Top="0"
+                Stroke="Transparent" StrokeThickness="0"
+                MouseDown="Rectangle_MouseDown"
+                MouseMove="Rectangle_MouseMove"
+                MouseUp="Rectangle_MouseUp">
+              <Rectangle.Fill>
+                <ImageBrush ImageSource="/Resimler/DizilimYap/dikey_kutu.png"/>
+              </Rectangle.Fill>
+            </Rectangle>
+
+            <!-- Rectangle: Sürüklenebilir öğe -->
+            <Rectangle Name="draggableRectangle2" Width="100" Height="150"
+            Canvas.Left="150" 
+            Canvas.Top="200"
               Stroke="Transparent" StrokeThickness="0"
               MouseDown="Rectangle_MouseDown"
               MouseMove="Rectangle_MouseMove"
@@ -530,18 +550,9 @@
             </Rectangle>
 
             <!-- Rectangle: Sürüklenebilir öğe -->
-            <Rectangle Name="draggableRectangle2" Width="100" Height="150" Canvas.Left="150" Canvas.Top="200"
-              Stroke="Transparent" StrokeThickness="0"
-              MouseDown="Rectangle_MouseDown"
-              MouseMove="Rectangle_MouseMove"
-              MouseUp="Rectangle_MouseUp">
-              <Rectangle.Fill>
-                <ImageBrush ImageSource="/Resimler/DizilimYap/dikey_kutu.png"/>
-              </Rectangle.Fill>
-            </Rectangle>
-
-            <!-- Rectangle: Sürüklenebilir öğe -->
-            <Rectangle Name="draggableRectangle3" Width="100" Height="150" Canvas.Left="300" Canvas.Top="200"
+            <Rectangle Name="draggableRectangle3" Width="100" Height="150" 
+            Canvas.Left="300" 
+            Canvas.Top="200"
               Stroke="Transparent" StrokeThickness="0"
               MouseDown="Rectangle_MouseDown"
               MouseMove="Rectangle_MouseMove"
@@ -552,6 +563,7 @@
             </Rectangle>
 
           </Canvas>
+          <!--Palet Bitiş-->
 
         </Grid>
       </Border>

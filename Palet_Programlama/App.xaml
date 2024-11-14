@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:Palet_Programlama.Sınıflar"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Stiller/UrunEkle_style.xaml" />

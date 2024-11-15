@@ -1,96 +1,102 @@
 {
-    "Anasayfa": {
-        "textblokurun": "Ürün/Palet",
-        "textblokurun2": "Ekle",
-        "dizilim1": "Dizilim",
-        "dizilim2": "Oluştur",
-        "hiz1": "Hızları",
-        "hiz2": "Düzenle",
-        "gruplama1": "Gruplama",
-        "gruplama2": "Oluştur",
-        "program": "Programlar",
-        "Alarm": "Alarmlar",
-        "izleme": "İzleme",
-        "Komut": "Komutlar",
-        "buttonC": "Devam",
-        "userborder1": "Hesap\nDeğiştir",
-        "userborder2": "Çıkış"
-    },
-    "UrunEkle": {
-        "onizle": "Ön İzleme",
-        "urunblg": "Ürün Bilgileri",
-        "paletblg": "Palet Bilgileri",
-        "urunad": "Ürün Adı",
-        "paletad": "Palet Adı",
-        "urunadgir": "Ürün Adı Giriniz...",
-        "paletadgir": "Palet Adı Giriniz...",
-        "genislik": "Genişlik/En (mm)",
-        "urungenislikgir": "Ürün En Giriniz...",
-        "paletgenislikgir": "Palet En Giriniz...",
-        "uzunluk": "Uzunluk/Boy (mm)",
-        "urunuzunlukgir": "Ürün Boy Giriniz...",
-        "paletuzunlukgir": "Palet Boy Giriniz...",
-        "yukseklik": "Yükseklik (mm)",
-        "urunyukseklikgir": "Ürün Yükseklik Giriniz...",
-        "paletyukseklikgir": "Palet Yükseklik Giriniz...",
-        "agirlik": "Ağırık (kg)",
-        "urunagirlikgir": "Ürün Ağırlık Giriniz...",
-        "basinc": "Basınç (bar)",
-        "urunbasincgir": "Ürün Basınç Giriniz...",
-        "urunlist": "Ürün Listesi",
-        "paletlist": "Palet Listesi",
-        "uruneklebtn": "Ürün Ekle",
-        "urunduzenlebtn": "Ürün Düzenle",
-        "urunsilbtn": "Ürün Sil",
-        "preview1": "Genişlik",
-        "preview2": "Uzunluk",
-        "preview3": "Yükseklik"
-    },
-    "UserControl": {
-        "urunekle": "Ürün/Palet Ekle",
-        "dizilimekle": "Dizilim Oluştur",
-        "hizayar": "Hız Ayarları",
-        "grupekle": "Gruplama Oluştur",
-        "program": "Programlar",
-        "alarm": "Alarmlar",
-        "izle": "İzleme",
-        "komut": "Komutlar"
-    },
-    "MesajKutusu": {
-        "uyari": "Uyarı Ekranı",
-        "mesaj": "Ürün Eklenmesinde Bir Problem Yaşandı! Lütfen Tekrar Deneyiniz",
-        "btncon1": "Tamam"
-    },
-    "global": {
-      "btnkaydet": "Kaydet",
-      "btnsil": "Sil"
-    },
-    "Hiz": {
-        "v1": "Konum 1",
-        "v2": "Konum 2",
-        "v3": "Konum 3",
-        "v4": "Konum 4",
-        "v5": "Konum 5",
-        "v6": "Konum 6",
-        "v7": "Konum 7",
-        "v8": "Konum 8",
-        "v9": "Konum 9",
-        "v10": "Konum 10",
-        "v11": "Konum 11"
-    },
-    "DizilimYap": {
-        "urunozellik": "Ürün Özellikleri:  ",
-        "paletozellik": "Palet Özellikleri:  ",
-        "kopyala": "Kopyala  ",
-        "yapistir": "Yapıştır  ",
-        "urunadet": "Ürün Adedi: 0",
-        "kopyalabtn": "Kopyala",
-        "btnKatTemizle": "Bu Katı Temizle",
-        "btnDizilimiKaydet": "Dizilimi Kaydet",
-        "btnPaletTemizle": "Paleti Temizle",
-        "btnSeciliUrunuSil": "Seçili Ürünü Sil",
-        "katkopyala": "Kat Kopyala",
-        "pozsecimi": "Pozisyon Seçimi",
+  "Anasayfa": {
+    "textblokurun": "Ürün/Palet",
+    "textblokurun2": "Ekle",
+    "dizilim1": "Dizilim",
+    "dizilim2": "Oluştur",
+    "hiz1": "Hızları",
+    "hiz2": "Düzenle",
+    "gruplama1": "Gruplama",
+    "gruplama2": "Oluştur",
+    "program": "Programlar",
+    "Alarm": "Alarmlar",
+    "izleme": "İzleme",
+    "Komut": "Komutlar",
+    "buttonC": "Devam",
+    "userborder1": "Hesap\nDeğiştir",
+    "userborder2": "Çıkış"
+  },
+  "UrunEkle": {
+    "onizle": "Ön İzleme",
+    "urunblg": "Ürün Bilgileri",
+    "paletblg": "Palet Bilgileri",
+    "urunad": "Ürün Adı",
+    "paletad": "Palet Adı",
+    "urunadgir": "Ürün Adı Giriniz...",
+    "paletadgir": "Palet Adı Giriniz...",
+    "genislik": "Genişlik/En (mm)",
+    "urungenislikgir": "Ürün En Giriniz...",
+    "paletgenislikgir": "Palet En Giriniz...",
+    "uzunluk": "Uzunluk/Boy (mm)",
+    "urunuzunlukgir": "Ürün Boy Giriniz...",
+    "paletuzunlukgir": "Palet Boy Giriniz...",
+    "yukseklik": "Yükseklik (mm)",
+    "urunyukseklikgir": "Ürün Yükseklik Giriniz...",
+    "paletyukseklikgir": "Palet Yükseklik Giriniz...",
+    "agirlik": "Ağırık (kg)",
+    "urunagirlikgir": "Ürün Ağırlık Giriniz...",
+    "basinc": "Basınç (bar)",
+    "urunbasincgir": "Ürün Basınç Giriniz...",
+    "urunlist": "Ürün Listesi",
+    "paletlist": "Palet Listesi",
+    "uruneklebtn": "Ürün Ekle",
+    "urunduzenlebtn": "Ürün Düzenle",
+    "urunsilbtn": "Ürün Sil",
+    "paleteklebtn": "Palet Ekle",
+    "paletduzenlebtn": "Palet Düzenle",
+    "paletsilbtn": "Palet Sil",
+    "preview1": "Genişlik",
+    "preview2": "Uzunluk",
+    "preview3": "Yükseklik",
+    "preview4": "Ağırlık",
+    "preview5": "Basınç"
+
+  },
+  "UserControl": {
+    "urunekle": "Ürün/Palet Ekle",
+    "dizilimekle": "Dizilim Oluştur",
+    "hizayar": "Hız Ayarları",
+    "grupekle": "Gruplama Oluştur",
+    "program": "Programlar",
+    "alarm": "Alarmlar",
+    "izle": "İzleme",
+    "komut": "Komutlar"
+  },
+  "MesajKutusu": {
+    "uyari": "Uyarı Ekranı",
+    "mesaj": "Ürün Eklenmesinde Bir Problem Yaşandı! Lütfen Tekrar Deneyiniz",
+    "btncon1": "Tamam"
+  },
+  "global": {
+    "btnkaydet": "Kaydet",
+    "btnsil": "Sil"
+  },
+  "Hiz": {
+    "v1": "Konum 1",
+    "v2": "Konum 2",
+    "v3": "Konum 3",
+    "v4": "Konum 4",
+    "v5": "Konum 5",
+    "v6": "Konum 6",
+    "v7": "Konum 7",
+    "v8": "Konum 8",
+    "v9": "Konum 9",
+    "v10": "Konum 10",
+    "v11": "Konum 11"
+  },
+  "DizilimYap": {
+    "urunozellik": "Ürün Özellikleri:  ",
+    "paletozellik": "Palet Özellikleri:  ",
+    "kopyala": "Kopyala  ",
+    "yapistir": "Yapıştır  ",
+    "urunadet": "Ürün Adedi: 0",
+    "kopyalabtn": "Kopyala",
+    "btnKatTemizle": "Bu Katı Temizle",
+    "btnDizilimiKaydet": "Dizilimi Kaydet",
+    "btnPaletTemizle": "Paleti Temizle",
+    "btnSeciliUrunuSil": "Seçili Ürünü Sil",
+    "katkopyala": "Kat Kopyala",
+    "pozsecimi": "Pozisyon Seçimi",
 
     "txtAynalama": "Aynalama (KAPALI)",
     "txtXeksen": "X Ekseni",
@@ -110,41 +116,58 @@
 
 
 
-    },
+  },
 
-    "GruplamaYap": {
-        "txtEn": "En: ",
-        "txtBoy": "Boy: ",
-        "txtYukseklik": "Yükseklik: ",
-        "txtAgirlik": "Ağırlık: ",
-        "txtGruplandirma": "Gruplandırma",
-        "txtUrunSecimi": "Ürün Seçimi",
-        "txtDizilimSecimi": "Dizilim Seçimi",
-        "txtGruplamaSecimi": "Gruplama Seçimi",
-        "txtKatNo": "Kat No: ",
-        "txtGrupNo": "Grup No: ",
-        "btnAyarlar": "Ayarlar",
-        "btnAyir": "Ayır",
-        "btnBirlestir": "Birleştir",
-        "btnKaydet": "Kaydet",
-        "btnGruplariTemizle": "Grupları Temizle",
-        "btnManuelDiz": "Manuel Diz",
-        "btnDizilimListesi": "DizilimListesi"
-
-
-
-        
+  "GruplamaYap": {
+    "txtEn": "En: ",
+    "txtBoy": "Boy: ",
+    "txtYukseklik": "Yükseklik: ",
+    "txtAgirlik": "Ağırlık: ",
+    "txtGruplandirma": "Gruplandırma",
+    "txtUrunSecimi": "Ürün Seçimi",
+    "txtDizilimSecimi": "Dizilim Seçimi",
+    "txtGruplamaSecimi": "Gruplama Seçimi",
+    "txtKatNo": "Kat No: ",
+    "txtGrupNo": "Grup No: ",
+    "btnAyarlar": "Ayarlar",
+    "btnAyir": "Ayır",
+    "btnBirlestir": "Birleştir",
+    "btnKaydet": "Kaydet",
+    "btnGruplariTemizle": "Grupları Temizle",
+    "btnManuelDiz": "Manuel Diz",
+    "btnDizilimListesi": "DizilimListesi"
 
 
-    
+
+
+
+
+
   },
   "Program": {
     "btnrecededuzen": "Reçete Düzenle",
     "btnCalistir": "Çalıştır",
     "not": "Program Notu:",
     "listtext": "Mevcut Program Listesi"
-    
 
+
+  },
+  "HataMesajlari": {
+    "urunadbos": "Ürün Adı Boş Bırakılamaz",
+    "urunenbos": "Ürün Genişlik Boş Bırakılamaz",
+    "urunboybos": "Ürün Uzunluk Boş Bırakılamaz",
+    "urunyukseklikbos": "Ürün Yükseklik Boş Bırakılamaz",
+    "urunagirlikbos": "Ürün Ağırlık Boş Bırakılamaz",
+    "urunbasincbos": "Ürün Basınç Boş Bırakılamaz",
+    "paletadbos": "Palet Adı Boş Bırakılamaz",
+    "paletenbos": "Palet Genişlik Boş Bırakılamaz",
+    "paletboybos": "Palet Uzunluk Boş Bırakılamaz",
+    "paletyukseklikbos": "Palet Yükseklik Boş Bırakılamaz"
+
+  },
+  "ButtonKey": {
+
+    "btntamam": "Tamam"
   }
- 
+
 }

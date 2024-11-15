@@ -201,6 +201,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Data\Paletler.json" />
+    <None Include="Data\Urunler.json" />
     <None Include="DilPaketleri\eng.json" />
     <None Include="DilPaketleri\tr.json" />
     <None Include="packages.config" />
@@ -314,15 +316,19 @@
     <Resource Include="Resimler\Hiz\buble_referance.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\UrunEkle\boy-preview.png" />
-    <Resource Include="Resimler\UrunEkle\en-preview.png" />
-    <Resource Include="Resimler\UrunEkle\yukseklik-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resimler\UserControlUstMenu\ileri_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
+    <Resource Include="Resimler\UrunEkle\boy-koli.png" />
+    <Resource Include="Resimler\UrunEkle\boy-pallet.png" />
+    <Resource Include="Resimler\UrunEkle\en-koli.png" />
+    <Resource Include="Resimler\UrunEkle\en-pallet.png" />
+    <Resource Include="Resimler\UrunEkle\yukseklik-koli.png" />
+    <Resource Include="Resimler\UrunEkle\yukseklik-pallet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\UrunEkle\koli-agirlik.png" />
+    <Resource Include="Resimler\UrunEkle\koli-basinc.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

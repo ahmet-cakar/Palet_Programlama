@@ -71,9 +71,14 @@
     "uruneklebtn": "Add Product",
     "urunduzenlebtn": "Edit Product",
     "urunsilbtn": "Product Delete",
+    "paleteklebtn": "Add Pallet",
+    "paletduzenlebtn": "Edit Pallet",
+    "paletsilbtn": "Pallet Delete",
     "preview1": "Width",
     "preview2": "Length",
-    "preview3": "Height"
+    "preview3": "Height",
+    "preview4": "Weight",
+    "preview5": "Pressure"
   },
   "UserControl": {
     "urunekle": "Add Product/Pallet",
@@ -114,26 +119,43 @@
     "not": "Program Grade:",
     "listtext": "Available Program List"
   },
-   
-    "GruplamaYap": {
-        "txtEn": "Width: ",
-        "txtBoy": "Length: ",
-        "txtYukseklik": "Height: ",
-        "txtAgirlik": "Weight: ",
-        "txtGruplandirma": "Grouping",
-        "txtUrunSecimi": "Product Selection",
-        "txtDizilimSecimi": "Sequence Selection",
-        "txtGruplamaSecimi": "Grouping Selection",
-        "txtKatNo": "Floor No: ",
-        "txtGrupNo": "Group No: ",
-        "btnAyarlar": "Settings",
-        "btnAyir": "Separate",
-        "btnBirlestir": "Merge",
-        "btnKaydet": "Save",
-        "btnGruplariTemizle": "Clear Groups",
-        "btnManuelDiz": "Manual Sequence",
-        "btnDizilimListesi": "Sequence List"
-    }
+
+  "GruplamaYap": {
+    "txtEn": "Width: ",
+    "txtBoy": "Length: ",
+    "txtYukseklik": "Height: ",
+    "txtAgirlik": "Weight: ",
+    "txtGruplandirma": "Grouping",
+    "txtUrunSecimi": "Product Selection",
+    "txtDizilimSecimi": "Sequence Selection",
+    "txtGruplamaSecimi": "Grouping Selection",
+    "txtKatNo": "Floor No: ",
+    "txtGrupNo": "Group No: ",
+    "btnAyarlar": "Settings",
+    "btnAyir": "Separate",
+    "btnBirlestir": "Merge",
+    "btnKaydet": "Save",
+    "btnGruplariTemizle": "Clear Groups",
+    "btnManuelDiz": "Manual Sequence",
+    "btnDizilimListesi": "Sequence List"
+  },
+  "HataMesajlari": {
+    "urunadbos": "Product Name Cannot Be Left Blank!",
+    "urunenbos": "Product Width Cannot Be Left Blank!",
+    "urunboybos": "Product Length Cannot Be Left Blank!",
+    "urunyukseklikbos": "Product Height Cannot Be Left Blank!",
+    "urunagirlikbos": "Product Weight Cannot Be Left Blank!",
+    "urunbasincbos": "Product Pressure Cannot Be Left Empty!",
+    "paletadbos": "Pallet Name Cannot Be Left Blank!",
+    "paletenbos": "Pallet Width Cannot Be Left Blank!",
+    "paletboybos": "Pallet Length Cannot Be Left Blank!",
+    "paletyukseklikbos": "Pallet Height Cannot Be Left Blank!"
+
+  },
+  "ButtonKey": {
+
+    "btntamam": "Ok"
+  }
 
 
 }

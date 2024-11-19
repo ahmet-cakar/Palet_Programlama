@@ -38,7 +38,7 @@
                     <Border Background="#191919" CornerRadius="10" Width="1100" Height="250" HorizontalAlignment="Left"
                     Margin="40,20,0,0" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Width="150" x:Name="priviewtextblock" Text="Yükseklik" Foreground="White" FontSize="22" FontFamily="Roboto" 
+                            <TextBlock Width="150" x:Name="priviewtextblock" Text="" Foreground="White" FontSize="22" FontFamily="Roboto" 
                             Margin="20,0,0,20" VerticalAlignment="Bottom" Opacity="1" />
                             <Image x:Name="onizleımage"  Width="250" Margin="280,0,0,0"></Image>
                            
@@ -108,7 +108,7 @@
                                     <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
                                     Margin="20,30,0,0" Content="{Binding Source='UrunEkle.urunduzenlebtn',Converter={StaticResource LanguageConverter}}"/>
                                     <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
-                                    Margin="20,30,0,0" Content="{Binding Source='UrunEkle.urunsilbtn',Converter={StaticResource LanguageConverter}}"/>
+                                    Margin="20,30,0,0" Content="{Binding Source='UrunEkle.urunsilbtn',Converter={StaticResource LanguageConverter}}" Click="UrunSilBtn_Click"/>
                                 </StackPanel>
 
                             </StackPanel>
@@ -150,11 +150,11 @@
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                                     <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_backgroundgreen}"
-                                    Margin="0,170,0,0" Content="{Binding Source='UrunEkle.uruneklebtn',Converter={StaticResource LanguageConverter}}"/>
+                                    Margin="0,170,0,0" Content="{Binding Source='UrunEkle.paleteklebtn',Converter={StaticResource LanguageConverter}}" Click="PaletEkleBtn_Click"/>
                                     <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
-                                    Margin="20,170,0,0" Content="{Binding Source='UrunEkle.urunduzenlebtn',Converter={StaticResource LanguageConverter}}"/>
+                                    Margin="20,170,0,0" Content="{Binding Source='UrunEkle.paletduzenlebtn',Converter={StaticResource LanguageConverter}}" Click="PaletDuzenleBtn_Click"/>
                                     <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
-                                 Margin="20,170,0,0" Content="{Binding Source='UrunEkle.urunsilbtn',Converter={StaticResource LanguageConverter}}"/>
+                                 Margin="20,170,0,0" Content="{Binding Source='UrunEkle.paletsilbtn',Converter={StaticResource LanguageConverter}}" Click="PaletSilBtn_Click"/>
                                 </StackPanel>
                             </StackPanel>
                         </Border>
@@ -172,15 +172,12 @@
 
                 <StackPanel Orientation="Horizontal" Panel.ZIndex="6">
                     <!--Ürün Listesi Listbox-->
-                    <ListBox Style="{StaticResource listbox_template_urunekle}" Panel.ZIndex="5">
-                        <ListBoxItem Content="X Ürünü"/>
-                        <ListBoxItem Content="Y Ürünü"/>
-                        <ListBoxItem Content="Z Ürünü"/>
+                    <ListBox Style="{StaticResource listbox_template_urunekle}" Panel.ZIndex="5" x:Name="urunlistbox" SelectionChanged="UrunList_SelectedItem">
+                       
                     </ListBox>
                     <!--Palet Listesi Listbox-->
-                    <ListBox Style="{StaticResource listbox_template_urunekle}" Panel.ZIndex="5">
-                        <ListBoxItem Content="800*1200 Palet"/>
-                        <ListBoxItem Content="1000*1200 Palet"/>
+                    <ListBox Style="{StaticResource listbox_template_urunekle}" Panel.ZIndex="5" x:Name="paletlistbox" SelectionChanged="PaletList_SelectedItem">
+                        
                     </ListBox>
                 </StackPanel>
             </Grid>

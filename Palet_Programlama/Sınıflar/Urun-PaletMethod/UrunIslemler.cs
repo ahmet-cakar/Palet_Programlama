@@ -45,6 +45,10 @@ namespace Palet_Programlama.Sınıflar
         {
             return DosyaOku();
         }
+        public void UrunListesiKaydet(List<Urun>UrunListesi)
+        {
+            DosyaYaz(UrunListesi);
+        }
 
         private List<Urun> DosyaOku()
         {

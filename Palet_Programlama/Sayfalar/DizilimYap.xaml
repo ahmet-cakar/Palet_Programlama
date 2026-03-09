@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Palet_Programlama.Sayfalar"
       xmlns:sınıflar="clr-namespace:Palet_Programlama.Sınıflar"
       mc:Ignorable="d" 
-      d:DesignHeight="768" d:DesignWidth="1366"
+      d:DesignHeight="868" d:DesignWidth="1809.135"
       Title="Dizilim_Yap">
   <Page.Resources>
     <sınıflar:LanguageConverter  x:Key="LanguageConverter" />
@@ -35,7 +35,7 @@
 
         </Grid.ColumnDefinitions>
         <!-- Aynalama  ve x y checkbox alanı başlangıç -->
-        <Border CornerRadius="15" Grid.Column="0" Margin="50,20,10,0"  Background="#191919">
+        <Border CornerRadius="15" Grid.Column="0" Margin="50,20,10,0"  Background="#191919" Visibility="Hidden">
           <Grid>
             <Grid.ColumnDefinitions>
               <ColumnDefinition Width="1.5*"/>
@@ -175,7 +175,7 @@
                 </Button>
 
                 <TextBlock FontSize="24" VerticalAlignment="Center" Width="35" Height="35" 
-                                     Foreground="White" Text="17">
+                                     Foreground="White" Text="1">
                 </TextBlock>
 
                 <Button Margin="15,0,60,0" Width="30" Height="25" Style="{StaticResource transparan_button}">
@@ -204,7 +204,7 @@
                 </Button>
 
                 <TextBlock VerticalAlignment="Center" FontSize="24" Width="35" 
-                                     Foreground="White" Text="17">
+                                     Foreground="White" Text="1">
                 </TextBlock>
 
                 <Button Margin="15,0,50,0" Width="30" Height="25" Style="{StaticResource transparan_button}">
@@ -283,7 +283,7 @@
                   Width="150"
                   Height="100"
                               Stroke="Transparent" StrokeThickness="0"
-                             >    
+                             >
                     <Rectangle.Fill>
                       <ImageBrush ImageSource="/Resimler/DizilimYap/yatay_kutu.png"/>
                     </Rectangle.Fill>
@@ -323,20 +323,20 @@
                   <TextBlock Margin="0,20,0,0" VerticalAlignment="Center" 
                                        Foreground="White"
                                        FontSize="24"
-                                       Text="{Binding Source='DizilimYap.txtCokluEkleMod',Converter={StaticResource LanguageConverter}}"></TextBlock>
+                                       Text="{Binding Source='DizilimYap.txtCokluEkleMod',Converter={StaticResource LanguageConverter}}"/>
 
                   <TextBlock VerticalAlignment="Center" Margin="0,30,0,0"
                                        Foreground="White"
                                        FontSize="24"
-                                       Text="{Binding Source='DizilimYap.txtHizalamaMod',Converter={StaticResource LanguageConverter}}"></TextBlock>
+                                       Text="{Binding Source='DizilimYap.txtHizalamaMod',Converter={StaticResource LanguageConverter}}" Visibility="Hidden"></TextBlock>
 
-                  <TextBlock VerticalAlignment="Center" Margin="0,30,0,0"
+                  <TextBlock VerticalAlignment="Center" Margin="0,30,0,0" Visibility="Hidden"
                                      Foreground="White"
                                      FontSize="24"
                                      Text="{Binding Source='DizilimYap.txtPaletTasimaMod',Converter={StaticResource LanguageConverter}}"></TextBlock>
 
 
-                  <TextBlock VerticalAlignment="Center" Margin="0,30,0,0"
+                  <TextBlock VerticalAlignment="Center" Margin="0,30,0,0" Visibility="Hidden"
                                       Foreground="White"
                                       FontSize="24"
                                       Text="{Binding Source='DizilimYap.txtKatTasimaMod',Converter={StaticResource LanguageConverter}}"></TextBlock>
@@ -344,10 +344,10 @@
 
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Vertical" Margin="0,15,0,0" >
-                  <CheckBox Margin="0,20,0,0"  Style="{StaticResource checkbox_siyah_mod}" ></CheckBox>
-                  <CheckBox Margin="0,30,0,0"  Style="{StaticResource checkbox_siyah_mod}" ></CheckBox>
-                  <CheckBox Margin="0,30,0,0"  Style="{StaticResource checkbox_siyah_mod}" ></CheckBox>
-                  <CheckBox Margin="0,30,0,0"  Style="{StaticResource checkbox_siyah_mod}" ></CheckBox>
+                  <CheckBox Margin="0,20,0,0"  Style="{StaticResource checkbox_siyah_mod}"  ></CheckBox>
+                  <CheckBox Margin="0,30,0,0"  Style="{StaticResource checkbox_siyah_mod}" Visibility="Hidden"></CheckBox>
+                  <CheckBox Margin="0,30,0,0"  Style="{StaticResource checkbox_siyah_mod}" Visibility="Hidden"></CheckBox>
+                  <CheckBox Margin="0,30,0,0"  Style="{StaticResource checkbox_siyah_mod}" Visibility="Hidden"></CheckBox>
 
 
 
@@ -503,38 +503,10 @@
           </Grid>
 
           <!--Palet Başlangıç-->
-          <Canvas Grid.Column="1" Grid.Row="1" Name="myCanvas" Width="600" Height="400">
+          <Canvas Grid.Column="1" Grid.Row="1" MouseLeftButtonDown="myCanvas_MouseLeftButtonDown"  Name="myCanvas" Width="600" Height="400" >
             <Canvas.Background>
               <ImageBrush ImageSource="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
             </Canvas.Background>
-
-            <!-- Rectangle: Sürüklenebilir öğe -->
-            <Rectangle Name="draggableRectangle" 
-              Width="100" 
-              Height="150"
-              Canvas.Left="0" Canvas.Top="0"
-              Stroke="Transparent" StrokeThickness="0"
-              MouseDown="Rectangle_MouseDown"
-              MouseMove="Rectangle_MouseMove"
-              MouseUp="Rectangle_MouseUp">
-              <Rectangle.Fill>
-                <ImageBrush ImageSource="/Resimler/DizilimYap/dikey_kutu.png"/>
-              </Rectangle.Fill>
-            </Rectangle>
-
-            <!-- Rectangle: Sürüklenebilir öğe -->
-            <Rectangle Name="draggableRectangle1" 
-              Width="100" 
-              Height="150" 
-             Canvas.Left="210" Canvas.Top="0"
-                Stroke="Transparent" StrokeThickness="0"
-                MouseDown="Rectangle_MouseDown"
-                MouseMove="Rectangle_MouseMove"
-                MouseUp="Rectangle_MouseUp">
-              <Rectangle.Fill>
-                <ImageBrush ImageSource="/Resimler/DizilimYap/dikey_kutu.png"/>
-              </Rectangle.Fill>
-            </Rectangle>
 
             <!-- Rectangle: Sürüklenebilir öğe -->
             <Rectangle Name="draggableRectangle2" Width="100" Height="150"
@@ -549,18 +521,7 @@
               </Rectangle.Fill>
             </Rectangle>
 
-            <!-- Rectangle: Sürüklenebilir öğe -->
-            <Rectangle Name="draggableRectangle3" Width="100" Height="150" 
-            Canvas.Left="300" 
-            Canvas.Top="200"
-              Stroke="Transparent" StrokeThickness="0"
-              MouseDown="Rectangle_MouseDown"
-              MouseMove="Rectangle_MouseMove"
-              MouseUp="Rectangle_MouseUp">
-              <Rectangle.Fill>
-                <ImageBrush ImageSource="/Resimler/DizilimYap/dikey_kutu.png"/>
-              </Rectangle.Fill>
-            </Rectangle>
+          
 
           </Canvas>
           <!--Palet Bitiş-->
@@ -590,19 +551,19 @@
           <StackPanel Grid.Row="1" Orientation="Vertical">
             <Button Margin="0,80,0,0" Style="{StaticResource transparan_button}" x:Name="AnasayfaBtn">
               <StackPanel>
-                <Image 
+                <Image x:Name="btnKatArti" MouseDown="btnKatArti_MouseDown"
                                   MaxHeight="50"
                                   MaxWidth="50"
                                   Source="pack://application:,,,/Resimler/DizilimYap/yukari_icon.png"/>
               </StackPanel>
             </Button>
-            <TextBlock Margin="0,20,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"
+            <TextBlock x:Name="txtKat" Margin="0,20,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"
                         Foreground="White"
                         FontSize="30"
                         Text="1"></TextBlock>
             <Button Margin="0,20,0,0" Style="{StaticResource transparan_button}" >
               <StackPanel>
-                <Image 
+                <Image x:Name="btnKatEksi" MouseDown="btnKatEksi_MouseDown"
                            MaxHeight="50"
                            MaxWidth="50"
                            Source="pack://application:,,,/Resimler/DizilimYap/asagi_icon.png"/>

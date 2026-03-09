@@ -14,6 +14,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -70,6 +72,10 @@
     <Compile Include="Sayfalar\ReceteDuzenle.xaml.cs">
       <DependentUpon>ReceteDuzenle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modeller\KatUrunu.cs" />
+    <Compile Include="Servisler\Palet\KatYoneticisi.cs" />
+    <Compile Include="Servisler\Palet\MesafeGostergesi.cs" />
+    <Compile Include="Servisler\Palet\YerlesimMotoru.cs" />
     <Compile Include="Sınıflar\DosyaYoluBul.cs" />
     <Compile Include="Sınıflar\LanguageConverter.cs" />
     <Compile Include="Sınıflar\KullaniciDil.cs" />
@@ -337,5 +343,6 @@
     <Resource Include="Resimler\UrunEkle\koli-agirlik.png" />
     <Resource Include="Resimler\UrunEkle\koli-basinc.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

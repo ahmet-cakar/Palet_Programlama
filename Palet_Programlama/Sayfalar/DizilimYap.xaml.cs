@@ -20,97 +20,65 @@ namespace Palet_Programlama.Sayfalar
     /// </summary>
     public partial class DizilimYap : Page
     {
+
+        private readonly Servisler.Palet.YerlesimMotoru _motor = new();
+        private readonly Servisler.Palet.MesafeGostergesi _mesafe = new();
+        private readonly Servisler.Palet.KatYoneticisi _katYonetici = new();
+
+
+
+        private enum EklemeYon { Dikey, Yatay }
+        private EklemeYon? _eklemeYon = null;
+
+        // Ürün ölçüsü (Canvas pixel) — şimdilik senin dikey kutu: 100x150
+        private const double UrunW_Dikey = 100;
+        private const double UrunH_Dikey = 150;
         private Point ilkTiklamaPozisyonu;
         private bool suruklemeBasladi = false;
         private const double suruklemeEsigi = 1.0;
         private bool surukleniyor = false;
         private Point tiklamaOffset;
-        private Rectangle sonSecilmisKutu=new Rectangle();//palet içindeki son seçilmiş kolinin seçimini kaldırmak için yazdık
-
+        private Rectangle sonSecilmisKutu = new Rectangle();//palet içindeki son seçilmiş kolinin seçimini kaldırmak için yazdık
+        private List<Rect> DigerKutular(Rectangle hareketEden) =>
+        myCanvas.Children.OfType<Rectangle>()
+            .Where(r => r != hareketEden)
+            .Select(GetRect)
+        .ToList();
         Rectangle suruklenenKutu; // Hareket ettirilen Rectangle
-        List<Rect> digerKutular = new List<Rect>(); // Diğer Rectangle'ların kapladığı alanları saklayan liste
-
-        // Mesafe göstergesi için çizgileri ve etiketleri tanımla
-        Line solCizgi = new Line { Stroke = Brushes.Magenta, StrokeThickness = 3 };
-        Line sagCizgi = new Line { Stroke = Brushes.Magenta, StrokeThickness = 3 };
-        Line ustCizgi = new Line { Stroke = Brushes.Magenta, StrokeThickness = 3 };
-        Line altCizgi = new Line { Stroke = Brushes.Magenta, StrokeThickness = 3 };
-
-        TextBlock solMesafe = new TextBlock { Foreground = Brushes.Magenta, FontSize = 20 };
-        TextBlock sagMesafe = new TextBlock { Foreground = Brushes.Magenta, FontSize = 20 };
-        TextBlock ustMesafe = new TextBlock { Foreground = Brushes.Magenta, FontSize = 20 };
-        TextBlock altMesafe = new TextBlock { Foreground = Brushes.Magenta, FontSize = 20 };
         private Frame MainFrame;
 
         public DizilimYap(Frame Main)
         {
             InitializeComponent();
             this.MainFrame = Main;
-            paleteMesafeCizgileriEkle();
+            _mesafe.Baslat(myCanvas);
+            _motor.SnapEsigi = 3.0;
+            _motor.CakismaEpsilon = 0.5;
+            txtKat.Text = _katYonetici.AktifKat.ToString();
         }
 
-        private void paleteMesafeCizgileriEkle()
+        private Rect GetRect(Rectangle r)
         {
-            // Çizgileri ve metinleri Canvas'a ekle
+            double left = Canvas.GetLeft(r);
+            double top = Canvas.GetTop(r);
 
-            myCanvas.Children.Add(solCizgi);
-            myCanvas.Children.Add(sagCizgi);
-            myCanvas.Children.Add(ustCizgi);
-            myCanvas.Children.Add(altCizgi);
+            // Actual 0 ise Width/Height kullan
+            double w = (r.ActualWidth > 0) ? r.ActualWidth : r.Width;
+            double h = (r.ActualHeight > 0) ? r.ActualHeight : r.Height;
 
-            myCanvas.Children.Add(solMesafe);
-            myCanvas.Children.Add(sagMesafe);
-            myCanvas.Children.Add(ustMesafe);
-            myCanvas.Children.Add(altMesafe);
-        }
-        private void mesafeCizgileriniGizle()
-        {
-            solCizgi.Visibility = Visibility.Collapsed;
-            sagCizgi.Visibility = Visibility.Collapsed;
-            ustCizgi.Visibility = Visibility.Collapsed;
-            altCizgi.Visibility = Visibility.Collapsed;
+            if (double.IsNaN(left)) left = 0;
+            if (double.IsNaN(top)) top = 0;
 
-            solMesafe.Visibility = Visibility.Collapsed;
-            sagMesafe.Visibility = Visibility.Collapsed;
-            ustMesafe.Visibility = Visibility.Collapsed;
-            altMesafe.Visibility = Visibility.Collapsed;
-        }
-        private void mesafeCizgileriniGoster()
-        {
-            // Çizgileri ve etiketleri gizle
-            solCizgi.Visibility = Visibility.Visible;
-            sagCizgi.Visibility = Visibility.Visible;
-            ustCizgi.Visibility = Visibility.Visible;
-            altCizgi.Visibility = Visibility.Visible;
-
-            solMesafe.Visibility = Visibility.Visible;
-            sagMesafe.Visibility = Visibility.Visible;
-            ustMesafe.Visibility = Visibility.Visible;
-            altMesafe.Visibility = Visibility.Visible;
-        }
-        private List<Rect> paletIcindekiKutulariBul(Rectangle suruklenenKutu)
-        {
-            // Diğer Rectangle'ların kapladığı alanları hesapla ve listeye ekle
-            digerKutular.Clear();
-            foreach (var child in myCanvas.Children)
-            {
-                if (child is Rectangle otherRectangle && otherRectangle != suruklenenKutu)
-                {
-                    double otherLeft = Canvas.GetLeft(otherRectangle);
-                    double otherTop = Canvas.GetTop(otherRectangle);
-                    Rect otherRect = new Rect(otherLeft, otherTop, otherRectangle.ActualWidth, otherRectangle.ActualHeight);
-                    digerKutular.Add(otherRect);
-                }
-            }
-            return digerKutular;
+            return new Rect(left, top, w, h);
         }
 
+      
         // MouseDown olayında sürükleme başlat
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
             suruklenenKutu = (Rectangle)sender;
             
-            mesafeCizgileriniGoster();
+            _mesafe.Goster();
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 surukleniyor = true;
@@ -118,7 +86,7 @@ namespace Palet_Programlama.Sayfalar
                 ilkTiklamaPozisyonu = e.GetPosition(suruklenenKutu);
                 tiklamaOffset = e.GetPosition(suruklenenKutu);
                 suruklenenKutu.CaptureMouse();
-                digerKutular = paletIcindekiKutulariBul(suruklenenKutu);
+                var digerKutular = DigerKutular(suruklenenKutu);
             }
         }
 
@@ -139,123 +107,36 @@ namespace Palet_Programlama.Sayfalar
 
                 if (suruklemeBasladi)
                 {
+                    
+
+                    var movingNow = GetRect(suruklenenKutu);
+                    double w = movingNow.Width;
+                    double h = movingNow.Height;
+
+
                     sonSecilmisKutu.Stroke = Brushes.Transparent;
                     sonSecilmisKutu.StrokeThickness = 0;
                     var position = e.GetPosition(myCanvas);
 
-                    // Yeni X ve Y pozisyonlarını hesapla
-                    double newLeft = position.X - tiklamaOffset.X;
-                    double newTop = position.Y - tiklamaOffset.Y;
+                    // mouse offset ile hedef sol-üst
+                    var hedef = new Point(position.X - tiklamaOffset.X, position.Y - tiklamaOffset.Y);
 
-                    // Canvas sınırları içinde kalmasını sağla
-                    double canvasLeft = 0;
-                    double canvasTop = 0;
-                    double canvasRight = myCanvas.ActualWidth - suruklenenKutu.ActualWidth;
-                    double canvasBottom = myCanvas.ActualHeight - suruklenenKutu.ActualHeight;
+                    // diğer kutular
+                    var digerKutular = DigerKutular(suruklenenKutu);
 
-                    newLeft = Math.Max(canvasLeft, Math.Min(newLeft, canvasRight));
-                    newTop = Math.Max(canvasTop, Math.Min(newTop, canvasBottom));
-
-                    // Yeni pozisyonun Rectangle alanı
-                    Rect newMovingRect = new Rect(newLeft, newTop, suruklenenKutu.ActualWidth, suruklenenKutu.ActualHeight);
-
-                    // Diğer Rectangle'larla çarpışma kontrolü
-                    bool canMove = true;
-                    foreach (var otherRect in digerKutular)
+                    // motor hesaplasın
+                    if (_motor.TrySurukle(movingNow, hedef, myCanvas.ActualWidth, myCanvas.ActualHeight, digerKutular, out var sonuc))
                     {
-                        if (newMovingRect.IntersectsWith(otherRect))
-                        {
-                            // Çarpışmanın hangi eksende olduğunu belirlemek için yatay ve dikey mesafeleri hesapla
-                            double deltaX = Math.Min(Math.Abs(newLeft + suruklenenKutu.ActualWidth - otherRect.Left), Math.Abs(newLeft - otherRect.Right));
-                            double deltaY = Math.Min(Math.Abs(newTop + suruklenenKutu.ActualHeight - otherRect.Top), Math.Abs(newTop - otherRect.Bottom));
-
-                            if (deltaX < deltaY)
-                            {
-                                if (newLeft < otherRect.Left)
-                                {
-                                    if (otherRect.Left - suruklenenKutu.ActualWidth >= canvasLeft)
-                                    {
-                                        newLeft = otherRect.Left - suruklenenKutu.ActualWidth;
-                                    }
-                                    else
-                                    {
-                                        canMove = false;
-                                    }
-                                }
-                                else
-                                {
-                                    if (otherRect.Right <= canvasRight)
-                                    {
-                                        newLeft = otherRect.Right;
-                                    }
-                                    else
-                                    {
-                                        canMove = false;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                if (newTop < otherRect.Top)
-                                {
-                                    if (otherRect.Top - suruklenenKutu.ActualHeight >= canvasTop)
-                                    {
-                                        newTop = otherRect.Top - suruklenenKutu.ActualHeight;
-                                    }
-                                    else
-                                    {
-                                        canMove = false;
-                                    }
-                                }
-                                else
-                                {
-                                    if (otherRect.Bottom <= canvasBottom)
-                                    {
-                                        newTop = otherRect.Bottom;
-                                    }
-                                    else
-                                    {
-                                        canMove = false;
-                                    }
-                                }
-                            }
-
-                            Rect tempRect = new Rect(newLeft, newTop, suruklenenKutu.ActualWidth, suruklenenKutu.ActualHeight);
-                            foreach (var checkRect in digerKutular)
-                            {
-
-                                bool isIntersecting =
-                                tempRect.Left < checkRect.Right &&
-                                tempRect.Right > checkRect.Left &&
-                                tempRect.Top < checkRect.Bottom &&
-                                tempRect.Bottom > checkRect.Top &&
-                                // Kenarların yalnızca temas ettiği durumları hariç tutma
-                                !(tempRect.Right == checkRect.Left || tempRect.Left == checkRect.Right ||
-                                  tempRect.Bottom == checkRect.Top || tempRect.Top == checkRect.Bottom);
-
-
-                                if (isIntersecting && checkRect != otherRect)
-                                {
-
-
-                                    canMove = false;
-                                    break;
-                                }
-                            }
-
-                            if (!canMove) return;
-
-                            newMovingRect = new Rect(newLeft, newTop, suruklenenKutu.ActualWidth, suruklenenKutu.ActualHeight);
-                        }
+                        Canvas.SetLeft(suruklenenKutu, sonuc.Left);
+                        Canvas.SetTop(suruklenenKutu, sonuc.Top);
+                        _mesafe.Guncelle(sonuc, digerKutular);
+                    }
+                    else
+                    {
+                        // hareket yok ama mesafe göstergesi güncel kalsın
+                        _mesafe.Guncelle(movingNow, digerKutular);
                     }
 
-                    if (canMove)
-                    {
-                        Canvas.SetLeft(suruklenenKutu, newLeft);
-                        Canvas.SetTop(suruklenenKutu, newTop);
-                    }
-
-                    UpdateDistanceIndicators(newMovingRect);
                 }
             }
 
@@ -267,27 +148,28 @@ namespace Palet_Programlama.Sayfalar
         {
             if (suruklemeBasladi)
             {
-                mesafeCizgileriniGizle();
+                _mesafe.Gizle();
             }
             else
             {
+                if (suruklenenKutu == null) { return; }
                 
                 if (suruklenenKutu.StrokeThickness == 1)
                 {
                     suruklenenKutu.Stroke = Brushes.Transparent;
                     suruklenenKutu.StrokeThickness = 0;
-                    mesafeCizgileriniGizle();
+                    _mesafe.Gizle();
 
                 }
                 else
                 {
-                    
+                    var digerKutular = DigerKutular(suruklenenKutu);
                     sonSecilmisKutu.Stroke = Brushes.Transparent;
                     sonSecilmisKutu.StrokeThickness = 0;
                     suruklenenKutu.Stroke = Brushes.Red;
                     suruklenenKutu.StrokeThickness = 1;
-                    UpdateDistanceIndicators(new Rect(Canvas.GetLeft(suruklenenKutu), Canvas.GetTop(suruklenenKutu), suruklenenKutu.ActualWidth, suruklenenKutu.ActualHeight));
-                    mesafeCizgileriniGoster();
+                    _mesafe.Guncelle(GetRect(suruklenenKutu), digerKutular);
+                    _mesafe.Goster();
 
                 }
                 sonSecilmisKutu = suruklenenKutu;
@@ -298,78 +180,170 @@ namespace Palet_Programlama.Sayfalar
             suruklenenKutu.ReleaseMouseCapture();
 
 
-
-
-
         }
-        private void UpdateDistanceIndicators(Rect movingRect)
-        {
-            double leftDistance = movingRect.Left;
-            double rightDistance = myCanvas.ActualWidth - movingRect.Right;
-            double topDistance = movingRect.Top;
-            double bottomDistance = myCanvas.ActualHeight - movingRect.Bottom;
-
-            foreach (var otherRect in digerKutular)
-            {
-                if (movingRect.Left > otherRect.Right)
-                    leftDistance = Math.Min(leftDistance, movingRect.Left - otherRect.Right);
-                if (movingRect.Right < otherRect.Left)
-                    rightDistance = Math.Min(rightDistance, otherRect.Left - movingRect.Right);
-                if (movingRect.Top > otherRect.Bottom)
-                    topDistance = Math.Min(topDistance, movingRect.Top - otherRect.Bottom);
-                if (movingRect.Bottom < otherRect.Top)
-                    bottomDistance = Math.Min(bottomDistance, otherRect.Top - movingRect.Bottom);
-            }
-
-            solCizgi.X1 = movingRect.Left;
-            solCizgi.Y1 = movingRect.Top + movingRect.Height / 2;
-            solCizgi.X2 = movingRect.Left - leftDistance;
-            solCizgi.Y2 = solCizgi.Y1;
-            solMesafe.Text = (leftDistance * 2).ToString("0");
-            Canvas.SetLeft(solMesafe, (solCizgi.X1 + solCizgi.X2) / 2);
-            Canvas.SetTop(solMesafe, solCizgi.Y1);
-
-            sagCizgi.X1 = movingRect.Right;
-            sagCizgi.Y1 = movingRect.Top + movingRect.Height / 2;
-            sagCizgi.X2 = movingRect.Right + rightDistance;
-            sagCizgi.Y2 = sagCizgi.Y1;
-            sagMesafe.Text = (rightDistance * 2).ToString("0");
-            Canvas.SetLeft(sagMesafe, (sagCizgi.X1 + sagCizgi.X2) / 2);
-            Canvas.SetTop(sagMesafe, sagCizgi.Y1);
-
-            ustCizgi.X1 = movingRect.Left + movingRect.Width / 2;
-            ustCizgi.Y1 = movingRect.Top;
-            ustCizgi.X2 = ustCizgi.X1;
-            ustCizgi.Y2 = movingRect.Top - topDistance;
-            ustMesafe.Text = (topDistance * 2).ToString("0");
-            Canvas.SetLeft(ustMesafe, ustCizgi.X1);
-            Canvas.SetTop(ustMesafe, (ustCizgi.Y1 + ustCizgi.Y2) / 2);
-
-            altCizgi.X1 = movingRect.Left + movingRect.Width / 2;
-            altCizgi.Y1 = movingRect.Bottom;
-            altCizgi.X2 = altCizgi.X1;
-            altCizgi.Y2 = movingRect.Bottom + bottomDistance;
-            altMesafe.Text = (bottomDistance * 2).ToString("0");
-            Canvas.SetLeft(altMesafe, altCizgi.X1);
-            Canvas.SetTop(altMesafe, (altCizgi.Y1 + altCizgi.Y2) / 2);
-        }
-
+       
         private void dikeyKutu_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if (_eklemeYon == EklemeYon.Dikey)
+            {
+                // toggle off
+                _eklemeYon = null;
+                dikeyKutu.StrokeThickness = 0;
+                dikeyKutu.Stroke = Brushes.Transparent;
+                return;
+            }
+
             dikeyKutu.StrokeThickness = 1;
             yatayKutu.StrokeThickness = 0;
             dikeyKutu.Stroke = Brushes.Red;
             yatayKutu.Stroke = Brushes.Transparent;
+            _eklemeYon = EklemeYon.Dikey;
         }
+
 
         private void yatayKutu_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if (_eklemeYon == EklemeYon.Yatay)
+            {
+                // toggle off
+                _eklemeYon = null;
+                yatayKutu.StrokeThickness = 0;
+                yatayKutu.Stroke = Brushes.Transparent;
+                return;
+            }
+
             dikeyKutu.StrokeThickness = 0;
             yatayKutu.StrokeThickness = 1;
             dikeyKutu.Stroke = Brushes.Transparent;
             yatayKutu.Stroke = Brushes.Red;
+            _eklemeYon = EklemeYon.Yatay;  // yatayda
         }
 
-      
+        private void myCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (_eklemeYon is null)
+            {
+                return;
+            }
+            // Eğer tıklanan yer bir Rectangle ise (mevcut ürün), ekleme yapma.
+            // (İstersen yine de eklemesini istersen bunu kaldırırız.)
+            if (e.OriginalSource is Rectangle) return;
+
+            var p = e.GetPosition(myCanvas);
+
+            double w = UrunW_Dikey;
+            double h = UrunH_Dikey;
+
+            // Yatay seçiliyse ölçü swap
+            if (_eklemeYon == EklemeYon.Yatay)
+                (w, h) = (h, w);
+
+           
+            // Tıklanan nokta ürünün sol-üst köşesi olsun
+            double newLeft = p.X;
+            double newTop = p.Y;
+
+            // Canvas sınırına sıkıştır
+            double maxLeft = myCanvas.ActualWidth - w;
+            double maxTop = myCanvas.ActualHeight - h;
+            newLeft = Math.Max(0, Math.Min(newLeft, maxLeft));
+            newTop = Math.Max(0, Math.Min(newTop, maxTop));
+
+            var candidate = new Rect(newLeft, newTop, w, h);
+
+            if (_motor.CakisiyorMu(candidate, myCanvas.Children.OfType<Rectangle>().Select(GetRect)))
+            {
+                MessageBox.Show("Bu konumda başka bir ürün var. Üst üste gelemez.", "Hata",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+          
+            var rect = YeniUrunOlustur(w, h, _eklemeYon);
+            rect.Tag = (_eklemeYon == EklemeYon.Dikey)
+            ? Modeller.UrunYonu.Dikey
+            : Modeller.UrunYonu.Yatay;
+            Canvas.SetLeft(rect, newLeft);
+            Canvas.SetTop(rect, newTop);
+            myCanvas.Children.Add(rect);
+        }
+
+
+        private Rectangle YeniUrunOlustur(double w, double h, EklemeYon? yon)
+        {
+            var resim = yon == EklemeYon.Dikey
+                ? "pack://application:,,,/Resimler/DizilimYap/dikey_kutu.png"
+                : "pack://application:,,,/Resimler/DizilimYap/yatay_kutu.png";
+
+            var rect = new Rectangle
+            {
+                Width = w,
+                Height = h,
+                Stroke = Brushes.Transparent,
+                StrokeThickness = 0,
+                Fill = new ImageBrush
+                {
+                    ImageSource = new BitmapImage(new Uri(resim, UriKind.Absolute))
+                }
+            };
+
+            rect.MouseDown += Rectangle_MouseDown;
+            rect.MouseMove += Rectangle_MouseMove;
+            rect.MouseUp += Rectangle_MouseUp;
+
+            return rect;
+        }
+
+        private void btnKatArti_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+
+            if (!myCanvas.Children.OfType<Rectangle>().Any())
+            {
+                MessageBox.Show("Kat boş. Ürün eklemeden yeni kata geçemezsin.", "Uyarı",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            if (_katYonetici.AktifKat >= _katYonetici.MaksKat)
+            {
+                MessageBox.Show($"Maksimum kat sayısı: {_katYonetici.MaksKat}", "Uyarı",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+
+            _mesafe.Gizle();
+
+            int yeniKat = _katYonetici.AktifKat + 1;
+
+            _katYonetici.KatDegistir(
+                yeniKat,
+                myCanvas,
+                sonSecilmisKutu,
+                Rectangle_MouseDown,
+                Rectangle_MouseMove,
+                Rectangle_MouseUp);
+
+            txtKat.Text = _katYonetici.AktifKat.ToString();
+        }
+
+        private void btnKatEksi_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            _mesafe.Gizle();
+
+            int yeniKat = _katYonetici.AktifKat - 1;
+
+            _katYonetici.KatDegistir(
+                yeniKat,
+                myCanvas,
+                sonSecilmisKutu,
+                Rectangle_MouseDown,
+                Rectangle_MouseMove,
+                Rectangle_MouseUp);
+
+            txtKat.Text = _katYonetici.AktifKat.ToString();
+
+        }
     }
 }

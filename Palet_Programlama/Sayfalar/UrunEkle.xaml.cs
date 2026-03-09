@@ -3,17 +3,10 @@ using Palet_Programlama.UserController;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Palet_Programlama.Sayfalar
 {
@@ -32,8 +25,8 @@ namespace Palet_Programlama.Sayfalar
         public UrunEkle(Frame Main)
         {
             InitializeComponent();
-            textBoxes = new List<TextBox> { myTextBox, myTextBox1, myTextBox2, myTextBox3, myTextBox4, myTextBox5, myTextBox6, myTextBox7, myTextBox8, myTextBox9 };
-            placeholders = new List<TextBlock> { myPlace, myPlace1, myPlace2, myPlace3, myPlace4, myPlace5, myPlace6, myPlace7, myPlace8, myPlace9 };
+            textBoxes = new List<TextBox> { txtUrunAdi, txtUrunEn, txtUrunBoy, txtUrunYukseklik, txtUrunAgirlik, txtUrunBasinc, txtPaletAdi, txtPaletEn, txtPaletBoy, txtPaletYukseklik};
+            placeholders = new List<TextBlock> { phUrunAdi, phUrunEn, phUrunBoy, phUrunYukseklik, phUrunAgirlik, phUrunBasinc, phPaletAdi, phPaletEn, phPaletBoy, phPaletYukseklik };
             this.MainFrame = Main;
             this.Loaded += Page_Loaded;
         }
@@ -54,16 +47,16 @@ namespace Palet_Programlama.Sayfalar
         }
         private void myTextBox_Loaded(object sender, RoutedEventArgs e)
         {
-            myTextBox.CaretBrush = Brushes.White;
-            myTextBox1.CaretBrush = Brushes.White;
-            myTextBox2.CaretBrush = Brushes.White;
-            myTextBox3.CaretBrush = Brushes.White;
-            myTextBox4.CaretBrush = Brushes.White;
-            myTextBox5.CaretBrush = Brushes.White;
-            myTextBox6.CaretBrush = Brushes.White;
-            myTextBox7.CaretBrush = Brushes.White;
-            myTextBox8.CaretBrush = Brushes.White;
-            myTextBox9.CaretBrush = Brushes.White;
+            txtUrunAdi.CaretBrush = Brushes.White;
+            txtUrunEn.CaretBrush = Brushes.White;
+            txtUrunBoy.CaretBrush = Brushes.White;
+            txtUrunYukseklik.CaretBrush = Brushes.White;
+            txtUrunAgirlik.CaretBrush = Brushes.White;
+            txtUrunBasinc.CaretBrush = Brushes.White;
+            txtPaletAdi.CaretBrush = Brushes.White;
+            txtPaletEn.CaretBrush = Brushes.White;
+            txtPaletBoy.CaretBrush = Brushes.White;
+            txtPaletYukseklik.CaretBrush = Brushes.White;
 
         }
 
@@ -100,14 +93,14 @@ namespace Palet_Programlama.Sayfalar
         #endregion
         private readonly Dictionary<string, Tuple<string, string>> textBoxData = new Dictionary<string, Tuple<string, string>>
         {
-            { "myTextBox1", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/en-koli.png", "UrunEkle.preview1") },
-            { "myTextBox2", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/boy-koli.png", "UrunEkle.preview2") },
-            { "myTextBox3", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/yukseklik-koli.png", "UrunEkle.preview3") },
-            { "myTextBox4", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/koli-agirlik.png", "UrunEkle.preview4") },
-            { "myTextBox5", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/koli-basinc.png", "UrunEkle.preview5") },
-            { "myTextBox7", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/en-pallet.png", "UrunEkle.preview1") },
-            { "myTextBox8", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/boy-pallet.png", "UrunEkle.preview2") },
-            { "myTextBox9", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/yukseklik-pallet.png", "UrunEkle.preview3") },
+            { "txtUrunEn", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/en-koli.png", "UrunEkle.preview1") },
+            { "txtUrunBoy", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/boy-koli.png", "UrunEkle.preview2") },
+            { "txtUrunYukseklik", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/yukseklik-koli.png", "UrunEkle.preview3") },
+            { "txtUrunAgirlik", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/koli-agirlik.png", "UrunEkle.preview4") },
+            { "txtUrunBasinc", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/koli-basinc.png", "UrunEkle.preview5") },
+            { "txtPaletEn", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/en-pallet.png", "UrunEkle.preview1") },
+            { "txtPaletBoy", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/boy-pallet.png", "UrunEkle.preview2") },
+            { "txtPaletYukseklik", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/yukseklik-pallet.png", "UrunEkle.preview3") },
         };
         private void UrunPalet_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -145,17 +138,18 @@ namespace Palet_Programlama.Sayfalar
                 }
             }
         }
+       
         #region Ürün İşlemleri
         private void UrunEkleBtn_Click(object sender, RoutedEventArgs e)
         {
             var textBoxes = new (TextBox, string)[]
              {
-                (myTextBox, "HataMesajlari.urunadbos"),
-                (myTextBox1, "HataMesajlari.urunenbos"),
-                (myTextBox2, "HataMesajlari.urunboybos"),
-                (myTextBox3, "HataMesajlari.urunyukseklikbos"),
-                (myTextBox4, "HataMesajlari.urunagirlikbos"),
-                (myTextBox5, "HataMesajlari.urunbasincbos")
+                (txtUrunAdi, "HataMesajlari.urunadbos"),
+                (txtUrunEn, "HataMesajlari.urunenbos"),
+                (txtUrunBoy, "HataMesajlari.urunboybos"),
+                (txtUrunYukseklik, "HataMesajlari.urunyukseklikbos"),
+                (txtUrunAgirlik, "HataMesajlari.urunagirlikbos"),
+                (txtUrunBasinc, "HataMesajlari.urunbasincbos")
              };
 
             // Boş olan bir TextBox varsa uyarı göster ve işlemi sonlandır
@@ -169,12 +163,15 @@ namespace Palet_Programlama.Sayfalar
                     return;
                 }
             }
-            string urunAd = myTextBox.Text;
-            double urunEn = Convert.ToDouble(myTextBox1.Text);
-            double urunBoy = Convert.ToDouble(myTextBox2.Text);
-            double urunYuseklik = Convert.ToDouble(myTextBox3.Text);
-            double urunAgirlik = Convert.ToDouble(myTextBox4.Text);
-            int urunBasinc = Convert.ToInt16(myTextBox5.Text);
+            string urunAd = txtUrunAdi.Text;
+            double urunEn = Convert.ToDouble(txtUrunEn.Text);
+            double urunBoy = Convert.ToDouble(txtUrunBoy.Text);
+            double urunYuseklik = Convert.ToDouble(txtUrunYukseklik.Text);
+            double urunAgirlik = Convert.ToDouble(txtUrunAgirlik.Text);
+            int urunBasinc = Convert.ToInt16(txtUrunBasinc.Text);
+            var urunler = urunIslemler.UrunListesiniGetir();
+            bool varMi = urunler.Any(x => x.UrunAdi == urunAd);
+            if (varMi){ MessageBox.Show("Bu ürün zaten mevcut,ismi değiştirin"); return; }
             urunIslemler.UrunKaydet(urunAd, urunEn, urunBoy, urunYuseklik, urunAgirlik,urunBasinc);
             urunlistbox.Items.Add(urunAd);
             
@@ -188,29 +185,37 @@ namespace Palet_Programlama.Sayfalar
             }
             string SilinecekUrun=urunlistbox.SelectedItem.ToString();
             urunIslemler.UrunSil(SilinecekUrun);
-            foreach (var item in urunlistbox.Items)
-            {
-                if (item.ToString() == SilinecekUrun)
-                {
-                    urunlistbox.Items.Remove(item);
-                    break;
-                }
-            }
+            urunlistbox.Items.Remove(SilinecekUrun);
+            urunlistbox.SelectedItem = null;
+            txtUrunAdi.Clear();
+            txtUrunEn.Clear();
+            txtUrunBoy.Clear();
+            txtUrunYukseklik.Clear();
+            txtUrunAgirlik.Clear();
+            txtUrunBasinc.Clear();
+
+
         }
         private void UrunList_SelectedItem(object sender, SelectionChangedEventArgs e)
         {
+
+            if(urunlistbox.SelectedItem == null)
+            {
+                return;
+            }
+
             urunlist = urunIslemler.UrunListesiniGetir();
             string SeciliUrun=urunlistbox.SelectedItem.ToString();
             foreach (var UrunAdBul in urunlist)
             {
                 if (UrunAdBul.UrunAdi==SeciliUrun)
                 {
-                    myTextBox.Text=UrunAdBul.UrunAdi;
-                    myTextBox1.Text=UrunAdBul.UrunEn.ToString();
-                    myTextBox2.Text=UrunAdBul.UrunBoy.ToString();
-                    myTextBox3.Text=UrunAdBul.UrunYukseklik.ToString();
-                    myTextBox4.Text=UrunAdBul.UrunAgirlik.ToString();
-                    myTextBox5.Text=UrunAdBul.UrunBasinc.ToString();
+                    txtUrunAdi.Text=UrunAdBul.UrunAdi;
+                    txtUrunEn.Text=UrunAdBul.UrunEn.ToString();
+                    txtUrunBoy.Text=UrunAdBul.UrunBoy.ToString();
+                    txtUrunYukseklik.Text=UrunAdBul.UrunYukseklik.ToString();
+                    txtUrunAgirlik.Text=UrunAdBul.UrunAgirlik.ToString();
+                    txtUrunBasinc.Text=UrunAdBul.UrunBasinc.ToString();
                     return;
                 }
             }
@@ -221,10 +226,10 @@ namespace Palet_Programlama.Sayfalar
         {
             var textBoxes = new (TextBox, string)[]
              {
-                (myTextBox6, "HataMesajlari.paletadbos"),
-                (myTextBox7, "HataMesajlari.paletenbos"),
-                (myTextBox8, "HataMesajlari.paletboybos"),
-                (myTextBox9, "HataMesajlari.paletyukseklikbos")
+                (txtPaletAdi, "HataMesajlari.paletadbos"),
+                (txtPaletEn, "HataMesajlari.paletenbos"),
+                (txtPaletBoy, "HataMesajlari.paletboybos"),
+                (txtPaletYukseklik, "HataMesajlari.paletyukseklikbos")
 
              };
 
@@ -239,10 +244,15 @@ namespace Palet_Programlama.Sayfalar
                     return;
                 }
             }
-            string paletAd = myTextBox6.Text;
-            double paletEn = Convert.ToDouble(myTextBox7.Text);
-            double paletBoy = Convert.ToDouble(myTextBox8.Text);
-            double paletYuseklik = Convert.ToDouble(myTextBox9.Text);
+            string paletAd = txtPaletAdi.Text;
+            double paletEn = Convert.ToDouble(txtPaletEn.Text);
+            double paletBoy = Convert.ToDouble(txtPaletBoy.Text);
+            double paletYuseklik = Convert.ToDouble(txtPaletYukseklik.Text);
+
+            var paletler = paletIslemler.PaletListesiniGetir();
+            bool varMi = paletler.Any(x => x.PaletAdi == paletAd);
+            if (varMi) { MessageBox.Show("Bu palet zaten mevcut,ismi değiştirin"); return; }
+
 
             paletIslemler.PaletKaydet(paletAd, paletEn, paletBoy, paletYuseklik);
             paletlistbox.Items.Add(paletAd);
@@ -257,23 +267,30 @@ namespace Palet_Programlama.Sayfalar
             }
             string SilinecekPalet = paletlistbox.SelectedItem.ToString();
             paletIslemler.PaletSil(SilinecekPalet);
-            foreach (var item in paletlistbox.Items)
-            {
-                if (item.ToString() == SilinecekPalet)
-                {
-                    paletlistbox.Items.Remove(item);
-                    break;
-                }
-            }
+            paletlistbox.Items.Remove(SilinecekPalet);
+            urunlistbox.SelectedItem = null;
+            txtPaletAdi.Clear();
+            txtPaletEn.Clear();
+            txtPaletBoy.Clear();
+            txtPaletYukseklik.Clear();
+
+
         }
         private void PaletDuzenleBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (paletlistbox.SelectedItem == null)
+            {
+                //Mesaj kutusu Eklenecek
+                return;
+            }
+
+
             var textBoxes = new (TextBox, string)[]
              {
-                (myTextBox6, "HataMesajlari.paletadbos"),
-                (myTextBox7, "HataMesajlari.paletenbos"),
-                (myTextBox8, "HataMesajlari.paletboybos"),
-                (myTextBox9, "HataMesajlari.paletyukseklikbos")
+                (txtPaletAdi, "HataMesajlari.paletadbos"),
+                (txtPaletEn, "HataMesajlari.paletenbos"),
+                (txtPaletBoy, "HataMesajlari.paletboybos"),
+                (txtPaletYukseklik, "HataMesajlari.paletyukseklikbos")
 
              };
 
@@ -289,10 +306,10 @@ namespace Palet_Programlama.Sayfalar
                 }
             }
             paletlist = paletIslemler.PaletListesiniGetir();
-            string paletAd = myTextBox6.Text;
-            double paletEn = Convert.ToDouble(myTextBox7.Text);
-            double paletBoy = Convert.ToDouble(myTextBox8.Text);
-            double paletYuseklik = Convert.ToDouble(myTextBox9.Text);
+            string paletAd = txtPaletAdi.Text;
+            double paletEn = Convert.ToDouble(txtPaletEn.Text);
+            double paletBoy = Convert.ToDouble(txtPaletBoy.Text);
+            double paletYuseklik = Convert.ToDouble(txtPaletYukseklik.Text);
             foreach (var item in paletlist)
             {
                if (item.PaletAdi == paletlistbox.SelectedItem.ToString())
@@ -310,16 +327,23 @@ namespace Palet_Programlama.Sayfalar
         }
         private void PaletList_SelectedItem(object sender, SelectionChangedEventArgs e)
         {
+            if (paletlistbox.SelectedItem == null)
+            {
+                //Mesaj kutusu Eklenecek
+                return;
+            }
+
+
             paletlist = paletIslemler.PaletListesiniGetir();
             string SeciliPalet = paletlistbox.SelectedItem.ToString();
             foreach (var PaletAdBul in paletlist)
             {
                 if (PaletAdBul.PaletAdi == SeciliPalet)
                 {
-                    myTextBox6.Text = PaletAdBul.PaletAdi;
-                    myTextBox7.Text = PaletAdBul.PaletEn.ToString();
-                    myTextBox8.Text = PaletAdBul.PaletBoy.ToString();
-                    myTextBox9.Text = PaletAdBul.PaletYukseklik.ToString();
+                    txtPaletAdi.Text = PaletAdBul.PaletAdi;
+                    txtPaletEn.Text = PaletAdBul.PaletEn.ToString();
+                    txtPaletBoy.Text = PaletAdBul.PaletBoy.ToString();
+                    txtPaletYukseklik.Text = PaletAdBul.PaletYukseklik.ToString();
                     return;
                 }
             }

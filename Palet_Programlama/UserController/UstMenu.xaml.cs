@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Palet_Programlama.Sınıflar;
+using Palet_Programlama.UserController;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Palet_Programlama.Sayfalar
 {
@@ -86,10 +78,21 @@ namespace Palet_Programlama.Sayfalar
         private void DizilimPageBtn_Click(object sender, RoutedEventArgs e)
         {
             var mainWindow = Application.Current.MainWindow as MainWindow;
-            if (mainWindow != null)
+            if (mainWindow == null)
+                return;
+
+            var urunler = mainWindow.UrunIslemler.UrunListesiniGetir();
+            var paletler = mainWindow.PaletIslemler.PaletListesiniGetir();
+
+            UrunPaletSecimKutusu secimKutusu = new UrunPaletSecimKutusu(urunler, paletler);
+            bool? sonuc = secimKutusu.ShowDialog();
+
+            if (sonuc == true)
             {
-                // Frame'in içeriğini değiştirme 
-                mainWindow.MainFrame.Content = new DizilimYap(mainWindow.MainFrame);
+                if (secimKutusu.SecilenUrun != null && secimKutusu.SecilenPalet != null)
+                {
+                    mainWindow.MainFrame.Content = new DizilimYap(mainWindow.MainFrame);
+                }
             }
         }
 

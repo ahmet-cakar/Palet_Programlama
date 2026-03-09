@@ -31,8 +31,8 @@
     <!-- Üst bilgi alanı -->
     <Grid Grid.Row="1" Margin="0,0,0,10">
       <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="3*"/>
-        <ColumnDefinition Width="2*"/>
+        <ColumnDefinition Width="1.14*"/>
+        <ColumnDefinition Width="*"/>
       </Grid.ColumnDefinitions>
 
       <!-- Aynalama ve X/Y -->
@@ -129,28 +129,31 @@
                                    Margin="10,0,0,0"
                                    FontSize="20"
                                    Foreground="White"
-                                   Text="Yumoş 200 ml"
+                                   Name="txtUrunOzellikleri"
+                                   Text=""
                                    TextWrapping="Wrap"/>
           </Grid>
 
           <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
               <ColumnDefinition Width="Auto"/>
-              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="110*"/>
+              <ColumnDefinition Width="399*"/>
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0"
                                    FontSize="20"
                                    Foreground="White"
                                    FontWeight="SemiBold"
-                                   Text="{Binding Source='DizilimYap.paletozellik',Converter={StaticResource LanguageConverter}}"/>
+                                   Text="{Binding Source='DizilimYap.paletozellik',Converter={StaticResource LanguageConverter}}" Margin="0,0,10,0"/>
 
             <TextBlock Grid.Column="1"
-                                   Margin="10,0,0,0"
+                                   x:Name="txtPaletOzellikleri"
+                                   Margin="2,0,0,0"
                                    FontSize="20"
                                    Foreground="White"
-                                   Text="Euro Palet"
-                                   TextWrapping="Wrap"/>
+                                   Text=""
+                                   TextWrapping="Wrap" Grid.ColumnSpan="2"/>
           </Grid>
         </Grid>
       </Border>
@@ -249,7 +252,7 @@
                 </StackPanel>
               </Button>
 
-              <Button Margin="60,0,0,0"  Content="{Binding Source='DizilimYap.kopyalabtn',Converter={StaticResource LanguageConverter}}"
+              <Button MouseDown="BtnKatKopyala_MouseDown" Margin="60,0,0,0"  Content="{Binding Source='DizilimYap.kopyalabtn',Converter={StaticResource LanguageConverter}}"
                                     Width="150"
                                     Background="{StaticResource button_background}"
                                     Style="{StaticResource button_template}" />
@@ -427,7 +430,7 @@
                                         Width="30"
                                         Height="25"
                                         Style="{StaticResource transparan_button}">
-                  <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                  <StackPanel MouseDown="BtnHareketMiktariArti_MouseDown" Orientation="Horizontal" HorizontalAlignment="Center">
                     <Image Source="pack://application:,,,/Resimler/DizilimYap/arti.png"/>
                   </StackPanel>
                 </Button>
@@ -435,7 +438,7 @@
                 <StackPanel Orientation="Horizontal"
                                             HorizontalAlignment="Center"
                                             Grid.Column="1">
-                  <TextBox Width="55"
+                  <TextBox Width="55" Name="txtHareketMiktari"
                                              FontSize="25"
                                              VerticalAlignment="Center"
                                              Foreground="White"
@@ -456,7 +459,7 @@
                                         Width="30"
                                         Height="25"
                                         Style="{StaticResource transparan_button}">
-                  <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                  <StackPanel MouseDown="BtnHareketMiktariEksi_MouseDown" Orientation="Horizontal" HorizontalAlignment="Center">
                     <Image Source="pack://application:,,,/Resimler/DizilimYap/eksi.png"/>
                   </StackPanel>
                 </Button>

@@ -1,18 +1,34 @@
 [
   {
-    "UrunAdi": "yun1",
-    "UrunEn": 5.0,
-    "UrunBoy": 6.0,
-    "UrunYukseklik": 7.0,
-    "UrunAgirlik": 8.0,
-    "UrunBasinc": 9
+    "UrunAdi": "Yumoş 220 ML",
+    "UrunEn": 200.0,
+    "UrunBoy": 300.0,
+    "UrunYukseklik": 200.0,
+    "UrunAgirlik": 20.0,
+    "UrunBasinc": 5
   },
   {
-    "UrunAdi": "yun2",
-    "UrunEn": 55.0,
-    "UrunBoy": 66.0,
-    "UrunYukseklik": 77.0,
-    "UrunAgirlik": 88.0,
-    "UrunBasinc": 99
+    "UrunAdi": "Yumoş 220 ML 2",
+    "UrunEn": 200.0,
+    "UrunBoy": 300.0,
+    "UrunYukseklik": 200.0,
+    "UrunAgirlik": 20.0,
+    "UrunBasinc": 5
+  },
+  {
+    "UrunAdi": "Yumoş 220 ML 3",
+    "UrunEn": 200.0,
+    "UrunBoy": 300.0,
+    "UrunYukseklik": 200.0,
+    "UrunAgirlik": 20.0,
+    "UrunBasinc": 5
+  },
+  {
+    "UrunAdi": "Yumoş 220 ML 4",
+    "UrunEn": 200.0,
+    "UrunBoy": 300.0,
+    "UrunYukseklik": 200.0,
+    "UrunAgirlik": 20.0,
+    "UrunBasinc": 5
   }
 ]

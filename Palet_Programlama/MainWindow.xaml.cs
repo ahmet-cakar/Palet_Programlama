@@ -1,4 +1,5 @@
 ﻿using Palet_Programlama.Sayfalar;
+using Palet_Programlama.Sınıflar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,9 @@ namespace Palet_Programlama
     /// </summary>
     public partial class MainWindow : Window
     {
+        public UrunIslemler UrunIslemler { get; } = new UrunIslemler();
+        public PaletIslemler PaletIslemler { get; } = new PaletIslemler();
+
         public MainWindow()
         {
             InitializeComponent();

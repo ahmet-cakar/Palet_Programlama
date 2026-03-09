@@ -95,6 +95,9 @@
     <Compile Include="UserController\BildirimKutusu.xaml.cs">
       <DependentUpon>BildirimKutusu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserController\UrunPaletSecimKutusu.xaml.cs">
+      <DependentUpon>UrunPaletSecimKutusu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserController\UstMenu.xaml.cs">
       <DependentUpon>UstMenu.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Stiller\Combomax_style.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Stiller\DizilimYap_style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -162,6 +169,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserController\BildirimKutusu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserController\UrunPaletSecimKutusu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

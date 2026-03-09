@@ -33,6 +33,8 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
+                    
+
                     <!--Ön İzleme Border-->
                     <TextBlock Text="{Binding Source='UrunEkle.onizle',Converter={StaticResource LanguageConverter}}" Foreground="White" Margin="60,30,0,0" Panel.ZIndex="1" FontSize="24" FontFamily="Roboto" FontWeight="Bold"></TextBlock>
                     <Border Background="#191919" CornerRadius="10" Width="1100" Height="250" HorizontalAlignment="Left"
@@ -63,44 +65,44 @@
                                 <!--Ürün Adı StackPanel-->
                                 <StackPanel Orientation="Horizontal" >
                                     <TextBlock Text="{Binding Source='UrunEkle.urunad',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,70,0,0" Width="120"/>
-                                    <TextBox Name="myTextBox" Margin="160,65,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="txtUrunAdi" Margin="160,65,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                                    <TextBlock x:Name="myPlace" Text="{Binding Source='UrunEkle.urunadgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="-150,70,0,0"/>
+                                    <TextBlock x:Name="phUrunAdi" Text="{Binding Source='UrunEkle.urunadgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="-150,70,0,0"/>
                                 </StackPanel>
                                 <!--Ürün Genişlik StackPanel-->
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding Source='UrunEkle.genislik',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0" Width="150"/>
-                                    <TextBox Name="myTextBox1"  Margin="130,35,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="txtUrunEn"  Margin="130,35,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                                    <TextBlock x:Name="myPlace1" Text="{Binding Source='UrunEkle.urungenislikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="-150,40,0,0"/>
+                                <TextBlock x:Name="phUrunEn" Text="{Binding Source='UrunEkle.urungenislikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="-150,40,0,0"/>
                                 </StackPanel>
                                 <!--Ürün Uzunluk StackPanel-->
                                 <StackPanel>
                                     <TextBlock Text="{Binding Source='UrunEkle.uzunluk',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox2"  Margin="202,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="txtUrunBoy"  Margin="202,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                                    <TextBlock x:Name="myPlace2" Text="{Binding Source='UrunEkle.urunuzunlukgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="280,-30,0,0"/>
+                  <TextBlock x:Name="phUrunBoy" Text="{Binding Source='UrunEkle.urunuzunlukgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="280,-30,0,0"/>
                                 </StackPanel>
                                 <!--Ürün Yükseklik StackPanel-->
                                 <StackPanel>
                                     <TextBlock Text="{Binding Source='UrunEkle.yukseklik',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox3"  Margin="202 ,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="txtUrunYukseklik"  Margin="202 ,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                                    <TextBlock x:Name="myPlace3" Text="{Binding Source='UrunEkle.urunyukseklikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="280,-30,0,0"/>
+                  <TextBlock x:Name="phUrunYukseklik" Text="{Binding Source='UrunEkle.urunyukseklikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="280,-30,0,0"/>
                                 </StackPanel>
                                 <!--Ürün Ağırlık StackPanel-->
                                 <StackPanel>
                                     <TextBlock Text="{Binding Source='UrunEkle.agirlik',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox4"  Margin="202,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="txtUrunAgirlik"  Margin="202,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                                    <TextBlock x:Name="myPlace4" Text="{Binding Source='UrunEkle.urunagirlikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="280,-30,0,0"/>
+                  <TextBlock x:Name="phUrunAgirlik" Text="{Binding Source='UrunEkle.urunagirlikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="280,-30,0,0"/>
                                 </StackPanel>
                                 <!--Ürün Basınç StackPanel-->
                                 <StackPanel>
                                     <TextBlock Text="{Binding Source='UrunEkle.basinc',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}"  Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox5"  Margin="202,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="txtUrunBasinc"  Margin="202,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                                    <TextBlock x:Name="myPlace5" Text="{Binding Source='UrunEkle.urunbasincgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="280,-30,0,0"/>
+                  <TextBlock x:Name="phUrunBasinc" Text="{Binding Source='UrunEkle.urunbasincgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="280,-30,0,0"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                                     <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_backgroundgreen}"
@@ -121,31 +123,31 @@
                                 <!--Palet Adı StackPanel-->
                                 <StackPanel>
                                     <TextBlock Text="{Binding Source='UrunEkle.paletad',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,60,0,0"/>
-                                    <TextBox Name="myTextBox6" Margin="180,-25,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="txtPaletAdi" Margin="180,-25,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed"  GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                                    <TextBlock x:Name="myPlace6" Text="{Binding Source='UrunEkle.paletadgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="268,-30,0,0"/>
+                  <TextBlock x:Name="phPaletAdi" Text="{Binding Source='UrunEkle.paletadgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="268,-30,0,0"/>
                                 </StackPanel>
                                 <!--Palet Genişlik StackPanel-->
                                 <StackPanel>
                                     <TextBlock Text="{Binding Source='UrunEkle.genislik',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox7" Margin="180,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="txtPaletEn" Margin="180,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                                    <TextBlock x:Name="myPlace7" Text="{Binding Source='UrunEkle.paletgenislikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="268,-30,0,0"/>
+                  <TextBlock x:Name="phPaletEn" Text="{Binding Source='UrunEkle.paletgenislikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="268,-30,0,0"/>
 
                                 </StackPanel>
                                 <!--Palet Uzunluk StackPanel-->
                                 <StackPanel>
                                     <TextBlock Text="{Binding Source='UrunEkle.uzunluk',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox8" Margin="180,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
+                                    <TextBox Name="txtPaletBoy" Margin="180,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                                    <TextBlock x:Name="myPlace8" Text="{Binding Source='UrunEkle.paletuzunlukgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="268,-30,0,0"/>
+                  <TextBlock x:Name="phPaletBoy" Text="{Binding Source='UrunEkle.paletuzunlukgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="268,-30,0,0"/>
 
                                 </StackPanel>
                                 <StackPanel>
                                     <TextBlock Text="{Binding Source='UrunEkle.yukseklik',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox Name="myTextBox9" Margin="180,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded" 
+                                    <TextBox Name="txtPaletYukseklik" Margin="180,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded" 
                                              TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                                    <TextBlock x:Name="myPlace9" Text="{Binding Source='UrunEkle.paletyukseklikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="268,-30,0,0"/>
+                  <TextBlock x:Name="phPaletYukseklik" Text="{Binding Source='UrunEkle.paletyukseklikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="268,-30,0,0"/>
 
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
@@ -172,7 +174,7 @@
 
                 <StackPanel Orientation="Horizontal" Panel.ZIndex="6">
                     <!--Ürün Listesi Listbox-->
-                    <ListBox Style="{StaticResource listbox_template_urunekle}" Panel.ZIndex="5" x:Name="urunlistbox" SelectionChanged="UrunList_SelectedItem">
+                    <ListBox  Style="{StaticResource listbox_template_urunekle}" Panel.ZIndex="5" x:Name="urunlistbox" SelectionChanged="UrunList_SelectedItem">
                        
                     </ListBox>
                     <!--Palet Listesi Listbox-->

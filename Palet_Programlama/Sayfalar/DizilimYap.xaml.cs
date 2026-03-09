@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Palet_Programlama.Sayfalar
@@ -24,9 +19,6 @@ namespace Palet_Programlama.Sayfalar
         private readonly Servisler.Palet.YerlesimMotoru _motor = new();
         private readonly Servisler.Palet.MesafeGostergesi _mesafe = new();
         private readonly Servisler.Palet.KatYoneticisi _katYonetici = new();
-
-
-
         private enum EklemeYon { Dikey, Yatay }
         private EklemeYon? _eklemeYon = null;
 
@@ -406,6 +398,25 @@ namespace Palet_Programlama.Sayfalar
 
 
             txtYapisValue.Text = Convert.ToString(Convert.ToInt32(txtYapisValue.Text) - 1);
+        }
+
+        private void BtnKatKopyala_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void BtnHareketMiktariArti_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            txtHareketMiktari.Text = Convert.ToString(Convert.ToInt32(txtHareketMiktari.Text) + 1);
+        }
+
+        private void BtnHareketMiktariEksi_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Convert.ToInt32(txtHareketMiktari.Text) == 1)
+            {
+                return;
+            }
+            txtHareketMiktari.Text = Convert.ToString(Convert.ToInt32(txtHareketMiktari.Text) - 1);
         }
     }
 }

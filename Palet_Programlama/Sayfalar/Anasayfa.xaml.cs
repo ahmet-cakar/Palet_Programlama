@@ -23,7 +23,8 @@ namespace Palet_Programlama.Sayfalar
     public partial class Anasayfa : Page
     {
         private readonly Frame MainFrame;
-        
+        UrunIslemler urunIslemler = new UrunIslemler();
+        PaletIslemler paletIslemler = new PaletIslemler();
         public Anasayfa(Frame Main)
         {
             string Dil = KullaniciDil.Dil;
@@ -42,7 +43,19 @@ namespace Palet_Programlama.Sayfalar
 
         private void DizilimPage_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new DizilimYap(MainFrame));
+            var urunler = urunIslemler.UrunListesiniGetir();
+            var paletler = paletIslemler.PaletListesiniGetir();
+
+            UrunPaletSecimKutusu pencere = new UrunPaletSecimKutusu(urunler, paletler);
+            bool? sonuc = pencere.ShowDialog();
+
+            if (sonuc == true)
+            {
+                if (pencere.SecilenUrun != null && pencere.SecilenPalet != null)
+                {
+                    MainFrame.Navigate(new DizilimYap(MainFrame));
+                }
+            }
         }
         private void btn_program_Click(object sender, RoutedEventArgs e)
         {

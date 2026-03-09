@@ -345,5 +345,67 @@ namespace Palet_Programlama.Sayfalar
             txtKat.Text = _katYonetici.AktifKat.ToString();
 
         }
+
+        private void BtnKopyalaArti_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Convert.ToInt32(txtKopyalaValue.Text) + 1 == Convert.ToInt32(txtYapisValue.Text))
+            {
+                txtKopyalaValue.Text = Convert.ToString(Convert.ToInt32(txtKopyalaValue.Text) + 2);
+                return;
+            }
+            txtKopyalaValue.Text = Convert.ToString(Convert.ToInt32(txtKopyalaValue.Text) + 1);
+        }
+
+
+        private void BtnYapistirArti_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            if(Convert.ToInt32(txtKopyalaValue.Text) == Convert.ToInt32(txtYapisValue.Text) + 1)
+            {
+                txtYapisValue.Text = Convert.ToString(Convert.ToInt32(txtYapisValue.Text) + 2);
+                return;
+            }
+
+            txtYapisValue.Text = Convert.ToString(Convert.ToInt32(txtYapisValue.Text) + 1);
+        }
+
+
+        private void BtnKopyalaEksi_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Convert.ToInt32(txtKopyalaValue.Text) == 1)
+            {
+                return;
+            }
+
+            if (Convert.ToInt32(txtKopyalaValue.Text) - 1 == Convert.ToInt32(txtYapisValue.Text))
+            {
+                if (Convert.ToInt32(txtKopyalaValue.Text) - 2 == 0) { return; }
+                txtKopyalaValue.Text = Convert.ToString(Convert.ToInt32(txtKopyalaValue.Text) - 2);
+                return;
+            }
+            txtKopyalaValue.Text = Convert.ToString(Convert.ToInt32(txtKopyalaValue.Text) - 1);
+
+        }
+
+      
+
+        private void BtnYapistirEksi_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Convert.ToInt32(txtYapisValue.Text) == 1)
+            {
+                return;
+            }
+            if (Convert.ToInt32(txtKopyalaValue.Text) == Convert.ToInt32(txtYapisValue.Text) - 1)
+            {
+
+                if (Convert.ToInt32(txtYapisValue.Text) - 2 == 0) { return; }
+
+                txtYapisValue.Text = Convert.ToString(Convert.ToInt32(txtYapisValue.Text) - 2);
+                return;
+            }
+
+
+            txtYapisValue.Text = Convert.ToString(Convert.ToInt32(txtYapisValue.Text) - 1);
+        }
     }
 }

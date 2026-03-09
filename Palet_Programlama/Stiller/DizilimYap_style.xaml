@@ -9,7 +9,7 @@
                         <Ellipse Width="30" Height="30" Stroke="White" StrokeThickness="2" Fill="Black"/>
                         <!-- Onay işareti -->
                         <Path x:Name="CheckMark" Data="M 10,22 L 14,26 L 20,15"
-                        Margin="50,-5,0,0"
+                        Margin="0,-5,0,0"
                         Stroke="White" StrokeThickness="3"
                         StrokeStartLineCap="Round" StrokeEndLineCap="Round" Visibility="Collapsed"/>
                     </Grid>
@@ -33,7 +33,7 @@
                         <Ellipse Width="30" Height="30" Stroke="White" StrokeThickness="2" Fill="Black"/>
                         <!-- Onay işareti -->
                         <Path x:Name="CheckMark" Data="M 10,22 L 14,26 L 20,15"
-                     Margin="0,20,0,0"
+                     Margin="0,-5,0,0"
                      Stroke="White" StrokeThickness="3"
                      StrokeStartLineCap="Round" StrokeEndLineCap="Round" Visibility="Collapsed"/>
                     </Grid>

@@ -171,11 +171,20 @@ namespace Palet_Programlama.Sayfalar
             int urunBasinc = Convert.ToInt16(txtUrunBasinc.Text);
             var urunler = urunIslemler.UrunListesiniGetir();
             bool varMi = urunler.Any(x => x.UrunAdi == urunAd);
-            if (varMi){ MessageBox.Show("Bu ürün zaten mevcut,ismi değiştirin"); return; }
+            if (varMi){ BildirimGoster("MesajKutusu.urunMevcut"); return; }
             urunIslemler.UrunKaydet(urunAd, urunEn, urunBoy, urunYuseklik, urunAgirlik,urunBasinc);
             urunlistbox.Items.Add(urunAd);
             
         }
+
+
+        private void BildirimGoster(string mesajKey, string butonKey = "MesajKutusu.tamam")
+        {
+            var pencere = new BildirimKutusu();
+            pencere.MesajGonder(butonKey, mesajKey);
+            pencere.ShowDialog();
+        }
+
         private void UrunSilBtn_Click(object sender, RoutedEventArgs e)
         { 
             if (urunlistbox.SelectedItem ==null)
@@ -251,7 +260,7 @@ namespace Palet_Programlama.Sayfalar
 
             var paletler = paletIslemler.PaletListesiniGetir();
             bool varMi = paletler.Any(x => x.PaletAdi == paletAd);
-            if (varMi) { MessageBox.Show("Bu palet zaten mevcut,ismi değiştirin"); return; }
+            if (varMi) { BildirimGoster("MesajKutusu.paletMevcut"); return; }
 
 
             paletIslemler.PaletKaydet(paletAd, paletEn, paletBoy, paletYuseklik);

@@ -8,9 +8,10 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Height="420"
+        Height="500"
         Width="800"
         Background="Transparent">
+
   <Window.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
@@ -33,63 +34,74 @@
           <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Ürün ve Palet Seç"
-                           FontSize="27"
+        <TextBlock Text="Ürün ve Palet seçin"
+                           FontSize="22"
                            FontFamily="Roboto"
                            Margin="15"
                            Foreground="White"/>
+
         <Border Grid.Row="1"
-        Margin="15,10,15,10"
-        Background="#252525"
-        CornerRadius="10"
-        Padding="15">
+                        Margin="15,10,15,10"
+                        Background="#252525"
+                        CornerRadius="10"
+                        Padding="20">
 
-          <Grid>
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="*"/>
-              <ColumnDefinition Width="20"/>
-              <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
+          <StackPanel>
             <!-- Ürünler -->
-            <StackPanel Grid.Column="0">
-              <TextBlock Text="Ürünler"
-                       Foreground="White"
-                       FontSize="20"
-                       Margin="0,0,0,10"/>
+            <TextBlock Text="Ürünler (*)"
+                                   Foreground="White"
+                                   FontSize="20"
+                                   Margin="0,0,0,10"/>
 
-              <ComboBox x:Name="urunComboBox"
-                      Style="{StaticResource KoyuTemaComboBox}"
-                      Height="40"
-
-                      FontSize="18"
-                      Text="Ürün Seçiniz"
-                                IsEditable="True"
-          IsReadOnly="True"
-                      SelectionChanged="urunComboBox_SelectionChanged"
-                      />
-            </StackPanel>
+            <ComboBox x:Name="urunComboBox"
+                                  Style="{StaticResource KoyuTemaComboBox}"
+                                  Height="40"
+                                  FontSize="18"
+                                  Text="Ürün Seçiniz"
+                                  IsEditable="True"
+                                  IsReadOnly="True"
+                                  Margin="0,0,0,20"
+                                  SelectionChanged="urunComboBox_SelectionChanged"/>
 
             <!-- Paletler -->
-            <StackPanel Grid.Column="2">
-              <TextBlock Text="Paletler"
-                       Foreground="White"
-                       FontSize="20"
-                       Margin="0,0,0,10"/>
+            <TextBlock Text="Paletler (*)"
+                                   Foreground="White"
+                                   FontSize="20"
+                                   Margin="0,0,0,10"/>
 
-              <ComboBox x:Name="paletComboBox"
-                        Text="Palet Seçiniz"
-                       Style="{StaticResource KoyuTemaComboBox}"
-                      Height="40"
-                                IsEditable="True"
-          IsReadOnly="True"
-                      SelectionChanged="paletComboBox_SelectionChanged"
-                      FontSize="18"
-                      />
+            <ComboBox x:Name="paletComboBox"
+                                  Style="{StaticResource KoyuTemaComboBox}"
+                                  Height="40"
+                                  FontSize="18"
+                                  Text="Palet Seçiniz"
+                                  IsEditable="True"
+                                  IsReadOnly="True"
+                                  Margin="0,0,0,20"
+                                  SelectionChanged="paletComboBox_SelectionChanged"/>
+
+            <!-- Dizilimler -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+              <TextBlock Text="Dizilimler"
+               Foreground="White"
+               FontSize="20"
+               VerticalAlignment="Center"/>
+
+              <TextBlock Text=" (Dizilim güncellemek için seçebilirsiniz.)"
+               Foreground="#A0A0A0"
+               FontSize="12"
+               Margin="8,4,0,0"
+               VerticalAlignment="Center"/>
             </StackPanel>
-          </Grid>
-        </Border>
 
+            <ComboBox x:Name="dizilimComboBox"
+                                  Style="{StaticResource KoyuTemaComboBox}"
+                                  Height="40"
+                                  FontSize="18"
+                                  Text="Dizilim Seçiniz"
+                                  IsEditable="True"
+                                  IsReadOnly="True"/>
+          </StackPanel>
+        </Border>
 
         <StackPanel Grid.Row="2"
                             Orientation="Horizontal"

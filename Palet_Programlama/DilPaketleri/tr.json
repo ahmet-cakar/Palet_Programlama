@@ -62,11 +62,26 @@
     "izle": "İzleme",
     "komut": "Komutlar"
   },
-  "MesajKutusu": {
-    "uyari": "Uyarı Ekranı",
-    "mesaj": "Ürün Eklenmesinde Bir Problem Yaşandı! Lütfen Tekrar Deneyiniz",
-    "btncon1": "Tamam"
-  },
+    "MesajKutusu": {
+        "tasinacakUrunYok": "Taşınacak ürün yok.",
+        "urunMevcut": "Bu ürün zaten mevcut,ismi değiştirin",
+        "paletMevcut": "Bu palet zaten mevcut,ismi değiştirin",
+        "urunSecimiGerekli": "Önce bir ürün seçmelisiniz.",
+        "katKopyalamaBasarili": "Kat başarıyla kopyalandı.",
+        "katKopyalamaBasarisiz": "Kopyalama başarısız oldu. Kaynak kat boş olabilir, hedef kat dolu olabilir veya hedef katın altındaki kat boş olabilir.",
+        "katKendineKopyalanamaz": "Bir kat kendisine kopyalanamaz.",
+        "kayitHatasiFormat": "Kayıt Edilirken hata meydana geldi: \n{0}",
+        "kayitBasarili": "Dizilim başarılı şekilde kayıt edildi.",
+        "farkliDizilimAdiGir": "Bu isimde bir dizilim zaten var. Lütfen farklı bir dizilim adı girin.",
+        "kayitIcinUrunGerekli": "Kaydedilecek ürün yok. Önce palete ürün eklemelisiniz.",
+        "maksKatUyari": "Maksimum Kat Sayısı",
+        "katBosOlamaz": "Kat boş. Ürün eklemeden yeni kata geçemezsin.",
+        "urunlerUstUsteGelemez": "Bu konumda başka bir ürün var.Ürünler üstüste gelemez.",
+        "uyari": "Uyarı Ekranı",
+        "tamam": "Tamam",
+        "mesaj": "Ürün Eklenmesinde Bir Problem Yaşandı! Lütfen Tekrar Deneyiniz",
+        "btncon1": "Tamam"
+    },
   "global": {
     "btnkaydet": "Kaydet",
     "btnsil": "Sil"

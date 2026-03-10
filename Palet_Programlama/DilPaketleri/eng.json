@@ -96,11 +96,26 @@
     "komut": "Commands"
 
   },
-  "MesajKutusu": {
-    "uyari": "Warning Screen",
-    "mesaj": "There was a Problem Adding a Product! Please Try Again",
-    "btncon1": "Tamam"
-  },
+    "MesajKutusu": {
+        "tasinacakUrunYok": "There are no products to move.",
+        "urunMevcut": "This product already exists, change the name",
+        "paletMevcut": "This palette already exists, change the name",
+        "urunSecimiGerekli": "First you must choose a product.",
+        "katKopyalamaBasarili": "The layer has been copied successfully.",
+        "katKopyalamaBasarisiz": "Copying failed. The source layer may be empty, the target layer may be occupied, or the layer below the target layer may be empty.",
+        "katKendineKopyalanamaz": "A layer cannot be copied to itself.",
+        "kayitHatasiFormat": "An error occurred while registering: \n{0}",
+        "kayitBasarili": "The sequence was saved successfully.",
+        "farkliDizilimAdiGir": "A directory with this name already exists. Please enter a different lineup name.",
+        "kayitIcinUrunGerekli": "There are no products to save. You must first add products to the palette.",
+        "maksKatUyari": "Maximum Number of Layers",
+        "katBosOlamaz": "Layer is empty. You cannot move to the new floor without adding products.",
+        "urunlerUstUsteGelemez": "There is another product in this location. Products cannot overlap.",
+        "uyari": "Warning Screen",
+        "tamam": "Okey",
+        "mesaj": "There was a Problem Adding a Product! Please Try Again",
+        "btncon1": "Tamam"
+    },
   "global": {
     "btnkaydet": "Save",
     "btnsil": "Delete"

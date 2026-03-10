@@ -1,38 +1,34 @@
-﻿using Palet_Programlama.Sınıflar;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.Globalization;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Palet_Programlama.Sınıflar;
 
 namespace Palet_Programlama.UserController
 {
-    /// <summary>
-    /// Interaction logic for BildirimKutusu.xaml
-    /// </summary>
     public partial class BildirimKutusu : Window
     {
         public BildirimKutusu()
         {
             InitializeComponent();
         }
-        public void MesajGonder(string btnkey, string mesajkey)
+
+        public void MesajGonder(string btnKey, string mesajKey)
         {
-            btn1.Content = LanguageConverter.GetString($"{btnkey}");
-            mesaj.Text = LanguageConverter.GetString($"{mesajkey}");
+            btn1.Content = LanguageConverter.GetString(btnKey);
+            mesaj.Text = LanguageConverter.GetString(mesajKey);
+        }
+
+        public void MesajGonderFormatli(string btnKey, string mesajKey, params object[] args)
+        {
+            btn1.Content = LanguageConverter.GetString(btnKey);
+
+            string sablon = LanguageConverter.GetString(mesajKey);
+            mesaj.Text = string.Format(CultureInfo.CurrentCulture, sablon, args);
         }
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
-             this.Close();
+            this.Close();
         }
     }
 }

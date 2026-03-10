@@ -247,8 +247,7 @@ namespace Palet_Programlama.Sayfalar
 
             if (_motor.CakisiyorMu(candidate, myCanvas.Children.OfType<Rectangle>().Select(GetRect)))
             {
-                MessageBox.Show("Bu konumda başka bir ürün var. Üst üste gelemez.", "Hata",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                BildirimGoster("MesajKutusu.urunlerUstUsteGelemez");
                 return;
             }
 
@@ -294,15 +293,13 @@ namespace Palet_Programlama.Sayfalar
 
             if (!myCanvas.Children.OfType<Rectangle>().Any())
             {
-                MessageBox.Show("Kat boş. Ürün eklemeden yeni kata geçemezsin.", "Uyarı",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
+                BildirimGoster("MesajKutusu.katBosOlamaz");
                 return;
             }
 
             if (_katYonetici.AktifKat >= _katYonetici.MaksKat)
             {
-                MessageBox.Show($"Maksimum kat sayısı: {_katYonetici.MaksKat}", "Uyarı",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
+                BildirimGoster("MesajKutusu.maksKatUyari");
                 return;
             }
 
@@ -466,10 +463,7 @@ namespace Palet_Programlama.Sayfalar
                 bool hicUrunYokMu = !_katYonetici.TumKatlar.Any(kat => kat.Value != null && kat.Value.Any());
                 if (hicUrunYokMu)
                 {
-                    MessageBox.Show("Kaydedilecek ürün yok. Önce palete ürün eklemelisiniz.",
-                        "Uyarı",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
+                    BildirimGoster("MesajKutusu.kayitIcinUrunGerekli");
                     return;
                 }
 
@@ -507,10 +501,7 @@ namespace Palet_Programlama.Sayfalar
 
                 if (ayniIsimdeVarMi)
                 {
-                    MessageBox.Show("Bu isimde bir dizilim zaten var. Lütfen farklı bir dizilim adı girin.",
-                        "Uyarı",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
+                    BildirimGoster("MesajKutusu.farkliDizilimAdiGir");
                     return;
                 }
 
@@ -520,17 +511,21 @@ namespace Palet_Programlama.Sayfalar
 
                 string yeniJson = JsonConvert.SerializeObject(tumDizilimler, Formatting.Indented);
                 File.WriteAllText(dosyaYolu, yeniJson);
-
-                MessageBox.Show($"Dizilim kaydedildi:\n{dosyaYolu}", "Bilgi",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
+                BildirimGoster("MesajKutusu.kayitBasarili");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Kayıt hatası:\n{ex.Message}");
+                BildirimGosterFormatli("MesajKutusu.kayitHatasiFormat", ex.Message);
+               
             }
         }
 
-
+        private void BildirimGosterFormatli(string mesajKey, params object[] args)
+        {
+            var pencere = new Palet_Programlama.UserController.BildirimKutusu();
+            pencere.MesajGonderFormatli("MesajKutusu.tamam", mesajKey, args);
+            pencere.ShowDialog();
+        }
 
         private double MerkezZHesapla(int katNo)
         {
@@ -626,10 +621,7 @@ namespace Palet_Programlama.Sayfalar
 
             if (kopyalanacakKat == yapistirilacakKat)
             {
-                MessageBox.Show("Bir kat kendisine kopyalanamaz.",
-                    "Uyarı",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                BildirimGoster("MesajKutusu.katKendineKopyalanamaz");
                 return;
             }
 
@@ -646,17 +638,10 @@ namespace Palet_Programlama.Sayfalar
 
             if (!basarili)
             {
-                MessageBox.Show("Kopyalama yapılamadı. Kaynak kat boş olabilir, hedef kat dolu olabilir veya hedef katın bir alt katı boş olabilir.",
-                    "Uyarı",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                BildirimGoster("MesajKutusu.katKopyalamaBasarisiz");
                 return;
             }
-
-            MessageBox.Show("Kat başarıyla kopyalandı.",
-                "Bilgi",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
+            BildirimGoster("MesajKutusu.katKopyalamaBasarili");
         }
 
         private void BtnYukari_Click(object sender, RoutedEventArgs e)
@@ -667,10 +652,7 @@ namespace Palet_Programlama.Sayfalar
                 var secili = SeciliKutuyuGetir();
                 if (secili == null)
                 {
-                    MessageBox.Show("Önce bir ürün seçmelisiniz.",
-                        "Uyarı",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
+                    BildirimGoster("MesajKutusu.urunSecimiGerekli");
                     return;
                 }
 
@@ -720,10 +702,7 @@ namespace Palet_Programlama.Sayfalar
                 var secili = SeciliKutuyuGetir();
                 if (secili == null)
                 {
-                    MessageBox.Show("Önce bir ürün seçmelisiniz.",
-                        "Uyarı",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
+                    BildirimGoster("MesajKutusu.urunSecimiGerekli");
                     return;
                 }
 
@@ -773,10 +752,7 @@ namespace Palet_Programlama.Sayfalar
                 var secili = SeciliKutuyuGetir();
                 if (secili == null)
                 {
-                    MessageBox.Show("Önce bir ürün seçmelisiniz.",
-                        "Uyarı",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
+                    BildirimGoster("MesajKutusu.urunSecimiGerekli");
                     return;
                 }
 
@@ -827,10 +803,8 @@ namespace Palet_Programlama.Sayfalar
                 var secili = SeciliKutuyuGetir();
                 if (secili == null)
                 {
-                    MessageBox.Show("Önce bir ürün seçmelisiniz.",
-                        "Uyarı",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
+                   
+                    BildirimGoster("MesajKutusu.urunSecimiGerekli");
                     return;
                 }
 
@@ -908,10 +882,7 @@ namespace Palet_Programlama.Sayfalar
             var secili = SeciliKutuyuGetir();
             if (secili == null)
             {
-                MessageBox.Show("Önce bir ürün seçmelisiniz.",
-                    "Uyarı",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                BildirimGoster("MesajKutusu.urunSecimiGerekli");
                 return;
             }
 
@@ -1052,10 +1023,7 @@ namespace Palet_Programlama.Sayfalar
             var secili = SeciliKutuyuGetir();
             if (secili == null)
             {
-                MessageBox.Show("Önce bir ürün seçmelisiniz.",
-                    "Uyarı",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+               BildirimGoster("MesajKutusu.urunSecimiGerekli");
                 return;
             }
 
@@ -1137,10 +1105,7 @@ namespace Palet_Programlama.Sayfalar
             var secili = SeciliKutuyuGetir();
             if (secili == null)
             {
-                MessageBox.Show("Önce bir ürün seçmelisiniz.",
-                    "Uyarı",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+                BildirimGoster("MesajKutusu.urunSecimiGerekli");
                 return;
             }
 
@@ -1295,10 +1260,7 @@ namespace Palet_Programlama.Sayfalar
 
             if (!kutular.Any())
             {
-                MessageBox.Show("Taşınacak ürün yok.",
-                    "Uyarı",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Warning);
+               BildirimGoster("MesajKutusu.tasinacakUrunYok");
                 return;
             }
 
@@ -1345,7 +1307,12 @@ namespace Palet_Programlama.Sayfalar
 
 
 
-
+        private void BildirimGoster(string mesajKey, string butonKey = "MesajKutusu.tamam")
+        {
+            var pencere = new UserController.BildirimKutusu();
+            pencere.MesajGonder(butonKey, mesajKey);
+            pencere.ShowDialog();
+        }
 
 
 

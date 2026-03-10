@@ -157,9 +157,7 @@ namespace Palet_Programlama.Sayfalar
             {
                 if (string.IsNullOrEmpty(textBox.Text))
                 {
-                    BildirimKutusu bildirimKutusu=new BildirimKutusu();
-                    bildirimKutusu.MesajGonder("ButtonKey.btntamam",message);
-                    bildirimKutusu.Show();
+                    BildirimGoster("ButtonKey.btntamam");
                     return;
                 }
             }

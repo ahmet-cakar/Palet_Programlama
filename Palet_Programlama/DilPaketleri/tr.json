@@ -63,6 +63,9 @@
     "komut": "Komutlar"
   },
     "MesajKutusu": {
+        "araKatSilinemez": "Lütfen kat temizlerken en üst kattan başlayınız,Ara kat silinemez.",
+        "guncellemeBasarili": "Dizilim güncellenmesi başarılı ile yapıldı.",
+        "isimGiriniz": "Lütfen bir isim giriniz.",
         "tasinacakUrunYok": "Taşınacak ürün yok.",
         "urunMevcut": "Bu ürün zaten mevcut,ismi değiştirin",
         "paletMevcut": "Bu palet zaten mevcut,ismi değiştirin",
@@ -80,7 +83,8 @@
         "uyari": "Uyarı Ekranı",
         "tamam": "Tamam",
         "mesaj": "Ürün Eklenmesinde Bir Problem Yaşandı! Lütfen Tekrar Deneyiniz",
-        "btncon1": "Tamam"
+        "btncon1": "Tamam",
+        "dizilimBulunamadi": "Dizilim bulunamadı"
     },
   "global": {
     "btnkaydet": "Kaydet",

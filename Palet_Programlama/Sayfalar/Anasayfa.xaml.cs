@@ -43,7 +43,7 @@ namespace Palet_Programlama.Sayfalar
             {
                 if (pencere.SecilenUrun != null && pencere.SecilenPalet != null)
                 {
-                    MainFrame.Navigate(new DizilimYap(MainFrame,pencere.SecilenUrun,pencere.SecilenPalet));
+                    MainFrame.Navigate(new DizilimYap(MainFrame,pencere.SecilenUrun,pencere.SecilenPalet,pencere.SecilenDizilimAdi));
                 }
             }
         }

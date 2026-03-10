@@ -48,10 +48,19 @@
 
           <StackPanel>
             <!-- Ürünler -->
-            <TextBlock Text="Ürünler (*)"
-                                   Foreground="White"
-                                   FontSize="20"
-                                   Margin="0,0,0,10"/>
+            <!-- Dizilimler -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+              <TextBlock Text="Ürünler"
+                Foreground="White"
+                FontSize="20"
+                VerticalAlignment="Center"/>
+
+                          <TextBlock Text=" ( * Zorunlu)"
+                Foreground="#A0A0A0"
+                FontSize="12"
+                Margin="8,4,0,0"
+                VerticalAlignment="Center"/>
+            </StackPanel>
 
             <ComboBox x:Name="urunComboBox"
                                   Style="{StaticResource KoyuTemaComboBox}"
@@ -64,10 +73,19 @@
                                   SelectionChanged="urunComboBox_SelectionChanged"/>
 
             <!-- Paletler -->
-            <TextBlock Text="Paletler (*)"
-                                   Foreground="White"
-                                   FontSize="20"
-                                   Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+              <TextBlock Text="Paletler"
+                Foreground="White"
+                FontSize="20"
+                VerticalAlignment="Center"/>
+
+              <TextBlock Text=" ( * Zorunlu)"
+                Foreground="#A0A0A0"
+                FontSize="12"
+                Margin="8,4,0,0"
+                VerticalAlignment="Center"/>
+            </StackPanel>
+
 
             <ComboBox x:Name="paletComboBox"
                                   Style="{StaticResource KoyuTemaComboBox}"
@@ -96,6 +114,7 @@
             <ComboBox x:Name="dizilimComboBox"
                                   Style="{StaticResource KoyuTemaComboBox}"
                                   Height="40"
+                                  SelectionChanged="dizilimComboBox_SelectionChanged"
                                   FontSize="18"
                                   Text="Dizilim Seçiniz"
                                   IsEditable="True"

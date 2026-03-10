@@ -97,6 +97,9 @@
     <Compile Include="UserController\BildirimKutusu.xaml.cs">
       <DependentUpon>BildirimKutusu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserController\MetinGirisKutusu.xaml.cs">
+      <DependentUpon>MetinGirisKutusu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserController\UrunPaletSecimKutusu.xaml.cs">
       <DependentUpon>UrunPaletSecimKutusu.xaml</DependentUpon>
     </Compile>
@@ -168,6 +171,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserController\BildirimKutusu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserController\MetinGirisKutusu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

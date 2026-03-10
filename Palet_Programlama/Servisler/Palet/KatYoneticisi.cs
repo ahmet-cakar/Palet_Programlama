@@ -1,6 +1,9 @@
-﻿using Palet_Programlama.Modeller;
+﻿using Newtonsoft.Json;
+using Palet_Programlama.Modeller;
+using Palet_Programlama.Sınıflar;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -96,6 +99,127 @@ namespace Palet_Programlama.Servisler.Palet
         }
 
 
+        public void AktifKatiTemizle(Canvas canvas)
+        {
+            var silinecekler = canvas.Children.OfType<Rectangle>().ToList();
+            foreach (var r in silinecekler)
+                canvas.Children.Remove(r);
+
+            _katlar[AktifKat] = new List<KatUrunu>();
+        }
+
+        public void TumKatlariTemizle(Canvas canvas)
+        {
+            var silinecekler = canvas.Children.OfType<Rectangle>().ToList();
+            foreach (var r in silinecekler)
+                canvas.Children.Remove(r);
+
+            _katlar.Clear();
+            AktifKat = 1;
+        }
+
+        public bool AraKatMiVeSilinemez()
+        {
+            // Aktif kattan sonra dolu bir kat varsa, bu kat ara kattır
+            return _katlar.Any(k =>
+                k.Key > AktifKat &&
+                k.Value != null &&
+                k.Value.Any());
+        }
+
+
+        public void Temizle()
+        {
+            _katlar.Clear();
+            AktifKat = 1;
+        }
+
+        public bool DizilimYukle(
+                string dizilimAdi,
+                Urun secilenUrun,
+                Sınıflar.Palet secilenPalet,
+                double olcekX,
+                double olcekY)
+        {
+            if (string.IsNullOrWhiteSpace(dizilimAdi))
+                return false;
+
+            try
+            {
+                string dosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Dizilimler.json");
+
+                if (!File.Exists(dosyaYolu))
+                    return false;
+
+                string json = File.ReadAllText(dosyaYolu);
+
+                var tumDizilimler = JsonConvert.DeserializeObject<List<DizilimKayitModel>>(json)
+                                   ?? new List<DizilimKayitModel>();
+
+                var kayit = tumDizilimler.FirstOrDefault(x =>
+                    string.Equals((x.DizilimAdi ?? "").Trim(), dizilimAdi.Trim(), StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals((x.PaletAdi ?? "").Trim(), (secilenPalet.PaletAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals((x.UrunAdi ?? "").Trim(), (secilenUrun.UrunAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase));
+
+                if (kayit == null)
+                    return false;
+
+                _katlar.Clear();
+
+                var katGruplari = kayit.Urunler
+                    .GroupBy(x => x.KatNo)
+                    .OrderBy(x => x.Key);
+
+                foreach (var katGrubu in katGruplari)
+                {
+                    var liste = new List<KatUrunu>();
+
+
+                    foreach (var urunKayit in katGrubu)
+                    {
+                        UrunYonu yon = string.Equals(urunKayit.Yon, "Yatay", StringComparison.OrdinalIgnoreCase)
+                            ? UrunYonu.Yatay
+                            : UrunYonu.Dikey;
+
+                        double gercekX = urunKayit.MerkezX;
+                        double gercekY = urunKayit.MerkezY;
+
+                        double canvasMerkezX = gercekY * olcekY;
+                        double canvasMerkezY = gercekX * olcekX;
+
+                        double dikeyUzunluk;
+                        double yatayUzunluk;
+
+                        if (yon == UrunYonu.Dikey)
+                        {
+                            dikeyUzunluk = secilenUrun.UrunBoy * olcekX;
+                            yatayUzunluk = secilenUrun.UrunEn * olcekY;
+                        }
+                        else
+                        {
+                            dikeyUzunluk = secilenUrun.UrunBoy * olcekY;
+                            yatayUzunluk = secilenUrun.UrunEn * olcekX;
+                        }
+
+                        liste.Add(new KatUrunu(
+                            canvasMerkezX,
+                            canvasMerkezY,
+                            dikeyUzunluk,
+                            yatayUzunluk,
+                            yon));
+                    }
+
+                    _katlar[katGrubu.Key] = liste;
+                }
+
+                AktifKat = _katlar.Any() ? _katlar.Keys.Min() : 1;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         public void KatDegistir(
             int yeniKat,

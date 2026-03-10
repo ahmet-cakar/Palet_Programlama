@@ -3,7 +3,7 @@
     "textblokurun": "Add",
     "textblokurun2": "Product/Pallet",
     "dizilim1": "Create",
-    "dizilim2": "Sequence",
+    "dizilim2": "layout",
     "hiz1": "Speed",
     "hiz2": "Settings",
     "gruplama1": "Create",
@@ -13,8 +13,8 @@
     "izleme": "Monitoring",
     "Komut": "Commands",
     "buttonC": "Continue",
-    "userborder1": "Change\nAccount",
-    "userborder2": "Exit"
+    "userblayout1": "Change\nAccount",
+    "userblayout2": "Exit"
   },
     "DizilimYap": {
         "urunozellik": "Product Features:  ",
@@ -26,7 +26,7 @@
         "katkopyala": "Copy Floor",
         "pozsecimi": "Position Selection",
         "btnKatTemizle": "Clear This Layer",
-        "btnDizilimiKaydet": "Save the Sequence",
+        "btnDizilimiKaydet": "Save the layout",
         "btnPaletTemizle": "Clear the Palette",
         "btnSeciliUrunuSil": "Delete Selected Item",
         "txtAynalama": "Mirroring (OFF)",
@@ -87,7 +87,7 @@
   },
   "UserControl": {
     "urunekle": "Add Product/Pallet",
-    "dizilimekle": "Create Sequence",
+    "dizilimekle": "Create layout",
     "hizayar": "Speed Settings",
     "grupekle": "Create Grouping",
     "program": "Programs",
@@ -97,6 +97,8 @@
 
   },
     "MesajKutusu": {
+        "araKatSilinemez": "Please start from the top floor when cleaning the floor, the intermediate layer cannot be wiped.",
+        "isimGiriniz": "Please enter a name..",
         "tasinacakUrunYok": "There are no products to move.",
         "urunMevcut": "This product already exists, change the name",
         "paletMevcut": "This palette already exists, change the name",
@@ -105,8 +107,8 @@
         "katKopyalamaBasarisiz": "Copying failed. The source layer may be empty, the target layer may be occupied, or the layer below the target layer may be empty.",
         "katKendineKopyalanamaz": "A layer cannot be copied to itself.",
         "kayitHatasiFormat": "An error occurred while registering: \n{0}",
-        "kayitBasarili": "The sequence was saved successfully.",
-        "farkliDizilimAdiGir": "A directory with this name already exists. Please enter a different lineup name.",
+        "kayitBasarili": "The layout was saved successfully.",
+        "farkliDizilimAdiGir": "A directory with this name already exists. Please enter a different layout name.",
         "kayitIcinUrunGerekli": "There are no products to save. You must first add products to the palette.",
         "maksKatUyari": "Maximum Number of Layers",
         "katBosOlamaz": "Layer is empty. You cannot move to the new floor without adding products.",
@@ -114,7 +116,9 @@
         "uyari": "Warning Screen",
         "tamam": "Okey",
         "mesaj": "There was a Problem Adding a Product! Please Try Again",
-        "btncon1": "Tamam"
+        "btncon1": "Tamam",
+        "dizilimBulunamadi": "The layout not found",
+        "guncellemeBasarili": "The layout update was done successfully."
     },
   "global": {
     "btnkaydet": "Save",
@@ -147,7 +151,7 @@
     "txtAgirlik": "Weight: ",
     "txtGruplandirma": "Grouping",
     "txtUrunSecimi": "Product Selection",
-    "txtDizilimSecimi": "Sequence Selection",
+    "txtDizilimSecimi": "layout Selection",
     "txtGruplamaSecimi": "Grouping Selection",
     "txtKatNo": "Floor No: ",
     "txtGrupNo": "Group No: ",
@@ -156,8 +160,8 @@
     "btnBirlestir": "Merge",
     "btnKaydet": "Save",
     "btnGruplariTemizle": "Clear Groups",
-    "btnManuelDiz": "Manual Sequence",
-    "btnDizilimListesi": "Sequence List"
+    "btnManuelDiz": "Manual layout",
+    "btnDizilimListesi": "layout List"
   },
   "HataMesajlari": {
     "urunadbos": "Product Name Cannot Be Left Blank!",

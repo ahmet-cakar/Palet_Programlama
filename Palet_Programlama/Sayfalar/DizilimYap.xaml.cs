@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Palet_Programlama.Modeller;
 using Palet_Programlama.Sınıflar;
+using Palet_Programlama.UserController;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,7 +34,7 @@ namespace Palet_Programlama.Sayfalar
 
         private double OlcekY => myCanvas.Width / _secilenPalet.PaletBoy;
         private double OlcekX => myCanvas.Height / _secilenPalet.PaletEn;
-
+        private string? _gelenDizilimAdi;
         private Point ilkTiklamaPozisyonu;
         private bool suruklemeBasladi = false;
         private const double suruklemeEsigi = 1.0;
@@ -48,10 +49,11 @@ namespace Palet_Programlama.Sayfalar
         Rectangle suruklenenKutu; // Hareket ettirilen Rectangle
         private Frame MainFrame;
 
-        public DizilimYap(Frame Main,Urun secilenUrun, Palet secilenPalet)
+        public DizilimYap(Frame Main,Urun secilenUrun, Palet secilenPalet,string? dizilimAdi)
         {
             InitializeComponent();
             this.MainFrame = Main;
+            
             _secilenPalet = secilenPalet;
             _secilenUrun = secilenUrun;
             txtUrunOzellikleri.Text = $"{_secilenUrun.UrunAdi} - {_secilenUrun.UrunEn} mm x {_secilenUrun.UrunBoy} mm x {_secilenUrun.UrunYukseklik} mm";
@@ -60,7 +62,36 @@ namespace Palet_Programlama.Sayfalar
             _motor.SnapEsigi = 3.0;
             _motor.CakismaEpsilon = 0.5;
             txtKat.Text = _katYonetici.AktifKat.ToString();
+            _gelenDizilimAdi = dizilimAdi;
+            if (!string.IsNullOrWhiteSpace(_gelenDizilimAdi))
+            {
+                bool yüklendi = _katYonetici.DizilimYukle(
+                    _gelenDizilimAdi,
+                    _secilenUrun,
+                    _secilenPalet,
+                    OlcekX,
+                    OlcekY);
+
+                if (yüklendi)
+                {
+                    _katYonetici.KatiYukleDisardan(
+                        myCanvas,
+                        Rectangle_MouseDown,
+                        Rectangle_MouseMove,
+                        Rectangle_MouseUp);
+
+                    txtKat.Text = _katYonetici.AktifKat.ToString();
+                }
+                else
+                {
+                    BildirimGoster("MesajKutusu.dizilimBulunamadi");
+                }
+            }
         }
+
+
+
+
 
         private Rect GetRect(Rectangle r)
         {
@@ -455,11 +486,13 @@ namespace Palet_Programlama.Sayfalar
             return model;
         }
 
-        private void DizilimiJsonDosyasinaKaydet(string dizilimAdi)
+
+        private void DizilimiJsonDosyasinaKaydet()
         {
             try
             {
                 _katYonetici.KatiKaydetDisardan(myCanvas);
+
                 bool hicUrunYokMu = !_katYonetici.TumKatlar.Any(kat => kat.Value != null && kat.Value.Any());
                 if (hicUrunYokMu)
                 {
@@ -467,9 +500,30 @@ namespace Palet_Programlama.Sayfalar
                     return;
                 }
 
+                string varsayilanAd = string.IsNullOrWhiteSpace(_gelenDizilimAdi)
+                    ? ""
+                    : _gelenDizilimAdi;
 
+                var pencere = new MetinGirisKutusu();
+                pencere.Ayarla(
+                    "Dizilim Kaydet",
+                    "Kaydetmek istediğiniz dizilim için bir isim giriniz.",
+                    varsayilanAd,
+                    "Kaydet",
+                    "İptal");
 
-                var yeniDizilim = DizilimKayitModeliOlustur(dizilimAdi);
+                bool? sonuc = pencere.ShowDialog();
+                if (sonuc != true)
+                {
+                    return;
+                }
+
+                string dizilimAdi = (pencere.GirilenMetin ?? "").Trim();
+                if (string.IsNullOrWhiteSpace(dizilimAdi))
+                {
+                    BildirimGoster("MesajKutusu.kayitIcinIsimGerekli");
+                    return;
+                }
 
                 string dosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Dizilimler.json");
 
@@ -494,29 +548,69 @@ namespace Palet_Programlama.Sayfalar
                     }
                 }
 
+                bool guncellemeModu = !string.IsNullOrWhiteSpace(_gelenDizilimAdi);
 
-
-                bool ayniIsimdeVarMi = tumDizilimler.Any(x =>
-                string.Equals(x.DizilimAdi, dizilimAdi, StringComparison.OrdinalIgnoreCase));
-
-                if (ayniIsimdeVarMi)
+                if (guncellemeModu)
                 {
-                    BildirimGoster("MesajKutusu.farkliDizilimAdiGir");
+                    var eskiKayit = tumDizilimler.FirstOrDefault(x =>
+                        string.Equals(x.DizilimAdi, _gelenDizilimAdi, StringComparison.OrdinalIgnoreCase) &&
+                        string.Equals(x.PaletAdi, _secilenPalet.PaletAdi, StringComparison.OrdinalIgnoreCase) &&
+                        string.Equals(x.UrunAdi, _secilenUrun.UrunAdi, StringComparison.OrdinalIgnoreCase));
+
+                    if (eskiKayit == null)
+                    {
+                        BildirimGoster("MesajKutusu.dizilimBulunamadi");
+                        return;
+                    }
+
+                    bool baskaKayittaAyniAdVarMi = tumDizilimler.Any(x =>
+                        !object.ReferenceEquals(x, eskiKayit) &&
+                        string.Equals(x.DizilimAdi, dizilimAdi, StringComparison.OrdinalIgnoreCase));
+
+                    if (baskaKayittaAyniAdVarMi)
+                    {
+                        BildirimGoster("MesajKutusu.farkliDizilimAdiGir");
+                        return;
+                    }
+
+                    var yeniDizilim = DizilimKayitModeliOlustur(dizilimAdi);
+
+                    int index = tumDizilimler.IndexOf(eskiKayit);
+                    tumDizilimler[index] = yeniDizilim;
+
+                    string yeniJson = JsonConvert.SerializeObject(tumDizilimler, Formatting.Indented);
+                    File.WriteAllText(dosyaYolu, yeniJson);
+
+                    _gelenDizilimAdi = dizilimAdi;
+
+                    BildirimGoster("MesajKutusu.guncellemeBasarili");
                     return;
                 }
+                else
+                {
+                    bool ayniIsimdeVarMi = tumDizilimler.Any(x =>
+                        string.Equals(x.DizilimAdi, dizilimAdi, StringComparison.OrdinalIgnoreCase));
 
+                    if (ayniIsimdeVarMi)
+                    {
+                        BildirimGoster("MesajKutusu.farkliDizilimAdiGir");
+                        return;
+                    }
 
+                    var yeniDizilim = DizilimKayitModeliOlustur(dizilimAdi);
+                    tumDizilimler.Add(yeniDizilim);
 
-                tumDizilimler.Add(yeniDizilim);
+                    string yeniJson = JsonConvert.SerializeObject(tumDizilimler, Formatting.Indented);
+                    File.WriteAllText(dosyaYolu, yeniJson);
 
-                string yeniJson = JsonConvert.SerializeObject(tumDizilimler, Formatting.Indented);
-                File.WriteAllText(dosyaYolu, yeniJson);
-                BildirimGoster("MesajKutusu.kayitBasarili");
+                    _gelenDizilimAdi = dizilimAdi;
+
+                    BildirimGoster("MesajKutusu.kayitBasarili");
+                }
             }
             catch (Exception ex)
             {
                 BildirimGosterFormatli("MesajKutusu.kayitHatasiFormat", ex.Message);
-               
             }
         }
 
@@ -570,8 +664,8 @@ namespace Palet_Programlama.Sayfalar
 
         private void Dizilimi_Kaydet_Click(object sender, RoutedEventArgs e)
         {
-            string dizilimAdi = "Dizilim_1";
-            DizilimiJsonDosyasinaKaydet(dizilimAdi);
+           
+            DizilimiJsonDosyasinaKaydet();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -1314,7 +1408,61 @@ namespace Palet_Programlama.Sayfalar
             pencere.ShowDialog();
         }
 
+        private void SeciliUrunuSil()
+        {
+            var secili = SeciliKutuyuGetir();
+            if (secili == null)
+            {
+                BildirimGoster("MesajKutusu.urunSecimiGerekli");
+                return;
+            }
 
+            myCanvas.Children.Remove(secili);
 
+            sonSecilmisKutu = new Rectangle();
+            _mesafe.Gizle();
+
+            _katYonetici.KatiKaydetDisardan(myCanvas);
+        }
+
+        private void AktifKatiTemizle()
+        {
+            _katYonetici.KatiKaydetDisardan(myCanvas);
+
+            if (_katYonetici.AraKatMiVeSilinemez())
+            {
+                BildirimGoster("MesajKutusu.araKatSilinemez");
+                return;
+            }
+
+            _katYonetici.AktifKatiTemizle(myCanvas);
+
+            sonSecilmisKutu = new Rectangle();
+            _mesafe.Gizle();
+        }
+
+        private void TumPaletiTemizle()
+        {
+            _katYonetici.TumKatlariTemizle(myCanvas);
+
+            txtKat.Text = _katYonetici.AktifKat.ToString();
+            sonSecilmisKutu = new Rectangle();
+            _mesafe.Gizle();
+        }
+
+        private void BtnUrunSil_Click(object sender, RoutedEventArgs e)
+        {
+            SeciliUrunuSil();
+        }
+
+        private void BtnPaletTemizle_Click(object sender, RoutedEventArgs e)
+        {
+            TumPaletiTemizle();
+        }
+
+        private void BtnKatTemizle_Click(object sender, RoutedEventArgs e)
+        {
+            AktifKatiTemizle();
+        }
     }
 }

@@ -553,20 +553,6 @@
                 <ImageBrush ImageSource="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
               </Canvas.Background>
 
-              <Rectangle Name="draggableRectangle2"
-                                       Width="100"
-                                       Height="150"
-                                       Canvas.Left="150"
-                                       Canvas.Top="200"
-                                       Stroke="Transparent"
-                                       StrokeThickness="0"
-                                       MouseDown="Rectangle_MouseDown"
-                                       MouseMove="Rectangle_MouseMove"
-                                       MouseUp="Rectangle_MouseUp">
-                <Rectangle.Fill>
-                  <ImageBrush ImageSource="/Resimler/DizilimYap/dikey_kutu.png"/>
-                </Rectangle.Fill>
-              </Rectangle>
             </Canvas>
           </Viewbox>
         </Grid>
@@ -631,7 +617,7 @@
                     Margin="0,0,0,0"
                     Background="Transparent">
         <WrapPanel>
-          <Button FontSize="24"
+          <Button FontSize="24" Click="Dizilimi_Kaydet_Click"
                             Content="{Binding Source='DizilimYap.btnDizilimiKaydet',Converter={StaticResource LanguageConverter}}"
                             Width="240"
                             Margin="0,0,10,10"

@@ -8,26 +8,10 @@
     "UrunBasinc": 5
   },
   {
-    "UrunAdi": "Yumoş 220 ML 2",
-    "UrunEn": 200.0,
-    "UrunBoy": 300.0,
-    "UrunYukseklik": 200.0,
-    "UrunAgirlik": 20.0,
-    "UrunBasinc": 5
-  },
-  {
-    "UrunAdi": "Yumoş 220 ML 3",
-    "UrunEn": 200.0,
-    "UrunBoy": 300.0,
-    "UrunYukseklik": 200.0,
-    "UrunAgirlik": 20.0,
-    "UrunBasinc": 5
-  },
-  {
-    "UrunAdi": "Yumoş 220 ML 4",
-    "UrunEn": 200.0,
-    "UrunBoy": 300.0,
-    "UrunYukseklik": 200.0,
+    "UrunAdi": "Test2",
+    "UrunEn": 400.0,
+    "UrunBoy": 400.0,
+    "UrunYukseklik": 150.0,
     "UrunAgirlik": 20.0,
     "UrunBasinc": 5
   }

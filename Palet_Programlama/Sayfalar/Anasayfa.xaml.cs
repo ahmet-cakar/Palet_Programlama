@@ -1,18 +1,8 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Palet_Programlama.Sınıflar;
 using Palet_Programlama.UserController;
 namespace Palet_Programlama.Sayfalar
@@ -53,7 +43,7 @@ namespace Palet_Programlama.Sayfalar
             {
                 if (pencere.SecilenUrun != null && pencere.SecilenPalet != null)
                 {
-                    MainFrame.Navigate(new DizilimYap(MainFrame));
+                    MainFrame.Navigate(new DizilimYap(MainFrame,pencere.SecilenUrun,pencere.SecilenPalet));
                 }
             }
         }

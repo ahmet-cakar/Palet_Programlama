@@ -11,10 +11,6 @@ using System.Windows.Shapes;
 
 namespace Palet_Programlama.Servisler.Palet
 {
-    /// <summary>
-    /// Katlar arası geçişte, her katın palet üzerindeki ürün yerleşimlerini saklar ve geri yükler.
-    /// Ürün verisi KatUrunu ile tutulur: MerkezX/MerkezY + Yon + Dikey/Yatay uzunluk.
-    /// </summary>
     public sealed class KatYoneticisi
     {
         private readonly Dictionary<int, List<KatUrunu>> _katlar = new();
@@ -22,9 +18,8 @@ namespace Palet_Programlama.Servisler.Palet
 
         public int AktifKat { get; private set; } = 1;
 
-        /// <summary>
-        /// Aktif katı kaydeder, yeni kata geçer ve yeni katı canvas'a yükler.
-        /// </summary>
+        public IReadOnlyDictionary<int, List<KatUrunu>> TumKatlar => _katlar;
+
         public void KatDegistir(
             int yeniKat,
             Canvas canvas,
@@ -33,14 +28,11 @@ namespace Palet_Programlama.Servisler.Palet
             MouseEventHandler onMove,
             MouseButtonEventHandler onUp)
         {
-            // Maks kat sınırı
             if (yeniKat > MaksKat)
             {
-                // İstersen burada MessageBox yerine bool döndürürüz; şimdilik sadece engelle
                 return;
             }
 
-            // Eğer ileri gidiyorsak ve mevcut kat boşsa, yeni kata geçme
             if (yeniKat > AktifKat)
             {
                 bool mevcutKatBosMu = !canvas.Children.OfType<Rectangle>().Any();
@@ -48,33 +40,21 @@ namespace Palet_Programlama.Servisler.Palet
                     return;
             }
 
-
-
-            // 1) Mevcut katı kaydet
             KatiKaydet(canvas);
 
-            // 2) Kat numarasını güncelle (min 1)
             AktifKat = yeniKat < 1 ? 1 : yeniKat;
 
-            // 3) Seçimi temizle
             if (seciliKutu is not null)
             {
                 seciliKutu.Stroke = Brushes.Transparent;
                 seciliKutu.StrokeThickness = 0;
             }
 
-            // 4) Yeni katı yükle
             KatiYukle(canvas, onDown, onMove, onUp);
         }
 
-        /// <summary>
-        /// İstenirse dışarıdan "kaydet" butonu için çağrılabilir.
-        /// </summary>
         public void KatiKaydetDisardan(Canvas canvas) => KatiKaydet(canvas);
 
-        /// <summary>
-        /// İstenirse dışarıdan "yükle" için çağrılabilir (AktifKat'a göre).
-        /// </summary>
         public void KatiYukleDisardan(
             Canvas canvas,
             MouseButtonEventHandler onDown,
@@ -95,12 +75,10 @@ namespace Palet_Programlama.Servisler.Palet
                     double cx = left + w / 2.0;
                     double cy = top + h / 2.0;
 
-                    // Yönü en sağlam şekilde Tag'den al
                     var yon = r.Tag is UrunYonu t
                         ? t
                         : (w >= h ? UrunYonu.Yatay : UrunYonu.Dikey);
 
-                    // Dikey/Yatay uzunlukları yön mantığına göre sakla
                     double dikeyUz = (yon == UrunYonu.Dikey) ? h : w;
                     double yatayUz = (yon == UrunYonu.Dikey) ? w : h;
 
@@ -117,13 +95,12 @@ namespace Palet_Programlama.Servisler.Palet
             MouseEventHandler onMove,
             MouseButtonEventHandler onUp)
         {
-            // Canvas'tan sadece ürünleri temizle (MesafeGostergesi Line/TextBlock eklemişse etkilenmez)
             var silinecekler = canvas.Children.OfType<Rectangle>().ToList();
             foreach (var r in silinecekler)
                 canvas.Children.Remove(r);
 
             if (!_katlar.TryGetValue(AktifKat, out var liste))
-                return; // boş kat
+                return;
 
             foreach (var u in liste)
             {
@@ -147,7 +124,7 @@ namespace Palet_Programlama.Servisler.Palet
                     {
                         ImageSource = new BitmapImage(new Uri(resim, UriKind.Absolute))
                     },
-                    Tag = u.Yon // tekrar kaydederken yönü sağlam okumak için
+                    Tag = u.Yon
                 };
 
                 rect.MouseDown += onDown;

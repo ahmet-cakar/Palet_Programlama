@@ -91,7 +91,7 @@ namespace Palet_Programlama.Sayfalar
             {
                 if (secimKutusu.SecilenUrun != null && secimKutusu.SecilenPalet != null)
                 {
-                    mainWindow.MainFrame.Content = new DizilimYap(mainWindow.MainFrame);
+                    mainWindow.MainFrame.Content = new DizilimYap(mainWindow.MainFrame, secimKutusu.SecilenUrun, secimKutusu.SecilenPalet);
                 }
             }
         }

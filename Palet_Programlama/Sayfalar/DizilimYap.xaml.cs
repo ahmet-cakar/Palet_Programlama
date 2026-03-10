@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Palet_Programlama.Modeller;
+using Palet_Programlama.Sınıflar;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -7,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
+
 
 namespace Palet_Programlama.Sayfalar
 {
@@ -22,9 +28,12 @@ namespace Palet_Programlama.Sayfalar
         private enum EklemeYon { Dikey, Yatay }
         private EklemeYon? _eklemeYon = null;
 
-        // Ürün ölçüsü (Canvas pixel) — şimdilik senin dikey kutu: 100x150
-        private const double UrunW_Dikey = 100;
-        private const double UrunH_Dikey = 150;
+        private Urun _secilenUrun;
+        private Palet _secilenPalet;
+
+        private double OlcekY => myCanvas.Width / _secilenPalet.PaletBoy;
+        private double OlcekX => myCanvas.Height / _secilenPalet.PaletEn;
+
         private Point ilkTiklamaPozisyonu;
         private bool suruklemeBasladi = false;
         private const double suruklemeEsigi = 1.0;
@@ -39,10 +48,14 @@ namespace Palet_Programlama.Sayfalar
         Rectangle suruklenenKutu; // Hareket ettirilen Rectangle
         private Frame MainFrame;
 
-        public DizilimYap(Frame Main)
+        public DizilimYap(Frame Main,Urun secilenUrun, Palet secilenPalet)
         {
             InitializeComponent();
             this.MainFrame = Main;
+            _secilenPalet = secilenPalet;
+            _secilenUrun = secilenUrun;
+            txtUrunOzellikleri.Text = $"{_secilenUrun.UrunAdi} - {_secilenUrun.UrunEn} mm x {_secilenUrun.UrunBoy} mm x {_secilenUrun.UrunYukseklik} mm";
+            txtPaletOzellikleri.Text = $"{_secilenPalet.PaletAdi} - {_secilenPalet.PaletEn} mm x {_secilenPalet.PaletBoy} mm x {_secilenPalet.PaletYukseklik} mm";
             _mesafe.Baslat(myCanvas);
             _motor.SnapEsigi = 3.0;
             _motor.CakismaEpsilon = 0.5;
@@ -117,7 +130,7 @@ namespace Palet_Programlama.Sayfalar
                     var digerKutular = DigerKutular(suruklenenKutu);
 
                     // motor hesaplasın
-                    if (_motor.TrySurukle(movingNow, hedef, myCanvas.ActualWidth, myCanvas.ActualHeight, digerKutular, out var sonuc))
+                    if (_motor.TrySurukle(movingNow, hedef, myCanvas.Width, myCanvas.Height, digerKutular, out var sonuc))
                     {
                         Canvas.SetLeft(suruklenenKutu, sonuc.Left);
                         Canvas.SetTop(suruklenenKutu, sonuc.Top);
@@ -169,7 +182,7 @@ namespace Palet_Programlama.Sayfalar
             }
             suruklemeBasladi = false;
             surukleniyor = false;
-            suruklenenKutu.ReleaseMouseCapture();
+            suruklenenKutu?.ReleaseMouseCapture();
 
 
         }
@@ -214,30 +227,19 @@ namespace Palet_Programlama.Sayfalar
         private void myCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (_eklemeYon is null)
-            {
                 return;
-            }
-            // Eğer tıklanan yer bir Rectangle ise (mevcut ürün), ekleme yapma.
-            // (İstersen yine de eklemesini istersen bunu kaldırırız.)
+
             if (e.OriginalSource is Rectangle) return;
 
             var p = e.GetPosition(myCanvas);
 
-            double w = UrunW_Dikey;
-            double h = UrunH_Dikey;
+            var (w, h) = CanvasUrunBoyutuGetir(_eklemeYon.Value);
 
-            // Yatay seçiliyse ölçü swap
-            if (_eklemeYon == EklemeYon.Yatay)
-                (w, h) = (h, w);
-
-           
-            // Tıklanan nokta ürünün sol-üst köşesi olsun
             double newLeft = p.X;
             double newTop = p.Y;
 
-            // Canvas sınırına sıkıştır
-            double maxLeft = myCanvas.ActualWidth - w;
-            double maxTop = myCanvas.ActualHeight - h;
+            double maxLeft = myCanvas.Width - w;
+            double maxTop = myCanvas.Height - h;
             newLeft = Math.Max(0, Math.Min(newLeft, maxLeft));
             newTop = Math.Max(0, Math.Min(newTop, maxTop));
 
@@ -250,11 +252,11 @@ namespace Palet_Programlama.Sayfalar
                 return;
             }
 
-          
             var rect = YeniUrunOlustur(w, h, _eklemeYon);
             rect.Tag = (_eklemeYon == EklemeYon.Dikey)
-            ? Modeller.UrunYonu.Dikey
-            : Modeller.UrunYonu.Yatay;
+                ? Modeller.UrunYonu.Dikey
+                : Modeller.UrunYonu.Yatay;
+
             Canvas.SetLeft(rect, newLeft);
             Canvas.SetTop(rect, newTop);
             myCanvas.Children.Add(rect);
@@ -417,6 +419,138 @@ namespace Palet_Programlama.Sayfalar
                 return;
             }
             txtHareketMiktari.Text = Convert.ToString(Convert.ToInt32(txtHareketMiktari.Text) - 1);
+        }
+
+        private DizilimKayitModel DizilimKayitModeliOlustur(string dizilimAdi)
+        {
+            _katYonetici.KatiKaydetDisardan(myCanvas);
+
+            var model = new DizilimKayitModel
+            {
+                DizilimAdi = dizilimAdi,
+                PaletAdi = _secilenPalet.PaletAdi,
+                PaletEn = _secilenPalet.PaletEn,
+                PaletBoy = _secilenPalet.PaletBoy,
+                PaletYukseklik = _secilenPalet.PaletYukseklik,
+                UrunAdi = _secilenUrun.UrunAdi,
+                UrunEn = _secilenUrun.UrunEn,
+                UrunBoy = _secilenUrun.UrunBoy,
+                UrunYukseklik = _secilenUrun.UrunYukseklik
+            };
+
+            foreach (var kat in _katYonetici.TumKatlar.OrderBy(x => x.Key))
+            {
+                int katNo = kat.Key;
+
+                foreach (var urun in kat.Value)
+                {
+                    double gercekMerkezX = CanvasMerkezDikeydenGercekX(urun.MerkezY);
+                    double gercekMerkezY = CanvasMerkezYataydanGercekY(urun.MerkezX);
+
+                    model.Urunler.Add(new DizilimUrunKayitModel
+                    {
+                        Yon = urun.Yon.ToString(),
+                        KatNo = katNo,
+                        MerkezX = gercekMerkezX,
+                        MerkezY = gercekMerkezY,
+                        MerkezZ = MerkezZHesapla(katNo)
+                    });
+                }
+            }
+
+            return model;
+        }
+
+        private void DizilimiJsonDosyasinaKaydet(string dizilimAdi)
+        {
+            try
+            {
+                var yeniDizilim = DizilimKayitModeliOlustur(dizilimAdi);
+
+                string dosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Dizilimler.json");
+
+                List<DizilimKayitModel> tumDizilimler;
+
+                if (!File.Exists(dosyaYolu))
+                {
+                    tumDizilimler = new List<DizilimKayitModel>();
+                }
+                else
+                {
+                    string mevcutJson = File.ReadAllText(dosyaYolu);
+
+                    if (string.IsNullOrWhiteSpace(mevcutJson))
+                    {
+                        tumDizilimler = new List<DizilimKayitModel>();
+                    }
+                    else
+                    {
+                        tumDizilimler = JsonConvert.DeserializeObject<List<DizilimKayitModel>>(mevcutJson)
+                                        ?? new List<DizilimKayitModel>();
+                    }
+                }
+
+                tumDizilimler.Add(yeniDizilim);
+
+                string yeniJson = JsonConvert.SerializeObject(tumDizilimler, Formatting.Indented);
+                File.WriteAllText(dosyaYolu, yeniJson);
+
+                MessageBox.Show($"Dizilim kaydedildi:\n{dosyaYolu}", "Bilgi",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Kayıt hatası:\n{ex.Message}");
+            }
+        }
+
+
+
+        private double MerkezZHesapla(int katNo)
+        {
+            return _secilenPalet.PaletYukseklik
+                   + (katNo * _secilenUrun.UrunYukseklik)
+                   - (_secilenUrun.UrunYukseklik / 2.0);
+        }
+
+        private double CanvasMerkezYataydanGercekY(double canvasMerkezYatay)
+        {
+            return canvasMerkezYatay / OlcekY;
+        }
+
+        private double CanvasMerkezDikeydenGercekX(double canvasMerkezDikey)
+        {
+            return canvasMerkezDikey / OlcekX;
+        }
+
+        private (double w, double h) CanvasUrunBoyutuGetir(EklemeYon yon)
+        {
+            double urunEn = _secilenUrun.UrunEn;
+            double urunBoy = _secilenUrun.UrunBoy;
+
+            double olcekX = OlcekX;
+            double olcekY = OlcekY;
+
+            if (yon == EklemeYon.Dikey)
+            {
+                double w = urunEn * olcekY;
+                double h = urunBoy * olcekX;
+                return (w, h);
+            }
+            else
+            {
+                double w = urunBoy * olcekY;
+                double h = urunEn * olcekX;
+                return (w, h);
+            }
+        }
+
+       
+
+        private void Dizilimi_Kaydet_Click(object sender, RoutedEventArgs e)
+        {
+            string dizilimAdi = "Dizilim_1";
+            DizilimiJsonDosyasinaKaydet(dizilimAdi);
         }
     }
 }

@@ -1,0 +1,36 @@
+[
+  {
+    "DizilimAdi": "Dizilim_1",
+    "PaletAdi": "EURO-PALET",
+    "PaletEn": 800.0,
+    "PaletBoy": 1200.0,
+    "PaletYukseklik": 100.0,
+    "UrunAdi": "Yumoş 220 ML",
+    "UrunEn": 200.0,
+    "UrunBoy": 300.0,
+    "UrunYukseklik": 200.0,
+    "Urunler": [
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 150.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 1,
+        "MerkezX": 700.0,
+        "MerkezY": 150.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 2,
+        "MerkezX": 100.0,
+        "MerkezY": 150.0,
+        "MerkezZ": 400.0
+      }
+    ]
+  }
+]

@@ -60,6 +60,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Modeller\DizilimKayitModel.cs" />
+    <Compile Include="Modeller\DizilimUrunKayitModel.cs" />
     <Compile Include="Sayfalar\GruplamaYap.xaml.cs">
       <DependentUpon>GruplamaYap.xaml</DependentUpon>
     </Compile>
@@ -225,6 +227,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Data\Dizilimler.json">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Include="Data\Paletler.json" />
     <None Include="Data\Urunler.json" />
     <None Include="DilPaketleri\eng.json" />

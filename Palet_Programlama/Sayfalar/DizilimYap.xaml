@@ -624,21 +624,21 @@
                             Background="{StaticResource button_background_green}"
                             Style="{StaticResource button_template}" />
 
-          <Button FontSize="24"
+          <Button FontSize="24"  Click="Button_Click"
                             Content="{Binding Source='DizilimYap.btnKatTemizle',Converter={StaticResource LanguageConverter}}"
                             Width="240"
                             Margin="0,0,10,10"
                             Background="{StaticResource button_background}"
                             Style="{StaticResource button_template}" />
 
-          <Button FontSize="24"
+          <Button FontSize="24" Click="Button_Click_1"
                             Content="{Binding Source='DizilimYap.btnPaletTemizle',Converter={StaticResource LanguageConverter}}"
                             Width="240"
                             Margin="0,0,10,10"
                             Background="{StaticResource button_background_black}"
                             Style="{StaticResource button_template}" />
 
-          <Button FontSize="24"
+          <Button FontSize="24" Click="Button_Click_2"
                             Content="{Binding Source='DizilimYap.btnSeciliUrunuSil',Converter={StaticResource LanguageConverter}}"
                             Width="240"
                             Margin="0,0,10,10"

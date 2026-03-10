@@ -423,8 +423,6 @@ namespace Palet_Programlama.Sayfalar
 
         private DizilimKayitModel DizilimKayitModeliOlustur(string dizilimAdi)
         {
-            _katYonetici.KatiKaydetDisardan(myCanvas);
-
             var model = new DizilimKayitModel
             {
                 DizilimAdi = dizilimAdi,
@@ -438,7 +436,9 @@ namespace Palet_Programlama.Sayfalar
                 UrunYukseklik = _secilenUrun.UrunYukseklik
             };
 
-            foreach (var kat in _katYonetici.TumKatlar.OrderBy(x => x.Key))
+            foreach (var kat in _katYonetici.TumKatlar
+                .Where(x => x.Value != null && x.Value.Any())
+                .OrderBy(x => x.Key))
             {
                 int katNo = kat.Key;
 
@@ -465,6 +465,19 @@ namespace Palet_Programlama.Sayfalar
         {
             try
             {
+                _katYonetici.KatiKaydetDisardan(myCanvas);
+                bool hicUrunYokMu = !_katYonetici.TumKatlar.Any(kat => kat.Value != null && kat.Value.Any());
+                if (hicUrunYokMu)
+                {
+                    MessageBox.Show("Kaydedilecek ürün yok. Önce palete ürün eklemelisiniz.",
+                        "Uyarı",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                    return;
+                }
+
+
+
                 var yeniDizilim = DizilimKayitModeliOlustur(dizilimAdi);
 
                 string dosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Dizilimler.json");
@@ -489,6 +502,22 @@ namespace Palet_Programlama.Sayfalar
                                         ?? new List<DizilimKayitModel>();
                     }
                 }
+
+
+
+                bool ayniIsimdeVarMi = tumDizilimler.Any(x =>
+                string.Equals(x.DizilimAdi, dizilimAdi, StringComparison.OrdinalIgnoreCase));
+
+                if (ayniIsimdeVarMi)
+                {
+                    MessageBox.Show("Bu isimde bir dizilim zaten var. Lütfen farklı bir dizilim adı girin.",
+                        "Uyarı",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                    return;
+                }
+
+
 
                 tumDizilimler.Add(yeniDizilim);
 
@@ -551,6 +580,21 @@ namespace Palet_Programlama.Sayfalar
         {
             string dizilimAdi = "Dizilim_1";
             DizilimiJsonDosyasinaKaydet(dizilimAdi);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

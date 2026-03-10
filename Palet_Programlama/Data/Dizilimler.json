@@ -20,16 +20,9 @@
       {
         "Yon": "Yatay",
         "KatNo": 1,
-        "MerkezX": 700.0,
-        "MerkezY": 150.0,
-        "MerkezZ": 200.0
-      },
-      {
-        "Yon": "Yatay",
-        "KatNo": 2,
         "MerkezX": 100.0,
-        "MerkezY": 150.0,
-        "MerkezZ": 400.0
+        "MerkezY": 350.0,
+        "MerkezZ": 200.0
       }
     ]
   }

@@ -20,6 +20,83 @@ namespace Palet_Programlama.Servisler.Palet
 
         public IReadOnlyDictionary<int, List<KatUrunu>> TumKatlar => _katlar;
 
+
+
+        public bool TumKatlariTasi(double deltaLeftPx, double deltaTopPx, double canvasGenislik, double canvasYukseklik)
+        {
+            var doluKatlar = _katlar
+                .Where(k => k.Value != null && k.Value.Any())
+                .ToList();
+
+            if (!doluKatlar.Any())
+                return false;
+
+            // Önce kontrol: herhangi bir üründe sınır ihlali olacak mı?
+            foreach (var kat in doluKatlar)
+            {
+                foreach (var urun in kat.Value)
+                {
+                    double w = Genislik(urun);
+                    double h = Yukseklik(urun);
+
+                    double left = urun.MerkezX - w / 2.0;
+                    double top = urun.MerkezY - h / 2.0;
+
+                    double yeniLeft = left + deltaLeftPx;
+                    double yeniTop = top + deltaTopPx;
+
+                    if (yeniLeft < 0 ||
+                        yeniTop < 0 ||
+                        yeniLeft + w > canvasGenislik ||
+                        yeniTop + h > canvasYukseklik)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            // Hepsi uygunsa taşı
+            foreach (var kat in doluKatlar)
+            {
+                foreach (var urun in kat.Value)
+                {
+                    urun.MerkezX += deltaLeftPx;
+                    urun.MerkezY += deltaTopPx;
+                }
+            }
+
+            return true;
+        }
+
+        private static KatUrunu AynalanmisKopyaOlustur(
+             KatUrunu kaynak,
+             bool xEksenineGoreAynala,
+             bool yEksenineGoreAynala,
+             double canvasGenislik,
+             double canvasYukseklik)
+        {
+            double yeniMerkezX = kaynak.MerkezX; // canvas yatay merkez
+            double yeniMerkezY = kaynak.MerkezY; // canvas dikey merkez
+
+            // Kullanıcının ekrandaki eksen beklentisine göre:
+            // X ekseni seçiliyse sağ-sol simetri uygula
+            if (xEksenineGoreAynala)
+                yeniMerkezX = canvasGenislik - kaynak.MerkezX;
+
+            // Y ekseni seçiliyse üst-alt simetri uygula
+            if (yEksenineGoreAynala)
+                yeniMerkezY = canvasYukseklik - kaynak.MerkezY;
+
+            return new KatUrunu(
+                yeniMerkezX,
+                yeniMerkezY,
+                kaynak.DikeyUzunluk,
+                kaynak.YatayUzunluk,
+                kaynak.Yon);
+        }
+
+
+
         public void KatDegistir(
             int yeniKat,
             Canvas canvas,
@@ -52,6 +129,51 @@ namespace Palet_Programlama.Servisler.Palet
 
             KatiYukle(canvas, onDown, onMove, onUp);
         }
+
+
+        public bool KatKopyala(
+    int kaynakKat,
+    int hedefKat,
+    bool xEksenineGoreAynala,
+    bool yEksenineGoreAynala,
+    double canvasGenislik,
+    double canvasYukseklik)
+        {
+            if (kaynakKat < 1 || hedefKat < 1)
+                return false;
+
+            if (kaynakKat == hedefKat)
+                return false;
+
+            // 1) Kaynak kat dolu olmalı
+            if (!_katlar.TryGetValue(kaynakKat, out var kaynakListe) || kaynakListe == null || !kaynakListe.Any())
+                return false;
+
+            // 2) Hedef kat boş olmalı
+            if (_katlar.TryGetValue(hedefKat, out var hedefListe) && hedefListe != null && hedefListe.Any())
+                return false;
+
+            // 3) Hedef katın bir önceki katı boş olmamalı
+            if (hedefKat > 1)
+            {
+                int oncekiKat = hedefKat - 1;
+
+                if (!_katlar.TryGetValue(oncekiKat, out var oncekiListe) || oncekiListe == null || !oncekiListe.Any())
+                    return false;
+            }
+
+            _katlar[hedefKat] = kaynakListe
+                .Select(u => AynalanmisKopyaOlustur(
+                    u,
+                    xEksenineGoreAynala,
+                    yEksenineGoreAynala,
+                    canvasGenislik,
+                    canvasYukseklik))
+                .ToList();
+
+            return true;
+        }
+
 
         public void KatiKaydetDisardan(Canvas canvas) => KatiKaydet(canvas);
 

@@ -402,10 +402,7 @@ namespace Palet_Programlama.Sayfalar
             txtYapisValue.Text = Convert.ToString(Convert.ToInt32(txtYapisValue.Text) - 1);
         }
 
-        private void BtnKatKopyala_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
+     
 
         private void BtnHareketMiktariArti_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -596,5 +593,761 @@ namespace Palet_Programlama.Sayfalar
         {
 
         }
+
+
+        private void AynalamaYazisiniGuncelle()
+        {
+            string dilAnahtari =
+                (cbYEkseni.IsChecked == true || cbXEkseni.IsChecked == true)
+                ? "DizilimYap.txtAynalamaAcik"
+                : "DizilimYap.txtAynalama";
+
+            var converter = (LanguageConverter)FindResource("LanguageConverter");
+            txtAynamala.Text = converter.Convert(dilAnahtari, typeof(string), null, System.Globalization.CultureInfo.CurrentCulture)?.ToString();
+        }
+
+
+        private void cbYEkseni_Click(object sender, RoutedEventArgs e)
+        {
+            AynalamaYazisiniGuncelle();
+        }
+
+        private void cbXEkseni_Click(object sender, RoutedEventArgs e)
+        {
+            AynalamaYazisiniGuncelle();
+        }
+
+        private void Btn_KatKopayala_Click(object sender, RoutedEventArgs e)
+        {
+            _katYonetici.KatiKaydetDisardan(myCanvas);
+
+            int kopyalanacakKat = Convert.ToInt32(txtKopyalaValue.Text);
+            int yapistirilacakKat = Convert.ToInt32(txtYapisValue.Text);
+
+            if (kopyalanacakKat == yapistirilacakKat)
+            {
+                MessageBox.Show("Bir kat kendisine kopyalanamaz.",
+                    "Uyarı",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+                return;
+            }
+
+            bool xAynala = cbXEkseni.IsChecked == true;
+            bool yAynala = cbYEkseni.IsChecked == true;
+
+            bool basarili = _katYonetici.KatKopyala(
+                kopyalanacakKat,
+                yapistirilacakKat,
+                xAynala,
+                yAynala,
+                myCanvas.Width,
+                myCanvas.Height);
+
+            if (!basarili)
+            {
+                MessageBox.Show("Kopyalama yapılamadı. Kaynak kat boş olabilir, hedef kat dolu olabilir veya hedef katın bir alt katı boş olabilir.",
+                    "Uyarı",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+                return;
+            }
+
+            MessageBox.Show("Kat başarıyla kopyalandı.",
+                "Bilgi",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
+        }
+
+        private void BtnYukari_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (CokluEklemeModuAcikMi())
+            {
+                var secili = SeciliKutuyuGetir();
+                if (secili == null)
+                {
+                    MessageBox.Show("Önce bir ürün seçmelisiniz.",
+                        "Uyarı",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                    return;
+                }
+
+                SeciliUrundenCokluKopyaOlustur(0, -secili.Height);
+                return;
+            }
+
+            if (HizalamaModuAcikMi())
+            {
+                SeciliUrunuHizala("Yukari");
+                return;
+            }
+
+            if (KatTasimaModuAcikMi())
+            {
+                if (!HareketMiktariniAl(out double hareketMm2))
+                    return;
+
+                double paletDeltaTopPx = -(hareketMm2 * OlcekX);
+                AktifKattakiTumUrunleriTasi(0, paletDeltaTopPx);
+                return;
+            }
+
+            if (PaletTasimaModuAcikMi())
+            {
+                if (!HareketMiktariniAl(out double hareketPalet))
+                    return;
+
+                double paletDeltaLeftPx = hareketPalet * OlcekY;
+                PalettekiTumKatlariTasi(0, -(hareketPalet * OlcekX));
+                return;
+            }
+
+
+            if (!HareketMiktariniAl(out double hareketMm))
+                return;
+
+            double deltaTopPx = -(hareketMm * OlcekX);
+            SeciliUrunuHareketEttir(0, deltaTopPx);
+        }
+
+        private void BtnAsagi_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (CokluEklemeModuAcikMi())
+            {
+                var secili = SeciliKutuyuGetir();
+                if (secili == null)
+                {
+                    MessageBox.Show("Önce bir ürün seçmelisiniz.",
+                        "Uyarı",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                    return;
+                }
+
+                SeciliUrundenCokluKopyaOlustur(0, secili.Height);
+                return;
+            }
+
+            if (HizalamaModuAcikMi())
+            {
+                SeciliUrunuHizala("Asagi");
+                return;
+            }
+
+
+            if (KatTasimaModuAcikMi())
+            {
+                if (!HareketMiktariniAl(out double hareketMm2))
+                    return;
+
+                double paletDeltaTopPx = hareketMm2 * OlcekX;
+                AktifKattakiTumUrunleriTasi(0, paletDeltaTopPx);
+                return;
+            }
+
+            if (PaletTasimaModuAcikMi())
+            {
+                if (!HareketMiktariniAl(out double hareketPalet))
+                    return;
+
+                double paletDeltaLeftPx = hareketPalet * OlcekY;
+                PalettekiTumKatlariTasi(0, hareketPalet * OlcekX);
+                return;
+            }
+
+            if (!HareketMiktariniAl(out double hareketMm))
+                return;
+
+            double deltaTopPx = hareketMm * OlcekX;
+            SeciliUrunuHareketEttir(0, deltaTopPx);
+        }
+
+        private void BtnSag_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (CokluEklemeModuAcikMi())
+            {
+                var secili = SeciliKutuyuGetir();
+                if (secili == null)
+                {
+                    MessageBox.Show("Önce bir ürün seçmelisiniz.",
+                        "Uyarı",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                    return;
+                }
+
+                SeciliUrundenCokluKopyaOlustur(secili.Width, 0);
+                return;
+            }
+
+            if (HizalamaModuAcikMi())
+            {
+                SeciliUrunuHizala("Sag");
+                return;
+            }
+
+
+            if (KatTasimaModuAcikMi())
+            {
+                if (!HareketMiktariniAl(out double hareketMm2))
+                    return;
+
+                double paletDeltaLeftPx = hareketMm2 * OlcekY;
+                AktifKattakiTumUrunleriTasi(paletDeltaLeftPx, 0);
+                return;
+            }
+
+            if (PaletTasimaModuAcikMi())
+            {
+                if (!HareketMiktariniAl(out double hareketPalet))
+                    return;
+
+                double paletDeltaLeftPx = hareketPalet * OlcekY;
+                PalettekiTumKatlariTasi(paletDeltaLeftPx, 0);
+                return;
+            }
+
+
+            if (!HareketMiktariniAl(out double hareketMm))
+                return;
+
+            double deltaLeftPx = hareketMm * OlcekY;
+            SeciliUrunuHareketEttir(deltaLeftPx, 0);
+        }
+
+        private void BtnSol_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (CokluEklemeModuAcikMi())
+            {
+                var secili = SeciliKutuyuGetir();
+                if (secili == null)
+                {
+                    MessageBox.Show("Önce bir ürün seçmelisiniz.",
+                        "Uyarı",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                    return;
+                }
+
+                SeciliUrundenCokluKopyaOlustur(-secili.Width, 0);
+                return;
+            }
+
+            if (HizalamaModuAcikMi())
+            {
+                SeciliUrunuHizala("Sol");
+                return;
+            }
+
+
+            if (KatTasimaModuAcikMi())
+            {
+                if (!HareketMiktariniAl(out double hareketMm2))
+                    return;
+
+                double paletDeltaLeftPx = -(hareketMm2 * OlcekY);
+                AktifKattakiTumUrunleriTasi(paletDeltaLeftPx, 0);
+                return;
+            }
+
+
+            if (PaletTasimaModuAcikMi())
+            {
+                if (!HareketMiktariniAl(out double hareketPalet))
+                    return;
+
+                double paletDeltaLeftPx = hareketPalet * OlcekY;
+                PalettekiTumKatlariTasi(-(hareketPalet * OlcekY), 0);
+                return;
+            }
+
+
+
+            if (!HareketMiktariniAl(out double hareketMm))
+                return;
+
+            double deltaLeftPx = -(hareketMm * OlcekY);
+            SeciliUrunuHareketEttir(deltaLeftPx, 0);
+        }
+
+
+        private Rectangle? SeciliKutuyuGetir()
+        {
+            if (sonSecilmisKutu == null)
+                return null;
+
+            if (!myCanvas.Children.OfType<Rectangle>().Contains(sonSecilmisKutu))
+                return null;
+
+            if (sonSecilmisKutu.StrokeThickness <= 0)
+                return null;
+
+            return sonSecilmisKutu;
+        }
+
+        private bool HareketMiktariniAl(out double hareketMm)
+        {
+            hareketMm = 0;
+
+            if (!double.TryParse(txtHareketMiktari.Text, out hareketMm))
+                return false;
+
+            if (hareketMm <= 0)
+                return false;
+
+            return true;
+        }
+
+        private void SeciliUrunuHareketEttir(double deltaLeftPx, double deltaTopPx)
+        {
+            var secili = SeciliKutuyuGetir();
+            if (secili == null)
+            {
+                MessageBox.Show("Önce bir ürün seçmelisiniz.",
+                    "Uyarı",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+                return;
+            }
+
+            var mevcut = GetRect(secili);
+
+            double yeniLeft = mevcut.Left + deltaLeftPx;
+            double yeniTop = mevcut.Top + deltaTopPx;
+
+            // Palet dışına çıkma kontrolü
+            if (yeniLeft < 0 ||
+                yeniTop < 0 ||
+                yeniLeft + mevcut.Width > myCanvas.Width ||
+                yeniTop + mevcut.Height > myCanvas.Height)
+            {
+                return;
+            }
+
+            var candidate = new Rect(yeniLeft, yeniTop, mevcut.Width, mevcut.Height);
+
+            // Çarpışma kontrolü
+            var digerKutular = DigerKutular(secili);
+            if (_motor.CakisiyorMu(candidate, digerKutular))
+            {
+                return;
+            }
+
+            Canvas.SetLeft(secili, yeniLeft);
+            Canvas.SetTop(secili, yeniTop);
+
+            _mesafe.Guncelle(candidate, digerKutular);
+            _mesafe.Goster();
+        }
+
+        private void cbCokluEkleme_Click(object sender, RoutedEventArgs e)
+        {
+            TekModSec(cbCokluEkleme);
+        }
+
+        private void cbHizalama_Click(object sender, RoutedEventArgs e)
+        {
+
+            TekModSec(cbHizalama);
+        }
+
+        private void cbPaletTasima_Click(object sender, RoutedEventArgs e)
+        {
+
+            TekModSec(cbPaletTasima);
+        }
+
+        private void cbKatTasima_Click(object sender, RoutedEventArgs e)
+        {
+            TekModSec(cbKatTasima);
+        }
+
+        private Rectangle SeciliKutudanKopyaOlustur(Rectangle kaynak)
+        {
+            double w = kaynak.Width;
+            double h = kaynak.Height;
+
+            var yon = kaynak.Tag is Modeller.UrunYonu t
+                ? t
+                : (w >= h ? Modeller.UrunYonu.Yatay : Modeller.UrunYonu.Dikey);
+
+            string resim = yon == Modeller.UrunYonu.Dikey
+                ? "pack://application:,,,/Resimler/DizilimYap/dikey_kutu.png"
+                : "pack://application:,,,/Resimler/DizilimYap/yatay_kutu.png";
+
+            var rect = new Rectangle
+            {
+                Width = w,
+                Height = h,
+                Stroke = Brushes.Transparent,
+                StrokeThickness = 0,
+                Fill = new ImageBrush
+                {
+                    ImageSource = new BitmapImage(new Uri(resim, UriKind.Absolute))
+                },
+                Tag = yon
+            };
+
+            rect.MouseDown += Rectangle_MouseDown;
+            rect.MouseMove += Rectangle_MouseMove;
+            rect.MouseUp += Rectangle_MouseUp;
+
+            return rect;
+        }
+
+
+        private bool CokluEklemeModuAcikMi()
+        {
+            return cbCokluEkleme.IsChecked == true;
+        }
+
+        private void ModYazilariniGuncelle()
+        {
+            var converter = (LanguageConverter)FindResource("LanguageConverter");
+
+            txtCokluEklemeMod.Text =
+                converter.Convert(
+                    cbCokluEkleme.IsChecked == true
+                        ? "DizilimYap.txtCokluEkleModAcik"
+                        : "DizilimYap.txtCokluEkleMod",
+                    typeof(string),
+                    null,
+                    System.Globalization.CultureInfo.CurrentCulture)?.ToString();
+
+            txtHizalamaMod.Text =
+                converter.Convert(
+                    cbHizalama.IsChecked == true
+                        ? "DizilimYap.txtHizalamaModAcik"
+                        : "DizilimYap.txtHizalamaMod",
+                    typeof(string),
+                    null,
+                    System.Globalization.CultureInfo.CurrentCulture)?.ToString();
+
+            txtPaletTasimaMod.Text =
+                converter.Convert(
+                    cbPaletTasima.IsChecked == true
+                        ? "DizilimYap.txtPaletTasimaModAcik"
+                        : "DizilimYap.txtPaletTasimaMod",
+                    typeof(string),
+                    null,
+                    System.Globalization.CultureInfo.CurrentCulture)?.ToString();
+
+            txtKatTasimaMod.Text =
+                converter.Convert(
+                    cbKatTasima.IsChecked == true
+                        ? "DizilimYap.txtKatTasimaModAcik"
+                        : "DizilimYap.txtKatTasimaMod",
+                    typeof(string),
+                    null,
+                    System.Globalization.CultureInfo.CurrentCulture)?.ToString();
+        }
+
+        private void SeciliUrundenCokluKopyaOlustur(double adimLeft, double adimTop)
+        {
+            var secili = SeciliKutuyuGetir();
+            if (secili == null)
+            {
+                MessageBox.Show("Önce bir ürün seçmelisiniz.",
+                    "Uyarı",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+                return;
+            }
+
+            var kaynakRect = GetRect(secili);
+
+            double w = kaynakRect.Width;
+            double h = kaynakRect.Height;
+
+            double yeniLeft = kaynakRect.Left + adimLeft;
+            double yeniTop = kaynakRect.Top + adimTop;
+
+            while (true)
+            {
+                // palet dışı kontrol
+                if (yeniLeft < 0 ||
+                    yeniTop < 0 ||
+                    yeniLeft + w > myCanvas.Width ||
+                    yeniTop + h > myCanvas.Height)
+                {
+                    break;
+                }
+
+                var candidate = new Rect(yeniLeft, yeniTop, w, h);
+
+                // mevcut tüm ürünlerle çarpışma kontrolü
+                var tumKutular = myCanvas.Children
+                    .OfType<Rectangle>()
+                    .Select(GetRect)
+                    .ToList();
+
+                if (_motor.CakisiyorMu(candidate, tumKutular))
+                {
+                    break;
+                }
+
+                var yeniRect = SeciliKutudanKopyaOlustur(secili);
+                Canvas.SetLeft(yeniRect, yeniLeft);
+                Canvas.SetTop(yeniRect, yeniTop);
+                myCanvas.Children.Add(yeniRect);
+
+                yeniLeft += adimLeft;
+                yeniTop += adimTop;
+            }
+        }
+
+        private void TekModSec(CheckBox secilen)
+        {
+            if (secilen.IsChecked == true)
+            {
+                if (secilen != cbCokluEkleme) cbCokluEkleme.IsChecked = false;
+                if (secilen != cbHizalama) cbHizalama.IsChecked = false;
+                if (secilen != cbPaletTasima) cbPaletTasima.IsChecked = false;
+                if (secilen != cbKatTasima) cbKatTasima.IsChecked = false;
+            }
+
+            ModYazilariniGuncelle();
+        }
+
+
+
+        private bool HizalamaModuAcikMi()
+        {
+            return cbHizalama.IsChecked == true;
+        }
+
+
+        private bool DikeyAralikCakisiyor(Rect a, Rect b)
+        {
+            return a.Top < b.Bottom && a.Bottom > b.Top;
+        }
+
+        private bool YatayAralikCakisiyor(Rect a, Rect b)
+        {
+            return a.Left < b.Right && a.Right > b.Left;
+        }
+
+        private void SeciliUrunuHizala(string yon)
+        {
+            var secili = SeciliKutuyuGetir();
+            if (secili == null)
+            {
+                MessageBox.Show("Önce bir ürün seçmelisiniz.",
+                    "Uyarı",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+                return;
+            }
+
+            var mevcut = GetRect(secili);
+            var digerKutular = DigerKutular(secili);
+
+            double yeniLeft = mevcut.Left;
+            double yeniTop = mevcut.Top;
+
+            if (yon == "Sag")
+            {
+                double hedefLeft = myCanvas.Width - mevcut.Width;
+
+                foreach (var diger in digerKutular)
+                {
+                    if (!DikeyAralikCakisiyor(mevcut, diger))
+                        continue;
+
+                    // sağdaki engeller
+                    if (diger.Left >= mevcut.Right)
+                    {
+                        double adayLeft = diger.Left - mevcut.Width;
+                        if (adayLeft < hedefLeft)
+                            hedefLeft = adayLeft;
+                    }
+                }
+
+                yeniLeft = hedefLeft;
+            }
+            else if (yon == "Sol")
+            {
+                double hedefLeft = 0;
+
+                foreach (var diger in digerKutular)
+                {
+                    if (!DikeyAralikCakisiyor(mevcut, diger))
+                        continue;
+
+                    // soldaki engeller
+                    if (diger.Right <= mevcut.Left)
+                    {
+                        double adayLeft = diger.Right;
+                        if (adayLeft > hedefLeft)
+                            hedefLeft = adayLeft;
+                    }
+                }
+
+                yeniLeft = hedefLeft;
+            }
+            else if (yon == "Asagi")
+            {
+                double hedefTop = myCanvas.Height - mevcut.Height;
+
+                foreach (var diger in digerKutular)
+                {
+                    if (!YatayAralikCakisiyor(mevcut, diger))
+                        continue;
+
+                    // aşağıdaki engeller
+                    if (diger.Top >= mevcut.Bottom)
+                    {
+                        double adayTop = diger.Top - mevcut.Height;
+                        if (adayTop < hedefTop)
+                            hedefTop = adayTop;
+                    }
+                }
+
+                yeniTop = hedefTop;
+            }
+            else if (yon == "Yukari")
+            {
+                double hedefTop = 0;
+
+                foreach (var diger in digerKutular)
+                {
+                    if (!YatayAralikCakisiyor(mevcut, diger))
+                        continue;
+
+                    // yukarıdaki engeller
+                    if (diger.Bottom <= mevcut.Top)
+                    {
+                        double adayTop = diger.Bottom;
+                        if (adayTop > hedefTop)
+                            hedefTop = adayTop;
+                    }
+                }
+
+                yeniTop = hedefTop;
+            }
+
+            var candidate = new Rect(yeniLeft, yeniTop, mevcut.Width, mevcut.Height);
+
+            if (_motor.CakisiyorMu(candidate, digerKutular))
+                return;
+
+            Canvas.SetLeft(secili, yeniLeft);
+            Canvas.SetTop(secili, yeniTop);
+
+            _mesafe.Guncelle(candidate, digerKutular);
+            _mesafe.Goster();
+        }
+
+
+
+        private void PalettekiTumKatlariTasi(double deltaLeftPx, double deltaTopPx)
+        {
+            _katYonetici.KatiKaydetDisardan(myCanvas);
+
+            bool basarili = _katYonetici.TumKatlariTasi(
+                deltaLeftPx,
+                deltaTopPx,
+                myCanvas.Width,
+                myCanvas.Height);
+
+            if (!basarili)
+                return;
+
+            _katYonetici.KatiYukleDisardan(
+                myCanvas,
+                Rectangle_MouseDown,
+                Rectangle_MouseMove,
+                Rectangle_MouseUp);
+
+            var secili = SeciliKutuyuGetir();
+            if (secili != null)
+            {
+                var seciliRect = GetRect(secili);
+                var digerKutular = DigerKutular(secili);
+                _mesafe.Guncelle(seciliRect, digerKutular);
+                _mesafe.Goster();
+            }
+            else
+            {
+                _mesafe.Gizle();
+            }
+        }
+
+
+        private bool KatTasimaModuAcikMi()
+        {
+            return cbKatTasima.IsChecked == true;
+        }
+
+        private bool PaletTasimaModuAcikMi()
+        {
+            return cbPaletTasima.IsChecked == true;
+        }
+
+        private void AktifKattakiTumUrunleriTasi(double deltaLeftPx, double deltaTopPx)
+        {
+            var kutular = myCanvas.Children.OfType<Rectangle>().ToList();
+
+            if (!kutular.Any())
+            {
+                MessageBox.Show("Taşınacak ürün yok.",
+                    "Uyarı",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+                return;
+            }
+
+            // Önce kontrol: herhangi biri dışarı çıkacak mı?
+            foreach (var kutu in kutular)
+            {
+                var rect = GetRect(kutu);
+
+                double yeniLeft = rect.Left + deltaLeftPx;
+                double yeniTop = rect.Top + deltaTopPx;
+
+                if (yeniLeft < 0 ||
+                    yeniTop < 0 ||
+                    yeniLeft + rect.Width > myCanvas.Width ||
+                    yeniTop + rect.Height > myCanvas.Height)
+                {
+                    return;
+                }
+            }
+
+            // Hepsi uygunsa birlikte taşı
+            foreach (var kutu in kutular)
+            {
+                var rect = GetRect(kutu);
+
+                Canvas.SetLeft(kutu, rect.Left + deltaLeftPx);
+                Canvas.SetTop(kutu, rect.Top + deltaTopPx);
+            }
+
+            // Seçili kutu varsa mesafeyi güncelle
+            var secili = SeciliKutuyuGetir();
+            if (secili != null)
+            {
+                var seciliRect = GetRect(secili);
+                var digerKutular = DigerKutular(secili);
+                _mesafe.Guncelle(seciliRect, digerKutular);
+                _mesafe.Goster();
+            }
+            else
+            {
+                _mesafe.Gizle();
+            }
+        }
+
+
+
+
+
+
+
     }
 }

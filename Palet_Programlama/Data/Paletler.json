@@ -1,8 +1,14 @@
 [
-  {
-    "PaletAdi": "EURO-PALET",
-    "PaletEn": 800.0,
-    "PaletBoy": 1200.0,
-    "PaletYukseklik": 100.0
-  }
+    {
+        "PaletAdi": "EURO-PALET",
+        "PaletEn": 800.0,
+        "PaletBoy": 1200.0,
+        "PaletYukseklik": 100.0
+    },
+    {
+        "PaletAdi": "EURO-PALET-2",
+        "PaletEn": 800.0,
+        "PaletBoy": 1200.0,
+        "PaletYukseklik": 400.0
+    }
 ]

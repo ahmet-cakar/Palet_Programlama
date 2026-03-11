@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Palet_Programlama.Sınıflar;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,11 +22,49 @@ namespace Palet_Programlama.Sayfalar
     public partial class GruplamaYap : Page
     {
         private readonly Frame MainFrame;
+        private Urun _secilenUrun;
+        private Palet _secilenPalet;
+        private string _dizilimAdi;
 
-        public GruplamaYap(Frame Main)
+        public GruplamaYap(Frame Main, Urun secilenUrun, Palet secilenPalet, string dizilimAdi)
         {
             InitializeComponent();
             this.MainFrame = Main;
+            _secilenUrun = secilenUrun;
+            _secilenPalet = secilenPalet;
+            _dizilimAdi = dizilimAdi;
+        }
+
+
+
+        private void BtnGruplandirmaEksi_Click(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToInt32(txtGrupValue.Text) != 1)
+            {
+                txtGrupValue.Text = (Convert.ToInt32(txtGrupValue.Text) - 1).ToString();
+            }
+        }
+
+        private void BtnGruplandirmaArti_Click(object sender, RoutedEventArgs e)
+        {
+            txtGrupValue.Text = (Convert.ToInt32(txtGrupValue.Text) + 1).ToString();
+        }
+
+
+
+
+        private void BtnKatEksi_Click(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToInt32(txtKatValue.Text) != 1)
+            {
+                txtKatValue.Text = (Convert.ToInt32(txtKatValue.Text) - 1).ToString();
+
+            }
+        }
+
+        private void BtnKatArti_Click(object sender, RoutedEventArgs e)
+        {
+            txtKatValue.Text = (Convert.ToInt32(txtKatValue.Text) + 1).ToString();
         }
     }
 }

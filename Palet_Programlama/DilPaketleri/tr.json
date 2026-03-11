@@ -63,6 +63,7 @@
     "komut": "Komutlar"
   },
     "MesajKutusu": {
+        "zorunluAlanDoldur": "Lütfen zorunlu alanları doldurunuz.",
         "araKatSilinemez": "Lütfen kat temizlerken en üst kattan başlayınız,Ara kat silinemez.",
         "guncellemeBasarili": "Dizilim güncellenmesi başarılı ile yapıldı.",
         "isimGiriniz": "Lütfen bir isim giriniz.",

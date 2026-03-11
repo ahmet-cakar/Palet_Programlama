@@ -34,7 +34,7 @@
           <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Ürün ve Palet seçin"
+        <TextBlock Text="Ürün,Palet ve Dizilim seçin"
                            FontSize="22"
                            FontFamily="Roboto"
                            Margin="15"
@@ -104,7 +104,7 @@
                FontSize="20"
                VerticalAlignment="Center"/>
 
-              <TextBlock Text=" (Dizilim güncellemek için seçebilirsiniz.)"
+              <TextBlock x:Name="txtDizilimAciklama" Text=" (Dizilim güncellemek için seçebilirsiniz.)"
                Foreground="#A0A0A0"
                FontSize="12"
                Margin="8,4,0,0"

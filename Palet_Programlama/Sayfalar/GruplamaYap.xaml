@@ -117,7 +117,7 @@
                           Text="{Binding Source='GruplamaYap.txtGruplandirma',Converter={StaticResource LanguageConverter}}"></TextBlock>
             </StackPanel>
             <StackPanel Margin="30,0,0,0" Grid.Column="1" Orientation="Horizontal">
-              <Button Margin="0,0,80,0" Style="{StaticResource transparan_button}">
+              <Button x:Name="BtnGruplandirmaEksi" Margin="0,0,80,0" Style="{StaticResource transparan_button}" Click="BtnGruplandirmaEksi_Click">
                 <StackPanel>
                   <Image 
                                        MaxHeight="60"
@@ -125,13 +125,13 @@
                                        Source="pack://application:,,,/Resimler/UserControlUstMenu/geri_icon.png"/>
                 </StackPanel>
               </Button>
-              <TextBlock  VerticalAlignment="Center"
+              <TextBlock x:Name="txtGrupValue"  VerticalAlignment="Center"
                                         Margin="0,0,80,0"
-                                        HorizontalAlignment="Center"
+                                        TextAlignment="Center"
                                      Foreground="White"
                                      FontSize="34"
-                                     Text="1"></TextBlock>
-              <Button  Style="{StaticResource transparan_button}" >
+                                     Text="1" Width="57"/>
+              <Button x:Name="BtnGruplandirmaArti" Style="{StaticResource transparan_button}" Click="BtnGruplandirmaArti_Click" >
                 <StackPanel>
                   <Image 
                                 MaxHeight="60"
@@ -455,7 +455,7 @@
           </StackPanel>
 
           <StackPanel Grid.Row="1" Orientation="Vertical">
-            <Button Margin="0,80,0,0" Style="{StaticResource transparan_button}" x:Name="AnasayfaBtn">
+            <Button x:Name="BtnKatArti" Margin="0,80,0,0" Style="{StaticResource transparan_button}"  Click="BtnKatArti_Click">
               <StackPanel>
                 <Image 
                                MaxHeight="50"
@@ -463,11 +463,11 @@
                                Source="pack://application:,,,/Resimler/DizilimYap/yukari_icon.png"/>
               </StackPanel>
             </Button>
-            <TextBlock Margin="0,20,0,0" VerticalAlignment="Center" HorizontalAlignment="Center"
+            <TextBlock x:Name="txtKatValue" TextAlignment="Center" Margin="0,20,0,0" HorizontalAlignment="Center"
                      Foreground="White"
                      FontSize="30"
-                     Text="1"></TextBlock>
-            <Button Margin="0,20,0,0" Style="{StaticResource transparan_button}" >
+                     Text="1" Width="46"/>
+            <Button x:Name="BtnKatEksi" Margin="0,20,0,0" Style="{StaticResource transparan_button}" Click="BtnKatEksi_Click" >
               <StackPanel>
                 <Image 
                         MaxHeight="50"

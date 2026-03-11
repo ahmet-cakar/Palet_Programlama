@@ -23,7 +23,9 @@ namespace Palet_Programlama.UserController
         public Palet SecilenPalet { get; private set; }
         public string SecilenDizilimAdi { get; private set; }
 
-        public UrunPaletSecimKutusu(List<Urun> urunler, List<Palet> paletler)
+        private string _dizilimAciklama;
+
+        public UrunPaletSecimKutusu(List<Urun> urunler, List<Palet> paletler, string dizilimAciklama)
         {
             InitializeComponent();
 
@@ -51,6 +53,8 @@ namespace Palet_Programlama.UserController
 
             dizilimComboBox.ItemsSource = null;
             dizilimComboBox.Text = "Dizilim Seçiniz";
+            _dizilimAciklama = dizilimAciklama;
+            txtDizilimAciklama.Text = dizilimAciklama;
         }
 
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -92,23 +96,41 @@ namespace Palet_Programlama.UserController
 
         private void btnTamam_Click(object sender, RoutedEventArgs e)
         {
-            if (urunComboBox.SelectedItem is not ComboSecenek<Urun> seciliUrun ||
+
+            
+                if (urunComboBox.SelectedItem is not ComboSecenek<Urun> seciliUrun ||
                 paletComboBox.SelectedItem is not ComboSecenek<Palet> seciliPalet ||
                 seciliUrun.Value == null ||
                 seciliPalet.Value == null)
-            {
-                BildirimKutusu bildirimKutusu = new BildirimKutusu();
-                bildirimKutusu.MesajGonder("ButtonKey.btntamam", "HataMesajlari.secimyapiniz");
-                bildirimKutusu.ShowDialog();
-                return;
-            }
+                {
 
-            SecilenUrun = seciliUrun.Value;
-            SecilenPalet = seciliPalet.Value;
-            SecilenDizilimAdi = dizilimComboBox.SelectedItem as string;
+                    BildirimKutusu bildirimKutusu = new BildirimKutusu();
+                    bildirimKutusu.MesajGonder("ButtonKey.btntamam", "MesajKutusu.zorunluAlanDoldur");
+                    bildirimKutusu.ShowDialog();
+                    return;
+                }
+                SecilenUrun = seciliUrun.Value;
+                SecilenPalet = seciliPalet.Value;
+                SecilenDizilimAdi = dizilimComboBox.SelectedItem as string;
 
-            DialogResult = true;
-            Close();
+
+                if (_dizilimAciklama == "(* Zorunlu)" && SecilenDizilimAdi==null)
+                {
+                    BildirimKutusu bildirimKutusu = new BildirimKutusu();
+                    bildirimKutusu.MesajGonder("ButtonKey.btntamam", "MesajKutusu.zorunluAlanDoldur");
+                    bildirimKutusu.ShowDialog();
+                    return;
+                 }
+
+
+                DialogResult = true;
+                Close();
+            
+            
+
+
+
+            
         }
 
         private void DizilimleriYukle()

@@ -36,7 +36,7 @@ namespace Palet_Programlama.Sayfalar
             var urunler = urunIslemler.UrunListesiniGetir();
             var paletler = paletIslemler.PaletListesiniGetir();
 
-            UrunPaletSecimKutusu pencere = new UrunPaletSecimKutusu(urunler, paletler);
+            UrunPaletSecimKutusu pencere = new UrunPaletSecimKutusu(urunler, paletler, "( Dizilim zorunlu değil.)");
             bool? sonuc = pencere.ShowDialog();
 
             if (sonuc == true)
@@ -84,7 +84,22 @@ namespace Palet_Programlama.Sayfalar
 
         private void btnGruplamaYap_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new GruplamaYap(MainFrame));
+            var urunler = urunIslemler.UrunListesiniGetir();
+            var paletler = paletIslemler.PaletListesiniGetir();
+
+            UrunPaletSecimKutusu pencere = new UrunPaletSecimKutusu(urunler, paletler, "(* Zorunlu)");
+            bool? sonuc = pencere.ShowDialog();
+
+            if (sonuc == true)
+            {
+                if (pencere.SecilenUrun != null && pencere.SecilenPalet != null)
+                {
+                    MainFrame.Navigate(new GruplamaYap(MainFrame, pencere.SecilenUrun, pencere.SecilenPalet, pencere.SecilenDizilimAdi));
+                }
+            }
+
+
+           
         }
     }
 }

@@ -168,7 +168,7 @@
                                    Foreground="White"
                                    FontSize="26" Text="{Binding Source='GruplamaYap.txtDizilimSecimi',Converter={StaticResource LanguageConverter}}"></TextBlock>
 
-              <ComboBox  Grid.Column="1" Grid.Row="1"
+              <ComboBox Margin="0,0,30,0" Grid.Column="1" Grid.Row="1"
                                 FontSize="20"
                                 Style="{DynamicResource theComboBox}"
                                 Background="#d4d4d4"
@@ -178,7 +178,7 @@
                                 MinWidth="100"
                                 Height="45"
                                        
-                                MaxWidth="250"
+                                MaxWidth="500"
                                 SelectedIndex="0"
                                 ItemContainerStyle="{DynamicResource theComboBoxItem}"
 >
@@ -191,6 +191,7 @@
               </ComboBox>
 
               <ComboBox  Grid.Column="1" Grid.Row="0"
+                                Margin="0,0,30,0" 
                                 FontSize="20"
                                 Style="{DynamicResource theComboBox}"
                                 Background="#d4d4d4"
@@ -199,7 +200,7 @@
                                 HorizontalContentAlignment="Left"
                                 VerticalAlignment="Center"
                                 MinWidth="100"
-                                MaxWidth="250"
+                                MaxWidth="500"
                                 Height="45"
                                 
 

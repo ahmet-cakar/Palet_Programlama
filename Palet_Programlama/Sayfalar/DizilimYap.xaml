@@ -555,8 +555,8 @@
               <Canvas.Background>
                 <ImageBrush ImageSource="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
               </Canvas.Background>
-
             </Canvas>
+
           </Viewbox>
         </Grid>
       </Border>

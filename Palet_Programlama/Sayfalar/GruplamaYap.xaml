@@ -37,62 +37,31 @@
         </Grid.ColumnDefinitions>
         <!-- Ürün En-Boy alanı başlangıç -->
         <Border CornerRadius="15" Grid.Column="0" Margin="50,20,10,0"  Background="#191919">
+
           <Grid>
             <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="*"/>
-              <ColumnDefinition  Width="1.4*"/>
+              <ColumnDefinition  Width="*"/>
+              <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-              <RowDefinition Height="*"/>
-              <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <StackPanel  Orientation="Horizontal" Grid.Column="0" Margin="40,10,40,0">
-              <TextBlock VerticalAlignment="Center" 
-                                    Foreground="White"
-                                    FontSize="22"
-                                    Text="{Binding Source='GruplamaYap.txtEn',Converter={StaticResource LanguageConverter}}"></TextBlock>
-              <TextBlock VerticalAlignment="Center" 
-                                Foreground="White"
-                                FontSize="24"
-                                Text="280 mm"></TextBlock>
-            </StackPanel>
 
-            <StackPanel  Orientation="Horizontal" Grid.Row="1"
-                                     Grid.Column="0" Margin="40,5">
-              <TextBlock VerticalAlignment="Center" 
-                                Foreground="White"
-                                FontSize="22"
-                                Text="{Binding Source='GruplamaYap.txtBoy',Converter={StaticResource LanguageConverter}}"></TextBlock>
-              <TextBlock VerticalAlignment="Center" 
-                            Foreground="White"
-                            FontSize="24"
-                            Text="280 mm"></TextBlock>
-            </StackPanel>
-            <StackPanel  Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Margin="40,10,40,0">
-              <TextBlock VerticalAlignment="Center" 
-                             Foreground="White"
-                             FontSize="22"
-                             Text="{Binding Source='GruplamaYap.txtYukseklik',Converter={StaticResource LanguageConverter}}"></TextBlock>
-              <TextBlock VerticalAlignment="Center" 
-                         Foreground="White"
-                         FontSize="24"
-                         Text="280 mm"></TextBlock>
-            </StackPanel>
-            <StackPanel  Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="40,5">
-              <TextBlock VerticalAlignment="Center" 
-                              Foreground="White"
-                              FontSize="22"
-                              Text="{Binding Source='GruplamaYap.txtAgirlik',Converter={StaticResource LanguageConverter}}"></TextBlock>
-              <TextBlock VerticalAlignment="Center" 
-                          Foreground="White"
-                          FontSize="24"
-                          Text="13 kg"></TextBlock>
-            </StackPanel>
-
-
+            <Grid Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center">
+              <TextBlock 
+                    Foreground="White"
+                    FontSize="28"
+                    Text="{Binding Source='GruplamaYap.txtPalet',Converter={StaticResource LanguageConverter}}"/>
+            </Grid>
+            <Grid Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">
+              <TextBlock 
+               x:Name="txtPaletOzellikleri" 
+               Foreground="White"
+               FontWeight="Thin"
+               FontSize="26"
+               Text="EuroPalet - 280 mm X 300 mm X 600 mm"/>  
+            </Grid>
 
 
           </Grid>
+        
 
 
 
@@ -425,10 +394,16 @@
 
           <Border Grid.Column="1" Grid.Row="1">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"  >
-              <Image 
-                         MaxHeight="600"
-                         MaxWidth="600"
-                         Source="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
+
+              <Canvas Name="myCanvas"
+                                Width="600"
+                                Height="400"
+                                >
+                <Canvas.Background>
+                  <ImageBrush ImageSource="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
+                </Canvas.Background>
+              </Canvas>
+
             </StackPanel>
           </Border>
 

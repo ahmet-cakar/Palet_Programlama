@@ -78,7 +78,7 @@ namespace Palet_Programlama.Sayfalar
             suruklenenKutu = (Rectangle)sender;
         }
 
-       
+
 
         private void Rectangle_MouseMove(object sender, MouseEventArgs e)
         {
@@ -138,7 +138,7 @@ namespace Palet_Programlama.Sayfalar
             txtKatValue.Text = _katYonetici.AktifKat.ToString();
         }
 
-   
+
 
         private void DizilimKayitlariniYukle()
         {
@@ -244,7 +244,7 @@ namespace Palet_Programlama.Sayfalar
                 txtKatValue.Text = _katYonetici.AktifKat.ToString();
             }
         }
-        
+
 
         private void BtnKatArti_Click(object sender, RoutedEventArgs e)
         {

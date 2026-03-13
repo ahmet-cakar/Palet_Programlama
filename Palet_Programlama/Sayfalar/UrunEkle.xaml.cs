@@ -18,32 +18,32 @@ namespace Palet_Programlama.Sayfalar
         private Frame MainFrame;
         private List<TextBox> textBoxes;
         private List<TextBlock> placeholders;
-        UrunIslemler urunIslemler=new UrunIslemler();
-        PaletIslemler paletIslemler=new PaletIslemler();
+        UrunIslemler urunIslemler = new UrunIslemler();
+        PaletIslemler paletIslemler = new PaletIslemler();
         private List<Urun> urunlist;
         private List<Palet> paletlist;
         public UrunEkle(Frame Main)
         {
             InitializeComponent();
-            textBoxes = new List<TextBox> { txtUrunAdi, txtUrunEn, txtUrunBoy, txtUrunYukseklik, txtUrunAgirlik, txtUrunBasinc, txtPaletAdi, txtPaletEn, txtPaletBoy, txtPaletYukseklik};
+            textBoxes = new List<TextBox> { txtUrunAdi, txtUrunEn, txtUrunBoy, txtUrunYukseklik, txtUrunAgirlik, txtUrunBasinc, txtPaletAdi, txtPaletEn, txtPaletBoy, txtPaletYukseklik };
             placeholders = new List<TextBlock> { phUrunAdi, phUrunEn, phUrunBoy, phUrunYukseklik, phUrunAgirlik, phUrunBasinc, phPaletAdi, phPaletEn, phPaletBoy, phPaletYukseklik };
             this.MainFrame = Main;
             this.Loaded += Page_Loaded;
         }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-                urunlistbox.Items.Clear();
-                urunlist = urunIslemler.UrunListesiniGetir();
-                foreach (var item in urunlist)
-                {
-                    urunlistbox.Items.Add(item.UrunAdi);
-                }
-                paletlistbox.Items.Clear();
-                paletlist = paletIslemler.PaletListesiniGetir();
-                foreach (var item in paletlist)
-                {
-                    paletlistbox.Items.Add(item.PaletAdi);
-                }
+            urunlistbox.Items.Clear();
+            urunlist = urunIslemler.UrunListesiniGetir();
+            foreach (var item in urunlist)
+            {
+                urunlistbox.Items.Add(item.UrunAdi);
+            }
+            paletlistbox.Items.Clear();
+            paletlist = paletIslemler.PaletListesiniGetir();
+            foreach (var item in paletlist)
+            {
+                paletlistbox.Items.Add(item.PaletAdi);
+            }
         }
         private void myTextBox_Loaded(object sender, RoutedEventArgs e)
         {
@@ -138,7 +138,7 @@ namespace Palet_Programlama.Sayfalar
                 }
             }
         }
-       
+
         #region Ürün İşlemleri
         private void UrunEkleBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -169,10 +169,10 @@ namespace Palet_Programlama.Sayfalar
             int urunBasinc = Convert.ToInt16(txtUrunBasinc.Text);
             var urunler = urunIslemler.UrunListesiniGetir();
             bool varMi = urunler.Any(x => x.UrunAdi == urunAd);
-            if (varMi){ BildirimGoster("MesajKutusu.urunMevcut"); return; }
-            urunIslemler.UrunKaydet(urunAd, urunEn, urunBoy, urunYuseklik, urunAgirlik,urunBasinc);
+            if (varMi) { BildirimGoster("MesajKutusu.urunMevcut"); return; }
+            urunIslemler.UrunKaydet(urunAd, urunEn, urunBoy, urunYuseklik, urunAgirlik, urunBasinc);
             urunlistbox.Items.Add(urunAd);
-            
+
         }
 
 
@@ -184,13 +184,13 @@ namespace Palet_Programlama.Sayfalar
         }
 
         private void UrunSilBtn_Click(object sender, RoutedEventArgs e)
-        { 
-            if (urunlistbox.SelectedItem ==null)
+        {
+            if (urunlistbox.SelectedItem == null)
             {
                 //Mesaj kutusu Eklenecek
                 return;
             }
-            string SilinecekUrun=urunlistbox.SelectedItem.ToString();
+            string SilinecekUrun = urunlistbox.SelectedItem.ToString();
             urunIslemler.UrunSil(SilinecekUrun);
             urunlistbox.Items.Remove(SilinecekUrun);
             urunlistbox.SelectedItem = null;
@@ -206,23 +206,23 @@ namespace Palet_Programlama.Sayfalar
         private void UrunList_SelectedItem(object sender, SelectionChangedEventArgs e)
         {
 
-            if(urunlistbox.SelectedItem == null)
+            if (urunlistbox.SelectedItem == null)
             {
                 return;
             }
 
             urunlist = urunIslemler.UrunListesiniGetir();
-            string SeciliUrun=urunlistbox.SelectedItem.ToString();
+            string SeciliUrun = urunlistbox.SelectedItem.ToString();
             foreach (var UrunAdBul in urunlist)
             {
-                if (UrunAdBul.UrunAdi==SeciliUrun)
+                if (UrunAdBul.UrunAdi == SeciliUrun)
                 {
-                    txtUrunAdi.Text=UrunAdBul.UrunAdi;
-                    txtUrunEn.Text=UrunAdBul.UrunEn.ToString();
-                    txtUrunBoy.Text=UrunAdBul.UrunBoy.ToString();
-                    txtUrunYukseklik.Text=UrunAdBul.UrunYukseklik.ToString();
-                    txtUrunAgirlik.Text=UrunAdBul.UrunAgirlik.ToString();
-                    txtUrunBasinc.Text=UrunAdBul.UrunBasinc.ToString();
+                    txtUrunAdi.Text = UrunAdBul.UrunAdi;
+                    txtUrunEn.Text = UrunAdBul.UrunEn.ToString();
+                    txtUrunBoy.Text = UrunAdBul.UrunBoy.ToString();
+                    txtUrunYukseklik.Text = UrunAdBul.UrunYukseklik.ToString();
+                    txtUrunAgirlik.Text = UrunAdBul.UrunAgirlik.ToString();
+                    txtUrunBasinc.Text = UrunAdBul.UrunBasinc.ToString();
                     return;
                 }
             }
@@ -263,7 +263,7 @@ namespace Palet_Programlama.Sayfalar
 
             paletIslemler.PaletKaydet(paletAd, paletEn, paletBoy, paletYuseklik);
             paletlistbox.Items.Add(paletAd);
-            
+
         }
         private void PaletSilBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -319,7 +319,7 @@ namespace Palet_Programlama.Sayfalar
             double paletYuseklik = Convert.ToDouble(txtPaletYukseklik.Text);
             foreach (var item in paletlist)
             {
-               if (item.PaletAdi == paletlistbox.SelectedItem.ToString())
+                if (item.PaletAdi == paletlistbox.SelectedItem.ToString())
                 {
                     item.PaletAdi = paletAd;
                     item.PaletEn = paletEn;
@@ -330,7 +330,7 @@ namespace Palet_Programlama.Sayfalar
                     break;
                 }
             }
-            
+
         }
         private void PaletList_SelectedItem(object sender, SelectionChangedEventArgs e)
         {
@@ -358,4 +358,3 @@ namespace Palet_Programlama.Sayfalar
         #endregion
     }
 }
- 

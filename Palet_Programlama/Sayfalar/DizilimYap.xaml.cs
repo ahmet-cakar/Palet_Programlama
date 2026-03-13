@@ -49,11 +49,11 @@ namespace Palet_Programlama.Sayfalar
         Rectangle suruklenenKutu; // Hareket ettirilen Rectangle
         private Frame MainFrame;
 
-        public DizilimYap(Frame Main,Urun secilenUrun, Palet secilenPalet,string? dizilimAdi)
+        public DizilimYap(Frame Main, Urun secilenUrun, Palet secilenPalet, string? dizilimAdi)
         {
             InitializeComponent();
             this.MainFrame = Main;
-            
+
             _secilenPalet = secilenPalet;
             _secilenUrun = secilenUrun;
             txtUrunOzellikleri.Text = $"{_secilenUrun.UrunAdi} - {_secilenUrun.UrunEn} mm x {_secilenUrun.UrunBoy} mm x {_secilenUrun.UrunYukseklik} mm";
@@ -108,12 +108,12 @@ namespace Palet_Programlama.Sayfalar
             return new Rect(left, top, w, h);
         }
 
-      
+
         // MouseDown olayında sürükleme başlat
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
             suruklenenKutu = (Rectangle)sender;
-            
+
             _mesafe.Goster();
             if (e.LeftButton == MouseButtonState.Pressed)
             {
@@ -143,7 +143,7 @@ namespace Palet_Programlama.Sayfalar
 
                 if (suruklemeBasladi)
                 {
-                    
+
 
                     var movingNow = GetRect(suruklenenKutu);
                     double w = movingNow.Width;
@@ -177,7 +177,7 @@ namespace Palet_Programlama.Sayfalar
             }
 
 
-           
+
         }
 
         private void Rectangle_MouseUp(object sender, MouseButtonEventArgs e)
@@ -189,7 +189,7 @@ namespace Palet_Programlama.Sayfalar
             else
             {
                 if (suruklenenKutu == null) { return; }
-                
+
                 if (suruklenenKutu.StrokeThickness == 1)
                 {
                     suruklenenKutu.Stroke = Brushes.Transparent;
@@ -217,7 +217,7 @@ namespace Palet_Programlama.Sayfalar
 
 
         }
-       
+
         private void dikeyKutu_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (_eklemeYon == EklemeYon.Dikey)
@@ -382,7 +382,7 @@ namespace Palet_Programlama.Sayfalar
         private void BtnYapistirArti_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
-            if(Convert.ToInt32(txtKopyalaValue.Text) == Convert.ToInt32(txtYapisValue.Text) + 1)
+            if (Convert.ToInt32(txtKopyalaValue.Text) == Convert.ToInt32(txtYapisValue.Text) + 1)
             {
                 txtYapisValue.Text = Convert.ToString(Convert.ToInt32(txtYapisValue.Text) + 2);
                 return;
@@ -409,7 +409,7 @@ namespace Palet_Programlama.Sayfalar
 
         }
 
-      
+
 
         private void BtnYapistirEksi_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -430,7 +430,7 @@ namespace Palet_Programlama.Sayfalar
             txtYapisValue.Text = Convert.ToString(Convert.ToInt32(txtYapisValue.Text) - 1);
         }
 
-     
+
 
         private void BtnHareketMiktariArti_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -660,15 +660,15 @@ namespace Palet_Programlama.Sayfalar
             }
         }
 
-       
+
 
         private void Dizilimi_Kaydet_Click(object sender, RoutedEventArgs e)
         {
-           
+
             DizilimiJsonDosyasinaKaydet();
         }
 
-       
+
 
 
         private void AynalamaYazisiniGuncelle()
@@ -884,7 +884,7 @@ namespace Palet_Programlama.Sayfalar
                 var secili = SeciliKutuyuGetir();
                 if (secili == null)
                 {
-                   
+
                     BildirimGoster("MesajKutusu.urunSecimiGerekli");
                     return;
                 }
@@ -1104,7 +1104,7 @@ namespace Palet_Programlama.Sayfalar
             var secili = SeciliKutuyuGetir();
             if (secili == null)
             {
-               BildirimGoster("MesajKutusu.urunSecimiGerekli");
+                BildirimGoster("MesajKutusu.urunSecimiGerekli");
                 return;
             }
 
@@ -1341,7 +1341,7 @@ namespace Palet_Programlama.Sayfalar
 
             if (!kutular.Any())
             {
-               BildirimGoster("MesajKutusu.tasinacakUrunYok");
+                BildirimGoster("MesajKutusu.tasinacakUrunYok");
                 return;
             }
 

@@ -1,10 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Palet_Programlama.Sınıflar
 {
@@ -45,7 +42,7 @@ namespace Palet_Programlama.Sınıflar
         {
             return DosyaOku();
         }
-        public void UrunListesiKaydet(List<Urun>UrunListesi)
+        public void UrunListesiKaydet(List<Urun> UrunListesi)
         {
             DosyaYaz(UrunListesi);
         }

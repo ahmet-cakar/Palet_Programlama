@@ -1,6 +1,4 @@
-﻿
-using Palet_Programlama.Sınıflar;
-using Palet_Programlama.UserController;
+﻿using Palet_Programlama.UserController;
 using System.Windows;
 using System.Windows.Input;
 
@@ -20,7 +18,7 @@ namespace Palet_Programlama.Sayfalar
         {
             InitializeComponent();
         }
-        
+
         private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             // Fare tekerleği ile kaydırma işlemi
@@ -71,7 +69,7 @@ namespace Palet_Programlama.Sayfalar
             if (mainWindow != null)
             {
                 // Frame'in içeriğini değiştirme 
-                mainWindow.MainFrame.Content = new UrunEkle(mainWindow.MainFrame);  
+                mainWindow.MainFrame.Content = new UrunEkle(mainWindow.MainFrame);
             }
         }
 
@@ -135,7 +133,7 @@ namespace Palet_Programlama.Sayfalar
             }
         }
 
-      
+
 
         private void Gruplama_Click(object sender, RoutedEventArgs e)
         {
@@ -143,7 +141,7 @@ namespace Palet_Programlama.Sayfalar
             var urunler = mainWindow.UrunIslemler.UrunListesiniGetir();
             var paletler = mainWindow.PaletIslemler.PaletListesiniGetir();
 
-            UrunPaletSecimKutusu secimKutusu = new UrunPaletSecimKutusu(urunler, paletler,"(* Zorunlu)");
+            UrunPaletSecimKutusu secimKutusu = new UrunPaletSecimKutusu(urunler, paletler, "(* Zorunlu)");
             bool? sonuc = secimKutusu.ShowDialog();
 
             if (sonuc == true)

@@ -1,7 +1,6 @@
-﻿using System;
+﻿using Palet_Programlama.Sınıflar;
 using System.Globalization;
 using System.Windows;
-using Palet_Programlama.Sınıflar;
 
 namespace Palet_Programlama.UserController
 {

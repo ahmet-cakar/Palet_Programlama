@@ -1,11 +1,4 @@
-﻿using Palet_Programlama.Sınıflar;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 namespace Palet_Programlama
 {
     /// <summary>
@@ -15,7 +8,7 @@ namespace Palet_Programlama
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-           
+
         }
 
     }

@@ -1,10 +1,10 @@
 ﻿
 
+using Palet_Programlama.Sınıflar;
+using Palet_Programlama.UserController;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Palet_Programlama.Sınıflar;
-using Palet_Programlama.UserController;
 namespace Palet_Programlama.Sayfalar
 {
     /// <summary>
@@ -43,7 +43,7 @@ namespace Palet_Programlama.Sayfalar
             {
                 if (pencere.SecilenUrun != null && pencere.SecilenPalet != null)
                 {
-                    MainFrame.Navigate(new DizilimYap(MainFrame,pencere.SecilenUrun,pencere.SecilenPalet,pencere.SecilenDizilimAdi));
+                    MainFrame.Navigate(new DizilimYap(MainFrame, pencere.SecilenUrun, pencere.SecilenPalet, pencere.SecilenDizilimAdi));
                 }
             }
         }
@@ -55,7 +55,7 @@ namespace Palet_Programlama.Sayfalar
         private void Kullaniciicon_MouseDown(object sender, MouseButtonEventArgs e)
         {
             textuser.Text = KullaniciDil.Kullaniciadi;
-            if (userpanelborder1.Visibility==Visibility.Hidden)
+            if (userpanelborder1.Visibility == Visibility.Hidden)
             {
                 userpanelborder1.Visibility = Visibility.Visible;
                 userpanelborder2.Visibility = Visibility.Visible;
@@ -74,7 +74,7 @@ namespace Palet_Programlama.Sayfalar
             //BildirimKutusu kutusu=new BildirimKutusu();
             //kutusu.Show();
             //kutusu.MesajGonder("MesajKutusu.btncon1", "MesajKutusu.mesaj");
-            
+
         }
 
         private void textlogout_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -99,7 +99,7 @@ namespace Palet_Programlama.Sayfalar
             }
 
 
-           
+
         }
     }
 }

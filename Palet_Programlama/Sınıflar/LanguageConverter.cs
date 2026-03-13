@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Globalization;
 using System.IO;
 using System.Windows.Data;
-using Newtonsoft.Json.Linq;
 namespace Palet_Programlama.Sınıflar
 {
     public class LanguageConverter : IValueConverter

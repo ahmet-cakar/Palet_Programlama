@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace Palet_Programlama.Sınıflar
 {
@@ -20,7 +15,7 @@ namespace Palet_Programlama.Sınıflar
         public static string DosyaGetir2(string klasorAdi, string dosyaAdi)
         {
             string uygulamaDizini = Directory.GetCurrentDirectory(); //uygulama dizini 
-            string result = Path.Combine(uygulamaDizini,"Palet_Programlama"+"\\"+ klasorAdi + "\\" + dosyaAdi); //Data klasorunun icindeki dosya  yolu
+            string result = Path.Combine(uygulamaDizini, "Palet_Programlama" + "\\" + klasorAdi + "\\" + dosyaAdi); //Data klasorunun icindeki dosya  yolu
             return result;
         }
     }

@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Palet_Programlama.Sayfalar
 {
@@ -104,14 +96,14 @@ namespace Palet_Programlama.Sayfalar
         {
             ImageSource currentImage = DilBtn.Source;
             // DilBtn'in mevcut kaynağını BitmapImage olarak al
-            
+
             string currentUri = currentImage.ToString();
             // Eğer kaynak geçerli değilse işlem yapma
             if (currentImage == null) return;
 
             // Kaynağın URI'sini string olarak al
-            
-            
+
+
 
             // Yeni URI'yi hesaplayacak bir değişken
             string newUri = string.Empty;
@@ -169,6 +161,6 @@ namespace Palet_Programlama.Sayfalar
             }
 
         }
-    
+
     }
 }

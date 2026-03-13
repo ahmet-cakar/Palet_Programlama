@@ -97,40 +97,40 @@ namespace Palet_Programlama.UserController
         private void btnTamam_Click(object sender, RoutedEventArgs e)
         {
 
-            
-                if (urunComboBox.SelectedItem is not ComboSecenek<Urun> seciliUrun ||
-                paletComboBox.SelectedItem is not ComboSecenek<Palet> seciliPalet ||
-                seciliUrun.Value == null ||
-                seciliPalet.Value == null)
-                {
 
-                    BildirimKutusu bildirimKutusu = new BildirimKutusu();
-                    bildirimKutusu.MesajGonder("ButtonKey.btntamam", "MesajKutusu.zorunluAlanDoldur");
-                    bildirimKutusu.ShowDialog();
-                    return;
-                }
-                SecilenUrun = seciliUrun.Value;
-                SecilenPalet = seciliPalet.Value;
-                SecilenDizilimAdi = dizilimComboBox.SelectedItem as string;
+            if (urunComboBox.SelectedItem is not ComboSecenek<Urun> seciliUrun ||
+            paletComboBox.SelectedItem is not ComboSecenek<Palet> seciliPalet ||
+            seciliUrun.Value == null ||
+            seciliPalet.Value == null)
+            {
 
-
-                if (_dizilimAciklama == "(* Zorunlu)" && SecilenDizilimAdi==null)
-                {
-                    BildirimKutusu bildirimKutusu = new BildirimKutusu();
-                    bildirimKutusu.MesajGonder("ButtonKey.btntamam", "MesajKutusu.zorunluAlanDoldur");
-                    bildirimKutusu.ShowDialog();
-                    return;
-                 }
+                BildirimKutusu bildirimKutusu = new BildirimKutusu();
+                bildirimKutusu.MesajGonder("ButtonKey.btntamam", "MesajKutusu.zorunluAlanDoldur");
+                bildirimKutusu.ShowDialog();
+                return;
+            }
+            SecilenUrun = seciliUrun.Value;
+            SecilenPalet = seciliPalet.Value;
+            SecilenDizilimAdi = dizilimComboBox.SelectedItem as string;
 
 
-                DialogResult = true;
-                Close();
-            
-            
+            if (_dizilimAciklama == "(* Zorunlu)" && SecilenDizilimAdi == null)
+            {
+                BildirimKutusu bildirimKutusu = new BildirimKutusu();
+                bildirimKutusu.MesajGonder("ButtonKey.btntamam", "MesajKutusu.zorunluAlanDoldur");
+                bildirimKutusu.ShowDialog();
+                return;
+            }
+
+
+            DialogResult = true;
+            Close();
 
 
 
-            
+
+
+
         }
 
         private void DizilimleriYukle()

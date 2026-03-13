@@ -22,22 +22,33 @@ namespace Palet_Programlama.Sayfalar
         private Urun _secilenUrun;
         private Palet _secilenPalet;
         private string _gelenDizilimAdi;
+
         private readonly Servisler.Palet.KatYoneticisi _katYonetici = new();
-        private List<DizilimKayitModel> _dizilimKayitlari = new();
         private readonly Servisler.Palet.MesafeGostergesi _mesafe = new();
+
+        private List<DizilimKayitModel> _dizilimKayitlari = new();
+
         private Rectangle suruklenenKutu;
         private Rectangle sonSecilmisKutu = new Rectangle();
+        private List<Rect> _tiklananDigerKutular = new();
+
+        private Rect _sonSeciliRect;
+        private bool _sonSeciliRectVar = false;
+
         private double OlcekY => myCanvas.Width / _secilenPalet.PaletBoy;
         private double OlcekX => myCanvas.Height / _secilenPalet.PaletEn;
 
         public GruplamaYap(Frame Main, Urun secilenUrun, Palet secilenPalet, string dizilimAdi)
         {
             InitializeComponent();
+
             MainFrame = Main;
             _secilenUrun = secilenUrun;
             _secilenPalet = secilenPalet;
             _gelenDizilimAdi = dizilimAdi;
+
             _mesafe.Baslat(myCanvas);
+
             txtPaletOzellikleri.Text =
                 $"{_secilenPalet.PaletAdi} - {_secilenPalet.PaletEn:0} mm X {_secilenPalet.PaletBoy:0} mm X {_secilenPalet.PaletYukseklik:0} mm";
 
@@ -51,7 +62,6 @@ namespace Palet_Programlama.Sayfalar
             UrunComboBoxDoldur();
             GelenDizilimiCanvasaYukle();
         }
-
 
         private Rect GetRect(Rectangle r)
         {
@@ -67,18 +77,63 @@ namespace Palet_Programlama.Sayfalar
             return new Rect(left, top, w, h);
         }
 
-        private List<Rect> DigerKutular(Rectangle hareketEden) =>
-            myCanvas.Children.OfType<Rectangle>()
+        private List<Rect> DigerKutular(Rectangle hareketEden)
+        {
+            return myCanvas.Children
+                .OfType<Rectangle>()
                 .Where(r => r != hareketEden)
                 .Select(GetRect)
                 .ToList();
+        }
 
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            suruklenenKutu = (Rectangle)sender;
+            if (sender is not Rectangle tiklananKutu)
+                return;
+
+            suruklenenKutu = tiklananKutu;
+
+            // Aynı seçili kutuya tekrar tıklanırsa seçimi kaldır
+            if (suruklenenKutu == sonSecilmisKutu && sonSecilmisKutu.StrokeThickness == 1)
+            {
+                sonSecilmisKutu.Stroke = Brushes.Transparent;
+                sonSecilmisKutu.StrokeThickness = 0;
+                _mesafe.Gizle();
+
+                sonSecilmisKutu = new Rectangle();
+                _sonSeciliRectVar = false;
+                return;
+            }
+
+            Rect seciliRect = GetRect(suruklenenKutu);
+
+            // Aynı kutu zaten seçili ve yeri değişmemişse tekrar tüm hesabı yapma
+            if (sonSecilmisKutu == suruklenenKutu &&
+                _sonSeciliRectVar &&
+                Math.Abs(seciliRect.Left - _sonSeciliRect.Left) < 0.1 &&
+                Math.Abs(seciliRect.Top - _sonSeciliRect.Top) < 0.1)
+            {
+                _mesafe.Goster();
+                return;
+            }
+
+            if (sonSecilmisKutu != null)
+            {
+                sonSecilmisKutu.Stroke = Brushes.Transparent;
+                sonSecilmisKutu.StrokeThickness = 0;
+            }
+
+            suruklenenKutu.Stroke = Brushes.Red;
+            suruklenenKutu.StrokeThickness = 1;
+
+            _tiklananDigerKutular = DigerKutular(suruklenenKutu);
+            _mesafe.Guncelle(seciliRect, _tiklananDigerKutular);
+            _mesafe.Goster();
+
+            sonSecilmisKutu = suruklenenKutu;
+            _sonSeciliRect = seciliRect;
+            _sonSeciliRectVar = true;
         }
-
-
 
         private void Rectangle_MouseMove(object sender, MouseEventArgs e)
         {
@@ -87,32 +142,8 @@ namespace Palet_Programlama.Sayfalar
 
         private void Rectangle_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            if (suruklenenKutu == null)
-                return;
-
-            if (suruklenenKutu.StrokeThickness == 1)
-            {
-                suruklenenKutu.Stroke = Brushes.Transparent;
-                suruklenenKutu.StrokeThickness = 0;
-                _mesafe.Gizle();
-            }
-            else
-            {
-                var digerKutular = DigerKutular(suruklenenKutu);
-
-                sonSecilmisKutu.Stroke = Brushes.Transparent;
-                sonSecilmisKutu.StrokeThickness = 0;
-
-                suruklenenKutu.Stroke = Brushes.Red;
-                suruklenenKutu.StrokeThickness = 1;
-
-                _mesafe.Guncelle(GetRect(suruklenenKutu), digerKutular);
-                _mesafe.Goster();
-            }
-
-            sonSecilmisKutu = suruklenenKutu;
+            // Gruplama sayfasında seçim MouseDown'da yönetiliyor
         }
-
 
         private void GelenDizilimiCanvasaYukle()
         {
@@ -135,10 +166,26 @@ namespace Palet_Programlama.Sayfalar
                 Rectangle_MouseMove,
                 Rectangle_MouseUp);
 
+            _mesafe.Baslat(myCanvas);
+            _mesafe.Gizle();
+
             txtKatValue.Text = _katYonetici.AktifKat.ToString();
         }
 
+        private void SecimiTemizle()
+        {
+            if (sonSecilmisKutu != null)
+            {
+                sonSecilmisKutu.Stroke = Brushes.Transparent;
+                sonSecilmisKutu.StrokeThickness = 0;
+            }
 
+            sonSecilmisKutu = new Rectangle();
+            suruklenenKutu = null;
+            _tiklananDigerKutular.Clear();
+            _sonSeciliRectVar = false;
+            _mesafe.Gizle();
+        }
 
         private void DizilimKayitlariniYukle()
         {
@@ -157,7 +204,7 @@ namespace Palet_Programlama.Sayfalar
                 _dizilimKayitlari = JsonConvert.DeserializeObject<List<DizilimKayitModel>>(json)
                                     ?? new List<DizilimKayitModel>();
             }
-            catch (Exception)
+            catch
             {
                 _dizilimKayitlari = new List<DizilimKayitModel>();
             }
@@ -229,7 +276,7 @@ namespace Palet_Programlama.Sayfalar
         {
             if (Convert.ToInt32(txtKatValue.Text) != 1)
             {
-                _mesafe.Gizle();
+                SecimiTemizle();
 
                 int yeniKat = _katYonetici.AktifKat - 1;
 
@@ -241,14 +288,16 @@ namespace Palet_Programlama.Sayfalar
                     Rectangle_MouseMove,
                     Rectangle_MouseUp);
 
+                _mesafe.Baslat(myCanvas);
+                _mesafe.Gizle();
+
                 txtKatValue.Text = _katYonetici.AktifKat.ToString();
             }
         }
 
-
         private void BtnKatArti_Click(object sender, RoutedEventArgs e)
         {
-            _mesafe.Gizle();
+            SecimiTemizle();
 
             int yeniKat = _katYonetici.AktifKat + 1;
 
@@ -259,6 +308,9 @@ namespace Palet_Programlama.Sayfalar
                 Rectangle_MouseDown,
                 Rectangle_MouseMove,
                 Rectangle_MouseUp);
+
+            _mesafe.Baslat(myCanvas);
+            _mesafe.Gizle();
 
             txtKatValue.Text = _katYonetici.AktifKat.ToString();
         }
@@ -291,7 +343,6 @@ namespace Palet_Programlama.Sayfalar
 
             SeciliDizilimiCanvasaYukle();
         }
-
 
         private void SeciliDizilimiCanvasaYukle()
         {
@@ -326,14 +377,16 @@ namespace Palet_Programlama.Sayfalar
                 return;
             }
 
-            sonSecilmisKutu = new Rectangle();
-            _mesafe.Gizle();
+            SecimiTemizle();
 
             _katYonetici.KatiYukleDisardan(
                 myCanvas,
                 Rectangle_MouseDown,
                 Rectangle_MouseMove,
                 Rectangle_MouseUp);
+
+            _mesafe.Baslat(myCanvas);
+            _mesafe.Gizle();
 
             txtKatValue.Text = _katYonetici.AktifKat.ToString();
         }
@@ -356,7 +409,6 @@ namespace Palet_Programlama.Sayfalar
             else
                 CboxDizilimListesi.ItemsSource = null;
         }
-
 
         private void PaletBilgisiniGuncelle(DizilimKayitModel kayit)
         {

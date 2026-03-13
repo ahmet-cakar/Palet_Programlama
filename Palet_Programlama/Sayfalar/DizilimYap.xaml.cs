@@ -22,6 +22,11 @@ namespace Palet_Programlama.Sayfalar
     /// </summary>
     public partial class DizilimYap : Page
     {
+        private static readonly ImageSource _dikeyResim =
+         new BitmapImage(new Uri("pack://application:,,,/Resimler/DizilimYap/dikey_kutu.png", UriKind.Absolute));
+
+        private static readonly ImageSource _yatayResim =
+            new BitmapImage(new Uri("pack://application:,,,/Resimler/DizilimYap/yatay_kutu.png", UriKind.Absolute));
 
         private readonly Servisler.Palet.YerlesimMotoru _motor = new();
         private readonly Servisler.Palet.MesafeGostergesi _mesafe = new();
@@ -31,7 +36,9 @@ namespace Palet_Programlama.Sayfalar
 
         private Urun _secilenUrun;
         private Palet _secilenPalet;
-
+        private List<Rect> _suruklemeDigerKutular = new();
+        private Rect _sonMesafeRect;
+        private bool _sonMesafeRectVar = false;
         private double OlcekY => myCanvas.Width / _secilenPalet.PaletBoy;
         private double OlcekX => myCanvas.Height / _secilenPalet.PaletEn;
         private string? _gelenDizilimAdi;
@@ -90,9 +97,6 @@ namespace Palet_Programlama.Sayfalar
         }
 
 
-
-
-
         private Rect GetRect(Rectangle r)
         {
             double left = Canvas.GetLeft(r);
@@ -113,8 +117,8 @@ namespace Palet_Programlama.Sayfalar
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
             suruklenenKutu = (Rectangle)sender;
-
             _mesafe.Goster();
+
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 surukleniyor = true;
@@ -122,16 +126,21 @@ namespace Palet_Programlama.Sayfalar
                 ilkTiklamaPozisyonu = e.GetPosition(suruklenenKutu);
                 tiklamaOffset = e.GetPosition(suruklenenKutu);
                 suruklenenKutu.CaptureMouse();
-                var digerKutular = DigerKutular(suruklenenKutu);
+                _suruklemeDigerKutular = DigerKutular(suruklenenKutu);
             }
         }
 
         // MouseMove olayında öğeyi hareket ettir
         private void Rectangle_MouseMove(object sender, MouseEventArgs e)
         {
+
+            if (!surukleniyor) return;
+            if (suruklenenKutu == null) return;
+            if (e.LeftButton != MouseButtonState.Pressed) return;
+
+            Point currentMousePosition = e.GetPosition(suruklenenKutu);
             if (surukleniyor && e.LeftButton == MouseButtonState.Pressed)
             {
-                Point currentMousePosition = e.GetPosition(suruklenenKutu);
 
                 // Farenin ilk tıklama pozisyonundan yeterince uzaklaşıp uzaklaşmadığını kontrol edin
                 if (!suruklemeBasladi && (Math.Abs(currentMousePosition.X - ilkTiklamaPozisyonu.X) > suruklemeEsigi ||
@@ -146,31 +155,39 @@ namespace Palet_Programlama.Sayfalar
 
 
                     var movingNow = GetRect(suruklenenKutu);
-                    double w = movingNow.Width;
-                    double h = movingNow.Height;
-
-
-                    sonSecilmisKutu.Stroke = Brushes.Transparent;
-                    sonSecilmisKutu.StrokeThickness = 0;
                     var position = e.GetPosition(myCanvas);
 
                     // mouse offset ile hedef sol-üst
                     var hedef = new Point(position.X - tiklamaOffset.X, position.Y - tiklamaOffset.Y);
 
                     // diğer kutular
-                    var digerKutular = DigerKutular(suruklenenKutu);
+                    var digerKutular = _suruklemeDigerKutular;
 
                     // motor hesaplasın
                     if (_motor.TrySurukle(movingNow, hedef, myCanvas.Width, myCanvas.Height, digerKutular, out var sonuc))
                     {
                         Canvas.SetLeft(suruklenenKutu, sonuc.Left);
                         Canvas.SetTop(suruklenenKutu, sonuc.Top);
-                        _mesafe.Guncelle(sonuc, digerKutular);
+
+                        if (!_sonMesafeRectVar ||
+                            Math.Abs(sonuc.Left - _sonMesafeRect.Left) > 0.5 ||
+                            Math.Abs(sonuc.Top - _sonMesafeRect.Top) > 0.5)
+                        {
+                            _mesafe.Guncelle(sonuc, digerKutular);
+                            _sonMesafeRect = sonuc;
+                            _sonMesafeRectVar = true;
+                        }
                     }
                     else
                     {
-                        // hareket yok ama mesafe göstergesi güncel kalsın
-                        _mesafe.Guncelle(movingNow, digerKutular);
+                        if (!_sonMesafeRectVar ||
+                            Math.Abs(movingNow.Left - _sonMesafeRect.Left) > 0.5 ||
+                            Math.Abs(movingNow.Top - _sonMesafeRect.Top) > 0.5)
+                        {
+                            _mesafe.Guncelle(movingNow, digerKutular);
+                            _sonMesafeRect = movingNow;
+                            _sonMesafeRectVar = true;
+                        }
                     }
 
                 }
@@ -214,8 +231,8 @@ namespace Palet_Programlama.Sayfalar
             suruklemeBasladi = false;
             surukleniyor = false;
             suruklenenKutu?.ReleaseMouseCapture();
-
-
+            _sonMesafeRectVar = false;
+            _suruklemeDigerKutular.Clear();
         }
 
         private void dikeyKutu_MouseDown(object sender, MouseButtonEventArgs e)
@@ -284,8 +301,8 @@ namespace Palet_Programlama.Sayfalar
 
             var rect = YeniUrunOlustur(w, h, _eklemeYon);
             rect.Tag = (_eklemeYon == EklemeYon.Dikey)
-                ? Modeller.UrunYonu.Dikey
-                : Modeller.UrunYonu.Yatay;
+                ? UrunYonu.Dikey
+                : UrunYonu.Yatay;
 
             Canvas.SetLeft(rect, newLeft);
             Canvas.SetTop(rect, newTop);
@@ -295,9 +312,7 @@ namespace Palet_Programlama.Sayfalar
 
         private Rectangle YeniUrunOlustur(double w, double h, EklemeYon? yon)
         {
-            var resim = yon == EklemeYon.Dikey
-                ? "pack://application:,,,/Resimler/DizilimYap/dikey_kutu.png"
-                : "pack://application:,,,/Resimler/DizilimYap/yatay_kutu.png";
+            ImageSource source = yon == EklemeYon.Dikey ? _dikeyResim : _yatayResim;
 
             var rect = new Rectangle
             {
@@ -307,7 +322,7 @@ namespace Palet_Programlama.Sayfalar
                 StrokeThickness = 0,
                 Fill = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri(resim, UriKind.Absolute))
+                    ImageSource = source
                 }
             };
 
@@ -659,7 +674,6 @@ namespace Palet_Programlama.Sayfalar
                 return (w, h);
             }
         }
-
 
 
         private void Dizilimi_Kaydet_Click(object sender, RoutedEventArgs e)
@@ -1028,9 +1042,7 @@ namespace Palet_Programlama.Sayfalar
                 ? t
                 : (w >= h ? Modeller.UrunYonu.Yatay : Modeller.UrunYonu.Dikey);
 
-            string resim = yon == Modeller.UrunYonu.Dikey
-                ? "pack://application:,,,/Resimler/DizilimYap/dikey_kutu.png"
-                : "pack://application:,,,/Resimler/DizilimYap/yatay_kutu.png";
+            ImageSource source = yon == Modeller.UrunYonu.Dikey ? _dikeyResim : _yatayResim;
 
             var rect = new Rectangle
             {
@@ -1040,7 +1052,7 @@ namespace Palet_Programlama.Sayfalar
                 StrokeThickness = 0,
                 Fill = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri(resim, UriKind.Absolute))
+                    ImageSource = source
                 },
                 Tag = yon
             };
@@ -1452,4 +1464,6 @@ namespace Palet_Programlama.Sayfalar
             AktifKatiTemizle();
         }
     }
+
+
 }

@@ -33,45 +33,212 @@
       }
     ]
   },
-    {
-        "DizilimAdi": "yeni",
-        "PaletAdi": "EURO-PALET",
-        "PaletEn": 800.0,
-        "PaletBoy": 1200.0,
-        "PaletYukseklik": 100.0,
-        "UrunAdi": "Test2",
-        "UrunEn": 200.0,
-        "UrunBoy": 300.0,
-        "UrunYukseklik": 200.0,
-        "Urunler": [
-            {
-                "Yon": "Dikey",
-                "KatNo": 1,
-                "MerkezX": 350.0,
-                "MerkezY": 100.0,
-                "MerkezZ": 200.0
-            },
-            {
-                "Yon": "Yatay",
-                "KatNo": 1,
-                "MerkezX": 100.0,
-                "MerkezY": 150.0,
-                "MerkezZ": 200.0
-            },
-            {
-                "Yon": "Yatay",
-                "KatNo": 1,
-                "MerkezX": 100.0,
-                "MerkezY": 450.0,
-                "MerkezZ": 200.0
-            },
-            {
-                "Yon": "Yatay",
-                "KatNo": 1,
-                "MerkezX": 100.0,
-                "MerkezY": 750.0,
-                "MerkezZ": 200.0
-            }
-        ]
-    }
+  {
+    "DizilimAdi": "yeni",
+    "PaletAdi": "EURO-PALET",
+    "PaletEn": 800.0,
+    "PaletBoy": 1200.0,
+    "PaletYukseklik": 100.0,
+    "UrunAdi": "Test2",
+    "UrunEn": 200.0,
+    "UrunBoy": 300.0,
+    "UrunYukseklik": 200.0,
+    "Urunler": [
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 350.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 1,
+        "MerkezX": 100.0,
+        "MerkezY": 150.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 1,
+        "MerkezX": 100.0,
+        "MerkezY": 450.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 1,
+        "MerkezX": 100.0,
+        "MerkezY": 750.0,
+        "MerkezZ": 200.0
+      }
+    ]
+  },
+  {
+    "DizilimAdi": "deneme",
+    "PaletAdi": "EURO-PALET",
+    "PaletEn": 800.0,
+    "PaletBoy": 1200.0,
+    "PaletYukseklik": 100.0,
+    "UrunAdi": "Yumoş 220 ML",
+    "UrunEn": 200.0,
+    "UrunBoy": 300.0,
+    "UrunYukseklik": 200.0,
+    "Urunler": [
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 150.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 150.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 150.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 150.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 150.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 1,
+        "MerkezX": 400.0,
+        "MerkezY": 150.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 1,
+        "MerkezX": 400.0,
+        "MerkezY": 450.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 1,
+        "MerkezX": 400.0,
+        "MerkezY": 750.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 1,
+        "MerkezX": 600.0,
+        "MerkezY": 150.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 1,
+        "MerkezX": 600.0,
+        "MerkezY": 450.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 1,
+        "MerkezX": 600.0,
+        "MerkezY": 750.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 2,
+        "MerkezX": 100.0,
+        "MerkezY": 150.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 2,
+        "MerkezX": 100.0,
+        "MerkezY": 450.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 2,
+        "MerkezX": 300.0,
+        "MerkezY": 450.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 2,
+        "MerkezX": 300.0,
+        "MerkezY": 150.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 2,
+        "MerkezX": 700.0,
+        "MerkezY": 150.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 2,
+        "MerkezX": 100.0,
+        "MerkezY": 1050.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 2,
+        "MerkezX": 300.0,
+        "MerkezY": 1050.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 2,
+        "MerkezX": 700.0,
+        "MerkezY": 450.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 2,
+        "MerkezX": 500.0,
+        "MerkezY": 150.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 2,
+        "MerkezX": 500.0,
+        "MerkezY": 450.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Yatay",
+        "KatNo": 2,
+        "MerkezX": 700.0,
+        "MerkezY": 1050.0,
+        "MerkezZ": 400.0
+      }
+    ]
+  }
 ]

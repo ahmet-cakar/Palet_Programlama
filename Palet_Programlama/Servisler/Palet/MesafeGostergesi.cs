@@ -20,15 +20,58 @@ namespace Palet_Programlama.Servisler.Palet
         private readonly TextBlock altYazi = new() { Foreground = Brushes.Magenta, FontSize = 20, Background = Brushes.Black, Padding = new Thickness(4, 1, 4, 1) };
         private Canvas? _canvas;
 
+
+
+        private void EgerYoksaEkle(Canvas canvas, UIElement eleman)
+        {
+            if (!canvas.Children.Contains(eleman))
+                canvas.Children.Add(eleman);
+        }
+
+        private void EskiParenttanKaldir(UIElement eleman)
+        {
+            if (eleman is FrameworkElement fe && fe.Parent is Panel parentPanel)
+            {
+                parentPanel.Children.Remove(eleman);
+            }
+        }
+
         public void Baslat(Canvas canvas)
         {
+            if (canvas == null)
+                return;
+
             _canvas = canvas;
 
-            canvas.Children.Add(sol); canvas.Children.Add(sag); canvas.Children.Add(ust); canvas.Children.Add(alt);
-            canvas.Children.Add(solYazi); canvas.Children.Add(sagYazi); canvas.Children.Add(ustYazi); canvas.Children.Add(altYazi);
+            EskiParenttanKaldir(sol);
+            EskiParenttanKaldir(sag);
+            EskiParenttanKaldir(ust);
+            EskiParenttanKaldir(alt);
 
-            Panel.SetZIndex(sol, 999); Panel.SetZIndex(sag, 999); Panel.SetZIndex(ust, 999); Panel.SetZIndex(alt, 999);
-            Panel.SetZIndex(solYazi, 1000); Panel.SetZIndex(sagYazi, 1000); Panel.SetZIndex(ustYazi, 1000); Panel.SetZIndex(altYazi, 1000);
+            EskiParenttanKaldir(solYazi);
+            EskiParenttanKaldir(sagYazi);
+            EskiParenttanKaldir(ustYazi);
+            EskiParenttanKaldir(altYazi);
+
+            EgerYoksaEkle(_canvas, sol);
+            EgerYoksaEkle(_canvas, sag);
+            EgerYoksaEkle(_canvas, ust);
+            EgerYoksaEkle(_canvas, alt);
+
+            EgerYoksaEkle(_canvas, solYazi);
+            EgerYoksaEkle(_canvas, sagYazi);
+            EgerYoksaEkle(_canvas, ustYazi);
+            EgerYoksaEkle(_canvas, altYazi);
+
+            Panel.SetZIndex(sol, 999);
+            Panel.SetZIndex(sag, 999);
+            Panel.SetZIndex(ust, 999);
+            Panel.SetZIndex(alt, 999);
+
+            Panel.SetZIndex(solYazi, 1000);
+            Panel.SetZIndex(sagYazi, 1000);
+            Panel.SetZIndex(ustYazi, 1000);
+            Panel.SetZIndex(altYazi, 1000);
 
             Gizle();
         }

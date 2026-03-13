@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 
-namespace Palet_Programlama.Servisler.Palet
+namespace Palet_Programlama.Servisler.PaletMethod
 {
     public sealed class YerlesimMotoru
     {

@@ -75,9 +75,9 @@
       <DependentUpon>ReceteDuzenle.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modeller\KatUrunu.cs" />
-    <Compile Include="Servisler\Palet\KatYoneticisi.cs" />
-    <Compile Include="Servisler\Palet\MesafeGostergesi.cs" />
-    <Compile Include="Servisler\Palet\YerlesimMotoru.cs" />
+    <Compile Include="Servisler\PaletMethod\KatYoneticisi.cs" />
+    <Compile Include="Servisler\PaletMethod\MesafeGostergesi.cs" />
+    <Compile Include="Servisler\PaletMethod\YerlesimMotoru.cs" />
     <Compile Include="Sınıflar\DosyaYoluBul.cs" />
     <Compile Include="Sınıflar\LanguageConverter.cs" />
     <Compile Include="Sınıflar\KullaniciDil.cs" />

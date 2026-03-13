@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Palet_Programlama.Modeller;
+using Palet_Programlama.Servisler.PaletMethod;
 using Palet_Programlama.Sınıflar;
 using Palet_Programlama.UserController;
+using Servisler.PaletMethod;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,9 +30,9 @@ namespace Palet_Programlama.Sayfalar
         private static readonly ImageSource _yatayResim =
             new BitmapImage(new Uri("pack://application:,,,/Resimler/DizilimYap/yatay_kutu.png", UriKind.Absolute));
 
-        private readonly Servisler.Palet.YerlesimMotoru _motor = new();
-        private readonly Servisler.Palet.MesafeGostergesi _mesafe = new();
-        private readonly Servisler.Palet.KatYoneticisi _katYonetici = new();
+        private readonly YerlesimMotoru _motor = new();
+        private readonly MesafeGostergesi _mesafe = new();
+        private readonly KatYoneticisi _katYonetici = new();
         private enum EklemeYon { Dikey, Yatay }
         private EklemeYon? _eklemeYon = null;
 

@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Palet_Programlama.Servisler.Palet
+namespace Servisler.PaletMethod
 {
     public sealed class KatYoneticisi
     {
@@ -136,7 +136,7 @@ namespace Palet_Programlama.Servisler.Palet
         public bool DizilimYukle(
                 string dizilimAdi,
                 Urun secilenUrun,
-                Sınıflar.Palet secilenPalet,
+                Palet secilenPalet,
                 double olcekX,
                 double olcekY)
         {
@@ -155,10 +155,9 @@ namespace Palet_Programlama.Servisler.Palet
                 var tumDizilimler = JsonConvert.DeserializeObject<List<DizilimKayitModel>>(json)
                                    ?? new List<DizilimKayitModel>();
 
-                var kayit = tumDizilimler.FirstOrDefault(x =>
-                    string.Equals((x.DizilimAdi ?? "").Trim(), dizilimAdi.Trim(), StringComparison.OrdinalIgnoreCase) &&
-                    string.Equals((x.PaletAdi ?? "").Trim(), (secilenPalet.PaletAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase) &&
-                    string.Equals((x.UrunAdi ?? "").Trim(), (secilenUrun.UrunAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase));
+                var kayit = tumDizilimler.FirstOrDefault(x => x.DizilimAdi == dizilimAdi);
+
+
 
                 if (kayit == null)
                     return false;

@@ -1,6 +1,7 @@
 ﻿using Palet_Programlama.Modeller;
 using Palet_Programlama.Popuplar;
 using Palet_Programlama.Sayfalar.Gruplama.Helpers;
+using Palet_Programlama.Sayfalar.Gruplama.Models;
 using Palet_Programlama.Sayfalar.Gruplama.Services;
 using Palet_Programlama.Servisler.PaletMethod;
 using Palet_Programlama.Sınıflar;
@@ -378,6 +379,7 @@ namespace Palet_Programlama.Sayfalar
 
         private void KataGec(int yeniKat)
         {
+            MevcutKatGruplariniKaydet();
             SecimiTemizle();
 
             _katYonetici.KatDegistir(
@@ -387,6 +389,15 @@ namespace Palet_Programlama.Sayfalar
                 Rectangle_MouseDown,
                 Rectangle_MouseMove,
                 Rectangle_MouseUp);
+
+
+            var kayitliAtamalar = _bilgiServisi.KatAtamalariniGetir(_katYonetici.AktifKat);
+
+            _secimServisi.KatAtamalariniYukle(
+                _katYonetici.AktifKat,
+                myCanvas.Children.OfType<Rectangle>(),
+                kayitliAtamalar,
+                _geometri);
 
             txtKatValue.Text = _katYonetici.AktifKat.ToString();
             GrupGorselleriniYenile();
@@ -459,6 +470,23 @@ namespace Palet_Programlama.Sayfalar
             txtGrupValue.Text = "1";
             SecimiTemizle();
         }
+
+        private void MevcutKatGruplariniKaydet()
+        {
+            var mevcutAtamalar = _secimServisi.GrupAtamalari
+                .Values
+                .Select(x => new GrupAtamaBilgisi
+                {
+                    KatNo = x.KatNo,
+                    GrupNo = x.GrupNo,
+                    GrupEkseni = x.GrupEkseni,
+                    KoliAnahtari = x.KoliAnahtari
+                })
+                .ToList();
+
+            _bilgiServisi.KatAtamalariniKaydet(AktifKatNo, mevcutAtamalar);
+        }
+
 
         private void BtnProgramKaydet_Click(object sender, RoutedEventArgs e)
         {

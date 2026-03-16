@@ -69,14 +69,16 @@ namespace Palet_Programlama.Sayfalar.Gruplama.Services
         }
 
         public void AktifKattakiGrupEtiketleriniYenile(
-            Canvas canvas,
-            int aktifKatNo,
-            Dictionary<Rectangle, GrupAtamaBilgisi> grupAtamalari,
-            KoliGeometriYardimcisi geometri)
+             Canvas canvas,
+             int aktifKatNo,
+             Dictionary<Rectangle, GrupAtamaBilgisi> grupAtamalari,
+             KoliGeometriYardimcisi geometri)
         {
             TumGrupEtiketleriniTemizle(canvas);
 
-            foreach (var kutu in canvas.Children.OfType<Rectangle>())
+            var kutular = canvas.Children.OfType<Rectangle>().ToList();
+
+            foreach (var kutu in kutular)
             {
                 if (grupAtamalari.TryGetValue(kutu, out var bilgi) && bilgi.KatNo == aktifKatNo)
                 {
@@ -112,12 +114,14 @@ namespace Palet_Programlama.Sayfalar.Gruplama.Services
         }
 
         public void AktifKattakiTumKutuGorselleriniYenile(
-            Canvas canvas,
-            int aktifKatNo,
-            Dictionary<Rectangle, GrupAtamaBilgisi> grupAtamalari,
-            KoliGeometriYardimcisi geometri)
+          Canvas canvas,
+          int aktifKatNo,
+          Dictionary<Rectangle, GrupAtamaBilgisi> grupAtamalari,
+          KoliGeometriYardimcisi geometri)
         {
-            foreach (var kutu in canvas.Children.OfType<Rectangle>())
+            var kutular = canvas.Children.OfType<Rectangle>().ToList();
+
+            foreach (var kutu in kutular)
             {
                 KutuGrupGorseliniGuncelle(canvas, kutu, aktifKatNo, grupAtamalari, geometri);
             }

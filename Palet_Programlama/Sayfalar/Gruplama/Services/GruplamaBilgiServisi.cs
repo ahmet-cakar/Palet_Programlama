@@ -1,10 +1,15 @@
 ﻿using Palet_Programlama.Modeller;
+using Palet_Programlama.Sayfalar.Gruplama.Models;
 using Palet_Programlama.Sınıflar;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Palet_Programlama.Sayfalar.Gruplama.Services
 {
     public sealed class GruplamaBilgiServisi
     {
+        private readonly Dictionary<int, List<GrupAtamaBilgisi>> _katBazliGrupAtamalari = new();
+
         public void UrunBilgisiniUygula(Urun urun, DizilimKayitModel kayit)
         {
             if (urun == null || kayit == null)
@@ -14,6 +19,47 @@ namespace Palet_Programlama.Sayfalar.Gruplama.Services
             urun.UrunEn = kayit.UrunEn;
             urun.UrunBoy = kayit.UrunBoy;
             urun.UrunYukseklik = kayit.UrunYukseklik;
+        }
+        public void KatAtamalariniKaydet(int katNo, List<GrupAtamaBilgisi> atamalar)
+        {
+            _katBazliGrupAtamalari[katNo] = atamalar
+                .Select(x => new GrupAtamaBilgisi
+                {
+                    KatNo = x.KatNo,
+                    GrupNo = x.GrupNo,
+                    GrupEkseni = x.GrupEkseni,
+                    KoliAnahtari = x.KoliAnahtari
+                })
+                .ToList();
+        }
+
+        public void KatTemizle(int katNo)
+        {
+            if (_katBazliGrupAtamalari.ContainsKey(katNo))
+                _katBazliGrupAtamalari.Remove(katNo);
+        }
+
+        public void TumunuTemizle()
+        {
+            _katBazliGrupAtamalari.Clear();
+        }
+
+        public List<GrupAtamaBilgisi> KatAtamalariniGetir(int katNo)
+        {
+            if (_katBazliGrupAtamalari.TryGetValue(katNo, out var liste))
+            {
+                return liste
+                    .Select(x => new GrupAtamaBilgisi
+                    {
+                        KatNo = x.KatNo,
+                        GrupNo = x.GrupNo,
+                        GrupEkseni = x.GrupEkseni,
+                        KoliAnahtari = x.KoliAnahtari
+                    })
+                    .ToList();
+            }
+
+            return new List<GrupAtamaBilgisi>();
         }
 
         public void PaletBilgisiniUygula(Palet palet, DizilimKayitModel kayit)

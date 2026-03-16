@@ -443,5 +443,20 @@ namespace Palet_Programlama.Sayfalar
             pencere.MesajGonder(butonKey, mesajKey);
             pencere.ShowDialog();
         }
+
+        private void BtnGruplariTemizle_Click(object sender, RoutedEventArgs e)
+        {
+            _secimServisi.TumGrupAtamalariniTemizle();
+            _gorsellestirmeServisi.TumGrupEtiketleriniTemizle(myCanvas);
+
+            foreach (var kutu in myCanvas.Children.OfType<Rectangle>())
+            {
+                kutu.Stroke = System.Windows.Media.Brushes.Transparent;
+                kutu.StrokeThickness = 0;
+            }
+
+            txtGrupValue.Text = "1";
+            SecimiTemizle();
+        }
     }
 }

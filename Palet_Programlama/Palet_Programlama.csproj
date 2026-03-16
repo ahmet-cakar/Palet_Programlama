@@ -69,6 +69,9 @@
     <Compile Include="Sayfalar\Gruplama\Helpers\KoliYonYardimcisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\GrupAtamaBilgisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\GrupKuraliSonucu.cs" />
+    <Compile Include="Sayfalar\Gruplama\Models\ProgramGrupModel.cs" />
+    <Compile Include="Sayfalar\Gruplama\Models\ProgramKayitModel.cs" />
+    <Compile Include="Sayfalar\Gruplama\Models\ProgramUrunModel.cs" />
     <Compile Include="Sayfalar\Gruplama\Services\DizilimKayitServisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Services\GrupGorsellestirmeServisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Services\GrupKuralServisi.cs" />
@@ -248,6 +251,9 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Include="Data\Paletler.json" />
+    <None Include="Data\Programlar.json">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Include="Data\Urunler.json" />
     <None Include="DilPaketleri\eng.json" />
     <None Include="DilPaketleri\tr.json" />

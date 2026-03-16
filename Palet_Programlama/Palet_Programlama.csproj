@@ -107,6 +107,9 @@
     <Compile Include="UserController\BildirimKutusu.xaml.cs">
       <DependentUpon>BildirimKutusu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserController\GrupAyarlariPopup.xaml.cs">
+      <DependentUpon>GrupAyarlariPopup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserController\MetinGirisKutusu.xaml.cs">
       <DependentUpon>MetinGirisKutusu.xaml</DependentUpon>
     </Compile>
@@ -181,6 +184,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserController\BildirimKutusu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserController\GrupAyarlariPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

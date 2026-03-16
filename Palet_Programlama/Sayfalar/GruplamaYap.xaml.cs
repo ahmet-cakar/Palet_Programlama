@@ -1,4 +1,5 @@
 ﻿using Palet_Programlama.Modeller;
+using Palet_Programlama.Popuplar;
 using Palet_Programlama.Sayfalar.Gruplama.Helpers;
 using Palet_Programlama.Sayfalar.Gruplama.Services;
 using Palet_Programlama.Servisler.PaletMethod;
@@ -457,6 +458,11 @@ namespace Palet_Programlama.Sayfalar
 
             txtGrupValue.Text = "1";
             SecimiTemizle();
+        }
+
+        private void BtnProgramKaydet_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

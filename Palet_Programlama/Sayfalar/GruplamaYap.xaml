@@ -510,12 +510,10 @@
         <StackPanel Orientation="Horizontal">
           <Button FontSize="24"  Content="{Binding Source='GruplamaYap.btnKaydet',Converter={StaticResource LanguageConverter}}" Width="240" 
                              Background="{StaticResource button_background_green}" Style="{StaticResource button_template}" />
-          <Button FontSize="24"   Content="{Binding Source='GruplamaYap.btnGruplariTemizle',Converter={StaticResource LanguageConverter}}" Width="240"  Margin="10,0,0,0"
+          <Button FontSize="24" x:Name="BtnGruplariTemizle"   Content="{Binding Source='GruplamaYap.btnGruplariTemizle',Converter={StaticResource LanguageConverter}}" Width="240"  Margin="10,0,0,0"
          Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
-          <Button FontSize="24"   Content="{Binding Source='GruplamaYap.btnManuelDiz',Converter={StaticResource LanguageConverter}}" Width="240" Margin="10,0,0,0"
-         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
-          <Button FontSize="24"   Content="{Binding Source='GruplamaYap.btnDizilimListesi',Converter={StaticResource LanguageConverter}}" Width="240" Margin="10,0,0,0"
-         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+          <!--<Button FontSize="24"   Content="{Binding Source='GruplamaYap.btnDizilimListesi',Converter={StaticResource LanguageConverter}}" Width="240" Margin="10,0,0,0"
+         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />-->
         </StackPanel>
       </Border>
     </Grid>

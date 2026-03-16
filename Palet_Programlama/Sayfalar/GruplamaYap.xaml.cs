@@ -1,8 +1,9 @@
 ﻿using Palet_Programlama.Modeller;
-using Palet_Programlama.Servisler.PaletMethod;
-using Palet_Programlama.Sınıflar;
 using Palet_Programlama.Sayfalar.Gruplama.Helpers;
 using Palet_Programlama.Sayfalar.Gruplama.Services;
+using Palet_Programlama.Servisler.PaletMethod;
+using Palet_Programlama.Sınıflar;
+using Palet_Programlama.UserController;
 using Servisler.PaletMethod;
 using System;
 using System.Collections.Generic;
@@ -20,10 +21,8 @@ namespace Palet_Programlama.Sayfalar
     public partial class GruplamaYap : Page
     {
         private readonly Frame MainFrame;
-
         private readonly KatYoneticisi _katYonetici = new();
         private readonly MesafeGostergesi _mesafe = new();
-
         private readonly KoliGeometriYardimcisi _geometri = new();
         private readonly KoliYonYardimcisi _yonYardimcisi = new();
         private readonly DizilimKayitServisi _dizilimKayitServisi = new();
@@ -79,14 +78,10 @@ namespace Palet_Programlama.Sayfalar
         private void SayfaVerileriniYukle()
         {
             _sayfaYukleniyor = true;
-
             _dizilimKayitlari = _dizilimKayitServisi.KayitlariYukle();
-
             IlkVerileriHazirla();
             ComboBoxlariDoldurIlkAcilisIcin();
-
             _sayfaYukleniyor = false;
-
             SeciliDizilimiCanvasaYukle();
         }
 
@@ -177,10 +172,8 @@ namespace Palet_Programlama.Sayfalar
         private void KayitBilgileriniUygula(DizilimKayitModel kayit)
         {
             _gelenDizilimAdi = kayit.DizilimAdi;
-
             _bilgiServisi.UrunBilgisiniUygula(_secilenUrun, kayit);
             _bilgiServisi.PaletBilgisiniUygula(_secilenPalet, kayit);
-
             txtPaletOzellikleri.Text = _bilgiServisi.PaletMetniUret(kayit);
         }
 
@@ -218,7 +211,6 @@ namespace Palet_Programlama.Sayfalar
                 Rectangle_MouseUp);
 
             txtKatValue.Text = _katYonetici.AktifKat.ToString();
-
             GrupGorselleriniYenile();
         }
 
@@ -257,7 +249,7 @@ namespace Palet_Programlama.Sayfalar
                 _secimServisi,
                 _yonYardimcisi))
             {
-                GrupKuraliUyarisiGoster("Aynı grupta yatay ve dikey ürün birlikte bulunamaz.");
+                BildirimGoster("GruplamaYap.ayniGrupYatayDikeyUyarisi");
                 return;
             }
 
@@ -269,7 +261,7 @@ namespace Palet_Programlama.Sayfalar
                 _secimServisi,
                 tiklananKutu))
             {
-                GrupKuraliUyarisiGoster("Aynı grupta en fazla 4 koli olabilir.");
+                BildirimGoster("GruplamaYap.ayniGrupMaksSayiUyarisi");
                 return;
             }
 
@@ -282,7 +274,7 @@ namespace Palet_Programlama.Sayfalar
                 _secimServisi,
                 _geometri))
             {
-                GrupKuraliUyarisiGoster("Bir grup yalnızca tek yönde büyüyebilir. Aynı gruba hem yatay hem dikey doğrultuda ürün eklenemez.");
+                BildirimGoster("GruplamaYap.ayniGrupYonUyarisi");
                 return;
             }
 
@@ -296,7 +288,8 @@ namespace Palet_Programlama.Sayfalar
                 _secimServisi,
                 _geometri))
             {
-                GrupKuraliUyarisiGoster("Aynı gruptaki ürünler bitişik olmalıdır. Aradaki ürünü atlayarak gruplama yapılamaz.");
+                BildirimGoster("GruplamaYap.ayniGrupBitisikUyarisi");
+
                 return;
             }
 
@@ -435,19 +428,20 @@ namespace Palet_Programlama.Sayfalar
         private void CanvasiTemizle()
         {
             myCanvas.Children.OfType<Rectangle>().ToList().ForEach(r => myCanvas.Children.Remove(r));
-
             _katYonetici.Temizle();
             _secimServisi.TumGrupAtamalariniTemizle();
             SecimiTemizle();
-
             _gorsellestirmeServisi.TumGrupEtiketleriniTemizle(myCanvas);
-
             txtKatValue.Text = "1";
         }
 
-        private void GrupKuraliUyarisiGoster(string mesaj)
+    
+
+        private void BildirimGoster(string mesajKey, string butonKey = "MesajKutusu.tamam")
         {
-            MessageBox.Show(mesaj, "Grup Kuralı", MessageBoxButton.OK, MessageBoxImage.Warning);
+            var pencere = new BildirimKutusu();
+            pencere.MesajGonder(butonKey, mesajKey);
+            pencere.ShowDialog();
         }
     }
 }

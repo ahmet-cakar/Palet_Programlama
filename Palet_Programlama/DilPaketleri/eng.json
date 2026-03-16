@@ -145,6 +145,10 @@
   },
 
     "GruplamaYap": {
+        "ayniGrupYatayDikeyUyarisi": "Horizontal and vertical products cannot be found together in the same group.",
+        "ayniGrupMaksSayiUyarisi": "There can be a maximum of 4 parcels in the same group.",
+        "ayniGrupBitisikUyarisi": "Products in the same group must be adjacent. Grouping cannot be done by skipping the product in between.",
+        "ayniGrupYonUyarisi": "A group can only grow in one direction. Products cannot be added to the same group both horizontally and vertically.",
         "txtPalet": "Palette :",
         "txtEn": "Width: ",
         "txtBoy": "Length: ",

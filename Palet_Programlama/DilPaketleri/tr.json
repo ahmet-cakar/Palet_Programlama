@@ -143,25 +143,29 @@
 
     },
 
-  "GruplamaYap": {
-    "txtEn": "En: ",
-    "txtBoy": "Boy: ",
-    "txtYukseklik": "Yükseklik: ",
-    "txtAgirlik": "Ağırlık: ",
-    "txtGruplandirma": "Gruplandırma",
-    "txtUrunSecimi": "Ürün Seçimi",
-    "txtDizilimSecimi": "Dizilim Seçimi",
-    "txtGruplamaSecimi": "Gruplama Seçimi",
-    "txtKatNo": "Kat No: ",
-    "txtGrupNo": "Grup No: ",
-    "btnAyarlar": "Ayarlar",
-    "txtPalet" : "Palet :",
-    "btnAyir": "Ayır",
-    "btnBirlestir": "Birleştir",
-    "btnKaydet": "Kaydet",
-    "btnGruplariTemizle": "Grupları Temizle",
-    "btnManuelDiz": "Manuel Diz",
-    "btnDizilimListesi": "DizilimListesi"
+    "GruplamaYap": {
+        "ayniGrupYatayDikeyUyarisi": "Aynı grupta yatay ve dikey ürün birlikte bulunamaz.",
+        "ayniGrupMaksSayiUyarisi": "Aynı grupta en fazla 4 koli olabilir.",
+        "ayniGrupBitisikUyarisi": "Aynı gruptaki ürünler bitişik olmalıdır. Aradaki ürünü atlayarak gruplama yapılamaz.",
+        "ayniGrupYonUyarisi": "Bir grup yalnızca tek yönde büyüyebilir. Aynı gruba hem yatay hem dikey doğrultuda ürün eklenemez.",
+        "txtEn": "En: ",
+        "txtBoy": "Boy: ",
+        "txtYukseklik": "Yükseklik: ",
+        "txtAgirlik": "Ağırlık: ",
+        "txtGruplandirma": "Gruplandırma",
+        "txtUrunSecimi": "Ürün Seçimi",
+        "txtDizilimSecimi": "Dizilim Seçimi",
+        "txtGruplamaSecimi": "Gruplama Seçimi",
+        "txtKatNo": "Kat No: ",
+        "txtGrupNo": "Grup No: ",
+        "btnAyarlar": "Ayarlar",
+        "txtPalet": "Palet :",
+        "btnAyir": "Ayır",
+        "btnBirlestir": "Birleştir",
+        "btnKaydet": "Kaydet",
+        "btnGruplariTemizle": "Grupları Temizle",
+        "btnManuelDiz": "Manuel Diz",
+        "btnDizilimListesi": "DizilimListesi"
 
 
 
@@ -169,7 +173,7 @@
 
 
 
-  },
+    },
   "Program": {
     "btnrecededuzen": "Reçete Düzenle",
     "btnCalistir": "Çalıştır",

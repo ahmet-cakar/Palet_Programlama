@@ -1404,7 +1404,7 @@ namespace Palet_Programlama.Sayfalar
 
         private void BildirimGoster(string mesajKey, string butonKey = "MesajKutusu.tamam")
         {
-            var pencere = new UserController.BildirimKutusu();
+            var pencere = new BildirimKutusu();
             pencere.MesajGonder(butonKey, mesajKey);
             pencere.ShowDialog();
         }

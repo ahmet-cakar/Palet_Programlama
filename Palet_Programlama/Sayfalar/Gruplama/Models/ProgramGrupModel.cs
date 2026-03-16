@@ -14,7 +14,7 @@ namespace Palet_Programlama.Sayfalar.Gruplama.Models
 
         public int GripperAcisi { get; set; } = 360;
 
-        public UrunYonu Yon { get; set; }
+        public UrunYonu? Yon { get; set; }
         public int UrunSayisi { get; set; }
 
         public List<ProgramUrunModel> Urunler { get; set; } = new();

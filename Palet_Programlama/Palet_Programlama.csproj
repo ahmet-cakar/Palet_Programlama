@@ -70,6 +70,7 @@
     <Compile Include="Sayfalar\Gruplama\Models\GrupAtamaBilgisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\GrupKuraliSonucu.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\ProgramGrupModel.cs" />
+    <Compile Include="Sayfalar\Gruplama\Models\ProgramKaydetGirdiModel.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\ProgramKayitModel.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\ProgramUrunModel.cs" />
     <Compile Include="Sayfalar\Gruplama\Services\DizilimKayitServisi.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Sayfalar\Gruplama\Services\GruplamaBilgiServisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Services\GruplamaSecimServisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Services\KatGecisServisi.cs" />
+    <Compile Include="Sayfalar\Gruplama\Services\ProgramKayitServisi.cs" />
     <Compile Include="Sayfalar\HizAyarları.xaml.cs">
       <DependentUpon>HizAyarları.xaml</DependentUpon>
     </Compile>
@@ -115,6 +117,9 @@
     </Compile>
     <Compile Include="UserController\MetinGirisKutusu.xaml.cs">
       <DependentUpon>MetinGirisKutusu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserController\ProgramKaydetPopup.xaml.cs">
+      <DependentUpon>ProgramKaydetPopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserController\UrunPaletSecimKutusu.xaml.cs">
       <DependentUpon>UrunPaletSecimKutusu.xaml</DependentUpon>
@@ -195,6 +200,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserController\MetinGirisKutusu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserController\ProgramKaydetPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,1 +1,101 @@
-﻿[]
+[
+  {
+    "Id": 1,
+    "ProgramAdi": "alksdjlkasdj",
+    "Aciklama": "\"lksdflsdsdf",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET",
+    "DizilimAdi": "deneme",
+    "OlusturmaTarihi": "2026-03-16T17:00:40.8050347+03:00",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 0.0,
+        "GrupMerkezY": 0.0,
+        "GrupMerkezZ": 0.0,
+        "GripperAcisi": 360,
+        "Yon": 0,
+        "UrunSayisi": 3,
+        "Urunler": []
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 0.0,
+        "GrupMerkezY": 0.0,
+        "GrupMerkezZ": 0.0,
+        "GripperAcisi": 360,
+        "Yon": 0,
+        "UrunSayisi": 2,
+        "Urunler": []
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 0.0,
+        "GrupMerkezY": 0.0,
+        "GrupMerkezZ": 0.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 3,
+        "Urunler": []
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 4,
+        "GrupMerkezX": 0.0,
+        "GrupMerkezY": 0.0,
+        "GrupMerkezZ": 0.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 3,
+        "Urunler": []
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 5,
+        "GrupMerkezX": 0.0,
+        "GrupMerkezY": 0.0,
+        "GrupMerkezZ": 0.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 4,
+        "Urunler": []
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 6,
+        "GrupMerkezX": 0.0,
+        "GrupMerkezY": 0.0,
+        "GrupMerkezZ": 0.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 4,
+        "Urunler": []
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 7,
+        "GrupMerkezX": 0.0,
+        "GrupMerkezY": 0.0,
+        "GrupMerkezZ": 0.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 2,
+        "Urunler": []
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 8,
+        "GrupMerkezX": 0.0,
+        "GrupMerkezY": 0.0,
+        "GrupMerkezZ": 0.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": []
+      }
+    ]
+  }
+]

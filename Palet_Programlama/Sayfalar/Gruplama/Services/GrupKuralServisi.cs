@@ -1,4 +1,5 @@
-﻿using Palet_Programlama.Sayfalar.Gruplama.Helpers;
+﻿using Palet_Programlama.Modeller;
+using Palet_Programlama.Sayfalar.Gruplama.Helpers;
 using Palet_Programlama.Sayfalar.Gruplama.Models;
 using System;
 using System.Collections.Generic;
@@ -43,19 +44,19 @@ namespace Palet_Programlama.Sayfalar.Gruplama.Services
             if (!ayniGruptakiKutular.Any())
                 return true;
 
-            string yeniKutuYonu = yonYardimcisi.KutuYonunuGetir(eklenecekKutu);
+            UrunYonu? yeniKutuYonu = yonYardimcisi.KutuYonunuGetir(eklenecekKutu);
 
-            if (string.IsNullOrWhiteSpace(yeniKutuYonu))
+            if (yeniKutuYonu == null)
                 return false;
 
             foreach (var kutu in ayniGruptakiKutular)
             {
-                string mevcutKutuYonu = yonYardimcisi.KutuYonunuGetir(kutu);
+                UrunYonu? mevcutKutuYonu = yonYardimcisi.KutuYonunuGetir(kutu);
 
-                if (string.IsNullOrWhiteSpace(mevcutKutuYonu))
+                if (mevcutKutuYonu == null)
                     return false;
 
-                if (!string.Equals(yeniKutuYonu, mevcutKutuYonu, StringComparison.OrdinalIgnoreCase))
+                if (yeniKutuYonu != mevcutKutuYonu)
                     return false;
             }
 

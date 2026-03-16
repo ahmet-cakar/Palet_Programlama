@@ -32,6 +32,7 @@ namespace Palet_Programlama.Sayfalar
         private readonly GruplamaSecimServisi _secimServisi = new();
         private readonly GrupGorsellestirmeServisi _gorsellestirmeServisi = new();
         private readonly GrupKuralServisi _kuralServisi = new();
+        private readonly ProgramKayitServisi _programKayitServisi = new();
 
         private Urun _secilenUrun;
         private Palet _secilenPalet;
@@ -475,6 +476,7 @@ namespace Palet_Programlama.Sayfalar
         {
             var mevcutAtamalar = _secimServisi.GrupAtamalari
                 .Values
+                .Where(x => x.KatNo == AktifKatNo)
                 .Select(x => new GrupAtamaBilgisi
                 {
                     KatNo = x.KatNo,
@@ -488,9 +490,132 @@ namespace Palet_Programlama.Sayfalar
         }
 
 
+        private bool PalettekiTumUrunlerGrupluMu()
+        {
+            MevcutKatGruplariniKaydet();
+
+            var tumKatlar = _katYonetici.TumKatlar;
+
+            if (tumKatlar == null || !tumKatlar.Any())
+                return false;
+
+            int palettekiToplamUrunSayisi = tumKatlar
+                .Where(kat => kat.Value != null)
+                .Sum(kat => kat.Value.Count);
+
+            int toplamGrupluUrunSayisi = tumKatlar
+                .SelectMany(kat => _bilgiServisi.KatAtamalariniGetir(kat.Key))
+                .Where(x => !string.IsNullOrWhiteSpace(x.KoliAnahtari))
+                .Select(x => $"{x.KatNo}_{x.KoliAnahtari}")
+                .Distinct()
+                .Count();
+
+            return palettekiToplamUrunSayisi == toplamGrupluUrunSayisi;
+        }
+
+        private ProgramKayitModel ProgramModeliOlustur(string programAdi, string aciklama)
+        {
+            MevcutKatGruplariniKaydet();
+
+            return new ProgramKayitModel
+            {
+                Id = _programKayitServisi.SonrakiIdGetir(),
+                ProgramAdi = programAdi,
+                Aciklama = aciklama,
+                UrunAdi = _secilenUrun?.UrunAdi ?? "",
+                PaletAdi = _secilenPalet?.PaletAdi ?? "",
+                DizilimAdi = _gelenDizilimAdi ?? "",
+                Gruplar = ProgramGruplariniOlustur()
+            };
+        }
+
+
+        private List<ProgramGrupModel> ProgramGruplariniOlustur()
+        {
+            var sonuc = new List<ProgramGrupModel>();
+
+            foreach (var kat in _katYonetici.TumKatlar.OrderBy(x => x.Key))
+            {
+                int katNo = kat.Key;
+
+                var katAtamalari = _bilgiServisi.KatAtamalariniGetir(katNo)
+                    .Where(x => x.KatNo == katNo)
+                    .ToList();
+
+                var gruplar = katAtamalari
+                    .GroupBy(x => x.GrupNo)
+                    .OrderBy(x => x.Key);
+
+                foreach (var grup in gruplar)
+                {
+                    var ilkKayit = grup.First();
+
+
+                    var grupModel = new ProgramGrupModel
+                    {
+                        KatNo = katNo,
+                        GrupNo = grup.Key,
+                        UrunSayisi = grup.Count(),
+                        GripperAcisi = 360,
+                        Yon = GrupYonuBul(katNo, grup.Key),
+                        GrupMerkezX = 0,
+                        GrupMerkezY = 0,
+                        GrupMerkezZ = 0,
+                        Urunler = new List<ProgramUrunModel>()
+                    };
+
+                    sonuc.Add(grupModel);
+                }
+            }
+
+            return sonuc;
+        }
+
+        private UrunYonu? GrupYonuBul(int katNo, int grupNo)
+        {
+            var grupKutulari = _secimServisi.GrupAtamalari
+                .Where(x => x.Value.KatNo == katNo && x.Value.GrupNo == grupNo)
+                .Select(x => x.Key)
+                .ToList();
+
+            if (!grupKutulari.Any())
+                return UrunYonu.Yatay;
+
+            var ilkKutu = grupKutulari.First();
+           
+            return _yonYardimcisi.KutuYonunuGetir(ilkKutu);
+        }
+
         private void BtnProgramKaydet_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (!PalettekiTumUrunlerGrupluMu())
+            {
+                BildirimGoster("GruplamaYap.programKayitIcinTumUrunlerGrupluOlmali");
+                return;
+            }
+
+            var popup = new ProgramKaydetPopup
+            {
+                Owner = Window.GetWindow(this)
+            };
+
+            bool? sonuc = popup.ShowDialog();
+            if (sonuc != true)
+                return;
+
+            string programAdi = popup.Sonuc.ProgramAdi;
+            string aciklama = popup.Sonuc.Aciklama;
+
+            if (_programKayitServisi.ProgramAdiVarMi(programAdi))
+            {
+                BildirimGoster("GruplamaYap.programAdiZatenKayitli");
+                return;
+            }
+
+            var program = ProgramModeliOlustur(programAdi, aciklama);
+            _programKayitServisi.Kaydet(program);
+
+            MessageBox.Show("Program başarıyla kaydedildi.");
         }
     }
 }

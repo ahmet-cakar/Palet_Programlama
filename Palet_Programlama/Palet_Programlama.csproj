@@ -65,6 +65,18 @@
     <Compile Include="Sayfalar\GruplamaYap.xaml.cs">
       <DependentUpon>GruplamaYap.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sayfalar\Gruplama\Helpers\KoliGeometriYardimcisi.cs" />
+    <Compile Include="Sayfalar\Gruplama\Helpers\KoliYonYardimcisi.cs" />
+    <Compile Include="Sayfalar\Gruplama\Models\DizilimSecimSonucu.cs" />
+    <Compile Include="Sayfalar\Gruplama\Models\GrupAtamaBilgisi.cs" />
+    <Compile Include="Sayfalar\Gruplama\Models\GrupKuraliSonucu.cs" />
+    <Compile Include="Sayfalar\Gruplama\Services\DizilimKayitServisi.cs" />
+    <Compile Include="Sayfalar\Gruplama\Services\GrupGorsellestirmeServisi.cs" />
+    <Compile Include="Sayfalar\Gruplama\Services\GrupKuralServisi.cs" />
+    <Compile Include="Sayfalar\Gruplama\Services\GruplamaBilgiServisi.cs" />
+    <Compile Include="Sayfalar\Gruplama\Services\GruplamaSayfaBaslatmaServisi.cs" />
+    <Compile Include="Sayfalar\Gruplama\Services\GruplamaSecimServisi.cs" />
+    <Compile Include="Sayfalar\Gruplama\Services\KatGecisServisi.cs" />
     <Compile Include="Sayfalar\HizAyarları.xaml.cs">
       <DependentUpon>HizAyarları.xaml</DependentUpon>
     </Compile>

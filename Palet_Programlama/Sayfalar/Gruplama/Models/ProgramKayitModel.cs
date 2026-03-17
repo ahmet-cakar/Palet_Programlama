@@ -15,7 +15,7 @@ namespace Palet_Programlama.Sayfalar.Gruplama.Models
 
         public string DizilimAdi { get; set; } = string.Empty;
 
-        public DateTime OlusturmaTarihi { get; set; } = DateTime.Now;
+        public string OlusturmaTarihi { get; set; } = DateTime.Now.ToString("MM/dd/yyyy hh:mm tt");
 
         public List<ProgramGrupModel> Gruplar { get; set; } = new();
     }

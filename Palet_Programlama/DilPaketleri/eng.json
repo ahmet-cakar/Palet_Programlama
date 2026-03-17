@@ -145,6 +145,9 @@
   },
 
     "GruplamaYap": {
+        "programBasariIleKayitEdildi": "The program was successfully registered.",
+        "programAdiZatenKayitli": "This program has already been registered under this name. Please change the name.",
+        "programKayitIcinTumUrunlerGrupluOlmali": "When registering for the program, all products must be grouped together.",
         "ayniGrupYatayDikeyUyarisi": "Horizontal and vertical products cannot be found together in the same group.",
         "ayniGrupMaksSayiUyarisi": "There can be a maximum of 4 parcels in the same group.",
         "ayniGrupBitisikUyarisi": "Products in the same group must be adjacent. Grouping cannot be done by skipping the product in between.",

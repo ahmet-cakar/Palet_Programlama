@@ -144,6 +144,9 @@
     },
 
     "GruplamaYap": {
+        "programBasariIleKayitEdildi": "Program başarılı ile kayıt edildi.",
+        "programAdiZatenKayitli": "Bu program adı ile daha önce kayıt yapılmış,Lütfen ismi değiştirin",
+        "programKayitIcinTumUrunlerGrupluOlmali": "Program kayıt ederken tüm ürünler gruplu olması gerekir.",
         "ayniGrupYatayDikeyUyarisi": "Aynı grupta yatay ve dikey ürün birlikte bulunamaz.",
         "ayniGrupMaksSayiUyarisi": "Aynı grupta en fazla 4 koli olabilir.",
         "ayniGrupBitisikUyarisi": "Aynı gruptaki ürünler bitişik olmalıdır. Aradaki ürünü atlayarak gruplama yapılamaz.",

@@ -1,31 +1,246 @@
 ﻿<Window x:Class="Palet_Programlama.Popuplar.ProgramKaydetPopup"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
         Title="Program Kaydet"
-        Height="260"
-        Width="420"
+        Height="600"
+        Width="700"
         WindowStartupLocation="CenterOwner"
-        ResizeMode="NoResize">
-  <Grid Margin="20">
-    <Grid.RowDefinitions>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="8"/>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="8"/>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="20"/>
-      <RowDefinition Height="Auto"/>
-    </Grid.RowDefinitions>
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
 
-    <TextBlock Text="Program Adı" FontWeight="SemiBold"/>
-    <TextBox x:Name="TxtProgramAdi" Grid.Row="2" Height="34"/>
+  <Window.Resources>
+    <SolidColorBrush x:Key="PopupOverlayBrush" Color="#66000000"/>
 
-    <TextBlock Grid.Row="4" Text="Açıklama" FontWeight="SemiBold"/>
-    <TextBox x:Name="TxtAciklama" Grid.Row="5" Height="34"/>
+    <SolidColorBrush x:Key="PopupBackgroundBrush" Color="#1B1B1D"/>
+    <SolidColorBrush x:Key="CardBrush" Color="#191919"/>
+    <SolidColorBrush x:Key="CardBorderBrush" Color="#2A2B2F"/>
 
-    <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right">
-      <Button Width="100" Height="34" Margin="0,0,10,0" Content="İptal" Click="BtnIptal_Click"/>
-      <Button Width="100" Height="34" Content="Kaydet" Click="BtnKaydet_Click"/>
-    </StackPanel>
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="#CFCFCF"/>
+    <SolidColorBrush x:Key="TextMutedBrush" Color="#8E8E8E"/>
+
+    <SolidColorBrush x:Key="InputBrush" Color="#191919"/>
+    <SolidColorBrush x:Key="InputBorderBrush" Color="#343434"/>
+
+    <SolidColorBrush x:Key="AccentBrush" Color="#F4BE00"/>
+    <SolidColorBrush x:Key="AccentHoverBrush" Color="#FFD24A"/>
+    <SolidColorBrush x:Key="AccentBorderBrush" Color="#F4BE00"/>
+
+    <SolidColorBrush x:Key="PassiveButtonBrush" Color="#202225"/>
+    <SolidColorBrush x:Key="PassiveButtonHoverBrush" Color="#2A2D31"/>
+    <SolidColorBrush x:Key="PassiveButtonBorderBrush" Color="#3A3D42"/>
+
+    <SolidColorBrush x:Key="CloseButtonBrush" Color="#1F2024"/>
+    <SolidColorBrush x:Key="CloseButtonHoverBrush" Color="#2C2D32"/>
+
+    <Style x:Key="SectionTitleStyle" TargetType="TextBlock">
+      <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
+      <Setter Property="FontSize" Value="24"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+      <Setter Property="Margin" Value="0,0,0,16"/>
+    </Style>
+
+    <Style x:Key="LabelStyle" TargetType="TextBlock">
+      <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
+      <Setter Property="FontSize" Value="17"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="InputTextBoxStyle" TargetType="TextBox">
+      <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
+      <Setter Property="Background" Value="{StaticResource InputBrush}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource InputBorderBrush}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="FontSize" Value="17"/>
+      <Setter Property="Padding" Value="12,8"/>
+      <Setter Property="Height" Value="42"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="InputMultiLineTextBoxStyle" TargetType="TextBox">
+      <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
+      <Setter Property="Background" Value="{StaticResource InputBrush}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource InputBorderBrush}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="FontSize" Value="16"/>
+      <Setter Property="Padding" Value="12,10"/>
+      <Setter Property="TextWrapping" Value="Wrap"/>
+      <Setter Property="AcceptsReturn" Value="True"/>
+      <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+    </Style>
+
+    <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+      <Setter Property="Foreground" Value="#111214"/>
+      <Setter Property="Background" Value="{StaticResource AccentBrush}"/>
+      <Setter Property="FontSize" Value="18"/>
+      <Setter Property="FontWeight" Value="Bold"/>
+      <Setter Property="Padding" Value="22,12"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Border x:Name="Bd"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="18">
+              <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Bd" Property="Background" Value="{StaticResource AccentHoverBrush}"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style x:Key="SecondaryButtonStyle" TargetType="Button">
+      <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
+      <Setter Property="Background" Value="{StaticResource PassiveButtonBrush}"/>
+      <Setter Property="FontSize" Value="18"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+      <Setter Property="Padding" Value="22,12"/>
+      <Setter Property="BorderBrush" Value="{StaticResource PassiveButtonBorderBrush}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Border x:Name="Bd"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="18">
+              <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Bd" Property="Background" Value="{StaticResource PassiveButtonHoverBrush}"/>
+                <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource AccentBrush}"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style x:Key="CloseButtonStyle" TargetType="Button">
+      <Setter Property="Width" Value="38"/>
+      <Setter Property="Height" Value="38"/>
+      <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}"/>
+      <Setter Property="Background" Value="{StaticResource CloseButtonBrush}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="FontSize" Value="18"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Border x:Name="Bd"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="10">
+              <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Bd" Property="Background" Value="{StaticResource CloseButtonHoverBrush}"/>
+                <Setter TargetName="Bd" Property="BorderBrush" Value="{StaticResource AccentBrush}"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </Window.Resources>
+
+  <Grid Background="{StaticResource PopupOverlayBrush}">
+    <Border Width="640"
+                Padding="28"
+                Background="{StaticResource PopupBackgroundBrush}"
+                BorderBrush="{StaticResource CardBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="24"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="20"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="24"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0">
+          <TextBlock Text="Program Kaydet"
+                               Foreground="{StaticResource TextPrimaryBrush}"
+                               FontSize="28"
+                               FontWeight="Bold"
+                               VerticalAlignment="Center"/>
+
+  
+        </DockPanel>
+
+        <Border Grid.Row="2"
+                        Background="{StaticResource CardBrush}"
+                        BorderBrush="{StaticResource CardBorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="10"
+                        Padding="22">
+
+          <StackPanel>
+            <TextBlock Text="Program Bilgileri"
+                                   Style="{StaticResource SectionTitleStyle}"/>
+
+            <StackPanel Margin="0,0,0,18">
+              <TextBlock Text="Program Adı"
+                                       Style="{StaticResource LabelStyle}"
+                                       Margin="0,0,0,10"/>
+              <TextBox x:Name="TxtProgramAdi"
+                                     Style="{StaticResource InputTextBoxStyle}"/>
+            </StackPanel>
+
+            <StackPanel>
+              <TextBlock Text="Açıklama"
+                                       Style="{StaticResource LabelStyle}"
+                                       Margin="0,0,0,10"/>
+              <TextBox x:Name="TxtAciklama"
+                                     Height="110"
+                                     Style="{StaticResource InputMultiLineTextBoxStyle}"/>
+            </StackPanel>
+          </StackPanel>
+        </Border>
+
+        <StackPanel Grid.Row="4"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+          <Button Width="130"
+                            Height="48"
+                            Margin="0,0,12,0"
+                            Content="İptal"
+                            Style="{StaticResource SecondaryButtonStyle}"
+                            Click="BtnIptal_Click"/>
+
+          <Button Width="130"
+                            Height="48"
+                            Content="Kaydet"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Click="BtnKaydet_Click"/>
+        </StackPanel>
+      </Grid>
+    </Border>
   </Grid>
 </Window>

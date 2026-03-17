@@ -448,8 +448,6 @@ namespace Palet_Programlama.Sayfalar
             txtKatValue.Text = "1";
         }
 
-    
-
         private void BildirimGoster(string mesajKey, string butonKey = "MesajKutusu.tamam")
         {
             var pencere = new BildirimKutusu();
@@ -529,7 +527,6 @@ namespace Palet_Programlama.Sayfalar
             };
         }
 
-
         private List<ProgramGrupModel> ProgramGruplariniOlustur()
         {
             var sonuc = new List<ProgramGrupModel>();
@@ -548,9 +545,6 @@ namespace Palet_Programlama.Sayfalar
 
                 foreach (var grup in gruplar)
                 {
-                    var ilkKayit = grup.First();
-
-
                     var grupModel = new ProgramGrupModel
                     {
                         KatNo = katNo,
@@ -563,6 +557,9 @@ namespace Palet_Programlama.Sayfalar
                         GrupMerkezZ = 0,
                         Urunler = new List<ProgramUrunModel>()
                     };
+
+                    GrupMerkezleriniHesaplaVeUygula(grupModel);
+                    GrupUrunleriniHesaplaVeUygula(grupModel);
 
                     sonuc.Add(grupModel);
                 }
@@ -584,6 +581,102 @@ namespace Palet_Programlama.Sayfalar
             var ilkKutu = grupKutulari.First();
            
             return _yonYardimcisi.KutuYonunuGetir(ilkKutu);
+        }
+
+        private void GrupUrunleriniHesaplaVeUygula(ProgramGrupModel grupModel)
+        {
+            var kutular = _secimServisi.GrupAtamalari
+                .Where(x => x.Value.KatNo == grupModel.KatNo && x.Value.GrupNo == grupModel.GrupNo)
+                .Select(x => x.Key)
+                .ToList();
+
+            grupModel.Urunler.Clear();
+
+            if (!kutular.Any())
+                return;
+
+            double paletYukseklik = _secilenPalet?.PaletYukseklik ?? 0;
+            double urunYukseklik = _secilenUrun?.UrunYukseklik ?? 0;
+
+            double urunMerkezZ = paletYukseklik
+                               + ((grupModel.KatNo - 1) * urunYukseklik)
+                               + (urunYukseklik / 2.0);
+
+            foreach (var kutu in kutular)
+            {
+                double left = Canvas.GetLeft(kutu);
+                double top = Canvas.GetTop(kutu);
+
+                if (double.IsNaN(left)) left = 0;
+                if (double.IsNaN(top)) top = 0;
+
+                double width = kutu.ActualWidth > 0 ? kutu.ActualWidth : kutu.Width;
+                double height = kutu.ActualHeight > 0 ? kutu.ActualHeight : kutu.Height;
+
+                double canvasMerkezX = left + width / 2.0;
+                double canvasMerkezY = top + height / 2.0;
+
+                // Canvas -> gerçek palet koordinatı dönüşümü
+                double gercekMerkezX = canvasMerkezY / OlcekX;
+                double gercekMerkezY = canvasMerkezX / OlcekY;
+
+                grupModel.Urunler.Add(new ProgramUrunModel
+                {
+                    MerkezX = gercekMerkezX,
+                    MerkezY = gercekMerkezY,
+                    MerkezZ = urunMerkezZ
+                });
+            }
+        }
+
+
+        private void GrupMerkezleriniHesaplaVeUygula(ProgramGrupModel grupModel)
+        {
+            var kutular = _secimServisi.GrupAtamalari
+                .Where(x => x.Value.KatNo == grupModel.KatNo && x.Value.GrupNo == grupModel.GrupNo)
+                .Select(x => x.Key)
+                .ToList();
+
+            if (!kutular.Any())
+            {
+                grupModel.GrupMerkezX = 0;
+                grupModel.GrupMerkezY = 0;
+                grupModel.GrupMerkezZ = 0;
+                return;
+            }
+
+            var merkezler = kutular
+                .Select(kutu =>
+                {
+                    double left = Canvas.GetLeft(kutu);
+                    double top = Canvas.GetTop(kutu);
+
+                    double width = kutu.ActualWidth > 0 ? kutu.ActualWidth : kutu.Width;
+                    double height = kutu.ActualHeight > 0 ? kutu.ActualHeight : kutu.Height;
+
+                    double canvasMerkezX = left + width / 2.0;
+                    double canvasMerkezY = top + height / 2.0;
+
+                    return new
+                    {
+                        CanvasMerkezX = canvasMerkezX,
+                        CanvasMerkezY = canvasMerkezY
+                    };
+                })
+                .ToList();
+
+            double ortalamaCanvasX = merkezler.Average(x => x.CanvasMerkezX);
+            double ortalamaCanvasY = merkezler.Average(x => x.CanvasMerkezY);
+
+            grupModel.GrupMerkezX = ortalamaCanvasY / OlcekX;
+            grupModel.GrupMerkezY = ortalamaCanvasX / OlcekY;
+
+            double paletYukseklik = _secilenPalet?.PaletYukseklik ?? 0;
+            double urunYukseklik = _secilenUrun?.UrunYukseklik ?? 0;
+
+            grupModel.GrupMerkezZ = paletYukseklik
+                                  + ((grupModel.KatNo - 1) * urunYukseklik)
+                                  + (urunYukseklik / 2.0);
         }
 
         private void BtnProgramKaydet_Click(object sender, RoutedEventArgs e)
@@ -615,7 +708,7 @@ namespace Palet_Programlama.Sayfalar
             var program = ProgramModeliOlustur(programAdi, aciklama);
             _programKayitServisi.Kaydet(program);
 
-            MessageBox.Show("Program başarıyla kaydedildi.");
+            BildirimGoster("GruplamaYap.programBasariIleKayitEdildi");
         }
     }
 }

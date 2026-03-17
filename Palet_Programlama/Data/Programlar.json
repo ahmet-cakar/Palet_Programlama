@@ -184,5 +184,222 @@
         ]
       }
     ]
+  },
+  {
+    "Id": 4,
+    "ProgramAdi": "kjnkzsadnas",
+    "Aciklama": "alksdjalsdas",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET",
+    "DizilimAdi": "deneme",
+    "OlusturmaTarihi": "03.17.2026 12:33 ÖS",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 300.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAcisi": 360,
+        "Yon": 0,
+        "UrunSayisi": 3,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 800.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAcisi": 360,
+        "Yon": 0,
+        "UrunSayisi": 2,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 400.0,
+        "GrupMerkezY": 450.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 3,
+        "Urunler": [
+          {
+            "MerkezX": 400.0,
+            "MerkezY": 150.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 400.0,
+            "MerkezY": 450.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 400.0,
+            "MerkezY": 750.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 4,
+        "GrupMerkezX": 600.0,
+        "GrupMerkezY": 450.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 3,
+        "Urunler": [
+          {
+            "MerkezX": 600.0,
+            "MerkezY": 150.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 600.0,
+            "MerkezY": 450.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 600.0,
+            "MerkezY": 750.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 5,
+        "GrupMerkezX": 400.0,
+        "GrupMerkezY": 150.0,
+        "GrupMerkezZ": 400.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 150.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 300.0,
+            "MerkezY": 150.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 500.0,
+            "MerkezY": 150.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 700.0,
+            "MerkezY": 150.0,
+            "MerkezZ": 400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 6,
+        "GrupMerkezX": 400.0,
+        "GrupMerkezY": 450.0,
+        "GrupMerkezZ": 400.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 450.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 300.0,
+            "MerkezY": 450.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 500.0,
+            "MerkezY": 450.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 700.0,
+            "MerkezY": 450.0,
+            "MerkezZ": 400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 7,
+        "GrupMerkezX": 200.0,
+        "GrupMerkezY": 1050.0,
+        "GrupMerkezZ": 400.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 2,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 1050.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 300.0,
+            "MerkezY": 1050.0,
+            "MerkezZ": 400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 8,
+        "GrupMerkezX": 700.0,
+        "GrupMerkezY": 1050.0,
+        "GrupMerkezZ": 400.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 700.0,
+            "MerkezY": 1050.0,
+            "MerkezZ": 400.0
+          }
+        ]
+      }
+    ]
   }
 ]

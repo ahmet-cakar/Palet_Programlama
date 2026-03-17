@@ -489,7 +489,6 @@ namespace Palet_Programlama.Sayfalar
             _bilgiServisi.KatAtamalariniKaydet(AktifKatNo, mevcutAtamalar);
         }
 
-
         private bool PalettekiTumUrunlerGrupluMu()
         {
             MevcutKatGruplariniKaydet();
@@ -680,7 +679,6 @@ namespace Palet_Programlama.Sayfalar
                                   + ((grupModel.KatNo - 1) * urunYukseklik)
                                   + (urunYukseklik / 2.0);
         }
-
 
         private void GruplamaListesiniDoldur(ProgramKayitModel program)
         {

@@ -110,20 +110,20 @@
     <Compile Include="Sınıflar\Urun-PaletMethod\PaletIslemler.cs" />
     <Compile Include="Sınıflar\Urun-PaletMethod\Urun.cs" />
     <Compile Include="Sınıflar\Urun-PaletMethod\UrunIslemler.cs" />
-    <Compile Include="UserController\BildirimKutusu.xaml.cs">
-      <DependentUpon>BildirimKutusu.xaml</DependentUpon>
+    <Compile Include="Popuplar\BildirimPopup.xaml.cs">
+      <DependentUpon>BildirimPopup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserController\GrupAyarlariPopup.xaml.cs">
+    <Compile Include="Popuplar\GrupAyarlariPopup.xaml.cs">
       <DependentUpon>GrupAyarlariPopup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserController\MetinGirisKutusu.xaml.cs">
-      <DependentUpon>MetinGirisKutusu.xaml</DependentUpon>
+    <Compile Include="Popuplar\MetinGirisPopup.xaml.cs">
+      <DependentUpon>MetinGirisPopup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserController\ProgramKaydetPopup.xaml.cs">
+    <Compile Include="Popuplar\ProgramKaydetPopup.xaml.cs">
       <DependentUpon>ProgramKaydetPopup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserController\UrunPaletSecimKutusu.xaml.cs">
-      <DependentUpon>UrunPaletSecimKutusu.xaml</DependentUpon>
+    <Compile Include="Popuplar\UrunPaletSecimPopup.xaml.cs">
+      <DependentUpon>UrunPaletSecimPopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserController\UstMenu.xaml.cs">
       <DependentUpon>UstMenu.xaml</DependentUpon>
@@ -192,23 +192,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UserController\BildirimKutusu.xaml">
+    <Page Include="Popuplar\BildirimPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserController\GrupAyarlariPopup.xaml">
+    <Page Include="Popuplar\GrupAyarlariPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserController\MetinGirisKutusu.xaml">
+    <Page Include="Popuplar\MetinGirisPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserController\ProgramKaydetPopup.xaml">
+    <Page Include="Popuplar\ProgramKaydetPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserController\UrunPaletSecimKutusu.xaml">
+    <Page Include="Popuplar\UrunPaletSecimPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

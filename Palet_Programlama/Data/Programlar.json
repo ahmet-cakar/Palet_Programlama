@@ -1,3 +1,188 @@
 [
-
+  {
+    "Id": 1,
+    "ProgramAdi": "ahmet",
+    "Aciklama": "1234",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.17.2026 12:00 ÖS",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAcisi": 360,
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAcisi": 360,
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "ProgramAdi": "sadasd",
+    "Aciklama": "12312",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.17.2026 12:04 ÖS",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAcisi": 360,
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAcisi": 360,
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "ProgramAdi": "askjdas",
+    "Aciklama": "lkasdjlaksda",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.17.2026 12:10 ÖS",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAcisi": 360,
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAcisi": 360,
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAcisi": 360,
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  }
 ]

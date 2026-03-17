@@ -69,6 +69,7 @@
     <Compile Include="Sayfalar\Gruplama\Helpers\KoliYonYardimcisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\GrupAtamaBilgisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\GrupKuraliSonucu.cs" />
+    <Compile Include="Sayfalar\Gruplama\Models\GruplamaListeItemModel.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\ProgramGrupModel.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\ProgramKaydetGirdiModel.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\ProgramKayitModel.cs" />

@@ -14,6 +14,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace Palet_Programlama.Sayfalar
 {
@@ -33,6 +34,7 @@ namespace Palet_Programlama.Sayfalar
         private readonly GrupGorsellestirmeServisi _gorsellestirmeServisi = new();
         private readonly GrupKuralServisi _kuralServisi = new();
         private readonly ProgramKayitServisi _programKayitServisi = new();
+        private readonly ObservableCollection<GruplamaListeItemModel> _gruplamaListesi = new();
 
         private Urun _secilenUrun;
         private Palet _secilenPalet;
@@ -72,7 +74,7 @@ namespace Palet_Programlama.Sayfalar
             _secilenUrun = secilenUrun;
             _secilenPalet = secilenPalet;
             _gelenDizilimAdi = dizilimAdi;
-
+            ListBoxGruplama.ItemsSource = _gruplamaListesi;
             _mesafe.Baslat(myCanvas);
 
             SayfaVerileriniYukle();
@@ -679,6 +681,25 @@ namespace Palet_Programlama.Sayfalar
                                   + (urunYukseklik / 2.0);
         }
 
+
+        private void GruplamaListesiniDoldur(ProgramKayitModel program)
+        {
+            _gruplamaListesi.Clear();
+
+            if (program?.Gruplar == null || !program.Gruplar.Any())
+                return;
+
+            foreach (var grup in program.Gruplar.OrderBy(x => x.KatNo).ThenBy(x => x.GrupNo))
+            {
+                _gruplamaListesi.Add(new GruplamaListeItemModel
+                {
+                    KatNo = grup.KatNo,
+                    GrupNo = grup.GrupNo,
+                    IsaretliMi = false
+                });
+            }
+        }
+
         private void BtnProgramKaydet_Click(object sender, RoutedEventArgs e)
         {
             if (!PalettekiTumUrunlerGrupluMu())
@@ -707,8 +728,10 @@ namespace Palet_Programlama.Sayfalar
 
             var program = ProgramModeliOlustur(programAdi, aciklama);
             _programKayitServisi.Kaydet(program);
-
+            GruplamaListesiniDoldur(program);
             BildirimGoster("GruplamaYap.programBasariIleKayitEdildi");
         }
     }
+
+
 }

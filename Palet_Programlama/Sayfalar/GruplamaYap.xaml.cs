@@ -580,11 +580,12 @@ namespace Palet_Programlama.Sayfalar
             GrupDurumunuTemizle();
         }
 
-        private void MevcutKatGruplariniKaydet()
+
+        private List<GrupAtamaBilgisi> KattakiAtamalariOlustur(int katNo)
         {
-            var mevcutAtamalar = _secimServisi.GrupAtamalari
+            return _secimServisi.GrupAtamalari
                 .Values
-                .Where(x => x.KatNo == AktifKatNo)
+                .Where(x => x.KatNo == katNo)
                 .Select(x => new GrupAtamaBilgisi
                 {
                     KatNo = x.KatNo,
@@ -593,7 +594,11 @@ namespace Palet_Programlama.Sayfalar
                     KoliAnahtari = x.KoliAnahtari
                 })
                 .ToList();
+        }
 
+        private void MevcutKatGruplariniKaydet()
+        {
+            var mevcutAtamalar = KattakiAtamalariOlustur(AktifKatNo);
             _bilgiServisi.KatAtamalariniKaydet(AktifKatNo, mevcutAtamalar);
         }
 
@@ -678,26 +683,18 @@ namespace Palet_Programlama.Sayfalar
 
         private UrunYonu? GrupYonuBul(int katNo, int grupNo)
         {
-            var grupKutulari = _secimServisi.GrupAtamalari
-                .Where(x => x.Value.KatNo == katNo && x.Value.GrupNo == grupNo)
-                .Select(x => x.Key)
-                .ToList();
+            var grupKutulari = GruptakiKutulariGetir(katNo, grupNo);
 
             if (!grupKutulari.Any())
                 return UrunYonu.Yatay;
 
             var ilkKutu = grupKutulari.First();
-           
             return _yonYardimcisi.KutuYonunuGetir(ilkKutu);
         }
 
         private void GrupUrunleriniHesaplaVeUygula(ProgramGrupModel grupModel)
         {
-            var kutular = _secimServisi.GrupAtamalari
-                .Where(x => x.Value.KatNo == grupModel.KatNo && x.Value.GrupNo == grupModel.GrupNo)
-                .Select(x => x.Key)
-                .ToList();
-
+            var kutular = GruptakiKutulariGetir(grupModel.KatNo, grupModel.GrupNo);
             grupModel.Urunler.Clear();
 
             if (!kutular.Any())
@@ -712,26 +709,12 @@ namespace Palet_Programlama.Sayfalar
 
             foreach (var kutu in kutular)
             {
-                double left = Canvas.GetLeft(kutu);
-                double top = Canvas.GetTop(kutu);
-
-                if (double.IsNaN(left)) left = 0;
-                if (double.IsNaN(top)) top = 0;
-
-                double width = kutu.ActualWidth > 0 ? kutu.ActualWidth : kutu.Width;
-                double height = kutu.ActualHeight > 0 ? kutu.ActualHeight : kutu.Height;
-
-                double canvasMerkezX = left + width / 2.0;
-                double canvasMerkezY = top + height / 2.0;
-
-                // Canvas -> gerçek palet koordinatı dönüşümü
-                double gercekMerkezX = canvasMerkezY / OlcekX;
-                double gercekMerkezY = canvasMerkezX / OlcekY;
+                Point gercekMerkez = _geometri.GercekMerkeziGetir(kutu, OlcekX, OlcekY);
 
                 grupModel.Urunler.Add(new ProgramUrunModel
                 {
-                    MerkezX = gercekMerkezX,
-                    MerkezY = gercekMerkezY,
+                    MerkezX = gercekMerkez.X,
+                    MerkezY = gercekMerkez.Y,
                     MerkezZ = urunMerkezZ
                 });
             }
@@ -748,12 +731,10 @@ namespace Palet_Programlama.Sayfalar
             var mainWindow = Application.Current.MainWindow as MainWindow;
             mainWindow?.YukleniyorGizle();
         }
+
         private void GrupMerkezleriniHesaplaVeUygula(ProgramGrupModel grupModel)
         {
-            var kutular = _secimServisi.GrupAtamalari
-                .Where(x => x.Value.KatNo == grupModel.KatNo && x.Value.GrupNo == grupModel.GrupNo)
-                .Select(x => x.Key)
-                .ToList();
+            var kutular = GruptakiKutulariGetir(grupModel.KatNo, grupModel.GrupNo);
 
             if (!kutular.Any())
             {
@@ -764,27 +745,11 @@ namespace Palet_Programlama.Sayfalar
             }
 
             var merkezler = kutular
-                .Select(kutu =>
-                {
-                    double left = Canvas.GetLeft(kutu);
-                    double top = Canvas.GetTop(kutu);
-
-                    double width = kutu.ActualWidth > 0 ? kutu.ActualWidth : kutu.Width;
-                    double height = kutu.ActualHeight > 0 ? kutu.ActualHeight : kutu.Height;
-
-                    double canvasMerkezX = left + width / 2.0;
-                    double canvasMerkezY = top + height / 2.0;
-
-                    return new
-                    {
-                        CanvasMerkezX = canvasMerkezX,
-                        CanvasMerkezY = canvasMerkezY
-                    };
-                })
+                .Select(kutu => _geometri.KutuMerkeziniGetir(kutu))
                 .ToList();
 
-            double ortalamaCanvasX = merkezler.Average(x => x.CanvasMerkezX);
-            double ortalamaCanvasY = merkezler.Average(x => x.CanvasMerkezY);
+            double ortalamaCanvasX = merkezler.Average(x => x.X);
+            double ortalamaCanvasY = merkezler.Average(x => x.Y);
 
             grupModel.GrupMerkezX = ortalamaCanvasY / OlcekX;
             grupModel.GrupMerkezY = ortalamaCanvasX / OlcekY;
@@ -813,6 +778,14 @@ namespace Palet_Programlama.Sayfalar
                     IsaretliMi = grup.GripperAyarlari?.KayitEdildiMi ?? false
                 });
             }
+        }
+
+        private List<Rectangle> GruptakiKutulariGetir(int katNo, int grupNo)
+        {
+            return _secimServisi.GrupAtamalari
+                .Where(x => x.Value.KatNo == katNo && x.Value.GrupNo == grupNo)
+                .Select(x => x.Key)
+                .ToList();
         }
 
         private void BtnProgramKaydet_Click(object sender, RoutedEventArgs e)
@@ -1080,18 +1053,7 @@ namespace Palet_Programlama.Sayfalar
                     _geometri);
 
                 // kritik kısım: bu katın atamalarını sakla
-                var mevcutAtamalar = _secimServisi.GrupAtamalari
-                    .Values
-                    .Where(x => x.KatNo == grup.KatNo)
-                    .Select(x => new GrupAtamaBilgisi
-                    {
-                        KatNo = x.KatNo,
-                        GrupNo = x.GrupNo,
-                        GrupEkseni = x.GrupEkseni,
-                        KoliAnahtari = x.KoliAnahtari
-                    })
-                    .ToList();
-
+                var mevcutAtamalar = KattakiAtamalariOlustur(grup.KatNo);
                 _bilgiServisi.KatAtamalariniKaydet(grup.KatNo, mevcutAtamalar);
             }
 
@@ -1135,22 +1097,9 @@ namespace Palet_Programlama.Sayfalar
                 if (_secimServisi.GrupAtamalari.ContainsKey(kutu))
                     continue;
 
-                double left = Canvas.GetLeft(kutu);
-                double top = Canvas.GetTop(kutu);
-
-                if (double.IsNaN(left)) left = 0;
-                if (double.IsNaN(top)) top = 0;
-
-                double width = kutu.ActualWidth > 0 ? kutu.ActualWidth : kutu.Width;
-                double height = kutu.ActualHeight > 0 ? kutu.ActualHeight : kutu.Height;
-
-                double canvasMerkezX = left + width / 2.0;
-                double canvasMerkezY = top + height / 2.0;
-
-                double kutuGercekMerkezX = canvasMerkezY / OlcekX;
-                double kutuGercekMerkezY = canvasMerkezX / OlcekY;
-
-                double fark = Math.Abs(kutuGercekMerkezX - gercekMerkezX) + Math.Abs(kutuGercekMerkezY - gercekMerkezY);
+                Point kutuGercekMerkez = _geometri.GercekMerkeziGetir(kutu, OlcekX, OlcekY);
+                double fark = Math.Abs(kutuGercekMerkez.X - gercekMerkezX)
+                            + Math.Abs(kutuGercekMerkez.Y - gercekMerkezY);
 
                 if (fark < enKucukFark)
                 {

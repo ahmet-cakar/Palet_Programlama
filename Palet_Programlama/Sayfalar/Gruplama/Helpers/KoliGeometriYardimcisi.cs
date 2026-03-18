@@ -70,6 +70,15 @@ namespace Palet_Programlama.Sayfalar.Gruplama.Helpers
             return sagSolMesafe <= tolerans || solSagMesafe <= tolerans;
         }
 
+        public Point GercekMerkeziGetir(Rectangle kutu, double olcekX, double olcekY)
+        {
+            Point merkez = KutuMerkeziniGetir(kutu);
+
+            return new Point(
+                merkez.Y / olcekX,
+                merkez.X / olcekY);
+        }
+
         public bool YYonundeKomsuMu(Rectangle birinci, Rectangle ikinci, double tolerans)
         {
             Rect r1 = GetRect(birinci);

@@ -165,7 +165,7 @@
     </Style>
   </Window.Resources>
 
-  <Grid Background="{StaticResource PopupOverlayBrush}">
+  <Grid Background="Transparent" >
     <Border Width="640"
                 Padding="28"
                 Background="{StaticResource PopupBackgroundBrush}"

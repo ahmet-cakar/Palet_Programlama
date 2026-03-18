@@ -35,7 +35,8 @@ namespace Palet_Programlama.Sayfalar
         private readonly GrupKuralServisi _kuralServisi = new();
         private readonly ProgramKayitServisi _programKayitServisi = new();
         private readonly ObservableCollection<GruplamaListeItemModel> _gruplamaListesi = new();
-
+        private GruplamaListeItemModel _secilenGruplamaItem;
+        private readonly Dictionary<string, GrupGripperAyarlari> _grupAyarKayitlari = new();
         private Urun _secilenUrun;
         private Palet _secilenPalet;
         private string _gelenDizilimAdi;
@@ -88,6 +89,29 @@ namespace Palet_Programlama.Sayfalar
             ComboBoxlariDoldurIlkAcilisIcin();
             _sayfaYukleniyor = false;
             SeciliDizilimiCanvasaYukle();
+        }
+
+        private string GrupAyarAnahtari(int katNo, int grupNo)
+        {
+            return $"{katNo}_{grupNo}";
+        }
+
+        private GrupGripperAyarlari GrupAyariniGetir(int katNo, int grupNo)
+        {
+            string anahtar = GrupAyarAnahtari(katNo, grupNo);
+
+            if (_grupAyarKayitlari.TryGetValue(anahtar, out var ayar))
+                return ayar;
+
+            ayar = new GrupGripperAyarlari();
+            _grupAyarKayitlari[anahtar] = ayar;
+            return ayar;
+        }
+
+        private void GrupAyariniKaydet(int katNo, int grupNo, GrupGripperAyarlari ayar)
+        {
+            string anahtar = GrupAyarAnahtari(katNo, grupNo);
+            _grupAyarKayitlari[anahtar] = ayar;
         }
 
         private void IlkVerileriHazirla()
@@ -551,7 +575,7 @@ namespace Palet_Programlama.Sayfalar
                         KatNo = katNo,
                         GrupNo = grup.Key,
                         UrunSayisi = grup.Count(),
-                        GripperAcisi = 360,
+                        GripperAyarlari = new GrupGripperAyarlari(),
                         Yon = GrupYonuBul(katNo, grup.Key),
                         GrupMerkezX = 0,
                         GrupMerkezY = 0,
@@ -728,6 +752,49 @@ namespace Palet_Programlama.Sayfalar
             _programKayitServisi.Kaydet(program);
             GruplamaListesiniDoldur(program);
             BildirimGoster("GruplamaYap.programBasariIleKayitEdildi");
+        }
+
+        private void BtnGrupAyarlar_Click(object sender, RoutedEventArgs e)
+        {
+            if (_secilenGruplamaItem == null)
+            {
+                BildirimGoster("GruplamaYap.onceListedenGrupSecilmeli");
+                return;
+            }
+
+            int katNo = _secilenGruplamaItem.KatNo;
+            int grupNo = _secilenGruplamaItem.GrupNo;
+
+            var mevcutAyar = GrupAyariniGetir(katNo, grupNo);
+
+            var popup = new GrupAyarlariPopup(katNo, grupNo)
+            {
+                Owner = Window.GetWindow(this)
+            };
+
+            // İstersen mevcut ayarı popup'a geri yükleyebilirsin
+            popup.AyarlariYukle(mevcutAyar);
+
+            bool? sonuc = popup.ShowDialog();
+
+            if (sonuc != true)
+                return;
+
+            var yeniAyar = popup.Sonuc;
+
+            if (yeniAyar == null)
+                return;
+
+            GrupAyariniKaydet(katNo, grupNo, yeniAyar);
+
+            _secilenGruplamaItem.IsaretliMi = yeniAyar.KayitEdildiMi;
+
+            ListBoxGruplama.Items.Refresh();
+        }
+
+        private void ListBoxGruplama_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _secilenGruplamaItem = ListBoxGruplama.SelectedItem as GruplamaListeItemModel;
         }
     }
 

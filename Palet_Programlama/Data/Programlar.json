@@ -14,7 +14,12 @@
         "GrupMerkezX": 150.0,
         "GrupMerkezY": 100.0,
         "GrupMerkezZ": 200.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 0,
         "UrunSayisi": 1,
         "Urunler": [
@@ -31,7 +36,12 @@
         "GrupMerkezX": 100.0,
         "GrupMerkezY": 350.0,
         "GrupMerkezZ": 200.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 1,
         "UrunSayisi": 1,
         "Urunler": [
@@ -48,7 +58,12 @@
         "GrupMerkezX": 650.0,
         "GrupMerkezY": 1100.0,
         "GrupMerkezZ": 200.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 0,
         "UrunSayisi": 1,
         "Urunler": [
@@ -76,7 +91,12 @@
         "GrupMerkezX": 150.0,
         "GrupMerkezY": 100.0,
         "GrupMerkezZ": 200.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 0,
         "UrunSayisi": 1,
         "Urunler": [
@@ -93,7 +113,12 @@
         "GrupMerkezX": 100.0,
         "GrupMerkezY": 350.0,
         "GrupMerkezZ": 200.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 1,
         "UrunSayisi": 1,
         "Urunler": [
@@ -110,7 +135,12 @@
         "GrupMerkezX": 650.0,
         "GrupMerkezY": 1100.0,
         "GrupMerkezZ": 200.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 0,
         "UrunSayisi": 1,
         "Urunler": [
@@ -138,7 +168,12 @@
         "GrupMerkezX": 150.0,
         "GrupMerkezY": 100.0,
         "GrupMerkezZ": 200.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 0,
         "UrunSayisi": 1,
         "Urunler": [
@@ -155,7 +190,12 @@
         "GrupMerkezX": 100.0,
         "GrupMerkezY": 350.0,
         "GrupMerkezZ": 200.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 1,
         "UrunSayisi": 1,
         "Urunler": [
@@ -172,7 +212,12 @@
         "GrupMerkezX": 650.0,
         "GrupMerkezY": 1100.0,
         "GrupMerkezZ": 200.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 0,
         "UrunSayisi": 1,
         "Urunler": [
@@ -200,7 +245,12 @@
         "GrupMerkezX": 150.0,
         "GrupMerkezY": 300.0,
         "GrupMerkezZ": 200.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 0,
         "UrunSayisi": 3,
         "Urunler": [
@@ -227,7 +277,12 @@
         "GrupMerkezX": 150.0,
         "GrupMerkezY": 800.0,
         "GrupMerkezZ": 200.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 0,
         "UrunSayisi": 2,
         "Urunler": [
@@ -249,7 +304,12 @@
         "GrupMerkezX": 400.0,
         "GrupMerkezY": 450.0,
         "GrupMerkezZ": 200.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 1,
         "UrunSayisi": 3,
         "Urunler": [
@@ -276,7 +336,12 @@
         "GrupMerkezX": 600.0,
         "GrupMerkezY": 450.0,
         "GrupMerkezZ": 200.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 1,
         "UrunSayisi": 3,
         "Urunler": [
@@ -303,7 +368,12 @@
         "GrupMerkezX": 400.0,
         "GrupMerkezY": 150.0,
         "GrupMerkezZ": 400.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 1,
         "UrunSayisi": 4,
         "Urunler": [
@@ -335,7 +405,12 @@
         "GrupMerkezX": 400.0,
         "GrupMerkezY": 450.0,
         "GrupMerkezZ": 400.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 1,
         "UrunSayisi": 4,
         "Urunler": [
@@ -367,7 +442,12 @@
         "GrupMerkezX": 200.0,
         "GrupMerkezY": 1050.0,
         "GrupMerkezZ": 400.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 1,
         "UrunSayisi": 2,
         "Urunler": [
@@ -389,7 +469,12 @@
         "GrupMerkezX": 700.0,
         "GrupMerkezY": 1050.0,
         "GrupMerkezZ": 400.0,
-        "GripperAcisi": 360,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
         "Yon": 1,
         "UrunSayisi": 1,
         "Urunler": [
@@ -397,6 +482,1392 @@
             "MerkezX": 700.0,
             "MerkezY": 1050.0,
             "MerkezZ": 400.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "ProgramAdi": "test",
+    "Aciklama": "asşldasdas",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 09:06 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "ProgramAdi": "dsafsadf",
+    "Aciklama": "sdfsdf",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 09:51 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "ProgramAdi": "asdasd",
+    "Aciklama": "asdasd",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 09:56 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 8,
+    "ProgramAdi": "asdfasd",
+    "Aciklama": "213123",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 10:01 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 9,
+    "ProgramAdi": "ffdsf",
+    "Aciklama": "asdasd",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 10:09 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 10,
+    "ProgramAdi": "d2324",
+    "Aciklama": "sadad",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 10:16 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 11,
+    "ProgramAdi": "asdas",
+    "Aciklama": "aedasdasd",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 10:17 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 12,
+    "ProgramAdi": "1sd1231",
+    "Aciklama": "asdasd",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 10:20 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 13,
+    "ProgramAdi": "1",
+    "Aciklama": "asd",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 10:23 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 14,
+    "ProgramAdi": "2",
+    "Aciklama": "",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 10:24 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 15,
+    "ProgramAdi": "4",
+    "Aciklama": "asda",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 10:28 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 16,
+    "ProgramAdi": "5",
+    "Aciklama": "",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 10:30 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 17,
+    "ProgramAdi": "3rwsfd",
+    "Aciklama": "",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 10:36 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 18,
+    "ProgramAdi": "6",
+    "Aciklama": "",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 10:39 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 19,
+    "ProgramAdi": "7",
+    "Aciklama": "as",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 10:42 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 20,
+    "ProgramAdi": "45354",
+    "Aciklama": "",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 10:48 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 21,
+    "ProgramAdi": "8",
+    "Aciklama": "",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 10:49 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 22,
+    "ProgramAdi": "10",
+    "Aciklama": "dsfd",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 11:01 ÖÖ",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": false,
+          "GripperAcisi": 360,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
           }
         ]
       }

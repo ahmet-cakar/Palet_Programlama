@@ -12,7 +12,7 @@ namespace Palet_Programlama.Sayfalar.Gruplama.Models
         public double GrupMerkezY { get; set; }
         public double GrupMerkezZ { get; set; }
 
-        public int GripperAcisi { get; set; } = 360;
+        public GrupGripperAyarlari GripperAyarlari { get; set; } = new();
 
         public UrunYonu? Yon { get; set; }
         public int UrunSayisi { get; set; }

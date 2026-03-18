@@ -10,7 +10,8 @@
         WindowStartupLocation="CenterScreen"
         Height="500"
         Width="800"
-        Background="Transparent">
+        Background="Transparent"
+        AllowsTransparency="True">
 
   <Window.Resources>
     <ResourceDictionary>

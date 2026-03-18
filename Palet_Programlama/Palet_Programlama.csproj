@@ -67,7 +67,9 @@
     </Compile>
     <Compile Include="Sayfalar\Gruplama\Helpers\KoliGeometriYardimcisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Helpers\KoliYonYardimcisi.cs" />
+    <Compile Include="Sayfalar\Gruplama\Models\GripperAcisiEnum.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\GrupAtamaBilgisi.cs" />
+    <Compile Include="Sayfalar\Gruplama\Models\GrupGripperAyarlari.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\GrupKuraliSonucu.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\GruplamaListeItemModel.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\ProgramGrupModel.cs" />

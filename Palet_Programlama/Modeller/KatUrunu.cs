@@ -10,8 +10,6 @@
     {
         public double MerkezX { get; set; }
         public double MerkezY { get; set; }
-
-        // Eksen bazlı ölçüler (Canvas px)
         public double DikeyUzunluk { get; set; }   // dikey eksen boyunca (height gibi)
         public double YatayUzunluk { get; set; }   // yatay eksen boyunca (width gibi)
 

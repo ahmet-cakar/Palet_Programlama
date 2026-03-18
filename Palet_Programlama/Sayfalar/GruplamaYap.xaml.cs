@@ -15,6 +15,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using Palet_Programlama.Statics;
 
 namespace Palet_Programlama.Sayfalar
 {
@@ -47,14 +48,8 @@ namespace Palet_Programlama.Sayfalar
         private Rectangle sonSecilmisKutu = new Rectangle();
         private ProgramKayitModel _seciliProgramKaydi;
         private bool _sayfaYukleniyor;
-
-        private const int BirGruptakiMaksimumKoliSayisi = 4;
-        private const double GrupHizalamaToleransi = 5.0;
-        private const double GrupKomsulukToleransi = 5.0;
-
-        private double OlcekY => myCanvas.Width / _secilenPalet.PaletBoy;
-        private double OlcekX => myCanvas.Height / _secilenPalet.PaletEn;
-
+        private double OlcekY => canvasPalet.Width / _secilenPalet.PaletBoy;
+        private double OlcekX => canvasPalet.Height / _secilenPalet.PaletEn;
         private int AktifKatNo => _katYonetici.AktifKat;
 
         private int AktifGrupNo
@@ -77,7 +72,7 @@ namespace Palet_Programlama.Sayfalar
             _secilenPalet = secilenPalet;
             _gelenDizilimAdi = dizilimAdi;
             ListBoxGruplama.ItemsSource = _gruplamaListesi;
-            _mesafe.Baslat(myCanvas);
+            _mesafe.Baslat(canvasPalet);
             SayfaVerileriniYukle();
         }
 
@@ -111,8 +106,6 @@ namespace Palet_Programlama.Sayfalar
                 YukleniyorGizle();
             }
         }
-
-
 
         private string GrupAyarAnahtari(int katNo, int grupNo)
         {
@@ -284,7 +277,7 @@ namespace Palet_Programlama.Sayfalar
             SecimiTemizle();
 
             _katYonetici.KatiYukleDisardan(
-                myCanvas,
+                canvasPalet,
                 Rectangle_MouseDown,
                 Rectangle_MouseMove,
                 Rectangle_MouseUp);
@@ -341,7 +334,7 @@ namespace Palet_Programlama.Sayfalar
                 return;
             }
 
-            var tumKutular = myCanvas.Children.OfType<Rectangle>();
+            var tumKutular = canvasPalet.Children.OfType<Rectangle>();
 
             if (_secimServisi.KoliBuAktifGruptaMi(tiklananKutu, AktifKatNo, aktifGrupNo))
             {
@@ -354,7 +347,7 @@ namespace Palet_Programlama.Sayfalar
                     _geometri);
 
                 _gorsellestirmeServisi.KutuGrupGorseliniGuncelle(
-                    myCanvas,
+                    canvasPalet,
                     tiklananKutu,
                     AktifKatNo,
                     _secimServisi.GrupAtamalari,
@@ -380,7 +373,7 @@ namespace Palet_Programlama.Sayfalar
                 tumKutular,
                 AktifKatNo,
                 aktifGrupNo,
-                BirGruptakiMaksimumKoliSayisi,
+                GrupSabitleri.BirGruptakiMaksimumKoliSayisi,
                 _secimServisi,
                 tiklananKutu))
             {
@@ -393,7 +386,7 @@ namespace Palet_Programlama.Sayfalar
                 tumKutular,
                 AktifKatNo,
                 aktifGrupNo,
-                GrupHizalamaToleransi,
+                GrupSabitleri.GrupHizalamaToleransi,
                 _secimServisi,
                 _geometri))
             {
@@ -406,8 +399,8 @@ namespace Palet_Programlama.Sayfalar
                 tumKutular,
                 AktifKatNo,
                 aktifGrupNo,
-                GrupHizalamaToleransi,
-                GrupKomsulukToleransi,
+                GrupSabitleri.GrupHizalamaToleransi,
+                GrupSabitleri.GrupKomsulukToleransi,
                 _secimServisi,
                 _geometri))
             {
@@ -430,7 +423,7 @@ namespace Palet_Programlama.Sayfalar
                 _geometri);
 
             _gorsellestirmeServisi.KutuGrupGorseliniGuncelle(
-                myCanvas,
+                canvasPalet,
                 tiklananKutu,
                 AktifKatNo,
                 _secimServisi.GrupAtamalari,
@@ -511,7 +504,7 @@ namespace Palet_Programlama.Sayfalar
 
             _katYonetici.KatDegistir(
                 yeniKat,
-                myCanvas,
+                canvasPalet,
                 sonSecilmisKutu,
                 Rectangle_MouseDown,
                 Rectangle_MouseMove,
@@ -522,7 +515,7 @@ namespace Palet_Programlama.Sayfalar
 
             _secimServisi.KatAtamalariniYukle(
                 _katYonetici.AktifKat,
-                myCanvas.Children.OfType<Rectangle>(),
+                canvasPalet.Children.OfType<Rectangle>(),
                 kayitliAtamalar,
                 _geometri);
 
@@ -553,13 +546,13 @@ namespace Palet_Programlama.Sayfalar
         private void GrupGorselleriniYenile()
         {
             _gorsellestirmeServisi.AktifKattakiGrupEtiketleriniYenile(
-                myCanvas,
+                canvasPalet,
                 AktifKatNo,
                 _secimServisi.GrupAtamalari,
                 _geometri);
 
             _gorsellestirmeServisi.AktifKattakiTumKutuGorselleriniYenile(
-                myCanvas,
+                canvasPalet,
                 AktifKatNo,
                 _secimServisi.GrupAtamalari,
                 _geometri);
@@ -567,11 +560,11 @@ namespace Palet_Programlama.Sayfalar
 
         private void CanvasiTemizle()
         {
-            myCanvas.Children.OfType<Rectangle>().ToList().ForEach(r => myCanvas.Children.Remove(r));
+            canvasPalet.Children.OfType<Rectangle>().ToList().ForEach(r => canvasPalet.Children.Remove(r));
             _katYonetici.Temizle();
             _secimServisi.TumGrupAtamalariniTemizle();
             SecimiTemizle();
-            _gorsellestirmeServisi.TumGrupEtiketleriniTemizle(myCanvas);
+            _gorsellestirmeServisi.TumGrupEtiketleriniTemizle(canvasPalet);
             txtKatValue.Text = "1";
         }
 
@@ -1063,7 +1056,7 @@ namespace Palet_Programlama.Sayfalar
 
                 KataGecSessiz(grup.KatNo);
 
-                var aktifKattakiKutular = myCanvas.Children.OfType<Rectangle>().ToList();
+                var aktifKattakiKutular = canvasPalet.Children.OfType<Rectangle>().ToList();
 
                 foreach (var urun in grup.Urunler)
                 {
@@ -1110,7 +1103,7 @@ namespace Palet_Programlama.Sayfalar
 
             _secimServisi.KatAtamalariniYukle(
                 _katYonetici.AktifKat,
-                myCanvas.Children.OfType<Rectangle>(),
+                canvasPalet.Children.OfType<Rectangle>(),
                 kayitliAtamalar,
                 _geometri);
 
@@ -1122,7 +1115,7 @@ namespace Palet_Programlama.Sayfalar
         {
             _katYonetici.KatDegistir(
                 yeniKat,
-                myCanvas,
+                canvasPalet,
                 sonSecilmisKutu,
                 Rectangle_MouseDown,
                 Rectangle_MouseMove,
@@ -1176,14 +1169,14 @@ namespace Palet_Programlama.Sayfalar
             _secilenGruplamaItem = null;
 
             _secimServisi.TumGrupAtamalariniTemizle();
-            _gorsellestirmeServisi.TumGrupEtiketleriniTemizle(myCanvas);
+            _gorsellestirmeServisi.TumGrupEtiketleriniTemizle(canvasPalet);
 
             foreach (var kat in _katYonetici.TumKatlar.Keys.ToList())
             {
                 _bilgiServisi.KatAtamalariniKaydet(kat, new List<GrupAtamaBilgisi>());
             }
 
-            foreach (var kutu in myCanvas.Children.OfType<Rectangle>())
+            foreach (var kutu in canvasPalet.Children.OfType<Rectangle>())
             {
                 kutu.Stroke = System.Windows.Media.Brushes.Transparent;
                 kutu.StrokeThickness = 0;

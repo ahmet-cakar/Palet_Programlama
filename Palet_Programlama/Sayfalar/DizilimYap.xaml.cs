@@ -2,6 +2,7 @@
 using Palet_Programlama.Modeller;
 using Palet_Programlama.Servisler.PaletMethod;
 using Palet_Programlama.Sınıflar;
+using Palet_Programlama.Statics;
 using Palet_Programlama.UserController;
 using Servisler.PaletMethod;
 using System;
@@ -24,16 +25,13 @@ namespace Palet_Programlama.Sayfalar
     /// </summary>
     public partial class DizilimYap : Page
     {
-        private static readonly ImageSource _dikeyResim =
-         new BitmapImage(new Uri("pack://application:,,,/Resimler/DizilimYap/dikey_kutu.png", UriKind.Absolute));
+        private static readonly ImageSource _dikeyResim = ResimYollari.dikeyResim;
+        private static readonly ImageSource _yatayResim = ResimYollari.yatayResim;
 
-        private static readonly ImageSource _yatayResim =
-            new BitmapImage(new Uri("pack://application:,,,/Resimler/DizilimYap/yatay_kutu.png", UriKind.Absolute));
 
         private readonly YerlesimMotoru _motor = new();
         private readonly MesafeGostergesi _mesafe = new();
         private readonly KatYoneticisi _katYonetici = new();
-        private enum EklemeYon { Dikey, Yatay }
         private EklemeYon? _eklemeYon = null;
 
         private Urun _secilenUrun;
@@ -41,8 +39,9 @@ namespace Palet_Programlama.Sayfalar
         private List<Rect> _suruklemeDigerKutular = new();
         private Rect _sonMesafeRect;
         private bool _sonMesafeRectVar = false;
-        private double OlcekY => myCanvas.Width / _secilenPalet.PaletBoy;
-        private double OlcekX => myCanvas.Height / _secilenPalet.PaletEn;
+        private double OlcekY => canvasPalet.Width / _secilenPalet.PaletBoy;
+        private double OlcekX => canvasPalet.Height / _secilenPalet.PaletEn;
+
         private string? _gelenDizilimAdi;
         private Point ilkTiklamaPozisyonu;
         private bool suruklemeBasladi = false;
@@ -51,7 +50,7 @@ namespace Palet_Programlama.Sayfalar
         private Point tiklamaOffset;
         private Rectangle sonSecilmisKutu = new Rectangle();//palet içindeki son seçilmiş kolinin seçimini kaldırmak için yazdık
         private List<Rect> DigerKutular(Rectangle hareketEden) =>
-        myCanvas.Children.OfType<Rectangle>()
+        canvasPalet.Children.OfType<Rectangle>()
             .Where(r => r != hareketEden)
             .Select(GetRect)
         .ToList();
@@ -62,12 +61,11 @@ namespace Palet_Programlama.Sayfalar
         {
             InitializeComponent();
             this.MainFrame = Main;
-
             _secilenPalet = secilenPalet;
             _secilenUrun = secilenUrun;
             txtUrunOzellikleri.Text = $"{_secilenUrun.UrunAdi} - {_secilenUrun.UrunEn} mm x {_secilenUrun.UrunBoy} mm x {_secilenUrun.UrunYukseklik} mm";
             txtPaletOzellikleri.Text = $"{_secilenPalet.PaletAdi} - {_secilenPalet.PaletEn} mm x {_secilenPalet.PaletBoy} mm x {_secilenPalet.PaletYukseklik} mm";
-            _mesafe.Baslat(myCanvas);
+            _mesafe.Baslat(canvasPalet);
             _motor.SnapEsigi = 3.0;
             _motor.CakismaEpsilon = 0.5;
             txtKat.Text = _katYonetici.AktifKat.ToString();
@@ -87,7 +85,7 @@ namespace Palet_Programlama.Sayfalar
                     if (yüklendi)
                     {
                         _katYonetici.KatiYukleDisardan(
-                            myCanvas,
+                            canvasPalet,
                             Rectangle_MouseDown,
                             Rectangle_MouseMove,
                             Rectangle_MouseUp);
@@ -175,7 +173,7 @@ namespace Palet_Programlama.Sayfalar
 
 
                     var movingNow = GetRect(suruklenenKutu);
-                    var position = e.GetPosition(myCanvas);
+                    var position = e.GetPosition(canvasPalet);
 
                     // mouse offset ile hedef sol-üst
                     var hedef = new Point(position.X - tiklamaOffset.X, position.Y - tiklamaOffset.Y);
@@ -184,7 +182,7 @@ namespace Palet_Programlama.Sayfalar
                     var digerKutular = _suruklemeDigerKutular;
 
                     // motor hesaplasın
-                    if (_motor.TrySurukle(movingNow, hedef, myCanvas.Width, myCanvas.Height, digerKutular, out var sonuc))
+                    if (_motor.TrySurukle(movingNow, hedef, canvasPalet.Width, canvasPalet.Height, digerKutular, out var sonuc))
                     {
                         Canvas.SetLeft(suruklenenKutu, sonuc.Left);
                         Canvas.SetTop(suruklenenKutu, sonuc.Top);
@@ -273,7 +271,6 @@ namespace Palet_Programlama.Sayfalar
             _eklemeYon = EklemeYon.Dikey;
         }
 
-
         private void yatayKutu_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (_eklemeYon == EklemeYon.Yatay)
@@ -292,28 +289,28 @@ namespace Palet_Programlama.Sayfalar
             _eklemeYon = EklemeYon.Yatay;  // yatayda
         }
 
-        private void myCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void canvasPalet_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (_eklemeYon is null)
                 return;
 
             if (e.OriginalSource is Rectangle) return;
 
-            var p = e.GetPosition(myCanvas);
+            var p = e.GetPosition(canvasPalet);
 
             var (w, h) = CanvasUrunBoyutuGetir(_eklemeYon.Value);
 
             double newLeft = p.X;
             double newTop = p.Y;
 
-            double maxLeft = myCanvas.Width - w;
-            double maxTop = myCanvas.Height - h;
+            double maxLeft = canvasPalet.Width - w;
+            double maxTop = canvasPalet.Height - h;
             newLeft = Math.Max(0, Math.Min(newLeft, maxLeft));
             newTop = Math.Max(0, Math.Min(newTop, maxTop));
 
             var candidate = new Rect(newLeft, newTop, w, h);
 
-            if (_motor.CakisiyorMu(candidate, myCanvas.Children.OfType<Rectangle>().Select(GetRect)))
+            if (_motor.CakisiyorMu(candidate, canvasPalet.Children.OfType<Rectangle>().Select(GetRect)))
             {
                 BildirimGoster("MesajKutusu.urunlerUstUsteGelemez");
                 return;
@@ -326,7 +323,7 @@ namespace Palet_Programlama.Sayfalar
 
             Canvas.SetLeft(rect, newLeft);
             Canvas.SetTop(rect, newTop);
-            myCanvas.Children.Add(rect);
+            canvasPalet.Children.Add(rect);
         }
 
 
@@ -357,7 +354,7 @@ namespace Palet_Programlama.Sayfalar
         {
 
 
-            if (!myCanvas.Children.OfType<Rectangle>().Any())
+            if (!canvasPalet.Children.OfType<Rectangle>().Any())
             {
                 BildirimGoster("MesajKutusu.katBosOlamaz");
                 return;
@@ -376,7 +373,7 @@ namespace Palet_Programlama.Sayfalar
 
             _katYonetici.KatDegistir(
                 yeniKat,
-                myCanvas,
+                canvasPalet,
                 sonSecilmisKutu,
                 Rectangle_MouseDown,
                 Rectangle_MouseMove,
@@ -393,7 +390,7 @@ namespace Palet_Programlama.Sayfalar
 
             _katYonetici.KatDegistir(
                 yeniKat,
-                myCanvas,
+                canvasPalet,
                 sonSecilmisKutu,
                 Rectangle_MouseDown,
                 Rectangle_MouseMove,
@@ -526,7 +523,7 @@ namespace Palet_Programlama.Sayfalar
         {
             try
             {
-                _katYonetici.KatiKaydetDisardan(myCanvas);
+                _katYonetici.KatiKaydetDisardan(canvasPalet);
 
                 bool hicUrunYokMu = !_katYonetici.TumKatlar.Any(kat => kat.Value != null && kat.Value.Any());
                 if (hicUrunYokMu)
@@ -733,7 +730,7 @@ namespace Palet_Programlama.Sayfalar
 
         private void Btn_KatKopayala_Click(object sender, RoutedEventArgs e)
         {
-            _katYonetici.KatiKaydetDisardan(myCanvas);
+            _katYonetici.KatiKaydetDisardan(canvasPalet);
 
             int kopyalanacakKat = Convert.ToInt32(txtKopyalaValue.Text);
             int yapistirilacakKat = Convert.ToInt32(txtYapisValue.Text);
@@ -752,8 +749,8 @@ namespace Palet_Programlama.Sayfalar
                 yapistirilacakKat,
                 xAynala,
                 yAynala,
-                myCanvas.Width,
-                myCanvas.Height);
+                canvasPalet.Width,
+                canvasPalet.Height);
 
             if (!basarili)
             {
@@ -974,7 +971,7 @@ namespace Palet_Programlama.Sayfalar
             if (sonSecilmisKutu == null)
                 return null;
 
-            if (!myCanvas.Children.OfType<Rectangle>().Contains(sonSecilmisKutu))
+            if (!canvasPalet.Children.OfType<Rectangle>().Contains(sonSecilmisKutu))
                 return null;
 
             if (sonSecilmisKutu.StrokeThickness <= 0)
@@ -1013,8 +1010,8 @@ namespace Palet_Programlama.Sayfalar
             // Palet dışına çıkma kontrolü
             if (yeniLeft < 0 ||
                 yeniTop < 0 ||
-                yeniLeft + mevcut.Width > myCanvas.Width ||
-                yeniTop + mevcut.Height > myCanvas.Height)
+                yeniLeft + mevcut.Width > canvasPalet.Width ||
+                yeniTop + mevcut.Height > canvasPalet.Height)
             {
                 return;
             }
@@ -1157,8 +1154,8 @@ namespace Palet_Programlama.Sayfalar
                 // palet dışı kontrol
                 if (yeniLeft < 0 ||
                     yeniTop < 0 ||
-                    yeniLeft + w > myCanvas.Width ||
-                    yeniTop + h > myCanvas.Height)
+                    yeniLeft + w > canvasPalet.Width ||
+                    yeniTop + h > canvasPalet.Height)
                 {
                     break;
                 }
@@ -1166,7 +1163,7 @@ namespace Palet_Programlama.Sayfalar
                 var candidate = new Rect(yeniLeft, yeniTop, w, h);
 
                 // mevcut tüm ürünlerle çarpışma kontrolü
-                var tumKutular = myCanvas.Children
+                var tumKutular = canvasPalet.Children
                     .OfType<Rectangle>()
                     .Select(GetRect)
                     .ToList();
@@ -1179,7 +1176,7 @@ namespace Palet_Programlama.Sayfalar
                 var yeniRect = SeciliKutudanKopyaOlustur(secili);
                 Canvas.SetLeft(yeniRect, yeniLeft);
                 Canvas.SetTop(yeniRect, yeniTop);
-                myCanvas.Children.Add(yeniRect);
+                canvasPalet.Children.Add(yeniRect);
 
                 yeniLeft += adimLeft;
                 yeniTop += adimTop;
@@ -1234,7 +1231,7 @@ namespace Palet_Programlama.Sayfalar
 
             if (yon == "Sag")
             {
-                double hedefLeft = myCanvas.Width - mevcut.Width;
+                double hedefLeft = canvasPalet.Width - mevcut.Width;
 
                 foreach (var diger in digerKutular)
                 {
@@ -1274,7 +1271,7 @@ namespace Palet_Programlama.Sayfalar
             }
             else if (yon == "Asagi")
             {
-                double hedefTop = myCanvas.Height - mevcut.Height;
+                double hedefTop = canvasPalet.Height - mevcut.Height;
 
                 foreach (var diger in digerKutular)
                 {
@@ -1329,19 +1326,19 @@ namespace Palet_Programlama.Sayfalar
 
         private void PalettekiTumKatlariTasi(double deltaLeftPx, double deltaTopPx)
         {
-            _katYonetici.KatiKaydetDisardan(myCanvas);
+            _katYonetici.KatiKaydetDisardan(canvasPalet);
 
             bool basarili = _katYonetici.TumKatlariTasi(
                 deltaLeftPx,
                 deltaTopPx,
-                myCanvas.Width,
-                myCanvas.Height);
+                canvasPalet.Width,
+                canvasPalet.Height);
 
             if (!basarili)
                 return;
 
             _katYonetici.KatiYukleDisardan(
-                myCanvas,
+                canvasPalet,
                 Rectangle_MouseDown,
                 Rectangle_MouseMove,
                 Rectangle_MouseUp);
@@ -1373,7 +1370,7 @@ namespace Palet_Programlama.Sayfalar
 
         private void AktifKattakiTumUrunleriTasi(double deltaLeftPx, double deltaTopPx)
         {
-            var kutular = myCanvas.Children.OfType<Rectangle>().ToList();
+            var kutular = canvasPalet.Children.OfType<Rectangle>().ToList();
 
             if (!kutular.Any())
             {
@@ -1391,8 +1388,8 @@ namespace Palet_Programlama.Sayfalar
 
                 if (yeniLeft < 0 ||
                     yeniTop < 0 ||
-                    yeniLeft + rect.Width > myCanvas.Width ||
-                    yeniTop + rect.Height > myCanvas.Height)
+                    yeniLeft + rect.Width > canvasPalet.Width ||
+                    yeniTop + rect.Height > canvasPalet.Height)
                 {
                     return;
                 }
@@ -1440,17 +1437,17 @@ namespace Palet_Programlama.Sayfalar
                 return;
             }
 
-            myCanvas.Children.Remove(secili);
+            canvasPalet.Children.Remove(secili);
 
             sonSecilmisKutu = new Rectangle();
             _mesafe.Gizle();
 
-            _katYonetici.KatiKaydetDisardan(myCanvas);
+            _katYonetici.KatiKaydetDisardan(canvasPalet);
         }
 
         private void AktifKatiTemizle()
         {
-            _katYonetici.KatiKaydetDisardan(myCanvas);
+            _katYonetici.KatiKaydetDisardan(canvasPalet);
 
             if (_katYonetici.AraKatMiVeSilinemez())
             {
@@ -1458,7 +1455,7 @@ namespace Palet_Programlama.Sayfalar
                 return;
             }
 
-            _katYonetici.AktifKatiTemizle(myCanvas);
+            _katYonetici.AktifKatiTemizle(canvasPalet);
 
             sonSecilmisKutu = new Rectangle();
             _mesafe.Gizle();
@@ -1466,7 +1463,7 @@ namespace Palet_Programlama.Sayfalar
 
         private void TumPaletiTemizle()
         {
-            _katYonetici.TumKatlariTemizle(myCanvas);
+            _katYonetici.TumKatlariTemizle(canvasPalet);
 
             txtKat.Text = _katYonetici.AktifKat.ToString();
             sonSecilmisKutu = new Rectangle();

@@ -463,7 +463,7 @@
           <Border Grid.Column="1" Grid.Row="1">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"  >
 
-              <Canvas Name="myCanvas"
+              <Canvas Name="canvasPalet"
                                 Width="600"
                                 Height="400"
                                 >

@@ -60,6 +60,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Enums\EklemeYonEnum.cs" />
     <Compile Include="Modeller\DizilimKayitModel.cs" />
     <Compile Include="Modeller\DizilimUrunKayitModel.cs" />
     <Compile Include="Sayfalar\GruplamaYap.xaml.cs">
@@ -67,7 +68,7 @@
     </Compile>
     <Compile Include="Sayfalar\Gruplama\Helpers\KoliGeometriYardimcisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Helpers\KoliYonYardimcisi.cs" />
-    <Compile Include="Sayfalar\Gruplama\Models\GripperAcisiEnum.cs" />
+    <Compile Include="Enums\GripperAcisiEnum.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\GrupAtamaBilgisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\GrupGripperAyarlari.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\GrupKuraliSonucu.cs" />
@@ -96,6 +97,8 @@
     <Compile Include="Servisler\PaletMethod\KatYoneticisi.cs" />
     <Compile Include="Servisler\PaletMethod\MesafeGostergesi.cs" />
     <Compile Include="Servisler\PaletMethod\YerlesimMotoru.cs" />
+    <Compile Include="Statics\GrupSabitleri.cs" />
+    <Compile Include="Statics\ResimYollari.cs" />
     <Compile Include="Sınıflar\DosyaYoluBul.cs" />
     <Compile Include="Sınıflar\LanguageConverter.cs" />
     <Compile Include="Sınıflar\KullaniciDil.cs" />

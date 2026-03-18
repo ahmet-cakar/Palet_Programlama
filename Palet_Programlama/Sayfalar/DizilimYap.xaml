@@ -548,10 +548,10 @@
                              StretchDirection="DownOnly"
                              HorizontalAlignment="Center"
                              VerticalAlignment="Center">
-            <Canvas Name="myCanvas"
+            <Canvas Name="canvasPalet"
                                 Width="600"
                                 Height="400"
-                                MouseLeftButtonDown="myCanvas_MouseLeftButtonDown">
+                                MouseLeftButtonDown="canvasPalet_MouseLeftButtonDown">
               <Canvas.Background>
                 <ImageBrush ImageSource="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
               </Canvas.Background>

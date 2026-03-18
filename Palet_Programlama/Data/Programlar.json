@@ -75,5 +75,159 @@
         ]
       }
     ]
+  },
+  {
+    "Id": 2,
+    "ProgramAdi": "Ahmet2",
+    "Aciklama": "Merhaba",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 02:25 ÖS",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 65,
+          "OffsetY": 4330
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": -90,
+          "OffsetX": 321,
+          "OffsetY": 1231
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 0,
+          "OffsetX": 1230,
+          "OffsetY": 330
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "ProgramAdi": "Ahmet3",
+    "Aciklama": "asdas",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET-2",
+    "DizilimAdi": "Dizilim_1",
+    "OlusturmaTarihi": "03.18.2026 02:02 ÖS",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 100.0,
+        "GrupMerkezY": 350.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": -90,
+          "OffsetX": 321,
+          "OffsetY": 1231
+        },
+        "Yon": 1,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 100.0,
+            "MerkezY": 350.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 650.0,
+        "GrupMerkezY": 1100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": -90,
+          "OffsetX": 1230,
+          "OffsetY": 330
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 650.0,
+            "MerkezY": 1100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 4,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 100.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 90,
+          "OffsetX": 10,
+          "OffsetY": 2
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      }
+    ]
   }
 ]

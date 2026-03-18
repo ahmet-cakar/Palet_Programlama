@@ -33,6 +33,21 @@ namespace Palet_Programlama.Sayfalar.Gruplama.Services
                 string.Equals((x.ProgramAdi ?? "").Trim(), programAdi.Trim(), System.StringComparison.OrdinalIgnoreCase));
         }
 
+        public void Guncelle(ProgramKayitModel guncelProgram)
+        {
+            var kayitlar = KayitlariYukle();
+
+            int index = kayitlar.FindIndex(x => x.Id == guncelProgram.Id);
+            if (index < 0)
+                return;
+
+            kayitlar[index] = guncelProgram;
+
+            string dosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Programlar.json");
+            string json = JsonConvert.SerializeObject(kayitlar, Formatting.Indented);
+            File.WriteAllText(dosyaYolu, json);
+        }
+
         public int SonrakiIdGetir()
         {
             var kayitlar = KayitlariYukle();

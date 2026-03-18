@@ -1,4 +1,5 @@
 ﻿using Palet_Programlama.Sayfalar.Gruplama.Models;
+using Palet_Programlama.Sınıflar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,14 @@ namespace Palet_Programlama.Popuplar
             DialogResult = false;
             Close();
         }
+
+        public void VerileriYukle(string programAdi, string aciklama)
+        {
+            TxtProgramAdi.Text = programAdi ?? "";
+            TxtAciklama.Text = aciklama ?? "";
+            TxtProgramAdi.IsReadOnly = true;
+        }
+
 
         private void BtnKaydet_Click(object sender, RoutedEventArgs e)
         {

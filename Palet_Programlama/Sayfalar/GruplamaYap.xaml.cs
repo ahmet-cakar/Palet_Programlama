@@ -293,12 +293,54 @@ namespace Palet_Programlama.Sayfalar
             GrupGorselleriniYenile();
         }
 
+
+        private bool GrupNoBaskaKattaKullanimdaMi(int grupNo, int aktifKatNo)
+        {
+            return _secimServisi.GrupAtamalari.Values.Any(x =>
+                x.GrupNo == grupNo && x.KatNo != aktifKatNo);
+        }
+
+        private int SonrakiBosGrupNoGetir()
+        {
+            var kullanilanGrupNolari = _secimServisi.GrupAtamalari.Values
+                .Select(x => x.GrupNo)
+                .Distinct()
+                .OrderBy(x => x)
+                .ToList();
+
+            int beklenen = 1;
+
+            foreach (var grupNo in kullanilanGrupNolari)
+            {
+                if (grupNo != beklenen)
+                    return beklenen;
+
+                beklenen++;
+            }
+
+            return beklenen;
+        }
+
+        private void AktifGrupNumarasiniGuncelle()
+        {
+            txtGrupValue.Text = SonrakiBosGrupNoGetir().ToString();
+        }
+
+
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (sender is not Rectangle tiklananKutu)
                 return;
 
             int aktifGrupNo = AktifGrupNo;
+
+            if (GrupNoBaskaKattaKullanimdaMi(aktifGrupNo, AktifKatNo))
+            {
+                AktifGrupNumarasiniGuncelle();
+                BildirimGoster("GruplamaYap.grupNoBaskaKattaKullaniliyor");
+                return;
+            }
+
             var tumKutular = myCanvas.Children.OfType<Rectangle>();
 
             if (_secimServisi.KoliBuAktifGruptaMi(tiklananKutu, AktifKatNo, aktifGrupNo))
@@ -318,6 +360,7 @@ namespace Palet_Programlama.Sayfalar
                     _secimServisi.GrupAtamalari,
                     _geometri);
                 MevcutGruplamaListesiniYenile();
+                AktifGrupNumarasiniGuncelle();
                 return;
             }
 
@@ -485,6 +528,7 @@ namespace Palet_Programlama.Sayfalar
 
             txtKatValue.Text = _katYonetici.AktifKat.ToString();
             GrupGorselleriniYenile();
+            AktifGrupNumarasiniGuncelle();
         }
 
         private void BtnGruplandirmaEksi_Click(object sender, RoutedEventArgs e)
@@ -1087,6 +1131,7 @@ namespace Palet_Programlama.Sayfalar
             txtKatValue.Text = _katYonetici.AktifKat.ToString();
         }
 
+
         private Rectangle EnYakinKutuyuBul(List<Rectangle> kutular, double gercekMerkezX, double gercekMerkezY)
         {
             Rectangle enYakinKutu = null;
@@ -1144,7 +1189,7 @@ namespace Palet_Programlama.Sayfalar
                 kutu.StrokeThickness = 0;
             }
 
-            txtGrupValue.Text = "1";
+            AktifGrupNumarasiniGuncelle();
             SecimiTemizle();
             MevcutGruplamaListesiniYenile();
             _seciliProgramKaydi = null;

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Palet_Programlama"
+        xmlns:userController="clr-namespace:Palet_Programlama.UserController"
         mc:Ignorable="d"
         WindowState="Maximized"
         Icon="pack://application:,,,/Resimler/Icon.ico"
@@ -19,5 +20,7 @@
                     Panel.ZIndex="1"
                     NavigationUIVisibility="Hidden"
                     />
-         </Grid>
+        <userController:LoadingOverlay x:Name="LoadingOverlayControl"
+                               Panel.ZIndex="999"/>
+  </Grid>
 </Window>

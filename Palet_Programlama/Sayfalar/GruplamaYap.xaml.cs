@@ -78,7 +78,6 @@ namespace Palet_Programlama.Sayfalar
             _gelenDizilimAdi = dizilimAdi;
             ListBoxGruplama.ItemsSource = _gruplamaListesi;
             _mesafe.Baslat(myCanvas);
-
             SayfaVerileriniYukle();
         }
 
@@ -89,21 +88,31 @@ namespace Palet_Programlama.Sayfalar
 
         private void SayfaVerileriniYukle()
         {
-            _sayfaYukleniyor = true;
-            _dizilimKayitlari = _dizilimKayitServisi.KayitlariYukle();
-            IlkVerileriHazirla();
-            ComboBoxlariDoldurIlkAcilisIcin();
-            _sayfaYukleniyor = false;
-            SeciliDizilimiCanvasaYukle();
+            YukleniyorGoster("Sayfa yükleniyor...");
 
-            string seciliUrunAdi = CboxUrunListesi.SelectedItem?.ToString() ?? _secilenUrun?.UrunAdi ?? "";
-            string seciliDizilimAdi = CboxDizilimListesi.SelectedItem?.ToString() ?? _gelenDizilimAdi ?? "";
-            ProgramlariDoldur(seciliUrunAdi, seciliDizilimAdi);
-            _seciliProgramKaydi = null;
-            ProgramKaydetButonMetniniGuncelle();
+            try
+            {
+                _sayfaYukleniyor = true;
+                _dizilimKayitlari = _dizilimKayitServisi.KayitlariYukle();
+                IlkVerileriHazirla();
+                ComboBoxlariDoldurIlkAcilisIcin();
+                _sayfaYukleniyor = false;
+                SeciliDizilimiCanvasaYukle();
+
+                string seciliUrunAdi = CboxUrunListesi.SelectedItem?.ToString() ?? _secilenUrun?.UrunAdi ?? "";
+                string seciliDizilimAdi = CboxDizilimListesi.SelectedItem?.ToString() ?? _gelenDizilimAdi ?? "";
+                ProgramlariDoldur(seciliUrunAdi, seciliDizilimAdi);
+                _seciliProgramKaydi = null;
+                ProgramKaydetButonMetniniGuncelle();
+            }
+            finally
+            {
+                _sayfaYukleniyor = false;
+                YukleniyorGizle();
+            }
         }
 
-     
+
 
         private string GrupAyarAnahtari(int katNo, int grupNo)
         {
@@ -691,7 +700,17 @@ namespace Palet_Programlama.Sayfalar
             }
         }
 
+        private void YukleniyorGoster(string mesaj = "Yükleniyor...")
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow?.YukleniyorGoster(mesaj);
+        }
 
+        private void YukleniyorGizle()
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow?.YukleniyorGizle();
+        }
         private void GrupMerkezleriniHesaplaVeUygula(ProgramGrupModel grupModel)
         {
             var kutular = _secimServisi.GrupAtamalari
@@ -759,8 +778,6 @@ namespace Palet_Programlama.Sayfalar
             }
         }
 
-
-
         private void BtnProgramKaydet_Click(object sender, RoutedEventArgs e)
         {
             if (!PalettekiTumUrunlerGrupluMu())
@@ -792,45 +809,51 @@ namespace Palet_Programlama.Sayfalar
             string programAdi = popup.Sonuc.ProgramAdi;
             string aciklama = popup.Sonuc.Aciklama;
 
-            // YENİ KAYIT
-            if (_seciliProgramKaydi == null)
+            YukleniyorGoster(_seciliProgramKaydi == null ? "Program kaydediliyor..." : "Program güncelleniyor...");
+
+            try
             {
-                if (_programKayitServisi.ProgramAdiVarMi(programAdi))
+                if (_seciliProgramKaydi == null)
                 {
-                    BildirimGoster("GruplamaYap.programAdiZatenKayitli");
+                    if (_programKayitServisi.ProgramAdiVarMi(programAdi))
+                    {
+                        BildirimGoster("GruplamaYap.programAdiZatenKayitli");
+                        return;
+                    }
+
+                    var yeniProgram = ProgramModeliOlustur(programAdi, aciklama);
+                    yeniProgram.Id = _programKayitServisi.SonrakiIdGetir();
+
+                    _programKayitServisi.Kaydet(yeniProgram);
+
+                    _seciliProgramKaydi = yeniProgram;
+                    ProgramKaydetButonMetniniGuncelle();
+
+                    ProgramlariDoldur(_secilenUrun?.UrunAdi ?? "", _gelenDizilimAdi ?? "");
+                    CboxProgramListesi.SelectedItem = yeniProgram.ProgramAdi;
+
+                    BildirimGoster("GruplamaYap.programBasariIleKayitEdildi");
                     return;
                 }
 
-                var yeniProgram = ProgramModeliOlustur(programAdi, aciklama);
-                yeniProgram.Id = _programKayitServisi.SonrakiIdGetir();
+                var guncelProgram = ProgramModeliOlustur(programAdi, aciklama);
+                guncelProgram.Id = _seciliProgramKaydi.Id;
 
-                _programKayitServisi.Kaydet(yeniProgram);
+                _programKayitServisi.Guncelle(guncelProgram);
 
-                _seciliProgramKaydi = yeniProgram;
+                _seciliProgramKaydi = guncelProgram;
                 ProgramKaydetButonMetniniGuncelle();
 
                 ProgramlariDoldur(_secilenUrun?.UrunAdi ?? "", _gelenDizilimAdi ?? "");
-                CboxProgramListesi.SelectedItem = yeniProgram.ProgramAdi;
+                CboxProgramListesi.SelectedItem = guncelProgram.ProgramAdi;
 
-                BildirimGoster("GruplamaYap.programBasariIleKayitEdildi");
-                return;
+                BildirimGoster("GruplamaYap.programBasariIleGuncellendi");
             }
-
-            // GÜNCELLEME
-            var guncelProgram = ProgramModeliOlustur(programAdi, aciklama);
-            guncelProgram.Id = _seciliProgramKaydi.Id;
-
-            _programKayitServisi.Guncelle(guncelProgram);
-
-            _seciliProgramKaydi = guncelProgram;
-            ProgramKaydetButonMetniniGuncelle();
-
-            ProgramlariDoldur(_secilenUrun?.UrunAdi ?? "", _gelenDizilimAdi ?? "");
-            CboxProgramListesi.SelectedItem = guncelProgram.ProgramAdi;
-
-            BildirimGoster("GruplamaYap.programBasariIleGuncellendi");
+            finally
+            {
+                YukleniyorGizle();
+            }
         }
-
 
         private void BtnGrupAyarlar_Click(object sender, RoutedEventArgs e)
         {
@@ -938,6 +961,7 @@ namespace Palet_Programlama.Sayfalar
             if (program == null)
                 return;
 
+            YukleniyorGoster("Program yükleniyor...");
             _sayfaYukleniyor = true;
 
             try
@@ -957,9 +981,9 @@ namespace Palet_Programlama.Sayfalar
             finally
             {
                 _sayfaYukleniyor = false;
+                YukleniyorGizle();
             }
         }
-
         private bool TumGruplarinAyarlariTamamMi()
         {
             var gruplar = _secimServisi.GrupAtamalari.Values

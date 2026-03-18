@@ -17,10 +17,18 @@ namespace Palet_Programlama
             InitializeComponent();
             MainFrame.Navigate(new Bekleme(MainFrame));
 
+
         }
 
+        public void YukleniyorGoster(string mesaj = "Yükleniyor...")
+        {
+            LoadingOverlayControl.Goster(mesaj);
+        }
 
-
+        public void YukleniyorGizle()
+        {
+            LoadingOverlayControl.Gizle();
+        }
 
     }
 }

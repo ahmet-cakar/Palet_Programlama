@@ -240,5 +240,508 @@
         "MerkezZ": 400.0
       }
     ]
+  },
+  {
+    "DizilimAdi": "Deneme_23",
+    "PaletAdi": "EURO-PALET",
+    "PaletEn": 800.0,
+    "PaletBoy": 1200.0,
+    "PaletYukseklik": 100.0,
+    "UrunAdi": "Yumoş 220 ML",
+    "UrunEn": 200.0,
+    "UrunBoy": 300.0,
+    "UrunYukseklik": 200.0,
+    "Urunler": [
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 150.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 150.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 150.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 150.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 150.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 450.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 450.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 450.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 450.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 450.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 2,
+        "MerkezX": 150.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 2,
+        "MerkezX": 150.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 2,
+        "MerkezX": 150.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 2,
+        "MerkezX": 150.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 2,
+        "MerkezX": 150.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 2,
+        "MerkezX": 450.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 2,
+        "MerkezX": 450.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 2,
+        "MerkezX": 450.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 2,
+        "MerkezX": 450.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 2,
+        "MerkezX": 450.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 3,
+        "MerkezX": 150.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 600.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 3,
+        "MerkezX": 150.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 600.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 3,
+        "MerkezX": 150.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 600.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 3,
+        "MerkezX": 150.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 600.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 3,
+        "MerkezX": 150.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 600.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 3,
+        "MerkezX": 450.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 600.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 3,
+        "MerkezX": 450.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 600.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 3,
+        "MerkezX": 450.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 600.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 3,
+        "MerkezX": 450.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 600.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 3,
+        "MerkezX": 450.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 600.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 4,
+        "MerkezX": 150.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 800.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 4,
+        "MerkezX": 150.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 800.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 4,
+        "MerkezX": 150.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 800.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 4,
+        "MerkezX": 150.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 800.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 4,
+        "MerkezX": 150.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 800.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 4,
+        "MerkezX": 450.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 800.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 4,
+        "MerkezX": 450.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 800.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 4,
+        "MerkezX": 450.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 800.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 4,
+        "MerkezX": 450.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 800.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 4,
+        "MerkezX": 450.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 800.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 5,
+        "MerkezX": 150.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 1000.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 5,
+        "MerkezX": 150.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 1000.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 5,
+        "MerkezX": 150.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 1000.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 5,
+        "MerkezX": 150.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 1000.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 5,
+        "MerkezX": 150.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 1000.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 5,
+        "MerkezX": 450.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 1000.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 5,
+        "MerkezX": 450.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 1000.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 5,
+        "MerkezX": 450.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 1000.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 5,
+        "MerkezX": 450.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 1000.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 5,
+        "MerkezX": 450.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 1000.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 6,
+        "MerkezX": 150.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 1200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 6,
+        "MerkezX": 150.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 1200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 6,
+        "MerkezX": 150.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 1200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 6,
+        "MerkezX": 150.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 1200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 6,
+        "MerkezX": 150.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 1200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 6,
+        "MerkezX": 450.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 1200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 6,
+        "MerkezX": 450.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 1200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 6,
+        "MerkezX": 450.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 1200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 6,
+        "MerkezX": 450.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 1200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 6,
+        "MerkezX": 450.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 1200.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 7,
+        "MerkezX": 150.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 1400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 7,
+        "MerkezX": 150.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 1400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 7,
+        "MerkezX": 150.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 1400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 7,
+        "MerkezX": 150.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 1400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 7,
+        "MerkezX": 150.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 1400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 7,
+        "MerkezX": 450.0,
+        "MerkezY": 100.0,
+        "MerkezZ": 1400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 7,
+        "MerkezX": 450.0,
+        "MerkezY": 300.0,
+        "MerkezZ": 1400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 7,
+        "MerkezX": 450.0,
+        "MerkezY": 500.0,
+        "MerkezZ": 1400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 7,
+        "MerkezX": 450.0,
+        "MerkezY": 700.0,
+        "MerkezZ": 1400.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 7,
+        "MerkezX": 450.0,
+        "MerkezY": 900.0,
+        "MerkezZ": 1400.0
+      }
+    ]
   }
 ]

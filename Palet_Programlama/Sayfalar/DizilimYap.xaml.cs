@@ -74,31 +74,49 @@ namespace Palet_Programlama.Sayfalar
             _gelenDizilimAdi = dizilimAdi;
             if (!string.IsNullOrWhiteSpace(_gelenDizilimAdi))
             {
-                bool yüklendi = _katYonetici.DizilimYukle(
-                    _gelenDizilimAdi,
-                    _secilenUrun,
-                    _secilenPalet,
-                    OlcekX,
-                    OlcekY);
-
-                if (yüklendi)
+                YukleniyorGoster("Dizilim yükleniyor...");
+                try
                 {
-                    _katYonetici.KatiYukleDisardan(
-                        myCanvas,
-                        Rectangle_MouseDown,
-                        Rectangle_MouseMove,
-                        Rectangle_MouseUp);
+                    bool yüklendi = _katYonetici.DizilimYukle(
+                        _gelenDizilimAdi,
+                        _secilenUrun,
+                        _secilenPalet,
+                        OlcekX,
+                        OlcekY);
 
-                    txtKat.Text = _katYonetici.AktifKat.ToString();
+                    if (yüklendi)
+                    {
+                        _katYonetici.KatiYukleDisardan(
+                            myCanvas,
+                            Rectangle_MouseDown,
+                            Rectangle_MouseMove,
+                            Rectangle_MouseUp);
+
+                        txtKat.Text = _katYonetici.AktifKat.ToString();
+                    }
+                    else
+                    {
+                        BildirimGoster("MesajKutusu.dizilimBulunamadi");
+                    }
                 }
-                else
+                finally
                 {
-                    BildirimGoster("MesajKutusu.dizilimBulunamadi");
+                    YukleniyorGizle();
                 }
             }
         }
 
+        private void YukleniyorGoster(string mesaj = "Yükleniyor...")
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow?.YukleniyorGoster(mesaj);
+        }
 
+        private void YukleniyorGizle()
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            mainWindow?.YukleniyorGizle();
+        }
         private Rect GetRect(Rectangle r)
         {
             double left = Canvas.GetLeft(r);
@@ -531,9 +549,7 @@ namespace Palet_Programlama.Sayfalar
 
                 bool? sonuc = pencere.ShowDialog();
                 if (sonuc != true)
-                {
                     return;
-                }
 
                 string dizilimAdi = (pencere.GirilenMetin ?? "").Trim();
                 if (string.IsNullOrWhiteSpace(dizilimAdi))
@@ -541,6 +557,8 @@ namespace Palet_Programlama.Sayfalar
                     BildirimGoster("MesajKutusu.kayitIcinIsimGerekli");
                     return;
                 }
+
+                YukleniyorGoster("Dizilim kaydediliyor...");
 
                 string dosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Dizilimler.json");
 
@@ -628,6 +646,10 @@ namespace Palet_Programlama.Sayfalar
             catch (Exception ex)
             {
                 BildirimGosterFormatli("MesajKutusu.kayitHatasiFormat", ex.Message);
+            }
+            finally
+            {
+                YukleniyorGizle();
             }
         }
 

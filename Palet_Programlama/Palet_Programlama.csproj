@@ -63,6 +63,9 @@
     <Compile Include="Enums\EklemeYonEnum.cs" />
     <Compile Include="Modeller\DizilimKayitModel.cs" />
     <Compile Include="Modeller\DizilimUrunKayitModel.cs" />
+    <Compile Include="Popuplar\OnayKutusu.xaml.cs">
+      <DependentUpon>OnayKutusu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sayfalar\GruplamaYap.xaml.cs">
       <DependentUpon>GruplamaYap.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,10 @@
     <Compile Include="UserController\UstMenu.xaml.cs">
       <DependentUpon>UstMenu.xaml</DependentUpon>
     </Compile>
+    <Page Include="Popuplar\OnayKutusu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Sayfalar\DizilimYap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

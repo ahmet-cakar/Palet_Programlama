@@ -5,6 +5,7 @@ using Palet_Programlama.Sayfalar.Gruplama.Services;
 using Palet_Programlama.Sayfalar.ProgramlarSayfasi;
 using Palet_Programlama.Servisler.PaletMethod;
 using Palet_Programlama.Sınıflar;
+using Palet_Programlama.UserController;
 using Servisler.PaletMethod;
 using System;
 using System.Collections.Generic;
@@ -321,24 +322,33 @@ namespace Palet_Programlama.Sayfalar
             var seciliProgram = ListBoxProgramlar.SelectedItem as ProgramKayitModel;
             if (seciliProgram == null)
             {
-                MessageBox.Show("Lütfen silmek için bir program seçiniz.", "Uyarı", MessageBoxButton.OK, MessageBoxImage.Warning);
+                var uyari = new BildirimKutusu();
+                uyari.MesajGonder("MesajKutusu.tamam", "Lütfen silmek için bir program seçiniz.");
+                uyari.ShowDialog();
                 return;
             }
 
-            var sonuc = MessageBox.Show(
-                $"'{seciliProgram.ProgramAdi}' isimli program silinsin mi?",
-                "Program Sil",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Question);
+            var onayKutusu = new OnayKutusu
+            {
+                Owner = Window.GetWindow(this)
+            };
 
-            if (sonuc != MessageBoxResult.Yes)
+            onayKutusu.MesajGonder(
+                $"'{seciliProgram.ProgramAdi}' programını silmek istediğinizden emin misiniz?",
+                "Evet",
+                "Hayır");
+
+            bool? sonuc = onayKutusu.ShowDialog();
+            if (sonuc != true || !onayKutusu.OnaylandiMi)
                 return;
 
             bool silindi = _programListeServisi.ProgramSil(seciliProgram.Id);
 
             if (!silindi)
             {
-                MessageBox.Show("Program silinemedi.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);
+                var hata = new BildirimKutusu();
+                hata.MesajGonder("MesajKutusu.tamam", "Program silinemedi.");
+                hata.ShowDialog();
                 return;
             }
 
@@ -346,7 +356,9 @@ namespace Palet_Programlama.Sayfalar
             BilgileriTemizle();
             CanvasiTemizle();
 
-            MessageBox.Show("Program başarıyla silindi.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
+            var bilgi = new BildirimKutusu();
+            bilgi.MesajGonder("MesajKutusu.tamam", "Program başarıyla silindi.");
+            bilgi.ShowDialog();
         }
 
         private void BilgileriTemizle()

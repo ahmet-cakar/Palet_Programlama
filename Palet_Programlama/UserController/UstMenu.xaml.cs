@@ -80,8 +80,6 @@ namespace Palet_Programlama.Sayfalar
 
        
 
-       
-
         private void BtnOnceki_Click(object sender, RoutedEventArgs e)
         {
             if (BtnOnceki.Tag is not string sayfaKodu)

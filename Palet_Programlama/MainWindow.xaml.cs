@@ -56,16 +56,17 @@ namespace Palet_Programlama
                 MainFrame.RenderTransform = transform;
             }
 
-            var ease = new CubicEase
+            var ease = new QuarticEase
             {
-                EasingMode = EasingMode.EaseInOut
+                
+                EasingMode = EasingMode.EaseOut
             };
 
             var cikisAnim = new DoubleAnimation
             {
                 From = 0,
                 To = solaDogru ? mesafe : -mesafe,
-                Duration = TimeSpan.FromMilliseconds(320),
+                Duration = TimeSpan.FromMilliseconds(200),
                 EasingFunction = ease
             };
 

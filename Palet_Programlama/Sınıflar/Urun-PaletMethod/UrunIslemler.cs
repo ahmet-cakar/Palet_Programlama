@@ -47,6 +47,14 @@ namespace Palet_Programlama.Sınıflar
             DosyaYaz(UrunListesi);
         }
 
+
+        public Urun UrunGetir(string UrunAdi)
+        {
+            UrunListesi = UrunListesiniGetir();
+            return UrunListesi.FirstOrDefault(u => u.UrunAdi == UrunAdi);
+        }
+
+
         private List<Urun> DosyaOku()
         {
             if (!File.Exists(dosyaYolu)) return new List<Urun>();

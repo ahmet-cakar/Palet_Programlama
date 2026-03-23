@@ -58,5 +58,11 @@ namespace Palet_Programlama.Sınıflar
             string json = JsonConvert.SerializeObject(PaletListesi, Formatting.Indented);
             File.WriteAllText(dosyaYolu, json);
         }
+
+        public Palet PaletGetir(string PaletAdi)
+        {
+            PaletListesi = PaletListesiniGetir();
+            return PaletListesi.FirstOrDefault(u => u.PaletAdi == PaletAdi);
+        }
     }
 }

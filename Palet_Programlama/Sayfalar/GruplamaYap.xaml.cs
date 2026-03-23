@@ -78,6 +78,7 @@ namespace Palet_Programlama.Sayfalar
             InitializeComponent();
 
             MainFrame = Main;
+            UstMenuControl.AktifSayfa = "GruplamaYap";
             _secilenUrun = secilenUrun;
             _secilenPalet = secilenPalet;
             _gelenDizilimAdi = dizilimAdi;

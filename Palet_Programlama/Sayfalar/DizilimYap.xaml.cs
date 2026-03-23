@@ -61,6 +61,8 @@ namespace Palet_Programlama.Sayfalar
         {
             InitializeComponent();
             this.MainFrame = Main;
+            
+            UstMenuControl.AktifSayfa = "DizilimYap";
             _secilenPalet = secilenPalet;
             _secilenUrun = secilenUrun;
             txtUrunOzellikleri.Text = $"{_secilenUrun.UrunAdi} - {_secilenUrun.UrunEn} mm x {_secilenUrun.UrunBoy} mm x {_secilenUrun.UrunYukseklik} mm";

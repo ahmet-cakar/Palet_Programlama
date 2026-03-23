@@ -51,6 +51,7 @@ namespace Palet_Programlama.Sayfalar
             InitializeComponent();
             MainFrame = Main;
 
+            UstMenuControl.AktifSayfa = "Programlar";
             _dizilimKayitlari = _dizilimKayitServisi.KayitlariYukle();
             ProgramlariYukle();
         }

@@ -14,6 +14,7 @@ namespace Palet_Programlama.Sayfalar
         public HizAyarları(Frame Main)
         {
             InitializeComponent();
+            UstMenuControl.AktifSayfa = "HizAyarlari";
             InitializePercentageTextBoxes();
             this.MainFrame = Main;
         }

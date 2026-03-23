@@ -1,6 +1,10 @@
 ﻿using Palet_Programlama.Sayfalar;
 using Palet_Programlama.Sınıflar;
+using System;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace Palet_Programlama
 {
@@ -19,6 +23,13 @@ namespace Palet_Programlama
 
 
         }
+        public void SayfayaGit(Page yeniSayfa)
+        {
+            if (yeniSayfa == null)
+                return;
+
+            MainFrame.Content = yeniSayfa;
+        }
 
         public void YukleniyorGoster(string mesaj = "Yükleniyor...")
         {
@@ -28,6 +39,53 @@ namespace Palet_Programlama
         public void YukleniyorGizle()
         {
             LoadingOverlayControl.Gizle();
+        }
+
+        public void SayfayaKayarakGit(Page yeniSayfa, bool solaDogru)
+        {
+            if (yeniSayfa == null)
+                return;
+
+            double mesafe = MainFrame.ActualWidth;
+            if (mesafe <= 0)
+                mesafe = 1400;
+
+            if (MainFrame.RenderTransform is not TranslateTransform transform)
+            {
+                transform = new TranslateTransform();
+                MainFrame.RenderTransform = transform;
+            }
+
+            var ease = new CubicEase
+            {
+                EasingMode = EasingMode.EaseInOut
+            };
+
+            var cikisAnim = new DoubleAnimation
+            {
+                From = 0,
+                To = solaDogru ? mesafe : -mesafe,
+                Duration = TimeSpan.FromMilliseconds(320),
+                EasingFunction = ease
+            };
+
+            cikisAnim.Completed += (s, e) =>
+            {
+                MainFrame.Content = yeniSayfa;
+                transform.X = solaDogru ? -mesafe : mesafe;
+
+                var girisAnim = new DoubleAnimation
+                {
+                    From = -transform.X,
+                    To = 0,
+                    Duration = TimeSpan.FromMilliseconds(320),
+                    EasingFunction = ease
+                };
+
+                transform.BeginAnimation(TranslateTransform.XProperty, girisAnim);
+            };
+
+            transform.BeginAnimation(TranslateTransform.XProperty, cikisAnim);
         }
 
     }

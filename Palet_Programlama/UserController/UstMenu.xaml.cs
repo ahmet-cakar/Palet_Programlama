@@ -1,157 +1,211 @@
 ﻿using Palet_Programlama.UserController;
+using System;
+using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Input;
-
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace Palet_Programlama.Sayfalar
 {
-    /// <summary>
-    /// Interaction logic for UstMenu.xaml
-    /// </summary>
-    public partial class UstMenu : System.Windows.Controls.UserControl
+    public partial class UstMenu : UserControl
     {
-        private bool _isMouseDown = false;
-        private Point _startPoint;
-        private double _scrollStartOffset;
+        private readonly List<MenuSayfaItem> _sayfalar = new()
+        {
+            new MenuSayfaItem("1-Ürün/Palet Ekle", "UrunEkle"),
+            new MenuSayfaItem("2-Dizilim Oluştur", "DizilimYap"),
+            new MenuSayfaItem("3-Hız Ayarları", "HizAyarlari"),
+            new MenuSayfaItem("4-Gruplama Oluştur", "GruplamaYap"),
+            new MenuSayfaItem("5-Programlar", "Programlar"),
+            new MenuSayfaItem("6-Alarmlar", "Alarmlar"),
+            new MenuSayfaItem("7-İzleme", "Izleme"),
+            new MenuSayfaItem("8-Komut", "Komut")
+        };
+
+      
+
+        private string _aktifSayfa = "UrunEkle";
+
+        public string AktifSayfa
+        {
+            get => _aktifSayfa;
+            set => _aktifSayfa = value;
+        }
 
         public UstMenu()
         {
             InitializeComponent();
+            Loaded += UstMenu_Loaded;
         }
 
-        private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        private void UstMenu_Loaded(object sender, RoutedEventArgs e)
         {
-            // Fare tekerleği ile kaydırma işlemi
-            if (e.Delta > 0)  // Yukarı kaydırma
-            {
-                myScrollViewer.ScrollToHorizontalOffset(myScrollViewer.HorizontalOffset - 50);
-            }
-            else  // Aşağı kaydırma
-            {
-                myScrollViewer.ScrollToHorizontalOffset(myScrollViewer.HorizontalOffset + 50);
-            }
-
-            e.Handled = true;  // Varsayılan kaydırmayı durdur
+            MenuyuHazirla();
         }
 
-        private void myScrollViewer_MouseDown(object sender, MouseButtonEventArgs e)
+        private void MenuyuHazirla()
         {
-            // Fare basılı tutulduğunda işlem başlar
-            _isMouseDown = true;
-            _startPoint = e.GetPosition(this);  // Başlangıç pozisyonunu al
-            _scrollStartOffset = myScrollViewer.HorizontalOffset;  // O anki kaydırma noktasını al
-            myScrollViewer.CaptureMouse();  // Fareyi yakala
+            int aktifIndex = _sayfalar.FindIndex(x => x.SayfaKodu == AktifSayfa);
+            if (aktifIndex < 0)
+                aktifIndex = 0;
+
+            MenuSayfaItem onceki = aktifIndex > 0 ? _sayfalar[aktifIndex - 1] : null;
+            MenuSayfaItem mevcut = _sayfalar[aktifIndex];
+            MenuSayfaItem sonraki = aktifIndex < _sayfalar.Count - 1 ? _sayfalar[aktifIndex + 1] : null;
+
+            BtnOnceki.Content = onceki?.Baslik ?? "";
+            BtnOnceki.Tag = onceki?.SayfaKodu;
+            BtnOnceki.Visibility = onceki == null ? Visibility.Hidden : Visibility.Visible;
+
+            BtnMevcut.Content = mevcut.Baslik;
+            BtnMevcut.Tag = mevcut.SayfaKodu;
+            BtnMevcut.Visibility = Visibility.Visible;
+
+            BtnSonraki.Content = sonraki?.Baslik ?? "";
+            BtnSonraki.Tag = sonraki?.SayfaKodu;
+            BtnSonraki.Visibility = sonraki == null ? Visibility.Hidden : Visibility.Visible;
+
+            BtnOnceki.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#CFCFCF"));
+            BtnOnceki.FontWeight = FontWeights.Normal;
+            BtnOnceki.FontSize = 22;
+
+            BtnMevcut.Foreground = Brushes.White;
+            BtnMevcut.FontWeight = FontWeights.Bold;
+            BtnMevcut.FontSize = 26;
+
+            BtnSonraki.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#CFCFCF"));
+            BtnSonraki.FontWeight = FontWeights.Normal;
+            BtnSonraki.FontSize = 22;
         }
 
-        private void myScrollViewer_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (_isMouseDown)
-            {
-                // Fare hareket ettikçe kaydırma yapılır
-                var currentPoint = e.GetPosition(this);
-                double diff = currentPoint.X - _startPoint.X;  // Ne kadar hareket ettiğini hesapla
+       
 
-                // Kaydırıcıyı yeni pozisyona taşır
-                myScrollViewer.ScrollToHorizontalOffset(_scrollStartOffset - diff);
-            }
-        }
+       
 
-        private void myScrollViewer_MouseUp(object sender, MouseButtonEventArgs e)
+        private void BtnOnceki_Click(object sender, RoutedEventArgs e)
         {
-            // Fare bırakıldığında kaydırmayı bitir
-            _isMouseDown = false;
-            myScrollViewer.ReleaseMouseCapture();
-        }
+            if (BtnOnceki.Tag is not string sayfaKodu)
+                return;
 
-        private void UrunEklePageBtn_Click(object sender, RoutedEventArgs e)
-        {
-            var mainWindow = Application.Current.MainWindow as MainWindow;
-            if (mainWindow != null)
-            {
-                // Frame'in içeriğini değiştirme 
-                mainWindow.MainFrame.Content = new UrunEkle(mainWindow.MainFrame);
-            }
-        }
+            Page hedefSayfa = HedefSayfayiHazirla(sayfaKodu);
+            if (hedefSayfa == null)
+                return;
 
-        private void DizilimPageBtn_Click(object sender, RoutedEventArgs e)
-        {
             var mainWindow = Application.Current.MainWindow as MainWindow;
             if (mainWindow == null)
                 return;
 
-            var urunler = mainWindow.UrunIslemler.UrunListesiniGetir();
-            var paletler = mainWindow.PaletIslemler.PaletListesiniGetir();
+            mainWindow.SayfayaKayarakGit(hedefSayfa, true);
+        }
 
-            UrunPaletSecimKutusu secimKutusu = new UrunPaletSecimKutusu(urunler, paletler, "( Dizilim zorunlu değil.)");
-            bool? sonuc = secimKutusu.ShowDialog();
+        private void BtnSonraki_Click(object sender, RoutedEventArgs e)
+        {
+            if (BtnSonraki.Tag is not string sayfaKodu)
+                return;
 
-            if (sonuc == true)
+            Page hedefSayfa = HedefSayfayiHazirla(sayfaKodu);
+            if (hedefSayfa == null)
+                return;
+
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow == null)
+                return;
+
+            mainWindow.SayfayaKayarakGit(hedefSayfa, false);
+        }
+
+        private Page HedefSayfayiHazirla(string sayfaKodu)
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow == null)
+                return null;
+
+            switch (sayfaKodu)
             {
-                if (secimKutusu.SecilenUrun != null && secimKutusu.SecilenPalet != null)
-                {
-                    mainWindow.MainFrame.Content = new DizilimYap(mainWindow.MainFrame, secimKutusu.SecilenUrun, secimKutusu.SecilenPalet, secimKutusu.SecilenDizilimAdi);
-                }
+                case "UrunEkle":
+                    return new UrunEkle(mainWindow.MainFrame);
+
+                case "DizilimYap":
+                    {
+                        var urunler = mainWindow.UrunIslemler.UrunListesiniGetir();
+                        var paletler = mainWindow.PaletIslemler.PaletListesiniGetir();
+
+                        var secimKutusu = new UrunPaletSecimKutusu(urunler, paletler, "( Dizilim zorunlu değil.)");
+                        bool? sonuc = secimKutusu.ShowDialog();
+
+                        if (sonuc == true &&
+                            secimKutusu.SecilenUrun != null &&
+                            secimKutusu.SecilenPalet != null)
+                        {
+                            return new DizilimYap(
+                                mainWindow.MainFrame,
+                                secimKutusu.SecilenUrun,
+                                secimKutusu.SecilenPalet,
+                                secimKutusu.SecilenDizilimAdi);
+                        }
+
+                        return null;
+                    }
+
+                case "HizAyarlari":
+                    return new HizAyarları(mainWindow.MainFrame);
+
+                case "GruplamaYap":
+                    {
+                        var urunler = mainWindow.UrunIslemler.UrunListesiniGetir();
+                        var paletler = mainWindow.PaletIslemler.PaletListesiniGetir();
+
+                        var secimKutusu = new UrunPaletSecimKutusu(urunler, paletler, "(* Zorunlu)");
+                        bool? sonuc = secimKutusu.ShowDialog();
+
+                        if (sonuc == true &&
+                            secimKutusu.SecilenUrun != null &&
+                            secimKutusu.SecilenPalet != null)
+                        {
+                            return new GruplamaYap(
+                                mainWindow.MainFrame,
+                                secimKutusu.SecilenUrun,
+                                secimKutusu.SecilenPalet,
+                                secimKutusu.SecilenDizilimAdi);
+                        }
+
+                        return null;
+                    }
+
+                case "Programlar":
+                    return new Programlar(mainWindow.MainFrame);
+
+                default:
+                    return null;
             }
         }
 
+
+    
         private void AnasayfaBtn_Click(object sender, RoutedEventArgs e)
         {
             var mainWindow = Application.Current.MainWindow as MainWindow;
             if (mainWindow != null)
-            {
-                // Frame'in içeriğini değiştirme 
-                mainWindow.MainFrame.Content = new Anasayfa(mainWindow.MainFrame);
-            }
+                mainWindow.SayfayaGit(new Anasayfa(mainWindow.MainFrame));
         }
 
         private void LogOutBtn_Click(object sender, RoutedEventArgs e)
         {
             var mainWindow = Application.Current.MainWindow as MainWindow;
             if (mainWindow != null)
-            {
-                // Frame'in içeriğini değiştirme 
-                mainWindow.MainFrame.Content = new Kullanici(mainWindow.MainFrame);
-            }
+                mainWindow.SayfayaGit(new Kullanici(mainWindow.MainFrame));
         }
+    }
 
-        private void hizayarlari_Click(object sender, RoutedEventArgs e)
+    public class MenuSayfaItem
+    {
+        public string Baslik { get; set; }
+        public string SayfaKodu { get; set; }
+
+        public MenuSayfaItem(string baslik, string sayfaKodu)
         {
-            var mainWindow = Application.Current.MainWindow as MainWindow;
-            if (mainWindow != null)
-            {
-                // Frame'in içeriğini değiştirme 
-                mainWindow.MainFrame.Content = new HizAyarları(mainWindow.MainFrame);
-            }
-        }
-        private void ProgramPageBtn_Click(object sender, RoutedEventArgs e)
-        {
-            var mainWindow = Application.Current.MainWindow as MainWindow;
-            if (mainWindow != null)
-            {
-                // Frame'in içeriğini değiştirme 
-                mainWindow.MainFrame.Content = new Programlar(mainWindow.MainFrame);
-            }
-        }
-
-
-
-        private void Gruplama_Click(object sender, RoutedEventArgs e)
-        {
-            var mainWindow = Application.Current.MainWindow as MainWindow;
-            var urunler = mainWindow.UrunIslemler.UrunListesiniGetir();
-            var paletler = mainWindow.PaletIslemler.PaletListesiniGetir();
-
-            UrunPaletSecimKutusu secimKutusu = new UrunPaletSecimKutusu(urunler, paletler, "(* Zorunlu)");
-            bool? sonuc = secimKutusu.ShowDialog();
-
-            if (sonuc == true)
-            {
-                if (secimKutusu.SecilenUrun != null && secimKutusu.SecilenPalet != null)
-                {
-                    mainWindow.MainFrame.Content = new GruplamaYap(mainWindow.MainFrame, secimKutusu.SecilenUrun, secimKutusu.SecilenPalet, secimKutusu.SecilenDizilimAdi);
-                }
-            }
-
+            Baslik = baslik;
+            SayfaKodu = sayfaKodu;
         }
     }
 }

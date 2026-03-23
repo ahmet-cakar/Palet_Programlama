@@ -29,6 +29,7 @@ namespace Palet_Programlama.Sayfalar
             placeholders = new List<TextBlock> { phUrunAdi, phUrunEn, phUrunBoy, phUrunYukseklik, phUrunAgirlik, phUrunBasinc, phPaletAdi, phPaletEn, phPaletBoy, phPaletYukseklik };
             this.MainFrame = Main;
             this.Loaded += Page_Loaded;
+            UstMenuControl.AktifSayfa = "UrunEkle";
         }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {

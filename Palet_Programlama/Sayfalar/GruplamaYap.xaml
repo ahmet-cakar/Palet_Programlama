@@ -23,7 +23,7 @@
     <!-- Header item control başlangıç -->
     <Grid Grid.Row="0">
       <Border VerticalAlignment="Center">
-        <local:UstMenu Margin="0,5,0,0"/>
+        <local:UstMenu x:Name="UstMenuControl" Margin="0,5,0,0"/>
       </Border>
     </Grid>
     <!-- Header item control bitiş -->

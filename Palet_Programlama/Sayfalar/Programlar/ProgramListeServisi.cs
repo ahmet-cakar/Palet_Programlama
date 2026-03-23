@@ -35,5 +35,26 @@ namespace Palet_Programlama.Sayfalar.ProgramlarSayfasi
                 .OrderBy(x => x.ProgramAdi)
                 .ToList();
         }
+
+        public bool ProgramSil(int programId)
+        {
+            string yol = DosyaYoluBul.DosyaGetir("Data", "Programlar.json");
+
+            if (!File.Exists(yol))
+                return false;
+
+            var kayitlar = KayitlariYukle();
+            var silinecekKayit = kayitlar.FirstOrDefault(x => x.Id == programId);
+
+            if (silinecekKayit == null)
+                return false;
+
+            kayitlar.Remove(silinecekKayit);
+
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(kayitlar, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(yol, json);
+
+            return true;
+        }
     }
 }

@@ -230,7 +230,6 @@
       }
     ]
   },
-
   {
     "Id": 4,
     "ProgramAdi": "deneme",
@@ -1068,2519 +1067,1678 @@
       }
     ]
   },
-    {
-        "Id": 5,
-        "ProgramAdi": "deneme",
-        "Aciklama": "iaşsdfasd",
-        "UrunAdi": "Yumoş 220 ML",
-        "PaletAdi": "EURO-PALET",
-        "DizilimAdi": "Deneme_23",
-        "OlusturmaTarihi": "03.18.2026 02:58 ÖS",
-        "Gruplar": [
-            {
-                "KatNo": 1,
-                "GrupNo": 1,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 1,
-                "GrupNo": 2,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 1,
-                "GrupNo": 3,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 1,
-                "GrupNo": 4,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 2,
-                "GrupNo": 4,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 2,
-                "GrupNo": 5,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 2,
-                "GrupNo": 6,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 2,
-                "GrupNo": 7,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 3,
-                "GrupNo": 7,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 300.0,
-                "GrupMerkezZ": 600.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 600.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 3,
-                "GrupNo": 8,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 800.0,
-                "GrupMerkezZ": 600.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 600.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 3,
-                "GrupNo": 9,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 200.0,
-                "GrupMerkezZ": 600.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 600.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 3,
-                "GrupNo": 10,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 700.0,
-                "GrupMerkezZ": 600.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 600.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 4,
-                "GrupNo": 10,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 300.0,
-                "GrupMerkezZ": 800.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 800.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 4,
-                "GrupNo": 11,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 800.0,
-                "GrupMerkezZ": 800.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 800.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 4,
-                "GrupNo": 12,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 800.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 800.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 4,
-                "GrupNo": 13,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 800.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 800.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 5,
-                "GrupNo": 13,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 1000.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1000.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 5,
-                "GrupNo": 14,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 1000.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1000.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 5,
-                "GrupNo": 15,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 300.0,
-                "GrupMerkezZ": 1000.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1000.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 5,
-                "GrupNo": 16,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 800.0,
-                "GrupMerkezZ": 1000.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1000.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 6,
-                "GrupNo": 17,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 1200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 6,
-                "GrupNo": 18,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 1200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 6,
-                "GrupNo": 19,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 1200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 6,
-                "GrupNo": 20,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 1200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 7,
-                "GrupNo": 20,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 1400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 7,
-                "GrupNo": 21,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 1400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 7,
-                "GrupNo": 22,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 300.0,
-                "GrupMerkezZ": 1400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 7,
-                "GrupNo": 23,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 800.0,
-                "GrupMerkezZ": 1400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1400.0
-                    }
-                ]
-            }
+  {
+    "Id": 5,
+    "ProgramAdi": "deneme",
+    "Aciklama": "iaşsdfasd",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET",
+    "DizilimAdi": "Deneme_23",
+    "OlusturmaTarihi": "03.18.2026 02:58 ÖS",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 200.0
+          }
         ]
-    }
-    ,
-    {
-        "Id": 6,
-        "ProgramAdi": "deneme",
-        "Aciklama": "iaşsdfasd",
-        "UrunAdi": "Yumoş 220 ML",
-        "PaletAdi": "EURO-PALET",
-        "DizilimAdi": "Deneme_23",
-        "OlusturmaTarihi": "03.18.2026 02:58 ÖS",
-        "Gruplar": [
-            {
-                "KatNo": 1,
-                "GrupNo": 1,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 1,
-                "GrupNo": 2,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 1,
-                "GrupNo": 3,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 1,
-                "GrupNo": 4,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 2,
-                "GrupNo": 4,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 2,
-                "GrupNo": 5,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 2,
-                "GrupNo": 6,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 2,
-                "GrupNo": 7,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 3,
-                "GrupNo": 7,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 300.0,
-                "GrupMerkezZ": 600.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 600.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 3,
-                "GrupNo": 8,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 800.0,
-                "GrupMerkezZ": 600.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 600.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 3,
-                "GrupNo": 9,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 200.0,
-                "GrupMerkezZ": 600.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 600.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 3,
-                "GrupNo": 10,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 700.0,
-                "GrupMerkezZ": 600.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 600.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 4,
-                "GrupNo": 10,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 300.0,
-                "GrupMerkezZ": 800.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 800.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 4,
-                "GrupNo": 11,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 800.0,
-                "GrupMerkezZ": 800.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 800.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 4,
-                "GrupNo": 12,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 800.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 800.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 4,
-                "GrupNo": 13,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 800.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 800.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 5,
-                "GrupNo": 13,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 1000.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1000.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 5,
-                "GrupNo": 14,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 1000.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1000.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 5,
-                "GrupNo": 15,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 300.0,
-                "GrupMerkezZ": 1000.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1000.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 5,
-                "GrupNo": 16,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 800.0,
-                "GrupMerkezZ": 1000.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1000.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 6,
-                "GrupNo": 17,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 1200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 6,
-                "GrupNo": 18,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 1200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 6,
-                "GrupNo": 19,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 1200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 6,
-                "GrupNo": 20,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 1200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 7,
-                "GrupNo": 20,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 1400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 7,
-                "GrupNo": 21,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 1400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 7,
-                "GrupNo": 22,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 300.0,
-                "GrupMerkezZ": 1400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 7,
-                "GrupNo": 23,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 800.0,
-                "GrupMerkezZ": 1400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1400.0
-                    }
-                ]
-            }
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 200.0
+          }
         ]
-    }
-
-    ,
-    {
-        "Id": 7,
-        "ProgramAdi": "deneme",
-        "Aciklama": "iaşsdfasd",
-        "UrunAdi": "Yumoş 220 ML",
-        "PaletAdi": "EURO-PALET",
-        "DizilimAdi": "Deneme_23",
-        "OlusturmaTarihi": "03.18.2026 02:58 ÖS",
-        "Gruplar": [
-            {
-                "KatNo": 1,
-                "GrupNo": 1,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 1,
-                "GrupNo": 2,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 1,
-                "GrupNo": 3,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 1,
-                "GrupNo": 4,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 2,
-                "GrupNo": 4,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 2,
-                "GrupNo": 5,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 2,
-                "GrupNo": 6,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 2,
-                "GrupNo": 7,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 3,
-                "GrupNo": 7,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 300.0,
-                "GrupMerkezZ": 600.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 600.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 3,
-                "GrupNo": 8,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 800.0,
-                "GrupMerkezZ": 600.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 600.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 3,
-                "GrupNo": 9,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 200.0,
-                "GrupMerkezZ": 600.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 600.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 3,
-                "GrupNo": 10,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 700.0,
-                "GrupMerkezZ": 600.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 600.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 600.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 4,
-                "GrupNo": 10,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 300.0,
-                "GrupMerkezZ": 800.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 800.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 4,
-                "GrupNo": 11,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 800.0,
-                "GrupMerkezZ": 800.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 800.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 4,
-                "GrupNo": 12,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 800.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 800.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 800.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 4,
-                "GrupNo": 13,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 800.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 800.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 5,
-                "GrupNo": 13,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 1000.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1000.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 5,
-                "GrupNo": 14,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 1000.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1000.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 5,
-                "GrupNo": 15,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 300.0,
-                "GrupMerkezZ": 1000.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1000.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 5,
-                "GrupNo": 16,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 800.0,
-                "GrupMerkezZ": 1000.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1000.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1000.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 6,
-                "GrupNo": 17,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 1200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 6,
-                "GrupNo": 18,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 1200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 6,
-                "GrupNo": 19,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 1200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1200.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 6,
-                "GrupNo": 20,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 1200.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1200.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 7,
-                "GrupNo": 20,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 400.0,
-                "GrupMerkezZ": 1400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 4,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 7,
-                "GrupNo": 21,
-                "GrupMerkezX": 150.0,
-                "GrupMerkezY": 900.0,
-                "GrupMerkezZ": 1400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 1,
-                "Urunler": [
-                    {
-                        "MerkezX": 150.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 7,
-                "GrupNo": 22,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 300.0,
-                "GrupMerkezZ": 1400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 3,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 100.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 300.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 500.0,
-                        "MerkezZ": 1400.0
-                    }
-                ]
-            },
-            {
-                "KatNo": 7,
-                "GrupNo": 23,
-                "GrupMerkezX": 450.0,
-                "GrupMerkezY": 800.0,
-                "GrupMerkezZ": 1400.0,
-                "GripperAyarlari": {
-                    "KayitEdildiMi": true,
-                    "GripperAcisi": 180,
-                    "OffsetX": 0,
-                    "OffsetY": 0
-                },
-                "Yon": 0,
-                "UrunSayisi": 2,
-                "Urunler": [
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 700.0,
-                        "MerkezZ": 1400.0
-                    },
-                    {
-                        "MerkezX": 450.0,
-                        "MerkezY": 900.0,
-                        "MerkezZ": 1400.0
-                    }
-                ]
-            }
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 200.0
+          }
         ]
-    }
-
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 4,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 4,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 5,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 6,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 7,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 3,
+        "GrupNo": 7,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 300.0,
+        "GrupMerkezZ": 600.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 3,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 600.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 600.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 600.0
+          }
+        ]
+      },
+      {
+        "KatNo": 3,
+        "GrupNo": 8,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 800.0,
+        "GrupMerkezZ": 600.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 2,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 600.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 600.0
+          }
+        ]
+      },
+      {
+        "KatNo": 3,
+        "GrupNo": 9,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 200.0,
+        "GrupMerkezZ": 600.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 2,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 600.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 600.0
+          }
+        ]
+      },
+      {
+        "KatNo": 3,
+        "GrupNo": 10,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 700.0,
+        "GrupMerkezZ": 600.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 3,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 600.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 600.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 600.0
+          }
+        ]
+      },
+      {
+        "KatNo": 4,
+        "GrupNo": 10,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 300.0,
+        "GrupMerkezZ": 800.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 3,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 800.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 800.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 800.0
+          }
+        ]
+      },
+      {
+        "KatNo": 4,
+        "GrupNo": 11,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 800.0,
+        "GrupMerkezZ": 800.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 2,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 800.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 800.0
+          }
+        ]
+      },
+      {
+        "KatNo": 4,
+        "GrupNo": 12,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 800.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 800.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 800.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 800.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 800.0
+          }
+        ]
+      },
+      {
+        "KatNo": 4,
+        "GrupNo": 13,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 800.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 800.0
+          }
+        ]
+      },
+      {
+        "KatNo": 5,
+        "GrupNo": 13,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 1000.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 1000.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 1000.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 1000.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 1000.0
+          }
+        ]
+      },
+      {
+        "KatNo": 5,
+        "GrupNo": 14,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 1000.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 1000.0
+          }
+        ]
+      },
+      {
+        "KatNo": 5,
+        "GrupNo": 15,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 300.0,
+        "GrupMerkezZ": 1000.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 3,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 1000.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 1000.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 1000.0
+          }
+        ]
+      },
+      {
+        "KatNo": 5,
+        "GrupNo": 16,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 800.0,
+        "GrupMerkezZ": 1000.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 2,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 1000.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 1000.0
+          }
+        ]
+      },
+      {
+        "KatNo": 6,
+        "GrupNo": 17,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 1200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 1200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 1200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 1200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 1200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 6,
+        "GrupNo": 18,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 1200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 1200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 6,
+        "GrupNo": 19,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 1200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 1200.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 1200.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 1200.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 1200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 6,
+        "GrupNo": 20,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 1200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 1200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 7,
+        "GrupNo": 20,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 1400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 1400.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 1400.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 1400.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 1400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 7,
+        "GrupNo": 21,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 1400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 1400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 7,
+        "GrupNo": 22,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 300.0,
+        "GrupMerkezZ": 1400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 3,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 1400.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 1400.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 1400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 7,
+        "GrupNo": 23,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 800.0,
+        "GrupMerkezZ": 1400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 2,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 1400.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 1400.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "ProgramAdi": "deneme",
+    "Aciklama": "iaşsdfasd",
+    "UrunAdi": "Yumoş 220 ML",
+    "PaletAdi": "EURO-PALET",
+    "DizilimAdi": "Deneme_23",
+    "OlusturmaTarihi": "03.18.2026 02:58 ÖS",
+    "Gruplar": [
+      {
+        "KatNo": 1,
+        "GrupNo": 1,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 2,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 3,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 200.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 1,
+        "GrupNo": 4,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 4,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 5,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 6,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 400.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 2,
+        "GrupNo": 7,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 3,
+        "GrupNo": 7,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 300.0,
+        "GrupMerkezZ": 600.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 3,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 600.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 600.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 600.0
+          }
+        ]
+      },
+      {
+        "KatNo": 3,
+        "GrupNo": 8,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 800.0,
+        "GrupMerkezZ": 600.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 2,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 600.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 600.0
+          }
+        ]
+      },
+      {
+        "KatNo": 3,
+        "GrupNo": 9,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 200.0,
+        "GrupMerkezZ": 600.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 2,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 600.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 600.0
+          }
+        ]
+      },
+      {
+        "KatNo": 3,
+        "GrupNo": 10,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 700.0,
+        "GrupMerkezZ": 600.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 3,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 600.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 600.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 600.0
+          }
+        ]
+      },
+      {
+        "KatNo": 4,
+        "GrupNo": 10,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 300.0,
+        "GrupMerkezZ": 800.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 3,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 800.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 800.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 800.0
+          }
+        ]
+      },
+      {
+        "KatNo": 4,
+        "GrupNo": 11,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 800.0,
+        "GrupMerkezZ": 800.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 2,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 800.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 800.0
+          }
+        ]
+      },
+      {
+        "KatNo": 4,
+        "GrupNo": 12,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 800.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 800.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 800.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 800.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 800.0
+          }
+        ]
+      },
+      {
+        "KatNo": 4,
+        "GrupNo": 13,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 800.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 800.0
+          }
+        ]
+      },
+      {
+        "KatNo": 5,
+        "GrupNo": 13,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 1000.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 1000.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 1000.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 1000.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 1000.0
+          }
+        ]
+      },
+      {
+        "KatNo": 5,
+        "GrupNo": 14,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 1000.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 1000.0
+          }
+        ]
+      },
+      {
+        "KatNo": 5,
+        "GrupNo": 15,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 300.0,
+        "GrupMerkezZ": 1000.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 3,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 1000.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 1000.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 1000.0
+          }
+        ]
+      },
+      {
+        "KatNo": 5,
+        "GrupNo": 16,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 800.0,
+        "GrupMerkezZ": 1000.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 2,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 1000.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 1000.0
+          }
+        ]
+      },
+      {
+        "KatNo": 6,
+        "GrupNo": 17,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 1200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 1200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 1200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 1200.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 1200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 6,
+        "GrupNo": 18,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 1200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 1200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 6,
+        "GrupNo": 19,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 1200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 1200.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 1200.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 1200.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 1200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 6,
+        "GrupNo": 20,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 1200.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 1200.0
+          }
+        ]
+      },
+      {
+        "KatNo": 7,
+        "GrupNo": 20,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 400.0,
+        "GrupMerkezZ": 1400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 4,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 1400.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 1400.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 1400.0
+          },
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 1400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 7,
+        "GrupNo": 21,
+        "GrupMerkezX": 150.0,
+        "GrupMerkezY": 900.0,
+        "GrupMerkezZ": 1400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 1,
+        "Urunler": [
+          {
+            "MerkezX": 150.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 1400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 7,
+        "GrupNo": 22,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 300.0,
+        "GrupMerkezZ": 1400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 3,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 100.0,
+            "MerkezZ": 1400.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 300.0,
+            "MerkezZ": 1400.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 500.0,
+            "MerkezZ": 1400.0
+          }
+        ]
+      },
+      {
+        "KatNo": 7,
+        "GrupNo": 23,
+        "GrupMerkezX": 450.0,
+        "GrupMerkezY": 800.0,
+        "GrupMerkezZ": 1400.0,
+        "GripperAyarlari": {
+          "KayitEdildiMi": true,
+          "GripperAcisi": 180,
+          "OffsetX": 0,
+          "OffsetY": 0
+        },
+        "Yon": 0,
+        "UrunSayisi": 2,
+        "Urunler": [
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 700.0,
+            "MerkezZ": 1400.0
+          },
+          {
+            "MerkezX": 450.0,
+            "MerkezY": 900.0,
+            "MerkezZ": 1400.0
+          }
+        ]
+      }
+    ]
+  }
 ]

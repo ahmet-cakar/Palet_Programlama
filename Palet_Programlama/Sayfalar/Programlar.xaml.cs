@@ -316,5 +316,67 @@ namespace Palet_Programlama.Sayfalar
         {
         }
 
+        private void BtnProgramSil_Click(object sender, RoutedEventArgs e)
+        {
+            var seciliProgram = ListBoxProgramlar.SelectedItem as ProgramKayitModel;
+            if (seciliProgram == null)
+            {
+                MessageBox.Show("Lütfen silmek için bir program seçiniz.", "Uyarı", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            var sonuc = MessageBox.Show(
+                $"'{seciliProgram.ProgramAdi}' isimli program silinsin mi?",
+                "Program Sil",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            if (sonuc != MessageBoxResult.Yes)
+                return;
+
+            bool silindi = _programListeServisi.ProgramSil(seciliProgram.Id);
+
+            if (!silindi)
+            {
+                MessageBox.Show("Program silinemedi.", "Hata", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            ProgramlariYukle();
+            BilgileriTemizle();
+            CanvasiTemizle();
+
+            MessageBox.Show("Program başarıyla silindi.", "Bilgi", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void BilgileriTemizle()
+        {
+            txtProgramAdi.Text = "Program Seçilmedi";
+            txtProgramAdi.ToolTip = "Program Seçilmedi";
+            txtProgramID.Text = "Seçilmedi";
+
+            txtUrunAdi.Text = "Ürün Seçilmedi";
+            txtUrunAdi.ToolTip = "Ürün Seçilmedi";
+            txtUrunGenislik.Text = "-";
+            txtUrunUzunluk.Text = "-";
+            txtUrunBasinc.Text = "-";
+            txtUrunYukseklik.Text = "-";
+            txtUrunAgirlik.Text = "-";
+
+            txtPaletAdi.Text = "Palet Seçilmedi";
+            txtPaletAdi.ToolTip = "Palet Seçilmedi";
+            txtPaletGenislik.Text = "-";
+            txtPaletUzunluk.Text = "-";
+            txtPaletYukseklik.Text = "-";
+
+            _seciliProgramKaydi = null;
+            urun = null;
+            palet = null;
+        }
+
+        private void BtnProgramBaslat_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

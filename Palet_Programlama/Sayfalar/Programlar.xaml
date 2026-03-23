@@ -296,19 +296,19 @@
                 <StackPanel VerticalAlignment="Top">
 
 
-                  <Button FontSize="24"
+                  <Button x:Name="BtnProgramSil" FontSize="24"
                                             Width="240"
                                             Margin="0,80,0,0"
                                             Content="{Binding Source='global.btnsil',Converter={StaticResource LanguageConverter}}"
                                             Background="{StaticResource button_background}"
-                                            Style="{StaticResource button_template}"/>
+                                            Style="{StaticResource button_template}" Click="BtnProgramSil_Click"/>
 
-                  <Button FontSize="24"
+                  <Button x:Name="BtnProgramBaslat" FontSize="24"
                                             Width="240"
                                             Margin="0,20,0,0"
                                             Content="{Binding Source='Program.btnCalistir',Converter={StaticResource LanguageConverter}}"
                                             Background="{DynamicResource button_backgroundgreen}"
-                                            Style="{StaticResource button_template}"/>
+                                            Style="{StaticResource button_template}" Click="BtnProgramBaslat_Click"/>
                 </StackPanel>
               </Grid>
             </Grid>

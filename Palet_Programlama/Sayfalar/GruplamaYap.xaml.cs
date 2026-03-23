@@ -35,7 +35,7 @@ namespace Palet_Programlama.Sayfalar
         private readonly GrupGorsellestirmeServisi _gorsellestirmeServisi = new();
         private readonly GrupKuralServisi _kuralServisi = new();
         private readonly ProgramKayitServisi _programKayitServisi = new();
-
+        private readonly GruplamaYuklemeServisi _yuklemeServisi = new();
         private readonly ObservableCollection<GruplamaListeItemModel> _gruplamaListesi = new();
         private readonly Dictionary<string, GrupGripperAyarlari> _grupAyarKayitlari = new();
         private readonly List<Rect> _tiklananDigerKutular = new();
@@ -94,15 +94,40 @@ namespace Palet_Programlama.Sayfalar
 
             try
             {
+                GruplamaYuklemeModel yuklemeModel = null;
+
                 YuklemeModundaCalistir(() =>
                 {
-                    _dizilimKayitlari = _dizilimKayitServisi.KayitlariYukle();
-                    IlkVerileriHazirla();
-                    ComboBoxlariDoldurIlkAcilisIcin();
+                    yuklemeModel = _yuklemeServisi.IlkAcilisVerisiniHazirla(
+                        _secilenUrun,
+                        _secilenPalet,
+                        _gelenDizilimAdi);
+
+                    _dizilimKayitlari = yuklemeModel.DizilimKayitlari;
+                    _programKayitlari = yuklemeModel.ProgramKayitlari;
+
+                    CboxUrunListesi.ItemsSource = yuklemeModel.UrunAdlari;
+                    CboxUrunListesi.SelectedItem = yuklemeModel.SeciliUrunAdi;
+
+                    CboxDizilimListesi.ItemsSource = yuklemeModel.DizilimAdlari.Any()
+                        ? yuklemeModel.DizilimAdlari
+                        : null;
+
+                    if (!string.IsNullOrWhiteSpace(yuklemeModel.SeciliDizilimAdi))
+                        CboxDizilimListesi.SelectedItem = yuklemeModel.SeciliDizilimAdi;
+                    else if (CboxDizilimListesi.Items.Count > 0)
+                        CboxDizilimListesi.SelectedIndex = 0;
+
+                    txtPaletOzellikleri.Text = yuklemeModel.PaletOzellikMetni;
+
+                    var programListe = new List<string> { ProgramSecinizMetni };
+                    programListe.AddRange(yuklemeModel.ProgramAdlari);
+
+                    CboxProgramListesi.ItemsSource = programListe;
+                    CboxProgramListesi.SelectedIndex = 0;
                 });
 
                 SeciliDizilimiCanvasaYukle();
-                ProgramlariGuncelSecimeGoreDoldur();
                 ProgramSeciminiSifirla(false);
             }
             finally
@@ -110,83 +135,8 @@ namespace Palet_Programlama.Sayfalar
                 YukleniyorGizle();
             }
         }
-
-        private void IlkVerileriHazirla()
-        {
-            if (string.IsNullOrWhiteSpace(_gelenDizilimAdi))
-            {
-                txtPaletOzellikleri.Text = _bilgiServisi.PaletMetniUret(_secilenPalet);
-                return;
-            }
-
-            var gelenKayit = _dizilimKayitServisi.GelenKaydiBul(
-                _dizilimKayitlari,
-                _secilenUrun?.UrunAdi ?? "",
-                _gelenDizilimAdi ?? "");
-
-            if (gelenKayit == null)
-            {
-                txtPaletOzellikleri.Text = _bilgiServisi.PaletMetniUret(_secilenPalet);
-                return;
-            }
-
-            KayitBilgileriniUygula(gelenKayit);
-        }
-
-        private void ComboBoxlariDoldurIlkAcilisIcin()
-        {
-            UrunleriDoldur();
-            UrunSeciminiUygula();
-
-            DizilimleriDoldur(_secilenUrun?.UrunAdi ?? "");
-            DizilimSeciminiUygula();
-        }
-
-        private void UrunleriDoldur()
-        {
-            CboxUrunListesi.ItemsSource = _dizilimKayitServisi.UrunAdlariniGetir(_dizilimKayitlari);
-        }
-
-        private void DizilimleriDoldur(string urunAdi)
-        {
-            var dizilimAdlari = _dizilimKayitServisi.UruneGoreDizilimAdlariniGetir(_dizilimKayitlari, urunAdi);
-            CboxDizilimListesi.ItemsSource = dizilimAdlari.Any() ? dizilimAdlari : null;
-        }
-
-        private void UrunSeciminiUygula()
-        {
-            var urunAdlari = CboxUrunListesi.ItemsSource as IEnumerable<string>;
-            if (urunAdlari == null)
-                return;
-
-            if (!string.IsNullOrWhiteSpace(_secilenUrun?.UrunAdi) &&
-                urunAdlari.Contains(_secilenUrun.UrunAdi))
-            {
-                CboxUrunListesi.SelectedItem = _secilenUrun.UrunAdi;
-                return;
-            }
-
-            if (CboxUrunListesi.Items.Count > 0)
-                CboxUrunListesi.SelectedIndex = 0;
-        }
-
-        private void DizilimSeciminiUygula()
-        {
-            var dizilimler = CboxDizilimListesi.ItemsSource as IEnumerable<string>;
-            if (dizilimler == null)
-                return;
-
-            if (!string.IsNullOrWhiteSpace(_gelenDizilimAdi) &&
-                dizilimler.Contains(_gelenDizilimAdi))
-            {
-                CboxDizilimListesi.SelectedItem = _gelenDizilimAdi;
-                return;
-            }
-
-            if (CboxDizilimListesi.Items.Count > 0)
-                CboxDizilimListesi.SelectedIndex = 0;
-        }
-
+      
+     
         private string SeciliUrunAdiniGetir()
         {
             return CboxUrunListesi.SelectedItem?.ToString() ?? _secilenUrun?.UrunAdi ?? "";
@@ -230,7 +180,7 @@ namespace Palet_Programlama.Sayfalar
 
         private DizilimKayitModel SeciliKaydiGetir()
         {
-            return _dizilimKayitServisi.KayitBul(
+            return _yuklemeServisi.SeciliKaydiGetir(
                 _dizilimKayitlari,
                 CboxUrunListesi.SelectedItem?.ToString() ?? "",
                 CboxDizilimListesi.SelectedItem?.ToString() ?? "");
@@ -238,10 +188,9 @@ namespace Palet_Programlama.Sayfalar
 
         private void KayitBilgileriniUygula(DizilimKayitModel kayit)
         {
-            _gelenDizilimAdi = kayit.DizilimAdi;
-            _bilgiServisi.UrunBilgisiniUygula(_secilenUrun, kayit);
-            _bilgiServisi.PaletBilgisiniUygula(_secilenPalet, kayit);
-            txtPaletOzellikleri.Text = _bilgiServisi.PaletMetniUret(kayit);
+            _gelenDizilimAdi = kayit?.DizilimAdi;
+            _yuklemeServisi.KayitBilgileriniUygula(_secilenUrun, _secilenPalet, kayit);
+            txtPaletOzellikleri.Text = _yuklemeServisi.PaletMetniGetir(_secilenPalet, kayit);
         }
 
         private void SeciliDizilimiCanvasaYukle()
@@ -402,19 +351,18 @@ namespace Palet_Programlama.Sayfalar
 
             string seciliUrunAdi = CboxUrunListesi.SelectedItem.ToString();
 
-            var urunKaydi = _dizilimKayitlari.FirstOrDefault(x =>
-                string.Equals((x.UrunAdi ?? "").Trim(), seciliUrunAdi.Trim(), StringComparison.OrdinalIgnoreCase));
-
-            if (urunKaydi != null)
-                _bilgiServisi.UrunBilgisiniUygula(_secilenUrun, urunKaydi);
-
             _gelenDizilimAdi = null;
             GrupDurumunuTemizle();
             ProgramSeciminiSifirla(true);
 
+            var dizilimAdlari = _yuklemeServisi.UrunDegisimindeDizilimleriHazirla(
+                _dizilimKayitlari,
+                seciliUrunAdi,
+                _secilenUrun);
+
             YuklemeModundaCalistir(() =>
             {
-                DizilimleriDoldur(seciliUrunAdi);
+                CboxDizilimListesi.ItemsSource = dizilimAdlari.Any() ? dizilimAdlari : null;
             });
 
             if (CboxDizilimListesi.Items.Count > 0)
@@ -422,7 +370,6 @@ namespace Palet_Programlama.Sayfalar
             else
                 CanvasiTemizle();
         }
-
         private void CboxDizilimListesi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (_sayfaYukleniyor || CboxDizilimListesi.SelectedItem == null)

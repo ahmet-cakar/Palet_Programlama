@@ -73,6 +73,7 @@
     <Compile Include="Sayfalar\Gruplama\Models\GrupGripperAyarlari.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\GrupKuraliSonucu.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\GruplamaListeItemModel.cs" />
+    <Compile Include="Sayfalar\Gruplama\Models\GruplamaYuklemeModel.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\ProgramGrupModel.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\ProgramKaydetGirdiModel.cs" />
     <Compile Include="Sayfalar\Gruplama\Models\ProgramKayitModel.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Sayfalar\Gruplama\Services\GrupKuralServisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Services\GruplamaBilgiServisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Services\GruplamaSecimServisi.cs" />
+    <Compile Include="Sayfalar\Gruplama\Services\GruplamaYuklemeServisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Services\KatGecisServisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Services\ProgramKayitServisi.cs" />
     <Compile Include="Sayfalar\HizAyarları.xaml.cs">

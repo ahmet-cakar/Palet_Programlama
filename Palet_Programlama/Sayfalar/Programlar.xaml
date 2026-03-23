@@ -162,8 +162,7 @@
                             </Grid>
                             <Grid Grid.Column="1">
                                 <StackPanel Orientation="Vertical">
-                                    <Button FontSize="24"   Content="{Binding Source='Program.btnrecededuzen',Converter={StaticResource LanguageConverter}}" Width="240" 
-                                Background="{StaticResource button_background}" Style="{StaticResource button_template}" Click="recededuzenle_Click" />
+                                    
                                     <TextBlock HorizontalAlignment="Right"  Style="{StaticResource textblock_template_urunekle}" Text="Program ID:" Margin="0,100,50,0" FontSize="25"/>
                                     <TextBlock HorizontalAlignment="Right"  Style="{StaticResource textblock_template_urunekle}" Text="3454" Margin="0,20,90,0" FontSize="25"/>
                                     <Button FontSize="24"   Content="{Binding Source='Program.btnCalistir',Converter={StaticResource LanguageConverter}}" Width="240" Margin="0,100,0,0"
@@ -209,11 +208,15 @@
                                    Source="pack://application:,,,/Resimler/DizilimYap/referans_eksenler.png"/>
                             </StackPanel>
                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"  >
-                            <Image Margin="-137,95,0,0"
-                                MaxHeight="600"
-                                MaxWidth="600"
-                                Source="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
-                        </StackPanel>
+                            <Canvas Name="canvasPalet"
+                              Width="600"
+                              Height="400"
+                              >
+                              <Canvas.Background>
+                                <ImageBrush ImageSource="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
+                              </Canvas.Background>
+                            </Canvas>
+                          </StackPanel>
                         </StackPanel>
                     </Border>
                     <Border Style="{StaticResource border_template_urunekle}" Width="100" Height="685" Margin="835,10,0,0">

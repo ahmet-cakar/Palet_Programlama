@@ -12,12 +12,8 @@ namespace Palet_Programlama.Sayfalar
         public Programlar(Frame Main)
         {
             InitializeComponent();
-            this.MainFrame = Main;
+            MainFrame = Main;
         }
-        private void recededuzenle_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(new ReceteDuzenle());
 
-        }
     }
 }

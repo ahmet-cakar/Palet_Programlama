@@ -440,7 +440,8 @@
       </Border>
       <!--Urun dizme alanı başlangıç-->
       <Border CornerRadius="20" Margin="5,10,35,10"  Grid.Column="1"   Background="#191919">
-        <Grid>
+       
+       <Grid>
           <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="6*"/>
@@ -476,6 +477,7 @@
           </Border>
 
         </Grid>
+      
       </Border>
       <!--Urun dizme alanı başlangıç-->
 

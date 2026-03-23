@@ -92,6 +92,7 @@
     <Compile Include="Sayfalar\Programlar.xaml.cs">
       <DependentUpon>Programlar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sayfalar\Programlar\ProgramListeServisi.cs" />
     <Compile Include="Sayfalar\ReceteDuzenle.xaml.cs">
       <DependentUpon>ReceteDuzenle.xaml</DependentUpon>
     </Compile>

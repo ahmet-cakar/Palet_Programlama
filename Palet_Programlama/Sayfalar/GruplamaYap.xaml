@@ -402,7 +402,8 @@
                     </DataTemplate>
                   </ListBox.ItemTemplate>
                 </ListBox>
-              </Grid>
+             
+             </Grid>
 
               <!-- Sağ taraf butonlar -->
               <StackPanel Grid.Column="2"

@@ -1,0 +1,39 @@
+﻿using Newtonsoft.Json;
+using Palet_Programlama.Sayfalar.Gruplama.Models;
+using Palet_Programlama.Sınıflar;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+namespace Palet_Programlama.Sayfalar.ProgramlarSayfasi
+{
+    public sealed class ProgramListeServisi
+    {
+        private const string KlasorAdi = "Data";
+        private const string DosyaAdi = "Programlar.json";
+
+        public List<ProgramKayitModel> KayitlariYukle()
+        {
+            string yol = DosyaYoluBul.DosyaGetir(KlasorAdi, DosyaAdi);
+
+            if (!File.Exists(yol))
+                return new List<ProgramKayitModel>();
+
+            string json = File.ReadAllText(yol);
+
+            if (string.IsNullOrWhiteSpace(json))
+                return new List<ProgramKayitModel>();
+
+            return JsonConvert.DeserializeObject<List<ProgramKayitModel>>(json)
+                   ?? new List<ProgramKayitModel>();
+        }
+
+        public List<ProgramKayitModel> ProgramlariGetir()
+        {
+            return KayitlariYukle()
+                .Where(x => !string.IsNullOrWhiteSpace(x.ProgramAdi))
+                .OrderBy(x => x.ProgramAdi)
+                .ToList();
+        }
+    }
+}

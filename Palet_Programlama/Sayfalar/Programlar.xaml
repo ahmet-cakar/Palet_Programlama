@@ -129,7 +129,7 @@
                 <!--Mevcut Program Listesi Kısımı-->
                 <Grid Grid.Row="1">
                     
-                    <Border Style="{StaticResource border_template_urunekle}" Width="900" Height="490" Margin="50,15,0,0">
+                    <Border Style="{StaticResource border_template_urunekle}" Width="900" Height="510" Margin="50,15,0,0">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -138,33 +138,81 @@
                             <Grid Grid.Column="0">
                                 <StackPanel Orientation="Vertical">
                                     <TextBlock Text="{Binding Source='Program.listtext',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" 
-                                               FontSize="25" Margin="15,5,0,0"></TextBlock>
-                                    <ListBox Background="Transparent" BorderThickness="0"  Height="400" Margin="-60,0,0,0" Width="350">
-                                        <ListBox.ItemsPanel>
-                                            <ItemsPanelTemplate>
-                                                <StackPanel />
-                                            </ItemsPanelTemplate>
-                                        </ListBox.ItemsPanel>
+                                               FontSize="25" Margin="15,5,0,30"></TextBlock>
+                  <ListBox x:Name="ListBoxProgramlar"
+                     Background="Transparent"
+                     BorderThickness="0"
+                     Height="400"
+                     Margin="-60,0,0,0"
+                     Width="350"
+                     HorizontalContentAlignment="Stretch"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     SelectionChanged="ListBoxProgramlar_SelectionChanged">
 
-                                        <ListBox.ItemContainerStyle>
-                                            <Style TargetType="ListBoxItem">
-                                                <Setter Property="Margin" Value="0,20,0,0" />
-                                                <Setter Property="Foreground" Value="White" />
-                                                <Setter Property="FontSize" Value="18" />
-                                            </Style>
-                                        </ListBox.ItemContainerStyle>
+                    <ListBox.ItemsPanel>
+                      <ItemsPanelTemplate>
+                        <StackPanel />
+                      </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
 
-                                        <ListBoxItem Content="X Programı"/>
-                                        <ListBoxItem Content="Y Programı"/>
-                                        <ListBoxItem Content="Z Programı"/>
-                                    </ListBox>
-                                </StackPanel>
+                    <ListBox.ItemContainerStyle>
+                      <Style TargetType="ListBoxItem">
+                        <Setter Property="Margin" Value="0,0,0,20"/>
+                        <Setter Property="Padding" Value="0"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                        <Setter Property="Template">
+                          <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                              <Border x:Name="ItemBorder"
+                                Background="#222222"
+                                BorderBrush="#303030"
+                                BorderThickness="1"
+                                CornerRadius="14"
+                                Padding="18,14">
+                                <ContentPresenter HorizontalAlignment="Stretch"
+                                              VerticalAlignment="Center"/>
+                              </Border>
+
+                              <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                  <Setter TargetName="ItemBorder" Property="Background" Value="#2A2A2A"/>
+                                  <Setter TargetName="ItemBorder" Property="BorderBrush" Value="#3A3A3A"/>
+                                </Trigger>
+
+                                <Trigger Property="IsSelected" Value="True">
+                                  <Setter TargetName="ItemBorder" Property="Background" Value="#4B5563"/>
+                                  <Setter TargetName="ItemBorder" Property="BorderBrush" Value="#9CA3AF"/>
+                                </Trigger>
+
+                                <Trigger Property="IsEnabled" Value="False">
+                                  <Setter TargetName="ItemBorder" Property="Opacity" Value="0.6"/>
+                                </Trigger>
+                              </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                          </Setter.Value>
+                        </Setter>
+                      </Style>
+                    </ListBox.ItemContainerStyle>
+
+                    <ListBox.ItemTemplate>
+                      <DataTemplate>
+                        <Grid>
+                          <TextBlock Foreground="White"
+                           FontSize="19"
+                           FontWeight="SemiBold"
+                           Text="{Binding ProgramAdi}"/>
+                        </Grid>
+                      </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                    
+                  </ListBox>
+                </StackPanel>
                             </Grid>
                             <Grid Grid.Column="1">
                                 <StackPanel Orientation="Vertical">
-                                    
-                                    <TextBlock HorizontalAlignment="Right"  Style="{StaticResource textblock_template_urunekle}" Text="Program ID:" Margin="0,100,50,0" FontSize="25"/>
-                                    <TextBlock HorizontalAlignment="Right"  Style="{StaticResource textblock_template_urunekle}" Text="3454" Margin="0,20,90,0" FontSize="25"/>
                                     <Button FontSize="24"   Content="{Binding Source='Program.btnCalistir',Converter={StaticResource LanguageConverter}}" Width="240" Margin="0,100,0,0"
                                     Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
                                     <Button FontSize="24"   Content="{Binding Source='global.btnsil',Converter={StaticResource LanguageConverter}}" Width="240" Margin="0,15,0,0"
@@ -183,31 +231,87 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <!--Program Notu Kısımı-->
-                <Grid Grid.Row="0">
-                    <Border Style="{StaticResource border_template_urunekle}" Width="930" Height="80" Margin="10,30,0,0">
-                        <StackPanel Orientation="Horizontal">
-                        <StackPanel>
-                            <TextBlock Text="{Binding Source='Program.not',Converter={StaticResource LanguageConverter}}"
-                                       Style="{StaticResource textblock_template_urunekle}" Margin="0,0,0,0"></TextBlock>
-                        </StackPanel>
-                        <StackPanel>
-                                <TextBlock Text="Bu Bir Test Programıdır."
-                                Style="{StaticResource textblock_template_urunekle}" Margin="10,0,0,0"></TextBlock>
-                        </StackPanel>
-                        </StackPanel>
-                    </Border>
-                </Grid>
-                <!--Dizilim Gösterme Kısımı-->
+        <Grid Grid.Row="0">
+          <Border Width="930"
+            Height="100"
+            Margin="10,30,0,0"
+            CornerRadius="18"
+            Background="#191919"
+            BorderBrush="#2B2B2B"
+            BorderThickness="1"
+            Padding="28,18">
+
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+              </Grid.ColumnDefinitions>
+
+              <!-- Program Adı -->
+              <TextBlock Grid.Column="0"
+                       VerticalAlignment="Center"
+                       Foreground="#E5E7EB"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Text="Program Adı ="/>
+              <TextBlock Grid.Column="1"
+             x:Name="txtProgramAdi"
+             Margin="4,0,0,0"
+             Text="Program Seçilmedi"
+             ToolTip="Program Seçilmedi"
+             VerticalAlignment="Center"
+             Foreground="White"
+             FontSize="20"
+             FontWeight="Normal"
+             TextTrimming="CharacterEllipsis"/> 
+
+              <!-- Ayraç -->
+              <Border Grid.Column="2"
+                    Width="1"
+                    Height="42"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="#3F3F46"/>
+
+              <!-- Program ID -->
+              <Grid Grid.Column="3">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="180"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                      
+                           VerticalAlignment="Center"
+                           Foreground="#E5E7EB"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Text="Program ID ="/>
+
+                <TextBlock Grid.Column="1"
+                           VerticalAlignment="Center"
+                           Foreground="White"
+                           FontSize="20"
+                           x:Name="txtProgramID"
+                           FontWeight="Normal"
+                           Text="Seçilmedi"/>
+              </Grid>
+            </Grid>
+          </Border>
+        </Grid>
+        <!--Dizilim Gösterme Kısımı-->
                 <Grid Grid.Row="1">
                     <Border Style="{StaticResource border_template_urunekle}" Width="810" Height="685" Margin="10,10,0,0">
                         <StackPanel Orientation="Horizontal">
-                            <StackPanel HorizontalAlignment="Left"  >
+                            <StackPanel>
                                 <Image  Margin="25,5,0,0"
-                                   MaxHeight="250"
-                                   MaxWidth="250"
+                                   MaxHeight="120"
+                                   MaxWidth="120"
                                    Source="pack://application:,,,/Resimler/DizilimYap/referans_eksenler.png"/>
                             </StackPanel>
-                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"  >
+                            <StackPanel VerticalAlignment="Center"  >
                             <Canvas Name="canvasPalet"
                               Width="600"
                               Height="400"

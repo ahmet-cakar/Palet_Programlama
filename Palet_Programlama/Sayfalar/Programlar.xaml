@@ -7,7 +7,7 @@
       xmlns:sınıflar="clr-namespace:Palet_Programlama.Sınıflar"
       mc:Ignorable="d"
       d:DesignHeight="768"
-      d:DesignWidth="1366"
+      d:DesignWidth="1900"
       Title="Programlar">
 
   <Page.Resources>
@@ -430,23 +430,23 @@
                                        FontSize="30"
                                        Text="{Binding Source='DizilimYap.txtKat',Converter={StaticResource LanguageConverter}}"/>
 
-              <Button x:Name="AnasayfaBtn"
+              <Button x:Name="BtnKatArti"
                                     Margin="0,120,0,0"
-                                    Style="{StaticResource transparan_button}">
+                                    Style="{StaticResource transparan_button}" Click="BtnKatArti_Click">
                 <Image MaxHeight="50"
                                        MaxWidth="50"
                                        Source="pack://application:,,,/Resimler/DizilimYap/yukari_icon.png"/>
               </Button>
 
-              <TextBlock Margin="0,20,0,0"
+              <TextBlock x:Name="txtKatValue" Margin="0,20,0,0"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Foreground="White"
                                        FontSize="30"
                                        Text="1"/>
 
-              <Button Margin="0,20,0,0"
-                                    Style="{StaticResource transparan_button}">
+              <Button x:Name="BtnKatEksi" Margin="0,20,0,0"
+                                    Style="{StaticResource transparan_button}" Click="BtnKatEksi_Click">
                 <Image MaxHeight="50"
                                        MaxWidth="50"
                                        Source="pack://application:,,,/Resimler/DizilimYap/asagi_icon.png"/>

@@ -91,19 +91,19 @@
     "btnkaydet": "Kaydet",
     "btnsil": "Sil"
   },
-  "Hiz": {
-    "v1": "Konum 1",
-    "v2": "Konum 2",
-    "v3": "Konum 3",
-    "v4": "Konum 4",
-    "v5": "Konum 5",
-    "v6": "Konum 6",
-    "v7": "Konum 7",
-    "v8": "Konum 8",
-    "v9": "Konum 9",
-    "v10": "Konum 10",
-    "v11": "Konum 11"
-  },
+    "Hiz": {
+        "v1": "V_50",
+        "v2": "V_51",
+        "v3": "V_52",
+        "v4": "V_53",
+        "v5": "V_54",
+        "v6": "V_55",
+        "v7": "V_56",
+        "v8": "V_57",
+        "v9": "V_58",
+        "v10": "V_59",
+        "v11": "V_60"
+    },
     "DizilimYap": {
         "urunozellik": "Ürün Özellikleri:  ",
         "paletozellik": "Palet Özellikleri:  ",

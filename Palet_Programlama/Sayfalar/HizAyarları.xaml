@@ -8,89 +8,198 @@
       mc:Ignorable="d" 
       d:DesignHeight="768" d:DesignWidth="1366"
       Title="HizAyarları">
-    <Page.Resources>
-        <sınıflar:LanguageConverter x:Key="LanguageConverter"/>
-    </Page.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+  <Page.Resources>
+    <sınıflar:LanguageConverter x:Key="LanguageConverter"/>
+  </Page.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid Grid.Row="0">
       <local:UstMenu x:Name="UstMenuControl" Margin="0,15,0,0"/>
-        </Grid>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <!--Hız TextBoxlar ve Border-->
-            <Grid Grid.Column="0">
-                <Border Style="{StaticResource border_template_urunekle}" Width="340" Height="780" Margin="45,30,0,0">
-                    <StackPanel Orientation="Vertical" Height="Auto">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Source='Hiz.v1',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
-                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" TextChanged="TextBox_TextChanged" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                            <TextBlock Text="{Binding Source='Hiz.v2',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
-                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top" TextChanged="TextBox_TextChanged"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                            <TextBlock Text="{Binding Source='Hiz.v3',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
-                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top" TextChanged="TextBox_TextChanged"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                            <TextBlock Text="{Binding Source='Hiz.v4',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
-                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top"  TextChanged="TextBox_TextChanged"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                            <TextBlock Text="{Binding Source='Hiz.v5',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
-                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top" TextChanged="TextBox_TextChanged"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                            <TextBlock Text="{Binding Source='Hiz.v6',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
-                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top" TextChanged="TextBox_TextChanged"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                            <TextBlock Text="{Binding Source='Hiz.v7',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
-                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top"  TextChanged="TextBox_TextChanged"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                            <TextBlock Text="{Binding Source='Hiz.v8',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,0,0,0" FontSize="20" Padding="15"/>
-                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top" TextChanged="TextBox_TextChanged"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                            <TextBlock Text="{Binding Source='Hiz.v9',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
-                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top" TextChanged="TextBox_TextChanged" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                            <TextBlock Text="{Binding Source='Hiz.v10',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
-                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top" Margin="10,0,0,0" TextChanged="TextBox_TextChanged"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                            <TextBlock Text="{Binding Source='Hiz.v11',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" FontSize="20" Padding="15"/>
-                            <TextBox Style="{StaticResource RoundedTextBoxHiz}" VerticalAlignment="Top" Margin="10,0,0,0" TextChanged="TextBox_TextChanged"/>
-                        </StackPanel>
-                    </StackPanel>
-                </Border>
-            </Grid>
-            <!--Hız Görsel ve Border-->
-            <Grid Grid.Column="1">
-                <Border Style="{StaticResource border_template_urunekle}" Width="1460" Margin="20,30,0,0" Height="780">
-                    <Image Source="pack://application:,,,/Resimler/Hiz/buble_referance.png"></Image>
-                </Border>
-                
-            </Grid>
-        </Grid>
-        <Grid Grid.Row="2">
-            <Border>
-                <StackPanel HorizontalAlignment="Left">
-                    <Button Style="{StaticResource button_template}" Height="45" Width="200"  Background="{StaticResource button_backgroundgreen}"
-                        Margin="50,20,0,0" Content="{Binding Source='global.btnkaydet',Converter={StaticResource LanguageConverter}}"/>
-                </StackPanel>
-            </Border>
-        </Grid>
     </Grid>
+    <Grid Grid.Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="Auto"/>
+      </Grid.ColumnDefinitions>
+      <!--Hız TextBoxlar ve Border-->
+      <Grid Grid.Column="0">
+        <Border Style="{StaticResource border_template_urunekle}" Width="340" Height="780" Margin="45,30,0,0">
+
+          <StackPanel Orientation="Vertical" Height="Auto">
+            <StackPanel Orientation="Horizontal">
+              <TextBlock Text="{Binding Source='Hiz.v1',Converter={StaticResource LanguageConverter}}"
+               Style="{StaticResource textblock_template_urunekle}"
+               FontSize="20"
+               Padding="15"/>
+              <TextBox Style="{StaticResource RoundedTextBoxHiz}"
+            Text="% 60"
+             Tag="V50"
+             GotFocus="HizTextBox_GotFocus"
+             TextChanged="TextBox_TextChanged" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+              <TextBlock Text="{Binding Source='Hiz.v2',Converter={StaticResource LanguageConverter}}"
+               Style="{StaticResource textblock_template_urunekle}"
+               FontSize="20"
+               Padding="15"/>
+              <TextBox Style="{StaticResource RoundedTextBoxHiz}"
+             Tag="V51"
+             Text="% 60"
+             GotFocus="HizTextBox_GotFocus"
+             TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+              <TextBlock Text="{Binding Source='Hiz.v3',Converter={StaticResource LanguageConverter}}"
+               Style="{StaticResource textblock_template_urunekle}"
+               FontSize="20"
+               Padding="15"/>
+              <TextBox Style="{StaticResource RoundedTextBoxHiz}"
+             Text="% 40"
+             Tag="V52"
+             GotFocus="HizTextBox_GotFocus"
+             TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+              <TextBlock Text="{Binding Source='Hiz.v4',Converter={StaticResource LanguageConverter}}"
+               Style="{StaticResource textblock_template_urunekle}"
+               FontSize="20"
+               Padding="15"/>
+              <TextBox Style="{StaticResource RoundedTextBoxHiz}"
+             Text="% 60"
+             Tag="V53"
+             GotFocus="HizTextBox_GotFocus"
+             TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+              <TextBlock  Text="{Binding Source='Hiz.v5',Converter={StaticResource LanguageConverter}}"
+               Style="{StaticResource textblock_template_urunekle}"
+               FontSize="20"
+               Padding="15"/>
+              <TextBox Style="{StaticResource RoundedTextBoxHiz}"
+             Text="% 60"
+             Tag="V54"
+             GotFocus="HizTextBox_GotFocus"
+             TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+              <TextBlock Text="{Binding Source='Hiz.v6',Converter={StaticResource LanguageConverter}}"
+               Style="{StaticResource textblock_template_urunekle}"
+               FontSize="20"
+               Padding="15"/>
+              <TextBox Style="{StaticResource RoundedTextBoxHiz}"
+             Tag="V55"
+             Text="% 80"
+             GotFocus="HizTextBox_GotFocus"
+             TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+              <TextBlock Text="{Binding Source='Hiz.v7',Converter={StaticResource LanguageConverter}}"
+               Style="{StaticResource textblock_template_urunekle}"
+               FontSize="20"
+               Padding="15"/>
+              <TextBox Style="{StaticResource RoundedTextBoxHiz}"
+             Tag="V56"
+             Text="% 80"
+             GotFocus="HizTextBox_GotFocus"
+             TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+              <TextBlock Text="{Binding Source='Hiz.v8',Converter={StaticResource LanguageConverter}}"
+               Style="{StaticResource textblock_template_urunekle}"
+               FontSize="20"
+               Padding="15"/>
+              <TextBox Style="{StaticResource RoundedTextBoxHiz}"
+             Tag="V57"
+             Text="% 40"
+             GotFocus="HizTextBox_GotFocus"
+             TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+              <TextBlock Text="{Binding Source='Hiz.v9',Converter={StaticResource LanguageConverter}}"
+               Style="{StaticResource textblock_template_urunekle}"
+               FontSize="20"
+               Padding="15"/>
+              <TextBox Style="{StaticResource RoundedTextBoxHiz}"
+             Tag="V58"
+             Text="% 60"
+             GotFocus="HizTextBox_GotFocus"
+             TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+              <TextBlock Text="{Binding Source='Hiz.v10',Converter={StaticResource LanguageConverter}}"
+               Style="{StaticResource textblock_template_urunekle}"
+               FontSize="20"
+               Padding="15"/>
+              <TextBox Style="{StaticResource RoundedTextBoxHiz}"
+             Tag="V59"
+             Text="% 80"
+             GotFocus="HizTextBox_GotFocus"
+             TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+              <TextBlock Text="{Binding Source='Hiz.v11',Converter={StaticResource LanguageConverter}}"
+               Style="{StaticResource textblock_template_urunekle}"
+               FontSize="20"
+               Padding="15"/>
+              <TextBox Style="{StaticResource RoundedTextBoxHiz}"
+             Tag="V60"
+             Text="% 80"
+             GotFocus="HizTextBox_GotFocus"
+             TextChanged="TextBox_TextChanged"/>
+            </StackPanel>
+          </StackPanel>
+       
+       </Border>
+      </Grid>
+      <!--Hız Görsel ve Border-->
+      <Grid Grid.Column="1">
+        <Border Style="{StaticResource border_template_urunekle}"
+            Width="1460"
+            Height="780"
+            Margin="20,30,0,0">
+          <Grid>
+            <Image Source="pack://application:,,,/Resimler/Hiz/buble_referance.png" Stretch="Fill"/>
+
+            <Canvas x:Name="OkCanvas" Background="Transparent"/>
+
+            <Canvas IsHitTestVisible="False">
+              <TextBlock Canvas.Top="220" Canvas.Left="220" Text="V_50" Foreground="White" FontSize="18"/>
+              <TextBlock Canvas.Top="350" Canvas.Left="220" Text="V_51" Foreground="White" FontSize="18"/>
+              <TextBlock Canvas.Top="470" Canvas.Left="300" Text="V_52" Foreground="White" FontSize="18"/>
+              <TextBlock Canvas.Top="450" Canvas.Left="450" Text="V_53" Foreground="White" FontSize="18"/>
+              <TextBlock Canvas.Top="330" Canvas.Left="450" Text="V_54" Foreground="White" FontSize="18"/>
+              <TextBlock Canvas.Top="230" Canvas.Left="685" Text="V_55" Foreground="White" FontSize="18"/>
+              <TextBlock Canvas.Top="320" Canvas.Left="940" Text="V_56" Foreground="White" FontSize="18"/>
+              <TextBlock Canvas.Top="460" Canvas.Left="1010" Text="V_57" Foreground="White" FontSize="18"/>
+              <TextBlock Canvas.Top="460" Canvas.Left="1150" Text="V_58" Foreground="White" FontSize="18"/>
+              <TextBlock Canvas.Top="280" Canvas.Left="1150" Text="V_59" Foreground="White" FontSize="18"/>
+              <TextBlock Canvas.Top="110" Canvas.Left="685" Text="V_60" Foreground="White" FontSize="18"/>
+            </Canvas>
+          </Grid>
+        </Border>
+      </Grid>
+    </Grid>
+    <Grid Grid.Row="2">
+      <Border>
+        <StackPanel HorizontalAlignment="Left">
+          <Button Style="{StaticResource button_template}" Height="45" Width="200"  Background="{StaticResource button_backgroundgreen}"
+                        Margin="50,20,0,0" Content="{Binding Source='global.btnkaydet',Converter={StaticResource LanguageConverter}}"/>
+        </StackPanel>
+      </Border>
+    </Grid>
+  </Grid>
 </Page>

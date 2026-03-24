@@ -3,7 +3,6 @@ using Palet_Programlama.Sayfalar.Gruplama.Helpers;
 using Palet_Programlama.Sayfalar.Gruplama.Models;
 using Palet_Programlama.Sayfalar.Gruplama.Services;
 using Palet_Programlama.Sayfalar.ProgramlarSayfasi;
-using Palet_Programlama.Servisler.PaletMethod;
 using Palet_Programlama.Sınıflar;
 using Palet_Programlama.UserController;
 using Servisler.PaletMethod;

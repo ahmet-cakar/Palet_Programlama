@@ -58,7 +58,6 @@ namespace Palet_Programlama
 
             var ease = new QuarticEase
             {
-                
                 EasingMode = EasingMode.EaseOut
             };
 

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Palet_Programlama.Sayfalar.HizAyarlari.Models;
+using Palet_Programlama.Sayfalar.HizAyarlari.Services;
+using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -17,9 +20,27 @@ namespace Palet_Programlama.Sayfalar
             InitializeComponent();
             UstMenuControl.AktifSayfa = "HizAyarlari";
             MainFrame = main;
-
             InitializePercentageTextBoxes();
             OkYollariniCiz();
+            HizVerileriniYukle();
+        }
+
+        private void HizVerileriniYukle()
+        {
+            var servis = new HizServisi();
+            HizVerileri veri = servis.HizVerileriniYukle();
+
+            if (veri.v50 > 0) TxtV50.Text = $"% {veri.v50}";
+            if (veri.v51 > 0) TxtV51.Text = $"% {veri.v51}";
+            if (veri.v52 > 0) TxtV52.Text = $"% {veri.v52}";
+            if (veri.v53 > 0) TxtV53.Text = $"% {veri.v53}";
+            if (veri.v54 > 0) TxtV54.Text = $"% {veri.v54}";
+            if (veri.v55 > 0) TxtV55.Text = $"% {veri.v55}";
+            if (veri.v56 > 0) TxtV56.Text = $"% {veri.v56}";
+            if (veri.v57 > 0) TxtV57.Text = $"% {veri.v57}";
+            if (veri.v58 > 0) TxtV58.Text = $"% {veri.v58}";
+            if (veri.v59 > 0) TxtV59.Text = $"% {veri.v59}";
+            if (veri.v60 > 0) TxtV60.Text = $"% {veri.v60}";
         }
 
         private void InitializePercentageTextBoxes()
@@ -192,7 +213,109 @@ namespace Palet_Programlama.Sayfalar
                 }
             }
         }
-    
-    
+
+        private void BtnHizKaydet_Click(object sender, RoutedEventArgs e)
+        {
+            if (!TextBoxDegeriGecerliMi(TxtV50) ||
+                !TextBoxDegeriGecerliMi(TxtV51) ||
+                !TextBoxDegeriGecerliMi(TxtV52) ||
+                !TextBoxDegeriGecerliMi(TxtV53) ||
+                !TextBoxDegeriGecerliMi(TxtV54) ||
+                !TextBoxDegeriGecerliMi(TxtV55) ||
+                !TextBoxDegeriGecerliMi(TxtV56) ||
+                !TextBoxDegeriGecerliMi(TxtV57) ||
+                !TextBoxDegeriGecerliMi(TxtV58) ||
+                !TextBoxDegeriGecerliMi(TxtV59) ||
+                !TextBoxDegeriGecerliMi(TxtV60))
+            {
+                MessageBox.Show("Tüm hız değerleri 0 ile 100 arasında olmalıdır.");
+                return;
+            }
+
+            var servis = new HizServisi();
+            var veri = HizVerileriniOlustur();
+
+            servis.HizVerileriniKaydet(veri);
+
+            MessageBox.Show("Hız ayarları kaydedildi.");
+        }
+
+        private void SadeceSayiGirisi_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = !Regex.IsMatch(e.Text, "^[0-9]+$");
+        }
+
+        private void SadeceSayiGirisi_Pasting(object sender, DataObjectPastingEventArgs e)
+        {
+            if (!e.DataObject.GetDataPresent(typeof(string)))
+            {
+                e.CancelCommand();
+                return;
+            }
+
+            string yapistirilanMetin = (string)e.DataObject.GetData(typeof(string));
+
+            if (!Regex.IsMatch(yapistirilanMetin, "^[0-9]+$"))
+            {
+                e.CancelCommand();
+            }
+        }
+
+        private bool TextBoxDegeriGecerliMi(TextBox textBox)
+        {
+            int deger = YuzdeDegeriniAl(textBox);
+            return deger >= 0 && deger <= 100;
+        }
+
+        private HizVerileri HizVerileriniOlustur()
+        {
+            return new HizVerileri
+            {
+                v50 = YuzdeDegeriniAl(TxtV50),
+                v51 = YuzdeDegeriniAl(TxtV51),
+                v52 = YuzdeDegeriniAl(TxtV52),
+                v53 = YuzdeDegeriniAl(TxtV53),
+                v54 = YuzdeDegeriniAl(TxtV54),
+                v55 = YuzdeDegeriniAl(TxtV55),
+                v56 = YuzdeDegeriniAl(TxtV56),
+                v57 = YuzdeDegeriniAl(TxtV57),
+                v58 = YuzdeDegeriniAl(TxtV58),
+                v59 = YuzdeDegeriniAl(TxtV59),
+                v60 = YuzdeDegeriniAl(TxtV60)
+            };
+        }
+
+        private int YuzdeDegeriniAl(TextBox textBox)
+        {
+            if (textBox == null || string.IsNullOrWhiteSpace(textBox.Text))
+                return 0;
+
+            string temizMetin = textBox.Text
+                .Replace("%", "")
+                .Trim();
+
+            return int.TryParse(temizMetin, out int sonuc) ? sonuc : 0;
+        }
+
+
+        private bool HizVerileriGecerliMi(HizVerileri veri)
+        {
+            return DegerGecerliMi(veri.v50)
+                && DegerGecerliMi(veri.v51)
+                && DegerGecerliMi(veri.v52)
+                && DegerGecerliMi(veri.v53)
+                && DegerGecerliMi(veri.v54)
+                && DegerGecerliMi(veri.v55)
+                && DegerGecerliMi(veri.v56)
+                && DegerGecerliMi(veri.v57)
+                && DegerGecerliMi(veri.v58)
+                && DegerGecerliMi(veri.v59)
+                && DegerGecerliMi(veri.v60);
+        }
+
+        private bool DegerGecerliMi(int deger)
+        {
+            return deger >= 0 && deger <= 100;
+        }
     }
 }

@@ -37,9 +37,13 @@
                Padding="15"/>
               <TextBox Style="{StaticResource RoundedTextBoxHiz}"
             Text="% 60"
+            x:Name="TxtV50"
+            MaxLength="5"
              Tag="V50"
              GotFocus="HizTextBox_GotFocus"
-             TextChanged="TextBox_TextChanged" />
+             TextChanged="TextBox_TextChanged"
+             PreviewTextInput="SadeceSayiGirisi_PreviewTextInput"
+         DataObject.Pasting="SadeceSayiGirisi_Pasting"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
@@ -49,9 +53,13 @@
                Padding="15"/>
               <TextBox Style="{StaticResource RoundedTextBoxHiz}"
              Tag="V51"
+             x:Name="TxtV51"
              Text="% 60"
+             MaxLength="5"
              GotFocus="HizTextBox_GotFocus"
-             TextChanged="TextBox_TextChanged"/>
+             TextChanged="TextBox_TextChanged"
+             PreviewTextInput="SadeceSayiGirisi_PreviewTextInput"
+         DataObject.Pasting="SadeceSayiGirisi_Pasting"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
@@ -62,8 +70,12 @@
               <TextBox Style="{StaticResource RoundedTextBoxHiz}"
              Text="% 40"
              Tag="V52"
+             MaxLength="5"
+             x:Name="TxtV52"
              GotFocus="HizTextBox_GotFocus"
-             TextChanged="TextBox_TextChanged"/>
+             TextChanged="TextBox_TextChanged"
+             PreviewTextInput="SadeceSayiGirisi_PreviewTextInput"
+         DataObject.Pasting="SadeceSayiGirisi_Pasting"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
@@ -74,8 +86,12 @@
               <TextBox Style="{StaticResource RoundedTextBoxHiz}"
              Text="% 60"
              Tag="V53"
+             MaxLength="5"
+             x:Name="TxtV53"
              GotFocus="HizTextBox_GotFocus"
-             TextChanged="TextBox_TextChanged"/>
+             TextChanged="TextBox_TextChanged"
+             PreviewTextInput="SadeceSayiGirisi_PreviewTextInput"
+         DataObject.Pasting="SadeceSayiGirisi_Pasting"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
@@ -86,8 +102,12 @@
               <TextBox Style="{StaticResource RoundedTextBoxHiz}"
              Text="% 60"
              Tag="V54"
+             MaxLength="5"
+             x:Name="TxtV54"
              GotFocus="HizTextBox_GotFocus"
-             TextChanged="TextBox_TextChanged"/>
+             TextChanged="TextBox_TextChanged"
+             PreviewTextInput="SadeceSayiGirisi_PreviewTextInput"
+         DataObject.Pasting="SadeceSayiGirisi_Pasting"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
@@ -97,9 +117,13 @@
                Padding="15"/>
               <TextBox Style="{StaticResource RoundedTextBoxHiz}"
              Tag="V55"
+             x:Name="TxtV55"
+             MaxLength="5"
              Text="% 80"
              GotFocus="HizTextBox_GotFocus"
-             TextChanged="TextBox_TextChanged"/>
+             TextChanged="TextBox_TextChanged"
+             PreviewTextInput="SadeceSayiGirisi_PreviewTextInput"
+         DataObject.Pasting="SadeceSayiGirisi_Pasting"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
@@ -109,9 +133,13 @@
                Padding="15"/>
               <TextBox Style="{StaticResource RoundedTextBoxHiz}"
              Tag="V56"
+             x:Name="TxtV56"
+             MaxLength="5"
              Text="% 80"
              GotFocus="HizTextBox_GotFocus"
-             TextChanged="TextBox_TextChanged"/>
+             TextChanged="TextBox_TextChanged"
+             PreviewTextInput="SadeceSayiGirisi_PreviewTextInput"
+         DataObject.Pasting="SadeceSayiGirisi_Pasting"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
@@ -121,9 +149,13 @@
                Padding="15"/>
               <TextBox Style="{StaticResource RoundedTextBoxHiz}"
              Tag="V57"
+             x:Name="TxtV57"
+             MaxLength="5"
              Text="% 40"
              GotFocus="HizTextBox_GotFocus"
-             TextChanged="TextBox_TextChanged"/>
+             TextChanged="TextBox_TextChanged"
+             PreviewTextInput="SadeceSayiGirisi_PreviewTextInput"
+         DataObject.Pasting="SadeceSayiGirisi_Pasting"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
@@ -134,8 +166,12 @@
               <TextBox Style="{StaticResource RoundedTextBoxHiz}"
              Tag="V58"
              Text="% 60"
+             MaxLength="5"
+             x:Name="TxtV58"
              GotFocus="HizTextBox_GotFocus"
-             TextChanged="TextBox_TextChanged"/>
+             TextChanged="TextBox_TextChanged"
+             PreviewTextInput="SadeceSayiGirisi_PreviewTextInput"
+         DataObject.Pasting="SadeceSayiGirisi_Pasting"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
@@ -145,9 +181,13 @@
                Padding="15"/>
               <TextBox Style="{StaticResource RoundedTextBoxHiz}"
              Tag="V59"
+             x:Name="TxtV59"
+             MaxLength="5"
              Text="% 80"
              GotFocus="HizTextBox_GotFocus"
-             TextChanged="TextBox_TextChanged"/>
+             TextChanged="TextBox_TextChanged"
+             PreviewTextInput="SadeceSayiGirisi_PreviewTextInput"
+         DataObject.Pasting="SadeceSayiGirisi_Pasting"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
@@ -158,8 +198,12 @@
               <TextBox Style="{StaticResource RoundedTextBoxHiz}"
              Tag="V60"
              Text="% 80"
+             x:Name="TxtV60"
+             MaxLength="5"
              GotFocus="HizTextBox_GotFocus"
-             TextChanged="TextBox_TextChanged"/>
+             TextChanged="TextBox_TextChanged"
+             PreviewTextInput="SadeceSayiGirisi_PreviewTextInput"
+         DataObject.Pasting="SadeceSayiGirisi_Pasting"/>
             </StackPanel>
           </StackPanel>
        
@@ -196,8 +240,8 @@
     <Grid Grid.Row="2">
       <Border>
         <StackPanel HorizontalAlignment="Left">
-          <Button Style="{StaticResource button_template}" Height="45" Width="200"  Background="{StaticResource button_backgroundgreen}"
-                        Margin="50,20,0,0" Content="{Binding Source='global.btnkaydet',Converter={StaticResource LanguageConverter}}"/>
+          <Button x:Name="BtnHizKaydet" Style="{StaticResource button_template}" Height="45" Width="200"  Background="{StaticResource button_backgroundgreen}"
+                        Margin="50,20,0,0" Content="{Binding Source='global.btnkaydet',Converter={StaticResource LanguageConverter}}" Click="BtnHizKaydet_Click"/>
         </StackPanel>
       </Border>
     </Grid>

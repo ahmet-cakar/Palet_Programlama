@@ -89,6 +89,8 @@
     <Compile Include="Sayfalar\Gruplama\Services\GruplamaYuklemeServisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Services\KatGecisServisi.cs" />
     <Compile Include="Sayfalar\Gruplama\Services\ProgramKayitServisi.cs" />
+    <Compile Include="Sayfalar\HizAyarlari\Models\HizVerileri.cs" />
+    <Compile Include="Sayfalar\HizAyarlari\Services\HizServisi.cs" />
     <Compile Include="Sayfalar\HizAyarları.xaml.cs">
       <DependentUpon>HizAyarları.xaml</DependentUpon>
     </Compile>
@@ -282,6 +284,7 @@
     <None Include="Data\Dizilimler.json">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Include="Data\HizAyarlari.json" />
     <None Include="Data\Paletler.json" />
     <None Include="Data\Programlar.json">
       <Generator>MSBuild:Compile</Generator>

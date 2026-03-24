@@ -1,10 +1,8 @@
 ﻿using Palet_Programlama.UserController;
-using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 
 namespace Palet_Programlama.Sayfalar
 {
@@ -14,18 +12,15 @@ namespace Palet_Programlama.Sayfalar
         {
             new MenuSayfaItem("1-Ürün/Palet Ekle", "UrunEkle"),
             new MenuSayfaItem("2-Dizilim Oluştur", "DizilimYap"),
-            new MenuSayfaItem("3-Hız Ayarları", "HizAyarlari"),
-            new MenuSayfaItem("4-Gruplama Oluştur", "GruplamaYap"),
-            new MenuSayfaItem("5-Programlar", "Programlar"),
+            new MenuSayfaItem("3-Gruplama Oluştur", "GruplamaYap"),
+            new MenuSayfaItem("4-Programlar", "Programlar"),
+            new MenuSayfaItem("5-Hız Ayarları", "HizAyarlari"),
             new MenuSayfaItem("6-Alarmlar", "Alarmlar"),
             new MenuSayfaItem("7-İzleme", "Izleme"),
             new MenuSayfaItem("8-Komut", "Komut")
         };
 
-      
-
         private string _aktifSayfa = "UrunEkle";
-
         public string AktifSayfa
         {
             get => _aktifSayfa;
@@ -77,8 +72,6 @@ namespace Palet_Programlama.Sayfalar
             BtnSonraki.FontWeight = FontWeights.Normal;
             BtnSonraki.FontSize = 22;
         }
-
-       
 
         private void BtnOnceki_Click(object sender, RoutedEventArgs e)
         {
@@ -178,8 +171,6 @@ namespace Palet_Programlama.Sayfalar
             }
         }
 
-
-    
         private void AnasayfaBtn_Click(object sender, RoutedEventArgs e)
         {
             var mainWindow = Application.Current.MainWindow as MainWindow;

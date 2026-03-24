@@ -243,7 +243,7 @@
                                        VerticalAlignment="Center"
                                        FontSize="24"
                                        Foreground="White"
-                                       Text="1"/>
+                                       Text="2"/>
 
               <Button Width="30" 
                                     Height="25"

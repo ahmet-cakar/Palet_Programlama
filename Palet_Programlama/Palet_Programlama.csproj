@@ -81,7 +81,7 @@
     <Compile Include="Screens\Gruplama\Models\ProgramKaydetGirdiModel.cs" />
     <Compile Include="Screens\Gruplama\Models\ProgramKayitModel.cs" />
     <Compile Include="Screens\Gruplama\Models\ProgramUrunModel.cs" />
-    <Compile Include="Screens\Gruplama\Services\DizilimKayitServisi.cs" />
+    <Compile Include="Screens\DizilimYap\Services\DizilimKayitServisi.cs" />
     <Compile Include="Screens\Gruplama\Services\GrupGorsellestirmeServisi.cs" />
     <Compile Include="Screens\Gruplama\Services\GrupKuralServisi.cs" />
     <Compile Include="Screens\Gruplama\Services\GruplamaBilgiServisi.cs" />

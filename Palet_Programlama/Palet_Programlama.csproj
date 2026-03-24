@@ -61,81 +61,81 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Enums\EklemeYonEnum.cs" />
-    <Compile Include="Modeller\DizilimKayitModel.cs" />
-    <Compile Include="Modeller\DizilimUrunKayitModel.cs" />
-    <Compile Include="Popuplar\OnayKutusu.xaml.cs">
+    <Compile Include="Screens\DizilimYap\Models\DizilimKayitModel.cs" />
+    <Compile Include="Screens\DizilimYap\Models\DizilimUrunKayitModel.cs" />
+    <Compile Include="Popups\OnayKutusu.xaml.cs">
       <DependentUpon>OnayKutusu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sayfalar\GruplamaYap.xaml.cs">
+    <Compile Include="Screens\GruplamaYap.xaml.cs">
       <DependentUpon>GruplamaYap.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sayfalar\Gruplama\Helpers\KoliGeometriYardimcisi.cs" />
-    <Compile Include="Sayfalar\Gruplama\Helpers\KoliYonYardimcisi.cs" />
+    <Compile Include="Screens\Gruplama\Helpers\KoliGeometriYardimcisi.cs" />
+    <Compile Include="Screens\Gruplama\Helpers\KoliYonYardimcisi.cs" />
     <Compile Include="Enums\GripperAcisiEnum.cs" />
-    <Compile Include="Sayfalar\Gruplama\Models\GrupAtamaBilgisi.cs" />
-    <Compile Include="Sayfalar\Gruplama\Models\GrupGripperAyarlari.cs" />
-    <Compile Include="Sayfalar\Gruplama\Models\GrupKuraliSonucu.cs" />
-    <Compile Include="Sayfalar\Gruplama\Models\GruplamaListeItemModel.cs" />
-    <Compile Include="Sayfalar\Gruplama\Models\GruplamaYuklemeModel.cs" />
-    <Compile Include="Sayfalar\Gruplama\Models\ProgramGrupModel.cs" />
-    <Compile Include="Sayfalar\Gruplama\Models\ProgramKaydetGirdiModel.cs" />
-    <Compile Include="Sayfalar\Gruplama\Models\ProgramKayitModel.cs" />
-    <Compile Include="Sayfalar\Gruplama\Models\ProgramUrunModel.cs" />
-    <Compile Include="Sayfalar\Gruplama\Services\DizilimKayitServisi.cs" />
-    <Compile Include="Sayfalar\Gruplama\Services\GrupGorsellestirmeServisi.cs" />
-    <Compile Include="Sayfalar\Gruplama\Services\GrupKuralServisi.cs" />
-    <Compile Include="Sayfalar\Gruplama\Services\GruplamaBilgiServisi.cs" />
-    <Compile Include="Sayfalar\Gruplama\Services\GruplamaSecimServisi.cs" />
-    <Compile Include="Sayfalar\Gruplama\Services\GruplamaYuklemeServisi.cs" />
-    <Compile Include="Sayfalar\Gruplama\Services\KatGecisServisi.cs" />
-    <Compile Include="Sayfalar\Gruplama\Services\ProgramKayitServisi.cs" />
-    <Compile Include="Sayfalar\HizAyarlari\Models\HizVerileri.cs" />
-    <Compile Include="Sayfalar\HizAyarlari\Services\HizServisi.cs" />
-    <Compile Include="Sayfalar\HizAyarları.xaml.cs">
+    <Compile Include="Screens\Gruplama\Models\GrupAtamaBilgisi.cs" />
+    <Compile Include="Screens\Gruplama\Models\GrupGripperAyarlari.cs" />
+    <Compile Include="Screens\Gruplama\Models\GrupKuraliSonucu.cs" />
+    <Compile Include="Screens\Gruplama\Models\GruplamaListeItemModel.cs" />
+    <Compile Include="Screens\Gruplama\Models\GruplamaYuklemeModel.cs" />
+    <Compile Include="Screens\Gruplama\Models\ProgramGrupModel.cs" />
+    <Compile Include="Screens\Gruplama\Models\ProgramKaydetGirdiModel.cs" />
+    <Compile Include="Screens\Gruplama\Models\ProgramKayitModel.cs" />
+    <Compile Include="Screens\Gruplama\Models\ProgramUrunModel.cs" />
+    <Compile Include="Screens\Gruplama\Services\DizilimKayitServisi.cs" />
+    <Compile Include="Screens\Gruplama\Services\GrupGorsellestirmeServisi.cs" />
+    <Compile Include="Screens\Gruplama\Services\GrupKuralServisi.cs" />
+    <Compile Include="Screens\Gruplama\Services\GruplamaBilgiServisi.cs" />
+    <Compile Include="Screens\Gruplama\Services\GruplamaSecimServisi.cs" />
+    <Compile Include="Screens\Gruplama\Services\GruplamaYuklemeServisi.cs" />
+    <Compile Include="Screens\Gruplama\Services\KatGecisServisi.cs" />
+    <Compile Include="Screens\Gruplama\Services\ProgramKayitServisi.cs" />
+    <Compile Include="Screens\HizAyarlari\Models\HizVerileri.cs" />
+    <Compile Include="Screens\HizAyarlari\Services\HizServisi.cs" />
+    <Compile Include="Screens\HizAyarları.xaml.cs">
       <DependentUpon>HizAyarları.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sayfalar\Programlar.xaml.cs">
+    <Compile Include="Screens\Programlar.xaml.cs">
       <DependentUpon>Programlar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sayfalar\Programlar\ProgramListeServisi.cs" />
-    <Compile Include="Sayfalar\ReceteDuzenle.xaml.cs">
+    <Compile Include="Screens\Programlar\ProgramListeServisi.cs" />
+    <Compile Include="Screens\ReceteDuzenle.xaml.cs">
       <DependentUpon>ReceteDuzenle.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Modeller\KatUrunu.cs" />
-    <Compile Include="Servisler\PaletMethod\KatYoneticisi.cs" />
-    <Compile Include="Servisler\PaletMethod\MesafeGostergesi.cs" />
-    <Compile Include="Servisler\PaletMethod\YerlesimMotoru.cs" />
-    <Compile Include="Statics\GrupSabitleri.cs" />
-    <Compile Include="Statics\ResimYollari.cs" />
-    <Compile Include="Sınıflar\DosyaYoluBul.cs" />
-    <Compile Include="Sınıflar\LanguageConverter.cs" />
-    <Compile Include="Sınıflar\KullaniciDil.cs" />
-    <Compile Include="Sayfalar\DizilimYap.xaml.cs">
+    <Compile Include="Screens\DizilimYap\Models\KatUrunu.cs" />
+    <Compile Include="Screens\DizilimYap\Services\KatYoneticisi.cs" />
+    <Compile Include="Screens\DizilimYap\Services\MesafeGostergesi.cs" />
+    <Compile Include="Screens\DizilimYap\Services\YerlesimMotoru.cs" />
+    <Compile Include="Screens\Statics\GrupSabitleri.cs" />
+    <Compile Include="Screens\Statics\ResimYollari.cs" />
+    <Compile Include="Screens\Helpers\DosyaYoluBul.cs" />
+    <Compile Include="Screens\Helpers\LanguageConverter.cs" />
+    <Compile Include="Screens\Helpers\KullaniciDil.cs" />
+    <Compile Include="Screens\DizilimYap.xaml.cs">
       <DependentUpon>DizilimYap.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sayfalar\Kullanici.xaml.cs">
+    <Compile Include="Screens\Kullanici.xaml.cs">
       <DependentUpon>Kullanici.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sayfalar\UrunEkle.xaml.cs">
+    <Compile Include="Screens\UrunEkle.xaml.cs">
       <DependentUpon>UrunEkle.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sınıflar\Urun-PaletMethod\Palet.cs" />
-    <Compile Include="Sınıflar\Urun-PaletMethod\PaletIslemler.cs" />
-    <Compile Include="Sınıflar\Urun-PaletMethod\Urun.cs" />
-    <Compile Include="Sınıflar\Urun-PaletMethod\UrunIslemler.cs" />
-    <Compile Include="Popuplar\BildirimPopup.xaml.cs">
+    <Compile Include="Screens\UrunPaletEkle\Models\Palet.cs" />
+    <Compile Include="Screens\UrunPaletEkle\Services\PaletIslemler.cs" />
+    <Compile Include="Screens\UrunPaletEkle\Models\Urun.cs" />
+    <Compile Include="Screens\UrunPaletEkle\Services\UrunIslemler.cs" />
+    <Compile Include="Popups\BildirimPopup.xaml.cs">
       <DependentUpon>BildirimPopup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Popuplar\GrupAyarlariPopup.xaml.cs">
+    <Compile Include="Popups\GrupAyarlariPopup.xaml.cs">
       <DependentUpon>GrupAyarlariPopup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Popuplar\MetinGirisPopup.xaml.cs">
+    <Compile Include="Popups\MetinGirisPopup.xaml.cs">
       <DependentUpon>MetinGirisPopup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Popuplar\ProgramKaydetPopup.xaml.cs">
+    <Compile Include="Popups\ProgramKaydetPopup.xaml.cs">
       <DependentUpon>ProgramKaydetPopup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Popuplar\UrunPaletSecimPopup.xaml.cs">
+    <Compile Include="Popups\UrunPaletSecimPopup.xaml.cs">
       <DependentUpon>UrunPaletSecimPopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserController\LoadingOverlay.xaml.cs">
@@ -144,23 +144,23 @@
     <Compile Include="UserController\UstMenu.xaml.cs">
       <DependentUpon>UstMenu.xaml</DependentUpon>
     </Compile>
-    <Page Include="Popuplar\OnayKutusu.xaml">
+    <Page Include="Popups\OnayKutusu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sayfalar\DizilimYap.xaml">
+    <Page Include="Screens\DizilimYap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sayfalar\GruplamaYap.xaml">
+    <Page Include="Screens\GruplamaYap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sayfalar\HizAyarları.xaml">
+    <Page Include="Screens\HizAyarları.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sayfalar\Kullanici.xaml">
+    <Page Include="Screens\Kullanici.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,59 +176,59 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Sayfalar\Anasayfa.xaml">
+    <Page Include="Screens\Anasayfa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sayfalar\Bekleme.xaml">
+    <Page Include="Screens\Bekleme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sayfalar\Programlar.xaml">
+    <Page Include="Screens\Programlar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sayfalar\ReceteDuzenle.xaml">
+    <Page Include="Screens\ReceteDuzenle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sayfalar\UrunEkle.xaml">
+    <Page Include="Screens\UrunEkle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Stiller\Combomax_style.xaml">
+    <Page Include="Screens\Styles\Combomax_style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Stiller\DizilimYap_style.xaml">
+    <Page Include="Screens\Styles\DizilimYap_style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Stiller\GruplamaYap_style.xaml">
+    <Page Include="Screens\Styles\GruplamaYap_style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Stiller\Hiz_style.xaml">
+    <Page Include="Screens\Styles\Hiz_style.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Popuplar\BildirimPopup.xaml">
+    <Page Include="Popups\BildirimPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Popuplar\GrupAyarlariPopup.xaml">
+    <Page Include="Popups\GrupAyarlariPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Popuplar\MetinGirisPopup.xaml">
+    <Page Include="Popups\MetinGirisPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Popuplar\ProgramKaydetPopup.xaml">
+    <Page Include="Popups\ProgramKaydetPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Popuplar\UrunPaletSecimPopup.xaml">
+    <Page Include="Popups\UrunPaletSecimPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -240,28 +240,28 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Stiller\Anasayfa_style.xaml">
+    <Page Include="Screens\Styles\Anasayfa_style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Stiller\ArkaPlan_style.xaml">
+    <Page Include="Screens\Styles\ArkaPlan_style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Stiller\Kullanici_style.xaml">
+    <Page Include="Screens\Styles\Kullanici_style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Stiller\UrunEkle_style.xaml">
+    <Page Include="Screens\Styles\UrunEkle_style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sayfalar\Anasayfa.xaml.cs">
+    <Compile Include="Screens\Anasayfa.xaml.cs">
       <DependentUpon>Anasayfa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sayfalar\Bekleme.xaml.cs">
+    <Compile Include="Screens\Bekleme.xaml.cs">
       <DependentUpon>Bekleme.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -290,8 +290,8 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Include="Data\Urunler.json" />
-    <None Include="DilPaketleri\eng.json" />
-    <None Include="DilPaketleri\tr.json" />
+    <None Include="Language\eng.json" />
+    <None Include="Language\tr.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -302,120 +302,120 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\Anasayfa\Icon\bildirim_zili_icon.png" />
+    <Resource Include="Images\Anasayfa\Icon\bildirim_zili_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\Anasayfa\Beyaz\1.png" />
-    <Resource Include="Resimler\Anasayfa\Beyaz\2.png" />
-    <Resource Include="Resimler\Anasayfa\Beyaz\3.png" />
-    <Resource Include="Resimler\Anasayfa\Beyaz\4.png" />
-    <Resource Include="Resimler\Anasayfa\Beyaz\5.png" />
-    <Resource Include="Resimler\Anasayfa\Beyaz\6.png" />
-    <Resource Include="Resimler\Anasayfa\Beyaz\7.png" />
-    <Resource Include="Resimler\Anasayfa\Beyaz\8.png" />
+    <Resource Include="Images\Anasayfa\Beyaz\1.png" />
+    <Resource Include="Images\Anasayfa\Beyaz\2.png" />
+    <Resource Include="Images\Anasayfa\Beyaz\3.png" />
+    <Resource Include="Images\Anasayfa\Beyaz\4.png" />
+    <Resource Include="Images\Anasayfa\Beyaz\5.png" />
+    <Resource Include="Images\Anasayfa\Beyaz\6.png" />
+    <Resource Include="Images\Anasayfa\Beyaz\7.png" />
+    <Resource Include="Images\Anasayfa\Beyaz\8.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\Anasayfa\Siyah\1.png" />
-    <Resource Include="Resimler\Anasayfa\Siyah\2.png" />
-    <Resource Include="Resimler\Anasayfa\Siyah\3.png" />
-    <Resource Include="Resimler\Anasayfa\Siyah\4.png" />
-    <Resource Include="Resimler\Anasayfa\Siyah\5.png" />
-    <Resource Include="Resimler\Anasayfa\Siyah\6.png" />
-    <Resource Include="Resimler\Anasayfa\Siyah\7.png" />
-    <Resource Include="Resimler\Anasayfa\Siyah\8.png" />
+    <Resource Include="Images\Anasayfa\Siyah\1.png" />
+    <Resource Include="Images\Anasayfa\Siyah\2.png" />
+    <Resource Include="Images\Anasayfa\Siyah\3.png" />
+    <Resource Include="Images\Anasayfa\Siyah\4.png" />
+    <Resource Include="Images\Anasayfa\Siyah\5.png" />
+    <Resource Include="Images\Anasayfa\Siyah\6.png" />
+    <Resource Include="Images\Anasayfa\Siyah\7.png" />
+    <Resource Include="Images\Anasayfa\Siyah\8.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\Kullanıcı\logo-sade.png" />
+    <Resource Include="Images\Kullanıcı\logo-sade.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\bekleme-ekranı.png" />
+    <Resource Include="Images\bekleme-ekranı.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\genel_background.png" />
+    <Resource Include="Images\genel_background.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\Anasayfa\Icon\kullanici_icon.png" />
+    <Resource Include="Images\Anasayfa\Icon\kullanici_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\Kullanıcı\dil_turkce_kapali.png" />
+    <Resource Include="Images\Kullanıcı\dil_turkce_kapali.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\UserControlUstMenu\geri_icon.png" />
+    <Resource Include="Images\UserControlUstMenu\geri_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\UserControlUstMenu\ana_sayfa_icon.png" />
+    <Resource Include="Images\UserControlUstMenu\ana_sayfa_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\Icon.ico" />
+    <Resource Include="Images\Icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\gradient_background.png" />
+    <Resource Include="Images\gradient_background.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\Kullanıcı\dil_turkce_Acik.png" />
+    <Resource Include="Images\Kullanıcı\dil_turkce_Acik.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\Kullanıcı\dil_eng.png" />
+    <Resource Include="Images\Kullanıcı\dil_eng.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\Kullanıcı\dil_eng_Acik.png" />
+    <Resource Include="Images\Kullanıcı\dil_eng_Acik.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\DizilimYap\referans_eksenler.png" />
+    <Resource Include="Images\DizilimYap\referans_eksenler.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\DizilimYap\secili_dikey_kutu.png" />
-    <Resource Include="Resimler\DizilimYap\dikey_kutu.png" />
-    <Resource Include="Resimler\DizilimYap\palet.png" />
+    <Resource Include="Images\DizilimYap\secili_dikey_kutu.png" />
+    <Resource Include="Images\DizilimYap\dikey_kutu.png" />
+    <Resource Include="Images\DizilimYap\palet.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\DizilimYap\asagi_ok.png" />
-    <Resource Include="Resimler\DizilimYap\saga_ok.png" />
-    <Resource Include="Resimler\DizilimYap\sola_ok.png" />
-    <Resource Include="Resimler\DizilimYap\yukari_ok.png" />
+    <Resource Include="Images\DizilimYap\asagi_ok.png" />
+    <Resource Include="Images\DizilimYap\saga_ok.png" />
+    <Resource Include="Images\DizilimYap\sola_ok.png" />
+    <Resource Include="Images\DizilimYap\yukari_ok.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\DizilimYap\arti.png" />
-    <Resource Include="Resimler\DizilimYap\eksi.png" />
+    <Resource Include="Images\DizilimYap\arti.png" />
+    <Resource Include="Images\DizilimYap\eksi.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\DizilimYap\yatay_kutu.png" />
+    <Resource Include="Images\DizilimYap\yatay_kutu.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\DizilimYap\secili_yatay_kutu.png" />
+    <Resource Include="Images\DizilimYap\secili_yatay_kutu.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\DizilimYap\info-icon.png" />
+    <Resource Include="Images\DizilimYap\info-icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\DizilimYap\asagi_icon.png" />
-    <Resource Include="Resimler\DizilimYap\yukari_icon.png" />
+    <Resource Include="Images\DizilimYap\asagi_icon.png" />
+    <Resource Include="Images\DizilimYap\yukari_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\Anasayfa\Icon\admin_pp2.png" />
-    <Resource Include="Resimler\Anasayfa\Icon\admin_pp3.png" />
+    <Resource Include="Images\Anasayfa\Icon\admin_pp2.png" />
+    <Resource Include="Images\Anasayfa\Icon\admin_pp3.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\Anasayfa\Icon\changeaccount.png" />
-    <Resource Include="Resimler\Anasayfa\Icon\logout.png" />
+    <Resource Include="Images\Anasayfa\Icon\changeaccount.png" />
+    <Resource Include="Images\Anasayfa\Icon\logout.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\Hiz\buble_referance.png" />
+    <Resource Include="Images\Hiz\buble_referance.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\UserControlUstMenu\ileri_icon.png" />
+    <Resource Include="Images\UserControlUstMenu\ileri_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\UrunEkle\boy-koli.png" />
-    <Resource Include="Resimler\UrunEkle\boy-pallet.png" />
-    <Resource Include="Resimler\UrunEkle\en-koli.png" />
-    <Resource Include="Resimler\UrunEkle\en-pallet.png" />
-    <Resource Include="Resimler\UrunEkle\yukseklik-koli.png" />
-    <Resource Include="Resimler\UrunEkle\yukseklik-pallet.png" />
+    <Resource Include="Images\UrunEkle\boy-koli.png" />
+    <Resource Include="Images\UrunEkle\boy-pallet.png" />
+    <Resource Include="Images\UrunEkle\en-koli.png" />
+    <Resource Include="Images\UrunEkle\en-pallet.png" />
+    <Resource Include="Images\UrunEkle\yukseklik-koli.png" />
+    <Resource Include="Images\UrunEkle\yukseklik-pallet.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resimler\UrunEkle\koli-agirlik.png" />
-    <Resource Include="Resimler\UrunEkle\koli-basinc.png" />
+    <Resource Include="Images\UrunEkle\koli-agirlik.png" />
+    <Resource Include="Images\UrunEkle\koli-basinc.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

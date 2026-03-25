@@ -113,7 +113,7 @@ namespace Palet_Programlama.Screens
                 return;
             }
 
-            bool yuklendi = _katYonetici.DizilimYukle(
+            bool yuklendi = _dizilimKayitServisi.DizilimYukle(
                 kayit.DizilimAdi,
                 urun,
                 palet,

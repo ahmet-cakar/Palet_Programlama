@@ -30,6 +30,7 @@ namespace Palet_Programlama.Screens
         private readonly YerlesimMotoru _motor = new();
         private readonly MesafeGostergesi _mesafe = new();
         private readonly KatYoneticisi _katYonetici = new();
+        private readonly DizilimKayitServisi dizilimKayitServisi = new();
         private EklemeYon? _eklemeYon = null;
         private readonly DizilimKayitServisi _dizilimKayitServisi = new();
         private Urun _secilenUrun;
@@ -75,7 +76,7 @@ namespace Palet_Programlama.Screens
                 YukleniyorGoster("Dizilim yükleniyor...");
                 try
                 {
-                    bool yüklendi = _katYonetici.DizilimYukle(
+                    bool yüklendi = dizilimKayitServisi.DizilimYukle(
                         _gelenDizilimAdi,
                         _secilenUrun,
                         _secilenPalet,

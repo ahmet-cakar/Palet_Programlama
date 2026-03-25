@@ -27,10 +27,10 @@ namespace Palet_Programlama.Screens
     {
         private readonly Frame MainFrame;
         private readonly KatYoneticisi _katYonetici = new();
+        private readonly DizilimKayitServisi _dizilimKayitServisi = new();
         private readonly MesafeGostergesi _mesafe = new();
         private readonly KoliGeometriYardimcisi _geometri = new();
         private readonly KoliYonYardimcisi _yonYardimcisi = new();
-        private readonly DizilimKayitServisi _dizilimKayitServisi = new();
         private readonly GruplamaBilgiServisi _bilgiServisi = new();
         private readonly GruplamaSecimServisi _secimServisi = new();
         private readonly GrupGorsellestirmeServisi _gorsellestirmeServisi = new();
@@ -207,7 +207,7 @@ namespace Palet_Programlama.Screens
 
             KayitBilgileriniUygula(kayit);
 
-            bool yuklendi = _katYonetici.DizilimYukle(
+            bool yuklendi = _dizilimKayitServisi.DizilimYukle(
                 kayit.DizilimAdi,
                 _secilenUrun,
                 _secilenPalet,

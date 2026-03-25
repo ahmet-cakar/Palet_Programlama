@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
-using Palet_Programlama.Modeller;
-using Palet_Programlama.Sınıflar;
+using Palet_Programlama.Screens.Dizilim.Models;
+using Palet_Programlama.Screens.Helpers;
+using Palet_Programlama.Screens.UrunPaletEkle.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;

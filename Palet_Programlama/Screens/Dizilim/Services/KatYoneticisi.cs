@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
-using Palet_Programlama.Modeller;
-using Palet_Programlama.Sınıflar;
+using Palet_Programlama.Screens.Dizilim.Models;
+using Palet_Programlama.Screens.Helpers;
+using Palet_Programlama.Screens.UrunPaletEkle.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Servisler.PaletMethod
+namespace Palet_Programlama.Screens.Dizilim.Services
 {
     public sealed class KatYoneticisi
     {
@@ -21,7 +22,6 @@ namespace Servisler.PaletMethod
         public int AktifKat { get; private set; } = 1;
 
         public IReadOnlyDictionary<int, List<KatUrunu>> TumKatlar => _katlar;
-
 
 
         public bool TumKatlariTasi(double deltaLeftPx, double deltaTopPx, double canvasGenislik, double canvasYukseklik)
@@ -355,8 +355,8 @@ namespace Servisler.PaletMethod
                 double top = u.MerkezY - h / 2.0;
 
                 string resim = u.Yon == UrunYonu.Dikey
-                    ? "pack://application:,,,/Resimler/DizilimYap/dikey_kutu.png"
-                    : "pack://application:,,,/Resimler/DizilimYap/yatay_kutu.png";
+                    ? "pack://application:,,,/Images/DizilimYap/dikey_kutu.png"
+                    : "pack://application:,,,/Images/DizilimYap/yatay_kutu.png";
 
                 var rect = new Rectangle
                 {

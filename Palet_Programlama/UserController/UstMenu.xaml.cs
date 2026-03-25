@@ -1,10 +1,10 @@
-﻿using Palet_Programlama.UserController;
+﻿using Palet_Programlama.Screens;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace Palet_Programlama.Sayfalar
+namespace Palet_Programlama.UserController
 {
     public partial class UstMenu : UserControl
     {

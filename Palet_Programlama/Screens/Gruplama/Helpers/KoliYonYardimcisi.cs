@@ -1,8 +1,8 @@
-﻿using Palet_Programlama.Modeller;
+﻿using Palet_Programlama.Screens.Dizilim.Models;
 using System;
 using System.Windows.Shapes;
 
-namespace Palet_Programlama.Sayfalar.Gruplama.Helpers
+namespace Palet_Programlama.Screens.Gruplama.Helpers
 {
     public sealed class KoliYonYardimcisi
     {

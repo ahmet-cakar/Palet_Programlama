@@ -5,7 +5,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace Palet_Programlama.Sayfalar
+namespace Palet_Programlama.Screens
 {
     /// <summary>
     /// Interaction logic for Kullanici.xaml
@@ -111,12 +111,12 @@ namespace Palet_Programlama.Sayfalar
             // Mevcut duruma göre yeni URI belirle
             switch (currentUri)
             {
-                case "pack://application:,,,/Resimler/Kullanıcı/dil_turkce_kapali.png":
-                    newUri = "pack://application:,,,/Resimler/Kullanıcı/dil_turkce_Acik.png";
+                case "pack://application:,,,/Images/Kullanıcı/dil_turkce_kapali.png":
+                    newUri = "pack://application:,,,/Images/Kullanıcı/dil_turkce_Acik.png";
                     break;
 
-                case "pack://application:,,,/Resimler/Kullanıcı/dil_turkce_Acik.png":
-                case "pack://application:,,,/Resimler/Kullanıcı/dil_eng_Acik.png":
+                case "pack://application:,,,/Images/Kullanıcı/dil_turkce_Acik.png":
+                case "pack://application:,,,/Images/Kullanıcı/dil_eng_Acik.png":
                     // Tıklama konumunu al
                     Point clickPoint = e.GetPosition(DilBtn);
                     double imageHeight = DilBtn.ActualHeight;
@@ -125,20 +125,20 @@ namespace Palet_Programlama.Sayfalar
                     if (clickPoint.Y < imageHeight / 2)
                     {
                         newUri = (currentUri.Contains("turkce"))
-                                 ? "pack://application:,,,/Resimler/Kullanıcı/dil_turkce_kapali.png"
-                                 : "pack://application:,,,/Resimler/Kullanıcı/dil_eng.png";
+                                 ? "pack://application:,,,/Images/Kullanıcı/dil_turkce_kapali.png"
+                                 : "pack://application:,,,/Images/Kullanıcı/dil_eng.png";
                     }
                     // Alt tarafa tıklanmışsa
                     else
                     {
                         newUri = (currentUri.Contains("turkce"))
-                                 ? "pack://application:,,,/Resimler/Kullanıcı/dil_eng.png"
-                                 : "pack://application:,,,/Resimler/Kullanıcı/dil_turkce_kapali.png";
+                                 ? "pack://application:,,,/Images/Kullanıcı/dil_eng.png"
+                                 : "pack://application:,,,/Images/Kullanıcı/dil_turkce_kapali.png";
                     }
                     break;
 
-                case "pack://application:,,,/Resimler/Kullanıcı/dil_eng.png":
-                    newUri = "pack://application:,,,/Resimler/Kullanıcı/dil_eng_Acik.png";
+                case "pack://application:,,,/Images/Kullanıcı/dil_eng.png":
+                    newUri = "pack://application:,,,/Images/Kullanıcı/dil_eng_Acik.png";
                     break;
             }
 

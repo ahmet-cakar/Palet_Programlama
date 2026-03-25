@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Palet_Programlama.Statics
+namespace Palet_Programlama.Screens.Statics
 {
     public static class GrupSabitleri
     {

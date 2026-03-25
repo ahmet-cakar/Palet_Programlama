@@ -1,11 +1,12 @@
 ﻿
 
-using Palet_Programlama.Sınıflar;
+using Palet_Programlama.Languages;
+using Palet_Programlama.Screens.UrunPaletEkle.Models;
 using Palet_Programlama.UserController;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-namespace Palet_Programlama.Sayfalar
+namespace Palet_Programlama.Screens
 {
     /// <summary>
     /// Interaction logic for Anasayfa.xaml

@@ -1,4 +1,4 @@
-﻿namespace Palet_Programlama.Sayfalar.Gruplama.Models
+﻿namespace Palet_Programlama.Screens.Gruplama.Models
 {
     public sealed class GrupAtamaBilgisi
     {

@@ -1,4 +1,5 @@
-﻿using Palet_Programlama.Sınıflar;
+﻿using Palet_Programlama.Languages;
+using Palet_Programlama.Screens.UrunPaletEkle.Models;
 using Palet_Programlama.UserController;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace Palet_Programlama.Sayfalar
+namespace Palet_Programlama.Screens
 {
     /// <summary>
     /// Interaction logic for UrunEkle.xaml
@@ -94,21 +95,21 @@ namespace Palet_Programlama.Sayfalar
         #endregion
         private readonly Dictionary<string, Tuple<string, string>> textBoxData = new Dictionary<string, Tuple<string, string>>
         {
-            { "txtUrunEn", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/en-koli.png", "UrunEkle.preview1") },
-            { "txtUrunBoy", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/boy-koli.png", "UrunEkle.preview2") },
-            { "txtUrunYukseklik", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/yukseklik-koli.png", "UrunEkle.preview3") },
-            { "txtUrunAgirlik", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/koli-agirlik.png", "UrunEkle.preview4") },
-            { "txtUrunBasinc", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/koli-basinc.png", "UrunEkle.preview5") },
-            { "txtPaletEn", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/en-pallet.png", "UrunEkle.preview1") },
-            { "txtPaletBoy", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/boy-pallet.png", "UrunEkle.preview2") },
-            { "txtPaletYukseklik", Tuple.Create("pack://application:,,,/Resimler/UrunEkle/yukseklik-pallet.png", "UrunEkle.preview3") },
+            { "txtUrunEn", Tuple.Create("pack://application:,,,/Images/UrunEkle/en-koli.png", "UrunEkle.preview1") },
+            { "txtUrunBoy", Tuple.Create("pack://application:,,,/Images/UrunEkle/boy-koli.png", "UrunEkle.preview2") },
+            { "txtUrunYukseklik", Tuple.Create("pack://application:,,,/Images/UrunEkle/yukseklik-koli.png", "UrunEkle.preview3") },
+            { "txtUrunAgirlik", Tuple.Create("pack://application:,,,/Images/UrunEkle/koli-agirlik.png", "UrunEkle.preview4") },
+            { "txtUrunBasinc", Tuple.Create("pack://application:,,,/Images/UrunEkle/koli-basinc.png", "UrunEkle.preview5") },
+            { "txtPaletEn", Tuple.Create("pack://application:,,,/Images/UrunEkle/en-pallet.png", "UrunEkle.preview1") },
+            { "txtPaletBoy", Tuple.Create("pack://application:,,,/Images/UrunEkle/boy-pallet.png", "UrunEkle.preview2") },
+            { "txtPaletYukseklik", Tuple.Create("pack://application:,,,/Images/UrunEkle/yukseklik-pallet.png", "UrunEkle.preview3") },
         };
         private void UrunPalet_GotFocus(object sender, RoutedEventArgs e)
         {
             if (sender is TextBox triggeredTextBox && textBoxData.TryGetValue(triggeredTextBox.Name, out var data))
             {
                 // Resim kaynağını değiştir
-                onizleımage.Source = new BitmapImage(new Uri(data.Item1));
+                onIzlemeImage.Source = new BitmapImage(new Uri(data.Item1));
 
                 // TextBlock metnini güncelle
                 priviewtextblock.Text = LanguageConverter.GetString(data.Item2);

@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
-using Palet_Programlama.Sayfalar.Gruplama.Models;
-using Palet_Programlama.Sınıflar;
+using Palet_Programlama.Screens.Gruplama.Models;
+using Palet_Programlama.Screens.Helpers;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Palet_Programlama.Sayfalar.Gruplama.Services
+namespace Palet_Programlama.Screens.Gruplama.Services
 {
     public sealed class ProgramKayitServisi
     {

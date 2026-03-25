@@ -1,10 +1,11 @@
 ﻿using Newtonsoft.Json;
-using Palet_Programlama.Modeller;
-using Palet_Programlama.Servisler.PaletMethod;
-using Palet_Programlama.Sınıflar;
-using Palet_Programlama.Statics;
+using Palet_Programlama.Languages;
+using Palet_Programlama.Screens.Dizilim.Models;
+using Palet_Programlama.Screens.Dizilim.Services;
+using Palet_Programlama.Screens.Helpers;
+using Palet_Programlama.Screens.Statics;
+using Palet_Programlama.Screens.UrunPaletEkle.Models;
 using Palet_Programlama.UserController;
-using Servisler.PaletMethod;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +18,7 @@ using System.Windows.Shapes;
 
 
 
-namespace Palet_Programlama.Sayfalar
+namespace Palet_Programlama.Screens
 {
     /// <summary>
     /// Interaction logic for DizilimYap.xaml
@@ -26,13 +27,11 @@ namespace Palet_Programlama.Sayfalar
     {
         private static readonly ImageSource _dikeyResim = ResimYollari.dikeyResim;
         private static readonly ImageSource _yatayResim = ResimYollari.yatayResim;
-
-
         private readonly YerlesimMotoru _motor = new();
         private readonly MesafeGostergesi _mesafe = new();
         private readonly KatYoneticisi _katYonetici = new();
         private EklemeYon? _eklemeYon = null;
-
+        private readonly DizilimKayitServisi _dizilimKayitServisi = new();
         private Urun _secilenUrun;
         private Palet _secilenPalet;
         private List<Rect> _suruklemeDigerKutular = new();
@@ -479,47 +478,6 @@ namespace Palet_Programlama.Sayfalar
             txtHareketMiktari.Text = Convert.ToString(Convert.ToInt32(txtHareketMiktari.Text) - 1);
         }
 
-        private DizilimKayitModel DizilimKayitModeliOlustur(string dizilimAdi)
-        {
-            var model = new DizilimKayitModel
-            {
-                DizilimAdi = dizilimAdi,
-                PaletAdi = _secilenPalet.PaletAdi,
-                PaletEn = _secilenPalet.PaletEn,
-                PaletBoy = _secilenPalet.PaletBoy,
-                PaletYukseklik = _secilenPalet.PaletYukseklik,
-                UrunAdi = _secilenUrun.UrunAdi,
-                UrunEn = _secilenUrun.UrunEn,
-                UrunBoy = _secilenUrun.UrunBoy,
-                UrunYukseklik = _secilenUrun.UrunYukseklik
-            };
-
-            foreach (var kat in _katYonetici.TumKatlar
-                .Where(x => x.Value != null && x.Value.Any())
-                .OrderBy(x => x.Key))
-            {
-                int katNo = kat.Key;
-
-                foreach (var urun in kat.Value)
-                {
-                    double gercekMerkezX = CanvasMerkezDikeydenGercekX(urun.MerkezY);
-                    double gercekMerkezY = CanvasMerkezYataydanGercekY(urun.MerkezX);
-
-                    model.Urunler.Add(new DizilimUrunKayitModel
-                    {
-                        Yon = urun.Yon.ToString(),
-                        KatNo = katNo,
-                        MerkezX = gercekMerkezX,
-                        MerkezY = gercekMerkezY,
-                        MerkezZ = MerkezZHesapla(katNo)
-                    });
-                }
-            }
-
-            return model;
-        }
-
-
         private void DizilimiJsonDosyasinaKaydet()
         {
             try
@@ -606,7 +564,13 @@ namespace Palet_Programlama.Sayfalar
                         return;
                     }
 
-                    var yeniDizilim = DizilimKayitModeliOlustur(dizilimAdi);
+                    var yeniDizilim = _dizilimKayitServisi.KayitModelDizilimiOlustur(
+                        dizilimAdi,
+                        _secilenPalet,
+                        _secilenUrun,
+                        _katYonetici.TumKatlar,
+                        OlcekX,
+                        OlcekY);
 
                     int index = tumDizilimler.IndexOf(eskiKayit);
                     tumDizilimler[index] = yeniDizilim;
@@ -630,7 +594,13 @@ namespace Palet_Programlama.Sayfalar
                         return;
                     }
 
-                    var yeniDizilim = DizilimKayitModeliOlustur(dizilimAdi);
+                    var yeniDizilim = _dizilimKayitServisi.KayitModelDizilimiOlustur(
+                    dizilimAdi,
+                    _secilenPalet,
+                    _secilenUrun,
+                    _katYonetici.TumKatlar,
+                    OlcekX,
+                    OlcekY);
                     tumDizilimler.Add(yeniDizilim);
 
                     string yeniJson = JsonConvert.SerializeObject(tumDizilimler, Formatting.Indented);
@@ -658,12 +628,6 @@ namespace Palet_Programlama.Sayfalar
             pencere.ShowDialog();
         }
 
-        private double MerkezZHesapla(int katNo)
-        {
-            return _secilenPalet.PaletYukseklik
-                   + (katNo * _secilenUrun.UrunYukseklik)
-                   - (_secilenUrun.UrunYukseklik / 2.0);
-        }
 
         private double CanvasMerkezYataydanGercekY(double canvasMerkezYatay)
         {
@@ -1060,11 +1024,11 @@ namespace Palet_Programlama.Sayfalar
             double w = kaynak.Width;
             double h = kaynak.Height;
 
-            var yon = kaynak.Tag is Modeller.UrunYonu t
+            var yon = kaynak.Tag is UrunYonu t
                 ? t
-                : (w >= h ? Modeller.UrunYonu.Yatay : Modeller.UrunYonu.Dikey);
+                : (w >= h ? UrunYonu.Yatay : UrunYonu.Dikey);
 
-            ImageSource source = yon == Modeller.UrunYonu.Dikey ? _dikeyResim : _yatayResim;
+            ImageSource source = yon == UrunYonu.Dikey ? _dikeyResim : _yatayResim;
 
             var rect = new Rectangle
             {

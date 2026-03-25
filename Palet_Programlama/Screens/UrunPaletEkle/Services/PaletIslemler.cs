@@ -1,9 +1,10 @@
 ﻿using Newtonsoft.Json;
+using Palet_Programlama.Screens.Helpers;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Palet_Programlama.Sınıflar
+namespace Palet_Programlama.Screens.UrunPaletEkle.Models
 {
     public class PaletIslemler
     {

@@ -1,4 +1,4 @@
-﻿using Palet_Programlama.Sınıflar;
+﻿using Palet_Programlama.Languages;
 using System.Globalization;
 using System.Windows;
 

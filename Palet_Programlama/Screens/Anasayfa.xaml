@@ -1,17 +1,17 @@
-﻿<Page x:Class="Palet_Programlama.Sayfalar.Anasayfa"
+﻿<Page x:Class="Palet_Programlama.Screens.Anasayfa"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Palet_Programlama.Sayfalar"
-      xmlns:sınıflar="clr-namespace:Palet_Programlama.Sınıflar"
+      xmlns:controls="clr-namespace:Palet_Programlama.UserController"
+      xmlns:language="clr-namespace:Palet_Programlama.Languages"
       mc:Ignorable="d" 
       d:DesignHeight="768" d:DesignWidth="1366"
       Background="Transparent"
       Title="Anasayfa">
     <Page.Resources>
-        <sınıflar:LanguageConverter x:Key="LanguageConverter"/>
-    </Page.Resources>
+        <language:LanguageConverter x:Key="LanguageConverter"/>
+     </Page.Resources>
     
     <Grid  >
         <Grid.RowDefinitions>
@@ -47,7 +47,7 @@
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <!-- Icon inside the Button -->
                         <Image Margin="30"
-                               Source="pack://application:,,,/Resimler/Anasayfa/Icon/bildirim_zili_icon.png"/>
+                               Source="pack://application:,,,/Images/Anasayfa/Icon/bildirim_zili_icon.png"/>
                         <!-- Text inside the Button -->
                     </StackPanel>
                 </Button>
@@ -58,7 +58,7 @@
                         <!-- Icon inside the Button -->
                         <Image  
                                Margin="30"
-                               Source="pack://application:,,,/Resimler/Anasayfa/Icon/kullanici_icon.png" x:Name="Kullaniciicon" MouseDown="Kullaniciicon_MouseDown"/>
+                               Source="pack://application:,,,/Images/Anasayfa/Icon/kullanici_icon.png" x:Name="Kullaniciicon" MouseDown="Kullaniciicon_MouseDown"/>
                         
                         <!-- Text inside the Button -->
                     </StackPanel>
@@ -112,7 +112,7 @@
                         <StackPanel 
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
-                            <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/1.png" 
+                <Image  Source="pack://application:,,,/Images/Anasayfa/Beyaz/1.png" 
                                        Style="{StaticResource icon_style}"  />
                         </StackPanel>
                     </DockPanel>
@@ -141,7 +141,7 @@
                             <StackPanel 
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
-                                <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/2.png" 
+                <Image      Source="pack://application:,,,/Images/Anasayfa/Beyaz/2.png" 
                                         Style="{StaticResource icon_style}" />
                             </StackPanel>
                         </DockPanel>
@@ -169,7 +169,7 @@
                             <StackPanel 
                      HorizontalAlignment="Center"
                      VerticalAlignment="Center">
-                                <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/3.png" 
+                <Image  Source="pack://application:,,,/Images/Anasayfa/Beyaz/3.png" 
                                             Style="{StaticResource icon_style}" />
                             </StackPanel>
                         </DockPanel>
@@ -197,7 +197,7 @@
                             <StackPanel 
                          HorizontalAlignment="Center"
                          VerticalAlignment="Center">
-                                <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/4.png" 
+                <Image  Source="pack://application:,,,/Images/Anasayfa/Beyaz/4.png" 
                                             Style="{StaticResource icon_style}" />
                             </StackPanel>
                         </DockPanel>
@@ -248,7 +248,7 @@
                         <StackPanel 
                      HorizontalAlignment="Center"
                      VerticalAlignment="Center">
-                            <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/5.png" 
+                <Image  Source="pack://application:,,,/Images/Anasayfa/Beyaz/5.png" 
                                         Style="{StaticResource icon_style}" />
                         </StackPanel>
                     </DockPanel>
@@ -279,7 +279,7 @@
                         <StackPanel 
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
-                            <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/6.png" 
+                <Image  Source="pack://application:,,,/Images/Anasayfa/Beyaz/6.png" 
                                         Style="{StaticResource icon_style}" />
                         </StackPanel>
                     </DockPanel>
@@ -311,7 +311,7 @@
                         <StackPanel 
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
-                            <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/7.png" 
+                <Image  Source="pack://application:,,,/Images/Anasayfa/Beyaz/7.png" 
                                         Style="{StaticResource icon_style}" />
                         </StackPanel>
                     </DockPanel>
@@ -341,7 +341,7 @@
                                             <StackPanel 
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
-                            <Image  Source="pack://application:,,,/Resimler/Anasayfa/Beyaz/8.png" 
+                <Image  Source="pack://application:,,,/Images/Anasayfa/Beyaz/8.png" 
                                         Style="{StaticResource icon_style}" />
                                             </StackPanel>
                     </DockPanel>
@@ -371,7 +371,7 @@
                     CornerRadius="17" Opacity="0.8" BorderBrush="Black" BorderThickness="1" Visibility="Visible">
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="pack://application:,,,/Resimler/Anasayfa/Icon/admin_pp2.png" Width="60" Height="60"/>
+            <Image Source="pack://application:,,,/Images/Anasayfa/Icon/admin_pp2.png" Width="60" Height="60"/>
                         <TextBlock x:Name="textuser" Style="{StaticResource HoverUnderlineTextBlockStyle}" Text="Admin1"
                                    Margin="0,20,0,0" FontSize="21" FontFamily="Roboto" Foreground="#3d3d3d"/>
                     </StackPanel>
@@ -379,7 +379,7 @@
                         <Border Background="#9a9a9a" Height="2" Width="120" CornerRadius="1"></Border>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="pack://application:,,,/Resimler/Anasayfa/Icon/changeaccount.png" Width="60" 
+            <Image Source="pack://application:,,,/Images/Anasayfa/Icon/changeaccount.png" Width="60" 
                                Height="60"/>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="{Binding Source='Anasayfa.userborder1',Converter={StaticResource LanguageConverter}}" Style="{StaticResource HoverUnderlineTextBlockStyle}" 
@@ -390,7 +390,7 @@
                         <Border Background="#9a9a9a" Height="2" Width="120" CornerRadius="1"></Border>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="pack://application:,,,/Resimler/Anasayfa/Icon/logout.png" Width="60" Height="60"/>
+            <Image Source="pack://application:,,,/Images/Anasayfa/Icon/logout.png" Width="60" Height="60"/>
                         <TextBlock x:Name="textlogout" Style="{StaticResource HoverUnderlineTextBlockStyle}" Text="{Binding Source='Anasayfa.userborder2',Converter={StaticResource LanguageConverter}}"  
                                    Margin="12,20,0,0" FontSize="21" FontFamily="Roboto" Foreground="#b92020" MouseLeftButtonDown="textlogout_MouseLeftButtonDown"/>
                     </StackPanel>
@@ -400,6 +400,5 @@
         
 
     </Grid>
-    
-    
+
 </Page>

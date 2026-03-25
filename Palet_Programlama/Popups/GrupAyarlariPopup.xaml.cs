@@ -1,4 +1,4 @@
-﻿using Palet_Programlama.Sayfalar.Gruplama.Models;
+﻿using Palet_Programlama.Screens.Gruplama.Models;
 using System;
 using System.Windows;
 using System.Windows.Input;

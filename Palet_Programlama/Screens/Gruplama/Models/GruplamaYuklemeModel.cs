@@ -1,7 +1,7 @@
-﻿using Palet_Programlama.Modeller;
+﻿using Palet_Programlama.Screens.Dizilim.Models;
 using System.Collections.Generic;
 
-namespace Palet_Programlama.Sayfalar.Gruplama.Models
+namespace Palet_Programlama.Screens.Gruplama.Models
 {
     public sealed class GruplamaYuklemeModel
     {

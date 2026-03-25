@@ -5,7 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace Palet_Programlama.Servisler.PaletMethod
+namespace Palet_Programlama.Screens.Dizilim.Services
 {
     public sealed class MesafeGostergesi
     {

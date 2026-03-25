@@ -1,5 +1,5 @@
-﻿using Palet_Programlama.Sayfalar;
-using Palet_Programlama.Sınıflar;
+﻿using Palet_Programlama.Screens;
+using Palet_Programlama.Screens.UrunPaletEkle.Models;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -88,5 +88,6 @@ namespace Palet_Programlama
             transform.BeginAnimation(TranslateTransform.XProperty, cikisAnim);
         }
 
+      
     }
 }

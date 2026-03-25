@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Palet_Programlama.Sayfalar.HizAyarlari.Models
+namespace Palet_Programlama.Screens.HizAyarlari.Models
 {
     public sealed class HizVerileri
     {

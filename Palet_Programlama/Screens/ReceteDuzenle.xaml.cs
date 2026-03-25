@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Palet_Programlama.Sayfalar
+namespace Palet_Programlama.Screens
 {
     /// <summary>
     /// Interaction logic for ReceteDuzenle.xaml

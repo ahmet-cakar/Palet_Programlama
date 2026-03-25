@@ -1,5 +1,6 @@
-﻿using Palet_Programlama.Sayfalar.Gruplama.Helpers;
-using Palet_Programlama.Sayfalar.Gruplama.Models;
+﻿
+using Palet_Programlama.Screens.Gruplama.Helpers;
+using Palet_Programlama.Screens.Gruplama.Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Shapes;
 
-namespace Palet_Programlama.Sayfalar.Gruplama.Services
+namespace Palet_Programlama.Screens.Gruplama.Services
 {
     public sealed class GruplamaSecimServisi
     {

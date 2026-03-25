@@ -1,11 +1,11 @@
-﻿using Palet_Programlama.Modeller;
-using Palet_Programlama.Sayfalar.Gruplama.Helpers;
-using Palet_Programlama.Sayfalar.Gruplama.Models;
-using Palet_Programlama.Sayfalar.Gruplama.Services;
-using Palet_Programlama.Sayfalar.ProgramlarSayfasi;
-using Palet_Programlama.Sınıflar;
+﻿using Palet_Programlama.Screens.Dizilim.Models;
+using Palet_Programlama.Screens.Dizilim.Services;
+using Palet_Programlama.Screens.Gruplama.Helpers;
+using Palet_Programlama.Screens.Gruplama.Models;
+using Palet_Programlama.Screens.Gruplama.Services;
+using Palet_Programlama.Screens.Program;
+using Palet_Programlama.Screens.UrunPaletEkle.Models;
 using Palet_Programlama.UserController;
-using Servisler.PaletMethod;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
 
-namespace Palet_Programlama.Sayfalar
+namespace Palet_Programlama.Screens
 {
     /// <summary>
     /// Interaction logic for Programlar.xaml

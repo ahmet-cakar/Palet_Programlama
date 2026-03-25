@@ -1,16 +1,16 @@
-﻿<Page x:Class="Palet_Programlama.Sayfalar.DizilimYap"
+﻿<Page x:Class="Palet_Programlama.Screens.DizilimYap"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:local="clr-namespace:Palet_Programlama.Sayfalar"
-      xmlns:sınıflar="clr-namespace:Palet_Programlama.Sınıflar"
+      xmlns:controls="clr-namespace:Palet_Programlama.UserController"
+      xmlns:language="clr-namespace:Palet_Programlama.Languages"
       mc:Ignorable="d"
       d:DesignHeight="868" d:DesignWidth="1809.135"
       Title="Dizilim_Yap">
 
   <Page.Resources>
-    <sınıflar:LanguageConverter x:Key="LanguageConverter" />
+    <language:LanguageConverter x:Key="LanguageConverter"/>
   </Page.Resources>
 
   <Grid Margin="12">
@@ -24,7 +24,7 @@
     <!-- Header -->
     <Grid Grid.Row="0" Margin="0,0,0,10">
       <Border VerticalAlignment="Center">
-        <local:UstMenu x:Name="UstMenuControl" Margin="0,5,0,0"/>
+        <controls:UstMenu x:Name="UstMenuControl" Margin="0,5,0,0"/>
       </Border>
     </Grid>
 
@@ -203,7 +203,7 @@
                                     VerticalAlignment="Center"
                                     Style="{StaticResource transparan_button}">
                 <StackPanel MouseDown="BtnKopyalaArti_MouseDown"  Orientation="Horizontal" HorizontalAlignment="Center">
-                  <Image Source="pack://application:,,,/Resimler/DizilimYap/arti.png"/>
+                  <Image Source="pack://application:,,,/Images/DizilimYap/arti.png"/>
                 </StackPanel>
               </Button>
 
@@ -219,7 +219,7 @@
                                     VerticalAlignment="Center"
                                     Style="{StaticResource transparan_button}">
                 <StackPanel MouseDown="BtnKopyalaEksi_MouseDown" Orientation="Horizontal" HorizontalAlignment="Center">
-                  <Image Source="pack://application:,,,/Resimler/DizilimYap/eksi.png"/>
+                  <Image Source="pack://application:,,,/Images/DizilimYap/eksi.png"/>
                 </StackPanel>
               </Button>
 
@@ -235,7 +235,7 @@
                                     VerticalAlignment="Center"
                                     Style="{StaticResource transparan_button}">
                 <StackPanel MouseDown="BtnYapistirArti_MouseDown" Orientation="Horizontal" HorizontalAlignment="Center">
-                  <Image Source="pack://application:,,,/Resimler/DizilimYap/arti.png"/>
+                  <Image Source="pack://application:,,,/Images/DizilimYap/arti.png"/>
                 </StackPanel>
               </Button>
 
@@ -251,7 +251,7 @@
                                     VerticalAlignment="Center"
                                     Style="{StaticResource transparan_button}">
                 <StackPanel MouseDown="BtnYapistirEksi_MouseDown" Orientation="Horizontal" HorizontalAlignment="Center">
-                  <Image Source="pack://application:,,,/Resimler/DizilimYap/eksi.png"/>
+                  <Image Source="pack://application:,,,/Images/DizilimYap/eksi.png"/>
                 </StackPanel>
               </Button>
 
@@ -285,7 +285,7 @@
                                         VerticalAlignment="Top"
                                         Orientation="Horizontal">
                 <StackPanel Width="20" Height="20" VerticalAlignment="Top">
-                  <Image Source="pack://application:,,,/Resimler/DizilimYap/info-icon.png"/>
+                  <Image Source="pack://application:,,,/Images/DizilimYap/info-icon.png"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Vertical" Margin="8,0,0,0">
@@ -334,7 +334,7 @@
                                            Stroke="Transparent"
                                            StrokeThickness="0">
                   <Rectangle.Fill>
-                    <ImageBrush ImageSource="/Resimler/DizilimYap/dikey_kutu.png"/>
+                    <ImageBrush ImageSource="/Images/DizilimYap/dikey_kutu.png"/>
                   </Rectangle.Fill>
                 </Rectangle>
 
@@ -346,7 +346,7 @@
                                            Stroke="Transparent"
                                            StrokeThickness="0">
                   <Rectangle.Fill>
-                    <ImageBrush ImageSource="/Resimler/DizilimYap/yatay_kutu.png"/>
+                    <ImageBrush ImageSource="/Images/DizilimYap/yatay_kutu.png"/>
                   </Rectangle.Fill>
                 </Rectangle>
               </StackPanel>
@@ -434,7 +434,7 @@
                                         Height="25"
                                         Style="{StaticResource transparan_button}">
                   <StackPanel MouseDown="BtnHareketMiktariArti_MouseDown" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="pack://application:,,,/Resimler/DizilimYap/arti.png"/>
+                    <Image Source="pack://application:,,,/Images/DizilimYap/arti.png"/>
                   </StackPanel>
                 </Button>
 
@@ -463,7 +463,7 @@
                                         Height="25"
                                         Style="{StaticResource transparan_button}">
                   <StackPanel MouseDown="BtnHareketMiktariEksi_MouseDown" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="pack://application:,,,/Resimler/DizilimYap/eksi.png"/>
+                    <Image Source="pack://application:,,,/Images/DizilimYap/eksi.png"/>
                   </StackPanel>
                 </Button>
               </Grid>
@@ -488,25 +488,25 @@
 
                   <Button x:Name="BtnYukari" Grid.Row="0" Grid.Column="1" Width="60" Height="60" Style="{StaticResource transparan_button}" Click="BtnYukari_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                      <Image Source="pack://application:,,,/Resimler/DizilimYap/yukari_ok.png"/>
+                      <Image Source="pack://application:,,,/Images/DizilimYap/yukari_ok.png"/>
                     </StackPanel>
                   </Button>
 
                   <Button x:Name="BtnSol" Grid.Row="1" Grid.Column="0" Width="60" Height="50" Style="{StaticResource transparan_button}" Click="BtnSol_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                      <Image Source="pack://application:,,,/Resimler/DizilimYap/sola_ok.png"/>
+                      <Image Source="pack://application:,,,/Images/DizilimYap/sola_ok.png"/>
                     </StackPanel>
                   </Button>
 
                   <Button x:Name="BtnSag" Grid.Row="1" Grid.Column="2" Width="60" Height="50" Style="{StaticResource transparan_button}" Click="BtnSag_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                      <Image Source="pack://application:,,,/Resimler/DizilimYap/saga_ok.png"/>
+                      <Image Source="pack://application:,,,/Images/DizilimYap/saga_ok.png"/>
                     </StackPanel>
                   </Button>
 
                   <Button x:Name="BtnAsagi" Grid.Row="2" Grid.Column="1" Width="60" Height="60" Style="{StaticResource transparan_button}" Click="BtnAsagi_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                      <Image Source="pack://application:,,,/Resimler/DizilimYap/asagi_ok.png"/>
+                      <Image Source="pack://application:,,,/Images/DizilimYap/asagi_ok.png"/>
                     </StackPanel>
                   </Button>
                 </Grid>
@@ -537,7 +537,7 @@
               <Image Margin="20,10,0,0"
                                    MaxHeight="160"
                                    MaxWidth="160"
-                                   Source="pack://application:,,,/Resimler/DizilimYap/referans_eksenler.png"/>
+                                   Source="pack://application:,,,/Images/DizilimYap/referans_eksenler.png"/>
             </StackPanel>
           </Grid>
 
@@ -553,7 +553,7 @@
                                 Height="400"
                                 MouseLeftButtonDown="canvasPalet_MouseLeftButtonDown">
               <Canvas.Background>
-                <ImageBrush ImageSource="pack://application:,,,/Resimler/DizilimYap/palet.png"/>
+                <ImageBrush ImageSource="pack://application:,,,/Images/DizilimYap/palet.png"/>
               </Canvas.Background>
             </Canvas>
 
@@ -588,7 +588,7 @@
                                        MouseDown="btnKatArti_MouseDown"
                                        MaxHeight="50"
                                        MaxWidth="50"
-                                       Source="pack://application:,,,/Resimler/DizilimYap/yukari_icon.png"/>
+                                       Source="pack://application:,,,/Images/DizilimYap/yukari_icon.png"/>
               </StackPanel>
             </Button>
 
@@ -606,7 +606,7 @@
                                        MouseDown="btnKatEksi_MouseDown"
                                        MaxHeight="50"
                                        MaxWidth="50"
-                                       Source="pack://application:,,,/Resimler/DizilimYap/asagi_icon.png"/>
+                                       Source="pack://application:,,,/Images/DizilimYap/asagi_icon.png"/>
               </StackPanel>
             </Button>
           </StackPanel>

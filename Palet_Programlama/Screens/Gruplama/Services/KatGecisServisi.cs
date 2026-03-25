@@ -1,9 +1,9 @@
-﻿using Servisler.PaletMethod;
+﻿using Palet_Programlama.Screens.Dizilim.Services;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
 
-namespace Palet_Programlama.Sayfalar.Gruplama.Services
+namespace Palet_Programlama.Screens.Gruplama.Services
 {
     public sealed class KatGecisServisi
     {

@@ -1,10 +1,6 @@
-﻿namespace Palet_Programlama.Modeller
+﻿namespace Palet_Programlama.Screens.Dizilim.Models
 {
-    public enum UrunYonu
-    {
-        Dikey = 0,
-        Yatay = 1
-    }
+
 
     public sealed class KatUrunu
     {

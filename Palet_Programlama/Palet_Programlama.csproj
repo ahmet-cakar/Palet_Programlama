@@ -61,11 +61,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Enums\EklemeYonEnum.cs" />
-    <Compile Include="Screens\DizilimYap\Models\DizilimKayitModel.cs" />
-    <Compile Include="Screens\DizilimYap\Models\DizilimUrunKayitModel.cs" />
     <Compile Include="Popups\OnayKutusu.xaml.cs">
       <DependentUpon>OnayKutusu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Dizilim\Models\KatUrunu.cs" />
+    <Compile Include="Screens\Dizilim\Models\DizilimKayitModel.cs" />
+    <Compile Include="Screens\Dizilim\Models\DizilimUrunKayitModel.cs" />
     <Compile Include="Screens\GruplamaYap.xaml.cs">
       <DependentUpon>GruplamaYap.xaml</DependentUpon>
     </Compile>
@@ -81,7 +82,7 @@
     <Compile Include="Screens\Gruplama\Models\ProgramKaydetGirdiModel.cs" />
     <Compile Include="Screens\Gruplama\Models\ProgramKayitModel.cs" />
     <Compile Include="Screens\Gruplama\Models\ProgramUrunModel.cs" />
-    <Compile Include="Screens\DizilimYap\Services\DizilimKayitServisi.cs" />
+    <Compile Include="Screens\Dizilim\Services\DizilimKayitServisi.cs" />
     <Compile Include="Screens\Gruplama\Services\GrupGorsellestirmeServisi.cs" />
     <Compile Include="Screens\Gruplama\Services\GrupKuralServisi.cs" />
     <Compile Include="Screens\Gruplama\Services\GruplamaBilgiServisi.cs" />
@@ -97,18 +98,17 @@
     <Compile Include="Screens\Programlar.xaml.cs">
       <DependentUpon>Programlar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Programlar\ProgramListeServisi.cs" />
+    <Compile Include="Screens\Program\ProgramListeServisi.cs" />
     <Compile Include="Screens\ReceteDuzenle.xaml.cs">
       <DependentUpon>ReceteDuzenle.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Screens\DizilimYap\Models\KatUrunu.cs" />
-    <Compile Include="Screens\DizilimYap\Services\KatYoneticisi.cs" />
-    <Compile Include="Screens\DizilimYap\Services\MesafeGostergesi.cs" />
-    <Compile Include="Screens\DizilimYap\Services\YerlesimMotoru.cs" />
+    <Compile Include="Screens\Dizilim\Services\KatYoneticisi.cs" />
+    <Compile Include="Screens\Dizilim\Services\MesafeGostergesi.cs" />
+    <Compile Include="Screens\Dizilim\Services\YerlesimMotoru.cs" />
     <Compile Include="Screens\Statics\GrupSabitleri.cs" />
     <Compile Include="Screens\Statics\ResimYollari.cs" />
     <Compile Include="Screens\Helpers\DosyaYoluBul.cs" />
-    <Compile Include="Screens\Helpers\LanguageConverter.cs" />
+    <Compile Include="Languages\LanguageConverter.cs" />
     <Compile Include="Screens\Helpers\KullaniciDil.cs" />
     <Compile Include="Screens\DizilimYap.xaml.cs">
       <DependentUpon>DizilimYap.xaml</DependentUpon>
@@ -290,8 +290,8 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Include="Data\Urunler.json" />
-    <None Include="Language\eng.json" />
-    <None Include="Language\tr.json" />
+    <None Include="Languages\eng.json" />
+    <None Include="Languages\tr.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -302,120 +302,231 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Anasayfa\Icon\bildirim_zili_icon.png" />
+    <Content Include="Images\Anasayfa\Icon\bildirim_zili_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Anasayfa\Beyaz\1.png" />
-    <Resource Include="Images\Anasayfa\Beyaz\2.png" />
-    <Resource Include="Images\Anasayfa\Beyaz\3.png" />
-    <Resource Include="Images\Anasayfa\Beyaz\4.png" />
-    <Resource Include="Images\Anasayfa\Beyaz\5.png" />
-    <Resource Include="Images\Anasayfa\Beyaz\6.png" />
-    <Resource Include="Images\Anasayfa\Beyaz\7.png" />
-    <Resource Include="Images\Anasayfa\Beyaz\8.png" />
+    <Content Include="Images\Anasayfa\Beyaz\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Beyaz\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Beyaz\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Beyaz\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Beyaz\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Beyaz\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Beyaz\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Beyaz\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Anasayfa\Siyah\1.png" />
-    <Resource Include="Images\Anasayfa\Siyah\2.png" />
-    <Resource Include="Images\Anasayfa\Siyah\3.png" />
-    <Resource Include="Images\Anasayfa\Siyah\4.png" />
-    <Resource Include="Images\Anasayfa\Siyah\5.png" />
-    <Resource Include="Images\Anasayfa\Siyah\6.png" />
-    <Resource Include="Images\Anasayfa\Siyah\7.png" />
-    <Resource Include="Images\Anasayfa\Siyah\8.png" />
+    <Content Include="Images\Anasayfa\Siyah\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Siyah\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Siyah\3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Siyah\4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Siyah\5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Siyah\6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Siyah\7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Siyah\8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Kullanıcı\logo-sade.png" />
+    <Content Include="Images\Kullanici\logo-sade.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\bekleme-ekranı.png" />
+    <Content Include="Images\bekleme-ekrani.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\genel_background.png" />
+    <Content Include="Images\genel_background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Anasayfa\Icon\kullanici_icon.png" />
+    <Content Include="Images\Anasayfa\Icon\kullanici_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Kullanıcı\dil_turkce_kapali.png" />
+    <Content Include="Images\Kullanici\dil_turkce_kapali.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\UserControlUstMenu\geri_icon.png" />
+    <Content Include="Images\UserControlUstMenu\geri_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\UserControlUstMenu\ana_sayfa_icon.png" />
+    <Content Include="Images\UserControlUstMenu\ana_sayfa_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Icon.ico" />
+    <Content Include="Images\Icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\gradient_background.png" />
+    <Content Include="Images\Kullanici\dil_turkce_Acik.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Kullanıcı\dil_turkce_Acik.png" />
+    <Content Include="Images\Kullanici\dil_eng.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Kullanıcı\dil_eng.png" />
+    <Content Include="Images\Kullanici\dil_eng_Acik.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Kullanıcı\dil_eng_Acik.png" />
+    <Content Include="Images\DizilimYap\referans_eksenler.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DizilimYap\referans_eksenler.png" />
+    <Content Include="Images\DizilimYap\secili_dikey_kutu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\DizilimYap\dikey_kutu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\DizilimYap\palet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DizilimYap\secili_dikey_kutu.png" />
-    <Resource Include="Images\DizilimYap\dikey_kutu.png" />
-    <Resource Include="Images\DizilimYap\palet.png" />
+    <Content Include="Images\DizilimYap\asagi_ok.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\DizilimYap\saga_ok.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\DizilimYap\sola_ok.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\DizilimYap\yukari_ok.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DizilimYap\asagi_ok.png" />
-    <Resource Include="Images\DizilimYap\saga_ok.png" />
-    <Resource Include="Images\DizilimYap\sola_ok.png" />
-    <Resource Include="Images\DizilimYap\yukari_ok.png" />
+    <Content Include="Images\DizilimYap\arti.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\DizilimYap\eksi.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DizilimYap\arti.png" />
-    <Resource Include="Images\DizilimYap\eksi.png" />
+    <Content Include="Images\DizilimYap\yatay_kutu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DizilimYap\yatay_kutu.png" />
+    <Content Include="Images\DizilimYap\secili_yatay_kutu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DizilimYap\secili_yatay_kutu.png" />
+    <Content Include="Images\DizilimYap\info-icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DizilimYap\info-icon.png" />
+    <Content Include="Images\DizilimYap\asagi_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\DizilimYap\yukari_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\DizilimYap\asagi_icon.png" />
-    <Resource Include="Images\DizilimYap\yukari_icon.png" />
+    <Content Include="Images\Anasayfa\Icon\admin_pp2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Icon\admin_pp3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Anasayfa\Icon\admin_pp2.png" />
-    <Resource Include="Images\Anasayfa\Icon\admin_pp3.png" />
+    <Content Include="Images\Anasayfa\Icon\changeaccount.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Anasayfa\Icon\logout.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Anasayfa\Icon\changeaccount.png" />
-    <Resource Include="Images\Anasayfa\Icon\logout.png" />
+    <Content Include="Images\Hiz\buble_referance.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Hiz\buble_referance.png" />
+    <Content Include="Images\UserControlUstMenu\ileri_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\UserControlUstMenu\ileri_icon.png" />
+    <Content Include="Images\UrunEkle\boy-koli.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\UrunEkle\boy-pallet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\UrunEkle\en-koli.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\UrunEkle\en-pallet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\UrunEkle\yukseklik-koli.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\UrunEkle\yukseklik-pallet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\UrunEkle\boy-koli.png" />
-    <Resource Include="Images\UrunEkle\boy-pallet.png" />
-    <Resource Include="Images\UrunEkle\en-koli.png" />
-    <Resource Include="Images\UrunEkle\en-pallet.png" />
-    <Resource Include="Images\UrunEkle\yukseklik-koli.png" />
-    <Resource Include="Images\UrunEkle\yukseklik-pallet.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\UrunEkle\koli-agirlik.png" />
-    <Resource Include="Images\UrunEkle\koli-basinc.png" />
+    <Content Include="Images\UrunEkle\koli-agirlik.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\UrunEkle\koli-basinc.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

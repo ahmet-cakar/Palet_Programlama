@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Palet_Programlama.Sınıflar
+namespace Palet_Programlama.Screens.Helpers
 {
     public static class DosyaYoluBul
     {

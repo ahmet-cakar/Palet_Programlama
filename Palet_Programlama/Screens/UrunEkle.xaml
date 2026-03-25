@@ -1,17 +1,17 @@
-﻿<Page x:Class="Palet_Programlama.Sayfalar.UrunEkle"
+﻿<Page x:Class="Palet_Programlama.Screens.UrunEkle"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Palet_Programlama.Sayfalar"
-      xmlns:sınıflar="clr-namespace:Palet_Programlama.Sınıflar"
+      xmlns:local="clr-namespace:Palet_Programlama.UserController"
+      xmlns:languages="clr-namespace:Palet_Programlama.Languages"
       mc:Ignorable="d" 
       d:DesignHeight="768" d:DesignWidth="1366"
       Title="UrunEkle">
-    <Page.Resources>
-        <sınıflar:LanguageConverter x:Key="LanguageConverter"/>
-    </Page.Resources>
-    <Grid>
+  <Page.Resources>
+    <languages:LanguageConverter x:Key="LanguageConverter"/>
+  </Page.Resources>
+  <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -42,7 +42,7 @@
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Width="150" x:Name="priviewtextblock" Text="" Foreground="White" FontSize="22" FontFamily="Roboto" 
                             Margin="20,0,0,20" VerticalAlignment="Bottom" Opacity="1" />
-                            <Image x:Name="onizleımage"  Width="250" Margin="280,0,0,0"></Image>
+                            <Image x:Name="onIzlemeImage"  Width="250" Margin="280,0,0,0"></Image>
                            
                         </StackPanel>
                     </Border>

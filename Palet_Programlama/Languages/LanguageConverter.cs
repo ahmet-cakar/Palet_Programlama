@@ -1,9 +1,10 @@
 ﻿using Newtonsoft.Json.Linq;
+using Palet_Programlama.Screens.Helpers;
 using System;
 using System.Globalization;
 using System.IO;
 using System.Windows.Data;
-namespace Palet_Programlama.Sınıflar
+namespace Palet_Programlama.Languages
 {
     public class LanguageConverter : IValueConverter
     {
@@ -13,8 +14,8 @@ namespace Palet_Programlama.Sınıflar
         // Dil dosyasını yüklemek için kullanılan metod
         public static void LoadLanguage(string languageCode)
         {
-            string filePath = DosyaYoluBul.DosyaGetir("DilPaketleri", $"{languageCode}.json");
-            //string filePath = $"C:\\Users\\yunusemre.kara\\source\\repos\\Palet_Programlama\\Palet_Programlama\\DilPaketleri\\{languageCode}.json";
+            string filePath = DosyaYoluBul.DosyaGetir("Languages", $"{languageCode}.json");
+            //string filePath = $"C:\\Users\\yunusemre.kara\\source\\repos\\Palet_Programlama\\Palet_Programlama\\Languages\\{languageCode}.json";
 
             if (File.Exists(filePath))
             {
@@ -28,8 +29,8 @@ namespace Palet_Programlama.Sınıflar
         }
         public static void LoadLanguage2(string languageCode)
         {
-            string filePath = DosyaYoluBul.DosyaGetir2("DilPaketleri", $"{languageCode}.json");
-            //string filePath = $"C:\\Users\\yunusemre.kara\\source\\repos\\Palet_Programlama\\Palet_Programlama\\DilPaketleri\\{languageCode}.json";
+            string filePath = DosyaYoluBul.DosyaGetir2("Languages", $"{languageCode}.json");
+            //string filePath = $"C:\\Users\\yunusemre.kara\\source\\repos\\Palet_Programlama\\Palet_Programlama\\Languages\\{languageCode}.json";
 
             if (File.Exists(filePath))
             {

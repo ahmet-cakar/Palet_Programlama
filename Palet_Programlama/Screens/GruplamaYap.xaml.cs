@@ -1,23 +1,24 @@
-﻿using Palet_Programlama.Modeller;
-using Palet_Programlama.Popuplar;
-using Palet_Programlama.Sayfalar.Gruplama.Helpers;
-using Palet_Programlama.Sayfalar.Gruplama.Models;
-using Palet_Programlama.Sayfalar.Gruplama.Services;
-using Palet_Programlama.Servisler.PaletMethod;
-using Palet_Programlama.Sınıflar;
-using Palet_Programlama.UserController;
-using Servisler.PaletMethod;
+﻿
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
+using Palet_Programlama.Screens.Gruplama.Services;
+using Palet_Programlama.Screens.Gruplama.Models;
+using System.Windows.Controls;
+using Palet_Programlama.Screens.Dizilim.Services;
+using Palet_Programlama.Screens.Gruplama.Helpers;
 using System.Collections.ObjectModel;
-using Palet_Programlama.Statics;
+using Palet_Programlama.Screens.UrunPaletEkle.Models;
+using Palet_Programlama.Screens.Dizilim.Models;
+using Palet_Programlama.Screens.Statics;
+using Palet_Programlama.Popuplar;
+using Palet_Programlama.UserController;
 
-namespace Palet_Programlama.Sayfalar
+namespace Palet_Programlama.Screens
 {
     /// <summary>
     /// Interaction logic for GruplamaYap.xaml

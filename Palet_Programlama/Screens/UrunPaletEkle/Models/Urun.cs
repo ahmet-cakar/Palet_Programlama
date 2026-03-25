@@ -1,4 +1,4 @@
-﻿namespace Palet_Programlama.Sınıflar
+﻿namespace Palet_Programlama.Screens.UrunPaletEkle.Models
 {
     public class Urun
     {

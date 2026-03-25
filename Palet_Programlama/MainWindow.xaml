@@ -3,24 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Palet_Programlama"
-        xmlns:userController="clr-namespace:Palet_Programlama.UserController"
+        xmlns:controls="clr-namespace:Palet_Programlama.UserController"
         mc:Ignorable="d"
         WindowState="Maximized"
-        Icon="pack://application:,,,/Resimler/Icon.ico"
         Title="RSTACK FUSION" Height="768" Width="1366">
     
         <Grid>
-            <Image Panel.ZIndex="-1" Source="pack://application:,,,/Resimler/genel_background.png" 
-                Style="{StaticResource backgroundstyle}"/>
-        <Frame 
+                    <Frame 
                     x:Name="MainFrame"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
                     Panel.ZIndex="1"
                     NavigationUIVisibility="Hidden"
                     />
-        <userController:LoadingOverlay x:Name="LoadingOverlayControl"
-                               Panel.ZIndex="999"/>
+    <controls:LoadingOverlay x:Name="LoadingOverlayControl"
+                               Panel.ZIndex="1"/>
+    <Image  Source="pack://application:,,,/Images/genel_background.png" 
+     Style="{StaticResource backgroundstyle}"/>
   </Grid>
 </Window>

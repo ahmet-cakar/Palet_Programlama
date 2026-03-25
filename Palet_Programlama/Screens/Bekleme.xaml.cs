@@ -1,7 +1,7 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace Palet_Programlama.Sayfalar
+namespace Palet_Programlama.Screens
 {
     /// <summary>
     /// Interaction logic for Bekleme.xaml
@@ -18,8 +18,7 @@ namespace Palet_Programlama.Sayfalar
         private void img_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MainFrame.Navigate(new Kullanici(MainFrame));
+
         }
-
-
     }
 }

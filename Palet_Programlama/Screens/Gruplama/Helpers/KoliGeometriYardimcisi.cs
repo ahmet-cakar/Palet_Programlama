@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Shapes;
 
-namespace Palet_Programlama.Sayfalar.Gruplama.Helpers
+namespace Palet_Programlama.Screens.Gruplama.Helpers
 {
     public sealed class KoliGeometriYardimcisi
     {

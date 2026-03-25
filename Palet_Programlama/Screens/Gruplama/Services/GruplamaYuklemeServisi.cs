@@ -1,11 +1,12 @@
-﻿using Palet_Programlama.Modeller;
-using Palet_Programlama.Sayfalar.Gruplama.Models;
-using Palet_Programlama.Sınıflar;
+﻿using Palet_Programlama.Screens.Dizilim.Models;
+using Palet_Programlama.Screens.Dizilim.Services;
+using Palet_Programlama.Screens.Gruplama.Models;
+using Palet_Programlama.Screens.UrunPaletEkle.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Palet_Programlama.Sayfalar.Gruplama.Services
+namespace Palet_Programlama.Screens.Gruplama.Services
 {
     public sealed class GruplamaYuklemeServisi
     {

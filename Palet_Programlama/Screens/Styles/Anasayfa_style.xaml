@@ -2,10 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <!--Button style başlangıç-->
-        <Style x:Key="button_template" TargetType="Button" >
-        
-       
-            <Setter Property="FontFamily" Value="Roboto"/>
+  <Style x:Key="button_template" TargetType="Button" >
+    <Setter Property="FontFamily" Value="Roboto"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="Width" Value="75"/>

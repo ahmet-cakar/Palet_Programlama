@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
-using Palet_Programlama.Sayfalar.HizAyarlari.Models;
-using Palet_Programlama.Sınıflar;
+using Palet_Programlama.Screens.Helpers;
+using Palet_Programlama.Screens.HizAyarlari.Models;
 using System.IO;
 
-namespace Palet_Programlama.Sayfalar.HizAyarlari.Services
+namespace Palet_Programlama.Screens.HizAyarlari.Services
 {
     public sealed class HizServisi
     {

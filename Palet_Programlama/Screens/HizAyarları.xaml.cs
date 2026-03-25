@@ -1,5 +1,6 @@
-﻿using Palet_Programlama.Sayfalar.HizAyarlari.Models;
-using Palet_Programlama.Sayfalar.HizAyarlari.Services;
+﻿
+using Palet_Programlama.Screens.HizAyarlari.Models;
+using Palet_Programlama.Screens.HizAyarlari.Services;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -8,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace Palet_Programlama.Sayfalar
+namespace Palet_Programlama.Screens
 {
     public partial class HizAyarları : Page
     {

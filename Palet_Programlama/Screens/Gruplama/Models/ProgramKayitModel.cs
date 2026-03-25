@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Palet_Programlama.Sayfalar.Gruplama.Models
+namespace Palet_Programlama.Screens.Gruplama.Models
 {
     public sealed class ProgramKayitModel
     {

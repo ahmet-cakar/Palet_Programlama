@@ -1,12 +1,12 @@
-﻿using Palet_Programlama.Modeller;
-using Palet_Programlama.Sayfalar.Gruplama.Helpers;
-using Palet_Programlama.Sayfalar.Gruplama.Models;
+﻿
+using Palet_Programlama.Screens.Dizilim.Models;
+using Palet_Programlama.Screens.Gruplama.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Shapes;
 
-namespace Palet_Programlama.Sayfalar.Gruplama.Services
+namespace Palet_Programlama.Screens.Gruplama.Services
 {
     public sealed class GrupKuralServisi
     {

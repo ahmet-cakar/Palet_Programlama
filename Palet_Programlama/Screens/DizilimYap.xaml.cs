@@ -76,7 +76,7 @@ namespace Palet_Programlama.Screens
                 YukleniyorGoster("Dizilim yükleniyor...");
                 try
                 {
-                    bool yüklendi = dizilimKayitServisi.DizilimYukle(
+                    bool yüklendi = _katYonetici.DizilimYukle(
                         _gelenDizilimAdi,
                         _secilenUrun,
                         _secilenPalet,

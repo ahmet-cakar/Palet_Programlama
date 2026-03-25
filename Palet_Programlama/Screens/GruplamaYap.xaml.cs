@@ -207,7 +207,7 @@ namespace Palet_Programlama.Screens
 
             KayitBilgileriniUygula(kayit);
 
-            bool yuklendi = _dizilimKayitServisi.DizilimYukle(
+            bool yuklendi = _katYonetici.DizilimYukle(
                 kayit.DizilimAdi,
                 _secilenUrun,
                 _secilenPalet,

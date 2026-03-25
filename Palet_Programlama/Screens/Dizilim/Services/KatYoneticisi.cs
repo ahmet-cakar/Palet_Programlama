@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
+
 namespace Palet_Programlama.Screens.Dizilim.Services
 {
     public sealed class KatYoneticisi
@@ -133,6 +135,91 @@ namespace Palet_Programlama.Screens.Dizilim.Services
             AktifKat = 1;
         }
 
+        public bool DizilimYukle(
+                string dizilimAdi,
+                Urun secilenUrun,
+                Palet secilenPalet,
+                double olcekX,
+                double olcekY)
+        {
+            if (string.IsNullOrWhiteSpace(dizilimAdi))
+                return false;
+
+            try
+            {
+                string dosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Dizilimler.json");
+
+                if (!File.Exists(dosyaYolu))
+                    return false;
+
+                string json = File.ReadAllText(dosyaYolu);
+
+                var tumDizilimler = JsonConvert.DeserializeObject<List<DizilimKayitModel>>(json)
+                                   ?? new List<DizilimKayitModel>();
+
+                var kayit = tumDizilimler.FirstOrDefault(x => x.DizilimAdi == dizilimAdi);
+
+
+
+                if (kayit == null)
+                    return false;
+
+                _katlar.Clear();
+
+                var katGruplari = kayit.Urunler
+                    .GroupBy(x => x.KatNo)
+                    .OrderBy(x => x.Key);
+
+                foreach (var katGrubu in katGruplari)
+                {
+                    var liste = new List<KatUrunu>();
+
+
+                    foreach (var urunKayit in katGrubu)
+                    {
+                        UrunYonu yon = string.Equals(urunKayit.Yon, "Yatay", StringComparison.OrdinalIgnoreCase)
+                            ? UrunYonu.Yatay
+                            : UrunYonu.Dikey;
+
+                        double gercekX = urunKayit.MerkezX;
+                        double gercekY = urunKayit.MerkezY;
+
+                        double canvasMerkezX = gercekY * olcekY;
+                        double canvasMerkezY = gercekX * olcekX;
+
+                        double dikeyUzunluk;
+                        double yatayUzunluk;
+
+                        if (yon == UrunYonu.Dikey)
+                        {
+                            dikeyUzunluk = secilenUrun.UrunBoy * olcekX;
+                            yatayUzunluk = secilenUrun.UrunEn * olcekY;
+                        }
+                        else
+                        {
+                            dikeyUzunluk = secilenUrun.UrunBoy * olcekY;
+                            yatayUzunluk = secilenUrun.UrunEn * olcekX;
+                        }
+
+                        liste.Add(new KatUrunu(
+                            canvasMerkezX,
+                            canvasMerkezY,
+                            dikeyUzunluk,
+                            yatayUzunluk,
+                            yon));
+                    }
+
+                    _katlar[katGrubu.Key] = liste;
+                }
+
+                AktifKat = _katlar.Any() ? _katlar.Keys.Min() : 1;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         public void KatDegistir(
             int yeniKat,
@@ -169,12 +256,12 @@ namespace Palet_Programlama.Screens.Dizilim.Services
 
 
         public bool KatKopyala(
-        int kaynakKat,
-        int hedefKat,
-        bool xEksenineGoreAynala,
-        bool yEksenineGoreAynala,
-        double canvasGenislik,
-        double canvasYukseklik)
+    int kaynakKat,
+    int hedefKat,
+    bool xEksenineGoreAynala,
+    bool yEksenineGoreAynala,
+    double canvasGenislik,
+    double canvasYukseklik)
         {
             if (kaynakKat < 1 || hedefKat < 1)
                 return false;

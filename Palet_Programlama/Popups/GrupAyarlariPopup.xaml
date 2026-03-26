@@ -255,21 +255,21 @@
                                                   Margin="0,0,10,10"
                                                   Checked="BirakmaYonu_Checked"/>
 
+                  <ToggleButton x:Name="TglBirakmaYonuEksiY"
+                                                  Style="{StaticResource YonSecimButtonStyle}"
+                                                  Content="- Y"
+                                                  Margin="0,0,0,10"
+                                                  Checked="BirakmaYonu_Checked"/>
+
                   <ToggleButton x:Name="TglBirakmaYonuArtiX"
                                                   Style="{StaticResource YonSecimButtonStyle}"
                                                   Content="+ X"
-                                                  Margin="0,0,0,10"
+                                                  Margin="0,0,10,0"
                                                   Checked="BirakmaYonu_Checked"/>
 
                   <ToggleButton x:Name="TglBirakmaYonuArtiY"
                                                   Style="{StaticResource YonSecimButtonStyle}"
                                                   Content="+ Y"
-                                                  Margin="0,0,10,0"
-                                                  Checked="BirakmaYonu_Checked"/>
-
-                  <ToggleButton x:Name="TglBirakmaYonuEksiY"
-                                                  Style="{StaticResource YonSecimButtonStyle}"
-                                                  Content="- Y"
                                                   Checked="BirakmaYonu_Checked"/>
                 </UniformGrid>
               </StackPanel>

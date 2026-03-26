@@ -53,5 +53,46 @@
         "MerkezZ": 160.0
       }
     ]
+  },
+  {
+    "DizilimAdi": "Dizim1",
+    "PaletAdi": "Euro-palet",
+    "PaletEn": 800.0,
+    "PaletBoy": 1200.0,
+    "PaletYukseklik": 120.0,
+    "UrunAdi": "Ahmet",
+    "UrunEn": 300.0,
+    "UrunBoy": 400.0,
+    "UrunYukseklik": 200.0,
+    "Urunler": [
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 200.0,
+        "MerkezY": 150.0,
+        "MerkezZ": 220.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 200.0,
+        "MerkezY": 450.0,
+        "MerkezZ": 220.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 600.0,
+        "MerkezY": 150.0,
+        "MerkezZ": 220.0
+      },
+      {
+        "Yon": "Dikey",
+        "KatNo": 1,
+        "MerkezX": 600.0,
+        "MerkezY": 450.0,
+        "MerkezZ": 220.0
+      }
+    ]
   }
 ]

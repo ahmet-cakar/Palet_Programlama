@@ -97,6 +97,7 @@
 
   },
     "MesajKutusu": {
+        "urunBasariliEklendi": "The product has been added successfully.",
         "araKatSilinemez": "Please start from the top floor when cleaning the floor, the intermediate layer cannot be wiped.",
         "isimGiriniz": "Please enter a name..",
         "tasinacakUrunYok": "There are no products to move.",

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Palet_Programlama.UserController"
       xmlns:languages="clr-namespace:Palet_Programlama.Languages"
       mc:Ignorable="d" 
-      d:DesignHeight="768" d:DesignWidth="1366"
+      d:DesignHeight="1000" d:DesignWidth="1366"
       Title="UrunEkle">
   <Page.Resources>
     <languages:LanguageConverter x:Key="LanguageConverter"/>
@@ -105,11 +105,11 @@
                   <TextBlock x:Name="phUrunBasinc" Text="{Binding Source='UrunEkle.urunbasincgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="280,-30,0,0"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                    <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_backgroundgreen}"
+                                    <Button x:Name="BtnUrunEkle" Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_backgroundgreen}"
                                     Margin="0,30,0,0" Content="{Binding Source='UrunEkle.uruneklebtn',Converter={StaticResource LanguageConverter}}" Click="UrunEkleBtn_Click"/>
-                                    <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
-                                    Margin="20,30,0,0" Content="{Binding Source='UrunEkle.urunduzenlebtn',Converter={StaticResource LanguageConverter}}"/>
-                                    <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
+                                    <Button x:Name="BtnUrunDuzenle" Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
+                                    Margin="20,30,0,0" Content="{Binding Source='UrunEkle.urunduzenlebtn',Converter={StaticResource LanguageConverter}}" Click="BtnUrunDuzenle_Click"/>
+                                    <Button x:Name="BtnUrunSil" Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
                                     Margin="20,30,0,0" Content="{Binding Source='UrunEkle.urunsilbtn',Converter={StaticResource LanguageConverter}}" Click="UrunSilBtn_Click"/>
                                 </StackPanel>
 
@@ -151,11 +151,11 @@
 
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                    <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_backgroundgreen}"
+                                    <Button x:Name="BtnPaletEkle" Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_backgroundgreen}"
                                     Margin="0,170,0,0" Content="{Binding Source='UrunEkle.paleteklebtn',Converter={StaticResource LanguageConverter}}" Click="PaletEkleBtn_Click"/>
-                                    <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
+                                    <Button x:Name="BtnPaletDuzenle" Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
                                     Margin="20,170,0,0" Content="{Binding Source='UrunEkle.paletduzenlebtn',Converter={StaticResource LanguageConverter}}" Click="PaletDuzenleBtn_Click"/>
-                                    <Button Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
+                                    <Button x:Name="BtnPaletSil" Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
                                  Margin="20,170,0,0" Content="{Binding Source='UrunEkle.paletsilbtn',Converter={StaticResource LanguageConverter}}" Click="PaletSilBtn_Click"/>
                                 </StackPanel>
                             </StackPanel>

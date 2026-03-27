@@ -20,9 +20,7 @@ using System.Windows.Shapes;
 
 namespace Palet_Programlama.Screens
 {
-    /// <summary>
-    /// Interaction logic for DizilimYap.xaml
-    /// </summary>
+    
     public partial class DizilimYap : Page
     {
         private static readonly ImageSource _dikeyResim = ResimYollari.dikeyResim;

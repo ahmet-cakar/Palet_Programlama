@@ -19,6 +19,8 @@ namespace Palet_Programlama.UserController
             btnHayir.Content = hayirButonMetni;
         }
 
+
+
         public void MesajGonderFormatli(string sablon, params object[] args)
         {
             mesaj.Text = string.Format(CultureInfo.CurrentCulture, sablon, args);

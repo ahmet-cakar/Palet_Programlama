@@ -114,7 +114,7 @@ namespace Palet_Programlama.UserController
             switch (sayfaKodu)
             {
                 case "UrunEkle":
-                    return new UrunEkle(mainWindow.MainFrame);
+                    return new UrunEkle();
 
                 case "DizilimYap":
                     {

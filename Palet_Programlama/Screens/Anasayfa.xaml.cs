@@ -29,7 +29,7 @@ namespace Palet_Programlama.Screens
 
         private void UrunEklePage_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new UrunEkle(MainFrame));
+            MainFrame.Navigate(new UrunEkle());
         }
 
         private void DizilimPage_Click(object sender, RoutedEventArgs e)

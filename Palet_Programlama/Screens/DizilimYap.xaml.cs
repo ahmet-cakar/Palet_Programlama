@@ -501,7 +501,9 @@ namespace Palet_Programlama.Screens
                     varsayilanAd,
                     "Kaydet",
                     "İptal");
-                pencere.SeparatorSecimleriniHazirla(_katYonetici.AktifKat);
+                pencere.SeparatorSecimleriniHazirla(_katYonetici.TumKatlar.Count);
+
+
 
                 bool? sonuc = pencere.ShowDialog();
                 if (sonuc != true)
@@ -513,6 +515,10 @@ namespace Palet_Programlama.Screens
                     BildirimGoster("MesajKutusu.kayitIcinIsimGerekli");
                     return;
                 }
+
+                bool separatorKullanilacak = pencere.SeparatorKullanilacak;
+                double separatorYukseklik = pencere.SeparatorKalinlik;
+                List<int> secilenSeparatorKatlari = pencere.SecilenSeparatorKatlari ?? new List<int>();
 
                 YukleniyorGoster("Dizilim kaydediliyor...");
 
@@ -570,7 +576,10 @@ namespace Palet_Programlama.Screens
                         _secilenUrun,
                         _katYonetici.TumKatlar,
                         OlcekX,
-                        OlcekY);
+                        OlcekY, 
+                        separatorKullanilacak, 
+                        separatorYukseklik, 
+                        secilenSeparatorKatlari);
 
                     int index = tumDizilimler.IndexOf(eskiKayit);
                     tumDizilimler[index] = yeniDizilim;
@@ -600,7 +609,10 @@ namespace Palet_Programlama.Screens
                     _secilenUrun,
                     _katYonetici.TumKatlar,
                     OlcekX,
-                    OlcekY);
+                    OlcekY,
+                    separatorKullanilacak,
+                    separatorYukseklik,
+                    secilenSeparatorKatlari);
                     tumDizilimler.Add(yeniDizilim);
 
                     string yeniJson = JsonConvert.SerializeObject(tumDizilimler, Formatting.Indented);

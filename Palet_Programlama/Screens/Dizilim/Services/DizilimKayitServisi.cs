@@ -61,14 +61,20 @@ namespace Palet_Programlama.Screens.Dizilim.Services
                 string.Equals((x.DizilimAdi ?? "").Trim(), (dizilimAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase));
         }
 
-
-
-        private double MerkezZHesapla(int katNo, Palet secilenPalet, Urun secilenUrun)
+        private double MerkezZHesapla(
+            int katNo,
+            Urun secilenUrun,
+            double separatorYukseklik,
+            List<int> secilenSeparatorKatlari)
         {
-            return secilenPalet.PaletYukseklik
-                   + (katNo * secilenUrun.UrunYukseklik)
-                   - (secilenUrun.UrunYukseklik / 2.0);
+            double normalMerkezZ = katNo * secilenUrun.UrunYukseklik;
+
+            int altindakiSeparatorSayisi = secilenSeparatorKatlari
+                .Count(x => x < katNo);
+
+            return normalMerkezZ + (altindakiSeparatorSayisi * separatorYukseklik);
         }
+
 
         public DizilimKayitModel KayitModelDizilimiOlustur(
             string dizilimAdi,
@@ -76,8 +82,19 @@ namespace Palet_Programlama.Screens.Dizilim.Services
             Urun secilenUrun,
             IReadOnlyDictionary<int, List<KatUrunu>> tumKatlar,
             double olcekX,
-            double olcekY)
+            double olcekY,
+            bool separatorKullanilacak,
+            double separatorYukseklik,
+            List<int> secilenSeparatorKatlari)
         {
+            if (!separatorKullanilacak)
+            {
+                separatorYukseklik = 0;
+                secilenSeparatorKatlari = new List<int>();
+            }
+
+            secilenSeparatorKatlari ??= new List<int>();
+
             var model = new DizilimKayitModel
             {
                 DizilimAdi = dizilimAdi,
@@ -88,7 +105,8 @@ namespace Palet_Programlama.Screens.Dizilim.Services
                 UrunAdi = secilenUrun.UrunAdi,
                 UrunEn = secilenUrun.UrunEn,
                 UrunBoy = secilenUrun.UrunBoy,
-                UrunYukseklik = secilenUrun.UrunYukseklik
+                UrunYukseklik = secilenUrun.UrunYukseklik,
+                SeparatorYukseklik = separatorYukseklik
             };
 
             foreach (var kat in tumKatlar
@@ -96,6 +114,9 @@ namespace Palet_Programlama.Screens.Dizilim.Services
                 .OrderBy(x => x.Key))
             {
                 int katNo = kat.Key;
+
+                int altindakiSeparatorSayisi = secilenSeparatorKatlari.Count(x => x < katNo);
+                bool separatorVarMi = altindakiSeparatorSayisi > 0;
 
                 foreach (var urun in kat.Value)
                 {
@@ -108,7 +129,12 @@ namespace Palet_Programlama.Screens.Dizilim.Services
                         KatNo = katNo,
                         MerkezX = gercekMerkezX,
                         MerkezY = gercekMerkezY,
-                        MerkezZ = MerkezZHesapla(katNo, secilenPalet, secilenUrun)
+                        MerkezZ = MerkezZHesapla(
+                            katNo,
+                            secilenUrun,
+                            separatorYukseklik,
+                            secilenSeparatorKatlari),
+                        SeparatorVarMi = separatorVarMi
                     });
                 }
             }

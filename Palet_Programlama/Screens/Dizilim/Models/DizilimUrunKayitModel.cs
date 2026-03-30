@@ -13,6 +13,8 @@ namespace Palet_Programlama.Screens.Dizilim.Models
     {
         public string Yon { get; set; }
         public int KatNo { get; set; }
+
+        public bool SeparatorVarMi { get; set; } = false;
         public double MerkezX { get; set; }
         public double MerkezY { get; set; }
         public double MerkezZ { get; set; }

@@ -501,6 +501,7 @@ namespace Palet_Programlama.Screens
                     varsayilanAd,
                     "Kaydet",
                     "İptal");
+                pencere.SeparatorSecimleriniHazirla(_katYonetici.AktifKat);
 
                 bool? sonuc = pencere.ShowDialog();
                 if (sonuc != true)

@@ -4,19 +4,20 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Height="260"
+        Height="520"
         Width="500"
         Background="Transparent">
 
   <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown">
     <Border Background="#191919"
-                BorderBrush="#f59f05"
-                BorderThickness="2"
-                CornerRadius="15"
-                Padding="20">
+            BorderBrush="#f59f05"
+            BorderThickness="2"
+            CornerRadius="15"
+            Padding="20">
 
       <Grid>
         <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
           <RowDefinition Height="Auto"/>
           <RowDefinition Height="Auto"/>
           <RowDefinition Height="Auto"/>
@@ -25,57 +26,85 @@
         </Grid.RowDefinitions>
 
         <TextBlock x:Name="txtBaslik"
-                           Text="Bilgi Girişi"
-                           FontSize="24"
-                           FontFamily="Roboto"
-                           Foreground="White"
-                           Margin="0,0,0,15"/>
+                   Text="Bilgi Girişi"
+                   FontSize="24"
+                   FontFamily="Roboto"
+                   Foreground="White"
+                   Margin="0,0,0,15"/>
 
         <TextBlock x:Name="txtMesaj"
-                           Grid.Row="1"
-                           Text="Lütfen bir değer giriniz."
-                           FontSize="16"
-                           Foreground="#D0D0D0"
-                           TextWrapping="Wrap"
-                           Margin="0,0,0,12"/>
+                   Grid.Row="1"
+                   Text="Lütfen bir değer giriniz."
+                   FontSize="16"
+                   Foreground="#D0D0D0"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,12"/>
 
         <TextBox x:Name="txtGiris"
-                         Grid.Row="2"
-                         Height="60"
-                         FontSize="22"
-                         Padding="10"
-                         Background="#2A2A2A"
-                         Foreground="White"
-                         BorderBrush="#f59f05"
-                         BorderThickness="1"
-                         VerticalContentAlignment="Center"
-                         Margin="0,0,0,20"/>
+                 Grid.Row="2"
+                 Height="50"
+                 FontSize="22"
+                 Padding="10"
+                 Background="#2A2A2A"
+                 Foreground="White"
+                 BorderBrush="#f59f05"
+                 BorderThickness="1"
+                 VerticalContentAlignment="Center"
+                 Margin="0,0,0,16"/>
 
-        <StackPanel Grid.Row="4"
-            Orientation="Horizontal"
-            HorizontalAlignment="Center"
-            Margin="0,20,0,0">
+        <StackPanel Grid.Row="3" Margin="0,0,0,12">
+          <CheckBox x:Name="chkSeparatorKullanilacak"
+                    Content="Separator kullanılacak"
+                    Foreground="White"
+                    FontSize="16"
+                    Checked="chkSeparatorKullanilacak_Checked"
+                    Unchecked="chkSeparatorKullanilacak_Unchecked"/>
+          <Border x:Name="borderSeparatorListe"
+            Margin="0,12,0,0"
+            Padding="12"
+            Background="#2A2A2A"
+            BorderBrush="#f59f05"
+            BorderThickness="1"
+            CornerRadius="10"
+            Visibility="Visible"> 
+            <StackPanel>
+              <TextBlock Text="Separator konumları"
+                   Foreground="White"
+                   FontSize="18"
+                   FontWeight="SemiBold"
+                   Margin="0,0,0,10"/>
+
+              <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled"
+                      Height="120">
+                <StackPanel x:Name="panelSeparatorListe"/>
+              </ScrollViewer>
+            </StackPanel>
+          </Border>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="5"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,20,0,0">
 
           <Button x:Name="btnTamam"
-            Content="Tamam"
-            Width="150"
-            Height="40"
-            Margin="0,0,20,0"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Background="{StaticResource button_background}"
-            Style="{StaticResource button_template}"
-            Click="btnTamam_Click"/>
+                  Content="Tamam"
+                  Width="150"
+                  Height="40"
+                  Margin="0,0,20,0"
+                  Background="{StaticResource button_background}"
+                  Style="{StaticResource button_template}"
+                  Click="btnTamam_Click"/>
 
           <Button x:Name="btnIptal"
-            Content="İptal"
-            Width="150"
-            Height="40"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Background="{StaticResource button_background}"
-            Style="{StaticResource button_template}"
-            Click="btnIptal_Click"/>
+                  Content="İptal"
+                  Width="150"
+                  Height="40"
+                  Background="{StaticResource button_background}"
+                  Style="{StaticResource button_template}"
+                  Click="btnIptal_Click"/>
         </StackPanel>
       </Grid>
     </Border>

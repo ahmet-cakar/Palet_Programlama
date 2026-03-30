@@ -10,6 +10,8 @@ namespace Palet_Programlama.Screens.Dizilim.Models
     {
 
         public string DizilimAdi { get; set; }
+
+        public double SeparatorYukseklik { get; set; } = 0;
         public string PaletAdi { get; set; }
         public double PaletEn { get; set; }
         public double PaletBoy { get; set; }

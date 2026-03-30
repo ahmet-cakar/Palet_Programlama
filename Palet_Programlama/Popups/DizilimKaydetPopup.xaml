@@ -4,7 +4,7 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Height="520"
+        Height="600"
         Width="500"
         Background="Transparent">
 
@@ -59,6 +59,26 @@
                     FontSize="16"
                     Checked="chkSeparatorKullanilacak_Checked"
                     Unchecked="chkSeparatorKullanilacak_Unchecked"/>
+          <StackPanel x:Name="panelSeparatorKalinlik"
+            Margin="0,10,0,10"
+            Visibility="Collapsed">
+            <TextBlock Text="Separator kalınlığı (mm)"
+               Foreground="White"
+               FontSize="16"
+               Margin="0,0,0,6"/>
+
+            <TextBox x:Name="txtSeparatorKalinlik"
+             Height="40"
+             FontSize="18"
+             Padding="10"
+             Background="#2A2A2A"
+             Foreground="White"
+             BorderBrush="#f59f05"
+             BorderThickness="1"
+             VerticalContentAlignment="Center"
+             PreviewTextInput="txtSeparatorKalinlik_PreviewTextInput"/>
+          </StackPanel>
+
           <Border x:Name="borderSeparatorListe"
             Margin="0,12,0,0"
             Padding="12"

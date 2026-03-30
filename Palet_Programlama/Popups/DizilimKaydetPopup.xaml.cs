@@ -14,6 +14,7 @@ namespace Palet_Programlama.UserController
 
         private int _toplamKat = 0;
 
+        public double SeparatorKalinlik { get; private set; } = 0;
         public MetinGirisKutusu()
         {
             InitializeComponent();
@@ -31,7 +32,8 @@ namespace Palet_Programlama.UserController
             txtGiris.Text = varsayilanMetin;
             btnTamam.Content = tamamButonYazisi;
             btnIptal.Content = iptalButonYazisi;
-
+            txtSeparatorKalinlik.Text = "";
+            panelSeparatorKalinlik.Visibility = Visibility.Collapsed;
             chkSeparatorKullanilacak.IsChecked = false;
             panelSeparatorListe.Children.Clear();
 
@@ -47,12 +49,32 @@ namespace Palet_Programlama.UserController
 
         private void chkSeparatorKullanilacak_Checked(object sender, RoutedEventArgs e)
         {
+            panelSeparatorKalinlik.Visibility = Visibility.Visible;
             SeparatorListesiniDoldur();
         }
 
         private void chkSeparatorKullanilacak_Unchecked(object sender, RoutedEventArgs e)
         {
+            panelSeparatorKalinlik.Visibility = Visibility.Collapsed;
+            txtSeparatorKalinlik.Text = "";
             panelSeparatorListe.Children.Clear();
+        }
+
+        private void txtSeparatorKalinlik_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            if (sender is not TextBox textBox)
+                return;
+
+            string yeniMetin = textBox.Text.Insert(textBox.CaretIndex, e.Text);
+
+            int noktaVirgulSayisi = yeniMetin.Count(c => c == '.' || c == ',');
+
+            bool gecersizKarakterVar = e.Text.Any(c => !char.IsDigit(c) && c != '.' && c != ',');
+
+            if (gecersizKarakterVar || noktaVirgulSayisi > 1)
+            {
+                e.Handled = true;
+            }
         }
 
         private void SeparatorListesiniDoldur()
@@ -108,14 +130,31 @@ namespace Palet_Programlama.UserController
 
             SeparatorKullanilacak = chkSeparatorKullanilacak.IsChecked == true;
 
-            SecilenSeparatorKatlari = panelSeparatorListe.Children
-                .OfType<CheckBox>()
-                .Where(x => x.IsChecked == true)
-                .Select(x => (int)x.Tag)
-                .ToList();
-
-            if (!SeparatorKullanilacak)
+            if (SeparatorKullanilacak)
             {
+                string giris = (txtSeparatorKalinlik.Text ?? "").Trim().Replace(',', '.');
+
+                if (!double.TryParse(
+                        giris,
+                        System.Globalization.NumberStyles.Any,
+                        System.Globalization.CultureInfo.InvariantCulture,
+                        out double kalinlik) || kalinlik <= 0)
+                {
+                    BildirimGoster("MesajKutusu.gecerliSeparatorKalinligiGir");
+                    return;
+                }
+
+                SeparatorKalinlik = kalinlik;
+
+                SecilenSeparatorKatlari = panelSeparatorListe.Children
+                    .OfType<CheckBox>()
+                    .Where(x => x.IsChecked == true)
+                    .Select(x => (int)x.Tag)
+                    .ToList();
+            }
+            else
+            {
+                SeparatorKalinlik = 0;
                 SecilenSeparatorKatlari.Clear();
             }
 

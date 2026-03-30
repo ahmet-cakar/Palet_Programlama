@@ -63,11 +63,15 @@ namespace Palet_Programlama.Screens.Dizilim.Services
 
         private double MerkezZHesapla(
             int katNo,
+            Palet secilenPalet,
             Urun secilenUrun,
             double separatorYukseklik,
             List<int> secilenSeparatorKatlari)
         {
-            double normalMerkezZ = katNo * secilenUrun.UrunYukseklik;
+            double normalMerkezZ =
+                secilenPalet.PaletYukseklik
+                + ((katNo - 1) * secilenUrun.UrunYukseklik)
+                + (secilenUrun.UrunYukseklik / 2.0);
 
             int altindakiSeparatorSayisi = secilenSeparatorKatlari
                 .Count(x => x < katNo);
@@ -116,7 +120,7 @@ namespace Palet_Programlama.Screens.Dizilim.Services
                 int katNo = kat.Key;
 
                 int altindakiSeparatorSayisi = secilenSeparatorKatlari.Count(x => x < katNo);
-                bool separatorVarMi = altindakiSeparatorSayisi > 0;
+                bool separatorVarMi = secilenSeparatorKatlari.Contains(katNo - 1); 
 
                 foreach (var urun in kat.Value)
                 {
@@ -131,6 +135,7 @@ namespace Palet_Programlama.Screens.Dizilim.Services
                         MerkezY = gercekMerkezY,
                         MerkezZ = MerkezZHesapla(
                             katNo,
+                            secilenPalet,
                             secilenUrun,
                             separatorYukseklik,
                             secilenSeparatorKatlari),

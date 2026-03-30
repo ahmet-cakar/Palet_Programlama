@@ -52,7 +52,7 @@ namespace Palet_Programlama.Screens
         private bool _sayfaYukleniyor;
 
         private const string ProgramSecinizMetni = "Güncelleme için seçim yapınız";
-
+        private DizilimKayitModel _seciliDizilimKaydi;
         private double OlcekY => canvasPalet.Width / _secilenPalet.PaletBoy;
         private double OlcekX => canvasPalet.Height / _secilenPalet.PaletEn;
         private int AktifKatNo => _katYonetici.AktifKat;
@@ -198,6 +198,7 @@ namespace Palet_Programlama.Screens
         private void SeciliDizilimiCanvasaYukle()
         {
             var kayit = SeciliKaydiGetir();
+            _seciliDizilimKaydi = kayit;
 
             if (kayit == null)
             {
@@ -887,6 +888,15 @@ namespace Palet_Programlama.Screens
 
         private double KatIcinMerkezZGetir(int katNo)
         {
+            if (_seciliDizilimKaydi?.Urunler != null)
+            {
+                var kattakiIlkUrun = _seciliDizilimKaydi.Urunler
+                    .FirstOrDefault(x => x.KatNo == katNo);
+
+                if (kattakiIlkUrun != null)
+                    return kattakiIlkUrun.MerkezZ;
+            }
+
             double paletYukseklik = _secilenPalet?.PaletYukseklik ?? 0;
             double urunYukseklik = _secilenUrun?.UrunYukseklik ?? 0;
 

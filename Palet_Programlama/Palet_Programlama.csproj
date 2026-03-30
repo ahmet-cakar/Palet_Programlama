@@ -129,8 +129,8 @@
     <Compile Include="Popups\GrupAyarlariPopup.xaml.cs">
       <DependentUpon>GrupAyarlariPopup.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Popups\MetinGirisPopup.xaml.cs">
-      <DependentUpon>MetinGirisPopup.xaml</DependentUpon>
+    <Compile Include="Popups\DizilimKaydetPopup.xaml.cs">
+      <DependentUpon>DizilimKaydetPopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="Popups\ProgramKaydetPopup.xaml.cs">
       <DependentUpon>ProgramKaydetPopup.xaml</DependentUpon>
@@ -220,7 +220,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Popups\MetinGirisPopup.xaml">
+    <Page Include="Popups\DizilimKaydetPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,4 +1,5 @@
 ﻿using Palet_Programlama.Languages;
+using Palet_Programlama.Screens.Services;
 using Palet_Programlama.Screens.UrunPaletEkle.Models;
 using Palet_Programlama.UserController;
 using System;
@@ -19,7 +20,7 @@ namespace Palet_Programlama.Screens
         private Frame MainFrame;
         private List<TextBox> textBoxes;
         private List<TextBlock> placeholders;
-
+        private readonly SonSecimServisi _sonSecimServisi = new SonSecimServisi();
         private readonly UrunIslemler urunIslemler = new UrunIslemler();
         private readonly PaletIslemler paletIslemler = new PaletIslemler();
 
@@ -74,6 +75,23 @@ namespace Palet_Programlama.Screens
 
             Loaded += Page_Loaded;
             UstMenuControl.AktifSayfa = "UrunEkle";
+        }
+
+
+        private void SonSecimiGuncelle(string urunAdi = null, string paletAdi = null, bool dizilimTemizle = false)
+        {
+            var sonSecim = _sonSecimServisi.Yukle() ?? new SonSecimModel();
+
+            if (!string.IsNullOrWhiteSpace(urunAdi))
+                sonSecim.UrunAdi = urunAdi;
+
+            if (!string.IsNullOrWhiteSpace(paletAdi))
+                sonSecim.PaletAdi = paletAdi;
+
+            if (dizilimTemizle)
+                sonSecim.DizilimAdi = null;
+
+            _sonSecimServisi.Kaydet(sonSecim);
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -297,6 +315,7 @@ namespace Palet_Programlama.Screens
                 urun.UrunAgirlik,
                 urun.UrunBasinc);
 
+            SonSecimiGuncelle(urunAdi: urun.UrunAdi, dizilimTemizle: true);
             urunlistbox.Items.Add(urun.UrunAdi);
             BildirimGoster("MesajKutusu.urunBasariliEklendi");
         }
@@ -361,12 +380,14 @@ namespace Palet_Programlama.Screens
                     item.UrunBasinc = yeniUrun.UrunBasinc;
 
                     urunIslemler.UrunListesiKaydet(urunlist);
+                    SonSecimiGuncelle(urunAdi: yeniUrun.UrunAdi, dizilimTemizle: true);
                     Page_Loaded(this, new RoutedEventArgs());
                     urunlistbox.SelectedItem = yeniUrun.UrunAdi;
                     BildirimGoster("MesajKutusu.urunBasariliGuncellendi");
                     break;
                 }
             }
+
         }
 
         private void UrunList_SelectedItem(object sender, SelectionChangedEventArgs e)
@@ -408,6 +429,7 @@ namespace Palet_Programlama.Screens
                 palet.PaletEn,
                 palet.PaletBoy,
                 palet.PaletYukseklik);
+            SonSecimiGuncelle(paletAdi: palet.PaletAdi, dizilimTemizle: true);
 
             paletlistbox.Items.Add(palet.PaletAdi);
         }
@@ -460,6 +482,7 @@ namespace Palet_Programlama.Screens
                     item.PaletYukseklik = yeniPalet.PaletYukseklik;
 
                     paletIslemler.PaletListesiKaydet(paletlist);
+                    SonSecimiGuncelle(paletAdi: yeniPalet.PaletAdi, dizilimTemizle: true);
                     Page_Loaded(this, new RoutedEventArgs());
                     paletlistbox.SelectedItem = yeniPalet.PaletAdi;
                     break;

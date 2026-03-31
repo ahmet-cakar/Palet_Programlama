@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Palet_Programlama.Screens.Dizilim.Models;
 using Palet_Programlama.Screens.Helpers;
+using Palet_Programlama.Screens.Services;
 using Palet_Programlama.Screens.UrunPaletEkle.Models;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,9 @@ namespace Palet_Programlama.UserController
 {
     public partial class UrunPaletSecimKutusu : Window
     {
+
+        private readonly SonSecimServisi _sonSecimServisi = new SonSecimServisi();
+
         private sealed class ComboSecenek<T>
         {
             public string Text { get; set; } = string.Empty;
@@ -25,6 +29,18 @@ namespace Palet_Programlama.UserController
         public string SecilenDizilimAdi { get; private set; }
 
         private string _dizilimAciklama;
+
+
+
+        private void SonSecimiKaydet()
+        {
+            _sonSecimServisi.Kaydet(new SonSecimModel
+            {
+                UrunAdi = SecilenUrun?.UrunAdi,
+                PaletAdi = SecilenPalet?.PaletAdi,
+                DizilimAdi = SecilenDizilimAdi
+            });
+        }
 
         public UrunPaletSecimKutusu(List<Urun> urunler, List<Palet> paletler, string dizilimAciklama)
         {
@@ -56,6 +72,70 @@ namespace Palet_Programlama.UserController
             dizilimComboBox.Text = "Dizilim Seçiniz";
             _dizilimAciklama = dizilimAciklama;
             txtDizilimAciklama.Text = dizilimAciklama;
+
+            SonSecimiYukle();
+        }
+
+        private void SonSecimiYukle()
+        {
+
+            try
+            {
+                var sonSecim = _sonSecimServisi.Yukle();
+                if (sonSecim == null)
+                {
+                    return;
+                }
+
+                if (!string.IsNullOrWhiteSpace(sonSecim.UrunAdi))
+                {
+                    var urunItem = urunComboBox.Items
+                        .OfType<ComboSecenek<Urun>>()
+                        .FirstOrDefault(x =>
+                            string.Equals((x.Value?.UrunAdi ?? "").Trim(),
+                                          sonSecim.UrunAdi.Trim(),
+                                          StringComparison.OrdinalIgnoreCase));
+
+                    if (urunItem != null)
+                    {
+                        urunComboBox.SelectedItem = urunItem;
+                    }
+                }
+
+                if (!string.IsNullOrWhiteSpace(sonSecim.PaletAdi))
+                {
+                    var paletItem = paletComboBox.Items
+                        .OfType<ComboSecenek<Palet>>()
+                        .FirstOrDefault(x =>
+                            string.Equals((x.Value?.PaletAdi ?? "").Trim(),
+                                          sonSecim.PaletAdi.Trim(),
+                                          StringComparison.OrdinalIgnoreCase));
+
+                    if (paletItem != null)
+                    {
+                        paletComboBox.SelectedItem = paletItem;
+                    }
+                }
+
+                DizilimleriYukle();
+
+                if (!string.IsNullOrWhiteSpace(sonSecim.DizilimAdi) &&
+                    dizilimComboBox.ItemsSource is IEnumerable<string> dizilimler)
+                {
+                    var seciliDizilim = dizilimler.FirstOrDefault(x =>
+                        string.Equals((x ?? "").Trim(),
+                                      sonSecim.DizilimAdi.Trim(),
+                                      StringComparison.OrdinalIgnoreCase));
+
+                    if (seciliDizilim != null)
+                    {
+                        dizilimComboBox.SelectedItem = seciliDizilim;
+                    }
+                }
+            }
+            finally { }
+               
+
         }
 
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -123,7 +203,7 @@ namespace Palet_Programlama.UserController
                 return;
             }
 
-
+            SonSecimiKaydet();
             DialogResult = true;
             Close();
 

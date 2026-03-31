@@ -61,6 +61,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Enums\EklemeYonEnum.cs" />
+    <Compile Include="Models\SonSecimModel.cs" />
     <Compile Include="Popups\OnayKutusu.xaml.cs">
       <DependentUpon>OnayKutusu.xaml</DependentUpon>
     </Compile>
@@ -138,6 +139,7 @@
     <Compile Include="Popups\UrunPaletSecimPopup.xaml.cs">
       <DependentUpon>UrunPaletSecimPopup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\SonSecimServisi.cs" />
     <Compile Include="UserController\LoadingOverlay.xaml.cs">
       <DependentUpon>LoadingOverlay.xaml</DependentUpon>
     </Compile>
@@ -289,6 +291,7 @@
     <None Include="Data\Programlar.json">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Include="Data\SonSecimler.json" />
     <None Include="Data\Urunler.json" />
     <None Include="Languages\eng.json" />
     <None Include="Languages\tr.json" />

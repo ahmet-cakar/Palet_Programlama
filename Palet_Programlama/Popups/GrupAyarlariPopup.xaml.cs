@@ -90,12 +90,19 @@ namespace Palet_Programlama.Popuplar
                 return;
             }
 
+            if (!Int32.TryParse(TxtOffsetZ.Text, out int offsetZ))
+            {
+                MessageBox.Show("Offset Z değeri geçersiz.");
+                return;
+            }
+
             Sonuc = new GrupGripperAyarlari
             {
                 KayitEdildiMi = true,
                 GripperAcisi = (int)seciliAci,
                 OffsetX = offsetX,
-                OffsetY = offsetY
+                OffsetY = offsetY,
+                OffsetZ = offsetZ
             };
 
             DialogResult = true;
@@ -112,6 +119,7 @@ namespace Palet_Programlama.Popuplar
 
             TxtOffsetX.Text = ayar.OffsetX.ToString();
             TxtOffsetY.Text = ayar.OffsetY.ToString();
+            TxtOffsetZ.Text = ayar.OffsetZ.ToString();
 
             TglBirakmaYonuEksiX.IsChecked = false;
             TglBirakmaYonuArtiX.IsChecked = false;

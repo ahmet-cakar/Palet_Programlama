@@ -11,5 +11,7 @@ namespace Palet_Programlama.Screens.Gruplama.Models
         public int OffsetX { get; set; } = 0;
 
         public int OffsetY { get; set; } = 0;
+
+        public int OffsetZ { get; set; } = 0;
     }
 }

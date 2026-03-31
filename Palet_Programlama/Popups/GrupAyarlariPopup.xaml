@@ -209,8 +209,8 @@
 
       <Grid>
         <Grid.RowDefinitions>
-          <RowDefinition Height="Auto"/>
-          <RowDefinition Height="20"/>
+          <RowDefinition Height="0"/>
+          <RowDefinition Height="0"/>
           <RowDefinition Height="*"/>
           <RowDefinition Height="24"/>
           <RowDefinition Height="Auto"/>
@@ -276,8 +276,8 @@
 
               <StackPanel>
                 <TextBlock Text="Offset Değerleri "
-                                           Style="{StaticResource LabelStyle}"
-                                           Margin="0,0,0,10"/>
+             Style="{StaticResource LabelStyle}"
+             Margin="0,0,0,10"/>
 
                 <Grid Margin="0,0,0,10">
                   <Grid.ColumnDefinitions>
@@ -287,14 +287,32 @@
                   </Grid.ColumnDefinitions>
 
                   <TextBlock Grid.Column="0"
-                                               Text="X"
-                                               Style="{StaticResource LabelStyle}"
-                                               VerticalAlignment="Center"/>
+               Text="X"
+               Style="{StaticResource LabelStyle}"
+               VerticalAlignment="Center"/>
 
                   <TextBox Grid.Column="1"
-                                             x:Name="TxtOffsetX"
-                                             Style="{StaticResource InputTextBoxStyle}"
-                                             Text="0"/>
+             x:Name="TxtOffsetX"
+             Style="{StaticResource InputTextBoxStyle}"
+             Text="0"/>
+                </Grid>
+
+                <Grid Margin="0,0,0,10">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="140"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
+                  <TextBlock Grid.Column="0"
+               Text="Y"
+               Style="{StaticResource LabelStyle}"
+               VerticalAlignment="Center"/>
+
+                  <TextBox Grid.Column="1"
+             x:Name="TxtOffsetY"
+             Style="{StaticResource InputTextBoxStyle}"
+             Text="0"/>
                 </Grid>
 
                 <Grid>
@@ -305,16 +323,18 @@
                   </Grid.ColumnDefinitions>
 
                   <TextBlock Grid.Column="0"
-                                               Text="Y"
-                                               Style="{StaticResource LabelStyle}"
-                                               VerticalAlignment="Center"/>
+               Text="Z"
+               Style="{StaticResource LabelStyle}"
+               VerticalAlignment="Center"/>
 
                   <TextBox Grid.Column="1"
-                                             x:Name="TxtOffsetY"
-                                             Style="{StaticResource InputTextBoxStyle}"
-                                             Text="0"/>
+             x:Name="TxtOffsetZ"
+             Style="{StaticResource InputTextBoxStyle}"
+             Text="0"/>
                 </Grid>
               </StackPanel>
+
+
             </StackPanel>
           </Border>
 
@@ -369,6 +389,7 @@
                             Click="BtnKaydet_Click"/>
         </StackPanel>
       </Grid>
+    
     </Border>
   </Grid>
 </Window>

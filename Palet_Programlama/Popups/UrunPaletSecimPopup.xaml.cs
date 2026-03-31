@@ -170,6 +170,13 @@ namespace Palet_Programlama.UserController
         {
             if (dizilimComboBox.SelectedItem is string seciliDizilim)
             {
+                if (seciliDizilim == "Dizilim Seçiniz")
+                {
+                    SecilenDizilimAdi = null;
+                    dizilimComboBox.Text = "Dizilim Seçiniz";
+                    return;
+                }
+
                 SecilenDizilimAdi = seciliDizilim;
                 dizilimComboBox.Text = seciliDizilim;
             }
@@ -193,6 +200,11 @@ namespace Palet_Programlama.UserController
             SecilenUrun = seciliUrun.Value;
             SecilenPalet = seciliPalet.Value;
             SecilenDizilimAdi = dizilimComboBox.SelectedItem as string;
+
+            if (SecilenDizilimAdi == "Dizilim Seçiniz")
+            {
+                SecilenDizilimAdi = null;
+            }
 
 
             if (_dizilimAciklama == "(* Zorunlu)" && SecilenDizilimAdi == null)
@@ -245,13 +257,18 @@ namespace Palet_Programlama.UserController
                                    ?? new List<DizilimKayitModel>();
 
                 var uygunDizilimler = tumDizilimler
-                    .Where(x =>
-                        string.Equals((x.PaletAdi ?? "").Trim(), (seciliPalet.Value.PaletAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase) &&
-                        string.Equals((x.UrunAdi ?? "").Trim(), (seciliUrun.Value.UrunAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase))
-                    .Select(x => x.DizilimAdi)
-                    .Where(x => !string.IsNullOrWhiteSpace(x))
-                    .Distinct()
-                    .ToList();
+                  .Where(x =>
+                      string.Equals((x.PaletAdi ?? "").Trim(), (seciliPalet.Value.PaletAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase) &&
+                      string.Equals((x.UrunAdi ?? "").Trim(), (seciliUrun.Value.UrunAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase))
+                  .Select(x => x.DizilimAdi)
+                  .Where(x => !string.IsNullOrWhiteSpace(x))
+                  .Distinct()
+                  .ToList();
+
+                if (_dizilimAciklama != "(* Zorunlu)")
+                {
+                    uygunDizilimler.Insert(0, "Dizilim Seçiniz");
+                }
 
                 dizilimComboBox.ItemsSource = uygunDizilimler;
 

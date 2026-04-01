@@ -25,31 +25,54 @@
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2.1*"/>
-                <ColumnDefinition Width="1.38*"/>
+                <ColumnDefinition Width="2.0*"/>
+                <ColumnDefinition Width="1.3*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     
 
                     <!--Ön İzleme Border-->
-                    <TextBlock Text="{Binding Source='UrunEkle.onizle',Converter={StaticResource LanguageConverter}}" Foreground="White" Margin="60,30,0,0" Panel.ZIndex="1" FontSize="24" FontFamily="Roboto" FontWeight="Bold"></TextBlock>
+                    <TextBlock Text="{Binding Source='UrunEkle.onizle',Converter={StaticResource LanguageConverter}}" Foreground="White" 
+                    Margin="60,30,0,0" 
+                    Panel.ZIndex="1" 
+                    FontSize="24" 
+                    FontFamily="Roboto" 
+                    FontWeight="Bold">
+                    </TextBlock>
                     <Border Background="#191919" CornerRadius="10" Width="1100" Height="250" HorizontalAlignment="Left"
                     Margin="40,20,0,0" VerticalAlignment="Top">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Width="150" x:Name="priviewtextblock" Text="" Foreground="White" FontSize="22" FontFamily="Roboto" 
                             Margin="20,0,0,20" VerticalAlignment="Bottom" Opacity="1" />
-                            <Image x:Name="onIzlemeImage"  Width="250" Margin="280,0,0,0"></Image>
-                           
+                            <Canvas Width="650" Height="250" Margin="150,0,0,0">
+                              <Image x:Name="onIzlemeImage"
+                               Width="250"
+                               Canvas.Left="100"
+                               Canvas.Top="0"/>
+
+                              <!-- örnek ölçü yazıları -->
+                              <TextBlock x:Name="txtOnizlemeKutu"
+                                   Text=""
+                                   Foreground="White"
+                                   FontSize="18"
+                                   FontWeight="Bold"
+                                   Canvas.Left="220"
+                                   Canvas.Top="125"/>
+
+
+                            </Canvas>
+
                         </StackPanel>
                     </Border>
-                </Grid>
+             </Grid>
 
-                <Grid Grid.Row="1">
+                 <Grid Grid.Row="2">
                     <!--Alt Alan-->
                     <StackPanel Panel.ZIndex="4">
                     <TextBlock Text="{Binding Source='UrunEkle.urunblg',Converter={StaticResource LanguageConverter}}" Foreground="White" Margin="60,25,0,0" Panel.ZIndex="1" FontSize="24" FontFamily="Roboto" FontWeight="Bold"/>
@@ -59,7 +82,7 @@
                     </StackPanel>
 
 
-                    <StackPanel Orientation="Horizontal" Margin="30,10,0,0" Panel.ZIndex="2">
+                    <StackPanel Orientation="Horizontal" Margin="30,0,0,0" Panel.ZIndex="2">
                         
                         <!--Ürün Bilgileri Border-->
                         <Border Style="{StaticResource border_template_urunekle}" Panel.ZIndex="3">
@@ -167,7 +190,15 @@
           
           </Grid>
 
-      <Grid Grid.Column="1" >
+
+
+
+
+
+
+
+
+        <Grid Grid.Column="1" >
         <Grid.ColumnDefinitions>
           <ColumnDefinition Width="*"/>
           <ColumnDefinition Width="*"/>

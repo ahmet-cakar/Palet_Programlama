@@ -4,6 +4,7 @@ using Palet_Programlama.Screens.UrunPaletEkle.Models;
 using Palet_Programlama.UserController;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -262,6 +263,7 @@ namespace Palet_Programlama.Screens
         {
             if (sender is TextBox triggeredTextBox && textBoxData.TryGetValue(triggeredTextBox.Name, out var data))
             {
+                OnizlemeTextKonumuAyarla(triggeredTextBox.Name);
                 onIzlemeImage.Source = new BitmapImage(new Uri(data.Item1));
                 priviewtextblock.Text = LanguageConverter.GetString(data.Item2);
             }
@@ -269,13 +271,86 @@ namespace Palet_Programlama.Screens
             UpdatePlaceholder();
         }
 
+        private void OnizlemeTextKonumuAyarla(string name, bool textChange = true)
+        {
+            TextBox _textblock = FindName(name) as TextBox;
+            if (textChange)
+            {
+                switch (name)
+                {
+                    case "txtUrunEn":
+                        Canvas.SetLeft(txtOnizlemeKutu, 285);
+                        Canvas.SetTop(txtOnizlemeKutu, 214);
+                        txtOnizlemeKutu.FontSize = 18;
+                        txtOnizlemeKutu.Text = _textblock.Text;
+                        txtOnizlemeKutu.Visibility = Visibility.Visible;
+                        break;
+                    case "txtUrunBoy":
+                        Canvas.SetLeft(txtOnizlemeKutu, 150);
+                        Canvas.SetTop(txtOnizlemeKutu, 214);
+                        txtOnizlemeKutu.FontSize = 18;
+                        txtOnizlemeKutu.Text = _textblock.Text;
+                        txtOnizlemeKutu.Visibility = Visibility.Visible;
+                        break;
+                    case "txtUrunYukseklik":
+                        Canvas.SetLeft(txtOnizlemeKutu, 225);
+                        Canvas.SetTop(txtOnizlemeKutu, 110.5);
+                        txtOnizlemeKutu.FontSize = 18;
+                        txtOnizlemeKutu.Text = _textblock.Text;
+                        txtOnizlemeKutu.Visibility = Visibility.Visible;
+                        break;
+                    case "txtUrunAgirlik":
+                        txtOnizlemeKutu.Visibility = Visibility.Hidden;
+                        txtOnizlemeKutu.FontSize = 18;
+                        break;
+                    case "txtUrunBasinc":
+                        Canvas.SetLeft(txtOnizlemeKutu, 207);
+                        Canvas.SetTop(txtOnizlemeKutu, 134);
+                        txtOnizlemeKutu.FontSize = 24;
+                        txtOnizlemeKutu.Text = _textblock.Text;
+                        txtOnizlemeKutu.Visibility = Visibility.Visible;
+                        break;
+                    case "txtPaletEn":
+                        Canvas.SetLeft(txtOnizlemeKutu, 280);
+                        Canvas.SetTop(txtOnizlemeKutu, 205);
+                        txtOnizlemeKutu.FontSize = 18;
+                        txtOnizlemeKutu.Text = _textblock.Text;
+                        txtOnizlemeKutu.Visibility = Visibility.Visible;
+                        break;
+                    case "txtPaletBoy":
+                        Canvas.SetLeft(txtOnizlemeKutu, 156);
+                        Canvas.SetTop(txtOnizlemeKutu, 199);
+                        txtOnizlemeKutu.FontSize = 18;
+                        txtOnizlemeKutu.Text = _textblock.Text;
+                        txtOnizlemeKutu.Visibility = Visibility.Visible;
+                        break;
+                    case "txtPaletYukseklik":
+                        Canvas.SetLeft(txtOnizlemeKutu, 220);
+                        Canvas.SetTop(txtOnizlemeKutu, 125);
+                        txtOnizlemeKutu.FontSize = 18;
+                        txtOnizlemeKutu.Text = _textblock.Text;
+                        txtOnizlemeKutu.Visibility = Visibility.Visible;
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                txtOnizlemeKutu.Text = _textblock.Text;
+            }
+        }
+
         private void UrunPalet_LostFocus(object sender, RoutedEventArgs e)
         {
+            OnizlemeTextKonumuAyarla(((TextBox)sender).Name, false);
             UpdatePlaceholder();
         }
 
         private void UrunPalet_Changed(object sender, RoutedEventArgs e)
         {
+            OnizlemeTextKonumuAyarla(((TextBox)sender).Name, false);
             UpdatePlaceholder();
         }
 
@@ -537,8 +612,9 @@ namespace Palet_Programlama.Screens
             }
         }
 
+
         #endregion
 
-      
+       
     }
 }

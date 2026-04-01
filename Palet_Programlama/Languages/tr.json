@@ -183,7 +183,7 @@
         "btnGruplariTemizle": "Grupları Temizle",
         "btnManuelDiz": "Manuel Diz",
         "btnDizilimListesi": "DizilimListesi"
-        
+
 
     },
     "Program": {
@@ -213,7 +213,9 @@
     "ButtonKey": {
 
         "btntamam": "Tamam",
-        "btnIptal": "Iptal"
+        "btnIptal": "Iptal",
+        "btnKaydet": "Kaydet"
+
     },
     "UrunPaletSecimPopup": {
 
@@ -221,6 +223,13 @@
         "dizilimSecilebilir": " (Dizilim güncellemek için seçebilirsiniz.)",
         "zorunluAlan": " ( * Zorunlu)"
 
+    },
+    "ProgramKaydetPopup": {
+        "anaBaslik": "Program Kaydet",
+        "baslik": "Program Bilgisi",
+        "programAdi": "Program Adı",
+        "aciklama": "Açıklama",
+        "zorunluAlan": " ( * Zorunlu)"
     }
 
 }

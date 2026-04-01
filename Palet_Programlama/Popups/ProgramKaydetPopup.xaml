@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:language="clr-namespace:Palet_Programlama.Languages"
         mc:Ignorable="d"
         Title="Program Kaydet"
         Height="600"
@@ -14,6 +15,7 @@
         Background="Transparent">
 
   <Window.Resources>
+    <language:LanguageConverter  x:Key="LanguageConverter"/>
     <SolidColorBrush x:Key="PopupOverlayBrush" Color="#66000000"/>
 
     <SolidColorBrush x:Key="PopupBackgroundBrush" Color="#1B1B1D"/>
@@ -163,6 +165,8 @@
         </Setter.Value>
       </Setter>
     </Style>
+    
+
   </Window.Resources>
 
   <Grid Background="Transparent" >
@@ -185,7 +189,7 @@
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0">
-          <TextBlock Text="Program Kaydet"
+          <TextBlock Text="{Binding Source='ProgramKaydetPopup.anaBaslik',Converter={StaticResource LanguageConverter}}"
                                Foreground="{StaticResource TextPrimaryBrush}"
                                FontSize="28"
                                FontWeight="Bold"
@@ -202,11 +206,11 @@
                         Padding="22">
 
           <StackPanel>
-            <TextBlock Text="Program Bilgileri"
+            <TextBlock Text="{Binding Source='ProgramKaydetPopup.baslik',Converter={StaticResource LanguageConverter}}"
                                    Style="{StaticResource SectionTitleStyle}"/>
 
             <StackPanel Margin="0,0,0,18">
-              <TextBlock Text="Program Adı"
+              <TextBlock Text="{Binding Source='ProgramKaydetPopup.programAdi',Converter={StaticResource LanguageConverter}}"
                                        Style="{StaticResource LabelStyle}"
                                        Margin="0,0,0,10"/>
               <TextBox x:Name="TxtProgramAdi"
@@ -214,7 +218,7 @@
             </StackPanel>
 
             <StackPanel>
-              <TextBlock Text="Açıklama"
+              <TextBlock Text="{Binding Source='ProgramKaydetPopup.aciklama',Converter={StaticResource LanguageConverter}}"
                                        Style="{StaticResource LabelStyle}"
                                        Margin="0,0,0,10"/>
               <TextBox x:Name="TxtAciklama"
@@ -230,13 +234,13 @@
           <Button Width="130"
                             Height="48"
                             Margin="0,0,12,0"
-                            Content="İptal"
+                            Content="{Binding Source='ButtonKey.btnKaydet',Converter={StaticResource LanguageConverter}}"
                             Style="{StaticResource SecondaryButtonStyle}"
                             Click="BtnIptal_Click"/>
 
           <Button Width="130"
                             Height="48"
-                            Content="Kaydet"
+                            Content="{Binding Source='ButtonKey.btnIptal',Converter={StaticResource LanguageConverter}}"
                             Style="{StaticResource PrimaryButtonStyle}"
                             Click="BtnKaydet_Click"/>
         </StackPanel>

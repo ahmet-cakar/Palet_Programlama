@@ -71,7 +71,7 @@
     "MesajKutusu": {
         "urunBasariliEklendi": "Ürün başarılı bir şekilde eklendi.",
         "paletBasariliEklendi": "Palet başarılı bir şekilde eklendi.",
-
+        "evet": "Evet",
         "zorunluAlanDoldur": "Lütfen zorunlu alanları doldurunuz.",
         "araKatSilinemez": "Lütfen kat temizlerken en üst kattan başlayınız,Ara kat silinemez.",
         "guncellemeBasarili": "Dizilim güncellenmesi başarılı ile yapıldı.",
@@ -230,6 +230,13 @@
         "programAdi": "Program Adı",
         "aciklama": "Açıklama",
         "zorunluAlan": " ( * Zorunlu)"
-    }
+    },
+    "GruplamaAyarPopup": {
+        "baslik": "Bırakma Ayarları",
+        "gripperAcilmaYonu": "Gripper açılma yönü",
+        "offsetDegerleri": "Offset Değerleri",
+        "gripperYonu": "Gripper Yönü",
+        "gripperAciklama": "Gripperın taşıyıcı kenarının açılacağı yönü gösterir."
 
+    }
 }

@@ -54,6 +54,7 @@
           <Button x:Name="btnEvet"
                             Width="150"
                             Height="42"
+                            
                             Margin="0,0,10,0"
                             Background="{StaticResource button_background_green}"
                             Style="{StaticResource button_template}"
@@ -62,6 +63,7 @@
           <Button x:Name="btnHayir"
                             Width="150"
                             Height="42"
+                            
                             Background="{StaticResource button_background}"
                             Style="{StaticResource button_template}"
                             Click="btnHayir_Click"/>

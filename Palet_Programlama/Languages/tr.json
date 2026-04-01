@@ -16,42 +16,48 @@
     "userborder1": "Hesap\nDeğiştir",
     "userborder2": "Çıkış"
   },
-  "UrunEkle": {
-    "onizle": "Ön İzleme",
-    "urunblg": "Ürün Bilgileri",
-    "paletblg": "Palet Bilgileri",
-    "urunad": "Ürün Adı",
-    "paletad": "Palet Adı",
-    "urunadgir": "Ürün Adı Giriniz...",
-    "paletadgir": "Palet Adı Giriniz...",
-    "genislik": "Genişlik/En (mm)",
-    "urungenislikgir": "Ürün En Giriniz...",
-    "paletgenislikgir": "Palet En Giriniz...",
-    "uzunluk": "Uzunluk/Boy (mm)",
-    "urunuzunlukgir": "Ürün Boy Giriniz...",
-    "paletuzunlukgir": "Palet Boy Giriniz...",
-    "yukseklik": "Yükseklik (mm)",
-    "urunyukseklikgir": "Ürün Yükseklik Giriniz...",
-    "paletyukseklikgir": "Palet Yükseklik Giriniz...",
-    "agirlik": "Ağırık (kg)",
-    "urunagirlikgir": "Ürün Ağırlık Giriniz...",
-    "basinc": "Basınç (bar)",
-    "urunbasincgir": "Ürün Basınç Giriniz...",
-    "urunlist": "Ürün Listesi",
-    "paletlist": "Palet Listesi",
-    "uruneklebtn": "Ürün Ekle",
-    "urunduzenlebtn": "Ürün Güncelle",
-    "urunsilbtn": "Ürün Sil",
-    "paleteklebtn": "Palet Ekle",
-    "paletduzenlebtn": "Palet Güncelle",
-    "paletsilbtn": "Palet Sil",
-    "preview1": "Genişlik",
-    "preview2": "Uzunluk",
-    "preview3": "Yükseklik",
-    "preview4": "Ağırlık",
-    "preview5": "Basınç"
+    "UrunEkle": {
+        "onizle": "Önizleme",
+        "urunblg": "Ürün Bilgileri",
+        "paletblg": "Palet Bilgileri",
+        "urunad": "Ürün Adı",
+        "paletad": "Palet Adı",
+        "urunadgir": "Ürün Adı Giriniz...",
+        "paletadgir": "Palet Adı Giriniz...",
+        "genislik": "Genişlik/En (mm)",
+        "urungenislikgir": "Ürün En Giriniz...",
+        "paletgenislikgir": "Palet En Giriniz...",
+        "uzunluk": "Uzunluk/Boy (mm)",
+        "urunuzunlukgir": "Ürün Boy Giriniz...",
+        "paletuzunlukgir": "Palet Boy Giriniz...",
+        "yukseklik": "Yükseklik (mm)",
+        "urunyukseklikgir": "Ürün Yükseklik Giriniz...",
+        "paletyukseklikgir": "Palet Yükseklik Giriniz...",
+        "agirlik": "Ağırık (kg)",
+        "urunagirlikgir": "Ürün Ağırlık Giriniz...",
+        "basinc": "Basınç (bar)",
+        "urunbasincgir": "Ürün Basınç Giriniz...",
+        "urunlist": "Ürün Listesi",
+        "paletlist": "Palet Listesi",
+        "uruneklebtn": "Ürün Ekle",
+        "urunduzenlebtn": "Ürün Güncelle",
+        "urunsilbtn": "Ürün Sil",
+        "paleteklebtn": "Palet Ekle",
+        "paletduzenlebtn": "Palet Güncelle",
+        "paletsilbtn": "Palet Sil",
+        "previewHomeKoli": "Ürün",
+        "previewHomePalet": "Palet",
+        "previewUrunEn": "Ürün Genişlik",
+        "previewUrunBoy": "Ürün Uzunluk",
+        "previewUrunYukseklik": "Ürün Yükseklik",
+        "previewUrunAgirlik": "Ürün Ağırlık",
+        "previewUrunBasinc": "Ürün Basınç",
+        "previewPaletEn": "Palet Genişlik",
+        "previewPaletBoy": "Palet Uzunluk",
+        "previewPaletYukseklik": "Palet Yükseklik"
 
-  },
+    },
+
   "UserControl": {
     "urunekle": "Ürün/Palet Ekle",
     "dizilimekle": "Dizilim Oluştur",
@@ -64,6 +70,8 @@
   },
     "MesajKutusu": {
         "urunBasariliEklendi": "Ürün başarılı bir şekilde eklendi.",
+        "paletBasariliEklendi": "Palet başarılı bir şekilde eklendi.",
+
         "zorunluAlanDoldur": "Lütfen zorunlu alanları doldurunuz.",
         "araKatSilinemez": "Lütfen kat temizlerken en üst kattan başlayınız,Ara kat silinemez.",
         "guncellemeBasarili": "Dizilim güncellenmesi başarılı ile yapıldı.",
@@ -86,7 +94,11 @@
         "tamam": "Tamam",
         "mesaj": "Ürün Eklenmesinde Bir Problem Yaşandı! Lütfen Tekrar Deneyiniz",
         "btncon1": "Tamam",
-        "dizilimBulunamadi": "Dizilim bulunamadı"
+        "urunBasariliSilindi": "Ürün başarılı bir şekilde silindi.",
+        "dizilimBulunamadi": "Dizilim bulunamadı",
+        "urunBasariliGuncellendi": "Seçilen ürün başarılı bir şekilde güncellendi.",
+        "paletBasariliGuncellendi": "Seçilen palet başarılı bir şekilde güncellendi.",
+        "paletBasariliSilindi": "Palet başarılı bir şekilde silindi."
     },
   "global": {
     "btnkaydet": "Kaydet",
@@ -181,19 +193,22 @@
 
 
   },
-  "HataMesajlari": {
-    "urunadbos": "Ürün Adı Boş Bırakılamaz",
-    "urunenbos": "Ürün Genişlik Boş Bırakılamaz",
-    "urunboybos": "Ürün Uzunluk Boş Bırakılamaz",
-    "urunyukseklikbos": "Ürün Yükseklik Boş Bırakılamaz",
-    "urunagirlikbos": "Ürün Ağırlık Boş Bırakılamaz",
-    "urunbasincbos": "Ürün Basınç Boş Bırakılamaz",
-    "paletadbos": "Palet Adı Boş Bırakılamaz",
-    "paletenbos": "Palet Genişlik Boş Bırakılamaz",
-    "paletboybos": "Palet Uzunluk Boş Bırakılamaz",
-    "paletyukseklikbos": "Palet Yükseklik Boş Bırakılamaz"
+    "HataMesajlari": {
+        "urunadbos": "Ürün Adı Boş Bırakılamaz",
+        "urunenbos": "Ürün Genişlik Boş Bırakılamaz",
+        "urunboybos": "Ürün Uzunluk Boş Bırakılamaz",
+        "urunyukseklikbos": "Ürün Yükseklik Boş Bırakılamaz",
+        "urunagirlikbos": "Ürün Ağırlık Boş Bırakılamaz",
+        "urunbasincbos": "Ürün Basınç Boş Bırakılamaz",
+        "paletadbos": "Palet Adı Boş Bırakılamaz",
+        "paletenbos": "Palet Genişlik Boş Bırakılamaz",
+        "paletboybos": "Palet Uzunluk Boş Bırakılamaz",
+        "paletyukseklikbos": "Palet Yükseklik Boş Bırakılamaz",
+        
+        "paletBasariliSilindi": "Palet başarılı bir şekilde silindi.",
+        "paletSeciniz": "Lütfen bir palet seçiniz."
 
-  },
+    },
   "ButtonKey": {
 
     "btntamam": "Tamam"

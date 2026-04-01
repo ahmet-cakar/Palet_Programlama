@@ -48,14 +48,16 @@ namespace Palet_Programlama.Screens
 
         private readonly Dictionary<string, Tuple<string, string>> textBoxData = new Dictionary<string, Tuple<string, string>>
         {
-            { "txtUrunEn", Tuple.Create("pack://application:,,,/Images/UrunEkle/en-koli.png", "UrunEkle.preview1") },
-            { "txtUrunBoy", Tuple.Create("pack://application:,,,/Images/UrunEkle/boy-koli.png", "UrunEkle.preview2") },
-            { "txtUrunYukseklik", Tuple.Create("pack://application:,,,/Images/UrunEkle/yukseklik-koli.png", "UrunEkle.preview3") },
-            { "txtUrunAgirlik", Tuple.Create("pack://application:,,,/Images/UrunEkle/koli-agirlik.png", "UrunEkle.preview4") },
-            { "txtUrunBasinc", Tuple.Create("pack://application:,,,/Images/UrunEkle/koli-basinc.png", "UrunEkle.preview5") },
-            { "txtPaletEn", Tuple.Create("pack://application:,,,/Images/UrunEkle/en-pallet.png", "UrunEkle.preview1") },
-            { "txtPaletBoy", Tuple.Create("pack://application:,,,/Images/UrunEkle/boy-pallet.png", "UrunEkle.preview2") },
-            { "txtPaletYukseklik", Tuple.Create("pack://application:,,,/Images/UrunEkle/yukseklik-pallet.png", "UrunEkle.preview3") },
+            { "txtUrunAdi", Tuple.Create("pack://application:,,,/Images/UrunEkle/home-koli.png", "UrunEkle.previewHomeKoli") },
+            { "txtPaletAdi", Tuple.Create("pack://application:,,,/Images/UrunEkle/home-pallet.png", "UrunEkle.previewHomePalet") },
+            { "txtUrunEn", Tuple.Create("pack://application:,,,/Images/UrunEkle/en-koli.png", "UrunEkle.previewUrunEn") },
+            { "txtUrunBoy", Tuple.Create("pack://application:,,,/Images/UrunEkle/boy-koli.png", "UrunEkle.previewUrunBoy") },
+            { "txtUrunYukseklik", Tuple.Create("pack://application:,,,/Images/UrunEkle/yukseklik-koli.png", "UrunEkle.previewUrunYukseklik") },
+            { "txtUrunAgirlik", Tuple.Create("pack://application:,,,/Images/UrunEkle/koli-agirlik.png", "UrunEkle.previewUrunAgirlik") },
+            { "txtUrunBasinc", Tuple.Create("pack://application:,,,/Images/UrunEkle/koli-basinc.png", "UrunEkle.previewUrunBasinc") },
+            { "txtPaletEn", Tuple.Create("pack://application:,,,/Images/UrunEkle/en-pallet.png", "UrunEkle.previewPaletEn") },
+            { "txtPaletBoy", Tuple.Create("pack://application:,,,/Images/UrunEkle/boy-pallet.png", "UrunEkle.previewPaletBoy") },
+            { "txtPaletYukseklik", Tuple.Create("pack://application:,,,/Images/UrunEkle/yukseklik-pallet.png", "UrunEkle.previewPaletYukseklik") },
         };
 
         public UrunEkle()
@@ -274,61 +276,97 @@ namespace Palet_Programlama.Screens
         private void OnizlemeTextKonumuAyarla(string name, bool textChange = true)
         {
             TextBox _textblock = FindName(name) as TextBox;
+            string tamMetin;
             if (textChange)
             {
                 switch (name)
                 {
+                    case "txtUrunAdi":
+                        Canvas.SetLeft(txtOnizlemeKutu, 111);
+                        Canvas.SetTop(txtOnizlemeKutu, 15);
+                        txtOnizlemeKutu.FontSize = 18;
+                        tamMetin = _textblock.Text ?? "";
+
+                        txtOnizlemeKutu.Text = tamMetin.Length > 22
+                            ? tamMetin.Substring(0, 22) + "..."
+                            : tamMetin;
+                        txtOnizlemeKutu.ToolTip = tamMetin;
+                        txtOnizlemeKutu.Visibility = Visibility.Visible;
+                        break;
+
+                    case "txtPaletAdi":
+                        Canvas.SetLeft(txtOnizlemeKutu, 111);
+                        Canvas.SetTop(txtOnizlemeKutu,12);
+                        txtOnizlemeKutu.FontSize = 18;
+                        tamMetin = _textblock.Text ?? "";
+
+                        txtOnizlemeKutu.Text = tamMetin.Length > 22
+                            ? tamMetin.Substring(0, 22) + "..."
+                            : tamMetin;
+                        txtOnizlemeKutu.ToolTip = tamMetin;
+                        txtOnizlemeKutu.Visibility = Visibility.Visible;
+                        break;
+
                     case "txtUrunEn":
-                        Canvas.SetLeft(txtOnizlemeKutu, 285);
+                        Canvas.SetLeft(txtOnizlemeKutu, 280);
                         Canvas.SetTop(txtOnizlemeKutu, 214);
                         txtOnizlemeKutu.FontSize = 18;
                         txtOnizlemeKutu.Text = _textblock.Text;
+                        txtOnizlemeKutu.ToolTip = "";
                         txtOnizlemeKutu.Visibility = Visibility.Visible;
                         break;
                     case "txtUrunBoy":
-                        Canvas.SetLeft(txtOnizlemeKutu, 150);
+                        Canvas.SetLeft(txtOnizlemeKutu, 145);
                         Canvas.SetTop(txtOnizlemeKutu, 214);
                         txtOnizlemeKutu.FontSize = 18;
                         txtOnizlemeKutu.Text = _textblock.Text;
+                        txtOnizlemeKutu.ToolTip = "";
                         txtOnizlemeKutu.Visibility = Visibility.Visible;
                         break;
                     case "txtUrunYukseklik":
-                        Canvas.SetLeft(txtOnizlemeKutu, 225);
+                        Canvas.SetLeft(txtOnizlemeKutu, 220);
                         Canvas.SetTop(txtOnizlemeKutu, 110.5);
                         txtOnizlemeKutu.FontSize = 18;
                         txtOnizlemeKutu.Text = _textblock.Text;
+                        txtOnizlemeKutu.ToolTip = "";
                         txtOnizlemeKutu.Visibility = Visibility.Visible;
                         break;
                     case "txtUrunAgirlik":
+                        txtOnizlemeKutu.ToolTip = "";
                         txtOnizlemeKutu.Visibility = Visibility.Hidden;
                         txtOnizlemeKutu.FontSize = 18;
                         break;
                     case "txtUrunBasinc":
-                        Canvas.SetLeft(txtOnizlemeKutu, 207);
+
+                        Canvas.SetLeft(txtOnizlemeKutu, 204);
                         Canvas.SetTop(txtOnizlemeKutu, 134);
                         txtOnizlemeKutu.FontSize = 24;
                         txtOnizlemeKutu.Text = _textblock.Text;
+                        txtOnizlemeKutu.ToolTip = "";
                         txtOnizlemeKutu.Visibility = Visibility.Visible;
                         break;
                     case "txtPaletEn":
-                        Canvas.SetLeft(txtOnizlemeKutu, 280);
+                        Canvas.SetLeft(txtOnizlemeKutu, 274);
                         Canvas.SetTop(txtOnizlemeKutu, 205);
                         txtOnizlemeKutu.FontSize = 18;
                         txtOnizlemeKutu.Text = _textblock.Text;
+                        txtOnizlemeKutu.ToolTip = "";
                         txtOnizlemeKutu.Visibility = Visibility.Visible;
                         break;
                     case "txtPaletBoy":
-                        Canvas.SetLeft(txtOnizlemeKutu, 156);
+                        Canvas.SetLeft(txtOnizlemeKutu, 151);
                         Canvas.SetTop(txtOnizlemeKutu, 199);
                         txtOnizlemeKutu.FontSize = 18;
                         txtOnizlemeKutu.Text = _textblock.Text;
+                        txtOnizlemeKutu.ToolTip = "";
                         txtOnizlemeKutu.Visibility = Visibility.Visible;
                         break;
                     case "txtPaletYukseklik":
-                        Canvas.SetLeft(txtOnizlemeKutu, 220);
+                        Canvas.SetLeft(txtOnizlemeKutu, 215);
                         Canvas.SetTop(txtOnizlemeKutu, 125);
-                        txtOnizlemeKutu.FontSize = 18;
+                        txtOnizlemeKutu.FontSize = 22;
                         txtOnizlemeKutu.Text = _textblock.Text;
+                        txtOnizlemeKutu.ToolTip = "";
                         txtOnizlemeKutu.Visibility = Visibility.Visible;
                         break;
 
@@ -338,7 +376,19 @@ namespace Palet_Programlama.Screens
             }
             else
             {
-                txtOnizlemeKutu.Text = _textblock.Text;
+                if(name == "txtUrunAdi" || name == "txtPaletAdi")
+                {
+                    tamMetin = _textblock.Text ?? "";
+
+                    txtOnizlemeKutu.Text = tamMetin.Length > 22
+                        ? tamMetin.Substring(0, 22) + "..."
+                        : tamMetin;
+                    txtOnizlemeKutu.ToolTip = tamMetin;
+                }
+                else
+                {
+                    txtOnizlemeKutu.Text = _textblock.Text;
+                }
             }
         }
 
@@ -442,6 +492,7 @@ namespace Palet_Programlama.Screens
             urunlistbox.Items.Remove(silinecekUrun);
             urunlistbox.SelectedItem = null;
             SonSecimdenSilinenleriTemizle(silinenUrunAdi: silinecekUrun);
+            BildirimGoster("MesajKutusu.urunBasariliSilindi");
             UrunFormunuTemizle();
         }
 
@@ -536,7 +587,7 @@ namespace Palet_Programlama.Screens
                 palet.PaletBoy,
                 palet.PaletYukseklik);
             SonSecimiGuncelle(paletAdi: palet.PaletAdi, dizilimTemizle: true);
-
+            BildirimGoster("MesajKutusu.paletBasariliEklendi");
             paletlistbox.Items.Add(palet.PaletAdi);
         }
 
@@ -544,7 +595,7 @@ namespace Palet_Programlama.Screens
         {
             if (paletlistbox.SelectedItem == null)
             {
-                BildirimGoster("HataMesajlari.paletseciniz");
+                BildirimGoster("HataMesajlari.paletSeciniz");
                 return;
             }
 
@@ -557,6 +608,7 @@ namespace Palet_Programlama.Screens
             paletlistbox.Items.Remove(silinecekPalet);
             paletlistbox.SelectedItem = null;
             SonSecimdenSilinenleriTemizle(silinenPaletAdi: silinecekPalet);
+            BildirimGoster("MesajKutusu.paletBasariliSilindi");
             PaletFormunuTemizle();
         }
 
@@ -564,7 +616,7 @@ namespace Palet_Programlama.Screens
         {
             if (paletlistbox.SelectedItem == null)
             {
-                BildirimGoster("HataMesajlari.paletseciniz");
+                BildirimGoster("HataMesajlari.paletSeciniz");
                 return;
             }
 
@@ -590,6 +642,7 @@ namespace Palet_Programlama.Screens
 
                     paletIslemler.PaletListesiKaydet(paletlist);
                     SonSecimiGuncelle(paletAdi: yeniPalet.PaletAdi, dizilimTemizle: true);
+                    BildirimGoster("MesajKutusu.paletBasariliGuncellendi");
                     Page_Loaded(this, new RoutedEventArgs());
                     paletlistbox.SelectedItem = yeniPalet.PaletAdi;
                     break;

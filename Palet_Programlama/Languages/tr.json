@@ -238,5 +238,10 @@
         "gripperYonu": "Gripper Yönü",
         "gripperAciklama": "Gripperın taşıyıcı kenarının açılacağı yönü gösterir."
 
+    },
+    "DizilimKaydetPopup": {
+
+        "separatorKonum": "Separator konumları",
+
     }
 }

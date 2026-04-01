@@ -1,12 +1,17 @@
 ﻿<Window x:Class="Palet_Programlama.UserController.MetinGirisKutusu"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:language="clr-namespace:Palet_Programlama.Languages"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Height="600"
         Width="500"
         Background="Transparent">
+
+  <Window.Resources>
+    <language:LanguageConverter x:Key="LanguageConverter"/>
+  </Window.Resources>
 
   <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown">
     <Border Background="#191919"
@@ -88,7 +93,7 @@
             CornerRadius="10"
             Visibility="Visible"> 
             <StackPanel>
-              <TextBlock Text="Separator konumları"
+              <TextBlock Text="{Binding Source='DizilimKaydetPopup.separatorKonum',Converter={StaticResource LanguageConverter}}"
                    Foreground="White"
                    FontSize="18"
                    FontWeight="SemiBold"

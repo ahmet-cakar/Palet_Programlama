@@ -1,21 +1,21 @@
 {
-  "Anasayfa": {
-    "textblokurun": "Add",
-    "textblokurun2": "Product/Pallet",
-    "dizilim1": "Create",
-    "dizilim2": "layout",
-    "hiz1": "Speed",
-    "hiz2": "Settings",
-    "gruplama1": "Create",
-    "gruplama2": "Grouping",
-    "program": "Programs",
-    "Alarm": "Alarms",
-    "izleme": "Monitoring",
-    "Komut": "Commands",
-    "buttonC": "Continue",
-    "userblayout1": "Change\nAccount",
-    "userblayout2": "Exit"
-  },
+    "Anasayfa": {
+        "textblokurun": "Add",
+        "textblokurun2": "Product/Pallet",
+        "dizilim1": "Create",
+        "dizilim2": "layout",
+        "hiz1": "Speed",
+        "hiz2": "Settings",
+        "gruplama1": "Create",
+        "gruplama2": "Grouping",
+        "program": "Programs",
+        "Alarm": "Alarms",
+        "izleme": "Monitoring",
+        "Komut": "Commands",
+        "buttonC": "Continue",
+        "hesapDegistir": "Change\nAccount",
+        "hesapCikis": "Exit"
+    },
     "DizilimYap": {
         "urunozellik": "Product Features:  ",
         "paletozellik": "Pallet Features:  ",

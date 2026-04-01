@@ -101,9 +101,7 @@ namespace Palet_Programlama.Screens
             // Eğer kaynak geçerli değilse işlem yapma
             if (currentImage == null) return;
 
-            // Kaynağın URI'sini string olarak al
-
-
+  
 
             // Yeni URI'yi hesaplayacak bir değişken
             string newUri = string.Empty;
@@ -111,12 +109,12 @@ namespace Palet_Programlama.Screens
             // Mevcut duruma göre yeni URI belirle
             switch (currentUri)
             {
-                case "pack://application:,,,/Images/Kullanıcı/dil_turkce_kapali.png":
-                    newUri = "pack://application:,,,/Images/Kullanıcı/dil_turkce_Acik.png";
+                case "pack://application:,,,/Images/Kullanici/dil_turkce_kapali.png":
+                    newUri = "pack://application:,,,/Images/Kullanici/dil_turkce_Acik.png";
                     break;
 
-                case "pack://application:,,,/Images/Kullanıcı/dil_turkce_Acik.png":
-                case "pack://application:,,,/Images/Kullanıcı/dil_eng_Acik.png":
+                case "pack://application:,,,/Images/Kullanici/dil_turkce_Acik.png":
+                case "pack://application:,,,/Images/Kullanici/dil_eng_Acik.png":
                     // Tıklama konumunu al
                     Point clickPoint = e.GetPosition(DilBtn);
                     double imageHeight = DilBtn.ActualHeight;
@@ -125,20 +123,20 @@ namespace Palet_Programlama.Screens
                     if (clickPoint.Y < imageHeight / 2)
                     {
                         newUri = (currentUri.Contains("turkce"))
-                                 ? "pack://application:,,,/Images/Kullanıcı/dil_turkce_kapali.png"
-                                 : "pack://application:,,,/Images/Kullanıcı/dil_eng.png";
+                                 ? "pack://application:,,,/Images/Kullanici/dil_turkce_kapali.png"
+                                 : "pack://application:,,,/Images/Kullanici/dil_eng.png";
                     }
                     // Alt tarafa tıklanmışsa
                     else
                     {
                         newUri = (currentUri.Contains("turkce"))
-                                 ? "pack://application:,,,/Images/Kullanıcı/dil_eng.png"
-                                 : "pack://application:,,,/Images/Kullanıcı/dil_turkce_kapali.png";
+                                 ? "pack://application:,,,/Images/Kullanici/dil_eng.png"
+                                 : "pack://application:,,,/Images/Kullanici/dil_turkce_kapali.png";
                     }
                     break;
 
-                case "pack://application:,,,/Images/Kullanıcı/dil_eng.png":
-                    newUri = "pack://application:,,,/Images/Kullanıcı/dil_eng_Acik.png";
+                case "pack://application:,,,/Images/Kullanici/dil_eng.png":
+                    newUri = "pack://application:,,,/Images/Kullanici/dil_eng_Acik.png";
                     break;
             }
 
@@ -155,7 +153,7 @@ namespace Palet_Programlama.Screens
             }
             else if (newUri.Contains("turkce_kapali"))
             {
-                KullaniciPlaceholder.Text = "Kullanıcı Adı";
+                KullaniciPlaceholder.Text = "Kullanici Adı";
                 passwordPlaceholder.Text = "Şifre";
                 giris_button.Content = "Giriş";
             }

@@ -382,7 +382,7 @@
             <Image Source="pack://application:,,,/Images/Anasayfa/Icon/changeaccount.png" Width="60" 
                                Height="60"/>
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding Source='Anasayfa.userborder1',Converter={StaticResource LanguageConverter}}" Style="{StaticResource HoverUnderlineTextBlockStyle}" 
+                            <TextBlock Text="{Binding Source='Anasayfa.hesapDegistir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource HoverUnderlineTextBlockStyle}" 
                                        Margin="0,12,0,0" FontSize="21" FontFamily="Roboto" Foreground="#3d3d3d"/>
                         </StackPanel>
                     </StackPanel>
@@ -391,7 +391,7 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
             <Image Source="pack://application:,,,/Images/Anasayfa/Icon/logout.png" Width="60" Height="60"/>
-                        <TextBlock x:Name="textlogout" Style="{StaticResource HoverUnderlineTextBlockStyle}" Text="{Binding Source='Anasayfa.userborder2',Converter={StaticResource LanguageConverter}}"  
+            <TextBlock x:Name="textlogout" Style="{StaticResource HoverUnderlineTextBlockStyle}" Text="{Binding Source='Anasayfa.hesapCikis',Converter={StaticResource LanguageConverter}}"  
                                    Margin="12,20,0,0" FontSize="21" FontFamily="Roboto" Foreground="#b92020" MouseLeftButtonDown="textlogout_MouseLeftButtonDown"/>
                     </StackPanel>
                 </StackPanel>

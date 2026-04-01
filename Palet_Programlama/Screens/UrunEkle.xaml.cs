@@ -287,8 +287,8 @@ namespace Palet_Programlama.Screens
                         txtOnizlemeKutu.FontSize = 18;
                         tamMetin = _textblock.Text ?? "";
 
-                        txtOnizlemeKutu.Text = tamMetin.Length > 22
-                            ? tamMetin.Substring(0, 22) + "..."
+                        txtOnizlemeKutu.Text = tamMetin.Length > 23
+                            ? tamMetin.Substring(0, 23) + "..."
                             : tamMetin;
                         txtOnizlemeKutu.ToolTip = tamMetin;
                         txtOnizlemeKutu.Visibility = Visibility.Visible;
@@ -300,8 +300,8 @@ namespace Palet_Programlama.Screens
                         txtOnizlemeKutu.FontSize = 18;
                         tamMetin = _textblock.Text ?? "";
 
-                        txtOnizlemeKutu.Text = tamMetin.Length > 22
-                            ? tamMetin.Substring(0, 22) + "..."
+                        txtOnizlemeKutu.Text = tamMetin.Length > 23
+                            ? tamMetin.Substring(0, 23) + "..."
                             : tamMetin;
                         txtOnizlemeKutu.ToolTip = tamMetin;
                         txtOnizlemeKutu.Visibility = Visibility.Visible;
@@ -380,8 +380,8 @@ namespace Palet_Programlama.Screens
                 {
                     tamMetin = _textblock.Text ?? "";
 
-                    txtOnizlemeKutu.Text = tamMetin.Length > 22
-                        ? tamMetin.Substring(0, 22) + "..."
+                    txtOnizlemeKutu.Text = tamMetin.Length > 23
+                        ? tamMetin.Substring(0, 23) + "..."
                         : tamMetin;
                     txtOnizlemeKutu.ToolTip = tamMetin;
                 }

@@ -13,8 +13,8 @@
         "izleme": "İzleme",
         "Komut": "Komutlar",
         "buttonC": "Devam",
-        "userborder1": "Hesap\nDeğiştir",
-        "userborder2": "Çıkış"
+        "hesapDegistir": "Hesap\nDeğiştir",
+        "hesapCikis": "Çıkış"
     },
     "UrunEkle": {
         "onizle": "Önizleme",
@@ -241,7 +241,7 @@
     },
     "DizilimKaydetPopup": {
 
-        "separatorKonum": "Separator konumları",
+        "separatorKonum": "Separator konumları"
 
     }
 }

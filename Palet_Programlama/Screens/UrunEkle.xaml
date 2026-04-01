@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Palet_Programlama.UserController"
       xmlns:languages="clr-namespace:Palet_Programlama.Languages"
       mc:Ignorable="d" 
-      d:DesignHeight="1000" d:DesignWidth="1366"
+      d:DesignHeight="1080" d:DesignWidth="1920"
       Title="UrunEkle">
   <Page.Resources>
     <languages:LanguageConverter x:Key="LanguageConverter"/>
@@ -22,10 +22,11 @@
         <local:UstMenu x:Name="UstMenuControl" Margin="0,15,0,0"/>
             </Border>
         </Grid>
+
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="2.1*"/>
+                <ColumnDefinition Width="1.38*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
@@ -47,6 +48,7 @@
                         </StackPanel>
                     </Border>
                 </Grid>
+
                 <Grid Grid.Row="1">
                     <!--Alt Alan-->
                     <StackPanel Panel.ZIndex="4">
@@ -162,36 +164,49 @@
                         </Border>
                     </StackPanel>
                 </Grid>
-            </Grid>
-            <Grid Grid.Column="1">
-                <!--Sağ Taraf Komple Border-->
-                <StackPanel Panel.ZIndex="7">
-                <TextBlock Text="{Binding Source='UrunEkle.paletlist',Converter={StaticResource LanguageConverter}}" Foreground="White" Margin="405,30,0,0" Panel.ZIndex="1" FontSize="24" FontFamily="Roboto" FontWeight="Bold"></TextBlock>
-                </StackPanel>
-                <StackPanel Panel.ZIndex="7">
-                <TextBlock Text="{Binding Source='UrunEkle.urunlist',Converter={StaticResource LanguageConverter}}" Foreground="White" Margin="30,30,0,0" Panel.ZIndex="1" FontSize="24" FontFamily="Roboto" FontWeight="Bold"></TextBlock>
-                </StackPanel>
+          
+          </Grid>
 
-                <StackPanel Orientation="Horizontal" Panel.ZIndex="6">
-                    <!--Ürün Listesi Listbox-->
-                    <ListBox  Style="{StaticResource listbox_template_urunekle}" Panel.ZIndex="5" x:Name="urunlistbox" SelectionChanged="UrunList_SelectedItem">
-                       
-                    </ListBox>
-                    <!--Palet Listesi Listbox-->
-                    <ListBox Style="{StaticResource listbox_template_urunekle}" Panel.ZIndex="5" x:Name="paletlistbox" SelectionChanged="PaletList_SelectedItem">
-                        
-                    </ListBox>
-                </StackPanel>
-            </Grid>
-        </Grid>
-        <Grid Grid.Row="2">
-            <Border>
-                <StackPanel Orientation="Horizontal">
-                    
-                   
-                    
-                </StackPanel>
-            </Border>
-        </Grid>
+      <Grid Grid.Column="1" >
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Ürün tarafı -->
+        <StackPanel  Grid.Column="0">
+          <TextBlock Text="{Binding Source='UrunEkle.urunlist',Converter={StaticResource LanguageConverter}}"
+                   Foreground="White"
+                   Margin="30,20,0,0"
+                   FontSize="24"
+                   Panel.ZIndex="20"
+                   FontFamily="Roboto"
+                   FontWeight="Bold"/>
+
+          <ListBox x:Name="urunlistbox"
+                 Style="{StaticResource listbox_template_urunekle}"
+                 Panel.ZIndex="5"
+                 SelectionChanged="UrunList_SelectedItem"/>
+        </StackPanel>
+
+        <!-- Palet tarafı -->
+        <StackPanel Grid.Column="2">
+          <TextBlock Text="{Binding Source='UrunEkle.paletlist',Converter={StaticResource LanguageConverter}}"
+                   Foreground="White"
+                   Panel.ZIndex="20"
+                   Margin="30,20,0,0"
+                   FontSize="24"
+                   FontFamily="Roboto"
+                   FontWeight="Bold"/>
+
+          <ListBox x:Name="paletlistbox"
+                 Style="{StaticResource listbox_template_urunekle}"
+                 Panel.ZIndex="5"
+                 SelectionChanged="PaletList_SelectedItem"/>
+        </StackPanel>
+      </Grid>
+
+    </Grid>
+        
     </Grid>
 </Page>

@@ -3,8 +3,8 @@
     <Style x:Key="listbox_template_urunekle" TargetType="ListBox" >
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Width" Value="365" />
-        <Setter Property="Height" Value="800" />
-        <Setter Property="Margin" Value="10,30,0,0" />
+        <Setter Property="Height" Value="810" />
+        <Setter Property="Margin" Value="0,-30,0,0" />
         <Setter Property="FontFamily" Value="Roboto" />
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Top" />
@@ -23,7 +23,7 @@
                         <!-- Öğeler için ScrollViewer -->
                         <ScrollViewer HorizontalScrollBarVisibility="Auto"  
                                       VerticalScrollBarVisibility="Auto">
-                            <ItemsPresenter Margin="0,20,0,0" />
+                            <ItemsPresenter Margin="0,15,0,0" />
                             <!-- Üstten boşluk eklendi -->
                         </ScrollViewer>
                     </Grid>

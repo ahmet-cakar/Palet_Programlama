@@ -290,6 +290,36 @@ namespace Palet_Programlama.Screens
             }
         }
 
+        private void SonSecimdenSilinenleriTemizle(string silinenUrunAdi = null, string silinenPaletAdi = null)
+        {
+            var sonSecim = _sonSecimServisi.Yukle();
+            if (sonSecim == null)
+                return;
+
+            bool degistiMi = false;
+
+            if (!string.IsNullOrWhiteSpace(silinenUrunAdi) &&
+                string.Equals(sonSecim.UrunAdi, silinenUrunAdi, StringComparison.OrdinalIgnoreCase))
+            {
+                sonSecim.UrunAdi = null;
+                sonSecim.DizilimAdi = null;
+                degistiMi = true;
+            }
+
+            if (!string.IsNullOrWhiteSpace(silinenPaletAdi) &&
+                string.Equals(sonSecim.PaletAdi, silinenPaletAdi, StringComparison.OrdinalIgnoreCase))
+            {
+                sonSecim.PaletAdi = null;
+                sonSecim.DizilimAdi = null;
+                degistiMi = true;
+            }
+
+            if (degistiMi)
+            {
+                _sonSecimServisi.Kaydet(sonSecim);
+            }
+        }
+
         #region Ürün İşlemleri
 
         private void UrunEkleBtn_Click(object sender, RoutedEventArgs e)
@@ -336,6 +366,7 @@ namespace Palet_Programlama.Screens
             urunIslemler.UrunSil(silinecekUrun);
             urunlistbox.Items.Remove(silinecekUrun);
             urunlistbox.SelectedItem = null;
+            SonSecimdenSilinenleriTemizle(silinenUrunAdi: silinecekUrun);
             UrunFormunuTemizle();
         }
 
@@ -450,6 +481,7 @@ namespace Palet_Programlama.Screens
             paletIslemler.PaletSil(silinecekPalet);
             paletlistbox.Items.Remove(silinecekPalet);
             paletlistbox.SelectedItem = null;
+            SonSecimdenSilinenleriTemizle(silinenPaletAdi: silinecekPalet);
             PaletFormunuTemizle();
         }
 
@@ -506,5 +538,7 @@ namespace Palet_Programlama.Screens
         }
 
         #endregion
+
+      
     }
 }

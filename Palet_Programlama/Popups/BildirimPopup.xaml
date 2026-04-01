@@ -16,8 +16,15 @@
     <Grid>
         <Border Background="#191919" BorderBrush="#f59f05" BorderThickness="2" CornerRadius="15" Padding="10">
             <StackPanel Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <TextBlock Text="{Binding Source='MesajKutusu.uyari',Converter={StaticResource LanguageConverter}}" FontSize="27" FontFamily="Roboto" Margin="15" Foreground="White"/>
-                <TextBlock  TextWrapping="Wrap" LineHeight="27" FontSize="17" Width="530" Height="75" Foreground="White" Margin="15" FontFamily="Roboto" x:Name="mesaj"/>
+                <TextBlock Text="{Binding Source='MesajKutusu.uyari',Converter={StaticResource LanguageConverter}}" 
+                FontSize="27" 
+                FontFamily="Roboto" 
+                Margin="15" 
+                Foreground="White"/>
+                <TextBlock  TextWrapping="Wrap" 
+                LineHeight="27" FontSize="17"
+                Width="530" Height="75" Foreground="White"
+                Margin="15" FontFamily="Roboto" x:Name="mesaj"/>
                 <Button Background="{StaticResource button_background}" Style="{StaticResource button_template}" Width="150" Height="40" VerticalAlignment="Center" Margin="20,0,0,0" HorizontalAlignment="Center" x:Name="btn1" Click="btn1_Click"/>
             </StackPanel>
         </Border>

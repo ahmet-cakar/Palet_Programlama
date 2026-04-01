@@ -1,21 +1,21 @@
 {
-  "Anasayfa": {
-    "textblokurun": "Ürün/Palet",
-    "textblokurun2": "Ekle",
-    "dizilim1": "Dizilim",
-    "dizilim2": "Oluştur",
-    "hiz1": "Hızları",
-    "hiz2": "Düzenle",
-    "gruplama1": "Gruplama",
-    "gruplama2": "Oluştur",
-    "program": "Programlar",
-    "Alarm": "Alarmlar",
-    "izleme": "İzleme",
-    "Komut": "Komutlar",
-    "buttonC": "Devam",
-    "userborder1": "Hesap\nDeğiştir",
-    "userborder2": "Çıkış"
-  },
+    "Anasayfa": {
+        "textblokurun": "Ürün/Palet",
+        "textblokurun2": "Ekle",
+        "dizilim1": "Dizilim",
+        "dizilim2": "Oluştur",
+        "hiz1": "Hızları",
+        "hiz2": "Düzenle",
+        "gruplama1": "Gruplama",
+        "gruplama2": "Oluştur",
+        "program": "Programlar",
+        "Alarm": "Alarmlar",
+        "izleme": "İzleme",
+        "Komut": "Komutlar",
+        "buttonC": "Devam",
+        "userborder1": "Hesap\nDeğiştir",
+        "userborder2": "Çıkış"
+    },
     "UrunEkle": {
         "onizle": "Önizleme",
         "urunblg": "Ürün Bilgileri",
@@ -58,16 +58,16 @@
 
     },
 
-  "UserControl": {
-    "urunekle": "Ürün/Palet Ekle",
-    "dizilimekle": "Dizilim Oluştur",
-    "hizayar": "Hız Ayarları",
-    "grupekle": "Gruplama Oluştur",
-    "program": "Programlar",
-    "alarm": "Alarmlar",
-    "izle": "İzleme",
-    "komut": "Komutlar"
-  },
+    "UserControl": {
+        "urunekle": "Ürün/Palet Ekle",
+        "dizilimekle": "Dizilim Oluştur",
+        "hizayar": "Hız Ayarları",
+        "grupekle": "Gruplama Oluştur",
+        "program": "Programlar",
+        "alarm": "Alarmlar",
+        "izle": "İzleme",
+        "komut": "Komutlar"
+    },
     "MesajKutusu": {
         "urunBasariliEklendi": "Ürün başarılı bir şekilde eklendi.",
         "paletBasariliEklendi": "Palet başarılı bir şekilde eklendi.",
@@ -100,10 +100,10 @@
         "paletBasariliGuncellendi": "Seçilen palet başarılı bir şekilde güncellendi.",
         "paletBasariliSilindi": "Palet başarılı bir şekilde silindi."
     },
-  "global": {
-    "btnkaydet": "Kaydet",
-    "btnsil": "Sil"
-  },
+    "global": {
+        "btnkaydet": "Kaydet",
+        "btnsil": "Sil"
+    },
     "Hiz": {
         "v1": "V_50",
         "v2": "V_51",
@@ -169,9 +169,10 @@
         "txtYukseklik": "Yükseklik: ",
         "txtAgirlik": "Ağırlık: ",
         "txtGruplandirma": "Gruplandırma",
-        "txtUrunSecimi": "Ürün Seçimi",
-        "txtDizilimSecimi": "Dizilim Seçimi",
-        "txtGruplamaSecimi": "Gruplama Seçimi",
+        "txtUrunSecimi": "Ürün Seçiniz",
+        "txtPaletSecimi": "Palet Seçiniz",
+        "txtDizilimSecimi": "Dizilim Seçiniz",
+        "txtGruplamaSecimi": "Gruplama Seçiniz",
         "txtKatNo": "Kat No: ",
         "txtGrupNo": "Grup No: ",
         "btnAyarlar": "Ayarlar",
@@ -182,17 +183,17 @@
         "btnGruplariTemizle": "Grupları Temizle",
         "btnManuelDiz": "Manuel Diz",
         "btnDizilimListesi": "DizilimListesi"
+        
+
+    },
+    "Program": {
+        "btnrecededuzen": "Reçete Düzenle",
+        "btnCalistir": "Çalıştır",
+        "not": "Program Hakkında:",
+        "listtext": "Mevcut Program Listesi"
 
 
     },
-  "Program": {
-    "btnrecededuzen": "Reçete Düzenle",
-    "btnCalistir": "Çalıştır",
-    "not": "Program Hakkında:",
-    "listtext": "Mevcut Program Listesi"
-
-
-  },
     "HataMesajlari": {
         "urunadbos": "Ürün Adı Boş Bırakılamaz",
         "urunenbos": "Ürün Genişlik Boş Bırakılamaz",
@@ -204,14 +205,22 @@
         "paletenbos": "Palet Genişlik Boş Bırakılamaz",
         "paletboybos": "Palet Uzunluk Boş Bırakılamaz",
         "paletyukseklikbos": "Palet Yükseklik Boş Bırakılamaz",
-        
+
         "paletBasariliSilindi": "Palet başarılı bir şekilde silindi.",
         "paletSeciniz": "Lütfen bir palet seçiniz."
 
     },
-  "ButtonKey": {
+    "ButtonKey": {
 
-    "btntamam": "Tamam"
-  }
+        "btntamam": "Tamam",
+        "btnIptal": "Iptal"
+    },
+    "UrunPaletSecimPopup": {
+
+        "baslik": "Ürün,Palet ve Dizilim seçin",
+        "dizilimSecilebilir": " (Dizilim güncellemek için seçebilirsiniz.)",
+        "zorunluAlan": " ( * Zorunlu)"
+
+    }
 
 }

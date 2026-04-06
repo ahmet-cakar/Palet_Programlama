@@ -1,10 +1,14 @@
-﻿using Palet_Programlama.Languages;
+﻿using Newtonsoft.Json;
+using Palet_Programlama.Languages;
+using Palet_Programlama.Screens.Dizilim.Models;
+using Palet_Programlama.Screens.Gruplama.Models;
+using Palet_Programlama.Screens.Helpers;
 using Palet_Programlama.Screens.Services;
 using Palet_Programlama.Screens.UrunPaletEkle.Models;
 using Palet_Programlama.UserController;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,6 +41,71 @@ namespace Palet_Programlama.Screens
             (txtUrunAgirlik, "HataMesajlari.urunagirlikbos"),
             (txtUrunBasinc, "HataMesajlari.urunbasincbos")
         };
+
+
+        private void UruneAitDizilimVeProgramlariSil(string urunAdi)
+        {
+            if (string.IsNullOrWhiteSpace(urunAdi))
+                return;
+
+            string dizilimDosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Dizilimler.json");
+            if (File.Exists(dizilimDosyaYolu))
+            {
+                var dizilimler = JsonConvert.DeserializeObject<List<DizilimKayitModel>>(
+                    File.ReadAllText(dizilimDosyaYolu)) ?? new List<DizilimKayitModel>();
+
+                dizilimler = dizilimler
+                    .Where(x => !string.Equals((x.UrunAdi ?? "").Trim(), urunAdi.Trim(), StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+
+                File.WriteAllText(dizilimDosyaYolu, JsonConvert.SerializeObject(dizilimler, Formatting.Indented));
+            }
+
+            string programDosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Programlar.json");
+            if (File.Exists(programDosyaYolu))
+            {
+                var programlar = JsonConvert.DeserializeObject<List<ProgramKayitModel>>(
+                    File.ReadAllText(programDosyaYolu)) ?? new List<ProgramKayitModel>();
+
+                programlar = programlar
+                    .Where(x => !string.Equals((x.UrunAdi ?? "").Trim(), urunAdi.Trim(), StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+
+                File.WriteAllText(programDosyaYolu, JsonConvert.SerializeObject(programlar, Formatting.Indented));
+            }
+        }
+
+        private void PaleteAitDizilimVeProgramlariSil(string paletAdi)
+        {
+            if (string.IsNullOrWhiteSpace(paletAdi))
+                return;
+
+            string dizilimDosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Dizilimler.json");
+            if (File.Exists(dizilimDosyaYolu))
+            {
+                var dizilimler = JsonConvert.DeserializeObject<List<DizilimKayitModel>>(
+                    File.ReadAllText(dizilimDosyaYolu)) ?? new List<DizilimKayitModel>();
+
+                dizilimler = dizilimler
+                    .Where(x => !string.Equals((x.PaletAdi ?? "").Trim(), paletAdi.Trim(), StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+
+                File.WriteAllText(dizilimDosyaYolu, JsonConvert.SerializeObject(dizilimler, Formatting.Indented));
+            }
+
+            string programDosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Programlar.json");
+            if (File.Exists(programDosyaYolu))
+            {
+                var programlar = JsonConvert.DeserializeObject<List<ProgramKayitModel>>(
+                    File.ReadAllText(programDosyaYolu)) ?? new List<ProgramKayitModel>();
+
+                programlar = programlar
+                    .Where(x => !string.Equals((x.PaletAdi ?? "").Trim(), paletAdi.Trim(), StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+
+                File.WriteAllText(programDosyaYolu, JsonConvert.SerializeObject(programlar, Formatting.Indented));
+            }
+        }
 
         private (TextBox TextBox, string MesajKey)[] PaletZorunluAlanlar => new[]
         {
@@ -501,6 +570,7 @@ namespace Palet_Programlama.Screens
                 return;
 
             urunIslemler.UrunSil(silinecekUrun);
+            UruneAitDizilimVeProgramlariSil(silinecekUrun);
             urunlistbox.Items.Remove(silinecekUrun);
             urunlistbox.SelectedItem = null;
             SonSecimdenSilinenleriTemizle(silinenUrunAdi: silinecekUrun);
@@ -547,7 +617,7 @@ namespace Palet_Programlama.Screens
                     item.UrunYukseklik = yeniUrun.UrunYukseklik;
                     item.UrunAgirlik = yeniUrun.UrunAgirlik;
                     item.UrunBasinc = yeniUrun.UrunBasinc;
-
+                    UrunAdinaBagliKayitlariGuncelle(seciliUrunAdi, yeniUrun.UrunAdi);
                     urunIslemler.UrunListesiKaydet(urunlist);
                     SonSecimiGuncelle(urunAdi: yeniUrun.UrunAdi, dizilimTemizle: true);
                     Page_Loaded(this, new RoutedEventArgs());
@@ -620,6 +690,7 @@ namespace Palet_Programlama.Screens
                 return;
 
             paletIslemler.PaletSil(silinecekPalet);
+            PaleteAitDizilimVeProgramlariSil(silinecekPalet);
             paletlistbox.Items.Remove(silinecekPalet);
             paletlistbox.SelectedItem = null;
             SonSecimdenSilinenleriTemizle(silinenPaletAdi: silinecekPalet);
@@ -654,7 +725,7 @@ namespace Palet_Programlama.Screens
                     item.PaletEn = yeniPalet.PaletEn;
                     item.PaletBoy = yeniPalet.PaletBoy;
                     item.PaletYukseklik = yeniPalet.PaletYukseklik;
-
+                    PaletAdinaBagliKayitlariGuncelle(seciliPaletAdi, yeniPalet.PaletAdi);
                     paletIslemler.PaletListesiKaydet(paletlist);
                     SonSecimiGuncelle(paletAdi: yeniPalet.PaletAdi, dizilimTemizle: true);
                     BildirimGoster("MesajKutusu.paletBasariliGuncellendi");
@@ -681,8 +752,86 @@ namespace Palet_Programlama.Screens
         }
 
 
+        private void UrunAdinaBagliKayitlariGuncelle(string eskiUrunAdi, string yeniUrunAdi)
+        {
+            if (string.IsNullOrWhiteSpace(eskiUrunAdi) || string.IsNullOrWhiteSpace(yeniUrunAdi))
+                return;
+
+            if (string.Equals(eskiUrunAdi.Trim(), yeniUrunAdi.Trim(), StringComparison.OrdinalIgnoreCase))
+                return;
+
+            string dizilimDosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Dizilimler.json");
+            if (File.Exists(dizilimDosyaYolu))
+            {
+                var dizilimler = JsonConvert.DeserializeObject<List<DizilimKayitModel>>(
+                    File.ReadAllText(dizilimDosyaYolu)) ?? new List<DizilimKayitModel>();
+
+                foreach (var kayit in dizilimler.Where(x =>
+                             string.Equals((x.UrunAdi ?? "").Trim(), eskiUrunAdi.Trim(), StringComparison.OrdinalIgnoreCase)))
+                {
+                    kayit.UrunAdi = yeniUrunAdi;
+                }
+
+                File.WriteAllText(dizilimDosyaYolu, JsonConvert.SerializeObject(dizilimler, Formatting.Indented));
+            }
+
+            string programDosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Programlar.json");
+            if (File.Exists(programDosyaYolu))
+            {
+                var programlar = JsonConvert.DeserializeObject<List<ProgramKayitModel>>(
+                    File.ReadAllText(programDosyaYolu)) ?? new List<ProgramKayitModel>();
+
+                foreach (var kayit in programlar.Where(x =>
+                             string.Equals((x.UrunAdi ?? "").Trim(), eskiUrunAdi.Trim(), StringComparison.OrdinalIgnoreCase)))
+                {
+                    kayit.UrunAdi = yeniUrunAdi;
+                }
+
+                File.WriteAllText(programDosyaYolu, JsonConvert.SerializeObject(programlar, Formatting.Indented));
+            }
+        }
+
+        private void PaletAdinaBagliKayitlariGuncelle(string eskiPaletAdi, string yeniPaletAdi)
+        {
+            if (string.IsNullOrWhiteSpace(eskiPaletAdi) || string.IsNullOrWhiteSpace(yeniPaletAdi))
+                return;
+
+            if (string.Equals(eskiPaletAdi.Trim(), yeniPaletAdi.Trim(), StringComparison.OrdinalIgnoreCase))
+                return;
+
+            string dizilimDosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Dizilimler.json");
+            if (File.Exists(dizilimDosyaYolu))
+            {
+                var dizilimler = JsonConvert.DeserializeObject<List<DizilimKayitModel>>(
+                    File.ReadAllText(dizilimDosyaYolu)) ?? new List<DizilimKayitModel>();
+
+                foreach (var kayit in dizilimler.Where(x =>
+                             string.Equals((x.PaletAdi ?? "").Trim(), eskiPaletAdi.Trim(), StringComparison.OrdinalIgnoreCase)))
+                {
+                    kayit.PaletAdi = yeniPaletAdi;
+                }
+
+                File.WriteAllText(dizilimDosyaYolu, JsonConvert.SerializeObject(dizilimler, Formatting.Indented));
+            }
+
+            string programDosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Programlar.json");
+            if (File.Exists(programDosyaYolu))
+            {
+                var programlar = JsonConvert.DeserializeObject<List<ProgramKayitModel>>(
+                    File.ReadAllText(programDosyaYolu)) ?? new List<ProgramKayitModel>();
+
+                foreach (var kayit in programlar.Where(x =>
+                             string.Equals((x.PaletAdi ?? "").Trim(), eskiPaletAdi.Trim(), StringComparison.OrdinalIgnoreCase)))
+                {
+                    kayit.PaletAdi = yeniPaletAdi;
+                }
+
+                File.WriteAllText(programDosyaYolu, JsonConvert.SerializeObject(programlar, Formatting.Indented));
+            }
+        }
+
         #endregion
 
-       
+
     }
 }

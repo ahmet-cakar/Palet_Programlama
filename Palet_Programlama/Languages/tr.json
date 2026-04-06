@@ -55,11 +55,10 @@
         "previewPaletEn": "Palet Genişlik",
         "previewPaletBoy": "Palet Uzunluk",
         "previewPaletYukseklik": "Palet Yükseklik",
-        "urunGuncellemeMesaj": "'{0}' adlı ürün güncellensin mi?",
-        "urunSilmeMesaj": "'{0}' adlı ürün silinsin mi?",
-        "paletGuncellemeMesaj": "'{0}' adlı palet güncellensin mi?",
-        "paletSilmeMesaj": "'{0}' adlı palet silinsin mi?"
-
+        "urunGuncellemeMesaj": "'{0}' adlı ürünü güncellemek istiyor musunuz ? ( Bu ürüne ait dizilimler ve programlar güncellenecektir !! )",
+        "urunSilmeMesaj": "'{0}' adlı ürünü silmek istiyor musunuz ? ( Bu ürüne ait dizilimler ve programlar silinecektir !! )",
+        "paletGuncellemeMesaj": "'{0}' adlı paleti güncellemek istiyor musunuz ? ( Bu palete ait dizilimler ve programlar güncellenecektir !! )",
+        "paletSilmeMesaj": "'{0}' adlı paleti silmek istiyor musunuz ? ( Bu palete ait dizilimler ve programlar silinecektir !! )"
 
     },
 

@@ -122,10 +122,10 @@
         "previewPaletEn": "Pallet Width",
         "previewPaletBoy": "Palet Lenght",
         "previewPaletYukseklik": "Pallet Height",
-        "urunSilmeMesaj": "Delete the product named '{0}'?",
-        "urunGuncellemeMesaj": "Update the product named '{0}'?",
-        "paletSilmeMesaj": "Delete the pallet named '{0}'?",
-        "paletGuncellemeMesaj": "Update the pallet named '{0}'?"
+        "urunSilmeMesaj": "Do you want to delete the product '{0}' ? ( Layers and programs belonging to this product will be deleted !! )",
+        "urunGuncellemeMesaj": "Do you want to update product '{0}' ? ( Layers and programs belonging to this product will be updated !! )",
+        "paletGuncellemeMesaj": "Do you want to delete the pallet '{0}' ? ( Layers and programs belonging to this pallet will be updated !! )",
+        "paletSilmeMesaj": "Do you want to delete the pallet '{0}' ? ( Layers and programs belonging to this pallet will be deleted !! )"
 
     },
     "UserControl": {

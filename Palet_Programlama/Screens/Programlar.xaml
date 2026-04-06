@@ -83,8 +83,7 @@
               <TextBlock Grid.Row="0" Grid.Column="1" x:Name="txtUrunAdi"
                                        Margin="30,18,0,0"
                                        Style="{StaticResource textblock_template_urunekle}"
-                                       ToolTip="Ürün Seçilmedi"
-                                       Text="Ürün Seçilmedi"/>
+                                       Text="{Binding Source='Program.secilmedi',Converter={StaticResource LanguageConverter}}"/>
 
               <TextBlock Grid.Row="1" Grid.Column="0"
                                        Margin="0,13,0,0"
@@ -166,8 +165,8 @@
                                        x:Name="txtPaletAdi"
                                        Margin="30,5,0,0"
                                        Style="{StaticResource textblock_template_urunekle}"
-                                       Text="Palet Seçilmedi"
-                                       ToolTip="Palet Seçilmedi"/>
+                                       Text="{Binding Source='Program.secilmedi',Converter={StaticResource LanguageConverter}}"
+                                       />
 
               <TextBlock Grid.Row="1" Grid.Column="0"
                                        Margin="0,20,0,0"
@@ -347,13 +346,12 @@
                                        Foreground="#E5E7EB"
                                        FontSize="24"
                                        FontWeight="Bold"
-                                       Text="Program Adı ="/>
+                                       Text="{Binding Source='ProgramKaydetPopup.programAdi',Converter={StaticResource LanguageConverter}}"/>
 
               <TextBlock Grid.Column="1"
                                        x:Name="txtProgramAdi"
-                                       Margin="4,0,0,0"
-                                       Text="Program Seçilmedi"
-                                       ToolTip="Program Seçilmedi"
+                                       Margin="15,01,0,0"
+                                       Text="{Binding Source='Program.secilmedi',Converter={StaticResource LanguageConverter}}"
                                        VerticalAlignment="Center"
                                        Foreground="White"
                                        FontSize="20"
@@ -378,7 +376,7 @@
                                            Foreground="#E5E7EB"
                                            FontSize="24"
                                            FontWeight="Bold"
-                                           Text="Program ID ="/>
+                                           Text="Program ID "/>
 
                 <TextBlock Grid.Column="1"
                                            x:Name="txtProgramID"

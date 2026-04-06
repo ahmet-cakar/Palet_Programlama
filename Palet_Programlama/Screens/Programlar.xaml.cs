@@ -13,6 +13,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
+using Palet_Programlama.Languages;
 
 namespace Palet_Programlama.Screens
 {
@@ -44,6 +45,12 @@ namespace Palet_Programlama.Screens
         private double OlcekY => canvasPalet.Width / palet.PaletBoy;
         private double OlcekX => canvasPalet.Height / palet.PaletEn;
         private int AktifKatNo => _katYonetici.AktifKat;
+
+
+        private string ProgramSecilmediText => LanguageConverter.GetString("Program.programSecilmedi");
+        private string SecilmediText => LanguageConverter.GetString("Program.secilmedi");
+        private string UrunSecilmediText => LanguageConverter.GetString("Program.urunSecilmedi");
+        private string PaletSecilmediText => LanguageConverter.GetString("Program.paletSecilmedi");
 
         public Programlar(Frame Main)
         {
@@ -323,7 +330,7 @@ namespace Palet_Programlama.Screens
             if (seciliProgram == null)
             {
                 var uyari = new BildirimKutusu();
-                uyari.MesajGonder("MesajKutusu.tamam", "Lütfen silmek için bir program seçiniz.");
+                uyari.MesajGonder("MesajKutusu.tamam", "Program.programSecmedenSilme");
                 uyari.ShowDialog();
                 return;
             }
@@ -333,10 +340,14 @@ namespace Palet_Programlama.Screens
                 Owner = Window.GetWindow(this)
             };
 
+            string mesaj = string.Format(
+                LanguageConverter.GetString("Program.programSilmeOnayMesaj"),
+                seciliProgram.ProgramAdi);
+
             onayKutusu.MesajGonder(
-                $"'{seciliProgram.ProgramAdi}' programını silmek istediğinizden emin misiniz?",
-                "Evet",
-                "Hayır");
+                mesaj,
+                LanguageConverter.GetString("MesajKutusu.evet"),
+                LanguageConverter.GetString("MesajKutusu.hayir"));
 
             bool? sonuc = onayKutusu.ShowDialog();
             if (sonuc != true || !onayKutusu.OnaylandiMi)
@@ -347,7 +358,7 @@ namespace Palet_Programlama.Screens
             if (!silindi)
             {
                 var hata = new BildirimKutusu();
-                hata.MesajGonder("MesajKutusu.tamam", "Program silinemedi.");
+                hata.MesajGonder("MesajKutusu.tamam", "Program.programSilinemedi");
                 hata.ShowDialog();
                 return;
             }
@@ -357,26 +368,25 @@ namespace Palet_Programlama.Screens
             CanvasiTemizle();
 
             var bilgi = new BildirimKutusu();
-            bilgi.MesajGonder("MesajKutusu.tamam", "Program başarıyla silindi.");
+            bilgi.MesajGonder("MesajKutusu.tamam", "Program.programBasariylaSilindi");
             bilgi.ShowDialog();
         }
 
         private void BilgileriTemizle()
         {
-            txtProgramAdi.Text = "Program Seçilmedi";
-            txtProgramAdi.ToolTip = "Program Seçilmedi";
-            txtProgramID.Text = "Seçilmedi";
+            txtProgramAdi.Text = ProgramSecilmediText;
+            txtProgramAdi.ToolTip = ProgramSecilmediText;
+            txtProgramID.Text = SecilmediText;
+            txtUrunAdi.Text = UrunSecilmediText;
+            txtUrunAdi.ToolTip = UrunSecilmediText;
+            txtPaletAdi.Text = PaletSecilmediText;
+            txtPaletAdi.ToolTip = PaletSecilmediText;
 
-            txtUrunAdi.Text = "Ürün Seçilmedi";
-            txtUrunAdi.ToolTip = "Ürün Seçilmedi";
             txtUrunGenislik.Text = "-";
             txtUrunUzunluk.Text = "-";
             txtUrunBasinc.Text = "-";
             txtUrunYukseklik.Text = "-";
             txtUrunAgirlik.Text = "-";
-
-            txtPaletAdi.Text = "Palet Seçilmedi";
-            txtPaletAdi.ToolTip = "Palet Seçilmedi";
             txtPaletGenislik.Text = "-";
             txtPaletUzunluk.Text = "-";
             txtPaletYukseklik.Text = "-";

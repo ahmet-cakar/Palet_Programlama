@@ -27,6 +27,13 @@
         "dizilimlerYuklenemedi": "Layers could not be loaded"
 
     },
+    "ProgramKaydetPopup": {
+        "anaBaslik": "Program Save",
+        "baslik": "Program Info",
+        "programAdi": "Program Name",
+        "aciklama": "Description",
+        "zorunluAlan": " ( * Required)"
+    },
 
     "DizilimYap": {
         "urunozellik": "Product Features:  ",
@@ -172,7 +179,15 @@
         "btnrecededuzen": "Edit Prescription",
         "btnCalistir": "Run",
         "not": "Program Info:",
-        "listtext": "Available Program List"
+        "listtext": "Available Program List",
+        "SecmedenSilme": "Please select a program to delete.",
+        "SilmeOnayMesaj": "Are you sure you want to delete program '{0}'?",
+        "Silinemedi": "The program could not be deleted.",
+        "BasariylaSilindi": "The program was successfully deleted.",
+        "Secilmedi": "Program Not Selected.",
+        "secilmedi": "Not Selected",
+        "urunSecilmedi": " Not Selected",
+        "paletSecilmedi": " Not Selected"
     },
 
     "GruplamaYap": {

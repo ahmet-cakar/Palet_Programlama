@@ -63,6 +63,8 @@
 
     },
 
+
+
     "UserControl": {
         "urunekle": "Ürün/Palet Ekle",
         "dizilimekle": "Dizilim Oluştur",
@@ -196,7 +198,15 @@
         "btnrecededuzen": "Reçete Düzenle",
         "btnCalistir": "Çalıştır",
         "not": "Program Hakkında:",
-        "listtext": "Mevcut Program Listesi"
+        "listtext": "Mevcut Program Listesi",
+        "SecmedenSilme": "Lütfen silmek için bir program seçiniz.",
+        "SilmeOnayMesaj": "'{0}' programını silmek istediğinizden emin misiniz?",
+        "Silinemedi": "Program silinemedi.",
+        "BasariylaSilindi": "Program başarıyla silindi.",
+        "Secilmedi": "Program Seçilmedi",
+        "secilmedi": "Seçilmedi",
+        "urunSecilmedi": "Ürün Seçilmedi",
+        "paletSecilmedi": "Palet Seçilmedi"
 
 
     },

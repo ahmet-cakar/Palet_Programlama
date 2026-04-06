@@ -16,6 +16,18 @@
         "hesapDegistir": "Change\nAccount",
         "hesapCikis": "Exit"
     },
+    "UrunPaletSecimPopup": {
+
+        "baslik": "Select Product, Pallet and Layer",
+        "dizilimSecilebilir": " (You can choose to update the layer.)",
+        "zorunluAlan": " ( * Required)",
+        "dizilimZorunluDegil": "(Layer is not required.)",
+        "dizilimDosyasiBulunamadi": "Layer file not found",
+        "kayitliDizilimYok": "No saved layer",
+        "dizilimlerYuklenemedi": "Layers could not be loaded"
+
+    },
+
     "DizilimYap": {
         "urunozellik": "Product Features:  ",
         "paletozellik": "Pallet Features:  ",

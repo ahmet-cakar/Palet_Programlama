@@ -227,7 +227,11 @@
 
         "baslik": "Ürün,Palet ve Dizilim seçin",
         "dizilimSecilebilir": " (Dizilim güncellemek için seçebilirsiniz.)",
-        "zorunluAlan": " ( * Zorunlu)"
+        "zorunluAlan": " ( * Zorunlu)",
+        "dizilimZorunluDegil": "(Dizilim zorunlu değil.)",
+        "dizilimDosyasiBulunamadi": "Dizilim dosyası bulunamadı",
+        "kayitliDizilimYok": "Kayıtlı dizilim yok",
+        "dizilimlerYuklenemedi": "Dizilimler yüklenemedi"
 
     },
     "ProgramKaydetPopup": {

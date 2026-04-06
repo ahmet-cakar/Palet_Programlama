@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Palet_Programlama.Languages;
 using Palet_Programlama.Screens.Dizilim.Models;
 using Palet_Programlama.Screens.Helpers;
 using Palet_Programlama.Screens.Services;
@@ -15,8 +16,10 @@ namespace Palet_Programlama.UserController
 {
     public partial class UrunPaletSecimKutusu : Window
     {
-
         private readonly SonSecimServisi _sonSecimServisi = new SonSecimServisi();
+
+        private string DizilimSecimiText => LanguageConverter.GetString("GruplamaYap.txtDizilimSecimi");
+        private string ZorunluAlanText => LanguageConverter.GetString("UrunPaletSecimPopup.zorunluAlan");
 
         private sealed class ComboSecenek<T>
         {
@@ -29,8 +32,6 @@ namespace Palet_Programlama.UserController
         public string SecilenDizilimAdi { get; private set; }
 
         private string _dizilimAciklama;
-
-
 
         private void SonSecimiKaydet()
         {
@@ -46,8 +47,8 @@ namespace Palet_Programlama.UserController
         {
             InitializeComponent();
 
-            urunler = urunler ?? new List<Urun>();
-            paletler = paletler ?? new List<Palet>();
+            urunler ??= new List<Urun>();
+            paletler ??= new List<Palet>();
 
             urunComboBox.ItemsSource = urunler
                 .Select(x => new ComboSecenek<Urun>
@@ -69,7 +70,7 @@ namespace Palet_Programlama.UserController
             paletComboBox.DisplayMemberPath = nameof(ComboSecenek<Palet>.Text);
 
             dizilimComboBox.ItemsSource = null;
-            dizilimComboBox.Text = "Dizilim Seçiniz";
+            dizilimComboBox.Text = DizilimSecimiText;
             _dizilimAciklama = dizilimAciklama;
             txtDizilimAciklama.Text = dizilimAciklama;
 
@@ -78,14 +79,11 @@ namespace Palet_Programlama.UserController
 
         private void SonSecimiYukle()
         {
-
             try
             {
                 var sonSecim = _sonSecimServisi.Yukle();
                 if (sonSecim == null)
-                {
                     return;
-                }
 
                 if (!string.IsNullOrWhiteSpace(sonSecim.UrunAdi))
                 {
@@ -97,9 +95,7 @@ namespace Palet_Programlama.UserController
                                           StringComparison.OrdinalIgnoreCase));
 
                     if (urunItem != null)
-                    {
                         urunComboBox.SelectedItem = urunItem;
-                    }
                 }
 
                 if (!string.IsNullOrWhiteSpace(sonSecim.PaletAdi))
@@ -112,9 +108,7 @@ namespace Palet_Programlama.UserController
                                           StringComparison.OrdinalIgnoreCase));
 
                     if (paletItem != null)
-                    {
                         paletComboBox.SelectedItem = paletItem;
-                    }
                 }
 
                 DizilimleriYukle();
@@ -128,14 +122,12 @@ namespace Palet_Programlama.UserController
                                       StringComparison.OrdinalIgnoreCase));
 
                     if (seciliDizilim != null)
-                    {
                         dizilimComboBox.SelectedItem = seciliDizilim;
-                    }
                 }
             }
-            finally { }
-               
-
+            finally
+            {
+            }
         }
 
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -170,10 +162,10 @@ namespace Palet_Programlama.UserController
         {
             if (dizilimComboBox.SelectedItem is string seciliDizilim)
             {
-                if (seciliDizilim == "Dizilim Seçiniz")
+                if (seciliDizilim == DizilimSecimiText)
                 {
                     SecilenDizilimAdi = null;
-                    dizilimComboBox.Text = "Dizilim Seçiniz";
+                    dizilimComboBox.Text = DizilimSecimiText;
                     return;
                 }
 
@@ -184,30 +176,27 @@ namespace Palet_Programlama.UserController
 
         private void btnTamam_Click(object sender, RoutedEventArgs e)
         {
-
-
             if (urunComboBox.SelectedItem is not ComboSecenek<Urun> seciliUrun ||
-            paletComboBox.SelectedItem is not ComboSecenek<Palet> seciliPalet ||
-            seciliUrun.Value == null ||
-            seciliPalet.Value == null)
+                paletComboBox.SelectedItem is not ComboSecenek<Palet> seciliPalet ||
+                seciliUrun.Value == null ||
+                seciliPalet.Value == null)
             {
-
                 BildirimKutusu bildirimKutusu = new BildirimKutusu();
                 bildirimKutusu.MesajGonder("ButtonKey.btntamam", "MesajKutusu.zorunluAlanDoldur");
                 bildirimKutusu.ShowDialog();
                 return;
             }
+
             SecilenUrun = seciliUrun.Value;
             SecilenPalet = seciliPalet.Value;
             SecilenDizilimAdi = dizilimComboBox.SelectedItem as string;
 
-            if (SecilenDizilimAdi == "Dizilim Seçiniz")
+            if (SecilenDizilimAdi == DizilimSecimiText)
             {
                 SecilenDizilimAdi = null;
             }
 
-
-            if (_dizilimAciklama == "(* Zorunlu)" && SecilenDizilimAdi == null)
+            if (_dizilimAciklama == ZorunluAlanText && SecilenDizilimAdi == null)
             {
                 BildirimKutusu bildirimKutusu = new BildirimKutusu();
                 bildirimKutusu.MesajGonder("ButtonKey.btntamam", "MesajKutusu.zorunluAlanDoldur");
@@ -218,19 +207,13 @@ namespace Palet_Programlama.UserController
             SonSecimiKaydet();
             DialogResult = true;
             Close();
-
-
-
-
-
-
         }
 
         private void DizilimleriYukle()
         {
             dizilimComboBox.ItemsSource = null;
             dizilimComboBox.SelectedItem = null;
-            dizilimComboBox.Text = "Dizilim Seçiniz";
+            dizilimComboBox.Text = DizilimSecimiText;
             SecilenDizilimAdi = null;
 
             if (urunComboBox.SelectedItem is not ComboSecenek<Urun> seciliUrun ||
@@ -254,20 +237,20 @@ namespace Palet_Programlama.UserController
                 string json = File.ReadAllText(dosyaYolu);
 
                 var tumDizilimler = JsonConvert.DeserializeObject<List<DizilimKayitModel>>(json)
-                                   ?? new List<DizilimKayitModel>();
+                                    ?? new List<DizilimKayitModel>();
 
                 var uygunDizilimler = tumDizilimler
-                  .Where(x =>
-                      string.Equals((x.PaletAdi ?? "").Trim(), (seciliPalet.Value.PaletAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase) &&
-                      string.Equals((x.UrunAdi ?? "").Trim(), (seciliUrun.Value.UrunAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase))
-                  .Select(x => x.DizilimAdi)
-                  .Where(x => !string.IsNullOrWhiteSpace(x))
-                  .Distinct()
-                  .ToList();
+                    .Where(x =>
+                        string.Equals((x.PaletAdi ?? "").Trim(), (seciliPalet.Value.PaletAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase) &&
+                        string.Equals((x.UrunAdi ?? "").Trim(), (seciliUrun.Value.UrunAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase))
+                    .Select(x => x.DizilimAdi)
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                    .Distinct()
+                    .ToList();
 
-                if (_dizilimAciklama != "(* Zorunlu)")
+                if (_dizilimAciklama != ZorunluAlanText)
                 {
-                    uygunDizilimler.Insert(0, "Dizilim Seçiniz");
+                    uygunDizilimler.Insert(0, DizilimSecimiText);
                 }
 
                 dizilimComboBox.ItemsSource = uygunDizilimler;

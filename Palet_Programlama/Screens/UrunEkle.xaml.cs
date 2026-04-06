@@ -465,7 +465,9 @@ namespace Palet_Programlama.Screens
             var urun = UrunFormundanOku();
             var urunler = urunIslemler.UrunListesiniGetir();
 
-            bool varMi = urunler.Any(x => x.UrunAdi == urun.UrunAdi);
+            bool varMi = urunler.Any(x =>
+            x.UrunAdi != null &&
+            x.UrunAdi.Trim().Equals(urun.UrunAdi.Trim(), StringComparison.OrdinalIgnoreCase));
             if (varMi)
             {
                 BildirimGoster("MesajKutusu.urunMevcut");
@@ -585,7 +587,9 @@ namespace Palet_Programlama.Screens
             var palet = PaletFormundanOku();
             var paletler = paletIslemler.PaletListesiniGetir();
 
-            bool varMi = paletler.Any(x => x.PaletAdi == palet.PaletAdi);
+            bool varMi = paletler.Any(x =>
+            x.PaletAdi != null &&
+            x.PaletAdi.Trim().Equals(palet.PaletAdi.Trim(), StringComparison.OrdinalIgnoreCase));
             if (varMi)
             {
                 BildirimGoster("MesajKutusu.paletMevcut");

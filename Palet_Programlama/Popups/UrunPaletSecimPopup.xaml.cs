@@ -20,6 +20,9 @@ namespace Palet_Programlama.UserController
 
         private string DizilimSecimiText => LanguageConverter.GetString("GruplamaYap.txtDizilimSecimi");
         private string ZorunluAlanText => LanguageConverter.GetString("UrunPaletSecimPopup.zorunluAlan");
+        private string DizilimDosyasiBulunamadiText => LanguageConverter.GetString("UrunPaletSecimPopup.dizilimDosyasiBulunamadi");
+        private string KayitliDizilimYokText => LanguageConverter.GetString("UrunPaletSecimPopup.kayitliDizilimYok");
+        private string DizilimlerYuklenemediText => LanguageConverter.GetString("UrunPaletSecimPopup.dizilimlerYuklenemedi");
 
         private sealed class ComboSecenek<T>
         {
@@ -230,7 +233,7 @@ namespace Palet_Programlama.UserController
 
                 if (!File.Exists(dosyaYolu))
                 {
-                    dizilimComboBox.Text = "Dizilim dosyası bulunamadı";
+                    dizilimComboBox.Text = DizilimDosyasiBulunamadiText;
                     return;
                 }
 
@@ -257,13 +260,13 @@ namespace Palet_Programlama.UserController
 
                 if (uygunDizilimler.Count == 0)
                 {
-                    dizilimComboBox.Text = "Kayıtlı dizilim yok";
+                    dizilimComboBox.Text = KayitliDizilimYokText;
                 }
             }
             catch (Exception)
             {
                 dizilimComboBox.ItemsSource = null;
-                dizilimComboBox.Text = "Dizilimler yüklenemedi";
+                dizilimComboBox.Text = DizilimlerYuklenemediText;
             }
         }
 

@@ -171,6 +171,7 @@
 
     "GruplamaYap": {
         "programBasariIleKayitEdildi": "Program başarılı ile kayıt edildi.",
+        "programKayitIcinTumGrupAyarlariYapilmali": "Program kayıt ederken tüm grup ayarları yapılmalı",
         "programAdiZatenKayitli": "Bu program adı ile daha önce kayıt yapılmış,Lütfen ismi değiştirin",
         "programKayitIcinTumUrunlerGrupluOlmali": "Program kayıt ederken tüm ürünler gruplu olması gerekir.",
         "ayniGrupYatayDikeyUyarisi": "Aynı grupta yatay ve dikey ürün birlikte bulunamaz.",

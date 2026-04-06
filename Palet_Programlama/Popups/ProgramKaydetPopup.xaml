@@ -236,13 +236,13 @@
                             Margin="0,0,12,0"
                             Content="{Binding Source='ButtonKey.btnKaydet',Converter={StaticResource LanguageConverter}}"
                             Style="{StaticResource SecondaryButtonStyle}"
-                            Click="BtnIptal_Click"/>
+                            Click="BtnKaydet_Click"/>
 
           <Button Width="130"
                             Height="48"
                             Content="{Binding Source='ButtonKey.btnIptal',Converter={StaticResource LanguageConverter}}"
                             Style="{StaticResource PrimaryButtonStyle}"
-                            Click="BtnKaydet_Click"/>
+                            Click="BtnIptal_Click"/>
         </StackPanel>
       </Grid>
     </Border>

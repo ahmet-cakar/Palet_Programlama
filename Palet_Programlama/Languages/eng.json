@@ -207,6 +207,7 @@
 
     "GruplamaYap": {
         "programBasariIleKayitEdildi": "The program was successfully registered.",
+        "programKayitIcinTumGrupAyarlariYapilmali": "All group settings must be configured when recording the program.",
         "programAdiZatenKayitli": "This program has already been registered under this name. Please change the name.",
         "programKayitIcinTumUrunlerGrupluOlmali": "When registering for the program, all products must be grouped together.",
         "ayniGrupYatayDikeyUyarisi": "Horizontal and vertical products cannot be found together in the same group.",

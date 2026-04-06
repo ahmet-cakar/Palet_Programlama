@@ -3,22 +3,13 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using Palet_Programlama.Languages;
 
 namespace Palet_Programlama.UserController
 {
     public partial class UstMenu : UserControl
     {
-        private readonly List<MenuSayfaItem> _sayfalar = new()
-        {
-            new MenuSayfaItem("1-Ürün/Palet Ekle", "UrunEkle"),
-            new MenuSayfaItem("2-Dizilim Oluştur", "DizilimYap"),
-            new MenuSayfaItem("3-Gruplama Oluştur", "GruplamaYap"),
-            new MenuSayfaItem("4-Programlar", "Programlar"),
-            new MenuSayfaItem("5-Hız Ayarları", "HizAyarlari"),
-            new MenuSayfaItem("6-Alarmlar", "Alarmlar"),
-            new MenuSayfaItem("7-İzleme", "Izleme"),
-            new MenuSayfaItem("8-Komut", "Komut")
-        };
+        private readonly List<MenuSayfaItem> _sayfalar = new();
 
         private string _aktifSayfa = "UrunEkle";
         public string AktifSayfa
@@ -31,6 +22,14 @@ namespace Palet_Programlama.UserController
         {
             InitializeComponent();
             Loaded += UstMenu_Loaded;
+            _sayfalar.Add(new MenuSayfaItem($"1-{LanguageConverter.GetString("UserControl.urunekle")}", "UrunEkle"));
+            _sayfalar.Add(new MenuSayfaItem($"2-{LanguageConverter.GetString("UserControl.dizilimekle")}", "DizilimYap"));
+            _sayfalar.Add(new MenuSayfaItem($"3-{LanguageConverter.GetString("UserControl.grupekle")}", "GruplamaYap"));
+            _sayfalar.Add(new MenuSayfaItem($"4-{LanguageConverter.GetString("UserControl.program")}", "Programlar"));
+            _sayfalar.Add(new MenuSayfaItem($"5-{LanguageConverter.GetString("UserControl.hizayar")}", "HizAyarlari"));
+            _sayfalar.Add(new MenuSayfaItem($"6-{LanguageConverter.GetString("UserControl.alarm")}", "Alarmlar"));
+            _sayfalar.Add(new MenuSayfaItem($"7-{LanguageConverter.GetString("UserControl.izle")}", "Izleme"));
+            _sayfalar.Add(new MenuSayfaItem($"8-{LanguageConverter.GetString("UserControl.komut")}", "Komut"));
         }
 
         private void UstMenu_Loaded(object sender, RoutedEventArgs e)
@@ -121,7 +120,10 @@ namespace Palet_Programlama.UserController
                         var urunler = mainWindow.UrunIslemler.UrunListesiniGetir();
                         var paletler = mainWindow.PaletIslemler.PaletListesiniGetir();
 
-                        var secimKutusu = new UrunPaletSecimKutusu(urunler, paletler, "( Dizilim zorunlu değil.)");
+                        var secimKutusu = new UrunPaletSecimKutusu(
+                        urunler,
+                        paletler,
+                        LanguageConverter.GetString("UrunPaletSecimPopup.dizilimZorunluDegil"));
                         bool? sonuc = secimKutusu.ShowDialog();
 
                         if (sonuc == true &&
@@ -146,7 +148,10 @@ namespace Palet_Programlama.UserController
                         var urunler = mainWindow.UrunIslemler.UrunListesiniGetir();
                         var paletler = mainWindow.PaletIslemler.PaletListesiniGetir();
 
-                        var secimKutusu = new UrunPaletSecimKutusu(urunler, paletler, "(* Zorunlu)");
+                        var secimKutusu = new UrunPaletSecimKutusu(
+                        urunler,
+                        paletler,
+                        LanguageConverter.GetString("UrunPaletSecimPopup.zorunluAlan"));
                         bool? sonuc = secimKutusu.ShowDialog();
 
                         if (sonuc == true &&

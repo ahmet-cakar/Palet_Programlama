@@ -249,7 +249,7 @@
 
     },
     "UrunPaletSecimPopup": {
-
+        
         "baslik": "Ürün,Palet ve Dizilim seçin",
         "dizilimSecilebilir": " (Dizilim güncellemek için seçebilirsiniz.)",
         "zorunluAlan": " ( * Zorunlu)",

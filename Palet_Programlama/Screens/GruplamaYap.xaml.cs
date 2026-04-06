@@ -16,6 +16,7 @@ using Palet_Programlama.Screens.UrunPaletEkle.Models;
 using Palet_Programlama.Screens.Dizilim.Models;
 using Palet_Programlama.Screens.Statics;
 using Palet_Programlama.Popuplar;
+using Palet_Programlama.Languages;
 using Palet_Programlama.UserController;
 
 namespace Palet_Programlama.Screens
@@ -50,12 +51,20 @@ namespace Palet_Programlama.Screens
         private ProgramKayitModel _seciliProgramKaydi;
         private Rectangle sonSecilmisKutu = new Rectangle();
         private bool _sayfaYukleniyor;
-
-        private const string ProgramSecinizMetni = "Güncelleme için seçim yapınız";
         private DizilimKayitModel _seciliDizilimKaydi;
         private double OlcekY => canvasPalet.Width / _secilenPalet.PaletBoy;
         private double OlcekX => canvasPalet.Height / _secilenPalet.PaletEn;
         private int AktifKatNo => _katYonetici.AktifKat;
+        private string ProgramSecinizMetni => LanguageConverter.GetString("GruplamaYap.programSeciniz");
+        private string ProgramKaydetText => LanguageConverter.GetString("GruplamaYap.btnKaydet");
+        private string GuncelleText => LanguageConverter.GetString("GruplamaYap.btnGuncelle");
+        private string SayfaYukleniyorText => LanguageConverter.GetString("GruplamaYap.sayfaYukleniyor");
+        private string ProgramKaydediliyorText => LanguageConverter.GetString("GruplamaYap.programKaydediliyor");
+        private string ProgramGuncelleniyorText => LanguageConverter.GetString("GruplamaYap.programGuncelleniyor");
+        private string ProgramYukleniyorText => LanguageConverter.GetString("GruplamaYap.programYukleniyor");
+        private string YukleniyorText => LanguageConverter.GetString("GruplamaYap.yukleniyor");
+
+
 
         private int AktifGrupNo
         {
@@ -70,8 +79,8 @@ namespace Palet_Programlama.Screens
         private void ProgramKaydetButonMetniniGuncelle()
         {
             BtnProgramKaydet.Content = _seciliProgramKaydi == null
-                ? "Program Kaydet"
-                : "Güncelle";
+                ? ProgramKaydetText
+                : GuncelleText;
         }
 
         public GruplamaYap(Frame Main, Urun secilenUrun, Palet secilenPalet, string dizilimAdi)
@@ -92,7 +101,7 @@ namespace Palet_Programlama.Screens
 
         private void SayfaVerileriniYukle()
         {
-            YukleniyorGoster("Sayfa yükleniyor...");
+            YukleniyorGoster(SayfaYukleniyorText);
 
             try
             {
@@ -487,7 +496,7 @@ namespace Palet_Programlama.Screens
             string programAdi = popup.Sonuc.ProgramAdi;
             string aciklama = popup.Sonuc.Aciklama;
 
-            YukleniyorGoster(_seciliProgramKaydi == null ? "Program kaydediliyor..." : "Program güncelleniyor...");
+            YukleniyorGoster(_seciliProgramKaydi == null ? ProgramKaydediliyorText : ProgramGuncelleniyorText);
 
             try
             {
@@ -567,7 +576,7 @@ namespace Palet_Programlama.Screens
             if (program == null)
                 return;
 
-            YukleniyorGoster("Program yükleniyor...");
+            YukleniyorGoster(ProgramYukleniyorText);
             try
             {
                 YuklemeModundaCalistir(() =>
@@ -1105,8 +1114,10 @@ namespace Palet_Programlama.Screens
             }
         }
 
-        private void YukleniyorGoster(string mesaj = "Yükleniyor...")
+        private void YukleniyorGoster(string mesaj = null)
         {
+            mesaj ??= YukleniyorText;
+
             var mainWindow = Application.Current.MainWindow as MainWindow;
             mainWindow?.YukleniyorGoster(mesaj);
         }

@@ -195,8 +195,14 @@
         "btnKaydet": "Kaydet",
         "btnGruplariTemizle": "Grupları Temizle",
         "btnManuelDiz": "Manuel Diz",
-        "btnDizilimListesi": "DizilimListesi"
-
+        "btnDizilimListesi": "DizilimListesi",
+        "programSeciniz": "Güncelleme için seçim yapınız",
+        "btnGuncelle": "Güncelle",
+        "sayfaYukleniyor": "Sayfa yükleniyor...",
+        "programKaydediliyor": "Program kaydediliyor...",
+        "programGuncelleniyor": "Program güncelleniyor...",
+        "programYukleniyor": "Program yükleniyor...",
+        "yukleniyor": "Yükleniyor..."
 
     },
     "Program": {

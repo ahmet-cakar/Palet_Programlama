@@ -59,7 +59,7 @@ namespace Palet_Programlama.Screens
         private string YukleniyorText => LanguageConverter.GetString("DizilimYap.yukleniyor");
         private string DizilimKaydediliyorText => LanguageConverter.GetString("DizilimYap.dizilimKaydediliyor");
 
-        private string DizilimKaydetBaslikText => LanguageConverter.GetString("DizilimKaydetPopup.anaBaslik");
+        private string DizilimKaydetBaslikText => LanguageConverter.GetString("DizilimKaydetPopup.dizilimBilgisi");
         private string DizilimKaydetMesajText => LanguageConverter.GetString("DizilimKaydetPopup.kaydetMesaj");
         private string KaydetText => LanguageConverter.GetString("ButtonKey.btnKaydet");
         private string IptalText => LanguageConverter.GetString("ButtonKey.btnIptal");
@@ -513,7 +513,7 @@ namespace Palet_Programlama.Screens
                     varsayilanAd,
                     KaydetText,
                     IptalText);
-                pencere.SeparatorSecimleriniHazirla(_katYonetici.TumKatlar.Count);
+                pencere.SeperatorSecimleriniHazirla(_katYonetici.TumKatlar.Count);
 
 
 
@@ -528,9 +528,9 @@ namespace Palet_Programlama.Screens
                     return;
                 }
 
-                bool separatorKullanilacak = pencere.SeparatorKullanilacak;
-                double separatorYukseklik = pencere.SeparatorKalinlik;
-                List<int> secilenSeparatorKatlari = pencere.SecilenSeparatorKatlari ?? new List<int>();
+                bool SeperatorKullanilacak = pencere.SeperatorKullanilacak;
+                double SeperatorYukseklik = pencere.SeperatorKalinlik;
+                List<int> secilenSeperatorKatlari = pencere.SecilenSeperatorKatlari ?? new List<int>();
 
                 YukleniyorGoster(DizilimKaydediliyorText);
 
@@ -589,9 +589,9 @@ namespace Palet_Programlama.Screens
                         _katYonetici.TumKatlar,
                         OlcekX,
                         OlcekY, 
-                        separatorKullanilacak, 
-                        separatorYukseklik, 
-                        secilenSeparatorKatlari);
+                        SeperatorKullanilacak, 
+                        SeperatorYukseklik, 
+                        secilenSeperatorKatlari);
 
                     int index = tumDizilimler.IndexOf(eskiKayit);
                     tumDizilimler[index] = yeniDizilim;
@@ -622,9 +622,9 @@ namespace Palet_Programlama.Screens
                     _katYonetici.TumKatlar,
                     OlcekX,
                     OlcekY,
-                    separatorKullanilacak,
-                    separatorYukseklik,
-                    secilenSeparatorKatlari);
+                    SeperatorKullanilacak,
+                    SeperatorYukseklik,
+                    secilenSeperatorKatlari);
                     tumDizilimler.Add(yeniDizilim);
 
                     string yeniJson = JsonConvert.SerializeObject(tumDizilimler, Formatting.Indented);

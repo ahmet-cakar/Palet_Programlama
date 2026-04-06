@@ -3,18 +3,19 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Palet_Programlama.Languages;
 
 namespace Palet_Programlama.UserController
 {
     public partial class MetinGirisKutusu : Window
     {
         public string GirilenMetin { get; private set; } = string.Empty;
-        public bool SeparatorKullanilacak { get; private set; } = false;
-        public List<int> SecilenSeparatorKatlari { get; private set; } = new();
+        public bool SeperatorKullanilacak { get; private set; } = false;
+        public List<int> SecilenSeperatorKatlari { get; private set; } = new();
 
         private int _toplamKat = 0;
 
-        public double SeparatorKalinlik { get; private set; } = 0;
+        public double SeperatorKalinlik { get; private set; } = 0;
         public MetinGirisKutusu()
         {
             InitializeComponent();
@@ -24,43 +25,45 @@ namespace Palet_Programlama.UserController
             string baslik,
             string mesaj,
             string varsayilanMetin = "",
-            string tamamButonYazisi = "Tamam",
-            string iptalButonYazisi = "İptal")
+            string tamamButonYazisi = null,
+            string iptalButonYazisi = null)
         {
+            tamamButonYazisi ??= LanguageConverter.GetString("ButtonKey.btntamam");
+            iptalButonYazisi ??= LanguageConverter.GetString("ButtonKey.btnIptal");
             txtBaslik.Text = baslik;
             txtMesaj.Text = mesaj;
             txtGiris.Text = varsayilanMetin;
             btnTamam.Content = tamamButonYazisi;
             btnIptal.Content = iptalButonYazisi;
-            txtSeparatorKalinlik.Text = "";
-            panelSeparatorKalinlik.Visibility = Visibility.Collapsed;
-            chkSeparatorKullanilacak.IsChecked = false;
-            panelSeparatorListe.Children.Clear();
+            txtSeperatorKalinlik.Text = "";
+            panelSeperatorKalinlik.Visibility = Visibility.Collapsed;
+            chkSeperatorKullanilacak.IsChecked = false;
+            panelSeperatorListe.Children.Clear();
 
             txtGiris.Focus();
             txtGiris.SelectAll();
         }
 
-        public void SeparatorSecimleriniHazirla(int toplamKat)
+        public void SeperatorSecimleriniHazirla(int toplamKat)
         {
             _toplamKat = toplamKat;
-            panelSeparatorListe.Children.Clear();
+            panelSeperatorListe.Children.Clear();
         }
 
-        private void chkSeparatorKullanilacak_Checked(object sender, RoutedEventArgs e)
+        private void chkSeperatorKullanilacak_Checked(object sender, RoutedEventArgs e)
         {
-            panelSeparatorKalinlik.Visibility = Visibility.Visible;
-            SeparatorListesiniDoldur();
+            panelSeperatorKalinlik.Visibility = Visibility.Visible;
+            SeperatorListesiniDoldur();
         }
 
-        private void chkSeparatorKullanilacak_Unchecked(object sender, RoutedEventArgs e)
+        private void chkSeperatorKullanilacak_Unchecked(object sender, RoutedEventArgs e)
         {
-            panelSeparatorKalinlik.Visibility = Visibility.Collapsed;
-            txtSeparatorKalinlik.Text = "";
-            panelSeparatorListe.Children.Clear();
+            panelSeperatorKalinlik.Visibility = Visibility.Collapsed;
+            txtSeperatorKalinlik.Text = "";
+            panelSeperatorListe.Children.Clear();
         }
 
-        private void txtSeparatorKalinlik_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        private void txtSeperatorKalinlik_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
             if (sender is not TextBox textBox)
                 return;
@@ -77,13 +80,13 @@ namespace Palet_Programlama.UserController
             }
         }
 
-        private void SeparatorListesiniDoldur()
+        private void SeperatorListesiniDoldur()
         {
-            panelSeparatorListe.Children.Clear();
+            panelSeperatorListe.Children.Clear();
 
             var paletCheckBox = new CheckBox
             {
-                Content = "Palet üzerine",
+                Content = LanguageConverter.GetString("DizilimKaydetPopup.paletUzerine"),
                 Tag = 0,
                 Foreground = System.Windows.Media.Brushes.White,
                 FontSize = 18,
@@ -92,13 +95,15 @@ namespace Palet_Programlama.UserController
                 Margin = new Thickness(0, 0, 0, 8)
             };
 
-            panelSeparatorListe.Children.Add(paletCheckBox);
+            panelSeperatorListe.Children.Add(paletCheckBox);
 
             for (int i = 1; i <= _toplamKat; i++)
             {
                 var checkBox = new CheckBox
                 {
-                    Content = $"{i}. kat üzerine",
+                    Content = string.Format(
+                    LanguageConverter.GetString("DizilimKaydetPopup.katUzerine"),
+                    i),
                     Tag = i,
                     Foreground = System.Windows.Media.Brushes.White,
                     FontSize = 18,
@@ -107,7 +112,7 @@ namespace Palet_Programlama.UserController
                     Margin = new Thickness(0, 0, 0, 8)
                 };
 
-                panelSeparatorListe.Children.Add(checkBox);
+                panelSeperatorListe.Children.Add(checkBox);
             }
         }
 
@@ -128,11 +133,11 @@ namespace Palet_Programlama.UserController
                 return;
             }
 
-            SeparatorKullanilacak = chkSeparatorKullanilacak.IsChecked == true;
+            SeperatorKullanilacak = chkSeperatorKullanilacak.IsChecked == true;
 
-            if (SeparatorKullanilacak)
+            if (SeperatorKullanilacak)
             {
-                string giris = (txtSeparatorKalinlik.Text ?? "").Trim().Replace(',', '.');
+                string giris = (txtSeperatorKalinlik.Text ?? "").Trim().Replace(',', '.');
 
                 if (!double.TryParse(
                         giris,
@@ -140,13 +145,13 @@ namespace Palet_Programlama.UserController
                         System.Globalization.CultureInfo.InvariantCulture,
                         out double kalinlik) || kalinlik <= 0)
                 {
-                    BildirimGoster("MesajKutusu.gecerliSeparatorKalinligiGir");
+                    BildirimGoster("MesajKutusu.gecerliSeperatorKalinligiGir");
                     return;
                 }
 
-                SeparatorKalinlik = kalinlik;
+                SeperatorKalinlik = kalinlik;
 
-                SecilenSeparatorKatlari = panelSeparatorListe.Children
+                SecilenSeperatorKatlari = panelSeperatorListe.Children
                     .OfType<CheckBox>()
                     .Where(x => x.IsChecked == true)
                     .Select(x => (int)x.Tag)
@@ -154,8 +159,8 @@ namespace Palet_Programlama.UserController
             }
             else
             {
-                SeparatorKalinlik = 0;
-                SecilenSeparatorKatlari.Clear();
+                SeperatorKalinlik = 0;
+                SecilenSeperatorKatlari.Clear();
             }
 
             DialogResult = true;

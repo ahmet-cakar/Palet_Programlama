@@ -35,11 +35,15 @@
         "zorunluAlan": " ( * Required)"
     },
     "DizilimKaydetPopup": {
-        "seratorGirilecek": "Will a separator be used?",
-        "separatorKonum": "Separator positions",
+        "dizilimBilgisi": "Layer Information",
+        "SeperatorGirilecek": "Will a Seperator be used?",
+        "SeperatorKonum": "Seperator positions",
         "programBilgisi": "Program Information",
         "degerGir": "Please enter a value.",
-        "kaydetMesaj": "Enter a name for the layer you want to save."
+        "kaydetMesaj": "Enter a name for the layer you want to save.",
+        "paletUzerine": "On pallet",
+        "katUzerine": "On layer {0}",
+        "SeperatorKalingligi": "Seperator Thickness (mm)"
     },
 
     "DizilimYap": {
@@ -166,7 +170,8 @@
         "urunBasariliGuncellendi": "The selected product has been successfully updated.",
         "paletBasariliGuncellendi": "The selected pallet has been successfully updated.",
         "evet": "Yes",
-        "hayir": "No"
+        "hayir": "No",
+        "gecerliSeperatorKalinligiGir": "Please enter a valid Seperator thickness"
     },
     "global": {
         "btnkaydet": "Save",

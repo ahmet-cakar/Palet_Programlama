@@ -31,7 +31,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock x:Name="txtBaslik"
-                   Text="{Binding Source='DizilimKaydetPopup.programBilgisi',Converter={StaticResource LanguageConverter}}"
+                   Text="{Binding Source='DizilimKaydetPopup.dizilimBilgisi',Converter={StaticResource LanguageConverter}}"
                    FontSize="24"
                    FontFamily="Roboto"
                    Foreground="White"
@@ -58,21 +58,21 @@
                  Margin="0,0,0,16"/>
 
         <StackPanel Grid.Row="3" Margin="0,0,0,12">
-          <CheckBox x:Name="chkSeparatorKullanilacak"
-                    Content="{Binding Source='DizilimKaydetPopup.seratorGirilecek',Converter={StaticResource LanguageConverter}}"
+          <CheckBox x:Name="chkSeperatorKullanilacak"
+                    Content="{Binding Source='DizilimKaydetPopup.SeperatorGirilecek',Converter={StaticResource LanguageConverter}}"
                     Foreground="White"
                     FontSize="16"
-                    Checked="chkSeparatorKullanilacak_Checked"
-                    Unchecked="chkSeparatorKullanilacak_Unchecked"/>
-          <StackPanel x:Name="panelSeparatorKalinlik"
+                    Checked="chkSeperatorKullanilacak_Checked"
+                    Unchecked="chkSeperatorKullanilacak_Unchecked"/>
+          <StackPanel x:Name="panelSeperatorKalinlik"
             Margin="0,10,0,10"
             Visibility="Collapsed">
-            <TextBlock Text="Separator kalınlığı (mm)"
+            <TextBlock Text="{Binding Source='DizilimKaydetPopup.SeperatorKalingligi',Converter={StaticResource LanguageConverter}}"
                Foreground="White"
                FontSize="16"
                Margin="0,0,0,6"/>
 
-            <TextBox x:Name="txtSeparatorKalinlik"
+            <TextBox x:Name="txtSeperatorKalinlik"
              Height="40"
              FontSize="18"
              Padding="10"
@@ -81,10 +81,10 @@
              BorderBrush="#f59f05"
              BorderThickness="1"
              VerticalContentAlignment="Center"
-             PreviewTextInput="txtSeparatorKalinlik_PreviewTextInput"/>
+             PreviewTextInput="txtSeperatorKalinlik_PreviewTextInput"/>
           </StackPanel>
 
-          <Border x:Name="borderSeparatorListe"
+          <Border x:Name="borderSeperatorListe"
             Margin="0,12,0,0"
             Padding="12"
             Background="#2A2A2A"
@@ -93,7 +93,7 @@
             CornerRadius="10"
             Visibility="Visible"> 
             <StackPanel>
-              <TextBlock Text="{Binding Source='DizilimKaydetPopup.separatorKonum',Converter={StaticResource LanguageConverter}}"
+              <TextBlock Text="{Binding Source='DizilimKaydetPopup.SeperatorKonum',Converter={StaticResource LanguageConverter}}"
                    Foreground="White"
                    FontSize="18"
                    FontWeight="SemiBold"
@@ -102,7 +102,7 @@
               <ScrollViewer VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Disabled"
                       Height="120">
-                <StackPanel x:Name="panelSeparatorListe"/>
+                <StackPanel x:Name="panelSeperatorListe"/>
               </ScrollViewer>
             </StackPanel>
           </Border>

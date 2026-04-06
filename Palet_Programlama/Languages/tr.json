@@ -106,7 +106,9 @@
         "paletBasariliGuncellendi": "Seçilen palet başarılı bir şekilde güncellendi.",
         "paletBasariliSilindi": "Palet başarılı bir şekilde silindi.",
         "evet": "Evet",
-        "hayir": "Hayır"
+        "hayir": "Hayır",
+        "gecerliSeperatorKalinligiGir": "Lütfen geçerli bir Seperator kalınlığı giriniz"
+        
     },
     "global": {
         "btnkaydet": "Kaydet",
@@ -133,7 +135,7 @@
         "urunadet": "Ürün Adedi: 0",
         "kopyalabtn": "Kopyala",
         "btnKatTemizle": "Bu Katı Temizle",
-        "btnDizilimiKaydet": "Dizilimi Kaydet",
+        "btnDizilimiKaydet": "Dizilim Kaydet",
         "btnPaletTemizle": "Paleti Temizle",
         "btnSeciliUrunuSil": "Seçili Ürünü Sil",
         "katkopyala": "Kat Kopyala",
@@ -263,10 +265,14 @@
 
     },
     "DizilimKaydetPopup": {
-        "seratorGirilecek": "Seperator kullanılacak mı?",
-        "separatorKonum": "Separator konumları",
+        "dizilimBilgisi": "Dizilim Bilgisi",
+        "SeperatorGirilecek": "Seperator kullanılacak mı?",
+        "SeperatorKonum": "Seperator konumları",
         "programBilgisi": "Program Bilgisi",
         "degerGir": "Lütfen bir değer giriniz.",
-        "kaydetMesaj": "Kaydetmek istediğiniz dizilim için bir isim giriniz."
+        "kaydetMesaj": "Kaydetmek istediğiniz dizilim için bir isim giriniz.",
+        "paletUzerine": "Palet üzerine",
+        "katUzerine": "{0}. kat üzerine",
+        "SeperatorKalingligi": "Seperator Kalınlığı (mm)"
     }
 }

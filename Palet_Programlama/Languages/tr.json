@@ -158,7 +158,10 @@
         "txtHizalamaModAcik": "Hizalama Modu (Açık)",
         "txtPaletTasimaModAcik": "Palet Taşıma Modu (Açık) ",
         "txtKatTasimaModAcik": "Kat Taşıma Modu (Açık) ",
-        "txtKat": "Kat"
+        "txtKat": "Kat",
+        "dizilimYukleniyor": "Dizilim yükleniyor...",
+        "yukleniyor": "Yükleniyor...",
+        "dizilimKaydediliyor": "Dizilim kaydediliyor..."
 
 
 
@@ -260,8 +263,10 @@
 
     },
     "DizilimKaydetPopup": {
-
-        "separatorKonum": "Separator konumları"
-
+        "seratorGirilecek": "Seperator kullanılacak mı?",
+        "separatorKonum": "Separator konumları",
+        "programBilgisi": "Program Bilgisi",
+        "degerGir": "Lütfen bir değer giriniz.",
+        "kaydetMesaj": "Kaydetmek istediğiniz dizilim için bir isim giriniz."
     }
 }

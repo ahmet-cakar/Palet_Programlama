@@ -12,7 +12,7 @@
         "Alarm": "Alarms",
         "izleme": "Monitoring",
         "Komut": "Commands",
-        "buttonC": "Continue",
+        "buttonC": "View",
         "hesapDegistir": "Change\nAccount",
         "hesapCikis": "Exit"
     },
@@ -34,6 +34,13 @@
         "aciklama": "Description",
         "zorunluAlan": " ( * Required)"
     },
+    "DizilimKaydetPopup": {
+        "seratorGirilecek": "Will a separator be used?",
+        "separatorKonum": "Separator positions",
+        "programBilgisi": "Program Information",
+        "degerGir": "Please enter a value.",
+        "kaydetMesaj": "Enter a name for the layer you want to save."
+    },
 
     "DizilimYap": {
         "urunozellik": "Product Features:  ",
@@ -46,7 +53,7 @@
         "pozsecimi": "Position Selection",
         "btnKatTemizle": "Clear This Layer",
         "btnDizilimiKaydet": "Save the Layer",
-        "btnPaletTemizle": "Clear the Palette",
+        "btnPaletTemizle": "Clear the Pallet",
         "btnSeciliUrunuSil": "Delete Selected Item",
         "txtAynalama": "Mirroring (OFF)",
         "txtAynalamaAcik": "Mirroring (ON)",
@@ -61,13 +68,16 @@
         "txtYazi3": "will be added.",
         "txtCokluEkleMod": "Multiple Add Mode (OFF)",
         "txtHizalamaMod": "Alignment Mode (OFF)",
-        "txtPaletTasimaMod": "Palette Move Mode (OFF)",
+        "txtPaletTasimaMod": "Pallet Move Mode (OFF)",
         "txtKatTasimaMod": "Layer Move Mode (OFF)",
         "txtCokluEkleModAcik": "Multiple Add Mode (ON)",
         "txtHizalamaModAcik": "Alignment Mode (ON)",
-        "txtPaletTasimaModAcik": "Palette Move Mode (ON)",
+        "txtPaletTasimaModAcik": "Pallet Move Mode (ON)",
         "txtKatTasimaModAcik": "Layer Move Mode (ON)",
-        "txtKat": "Layer"
+        "txtKat": "Layer",
+        "dizilimYukleniyor": "Layer is loading",
+        "yukleniyor": "Loading...",
+        "dizilimKaydediliyor": "Layer is saving"
     },
     "UrunEkle": {
         "onizle": "Preview",
@@ -133,7 +143,7 @@
         "isimGiriniz": "Please enter a name..",
         "tasinacakUrunYok": "There are no products to move.",
         "urunMevcut": "This product already exists, change the name",
-        "paletMevcut": "This palette already exists, change the name",
+        "paletMevcut": "This Pallet already exists, change the name",
         "urunSecimiGerekli": "First you must choose a product.",
         "katKopyalamaBasarili": "The layer has been copied successfully.",
         "katKopyalamaBasarisiz": "Copying failed. The source layer may be empty, the target layer may be occupied, or the layer below the target layer may be empty.",
@@ -141,7 +151,7 @@
         "kayitHatasiFormat": "An error occurred while registering: \n{0}",
         "kayitBasarili": "The layer was saved successfully.",
         "farkliDizilimAdiGir": "A directory with this name already exists. Please enter a different layer name.",
-        "kayitIcinUrunGerekli": "There are no products to save. You must first add products to the palette.",
+        "kayitIcinUrunGerekli": "There are no products to save. You must first add products to the Pallet.",
         "maksKatUyari": "Maximum Number of Layers",
         "katBosOlamaz": "Layer is empty. You cannot move to the new floor without adding products.",
         "urunlerUstUsteGelemez": "There is another product in this location. Products cannot overlap.",
@@ -198,7 +208,7 @@
         "ayniGrupMaksSayiUyarisi": "There can be a maximum of 4 parcels in the same group.",
         "ayniGrupBitisikUyarisi": "Products in the same group must be adjacent. Grouping cannot be done by skipping the product in between.",
         "ayniGrupYonUyarisi": "A group can only grow in one direction. Products cannot be added to the same group both horizontally and vertically.",
-        "txtPalet": "Palette :",
+        "txtPalet": "Pallet :",
         "txtEn": "Width: ",
         "txtBoy": "Length: ",
         "txtYukseklik": "Height: ",

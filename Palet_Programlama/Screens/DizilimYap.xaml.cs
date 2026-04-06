@@ -54,6 +54,17 @@ namespace Palet_Programlama.Screens
         Rectangle suruklenenKutu; // Hareket ettirilen Rectangle
         private Frame MainFrame;
 
+
+        private string DizilimYukleniyorText => LanguageConverter.GetString("DizilimYap.dizilimYukleniyor");
+        private string YukleniyorText => LanguageConverter.GetString("DizilimYap.yukleniyor");
+        private string DizilimKaydediliyorText => LanguageConverter.GetString("DizilimYap.dizilimKaydediliyor");
+
+        private string DizilimKaydetBaslikText => LanguageConverter.GetString("DizilimKaydetPopup.anaBaslik");
+        private string DizilimKaydetMesajText => LanguageConverter.GetString("DizilimKaydetPopup.kaydetMesaj");
+        private string KaydetText => LanguageConverter.GetString("ButtonKey.btnKaydet");
+        private string IptalText => LanguageConverter.GetString("ButtonKey.btnIptal");
+
+
         public DizilimYap(Frame Main, Urun secilenUrun, Palet secilenPalet, string? dizilimAdi)
         {
             InitializeComponent();
@@ -71,7 +82,7 @@ namespace Palet_Programlama.Screens
             _gelenDizilimAdi = dizilimAdi;
             if (!string.IsNullOrWhiteSpace(_gelenDizilimAdi))
             {
-                YukleniyorGoster("Dizilim yükleniyor...");
+                YukleniyorGoster(DizilimYukleniyorText);
                 try
                 {
                     bool yüklendi = _katYonetici.DizilimYukle(
@@ -103,8 +114,9 @@ namespace Palet_Programlama.Screens
             }
         }
 
-        private void YukleniyorGoster(string mesaj = "Yükleniyor...")
+        private void YukleniyorGoster(string mesaj = null)
         {
+            mesaj ??= YukleniyorText;
             var mainWindow = Application.Current.MainWindow as MainWindow;
             mainWindow?.YukleniyorGoster(mesaj);
         }
@@ -496,11 +508,11 @@ namespace Palet_Programlama.Screens
 
                 var pencere = new MetinGirisKutusu();
                 pencere.Ayarla(
-                    "Dizilim Kaydet",
-                    "Kaydetmek istediğiniz dizilim için bir isim giriniz.",
+                    DizilimKaydetBaslikText,
+                    DizilimKaydetMesajText,
                     varsayilanAd,
-                    "Kaydet",
-                    "İptal");
+                    KaydetText,
+                    IptalText);
                 pencere.SeparatorSecimleriniHazirla(_katYonetici.TumKatlar.Count);
 
 
@@ -520,7 +532,7 @@ namespace Palet_Programlama.Screens
                 double separatorYukseklik = pencere.SeparatorKalinlik;
                 List<int> secilenSeparatorKatlari = pencere.SecilenSeparatorKatlari ?? new List<int>();
 
-                YukleniyorGoster("Dizilim kaydediliyor...");
+                YukleniyorGoster(DizilimKaydediliyorText);
 
                 string dosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Dizilimler.json");
 

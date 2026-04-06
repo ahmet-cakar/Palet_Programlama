@@ -54,7 +54,12 @@
         "previewUrunBasinc": "Ürün Basınç",
         "previewPaletEn": "Palet Genişlik",
         "previewPaletBoy": "Palet Uzunluk",
-        "previewPaletYukseklik": "Palet Yükseklik"
+        "previewPaletYukseklik": "Palet Yükseklik",
+        "urunGuncellemeMesaj": "'{0}' adlı ürün güncellensin mi?",
+        "urunSilmeMesaj": "'{0}' adlı ürün silinsin mi?",
+        "paletGuncellemeMesaj": "'{0}' adlı palet güncellensin mi?",
+        "paletSilmeMesaj": "'{0}' adlı palet silinsin mi?"
+
 
     },
 
@@ -71,7 +76,6 @@
     "MesajKutusu": {
         "urunBasariliEklendi": "Ürün başarılı bir şekilde eklendi.",
         "paletBasariliEklendi": "Palet başarılı bir şekilde eklendi.",
-        "evet": "Evet",
         "zorunluAlanDoldur": "Lütfen zorunlu alanları doldurunuz.",
         "araKatSilinemez": "Lütfen kat temizlerken en üst kattan başlayınız,Ara kat silinemez.",
         "guncellemeBasarili": "Dizilim güncellenmesi başarılı ile yapıldı.",
@@ -98,7 +102,9 @@
         "dizilimBulunamadi": "Dizilim bulunamadı",
         "urunBasariliGuncellendi": "Seçilen ürün başarılı bir şekilde güncellendi.",
         "paletBasariliGuncellendi": "Seçilen palet başarılı bir şekilde güncellendi.",
-        "paletBasariliSilindi": "Palet başarılı bir şekilde silindi."
+        "paletBasariliSilindi": "Palet başarılı bir şekilde silindi.",
+        "evet": "Evet",
+        "hayir": "Hayır"
     },
     "global": {
         "btnkaydet": "Kaydet",

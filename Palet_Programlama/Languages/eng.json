@@ -3,7 +3,7 @@
         "textblokurun": "Add",
         "textblokurun2": "Product/Pallet",
         "dizilim1": "Create",
-        "dizilim2": "layout",
+        "dizilim2": "Layer",
         "hiz1": "Speed",
         "hiz2": "Settings",
         "gruplama1": "Create",
@@ -26,7 +26,7 @@
         "katkopyala": "Copy Floor",
         "pozsecimi": "Position Selection",
         "btnKatTemizle": "Clear This Layer",
-        "btnDizilimiKaydet": "Save the layout",
+        "btnDizilimiKaydet": "Save the Layer",
         "btnPaletTemizle": "Clear the Palette",
         "btnSeciliUrunuSil": "Delete Selected Item",
         "txtAynalama": "Mirroring (OFF)",
@@ -88,20 +88,26 @@
         "previewUrunBasinc": "Product Pressure",
         "previewPaletEn": "Pallet Width",
         "previewPaletBoy": "Palet Lenght",
-        "previewPaletYukseklik": "Pallet Height"
-    },
-  "UserControl": {
-    "urunekle": "Add Product/Pallet",
-    "dizilimekle": "Create layout",
-    "hizayar": "Speed Settings",
-    "grupekle": "Create Grouping",
-    "program": "Programs",
-    "alarm": "Alarms",
-    "izle": "Monitoring",
-    "komut": "Commands"
+        "previewPaletYukseklik": "Pallet Height",
+        "urunSilmeMesaj": "Delete the product named '{0}'?",
+        "urunGuncellemeMesaj": "Update the product named '{0}'?",
+        "paletSilmeMesaj": "Delete the pallet named '{0}'?",
+        "paletGuncellemeMesaj": "Update the pallet named '{0}'?"
 
-  },
+    },
+    "UserControl": {
+        "urunekle": "Add Product/Pallet",
+        "dizilimekle": "Create Layer",
+        "hizayar": "Speed Settings",
+        "grupekle": "Create Grouping",
+        "program": "Programs",
+        "alarm": "Alarms",
+        "izle": "Monitoring",
+        "komut": "Commands"
+
+    },
     "MesajKutusu": {
+        "zorunluAlanDoldur": "Please fill in the required fields.",
         "urunBasariliEklendi": "The product has been added successfully.",
         "paletBasariliEklendi": "The pallet was added successfully.",
         "araKatSilinemez": "Please start from the top floor when cleaning the floor, the intermediate layer cannot be wiped.",
@@ -114,27 +120,29 @@
         "katKopyalamaBasarisiz": "Copying failed. The source layer may be empty, the target layer may be occupied, or the layer below the target layer may be empty.",
         "katKendineKopyalanamaz": "A layer cannot be copied to itself.",
         "kayitHatasiFormat": "An error occurred while registering: \n{0}",
-        "kayitBasarili": "The layout was saved successfully.",
-        "farkliDizilimAdiGir": "A directory with this name already exists. Please enter a different layout name.",
+        "kayitBasarili": "The layer was saved successfully.",
+        "farkliDizilimAdiGir": "A directory with this name already exists. Please enter a different layer name.",
         "kayitIcinUrunGerekli": "There are no products to save. You must first add products to the palette.",
         "maksKatUyari": "Maximum Number of Layers",
         "katBosOlamaz": "Layer is empty. You cannot move to the new floor without adding products.",
         "urunlerUstUsteGelemez": "There is another product in this location. Products cannot overlap.",
-        "uyari": "Warning Screen",
+        "uyari": "Information Screen",
         "tamam": "Okey",
         "mesaj": "There was a Problem Adding a Product! Please Try Again",
         "btncon1": "OK",
-        "dizilimBulunamadi": "The layout not found",
-        "guncellemeBasarili": "The layout update was done successfully.",
+        "dizilimBulunamadi": "The layer not found",
+        "guncellemeBasarili": "The layer update was done successfully.",
         "urunBasariliSilindi": "The product has been successfully deleted.",
         "paletBasariliSilindi": "The pallet has been successfully deleted.",
         "urunBasariliGuncellendi": "The selected product has been successfully updated.",
-        "paletBasariliGuncellendi": "The selected pallet has been successfully updated."
+        "paletBasariliGuncellendi": "The selected pallet has been successfully updated.",
+        "evet": "Yes",
+        "hayir": "No"
     },
-  "global": {
-    "btnkaydet": "Save",
-    "btnsil": "Delete"
-  },
+    "global": {
+        "btnkaydet": "Save",
+        "btnsil": "Delete"
+    },
     "Hiz": {
         "v1": "V_50",
         "v2": "V_51",
@@ -148,12 +156,12 @@
         "v10": "V_59",
         "v11": "V_60"
     },
-  "Program": {
-    "btnrecededuzen": "Edit Prescription",
-    "btnCalistir": "Run",
-    "not": "Program Info:",
-    "listtext": "Available Program List"
-  },
+    "Program": {
+        "btnrecededuzen": "Edit Prescription",
+        "btnCalistir": "Run",
+        "not": "Program Info:",
+        "listtext": "Available Program List"
+    },
 
     "GruplamaYap": {
         "programBasariIleKayitEdildi": "The program was successfully registered.",
@@ -170,7 +178,8 @@
         "txtAgirlik": "Weight: ",
         "txtGruplandirma": "Grouping",
         "txtUrunSecimi": "Product Selection",
-        "txtDizilimSecimi": "layout Selection",
+        "txtPaletSecimi": "Pallet Selection",
+        "txtDizilimSecimi": "Layer Selection",
         "txtGruplamaSecimi": "Grouping Selection",
         "txtKatNo": "Floor No: ",
         "txtGrupNo": "Group No: ",
@@ -179,8 +188,8 @@
         "btnBirlestir": "Merge",
         "btnKaydet": "Save",
         "btnGruplariTemizle": "Clear Groups",
-        "btnManuelDiz": "Manual layout",
-        "btnDizilimListesi": "layout List"
+        "btnManuelDiz": "Manual Layer",
+        "btnDizilimListesi": "Layer List"
     },
     "HataMesajlari": {
         "urunadbos": "Product Name Cannot Be Left Blank!",
@@ -196,10 +205,13 @@
         "paletSeciniz": "Please select a pallet."
 
     },
-  "ButtonKey": {
+    "ButtonKey": {
 
-    "btntamam": "Ok"
-  }
+        "btntamam": "Okey",
+        "btnIptal": "Cancel",
+        "btnKaydet": "Save"
+
+    }
 
 
 }

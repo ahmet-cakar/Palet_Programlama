@@ -38,6 +38,7 @@
 
         <TextBlock Grid.Row="1"
                            x:Name="mesaj"
+                           Text="{Binding Source='',Converter={StaticResource LanguageConverter}}"
                            TextWrapping="Wrap"
                            LineHeight="27"
                            FontSize="18"

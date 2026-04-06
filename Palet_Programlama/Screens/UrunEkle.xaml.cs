@@ -116,16 +116,24 @@ namespace Palet_Programlama.Screens
             txtPaletYukseklik.CaretBrush = Brushes.White;
         }
 
-        private bool OnayAl(string mesaj)
+        private bool OnayAl(string mesajKey, params object[] args)
         {
             var onayKutusu = new OnayKutusu
             {
                 Owner = Window.GetWindow(this)
             };
 
-            onayKutusu.MesajGonder(mesaj, "Evet", "Hayır");
-            bool? sonuc = onayKutusu.ShowDialog();
+            string mesaj = LanguageConverter.GetString(mesajKey);
 
+            if (args != null && args.Length > 0)
+                mesaj = string.Format(mesaj, args);
+
+            onayKutusu.MesajGonder(
+                mesaj,
+                LanguageConverter.GetString("MesajKutusu.evet"),
+                LanguageConverter.GetString("MesajKutusu.hayir"));
+
+            bool? sonuc = onayKutusu.ShowDialog();
             return sonuc == true && onayKutusu.OnaylandiMi;
         }
 
@@ -218,6 +226,7 @@ namespace Palet_Programlama.Screens
             txtUrunYukseklik.Text = urun.UrunYukseklik.ToString();
             txtUrunAgirlik.Text = urun.UrunAgirlik.ToString();
             txtUrunBasinc.Text = urun.UrunBasinc.ToString();
+            txtOnizlemeKutu.Visibility = Visibility.Hidden;
         }
 
         private void PaletFormaYaz(Palet palet)
@@ -226,6 +235,7 @@ namespace Palet_Programlama.Screens
             txtPaletEn.Text = palet.PaletEn.ToString();
             txtPaletBoy.Text = palet.PaletBoy.ToString();
             txtPaletYukseklik.Text = palet.PaletYukseklik.ToString();
+            txtOnizlemeKutu.Visibility = Visibility.Hidden;
         }
 
         #region TextBox Controlleri
@@ -485,7 +495,7 @@ namespace Palet_Programlama.Screens
 
             string silinecekUrun = urunlistbox.SelectedItem.ToString();
 
-            if (!OnayAl($"'{silinecekUrun}' adlı ürünü silmek istiyor musunuz?"))
+            if (!OnayAl("UrunEkle.urunSilmeMesaj", silinecekUrun))
                 return;
 
             urunIslemler.UrunSil(silinecekUrun);
@@ -509,7 +519,7 @@ namespace Palet_Programlama.Screens
 
             string seciliUrunAdi = urunlistbox.SelectedItem.ToString();
 
-            if (!OnayAl($"'{seciliUrunAdi}' adlı ürünü düzenlemek istiyor musunuz?"))
+            if (!OnayAl("UrunEkle.urunGuncellemeMesaj", seciliUrunAdi))
                 return;
 
             urunlist = urunIslemler.UrunListesiniGetir();
@@ -559,6 +569,7 @@ namespace Palet_Programlama.Screens
             if (urun != null)
             {
                 UrunFormaYaz(urun);
+
             }
         }
 
@@ -601,7 +612,7 @@ namespace Palet_Programlama.Screens
 
             string silinecekPalet = paletlistbox.SelectedItem.ToString();
 
-            if (!OnayAl($"'{silinecekPalet}' adlı paleti silmek istiyor musunuz?"))
+            if (!OnayAl("UrunEkle.paletSilmeMesaj", silinecekPalet))
                 return;
 
             paletIslemler.PaletSil(silinecekPalet);
@@ -625,7 +636,7 @@ namespace Palet_Programlama.Screens
 
             string seciliPaletAdi = paletlistbox.SelectedItem.ToString();
 
-            if (!OnayAl($"'{seciliPaletAdi}' adlı paleti düzenlemek istiyor musunuz?"))
+            if (!OnayAl("UrunEkle.paletGuncellemeMesaj", seciliPaletAdi))
                 return;
 
             paletlist = paletIslemler.PaletListesiniGetir();

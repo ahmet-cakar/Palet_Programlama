@@ -24,6 +24,9 @@ namespace Palet_Programlama.UserController
         private string KayitliDizilimYokText => LanguageConverter.GetString("UrunPaletSecimPopup.kayitliDizilimYok");
         private string DizilimlerYuklenemediText => LanguageConverter.GetString("UrunPaletSecimPopup.dizilimlerYuklenemedi");
 
+
+
+
         private sealed class ComboSecenek<T>
         {
             public string Text { get; set; } = string.Empty;

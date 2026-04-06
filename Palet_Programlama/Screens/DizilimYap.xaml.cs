@@ -64,6 +64,7 @@ namespace Palet_Programlama.Screens
         private string KaydetText => LanguageConverter.GetString("ButtonKey.btnKaydet");
         private string IptalText => LanguageConverter.GetString("ButtonKey.btnIptal");
 
+        private string DizilimGuncelle => LanguageConverter.GetString("DizilimYap.btnDizilimiGuncelle");
 
         public DizilimYap(Frame Main, Urun secilenUrun, Palet secilenPalet, string? dizilimAdi)
         {
@@ -82,6 +83,8 @@ namespace Palet_Programlama.Screens
             _gelenDizilimAdi = dizilimAdi;
             if (!string.IsNullOrWhiteSpace(_gelenDizilimAdi))
             {
+                BtnDizilimKaydet.Content = DizilimGuncelle;
+
                 YukleniyorGoster(DizilimYukleniyorText);
                 try
                 {
@@ -113,6 +116,7 @@ namespace Palet_Programlama.Screens
                 }
             }
         }
+
 
         private void YukleniyorGoster(string mesaj = null)
         {

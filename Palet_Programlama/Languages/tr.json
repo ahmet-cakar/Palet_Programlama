@@ -135,6 +135,7 @@
         "kopyalabtn": "Kopyala",
         "btnKatTemizle": "Bu Katı Temizle",
         "btnDizilimiKaydet": "Dizilim Kaydet",
+        "btnDizilimiGuncelle": "Dizilimi Güncelle",
         "btnPaletTemizle": "Paleti Temizle",
         "btnSeciliUrunuSil": "Seçili Ürünü Sil",
         "katkopyala": "Kat Kopyala",
@@ -197,14 +198,17 @@
         "btnKaydet": "Kaydet",
         "btnGruplariTemizle": "Grupları Temizle",
         "btnManuelDiz": "Manuel Diz",
-        "btnDizilimListesi": "DizilimListesi",
+        "btnDizilimListesi": "Dizilim Sil",
         "programSeciniz": "Güncelleme için seçim yapınız",
         "btnGuncelle": "Güncelle",
         "sayfaYukleniyor": "Sayfa yükleniyor...",
         "programKaydediliyor": "Program kaydediliyor...",
         "programGuncelleniyor": "Program güncelleniyor...",
         "programYukleniyor": "Program yükleniyor...",
-        "yukleniyor": "Yükleniyor..."
+        "yukleniyor": "Yükleniyor...",
+        "silinecekDizilimSecilmeli": "Lütfen silmek için bir dizilim seçiniz.",
+        "dizilimSilmeMesaj": "'{0}' adlı dizilim ve buna bağlı programları silmek istediğinizden emin misiniz?",
+        "dizilimVeBagliProgramlarSilindi": "Dizilim ve buna bağlı programlar başarıyla silindi."
 
     },
     "Program": {

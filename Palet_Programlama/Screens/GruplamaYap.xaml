@@ -536,8 +536,8 @@
                              Background="{StaticResource button_background_green}" Style="{StaticResource button_template}" Click="BtnProgramKaydet_Click" />
           <Button FontSize="24" x:Name="BtnGruplariTemizle"   Content="{Binding Source='GruplamaYap.btnGruplariTemizle',Converter={StaticResource LanguageConverter}}" Width="240"  Margin="10,0,0,0"
          Background="{StaticResource button_background}" Style="{StaticResource button_template}" Click="BtnGruplariTemizle_Click" />
-          <!--<Button FontSize="24"   Content="{Binding Source='GruplamaYap.btnDizilimListesi',Converter={StaticResource LanguageConverter}}" Width="240" Margin="10,0,0,0"
-         Background="{StaticResource button_background}" Style="{StaticResource button_template}" />-->
+          <Button x:Name="BtnDizilimSil" FontSize="24"   Content="{Binding Source='GruplamaYap.btnDizilimListesi',Converter={StaticResource LanguageConverter}}" Width="240" Margin="10,0,0,0"
+         Background="{StaticResource button_background}" Style="{StaticResource button_template}" Click="BtnDizilimSil_Click"  />
         </StackPanel>
       </Border>
     </Grid>

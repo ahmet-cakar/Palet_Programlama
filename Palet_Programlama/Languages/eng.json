@@ -57,6 +57,7 @@
         "pozsecimi": "Position Selection",
         "btnKatTemizle": "Clear This Layer",
         "btnDizilimiKaydet": "Save the Layer",
+        "btnDizilimiGuncelle": "Update the Layer",
         "btnPaletTemizle": "Clear the Pallet",
         "btnSeciliUrunuSil": "Delete Selected Item",
         "txtAynalama": "Mirroring (OFF)",
@@ -234,14 +235,17 @@
         "btnKaydet": "Save",
         "btnGruplariTemizle": "Clear Groups",
         "btnManuelDiz": "Manual Layer",
-        "btnDizilimListesi": "Layer List",
+        "btnDizilimListesi": "Delete Layer",
         "programSeciniz": "Select to update",
         "btnGuncelle": "Update",
         "sayfaYukleniyor": "Page loading...",
         "programKaydediliyor": "Program is saving..",
         "programGuncelleniyor": "Program is updating...",
         "programYukleniyor": "Program is loading...",
-        "yukleniyor": "Loading..."
+        "yukleniyor": "Loading...",
+        "silinecekDizilimSecilmeli": "Please select an array to delete.",
+        "dizilimSilmeMesaj": "Do you want to delete the layer named '{0}' and the programs associated with it?",
+        "dizilimVeBagliProgramlarSilindi": "Layer and its related programs have been successfully deleted."
     },
     "HataMesajlari": {
         "urunadbos": "Product Name Cannot Be Left Blank!",

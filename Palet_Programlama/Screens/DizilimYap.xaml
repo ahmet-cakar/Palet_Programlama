@@ -624,6 +624,7 @@
                             Content="{Binding Source='DizilimYap.btnDizilimiKaydet',Converter={StaticResource LanguageConverter}}"
                             Width="240"
                             Margin="0,0,10,10"
+                            x:Name="BtnDizilimKaydet"
                             Background="{StaticResource button_background_green}"
                             Style="{StaticResource button_template}" />
 

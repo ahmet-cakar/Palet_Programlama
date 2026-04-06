@@ -1,23 +1,26 @@
 ﻿
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows;
-using System.Windows.Input;
-using System.Windows.Shapes;
-using Palet_Programlama.Screens.Gruplama.Services;
-using Palet_Programlama.Screens.Gruplama.Models;
-using System.Windows.Controls;
+using Newtonsoft.Json;
+using Palet_Programlama.Languages;
+using Palet_Programlama.Popuplar;
+using Palet_Programlama.Screens.Dizilim.Models;
 using Palet_Programlama.Screens.Dizilim.Services;
 using Palet_Programlama.Screens.Gruplama.Helpers;
-using System.Collections.ObjectModel;
-using Palet_Programlama.Screens.UrunPaletEkle.Models;
-using Palet_Programlama.Screens.Dizilim.Models;
+using Palet_Programlama.Screens.Gruplama.Models;
+using Palet_Programlama.Screens.Gruplama.Services;
+using Palet_Programlama.Screens.Helpers;
 using Palet_Programlama.Screens.Statics;
-using Palet_Programlama.Popuplar;
-using Palet_Programlama.Languages;
+using Palet_Programlama.Screens.UrunPaletEkle.Models;
 using Palet_Programlama.UserController;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
+using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Shapes;
 
 namespace Palet_Programlama.Screens
 {
@@ -1122,6 +1125,64 @@ namespace Palet_Programlama.Screens
             mainWindow?.YukleniyorGoster(mesaj);
         }
 
+        private bool OnayAl(string mesajKey, params object[] args)
+        {
+            var onayKutusu = new OnayKutusu
+            {
+                Owner = Window.GetWindow(this)
+            };
+
+            string mesaj = LanguageConverter.GetString(mesajKey);
+
+            if (args != null && args.Length > 0)
+                mesaj = string.Format(mesaj, args);
+
+            onayKutusu.MesajGonder(
+                mesaj,
+                LanguageConverter.GetString("MesajKutusu.evet"),
+                LanguageConverter.GetString("MesajKutusu.hayir"));
+
+            bool? sonuc = onayKutusu.ShowDialog();
+            return sonuc == true && onayKutusu.OnaylandiMi;
+        }
+
+        private void SeciliDizilimiVeBagliProgramlariSil(DizilimKayitModel seciliDizilim)
+        {
+            string dizilimDosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Dizilimler.json");
+            if (File.Exists(dizilimDosyaYolu))
+            {
+                var dizilimler = JsonConvert.DeserializeObject<List<DizilimKayitModel>>(
+                    File.ReadAllText(dizilimDosyaYolu)) ?? new List<DizilimKayitModel>();
+
+                dizilimler = dizilimler
+                    .Where(x =>
+                        !string.Equals((x.UrunAdi ?? "").Trim(), (_secilenUrun?.UrunAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase) ||
+                        !string.Equals((x.PaletAdi ?? "").Trim(), (_secilenPalet?.PaletAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase) ||
+                        !string.Equals((x.DizilimAdi ?? "").Trim(), (seciliDizilim.DizilimAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+
+                File.WriteAllText(dizilimDosyaYolu, JsonConvert.SerializeObject(dizilimler, Formatting.Indented));
+            }
+
+            string programDosyaYolu = DosyaYoluBul.DosyaGetir("Data", "Programlar.json");
+            if (File.Exists(programDosyaYolu))
+            {
+                var programlar = JsonConvert.DeserializeObject<List<ProgramKayitModel>>(
+                    File.ReadAllText(programDosyaYolu)) ?? new List<ProgramKayitModel>();
+
+                programlar = programlar
+                    .Where(x =>
+                        !string.Equals((x.UrunAdi ?? "").Trim(), (_secilenUrun?.UrunAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase) ||
+                        !string.Equals((x.PaletAdi ?? "").Trim(), (_secilenPalet?.PaletAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase) ||
+                        !string.Equals((x.DizilimAdi ?? "").Trim(), (seciliDizilim.DizilimAdi ?? "").Trim(), StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+
+                File.WriteAllText(programDosyaYolu, JsonConvert.SerializeObject(programlar, Formatting.Indented));
+            }
+        }
+
+
+
         private void YukleniyorGizle()
         {
             var mainWindow = Application.Current.MainWindow as MainWindow;
@@ -1133,6 +1194,31 @@ namespace Palet_Programlama.Screens
             var pencere = new BildirimKutusu();
             pencere.MesajGonder(butonKey, mesajKey);
             pencere.ShowDialog();
+        }
+
+        private void BtnDizilimSil_Click(object sender, RoutedEventArgs e)
+        {
+            var seciliDizilim = SeciliKaydiGetir();
+            if (seciliDizilim == null)
+            {
+                BildirimGoster("GruplamaYap.silinecekDizilimSecilmeli");
+                return;
+            }
+
+            if (!OnayAl("GruplamaYap.dizilimSilmeMesaj", seciliDizilim.DizilimAdi))
+                return;
+
+            SeciliDizilimiVeBagliProgramlariSil(seciliDizilim);
+
+            _gelenDizilimAdi = null;
+            _seciliProgramKaydi = null;
+            _seciliDizilimKaydi = null;
+
+            GrupDurumunuTemizle();
+            ProgramSeciminiSifirla(true);
+            SayfaVerileriniYukle();
+
+            BildirimGoster("GruplamaYap.dizilimVeBagliProgramlarSilindi");
         }
     }
 }

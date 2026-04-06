@@ -47,7 +47,7 @@ namespace Palet_Programlama.Screens
         private int AktifKatNo => _katYonetici.AktifKat;
 
 
-        private string ProgramSecilmediText => LanguageConverter.GetString("Program.programSecilmedi");
+        private string ProgramSecilmediText => LanguageConverter.GetString("Program.Secilmedi");
         private string SecilmediText => LanguageConverter.GetString("Program.secilmedi");
         private string UrunSecilmediText => LanguageConverter.GetString("Program.urunSecilmedi");
         private string PaletSecilmediText => LanguageConverter.GetString("Program.paletSecilmedi");
@@ -341,7 +341,7 @@ namespace Palet_Programlama.Screens
             };
 
             string mesaj = string.Format(
-                LanguageConverter.GetString("Program.programSilmeOnayMesaj"),
+                LanguageConverter.GetString("Program.silmeOnayMesaj"),
                 seciliProgram.ProgramAdi);
 
             onayKutusu.MesajGonder(
@@ -368,7 +368,7 @@ namespace Palet_Programlama.Screens
             CanvasiTemizle();
 
             var bilgi = new BildirimKutusu();
-            bilgi.MesajGonder("MesajKutusu.tamam", "Program.programBasariylaSilindi");
+            bilgi.MesajGonder("MesajKutusu.tamam", "Program.basariylaSilindi");
             bilgi.ShowDialog();
         }
 

@@ -170,6 +170,7 @@
     },
 
     "GruplamaYap": {
+        "onceListedenGrupSecilmeli": "Önce Listeden grup seçmelisiniz.",
         "programBasariIleKayitEdildi": "Program başarılı ile kayıt edildi.",
         "programKayitIcinTumGrupAyarlariYapilmali": "Program kayıt ederken tüm grup ayarları yapılmalı",
         "programAdiZatenKayitli": "Bu program adı ile daha önce kayıt yapılmış,Lütfen ismi değiştirin",
@@ -187,6 +188,7 @@
         "txtPaletSecimi": "Palet Seçiniz",
         "txtDizilimSecimi": "Dizilim Seçiniz",
         "txtGruplamaSecimi": "Gruplama Seçiniz",
+        "txtProgramSecimi": "Program Seçiniz",
         "txtKatNo": "Kat No: ",
         "txtGrupNo": "Grup No: ",
         "btnAyarlar": "Ayarlar",
@@ -212,15 +214,13 @@
         "not": "Program Hakkında:",
         "listtext": "Mevcut Program Listesi",
         "SecmedenSilme": "Lütfen silmek için bir program seçiniz.",
-        "SilmeOnayMesaj": "'{0}' programını silmek istediğinizden emin misiniz?",
+        "silmeOnayMesaj": "'{0}' programını silmek istediğinizden emin misiniz?",
         "Silinemedi": "Program silinemedi.",
-        "BasariylaSilindi": "Program başarıyla silindi.",
+        "basariylaSilindi": "Program başarıyla silindi.",
         "Secilmedi": "Program Seçilmedi",
         "secilmedi": "Seçilmedi",
         "urunSecilmedi": "Ürün Seçilmedi",
         "paletSecilmedi": "Palet Seçilmedi"
-
-
     },
     "HataMesajlari": {
         "urunadbos": "Ürün Adı Boş Bırakılamaz",

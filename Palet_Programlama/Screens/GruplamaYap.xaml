@@ -218,7 +218,7 @@
                            Foreground="White"
                            FontSize="24"
                            FontWeight="SemiBold"
-                           Text="Program Seçimi"/>
+                           Text="{Binding Source='GruplamaYap.txtDizilimSecimi',Converter={StaticResource LanguageConverter}}"/>
 
               <ComboBox x:Name="CboxProgramListesi"
                           Grid.Column="2"

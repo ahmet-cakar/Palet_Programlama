@@ -524,7 +524,7 @@ namespace Palet_Programlama.Screens
                 _programKayitServisi.Guncelle(guncelProgram);
                 KaydedilenProgramiUygula(guncelProgram);
 
-                BildirimGoster("GruplamaYap.programBasariIleGuncellendi");
+                BildirimGoster("GruplamaYap.programBasariIleKayitEdildi");
             }
             finally
             {

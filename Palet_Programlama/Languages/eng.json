@@ -196,9 +196,9 @@
         "not": "Program Info:",
         "listtext": "Available Program List",
         "SecmedenSilme": "Please select a program to delete.",
-        "SilmeOnayMesaj": "Are you sure you want to delete program '{0}'?",
+        "silmeOnayMesaj": "Are you sure you want to delete program '{0}'?",
         "Silinemedi": "The program could not be deleted.",
-        "BasariylaSilindi": "The program was successfully deleted.",
+        "basariylaSilindi": "The program was successfully deleted.",
         "Secilmedi": "Program Not Selected.",
         "secilmedi": "Not Selected",
         "urunSecilmedi": " Not Selected",
@@ -206,6 +206,7 @@
     },
 
     "GruplamaYap": {
+        "onceListedenGrupSecilmeli": "You must first select the group from the List.",
         "programBasariIleKayitEdildi": "The program was successfully registered.",
         "programKayitIcinTumGrupAyarlariYapilmali": "All group settings must be configured when recording the program.",
         "programAdiZatenKayitli": "This program has already been registered under this name. Please change the name.",
@@ -224,6 +225,7 @@
         "txtPaletSecimi": "Pallet Selection",
         "txtDizilimSecimi": "Layer Selection",
         "txtGruplamaSecimi": "Grouping Selection",
+        "txtProgramSecimi": "Program Selection",
         "txtKatNo": "Layer No: ",
         "txtGrupNo": "Group No: ",
         "btnAyarlar": "Settings",
@@ -260,6 +262,14 @@
         "btntamam": "Okey",
         "btnIptal": "Cancel",
         "btnKaydet": "Save"
+
+    },
+    "GruplamaAyarPopup": {
+        "baslik": "Drop Settings",
+        "gripperAcilmaYonu": "Gripper opening direction",
+        "offsetDegerleri": "Offset Values",
+        "gripperYonu": "Gripper Direction",
+        "gripperAciklama": "It shows the direction in which the carrier edge of the gripper will be opened."
 
     }
 

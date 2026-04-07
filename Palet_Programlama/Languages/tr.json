@@ -281,7 +281,7 @@
         "paletUzerine": "Palet üzerine",
         "katUzerine": "{0}. kat üzerine",
         "SeperatorKalingligi": "Seperator Kalınlığı (mm)"
-    }
+    },
 
     "Ayarlar": {
         "kullanciSifreZorunlu": "Lütfen kullanıcı adı ve şifre giriniz.",
@@ -292,7 +292,7 @@
         "kullaniciSilmeBasarisiz": "Kullanıcı silinemedi. Lütfen tekrar deneyiniz.",
         "kullaniciGuncellemeBasarili": "Kullanıcı başarıyla güncellendi.",
         "kullaniciSilmeBasarili": "Kullanıcı başarıyla silindi.",
-        "kullaniciEkleBasarili": "Kullanıcı başarıyla eklendi."
+        "kullaniciEklemeBasarili": "Kullanıcı başarıyla eklendi."
     }
 
 }

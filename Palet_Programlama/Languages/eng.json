@@ -277,7 +277,7 @@
         "kullaniciSilmeBasarisiz": "The user could not be deleted. Please try again.",
         "kullaniciGuncellemeBasarili": "The user has been updated successfully.",
         "kullaniciSilmeBasarili": "The user has been deleted successfully.",
-        "kullaniciEkleBasarili": "User added successfully."
+        "kullaniciEklemeBasarili": "User added successfully."
     }
 
 }

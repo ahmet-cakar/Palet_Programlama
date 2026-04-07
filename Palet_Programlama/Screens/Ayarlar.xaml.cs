@@ -22,6 +22,7 @@ namespace Palet_Programlama.Screens
         {
             InitializeComponent();
             _mainFrame = main;
+            UstMenuControl.AktifSayfa = "Ayarlar";
             _kullanicilarServisi = new KullanicilarServisi();
             KullanicilariYukle();
 
@@ -52,6 +53,11 @@ namespace Palet_Programlama.Screens
             txtKullaniciAdi.Text = string.Empty;
             txtKullaniciSifre.Password = string.Empty;
             txtKullaniciSifreAcik.Text = string.Empty;
+
+            txtKullaniciSifre.Visibility = Visibility.Visible;
+            txtKullaniciSifreAcik.Visibility = Visibility.Collapsed;
+            btnSifreGoster.Content = "👁";
+            _sifreGorunurMu = false;
 
             lstKullaniciListesi.SelectedItem = null;
             _seciliKullanici = null;

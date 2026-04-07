@@ -107,10 +107,10 @@
                              ItemContainerStyle="{StaticResource AyarMenuItemStyle}"
                              SelectedIndex="0">
             <ListBoxItem Content="Kullanıcı Yönetimi"/>
-            <ListBoxItem Content="Dil Ayarları"/>
+            <!--<ListBoxItem Content="Dil Ayarları"/>-->
             <ListBoxItem Content="Yetki Ayarı"/>
-            <ListBoxItem Content="Yedekleme / Geri Yükleme"/>
             <ListBoxItem Content="Varsayılan Sistem Ayarları"/>
+            <ListBoxItem Content="Yedekleme / Geri Yükleme"/>
           </ListBox>
         </Grid>
       </Border>

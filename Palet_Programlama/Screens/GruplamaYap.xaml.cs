@@ -60,12 +60,12 @@ namespace Palet_Programlama.Screens
         private int AktifKatNo => _katYonetici.AktifKat;
         private string ProgramSecinizMetni => LanguageConverter.GetString("GruplamaYap.programSeciniz");
         private string ProgramKaydetText => LanguageConverter.GetString("GruplamaYap.btnKaydet");
-        private string GuncelleText => LanguageConverter.GetString("GruplamaYap.btnGuncelle");
+        private string GuncelleText => LanguageConverter.GetString("ButtonKey.btnGuncelle");
         private string SayfaYukleniyorText => LanguageConverter.GetString("GruplamaYap.sayfaYukleniyor");
         private string ProgramKaydediliyorText => LanguageConverter.GetString("GruplamaYap.programKaydediliyor");
         private string ProgramGuncelleniyorText => LanguageConverter.GetString("GruplamaYap.programGuncelleniyor");
         private string ProgramYukleniyorText => LanguageConverter.GetString("GruplamaYap.programYukleniyor");
-        private string YukleniyorText => LanguageConverter.GetString("GruplamaYap.yukleniyor");
+        private string YukleniyorText => LanguageConverter.GetString("DizilimYap.yukleniyor");
 
 
 
@@ -1139,8 +1139,8 @@ namespace Palet_Programlama.Screens
 
             onayKutusu.MesajGonder(
                 mesaj,
-                LanguageConverter.GetString("MesajKutusu.evet"),
-                LanguageConverter.GetString("MesajKutusu.hayir"));
+                LanguageConverter.GetString("ButtonKey.btnEvet"),
+                LanguageConverter.GetString("ButtonKey.btnHayir"));
 
             bool? sonuc = onayKutusu.ShowDialog();
             return sonuc == true && onayKutusu.OnaylandiMi;
@@ -1189,7 +1189,7 @@ namespace Palet_Programlama.Screens
             mainWindow?.YukleniyorGizle();
         }
 
-        private void BildirimGoster(string mesajKey, string butonKey = "MesajKutusu.tamam")
+        private void BildirimGoster(string mesajKey, string butonKey = "ButtonKey.btntamam")
         {
             var pencere = new BildirimKutusu();
             pencere.MesajGonder(butonKey, mesajKey);

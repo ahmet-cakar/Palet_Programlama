@@ -311,7 +311,7 @@
         <Grid Grid.Row="2" Margin="50,15,50,30">
             <Border CornerRadius="20"  Background="Transparent">
                 <StackPanel Orientation="Horizontal">
-                <Button FontSize="24"  Content="{Binding Source='global.btnkaydet',Converter={StaticResource LanguageConverter}}" Width="240" 
+                <Button FontSize="24"  Content="{Binding Source='ButtonKey.btnKaydet',Converter={StaticResource LanguageConverter}}" Width="240" 
                 Background="{StaticResource button_background_green}" Style="{StaticResource button_template}" />
                 </StackPanel>
             </Border>

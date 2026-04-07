@@ -95,7 +95,7 @@
                     
                     <DockPanel Grid.Row="0" Grid.Column="0">
                         <!-- Sağ altta buton -->
-                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" x:Name="UrunEklePage" 
+                            <Button  Content="{Binding Source='ButtonKey.btnDevam',Converter={StaticResource LanguageConverter}}" x:Name="UrunEklePage" 
                                 Background="{StaticResource button_background}" Style="{StaticResource button_template}" Click="UrunEklePage_Click" />
 
                         <!-- Sol alttaki açıklama -->
@@ -123,8 +123,8 @@
                             Style="{StaticResource border_template}">
 
                         <DockPanel Grid.Row="0" Grid.Column="1">
-                            <!-- Sağ altta buton -->
-                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" x:Name="DizilimPage" 
+                              <!-- Sağ altta buton -->
+                           <Button  Content="{Binding Source='ButtonKey.btnDevam',Converter={StaticResource LanguageConverter}}" x:Name="DizilimPage" 
                                 Background="{StaticResource button_background}" Style="{StaticResource button_template}" Click="DizilimPage_Click" />
 
                             <!-- Sol alttaki açıklama -->
@@ -152,7 +152,7 @@
 
                         <DockPanel Grid.Row="0" Grid.Column="2">
                             <!-- Sağ altta buton -->
-                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" Click="Button_Click"
+              <Button  Content="{Binding Source='ButtonKey.btnDevam',Converter={StaticResource LanguageConverter}}" Click="Button_Click"
                          Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
                             <!-- Sol alttaki açıklama -->
@@ -180,7 +180,7 @@
 
                         <DockPanel Grid.Row="0" Grid.Column="3">
                             <!-- Sağ altta buton -->
-                            <Button x:Name="btnGruplamaYap"  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" 
+              <Button x:Name="btnGruplamaYap"  Content="{Binding Source='ButtonKey.btnDevam',Converter={StaticResource LanguageConverter}}" 
                          Background="{StaticResource button_background}" Style="{StaticResource button_template}" Click="btnGruplamaYap_Click" />
 
                             <!-- Sol alttaki açıklama -->
@@ -231,7 +231,7 @@
                     
                     <DockPanel Grid.Row="1" Grid.Column="0">
                         <!-- Sağ altta buton -->
-                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" 
+              <Button  Content="{Binding Source='ButtonKey.btnDevam',Converter={StaticResource LanguageConverter}}" 
                          Background="{StaticResource button_background}" Style="{StaticResource button_template}" Click="btn_program_Click" />
 
                         <!-- Sol alttaki açıklama -->
@@ -239,7 +239,7 @@
                              VerticalAlignment="Bottom" 
                              HorizontalAlignment="Left"
                              Margin="20,0,0,-45">
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='Anasayfa.program',Converter={StaticResource LanguageConverter}}" />
+                          <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='UserControl.program',Converter={StaticResource LanguageConverter}}" />
                             <TextBlock  Style="{StaticResource textblock_template}" Text="" />
                         </StackPanel>
 
@@ -262,7 +262,7 @@
                          Style="{StaticResource border_template}">
                     <DockPanel Grid.Row="1" Grid.Column="1">
                         <!-- Sağ altta buton -->
-                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}"
+              <Button  Content="{Binding Source='ButtonKey.btnDevam',Converter={StaticResource LanguageConverter}}"
                             Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
                         <!-- Sol alttaki açıklama -->
@@ -294,7 +294,7 @@
                                        
                     <DockPanel Grid.Row="1" Grid.Column="2">
                         <!-- Sağ altta buton -->
-                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}" 
+              <Button  Content="{Binding Source='ButtonKey.btnDevam',Converter={StaticResource LanguageConverter}}" 
                             Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
                         <!-- Sol alttaki açıklama -->
@@ -302,7 +302,7 @@
                                 VerticalAlignment="Bottom" 
                                 HorizontalAlignment="Left"
                                 Margin="20,0,0,-45">
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='Anasayfa.izleme',Converter={StaticResource LanguageConverter}}" />
+                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='UserControl.izleme',Converter={StaticResource LanguageConverter}}" />
                             <TextBlock  Style="{StaticResource textblock_template}" Text="" />
                         </StackPanel>
 
@@ -324,7 +324,7 @@
                          Style="{StaticResource border_template}">
                      <DockPanel Grid.Row="1" Grid.Column="3">
                                             <!-- Sağ altta buton -->
-                            <Button  Content="{Binding Source='Anasayfa.buttonC',Converter={StaticResource LanguageConverter}}"
+              <Button  Content="{Binding Source='ButtonKey.btnDevam',Converter={StaticResource LanguageConverter}}"
                             Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
 
                                             <!-- Sol alttaki açıklama -->
@@ -332,7 +332,7 @@
                                 VerticalAlignment="Bottom" 
                                 HorizontalAlignment="Left"
                                 Margin="20,0,0,-45">
-                                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='Anasayfa.Komut',Converter={StaticResource LanguageConverter}}" />
+                <TextBlock  Style="{StaticResource textblock_template}" Text="{Binding Source='UserControl.ayarlar',Converter={StaticResource LanguageConverter}}" />
                                                 <TextBlock  Style="{StaticResource textblock_template}" Text="" />
                                             </StackPanel>
 
@@ -341,7 +341,7 @@
                                             <StackPanel 
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
-                <Image  Source="pack://application:,,,/Images/Anasayfa/Beyaz/8.png" 
+                <Image   Source="pack://application:,,,/Images/Ayarlar/settings.png" 
                                         Style="{StaticResource icon_style}" />
                                             </StackPanel>
                     </DockPanel>

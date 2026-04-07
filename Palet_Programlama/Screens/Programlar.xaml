@@ -298,7 +298,7 @@
                   <Button x:Name="BtnProgramSil" FontSize="24"
                                             Width="240"
                                             Margin="0,80,0,0"
-                                            Content="{Binding Source='global.btnsil',Converter={StaticResource LanguageConverter}}"
+                                            Content="{Binding Source='ButtonKey.btnSil',Converter={StaticResource LanguageConverter}}"
                                             Background="{StaticResource button_background}"
                                             Style="{StaticResource button_template}" Click="BtnProgramSil_Click"/>
 

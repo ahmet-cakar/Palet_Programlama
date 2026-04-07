@@ -652,7 +652,7 @@ namespace Palet_Programlama.Screens
         private void BildirimGosterFormatli(string mesajKey, params object[] args)
         {
             var pencere = new Palet_Programlama.UserController.BildirimKutusu();
-            pencere.MesajGonderFormatli("MesajKutusu.tamam", mesajKey, args);
+            pencere.MesajGonderFormatli("ButtonKey.btntamam", mesajKey, args);
             pencere.ShowDialog();
         }
 
@@ -1414,7 +1414,7 @@ namespace Palet_Programlama.Screens
 
 
 
-        private void BildirimGoster(string mesajKey, string butonKey = "MesajKutusu.tamam")
+        private void BildirimGoster(string mesajKey, string butonKey = "ButtonKey.btntamam")
         {
             var pencere = new BildirimKutusu();
             pencere.MesajGonder(butonKey, mesajKey);

@@ -8,10 +8,7 @@
         "hiz2": "Settings",
         "gruplama1": "Create",
         "gruplama2": "Grouping",
-        "program": "Programs",
         "Alarm": "Alarms",
-        "izleme": "Monitoring",
-        "Komut": "Commands",
         "buttonC": "View",
         "hesapDegistir": "Change\nAccount",
         "hesapCikis": "Exit"
@@ -32,7 +29,6 @@
         "baslik": "Program Info",
         "programAdi": "Program Name",
         "aciklama": "Description",
-        "zorunluAlan": " ( * Required)"
     },
     "DizilimKaydetPopup": {
         "dizilimBilgisi": "Layer Information",
@@ -49,8 +45,6 @@
     "DizilimYap": {
         "urunozellik": "Product Features:  ",
         "paletozellik": "Pallet Features:  ",
-        "kopyala": "Copy  ",
-        "yapistir": "Paste  ",
         "urunadet": "Product Quantity: 0",
         "kopyalabtn": "Copy",
         "katkopyala": "Copy Layer",
@@ -136,8 +130,8 @@
         "grupekle": "Create Grouping",
         "program": "Programs",
         "alarm": "Alarms",
-        "izle": "Monitoring",
-        "komut": "Commands"
+        "izleme": "Monitoring",
+        "ayarlar": "Settings"
 
     },
     "MesajKutusu": {
@@ -147,8 +141,8 @@
         "araKatSilinemez": "Please start from the top Layer when cleaning the Layer, the intermediate layer cannot be wiped.",
         "isimGiriniz": "Please enter a name..",
         "tasinacakUrunYok": "There are no products to move.",
-        "urunMevcut": "This product already exists, change the name",
-        "paletMevcut": "This Pallet already exists, change the name",
+        "urunMevcut": "This product already exists,please change the name",
+        "paletMevcut": "This Pallet already exists,please change the name",
         "urunSecimiGerekli": "First you must choose a product.",
         "katKopyalamaBasarili": "The layer has been copied successfully.",
         "katKopyalamaBasarisiz": "Copying failed. The source layer may be empty, the target layer may be occupied, or the layer below the target layer may be empty.",
@@ -161,7 +155,6 @@
         "katBosOlamaz": "Layer is empty. You cannot move to the new Layer without adding products.",
         "urunlerUstUsteGelemez": "There is another product in this location. Products cannot overlap.",
         "uyari": "Information Screen",
-        "tamam": "Okey",
         "mesaj": "There was a Problem Adding a Product! Please Try Again",
         "btncon1": "OK",
         "dizilimBulunamadi": "The layer not found",
@@ -170,13 +163,7 @@
         "paletBasariliSilindi": "The pallet has been successfully deleted.",
         "urunBasariliGuncellendi": "The selected product has been successfully updated.",
         "paletBasariliGuncellendi": "The selected pallet has been successfully updated.",
-        "evet": "Yes",
-        "hayir": "No",
         "gecerliSeperatorKalinligiGir": "Please enter a valid Seperator thickness"
-    },
-    "global": {
-        "btnkaydet": "Save",
-        "btnsil": "Delete"
     },
     "Hiz": {
         "v1": "V_50",
@@ -200,7 +187,7 @@
         "silmeOnayMesaj": "Are you sure you want to delete program '{0}'?",
         "Silinemedi": "The program could not be deleted.",
         "basariylaSilindi": "The program was successfully deleted.",
-        "Secilmedi": "Program Not Selected.",
+        "progSecilmedi": "Program Not Selected.",
         "secilmedi": "Not Selected",
         "urunSecilmedi": " Not Selected",
         "paletSecilmedi": " Not Selected"
@@ -237,12 +224,10 @@
         "btnManuelDiz": "Manual Layer",
         "btnDizilimListesi": "Delete Layer",
         "programSeciniz": "Select to update",
-        "btnGuncelle": "Update",
         "sayfaYukleniyor": "Page loading...",
         "programKaydediliyor": "Program is saving..",
         "programGuncelleniyor": "Program is updating...",
         "programYukleniyor": "Program is loading...",
-        "yukleniyor": "Loading...",
         "silinecekDizilimSecilmeli": "Please select an array to delete.",
         "dizilimSilmeMesaj": "Do you want to delete the layer named '{0}' and the programs associated with it?",
         "dizilimVeBagliProgramlarSilindi": "Layer and its related programs have been successfully deleted."
@@ -265,7 +250,14 @@
 
         "btntamam": "Okey",
         "btnIptal": "Cancel",
-        "btnKaydet": "Save"
+        "btnKaydet": "Save",
+        "btnSil": "Delete",
+        "btnDevam": "View",
+        "btnEvet": "Yes",
+        "btnHayir": "No",
+        "btnKopyala": "Copy",
+        "btnYapistir": "Paste",
+        "btnGuncelle": "Update"
 
     },
     "GruplamaAyarPopup": {

@@ -47,7 +47,7 @@ namespace Palet_Programlama.Screens
         private int AktifKatNo => _katYonetici.AktifKat;
 
 
-        private string ProgramSecilmediText => LanguageConverter.GetString("Program.Secilmedi");
+        private string ProgramSecilmediText => LanguageConverter.GetString("Program.progSecilmedi");
         private string SecilmediText => LanguageConverter.GetString("Program.secilmedi");
         private string UrunSecilmediText => LanguageConverter.GetString("Program.urunSecilmedi");
         private string PaletSecilmediText => LanguageConverter.GetString("Program.paletSecilmedi");
@@ -330,7 +330,7 @@ namespace Palet_Programlama.Screens
             if (seciliProgram == null)
             {
                 var uyari = new BildirimKutusu();
-                uyari.MesajGonder("MesajKutusu.tamam", "Program.programSecmedenSilme");
+                uyari.MesajGonder("ButtonKey.btntamam", "Program.programSecmedenSilme");
                 uyari.ShowDialog();
                 return;
             }
@@ -346,8 +346,8 @@ namespace Palet_Programlama.Screens
 
             onayKutusu.MesajGonder(
                 mesaj,
-                LanguageConverter.GetString("MesajKutusu.evet"),
-                LanguageConverter.GetString("MesajKutusu.hayir"));
+                LanguageConverter.GetString("ButtonKey.btnEvet"),
+                LanguageConverter.GetString("ButtonKey.btnHayir"));
 
             bool? sonuc = onayKutusu.ShowDialog();
             if (sonuc != true || !onayKutusu.OnaylandiMi)
@@ -358,7 +358,7 @@ namespace Palet_Programlama.Screens
             if (!silindi)
             {
                 var hata = new BildirimKutusu();
-                hata.MesajGonder("MesajKutusu.tamam", "Program.programSilinemedi");
+                hata.MesajGonder("ButtonKey.btntamam", "Program.programSilinemedi");
                 hata.ShowDialog();
                 return;
             }
@@ -368,7 +368,7 @@ namespace Palet_Programlama.Screens
             CanvasiTemizle();
 
             var bilgi = new BildirimKutusu();
-            bilgi.MesajGonder("MesajKutusu.tamam", "Program.basariylaSilindi");
+            bilgi.MesajGonder("ButtonKey.btntamam", "Program.basariylaSilindi");
             bilgi.ShowDialog();
         }
 

@@ -227,7 +227,7 @@
                                        FontSize="24"
                                        VerticalAlignment="Center"
                                        Foreground="White"
-                                       Text="{Binding Source='DizilimYap.yapistir',Converter={StaticResource LanguageConverter}}"/>
+                                       Text="{Binding Source='ButtonKey.btnYapistir',Converter={StaticResource LanguageConverter}}"/>
 
               <Button Width="30"
                                     Height="25"
@@ -255,7 +255,7 @@
                 </StackPanel>
               </Button>
 
-              <Button  Margin="60,0,0,0"  Content="{Binding Source='DizilimYap.kopyalabtn',Converter={StaticResource LanguageConverter}}"
+              <Button  Margin="60,0,0,0"  Content="{Binding Source='ButtonKey.btnKopyala',Converter={StaticResource LanguageConverter}}"
                                     Width="150"
                                     Background="{StaticResource button_background}"
                                     Style="{StaticResource button_template}" Click="Btn_KatKopayala_Click" />

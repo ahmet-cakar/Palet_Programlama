@@ -116,7 +116,7 @@ namespace Palet_Programlama.UserController
             }
         }
 
-        private void BildirimGoster(string mesajKey, string butonKey = "MesajKutusu.tamam")
+        private void BildirimGoster(string mesajKey, string butonKey = "ButtonKey.btntamam")
         {
             var pencere = new BildirimKutusu();
             pencere.MesajGonder(butonKey, mesajKey);

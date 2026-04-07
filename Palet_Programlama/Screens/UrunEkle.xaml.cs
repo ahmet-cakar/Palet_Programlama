@@ -199,14 +199,14 @@ namespace Palet_Programlama.Screens
 
             onayKutusu.MesajGonder(
                 mesaj,
-                LanguageConverter.GetString("MesajKutusu.evet"),
-                LanguageConverter.GetString("MesajKutusu.hayir"));
+                LanguageConverter.GetString("ButtonKey.btnEvet"),
+                LanguageConverter.GetString("ButtonKey.btnHayir"));
 
             bool? sonuc = onayKutusu.ShowDialog();
             return sonuc == true && onayKutusu.OnaylandiMi;
         }
 
-        private void BildirimGoster(string mesajKey, string butonKey = "MesajKutusu.tamam")
+        private void BildirimGoster(string mesajKey, string butonKey = "ButtonKey.btntamam")
         {
             var pencere = new BildirimKutusu();
             pencere.MesajGonder(butonKey, mesajKey);

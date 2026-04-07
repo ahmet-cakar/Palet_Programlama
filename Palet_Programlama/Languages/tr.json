@@ -8,14 +8,11 @@
         "hiz2": "Düzenle",
         "gruplama1": "Gruplama",
         "gruplama2": "Oluştur",
-        "program": "Programlar",
         "Alarm": "Alarmlar",
-        "izleme": "İzleme",
-        "Komut": "Komutlar",
-        "buttonC": "Devam",
         "hesapDegistir": "Hesap\nDeğiştir",
         "hesapCikis": "Çıkış"
     },
+  
     "UrunEkle": {
         "onizle": "Önizleme",
         "urunblg": "Ürün Bilgileri",
@@ -33,7 +30,7 @@
         "yukseklik": "Yükseklik (mm)",
         "urunyukseklikgir": "Ürün Yükseklik Giriniz...",
         "paletyukseklikgir": "Palet Yükseklik Giriniz...",
-        "agirlik": "Ağırık (kg)",
+        "agirlik": "Ağırlık (kg)",
         "urunagirlikgir": "Ürün Ağırlık Giriniz...",
         "basinc": "Basınç (bar)",
         "urunbasincgir": "Ürün Basınç Giriniz...",
@@ -62,8 +59,6 @@
 
     },
 
-
-
     "UserControl": {
         "urunekle": "Ürün/Palet Ekle",
         "dizilimekle": "Dizilim Oluştur",
@@ -71,9 +66,10 @@
         "grupekle": "Gruplama Oluştur",
         "program": "Programlar",
         "alarm": "Alarmlar",
-        "izle": "İzleme",
-        "komut": "Komutlar"
+        "izleme": "İzleme",
+        "ayarlar": "Ayarlar"
     },
+    
     "MesajKutusu": {
         "urunBasariliEklendi": "Ürün başarılı bir şekilde eklendi.",
         "paletBasariliEklendi": "Palet başarılı bir şekilde eklendi.",
@@ -82,8 +78,8 @@
         "guncellemeBasarili": "Dizilim güncellenmesi başarılı ile yapıldı.",
         "isimGiriniz": "Lütfen bir isim giriniz.",
         "tasinacakUrunYok": "Taşınacak ürün yok.",
-        "urunMevcut": "Bu ürün zaten mevcut,ismi değiştirin",
-        "paletMevcut": "Bu palet zaten mevcut,ismi değiştirin",
+        "urunMevcut": "Bu ürün zaten mevcut,lütfen ismi değiştirin",
+        "paletMevcut": "Bu palet zaten mevcut,lütfen ismi değiştirin",
         "urunSecimiGerekli": "Önce bir ürün seçmelisiniz.",
         "katKopyalamaBasarili": "Kat başarıyla kopyalandı.",
         "katKopyalamaBasarisiz": "Kopyalama başarısız oldu. Kaynak kat boş olabilir, hedef kat dolu olabilir veya hedef katın altındaki kat boş olabilir.",
@@ -96,23 +92,16 @@
         "katBosOlamaz": "Kat boş. Ürün eklemeden yeni kata geçemezsin.",
         "urunlerUstUsteGelemez": "Bu konumda başka bir ürün var.Ürünler üstüste gelemez.",
         "uyari": "Uyarı Ekranı",
-        "tamam": "Tamam",
         "mesaj": "Ürün Eklenmesinde Bir Problem Yaşandı! Lütfen Tekrar Deneyiniz",
-        "btncon1": "Tamam",
         "urunBasariliSilindi": "Ürün başarılı bir şekilde silindi.",
         "dizilimBulunamadi": "Dizilim bulunamadı",
         "urunBasariliGuncellendi": "Seçilen ürün başarılı bir şekilde güncellendi.",
         "paletBasariliGuncellendi": "Seçilen palet başarılı bir şekilde güncellendi.",
         "paletBasariliSilindi": "Palet başarılı bir şekilde silindi.",
-        "evet": "Evet",
-        "hayir": "Hayır",
         "gecerliSeperatorKalinligiGir": "Lütfen geçerli bir Seperator kalınlığı giriniz"
         
     },
-    "global": {
-        "btnkaydet": "Kaydet",
-        "btnsil": "Sil"
-    },
+   
     "Hiz": {
         "v1": "V_50",
         "v2": "V_51",
@@ -126,11 +115,10 @@
         "v10": "V_59",
         "v11": "V_60"
     },
+   
     "DizilimYap": {
         "urunozellik": "Ürün Özellikleri:  ",
         "paletozellik": "Palet Özellikleri:  ",
-        "kopyala": "Kopyala  ",
-        "yapistir": "Yapıştır  ",
         "urunadet": "Ürün Adedi: 0",
         "kopyalabtn": "Kopyala",
         "btnKatTemizle": "Bu Katı Temizle",
@@ -140,7 +128,6 @@
         "btnSeciliUrunuSil": "Seçili Ürünü Sil",
         "katkopyala": "Kat Kopyala",
         "pozsecimi": "Pozisyon Seçimi",
-
         "txtAynalama": "Aynalama (KAPALI)",
         "txtAynalamaAcik": "Aynalama (AÇIK)",
         "txtXeksen": "X Ekseni",
@@ -200,17 +187,16 @@
         "btnManuelDiz": "Manuel Diz",
         "btnDizilimListesi": "Dizilim Sil",
         "programSeciniz": "Güncelleme için seçim yapınız",
-        "btnGuncelle": "Güncelle",
         "sayfaYukleniyor": "Sayfa yükleniyor...",
         "programKaydediliyor": "Program kaydediliyor...",
         "programGuncelleniyor": "Program güncelleniyor...",
         "programYukleniyor": "Program yükleniyor...",
-        "yukleniyor": "Yükleniyor...",
         "silinecekDizilimSecilmeli": "Lütfen silmek için bir dizilim seçiniz.",
         "dizilimSilmeMesaj": "'{0}' adlı dizilim ve buna bağlı programları silmek istediğinizden emin misiniz?",
         "dizilimVeBagliProgramlarSilindi": "Dizilim ve buna bağlı programlar başarıyla silindi."
 
     },
+  
     "Program": {
         "btnrecededuzen": "Reçete Düzenle",
         "btnCalistir": "Çalıştır",
@@ -220,11 +206,12 @@
         "silmeOnayMesaj": "'{0}' programını silmek istediğinizden emin misiniz?",
         "Silinemedi": "Program silinemedi.",
         "basariylaSilindi": "Program başarıyla silindi.",
-        "Secilmedi": "Program Seçilmedi",
+        "progSecilmedi": "Program Seçilmedi",
         "secilmedi": "Seçilmedi",
         "urunSecilmedi": "Ürün Seçilmedi",
         "paletSecilmedi": "Palet Seçilmedi"
     },
+    
     "HataMesajlari": {
         "urunadbos": "Ürün Adı Boş Bırakılamaz",
         "urunenbos": "Ürün Genişlik Boş Bırakılamaz",
@@ -236,18 +223,26 @@
         "paletenbos": "Palet Genişlik Boş Bırakılamaz",
         "paletboybos": "Palet Uzunluk Boş Bırakılamaz",
         "paletyukseklikbos": "Palet Yükseklik Boş Bırakılamaz",
-
-        "paletBasariliSilindi": "Palet başarılı bir şekilde silindi.",
         "paletSeciniz": "Lütfen bir palet seçiniz."
 
     },
+
     "ButtonKey": {
 
         "btntamam": "Tamam",
         "btnIptal": "Iptal",
-        "btnKaydet": "Kaydet"
+        "btnKaydet": "Kaydet",
+        "btnSil": "Sil",
+        "btnDevam": "Devam",
+        "btnEvet": "Evet",
+        "btnHayir": "Hayır",
+        "btnKopyala": "Kopyala",
+        "btnYapistir": "Yapıştır",
+        "btnGuncelle": "Güncelle"
+
 
     },
+   
     "UrunPaletSecimPopup": {
         
         "baslik": "Ürün,Palet ve Dizilim seçin",
@@ -259,13 +254,14 @@
         "dizilimlerYuklenemedi": "Dizilimler yüklenemedi"
 
     },
+    
     "ProgramKaydetPopup": {
         "anaBaslik": "Program Kaydet",
         "baslik": "Program Bilgisi",
         "programAdi": "Program Adı",
         "aciklama": "Açıklama",
-        "zorunluAlan": " ( * Zorunlu)"
     },
+  
     "GruplamaAyarPopup": {
         "baslik": "Bırakma Ayarları",
         "gripperAcilmaYonu": "Gripper açılma yönü",
@@ -274,6 +270,7 @@
         "gripperAciklama": "Gripperın taşıyıcı kenarının açılacağı yönü gösterir."
 
     },
+    
     "DizilimKaydetPopup": {
         "dizilimBilgisi": "Dizilim Bilgisi",
         "SeperatorGirilecek": "Seperator kullanılacak mı?",

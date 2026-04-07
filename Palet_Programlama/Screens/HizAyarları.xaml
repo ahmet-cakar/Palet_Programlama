@@ -241,7 +241,7 @@
       <Border>
         <StackPanel HorizontalAlignment="Left">
           <Button x:Name="BtnHizKaydet" Style="{StaticResource button_template}" Height="45" Width="200"  Background="{StaticResource button_backgroundgreen}"
-                        Margin="50,20,0,0" Content="{Binding Source='global.btnkaydet',Converter={StaticResource LanguageConverter}}" Click="BtnHizKaydet_Click"/>
+                        Margin="50,20,0,0" Content="{Binding Source='ButtonKey.Kaydet',Converter={StaticResource LanguageConverter}}" Click="BtnHizKaydet_Click"/>
         </StackPanel>
       </Border>
     </Grid>

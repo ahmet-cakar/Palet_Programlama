@@ -324,8 +324,8 @@
                          Style="{StaticResource border_template}">
                      <DockPanel Grid.Row="1" Grid.Column="3">
                                             <!-- Sağ altta buton -->
-              <Button  Content="{Binding Source='ButtonKey.btnDevam',Converter={StaticResource LanguageConverter}}"
-                            Background="{StaticResource button_background}" Style="{StaticResource button_template}" />
+              <Button x:Name="btnAyarlar" Content="{Binding Source='ButtonKey.btnDevam',Converter={StaticResource LanguageConverter}}"
+                            Background="{StaticResource button_background}" Style="{StaticResource button_template}"  Width="75" Click="btnAyarlar_Click" />
 
                                             <!-- Sol alttaki açıklama -->
                                             <StackPanel  DockPanel.Dock="Bottom"

@@ -65,6 +65,9 @@
     <Compile Include="Popups\OnayKutusu.xaml.cs">
       <DependentUpon>OnayKutusu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Ayarlar.xaml.cs">
+      <DependentUpon>Ayarlar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Dizilim\Models\KatUrunu.cs" />
     <Compile Include="Screens\Dizilim\Models\DizilimKayitModel.cs" />
     <Compile Include="Screens\Dizilim\Models\DizilimUrunKayitModel.cs" />
@@ -147,6 +150,10 @@
       <DependentUpon>UstMenu.xaml</DependentUpon>
     </Compile>
     <Page Include="Popups\OnayKutusu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Screens\Ayarlar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -540,6 +547,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Screens\GenelAyarlar\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

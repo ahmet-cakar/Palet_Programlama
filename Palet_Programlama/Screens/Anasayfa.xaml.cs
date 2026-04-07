@@ -1,5 +1,6 @@
 ﻿using Palet_Programlama.Languages;
 using Palet_Programlama.Screens.UrunPaletEkle.Models;
+
 using Palet_Programlama.UserController;
 using System.Windows;
 using System.Windows.Controls;
@@ -102,6 +103,11 @@ namespace Palet_Programlama.Screens
                     MainFrame.Navigate(new GruplamaYap(MainFrame, pencere.SecilenUrun, pencere.SecilenPalet, pencere.SecilenDizilimAdi));
                 }
             }
+        }
+
+        private void btnAyarlar_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Ayarlar(MainFrame));
         }
     }
 }

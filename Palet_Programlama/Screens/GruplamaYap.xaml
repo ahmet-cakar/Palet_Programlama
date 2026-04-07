@@ -6,7 +6,6 @@
       xmlns:controls="clr-namespace:Palet_Programlama.UserController"
       xmlns:language="clr-namespace:Palet_Programlama.Languages"
       mc:Ignorable="d" 
-      
       d:DesignHeight="768" d:DesignWidth="1366"
       Title="GruplamaYap">
   <Page.Resources>

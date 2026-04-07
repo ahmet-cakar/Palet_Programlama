@@ -28,7 +28,7 @@
         "anaBaslik": "Program Save",
         "baslik": "Program Info",
         "programAdi": "Program Name",
-        "aciklama": "Description",
+        "aciklama": "Description"
     },
     "DizilimKaydetPopup": {
         "dizilimBilgisi": "Layer Information",
@@ -267,7 +267,17 @@
         "gripperYonu": "Gripper Direction",
         "gripperAciklama": "It shows the direction in which the carrier edge of the gripper will be opened."
 
+    },
+    "Ayarlar": {
+        "kullanciSifreZorunlu": "Please enter username and password.",
+        "kullaniciAdiMevcut": "This username already exists. Please change the username.",
+        "kullanciEklemeBasarisiz": "Failed to add user. Please try again.",
+        "kullaniciSeciniz": "Please select a user.",
+        "kullaniciGuncellemeBasarisiz": "Failed to update user. Please try again.",
+        "kullaniciSilmeBasarisiz": "The user could not be deleted. Please try again.",
+        "kullaniciGuncellemeBasarili": "The user has been updated successfully.",
+        "kullaniciSilmeBasarili": "The user has been deleted successfully.",
+        "kullaniciEkleBasarili": "User added successfully."
     }
-
 
 }

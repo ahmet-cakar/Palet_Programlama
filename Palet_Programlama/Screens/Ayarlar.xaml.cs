@@ -1,5 +1,6 @@
 ﻿using Palet_Programlama.Models;
 using Palet_Programlama.Services;
+using Palet_Programlama.UserController;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
@@ -71,13 +72,13 @@ namespace Palet_Programlama.Screens
 
             if (string.IsNullOrWhiteSpace(kullaniciAdi) || string.IsNullOrWhiteSpace(sifre))
             {
-                MessageBox.Show("Lütfen kullanıcı adı ve şifre giriniz.");
+                BildirimGoster("Ayarlar.kullaniciSifreZorunlu");
                 return;
             }
 
             if (_kullanicilarServisi.KullaniciAdiVarMi(kullaniciAdi))
             {
-                MessageBox.Show("Bu kullanıcı adı zaten mevcut.");
+                BildirimGoster("Ayarlar.kullaniciAdiMevcut");
                 return;
             }
 
@@ -94,10 +95,10 @@ namespace Palet_Programlama.Screens
 
             if (!eklendi)
             {
-                MessageBox.Show("Kullanıcı eklenemedi.");
+                BildirimGoster("Ayarlar.kullaniciEklemeBasarisiz");
                 return;
             }
-
+            BildirimGoster("Ayarlar.kullaniciEklemeBasarili");
             KullanicilariYukle();
             AlanlariTemizle();
         }
@@ -106,7 +107,7 @@ namespace Palet_Programlama.Screens
         {
             if (_seciliKullanici == null)
             {
-                MessageBox.Show("Lütfen güncellenecek kullanıcıyı seçiniz.");
+                BildirimGoster("Ayarlar.kullaniciSeciniz");
                 return;
             }
 
@@ -115,13 +116,13 @@ namespace Palet_Programlama.Screens
 
             if (string.IsNullOrWhiteSpace(kullaniciAdi) || string.IsNullOrWhiteSpace(sifre))
             {
-                MessageBox.Show("Lütfen kullanıcı adı ve şifre giriniz.");
+                BildirimGoster("Ayarlar.kullaniciSifreZorunlu");
                 return;
             }
 
             if (_kullanicilarServisi.KullaniciAdiVarMi(kullaniciAdi, _seciliKullanici.Id))
             {
-                MessageBox.Show("Bu kullanıcı adı zaten mevcut.");
+                BildirimGoster("Ayarlar.kullaniciAdiMevcut");
                 return;
             }
 
@@ -132,10 +133,10 @@ namespace Palet_Programlama.Screens
 
             if (!guncellendi)
             {
-                MessageBox.Show("Kullanıcı güncellenemedi.");
+                BildirimGoster("Ayarlar.kullaniciGuncellemeBasarisiz");
                 return;
             }
-
+            BildirimGoster("Ayarlar.kullaniciGuncellemeBasarili");
             KullanicilariYukle();
             AlanlariTemizle();
         }
@@ -144,7 +145,7 @@ namespace Palet_Programlama.Screens
         {
             if (_seciliKullanici == null)
             {
-                MessageBox.Show("Lütfen silinecek kullanıcıyı seçiniz.");
+                BildirimGoster("Ayarlar.kullaniciSeciniz");
                 return;
             }
 
@@ -152,10 +153,10 @@ namespace Palet_Programlama.Screens
 
             if (!silindi)
             {
-                MessageBox.Show("Kullanıcı silinemedi.");
+                BildirimGoster("Ayarlar.kullaniciSilmeBasarisiz");
                 return;
             }
-
+            BildirimGoster("Ayarlar.kullaniciSilmeBasarili");
             KullanicilariYukle();
             AlanlariTemizle();
         }
@@ -179,5 +180,13 @@ namespace Palet_Programlama.Screens
                 _sifreGorunurMu = true;
             }
         }
+
+        private void BildirimGoster(string mesajKey, string butonKey = "ButtonKey.btntamam")
+        {
+            var pencere = new BildirimKutusu();
+            pencere.MesajGonder(butonKey, mesajKey);
+            pencere.ShowDialog();
+        }
+
     }
 }

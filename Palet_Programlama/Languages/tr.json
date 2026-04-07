@@ -282,4 +282,17 @@
         "katUzerine": "{0}. kat üzerine",
         "SeperatorKalingligi": "Seperator Kalınlığı (mm)"
     }
+
+    "Ayarlar": {
+        "kullanciSifreZorunlu": "Lütfen kullanıcı adı ve şifre giriniz.",
+        "kullaniciAdiMevcut": "Bu kullanıcı adı zaten mevcut.Lütfen kullanıcı adını değiştirin.",
+        "kullanciEklemeBasarisiz": "Kullanıcı eklenemedi. Lütfen tekrar deneyiniz.",
+        "kullaniciSeciniz": "Lütfen bir kullanıcı seçiniz.",
+        "kullaniciGuncellemeBasarisiz": "Kullanıcı güncellenemedi. Lütfen tekrar deneyiniz.",
+        "kullaniciSilmeBasarisiz": "Kullanıcı silinemedi. Lütfen tekrar deneyiniz.",
+        "kullaniciGuncellemeBasarili": "Kullanıcı başarıyla güncellendi.",
+        "kullaniciSilmeBasarili": "Kullanıcı başarıyla silindi.",
+        "kullaniciEkleBasarili": "Kullanıcı başarıyla eklendi."
+    }
+
 }

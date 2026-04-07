@@ -19,8 +19,6 @@ namespace Palet_Programlama.Screens
 
         public Anasayfa(Frame Main)
         {
-            string Dil = KullaniciDil.Dil;
-            LanguageConverter.LoadLanguage($"{Dil}");
             InitializeComponent();
             this.MainFrame = Main;
             userpanelborder1.Visibility = Visibility.Hidden;
@@ -60,7 +58,6 @@ namespace Palet_Programlama.Screens
 
         private void Kullaniciicon_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            textuser.Text = KullaniciDil.Kullaniciadi;
 
             if (userpanelborder1.Visibility == Visibility.Hidden)
             {

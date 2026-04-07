@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Palet_Programlama.Languages;
+using Palet_Programlama.Services;
+using Palet_Programlama.UserController;
+using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -12,13 +16,18 @@ namespace Palet_Programlama.Screens
     /// </summary>
     public partial class Kullanici : Page
     {
-        private readonly Frame MainFrame;
-
+        private readonly Frame _mainFrame;
+        private readonly KullanicilarServisi _kullanicilarServisi;
         public Kullanici(Frame Main)
         {
             InitializeComponent();
-            this.MainFrame = Main;
+            this._mainFrame = Main;
+            _kullanicilarServisi = new KullanicilarServisi();
+            
         }
+
+     
+
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             UpdateKullaniciPlaceholder();
@@ -72,24 +81,12 @@ namespace Palet_Programlama.Screens
             }
         }
 
-        private void giris_button_Click(object sender, RoutedEventArgs e)
-        {
-            if ((kullanici_textbox.Text == "" || kullanici_textbox.Text == "Admin") && passwordBox.Password == "")
-            {
-                KullaniciDil.Kullaniciadi = "Admin";
-                ImageSource currentImage = DilBtn.Source;
-                string currentUri = currentImage.ToString();
-                if (currentUri.Contains("eng"))
-                {
-                    KullaniciDil.Dil = "eng";
-                }
-                else if (currentUri.Contains("turkce"))
-                {
-                    KullaniciDil.Dil = "tr";
-                }
-                MainFrame.Navigate(new Anasayfa(MainFrame));
-            }
 
+        private void BildirimGoster(string mesajKey, string butonKey = "ButtonKey.btntamam")
+        {
+            var pencere = new BildirimKutusu();
+            pencere.MesajGonder(butonKey, mesajKey);
+            pencere.ShowDialog();
         }
 
         private void DilBtn_MouseDown(object sender, MouseButtonEventArgs e)
@@ -147,18 +144,46 @@ namespace Palet_Programlama.Screens
             }
             if (newUri.Contains("eng"))
             {
+                LanguageConverter.DilYukle("eng");
                 KullaniciPlaceholder.Text = "User";
                 passwordPlaceholder.Text = "Password";
-                giris_button.Content = "Login";
+                btnGiris.Content = "Login";
             }
             else if (newUri.Contains("turkce_kapali"))
             {
+                LanguageConverter.DilYukle("tr");
                 KullaniciPlaceholder.Text = "Kullanici Adı";
                 passwordPlaceholder.Text = "Şifre";
-                giris_button.Content = "Giriş";
+                btnGiris.Content = "Giriş";
             }
 
         }
 
+        private void btnGiris_Click(object sender, RoutedEventArgs e)
+        {
+          
+            string kullaniciAdi = kullanici_textbox.Text.Trim();
+            string sifre = passwordBox.Password.Trim();
+
+            if (string.IsNullOrWhiteSpace(kullaniciAdi) || string.IsNullOrWhiteSpace(sifre))
+            {
+                BildirimGoster("Kullanıcı adı ve şifre boş bırakılamaz.");
+                return;
+            }
+
+            var kullanicilar = _kullanicilarServisi.TumKullanicilariGetir();
+
+            var kullanici = kullanicilar.FirstOrDefault(x =>
+                x.KullaniciAdi.Equals(kullaniciAdi, StringComparison.OrdinalIgnoreCase) &&
+                x.Sifre == sifre);
+
+            if (kullanici == null)
+            {
+                BildirimGoster("Kullanıcı adı veya şifre hatalı.");
+                return;
+            }
+
+            _mainFrame.Navigate(new Anasayfa(_mainFrame));
+        }
     }
 }

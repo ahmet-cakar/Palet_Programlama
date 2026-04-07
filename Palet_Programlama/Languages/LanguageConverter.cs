@@ -12,25 +12,11 @@ namespace Palet_Programlama.Languages
         public LanguageConverter() { }
 
         // Dil dosyasını yüklemek için kullanılan metod
-        public static void LoadLanguage(string languageCode)
+
+        public static void DilYukle(string languageCode)
         {
             string filePath = DosyaYoluBul.DosyaGetir("Languages", $"{languageCode}.json");
-            //string filePath = $"C:\\Users\\yunusemre.kara\\source\\repos\\Palet_Programlama\\Palet_Programlama\\Languages\\{languageCode}.json";
 
-            if (File.Exists(filePath))
-            {
-                string json = File.ReadAllText(filePath);
-                _languageData = JObject.Parse(json);
-            }
-            else
-            {
-                throw new FileNotFoundException($"Dil dosyası bulunamadı: {filePath}");
-            }
-        }
-        public static void LoadLanguage2(string languageCode)
-        {
-            string filePath = DosyaYoluBul.DosyaGetir2("Languages", $"{languageCode}.json");
-            //string filePath = $"C:\\Users\\yunusemre.kara\\source\\repos\\Palet_Programlama\\Palet_Programlama\\Languages\\{languageCode}.json";
 
             if (File.Exists(filePath))
             {
@@ -48,7 +34,7 @@ namespace Palet_Programlama.Languages
         {
             if (_languageData == null)
             {
-                LoadLanguage2("tr");
+                DilYukle("tr");
             }
 
             var tokens = key.Split('.'); // Anahtarları parçalara ayırıyoruz

@@ -12,7 +12,12 @@
         <Image Source="pack://application:,,,/Images/gradient_background.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="UniformToFill"/>
         <Grid>
       <Image Source="pack://application:,,,/Images/Kullanici/dil_turkce_kapali.png" HorizontalAlignment="Right" 
-                   VerticalAlignment="Top" Height="150" Width="130"  Margin="0,0,20,0" x:Name="DilBtn" MouseDown="DilBtn_MouseDown" Stretch="UniformToFill"/>
+                   VerticalAlignment="Top" 
+                   Height="150" Width="130" 
+                   Margin="0,0,20,0" 
+                   x:Name="DilBtn" 
+                   MouseDown="DilBtn_MouseDown" 
+                   Stretch="UniformToFill"/>
         </Grid>
 
         <StackPanel HorizontalAlignment="Center"  VerticalAlignment="Center" >
@@ -60,11 +65,18 @@
                 </TextBlock>
 
             </Grid>
-            <Grid>
-                <Button x:Name="giris_button" Style="{StaticResource button_template}"
+              <CheckBox x:Name="chkBeniHatirla"
+                  Content="Beni Hatırla"
+                  Foreground="White"
+                  FontSize="18"
+                  Margin="10,15,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Center"/>
+              <Grid>
+                <Button x:Name="btnGiris" Style="{StaticResource button_template}"
                         Background="{StaticResource button_background}" Content="Giriş" 
-                        Width="170" Click="giris_button_Click" Height="40" Margin="0,20,100,0"
-                        FontSize="20"/>
+                        Width="170"  Height="40" Margin="0,20,100,0"
+                        FontSize="20" Click="btnGiris_Click"/>
             </Grid>
          
         </StackPanel>

@@ -118,7 +118,6 @@
     <Compile Include="Screens\Statics\ResimYollari.cs" />
     <Compile Include="Screens\Helpers\DosyaYoluBul.cs" />
     <Compile Include="Languages\LanguageConverter.cs" />
-    <Compile Include="Screens\Helpers\KullaniciDil.cs" />
     <Compile Include="Screens\DizilimYap.xaml.cs">
       <DependentUpon>DizilimYap.xaml</DependentUpon>
     </Compile>

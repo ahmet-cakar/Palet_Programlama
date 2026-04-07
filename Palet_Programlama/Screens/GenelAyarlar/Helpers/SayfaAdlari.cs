@@ -9,7 +9,6 @@
         public const string HizAyarlari = "HizAyarlari";
         public const string Alarmlar = "Alarmlar";
         public const string Izleme = "Izleme";
-        public const string Komut = "Komut";
         public const string Ayarlar = "Ayarlar";
     }
 }

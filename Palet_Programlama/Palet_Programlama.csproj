@@ -73,7 +73,9 @@
     <Compile Include="Screens\Dizilim\Models\DizilimUrunKayitModel.cs" />
     <Compile Include="Screens\GenelAyarlar\Models\KullaniciModel.cs" />
     <Compile Include="Screens\GenelAyarlar\Helpers\SayfaAdlari.cs" />
+    <Compile Include="Screens\GenelAyarlar\Services\KullaniciFormServisi.cs" />
     <Compile Include="Screens\GenelAyarlar\Services\KullanicilarServisi.cs" />
+    <Compile Include="Screens\GenelAyarlar\Services\KullaniciYetkiServisi.cs" />
     <Compile Include="Screens\GruplamaYap.xaml.cs">
       <DependentUpon>GruplamaYap.xaml</DependentUpon>
     </Compile>

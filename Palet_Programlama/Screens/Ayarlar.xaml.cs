@@ -17,14 +17,22 @@ namespace Palet_Programlama.Screens
         private List<KullaniciModel> _kullanicilar = new();
         private KullaniciModel? _seciliKullanici;
         private bool _sifreGorunurMu = false;
+        private KullaniciModel? _seciliYetkiKullanici;
+        private readonly KullaniciYetkiServisi _kullaniciYetkiServisi;
+        private readonly KullaniciFormServisi _kullaniciFormServisi;
 
         public Ayarlar(Frame main)
         {
             InitializeComponent();
             _mainFrame = main;
             UstMenuControl.AktifSayfa = "Ayarlar";
+
             _kullanicilarServisi = new KullanicilarServisi();
+            _kullaniciYetkiServisi = new KullaniciYetkiServisi();
+            _kullaniciFormServisi = new KullaniciFormServisi();
+
             KullanicilariYukle();
+            lstAyarMenusu.SelectedIndex = 0;
 
         }
 
@@ -33,7 +41,34 @@ namespace Palet_Programlama.Screens
             _kullanicilar = _kullanicilarServisi.TumKullanicilariGetir();
             lstKullaniciListesi.ItemsSource = null;
             lstKullaniciListesi.ItemsSource = _kullanicilar;
-            txtKayiSayisi.Text = _kullanicilar.Count.ToString() + " Kayıt";
+            txtKayiSayisi.Text = $"{_kullanicilar.Count} Kayıt";
+            YetkiKullanicilariniYukle();
+        }
+
+        private void lstYetkiKullaniciListesi_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lstYetkiKullaniciListesi.SelectedItem is not KullaniciModel secili)
+                return;
+
+            _seciliYetkiKullanici = secili;
+            txtSeciliYetkiKullanici.Text = $"Seçili Kullanıcı: {secili.KullaniciAdi}";
+
+            _kullaniciYetkiServisi.YetkileriCheckboxlaraYansit(
+                secili,
+                chkUrunEkle,
+                chkDizilimYap,
+                chkGruplamaYap,
+                chkProgramlar,
+                chkHizAyarlari,
+                chkAlarmlar,
+                chkIzleme,
+                chkAyarlar);
+        }
+
+        private void YetkiKullanicilariniYukle()
+        {
+            lstYetkiKullaniciListesi.ItemsSource = null;
+            lstYetkiKullaniciListesi.ItemsSource = _kullanicilar;
         }
 
         private void lstKullaniciListesi_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -47,7 +82,6 @@ namespace Palet_Programlama.Screens
             txtKullaniciSifre.Password = secili.Sifre;
             txtKullaniciSifreAcik.Text = secili.Sifre;
         }
-
         private void AlanlariTemizle()
         {
             txtKullaniciAdi.Text = string.Empty;
@@ -76,7 +110,7 @@ namespace Palet_Programlama.Screens
             string kullaniciAdi = txtKullaniciAdi.Text.Trim();
             string sifre = AktifSifreyiAl().Trim();
 
-            if (string.IsNullOrWhiteSpace(kullaniciAdi) || string.IsNullOrWhiteSpace(sifre))
+            if (!_kullaniciFormServisi.BilgilerGecerliMi(kullaniciAdi, sifre))
             {
                 BildirimGoster("Ayarlar.kullaniciSifreZorunlu");
                 return;
@@ -88,14 +122,7 @@ namespace Palet_Programlama.Screens
                 return;
             }
 
-            var yeniKullanici = new KullaniciModel
-            {
-                KullaniciAdi = kullaniciAdi,
-                Sifre = sifre,
-                Rol = "Operator",
-                AktifMi = true,
-                YetkiliSayfalar = new List<string>()
-            };
+            var yeniKullanici = _kullaniciFormServisi.YeniKullaniciOlustur(kullaniciAdi, sifre);
 
             bool eklendi = _kullanicilarServisi.KullaniciEkle(yeniKullanici);
 
@@ -104,6 +131,7 @@ namespace Palet_Programlama.Screens
                 BildirimGoster("Ayarlar.kullaniciEklemeBasarisiz");
                 return;
             }
+
             BildirimGoster("Ayarlar.kullaniciEklemeBasarili");
             KullanicilariYukle();
             AlanlariTemizle();
@@ -120,7 +148,7 @@ namespace Palet_Programlama.Screens
             string kullaniciAdi = txtKullaniciAdi.Text.Trim();
             string sifre = AktifSifreyiAl().Trim();
 
-            if (string.IsNullOrWhiteSpace(kullaniciAdi) || string.IsNullOrWhiteSpace(sifre))
+            if (!_kullaniciFormServisi.BilgilerGecerliMi(kullaniciAdi, sifre))
             {
                 BildirimGoster("Ayarlar.kullaniciSifreZorunlu");
                 return;
@@ -132,8 +160,7 @@ namespace Palet_Programlama.Screens
                 return;
             }
 
-            _seciliKullanici.KullaniciAdi = kullaniciAdi;
-            _seciliKullanici.Sifre = sifre;
+            _kullaniciFormServisi.KullaniciyiGuncelle(_seciliKullanici, kullaniciAdi, sifre);
 
             bool guncellendi = _kullanicilarServisi.KullaniciGuncelle(_seciliKullanici);
 
@@ -142,6 +169,7 @@ namespace Palet_Programlama.Screens
                 BildirimGoster("Ayarlar.kullaniciGuncellemeBasarisiz");
                 return;
             }
+
             BildirimGoster("Ayarlar.kullaniciGuncellemeBasarili");
             KullanicilariYukle();
             AlanlariTemizle();
@@ -194,5 +222,63 @@ namespace Palet_Programlama.Screens
             pencere.ShowDialog();
         }
 
+        private void lstAyarMenusu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            panelKullaniciYonetimi.Visibility = Visibility.Collapsed;
+            panelYetkiAyari.Visibility = Visibility.Collapsed;
+            panelVarsayilanSistemAyarlari.Visibility = Visibility.Collapsed;
+            panelYedekleme.Visibility = Visibility.Collapsed;
+
+            switch (lstAyarMenusu.SelectedIndex)
+            {
+                case 0:
+                    panelKullaniciYonetimi.Visibility = Visibility.Visible;
+                    break;
+                case 1:
+                    panelYetkiAyari.Visibility = Visibility.Visible;
+                    break;
+                case 2:
+                    panelVarsayilanSistemAyarlari.Visibility = Visibility.Visible;
+                    break;
+                case 3:
+                    panelYedekleme.Visibility = Visibility.Visible;
+                    break;
+            }
+        }
+
+        private void btnTumAyarlariKaydet_Click(object sender, RoutedEventArgs e)
+        {
+            if (_seciliYetkiKullanici == null)
+            {
+                BildirimGoster("Ayarlar.kullaniciSeciniz");
+                return;
+            }
+
+            var yetkiler = _kullaniciYetkiServisi.SeciliYetkileriTopla(
+                chkUrunEkle,
+                chkDizilimYap,
+                chkGruplamaYap,
+                chkProgramlar,
+                chkHizAyarlari,
+                chkAlarmlar,
+                chkIzleme,
+                chkAyarlar);
+
+            _kullaniciYetkiServisi.YetkileriAta(_seciliYetkiKullanici, yetkiler);
+
+            bool guncellendi = _kullanicilarServisi.KullaniciGuncelle(_seciliYetkiKullanici);
+
+            if (!guncellendi)
+            {
+                BildirimGoster("Ayarlar.kullaniciGuncellemeBasarisiz");
+                return;
+            }
+
+            BildirimGoster("Ayarlar.kullaniciGuncellemeBasarili");
+            KullanicilariYukle();
+            lstYetkiKullaniciListesi.SelectedItem = null;
+            _seciliYetkiKullanici = null;
+            txtSeciliYetkiKullanici.Text = "Seçili Kullanıcı:";
+        }
     }
 }

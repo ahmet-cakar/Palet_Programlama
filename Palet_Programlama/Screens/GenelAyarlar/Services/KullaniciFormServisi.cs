@@ -12,26 +12,27 @@ namespace Palet_Programlama.Services
                 && !string.IsNullOrWhiteSpace(sifre);
         }
 
-        public KullaniciModel YeniKullaniciOlustur(string kullaniciAdi, string sifre)
+        public KullaniciModel YeniKullaniciOlustur(string kullaniciAdi, string sifre, string rol)
         {
             return new KullaniciModel
             {
                 Id = Guid.NewGuid().ToString(),
                 KullaniciAdi = kullaniciAdi.Trim(),
                 Sifre = sifre.Trim(),
-                Rol = "Operator",
+                Rol = rol,
                 AktifMi = true,
                 YetkiliSayfalar = new List<string>()
             };
         }
 
-        public void KullaniciyiGuncelle(KullaniciModel kullanici, string kullaniciAdi, string sifre)
+        public void KullaniciyiGuncelle(KullaniciModel kullanici, string kullaniciAdi, string sifre, string rol)
         {
             if (kullanici == null)
                 return;
 
             kullanici.KullaniciAdi = kullaniciAdi.Trim();
             kullanici.Sifre = sifre.Trim();
+            kullanici.Rol = rol;
         }
     }
 }

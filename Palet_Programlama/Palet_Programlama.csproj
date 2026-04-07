@@ -166,6 +166,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Screens\GenelAyarlar\Styles\AyarlarStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Screens\GruplamaYap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -7,19 +7,17 @@ using System.Windows.Controls;
 
 namespace Palet_Programlama.Screens
 {
-    /// <summary>
-    /// Interaction logic for Ayarlar.xaml
-    /// </summary>
     public partial class Ayarlar : Page
     {
         private readonly Frame _mainFrame;
         private readonly KullanicilarServisi _kullanicilarServisi;
-        private List<KullaniciModel> _kullanicilar = new();
-        private KullaniciModel? _seciliKullanici;
-        private bool _sifreGorunurMu = false;
-        private KullaniciModel? _seciliYetkiKullanici;
         private readonly KullaniciYetkiServisi _kullaniciYetkiServisi;
         private readonly KullaniciFormServisi _kullaniciFormServisi;
+
+        private List<KullaniciModel> _kullanicilar = new();
+        private KullaniciModel? _seciliKullanici;
+        private KullaniciModel? _seciliYetkiKullanici;
+        private bool _sifreGorunurMu = false;
 
         public Ayarlar(Frame main)
         {
@@ -33,7 +31,7 @@ namespace Palet_Programlama.Screens
 
             KullanicilariYukle();
             lstAyarMenusu.SelectedIndex = 0;
-
+            cmbRolSecimi.SelectedIndex = 0;
         }
 
         private void KullanicilariYukle()
@@ -43,6 +41,12 @@ namespace Palet_Programlama.Screens
             lstKullaniciListesi.ItemsSource = _kullanicilar;
             txtKayiSayisi.Text = $"{_kullanicilar.Count} Kayıt";
             YetkiKullanicilariniYukle();
+        }
+
+        private void YetkiKullanicilariniYukle()
+        {
+            lstYetkiKullaniciListesi.ItemsSource = null;
+            lstYetkiKullaniciListesi.ItemsSource = _kullanicilar;
         }
 
         private void lstYetkiKullaniciListesi_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -65,12 +69,6 @@ namespace Palet_Programlama.Screens
                 chkAyarlar);
         }
 
-        private void YetkiKullanicilariniYukle()
-        {
-            lstYetkiKullaniciListesi.ItemsSource = null;
-            lstYetkiKullaniciListesi.ItemsSource = _kullanicilar;
-        }
-
         private void lstKullaniciListesi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (lstKullaniciListesi.SelectedItem is not KullaniciModel secili)
@@ -81,7 +79,15 @@ namespace Palet_Programlama.Screens
             txtKullaniciAdi.Text = secili.KullaniciAdi;
             txtKullaniciSifre.Password = secili.Sifre;
             txtKullaniciSifreAcik.Text = secili.Sifre;
+
+            if (secili.Rol == "Admin")
+                cmbRolSecimi.SelectedIndex = 2;
+            else if (secili.Rol == "Operator")
+                cmbRolSecimi.SelectedIndex = 1;
+            else
+                cmbRolSecimi.SelectedIndex = 0;
         }
+
         private void AlanlariTemizle()
         {
             txtKullaniciAdi.Text = string.Empty;
@@ -95,6 +101,7 @@ namespace Palet_Programlama.Screens
 
             lstKullaniciListesi.SelectedItem = null;
             _seciliKullanici = null;
+            cmbRolSecimi.SelectedIndex = 0;
         }
 
         private string AktifSifreyiAl()
@@ -104,15 +111,32 @@ namespace Palet_Programlama.Screens
                 : txtKullaniciSifreAcik.Text;
         }
 
+        private string SeciliRoluAl()
+        {
+            if (cmbRolSecimi.SelectedItem is ComboBoxItem seciliItem &&
+                seciliItem.Content != null)
+            {
+                return seciliItem.Content.ToString() ?? "Seçim Yapılmadı";
+            }
+
+            return "Seçim Yapılmadı";
+        }
 
         private void btnKullaniciEkle_Click(object sender, RoutedEventArgs e)
         {
             string kullaniciAdi = txtKullaniciAdi.Text.Trim();
             string sifre = AktifSifreyiAl().Trim();
+            string rol = SeciliRoluAl();
 
             if (!_kullaniciFormServisi.BilgilerGecerliMi(kullaniciAdi, sifre))
             {
                 BildirimGoster("Ayarlar.kullaniciSifreZorunlu");
+                return;
+            }
+
+            if (rol == "Seçim Yapılmadı")
+            {
+                BildirimGoster("Ayarlar.rolSeciniz");
                 return;
             }
 
@@ -122,7 +146,7 @@ namespace Palet_Programlama.Screens
                 return;
             }
 
-            var yeniKullanici = _kullaniciFormServisi.YeniKullaniciOlustur(kullaniciAdi, sifre);
+            var yeniKullanici = _kullaniciFormServisi.YeniKullaniciOlustur(kullaniciAdi, sifre, rol);
 
             bool eklendi = _kullanicilarServisi.KullaniciEkle(yeniKullanici);
 
@@ -147,10 +171,17 @@ namespace Palet_Programlama.Screens
 
             string kullaniciAdi = txtKullaniciAdi.Text.Trim();
             string sifre = AktifSifreyiAl().Trim();
+            string rol = SeciliRoluAl();
 
             if (!_kullaniciFormServisi.BilgilerGecerliMi(kullaniciAdi, sifre))
             {
                 BildirimGoster("Ayarlar.kullaniciSifreZorunlu");
+                return;
+            }
+
+            if (rol == "Seçim Yapılmadı")
+            {
+                BildirimGoster("Ayarlar.rolSeciniz");
                 return;
             }
 
@@ -160,7 +191,7 @@ namespace Palet_Programlama.Screens
                 return;
             }
 
-            _kullaniciFormServisi.KullaniciyiGuncelle(_seciliKullanici, kullaniciAdi, sifre);
+            _kullaniciFormServisi.KullaniciyiGuncelle(_seciliKullanici, kullaniciAdi, sifre, rol);
 
             bool guncellendi = _kullanicilarServisi.KullaniciGuncelle(_seciliKullanici);
 
@@ -190,6 +221,7 @@ namespace Palet_Programlama.Screens
                 BildirimGoster("Ayarlar.kullaniciSilmeBasarisiz");
                 return;
             }
+
             BildirimGoster("Ayarlar.kullaniciSilmeBasarili");
             KullanicilariYukle();
             AlanlariTemizle();
@@ -248,7 +280,6 @@ namespace Palet_Programlama.Screens
 
         private void btnTumAyarlariKaydet_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void btnYetkileriKaydet_Click(object sender, RoutedEventArgs e)
@@ -285,7 +316,5 @@ namespace Palet_Programlama.Screens
             _seciliYetkiKullanici = null;
             txtSeciliYetkiKullanici.Text = "Seçili Kullanıcı:";
         }
-
-   
     }
 }

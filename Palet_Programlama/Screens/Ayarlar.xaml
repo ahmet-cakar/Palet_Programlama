@@ -59,6 +59,21 @@
       <Setter Property="FontSize" Value="18"/>
       <Setter Property="TextWrapping" Value="Wrap"/>
     </Style>
+
+    <Style x:Key="YetkiCheckBoxStyle" TargetType="CheckBox">
+      <Setter Property="FontSize" Value="17"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+      <Setter Property="Margin" Value="10,0,0,0"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="RenderTransformOrigin" Value="0,0.5"/>
+      <Setter Property="LayoutTransform">
+        <Setter.Value>
+          <ScaleTransform ScaleX="1.4" ScaleY="1.4"/>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
   </Page.Resources>
 
   <Grid Margin="12">
@@ -145,8 +160,10 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="12"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="12"/>
+                <RowDefinition Height="18"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="16"/>
+                <RowDefinition Height="Auto"/>
               </Grid.RowDefinitions>
 
               <Border Grid.Row="0"
@@ -489,9 +506,9 @@
 
               <!-- Sayfa yetkileri -->
               <Border Grid.Column="2"
-        Background="#222222"
-        CornerRadius="12"
-        Padding="18">
+                Background="#222222"
+                CornerRadius="12"
+                Padding="18">
                 <Grid>
                   <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -499,6 +516,8 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="18"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="Auto"/>
                   </Grid.RowDefinitions>
 
                   <TextBlock Text="Sayfa Yetkileri"
@@ -525,65 +544,97 @@
                       <RowDefinition Height="12"/>
                       <RowDefinition Height="Auto"/>
                       <RowDefinition Height="12"/>
+
                       <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
                     <Border Grid.Row="0" Grid.Column="0" Background="#2B2B2B" CornerRadius="10" Padding="14">
                       <CheckBox x:Name="chkUrunEkle"
-                          Content="Ürün/Palet Ekle"
-                          Foreground="White"
-                          FontSize="17"/>
+                            Content="Ürün/Palet Ekle"
+                            Style="{StaticResource YetkiCheckBoxStyle}"
+                            >
+
+                      </CheckBox>
+
                     </Border>
 
                     <Border Grid.Row="0" Grid.Column="2" Background="#2B2B2B" CornerRadius="10" Padding="14">
                       <CheckBox x:Name="chkDizilimYap"
-                          Content="Dizilim Oluştur"
-                          Foreground="White"
-                          FontSize="17"/>
+                       Content="Dizilim Oluştur"
+                       Style="{StaticResource YetkiCheckBoxStyle}"
+                        >
+
+                      </CheckBox>
                     </Border>
 
                     <Border Grid.Row="2" Grid.Column="0" Background="#2B2B2B" CornerRadius="10" Padding="14">
                       <CheckBox x:Name="chkGruplamaYap"
-                          Content="Gruplama Oluştur"
-                          Foreground="White"
-                          FontSize="17"/>
+                        Style="{StaticResource YetkiCheckBoxStyle}"
+                       Content="Gruplama Oluştur"
+                        >
+
+                      </CheckBox>
                     </Border>
 
                     <Border Grid.Row="2" Grid.Column="2" Background="#2B2B2B" CornerRadius="10" Padding="14">
                       <CheckBox x:Name="chkProgramlar"
-                          Content="Programlar"
-                          Foreground="White"
-                          FontSize="17"/>
+                      Style="{StaticResource YetkiCheckBoxStyle}"
+                       Content="Programlar"
+                        >
+ 
+                      </CheckBox>
                     </Border>
 
                     <Border Grid.Row="4" Grid.Column="0" Background="#2B2B2B" CornerRadius="10" Padding="14">
                       <CheckBox x:Name="chkHizAyarlari"
-                          Content="Hız Ayarları"
-                          Foreground="White"
-                          FontSize="17"/>
+                      Style="{StaticResource YetkiCheckBoxStyle}"
+                       Content="Hız Ayarları"
+                        >
+
+                      </CheckBox>
+
+
                     </Border>
 
                     <Border Grid.Row="4" Grid.Column="2" Background="#2B2B2B" CornerRadius="10" Padding="14">
                       <CheckBox x:Name="chkAlarmlar"
-                          Content="Alarmlar"
-                          Foreground="White"
-                          FontSize="17"/>
+                      Style="{StaticResource YetkiCheckBoxStyle}"
+                        Content="Alarmlar"
+                         >
+
+                      </CheckBox>
                     </Border>
 
                     <Border Grid.Row="6" Grid.Column="0" Background="#2B2B2B" CornerRadius="10" Padding="14">
                       <CheckBox x:Name="chkIzleme"
-                          Content="İzleme"
-                          Foreground="White"
-                          FontSize="17"/>
+                      Style="{StaticResource YetkiCheckBoxStyle}"
+                        Content="İzleme"
+                         >
+
+                      </CheckBox>
                     </Border>
 
                     <Border Grid.Row="6" Grid.Column="2" Background="#2B2B2B" CornerRadius="10" Padding="14">
                       <CheckBox x:Name="chkAyarlar"
-                          Content="Ayarlar"
-                          Foreground="White"
-                          FontSize="17"/>
+                      Style="{StaticResource YetkiCheckBoxStyle}"
+                        Content="Ayarlar"
+                         >
+
+                      </CheckBox>
                     </Border>
                   </Grid>
+
+                  <Grid Grid.Row="6">
+                    <Button x:Name="btnYetkileriKaydet"
+                    Content="Kaydet"
+                    Width="180"
+                    Height="48"
+                    HorizontalAlignment="Left"
+                    Background="{StaticResource button_background_green}"
+                    Style="{StaticResource button_template}"
+                    Click="btnYetkileriKaydet_Click" />
+                  </Grid>
+
                 </Grid>
               </Border>
 
@@ -689,17 +740,6 @@
 
         </Grid>
       </Border>
-    </Grid>
-
-    <!-- Alt Kaydet Butonu -->
-    <Grid Grid.Row="2" Margin="30,30,0,0">
-      <Button x:Name="btnTumAyarlariKaydet"
-                    Content="Kaydet"
-                    Width="180"
-                    Height="48"
-                    HorizontalAlignment="Left"
-                    Background="{StaticResource button_background_green}"
-                    Style="{StaticResource button_template}" Click="btnTumAyarlariKaydet_Click"/>
     </Grid>
   </Grid>
 </Page>

@@ -248,6 +248,11 @@ namespace Palet_Programlama.Screens
 
         private void btnTumAyarlariKaydet_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void btnYetkileriKaydet_Click(object sender, RoutedEventArgs e)
+        {
             if (_seciliYetkiKullanici == null)
             {
                 BildirimGoster("Ayarlar.kullaniciSeciniz");
@@ -280,5 +285,7 @@ namespace Palet_Programlama.Screens
             _seciliYetkiKullanici = null;
             txtSeciliYetkiKullanici.Text = "Seçili Kullanıcı:";
         }
+
+   
     }
 }

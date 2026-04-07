@@ -71,6 +71,9 @@
     <Compile Include="Screens\Dizilim\Models\KatUrunu.cs" />
     <Compile Include="Screens\Dizilim\Models\DizilimKayitModel.cs" />
     <Compile Include="Screens\Dizilim\Models\DizilimUrunKayitModel.cs" />
+    <Compile Include="Screens\GenelAyarlar\Models\KullaniciModel.cs" />
+    <Compile Include="Screens\GenelAyarlar\Helpers\SayfaAdlari.cs" />
+    <Compile Include="Screens\GenelAyarlar\Services\KullanicilarServisi.cs" />
     <Compile Include="Screens\GruplamaYap.xaml.cs">
       <DependentUpon>GruplamaYap.xaml</DependentUpon>
     </Compile>
@@ -290,10 +293,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Data\Ayarlar.json">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Include="Data\Dizilimler.json">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Include="Data\HizAyarlari.json" />
+    <None Include="Data\Kullanicilar.json">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Include="Data\Paletler.json" />
     <None Include="Data\Programlar.json">
       <Generator>MSBuild:Compile</Generator>
@@ -547,8 +556,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Screens\GenelAyarlar\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

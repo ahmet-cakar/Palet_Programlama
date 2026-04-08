@@ -238,7 +238,8 @@
         "btnHayir": "Hayır",
         "btnKopyala": "Kopyala",
         "btnYapistir": "Yapıştır",
-        "btnGuncelle": "Güncelle"
+        "btnGuncelle": "Güncelle",
+        "btnGiris": "Giriş"
 
 
     },
@@ -297,7 +298,9 @@
 
     "Kullanici": {
         "kullaniciAdiSifreHatali": "Kullanıcı adı veya şifre hatalı lütfen kontrol edin",
-        "beniHatirla": "Beni Hatırla"
+        "beniHatirla": "Beni Hatırla",
+        "kullaniciAdi": "Kullanıcı Adı",
+        "kullaniciSifre": "Şifre"
     }
 
 }

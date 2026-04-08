@@ -3,11 +3,14 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:language="clr-namespace:Palet_Programlama.Languages"
       xmlns:local="clr-namespace:Palet_Programlama.Screens"
       mc:Ignorable="d" 
       d:DesignHeight="768" d:DesignWidth="1366"
       Title="Kullanici">
-
+  <Page.Resources>
+    <language:LanguageConverter  x:Key="LanguageConverter"/>
+  </Page.Resources>
   <Grid>
         <Image Source="pack://application:,,,/Images/gradient_background.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="UniformToFill"/>
         <Grid>
@@ -219,9 +222,9 @@
 
             </Grid>
               <CheckBox x:Name="chkBeniHatirla"
+                  Content="{Binding Source='Kullanici.beniHatirla',Converter={StaticResource LanguageConverter}}"
                   Foreground="White"
                   FontSize="18"
-                  Content="Beni Hatırla"
                   Margin="10,15,0,0"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Center"/>

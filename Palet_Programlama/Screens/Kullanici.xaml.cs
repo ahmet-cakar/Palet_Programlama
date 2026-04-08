@@ -5,9 +5,6 @@ using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace Palet_Programlama.Screens
 {
@@ -19,13 +16,31 @@ namespace Palet_Programlama.Screens
         private readonly Frame _mainFrame;
         private readonly KullanicilarServisi _kullanicilarServisi;
         private bool _sayfaHazirMi = false;
+        private readonly AyarlarServisi _ayarlarServisi;
+
+
         public Kullanici(Frame Main)
         {
             InitializeComponent();
-            this._mainFrame = Main;
+            _mainFrame = Main;
             _kullanicilarServisi = new KullanicilarServisi();
-            _sayfaHazirMi = true;
+            _ayarlarServisi = new AyarlarServisi();
 
+            string seciliDil = _ayarlarServisi.SeciliDiliGetir();
+
+            if (seciliDil == "eng")
+            {
+                cmbDil.SelectedIndex = (int)LanguagesEnum.eng;
+            }
+            else
+            {
+                cmbDil.SelectedIndex = (int)LanguagesEnum.tr;
+            }
+
+            DiliUygula();
+            MetinleriGuncelle();
+
+            _sayfaHazirMi = true;
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -37,6 +52,7 @@ namespace Palet_Programlama.Screens
         {
             UpdateKullaniciPlaceholder();
         }
+
         private void PasswordBox_GotFocus(object sender, RoutedEventArgs e)
         {
             UpdatePasswordPlaceholder();
@@ -54,14 +70,13 @@ namespace Palet_Programlama.Screens
 
         private void UpdatePasswordPlaceholder()
         {
-            // Eğer şifre boşsa, placeholder'ı göster
             if (string.IsNullOrEmpty(passwordBox.Password))
             {
-                passwordPlaceholder.Visibility = Visibility.Visible; // Placeholder görünür
+                passwordPlaceholder.Visibility = Visibility.Visible;
             }
             else
             {
-                passwordPlaceholder.Visibility = Visibility.Collapsed; // Placeholder gizlenir
+                passwordPlaceholder.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -69,18 +84,18 @@ namespace Palet_Programlama.Screens
         {
             UpdateKullaniciPlaceholder();
         }
+
         private void UpdateKullaniciPlaceholder()
         {
             if (string.IsNullOrEmpty(kullanici_textbox.Text))
             {
-                KullaniciPlaceholder.Visibility = Visibility.Visible; // Placeholder görünür
+                KullaniciPlaceholder.Visibility = Visibility.Visible;
             }
             else
             {
-                KullaniciPlaceholder.Visibility = Visibility.Collapsed; // Placeholder gizlenir
+                KullaniciPlaceholder.Visibility = Visibility.Collapsed;
             }
         }
-
 
         private void BildirimGoster(string mesajKey, string butonKey = "ButtonKey.btntamam")
         {
@@ -89,11 +104,8 @@ namespace Palet_Programlama.Screens
             pencere.ShowDialog();
         }
 
-      
-
         private void btnGiris_Click(object sender, RoutedEventArgs e)
         {
-          
             string kullaniciAdi = kullanici_textbox.Text.Trim();
             string sifre = passwordBox.Password.Trim();
 
@@ -118,28 +130,47 @@ namespace Palet_Programlama.Screens
             _mainFrame.Navigate(new Anasayfa(_mainFrame));
         }
 
-        private void cmbDil_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DiliUygula()
         {
-            if (!_sayfaHazirMi || cmbDil == null || KullaniciPlaceholder == null || passwordPlaceholder == null || btnGiris == null)
-                return;
-
             int dilIndex = cmbDil.SelectedIndex;
 
-            if (dilIndex == 0)
+            if (dilIndex == (int)LanguagesEnum.tr)
             {
                 LanguageConverter.DilYukle("tr");
-                KullaniciPlaceholder.Text = "Kullanici Adı";
-                passwordPlaceholder.Text = "Şifre";
-                btnGiris.Content = "Giriş";
-                chkBeniHatirla.Content = "Beni Hatırla";
             }
-            else if (dilIndex == 1)
+            else if (dilIndex == (int)LanguagesEnum.eng)
             {
                 LanguageConverter.DilYukle("eng");
-                KullaniciPlaceholder.Text = "User";
-                passwordPlaceholder.Text = "Password";
-                btnGiris.Content = "Login";
-                chkBeniHatirla.Content = "Remember Me";
+            }
+            else
+            {
+                LanguageConverter.DilYukle("tr");
+            }
+        }
+
+        private void MetinleriGuncelle()
+        {
+            KullaniciPlaceholder.Text = LanguageConverter.GetString("Kullanici.kullaniciAdi");
+            passwordPlaceholder.Text = LanguageConverter.GetString("Kullanici.kullaniciSifre");
+            chkBeniHatirla.Content = LanguageConverter.GetString("Kullanici.beniHatirla");
+            btnGiris.Content = LanguageConverter.GetString("ButtonKey.btnGiris");
+        }
+
+        private void cmbDil_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (!_sayfaHazirMi || cmbDil == null)
+                return;
+
+            DiliUygula();
+            MetinleriGuncelle();
+
+            if (cmbDil.SelectedIndex == (int)LanguagesEnum.tr)
+            {
+                _ayarlarServisi.SeciliDiliKaydet("tr");
+            }
+            else if (cmbDil.SelectedIndex == (int)LanguagesEnum.eng)
+            {
+                _ayarlarServisi.SeciliDiliKaydet("eng");
             }
         }
     }

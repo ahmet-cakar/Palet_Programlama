@@ -257,7 +257,8 @@
         "btnHayir": "No",
         "btnKopyala": "Copy",
         "btnYapistir": "Paste",
-        "btnGuncelle": "Update"
+        "btnGuncelle": "Update",
+        "btnGiris": "Login"
 
     },
     "GruplamaAyarPopup": {
@@ -281,7 +282,9 @@
     },
     "Kullanici": {
         "kullaniciAdiSifreHatali": "Username or password is incorrect, please check.",
-        "beniHatirla": "Remember me"
+        "beniHatirla": "Remember me",
+        "kullaniciAdi": "Username",
+        "kullaniciSifre": "Password"
     }
 
 }

@@ -61,6 +61,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Enums\EklemeYonEnum.cs" />
+    <Compile Include="Enums\LanguagesEnum.cs" />
     <Compile Include="Models\SonSecimModel.cs" />
     <Compile Include="Popups\OnayKutusu.xaml.cs">
       <DependentUpon>OnayKutusu.xaml</DependentUpon>
@@ -71,8 +72,10 @@
     <Compile Include="Screens\Dizilim\Models\KatUrunu.cs" />
     <Compile Include="Screens\Dizilim\Models\DizilimKayitModel.cs" />
     <Compile Include="Screens\Dizilim\Models\DizilimUrunKayitModel.cs" />
+    <Compile Include="Screens\GenelAyarlar\Models\AyarModel.cs" />
     <Compile Include="Screens\GenelAyarlar\Models\KullaniciModel.cs" />
     <Compile Include="Screens\GenelAyarlar\Helpers\SayfaAdlari.cs" />
+    <Compile Include="Screens\GenelAyarlar\Services\AyarlarServisi.cs" />
     <Compile Include="Screens\GenelAyarlar\Services\KullaniciFormServisi.cs" />
     <Compile Include="Screens\GenelAyarlar\Services\KullanicilarServisi.cs" />
     <Compile Include="Screens\GenelAyarlar\Services\KullaniciYetkiServisi.cs" />

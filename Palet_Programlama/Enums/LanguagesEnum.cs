@@ -1,0 +1,1 @@
+﻿public enum LanguagesEnum { tr = 0, eng = 1}

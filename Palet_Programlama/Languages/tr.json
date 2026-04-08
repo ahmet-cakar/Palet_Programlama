@@ -296,7 +296,8 @@
     },
 
     "Kullanici": {
-        "kullaniciAdiSifreHatali": "Kullanıcı adı veya şifre hatalı lütfen kontrol edin"
+        "kullaniciAdiSifreHatali": "Kullanıcı adı veya şifre hatalı lütfen kontrol edin",
+        "beniHatirla": "Beni Hatırla"
     }
 
 }

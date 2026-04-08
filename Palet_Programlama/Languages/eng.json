@@ -103,10 +103,10 @@
         "paletlist": "Pallet List",
         "uruneklebtn": "Add Product",
         "urunduzenlebtn": "Update Product",
-        "urunsilbtn": "Product Delete",
+        "urunsilbtn": "Delete Product ",
         "paleteklebtn": "Add Pallet",
         "paletduzenlebtn": "Update Pallet",
-        "paletsilbtn": "Pallet Delete",
+        "paletsilbtn": "Delete Pallet ",
         "previewHomeKoli": "Product ",
         "previewHomePalet": "Pallet ",
         "previewUrunEn": "Product Width",
@@ -280,7 +280,8 @@
         "kullaniciEklemeBasarili": "User added successfully."
     },
     "Kullanici": {
-        "kullaniciAdiSifreHatali": "Username or password is incorrect, please check."
+        "kullaniciAdiSifreHatali": "Username or password is incorrect, please check.",
+        "beniHatirla": "Remember me"
     }
 
 }

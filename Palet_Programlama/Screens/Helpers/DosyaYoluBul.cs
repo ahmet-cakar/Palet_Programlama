@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace Palet_Programlama.Screens.Helpers
 {
@@ -6,12 +7,22 @@ namespace Palet_Programlama.Screens.Helpers
     {
         public static string DosyaGetir(string klasorAdi, string dosyaAdi)
         {
-            string uygulamaDizini = Directory.GetCurrentDirectory(); //uygulama dizini 
-            string uygulamaDizini2 = Path.GetDirectoryName(uygulamaDizini);  //ustdizin
-            string uygulamaDizini3 = Path.GetDirectoryName(uygulamaDizini2);  //2 ust dizin
-            string result = Path.Combine(uygulamaDizini3, klasorAdi + "\\" + dosyaAdi); //Data klasorunun icindeki dosya  yolu
-            return result;
+            string outputYolu = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, klasorAdi, dosyaAdi);
+            if (File.Exists(outputYolu))
+                return outputYolu;
+
+            DirectoryInfo klasor = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
+
+            while (klasor != null)
+            {
+                string adayYol = Path.Combine(klasor.FullName, klasorAdi, dosyaAdi);
+                if (File.Exists(adayYol))
+                    return adayYol;
+
+                klasor = klasor.Parent;
+            }
+
+            return outputYolu;
         }
-       
     }
 }

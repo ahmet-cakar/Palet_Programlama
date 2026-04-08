@@ -314,8 +314,12 @@
     </None>
     <None Include="Data\SonSecimler.json" />
     <None Include="Data\Urunler.json" />
-    <None Include="Languages\eng.json" />
-    <None Include="Languages\tr.json" />
+    <Content Include="Languages\eng.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Languages\tr.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

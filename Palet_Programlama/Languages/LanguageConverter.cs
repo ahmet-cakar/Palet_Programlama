@@ -3,6 +3,7 @@ using Palet_Programlama.Screens.Helpers;
 using System;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Windows.Data;
 namespace Palet_Programlama.Languages
 {
@@ -17,7 +18,6 @@ namespace Palet_Programlama.Languages
         {
             string filePath = DosyaYoluBul.DosyaGetir("Languages", $"{languageCode}.json");
 
-
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
@@ -25,7 +25,7 @@ namespace Palet_Programlama.Languages
             }
             else
             {
-                throw new FileNotFoundException($"Dil dosyası bulunamadı: {filePath}");
+                _languageData ??= new JObject();
             }
         }
 
@@ -54,6 +54,8 @@ namespace Palet_Programlama.Languages
 
             return currentToken.ToString();
         }
+
+
 
         // IValueConverter'ın Convert metodunu uygulayın
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

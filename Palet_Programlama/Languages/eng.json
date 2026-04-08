@@ -278,6 +278,9 @@
         "kullaniciGuncellemeBasarili": "The user has been updated successfully.",
         "kullaniciSilmeBasarili": "The user has been deleted successfully.",
         "kullaniciEklemeBasarili": "User added successfully."
+    },
+    "Kullanici": {
+        "kullaniciAdiSifreHatali": "Username or password is incorrect, please check."
     }
 
 }

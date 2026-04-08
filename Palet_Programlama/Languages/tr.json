@@ -12,7 +12,7 @@
         "hesapDegistir": "Hesap\nDeğiştir",
         "hesapCikis": "Çıkış"
     },
-  
+
     "UrunEkle": {
         "onizle": "Önizleme",
         "urunblg": "Ürün Bilgileri",
@@ -69,7 +69,7 @@
         "izleme": "İzleme",
         "ayarlar": "Ayarlar"
     },
-    
+
     "MesajKutusu": {
         "urunBasariliEklendi": "Ürün başarılı bir şekilde eklendi.",
         "paletBasariliEklendi": "Palet başarılı bir şekilde eklendi.",
@@ -99,9 +99,9 @@
         "paletBasariliGuncellendi": "Seçilen palet başarılı bir şekilde güncellendi.",
         "paletBasariliSilindi": "Palet başarılı bir şekilde silindi.",
         "gecerliSeperatorKalinligiGir": "Lütfen geçerli bir Seperator kalınlığı giriniz"
-        
+
     },
-   
+
     "Hiz": {
         "v1": "V_50",
         "v2": "V_51",
@@ -115,7 +115,7 @@
         "v10": "V_59",
         "v11": "V_60"
     },
-   
+
     "DizilimYap": {
         "urunozellik": "Ürün Özellikleri:  ",
         "paletozellik": "Palet Özellikleri:  ",
@@ -196,7 +196,7 @@
         "dizilimVeBagliProgramlarSilindi": "Dizilim ve buna bağlı programlar başarıyla silindi."
 
     },
-  
+
     "Program": {
         "btnrecededuzen": "Reçete Düzenle",
         "btnCalistir": "Çalıştır",
@@ -211,7 +211,7 @@
         "urunSecilmedi": "Ürün Seçilmedi",
         "paletSecilmedi": "Palet Seçilmedi"
     },
-    
+
     "HataMesajlari": {
         "urunadbos": "Ürün Adı Boş Bırakılamaz",
         "urunenbos": "Ürün Genişlik Boş Bırakılamaz",
@@ -242,9 +242,9 @@
 
 
     },
-   
+
     "UrunPaletSecimPopup": {
-        
+
         "baslik": "Ürün,Palet ve Dizilim seçin",
         "dizilimSecilebilir": " (Dizilim güncellemek için seçebilirsiniz.)",
         "zorunluAlan": " ( * Zorunlu)",
@@ -254,14 +254,14 @@
         "dizilimlerYuklenemedi": "Dizilimler yüklenemedi"
 
     },
-    
+
     "ProgramKaydetPopup": {
         "anaBaslik": "Program Kaydet",
         "baslik": "Program Bilgisi",
         "programAdi": "Program Adı",
-        "aciklama": "Açıklama",
+        "aciklama": "Açıklama"
     },
-  
+
     "GruplamaAyarPopup": {
         "baslik": "Bırakma Ayarları",
         "gripperAcilmaYonu": "Gripper açılma yönü",
@@ -270,7 +270,7 @@
         "gripperAciklama": "Gripperın taşıyıcı kenarının açılacağı yönü gösterir."
 
     },
-    
+
     "DizilimKaydetPopup": {
         "dizilimBilgisi": "Dizilim Bilgisi",
         "SeperatorGirilecek": "Seperator kullanılacak mı?",
@@ -293,6 +293,10 @@
         "kullaniciGuncellemeBasarili": "Kullanıcı başarıyla güncellendi.",
         "kullaniciSilmeBasarili": "Kullanıcı başarıyla silindi.",
         "kullaniciEklemeBasarili": "Kullanıcı başarıyla eklendi."
+    },
+
+    "Kullanici": {
+        "kullaniciAdiSifreHatali": "Kullanıcı adı veya şifre hatalı lütfen kontrol edin"
     }
 
 }

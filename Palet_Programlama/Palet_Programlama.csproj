@@ -383,6 +383,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Kullanici\eng.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Kullanici\logo-sade.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -403,12 +406,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Kullanici\dil_turkce_kapali.png">
+    <Content Include="Images\Ayarlar\settings.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Images\Ayarlar\settings.png">
+    <Content Include="Images\Kullanici\tr.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\UrunEkle\home-koli.png">
@@ -428,21 +429,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\Icon.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Images\Kullanici\dil_turkce_Acik.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Images\Kullanici\dil_eng.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Images\Kullanici\dil_eng_Acik.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -26,8 +26,6 @@ namespace Palet_Programlama.Screens
             
         }
 
-     
-
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             UpdateKullaniciPlaceholder();
@@ -91,71 +89,71 @@ namespace Palet_Programlama.Screens
 
         private void DilBtn_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            ImageSource currentImage = DilBtn.Source;
-            // DilBtn'in mevcut kaynağını BitmapImage olarak al
+            //ImageSource currentImage = DilBtn.Source;
+            //// DilBtn'in mevcut kaynağını BitmapImage olarak al
 
-            string currentUri = currentImage.ToString();
-            // Eğer kaynak geçerli değilse işlem yapma
-            if (currentImage == null) return;
+            //string currentUri = currentImage.ToString();
+            //// Eğer kaynak geçerli değilse işlem yapma
+            //if (currentImage == null) return;
 
   
 
-            // Yeni URI'yi hesaplayacak bir değişken
-            string newUri = string.Empty;
+            //// Yeni URI'yi hesaplayacak bir değişken
+            //string newUri = string.Empty;
 
-            // Mevcut duruma göre yeni URI belirle
-            switch (currentUri)
-            {
-                case "pack://application:,,,/Images/Kullanici/dil_turkce_kapali.png":
-                    newUri = "pack://application:,,,/Images/Kullanici/dil_turkce_Acik.png";
-                    break;
+            //// Mevcut duruma göre yeni URI belirle
+            //switch (currentUri)
+            //{
+            //    case "pack://application:,,,/Images/Kullanici/dil_turkce_kapali.png":
+            //        newUri = "pack://application:,,,/Images/Kullanici/dil_turkce_Acik.png";
+            //        break;
 
-                case "pack://application:,,,/Images/Kullanici/dil_turkce_Acik.png":
-                case "pack://application:,,,/Images/Kullanici/dil_eng_Acik.png":
-                    // Tıklama konumunu al
-                    Point clickPoint = e.GetPosition(DilBtn);
-                    double imageHeight = DilBtn.ActualHeight;
+            //    case "pack://application:,,,/Images/Kullanici/dil_turkce_Acik.png":
+            //    case "pack://application:,,,/Images/Kullanici/dil_eng_Acik.png":
+            //        // Tıklama konumunu al
+            //        Point clickPoint = e.GetPosition(DilBtn);
+            //        double imageHeight = DilBtn.ActualHeight;
 
-                    // Üst tarafa tıklanmışsa
-                    if (clickPoint.Y < imageHeight / 2)
-                    {
-                        newUri = (currentUri.Contains("turkce"))
-                                 ? "pack://application:,,,/Images/Kullanici/dil_turkce_kapali.png"
-                                 : "pack://application:,,,/Images/Kullanici/dil_eng.png";
-                    }
-                    // Alt tarafa tıklanmışsa
-                    else
-                    {
-                        newUri = (currentUri.Contains("turkce"))
-                                 ? "pack://application:,,,/Images/Kullanici/dil_eng.png"
-                                 : "pack://application:,,,/Images/Kullanici/dil_turkce_kapali.png";
-                    }
-                    break;
+            //        // Üst tarafa tıklanmışsa
+            //        if (clickPoint.Y < imageHeight / 2)
+            //        {
+            //            newUri = (currentUri.Contains("turkce"))
+            //                     ? "pack://application:,,,/Images/Kullanici/dil_turkce_kapali.png"
+            //                     : "pack://application:,,,/Images/Kullanici/dil_eng.png";
+            //        }
+            //        // Alt tarafa tıklanmışsa
+            //        else
+            //        {
+            //            newUri = (currentUri.Contains("turkce"))
+            //                     ? "pack://application:,,,/Images/Kullanici/dil_eng.png"
+            //                     : "pack://application:,,,/Images/Kullanici/dil_turkce_kapali.png";
+            //        }
+            //        break;
 
-                case "pack://application:,,,/Images/Kullanici/dil_eng.png":
-                    newUri = "pack://application:,,,/Images/Kullanici/dil_eng_Acik.png";
-                    break;
-            }
+            //    case "pack://application:,,,/Images/Kullanici/dil_eng.png":
+            //        newUri = "pack://application:,,,/Images/Kullanici/dil_eng_Acik.png";
+            //        break;
+            //}
 
-            // Eğer yeni bir URI belirlendiyse kaynağı güncelle
-            if (!string.IsNullOrEmpty(newUri))
-            {
-                DilBtn.Source = new BitmapImage(new Uri(newUri));
-            }
-            if (newUri.Contains("eng"))
-            {
-                LanguageConverter.DilYukle("eng");
-                KullaniciPlaceholder.Text = "User";
-                passwordPlaceholder.Text = "Password";
-                btnGiris.Content = "Login";
-            }
-            else if (newUri.Contains("turkce_kapali"))
-            {
-                LanguageConverter.DilYukle("tr");
-                KullaniciPlaceholder.Text = "Kullanici Adı";
-                passwordPlaceholder.Text = "Şifre";
-                btnGiris.Content = "Giriş";
-            }
+            //// Eğer yeni bir URI belirlendiyse kaynağı güncelle
+            //if (!string.IsNullOrEmpty(newUri))
+            //{
+            //    DilBtn.Source = new BitmapImage(new Uri(newUri));
+            //}
+            //if (newUri.Contains("eng"))
+            //{
+            //    LanguageConverter.DilYukle("eng");
+            //    KullaniciPlaceholder.Text = "User";
+            //    passwordPlaceholder.Text = "Password";
+            //    btnGiris.Content = "Login";
+            //}
+            //else if (newUri.Contains("turkce_kapali"))
+            //{
+            //    LanguageConverter.DilYukle("tr");
+            //    KullaniciPlaceholder.Text = "Kullanici Adı";
+            //    passwordPlaceholder.Text = "Şifre";
+            //    btnGiris.Content = "Giriş";
+            //}
 
         }
 
@@ -167,7 +165,7 @@ namespace Palet_Programlama.Screens
 
             if (string.IsNullOrWhiteSpace(kullaniciAdi) || string.IsNullOrWhiteSpace(sifre))
             {
-                BildirimGoster("Kullanıcı adı ve şifre boş bırakılamaz.");
+                BildirimGoster("Ayarlar.kullanciSifreZorunlu");
                 return;
             }
 
@@ -179,7 +177,7 @@ namespace Palet_Programlama.Screens
 
             if (kullanici == null)
             {
-                BildirimGoster("Kullanıcı adı veya şifre hatalı.");
+                BildirimGoster("Kullanici.kullaniciAdiSifreHatali");
                 return;
             }
 

@@ -6,56 +6,56 @@
       xmlns:controls="clr-namespace:Palet_Programlama.UserController"
       xmlns:language="clr-namespace:Palet_Programlama.Languages"
       mc:Ignorable="d"
-      d:DesignHeight="768"
-      d:DesignWidth="1900"
+      d:DesignWidth="1920"
+      d:DesignHeight="1080"
       Title="Programlar">
 
   <Page.Resources>
     <language:LanguageConverter x:Key="LanguageConverter"/>
   </Page.Resources>
 
-  <Grid>
+  <Grid Margin="24,24,24,90">
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto"/>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
 
     <!-- Üst Menü -->
-    <Grid Grid.Row="0">
-      <controls:UstMenu x:Name="UstMenuControl" Margin="0,15,0,0"/>
+    <Grid Grid.Row="0" Margin="0,0,0,18">
+      <controls:UstMenu x:Name="UstMenuControl" Margin="0,5,0,0"/>
     </Grid>
 
     <!-- Ana Alan -->
     <Grid Grid.Row="1">
       <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto"/>
-        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="1.02*"/>
+        <ColumnDefinition Width="1*"/>
       </Grid.ColumnDefinitions>
 
       <!-- SOL TARAF -->
-      <Grid Grid.Column="0">
+      <Grid Grid.Column="0" Margin="0,0,12,0">
         <Grid.RowDefinitions>
           <RowDefinition Height="Auto"/>
-          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="14"/>
+          <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!-- Ürün + Palet Bilgi Kartları -->
         <Grid Grid.Row="0">
           <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="14"/>
+            <ColumnDefinition Width="1*"/>
           </Grid.ColumnDefinitions>
 
           <!-- Ürün Bilgileri -->
           <Border Grid.Column="0"
-                            Style="{StaticResource border_template_urunekle}"
-                            Margin="50,30,0,0"
-                            Width="440"
-                            Height="300">
-            <Grid Margin="20,18,20,18">
+                            Background="#191919"
+                            CornerRadius="20"
+                            Padding="22"
+                            MinHeight="300">
+            <Grid>
               <Grid.RowDefinitions>
-
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -74,7 +74,7 @@
                                    Width="20"
                                    Height="20"
                                    HorizontalAlignment="Right"
-                                   Margin="0,-40,0,10"/>
+                                   Margin="0,0,0,10"/>
 
               <TextBlock Grid.Row="0" Grid.Column="0"
                                        Margin="0,18,0,0"
@@ -133,12 +133,12 @@
           </Border>
 
           <!-- Palet Bilgileri -->
-          <Border Grid.Column="1"
-                            Style="{StaticResource border_template_urunekle}"
-                            Margin="15,30,0,0"
-                            Width="440"
-                            Height="300">
-            <Grid Margin="20,28,20,18">
+          <Border Grid.Column="2"
+                            Background="#191919"
+                            CornerRadius="20"
+                            Padding="22"
+                            MinHeight="300">
+            <Grid>
               <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -154,19 +154,19 @@
               <Image Grid.ColumnSpan="2"
                                    Source="pack://application:,,,/Images/DizilimYap/info-icon.png"
                                    Width="20"
+                                   Height="20"
                                    HorizontalAlignment="Right"
-                                   Margin="0,-45,0,10"/>
+                                   Margin="0,0,0,10"/>
 
               <TextBlock Grid.Row="0" Grid.Column="0"
-                                       Margin="0,5,0,0"
+                                       Margin="0,8,0,0"
                                        Style="{StaticResource textblock_template_urunekle}"
                                        Text="{Binding Source='UrunEkle.paletad',Converter={StaticResource LanguageConverter}}"/>
-              <TextBlock Grid.Row="0" Grid.Column="1" 
+              <TextBlock Grid.Row="0" Grid.Column="1"
                                        x:Name="txtPaletAdi"
-                                       Margin="30,5,0,0"
+                                       Margin="30,8,0,0"
                                        Style="{StaticResource textblock_template_urunekle}"
-                                       Text="{Binding Source='Program.secilmedi',Converter={StaticResource LanguageConverter}}"
-                                       />
+                                       Text="{Binding Source='Program.secilmedi',Converter={StaticResource LanguageConverter}}"/>
 
               <TextBlock Grid.Row="1" Grid.Column="0"
                                        Margin="0,20,0,0"
@@ -199,207 +199,201 @@
         </Grid>
 
         <!-- Program Listesi -->
-        <Grid Grid.Row="1">
-          <Border Style="{StaticResource border_template_urunekle}"
-                            Width="900"
-                            Height="480"
-                            Margin="50,15,0,0">
-            <Grid>
-              <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="260"/>
-              </Grid.ColumnDefinitions>
+        <Border Grid.Row="2"
+                        Background="#191919"
+                        CornerRadius="20"
+                        Padding="20">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="240"/>
+            </Grid.ColumnDefinitions>
 
-              <Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                  <RowDefinition Height="Auto"/>
-                  <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+            <Grid Grid.Column="0" Margin="0,0,18,0">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+              </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0"
-                                           Text="{Binding Source='Program.listtext',Converter={StaticResource LanguageConverter}}"
-                                           Style="{StaticResource textblock_template_urunekle}"
-                                           FontSize="25"
-                                           Margin="15,5,0,30"/>
+              <TextBlock Grid.Row="0"
+                                       Text="{Binding Source='Program.listtext',Converter={StaticResource LanguageConverter}}"
+                                       Style="{StaticResource textblock_template_urunekle}"
+                                       FontSize="24"
+                                       Margin="0,0,0,0"/>
 
-                <ListBox Grid.Row="1"
-                                         x:Name="ListBoxProgramlar"
-                                         Background="Transparent"
-                                         BorderThickness="0"
-                                         Height="400"
-                                         Width="600"
-                                         Padding="0,0,25,0"
-                                         HorizontalContentAlignment="Stretch"
-                                         ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                         SelectionChanged="ListBoxProgramlar_SelectionChanged">
+              <ListBox Grid.Row="1"
+                                     x:Name="ListBoxProgramlar"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     Padding="0,0,10,0"
+                                     HorizontalContentAlignment="Stretch"
+                                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                     SelectionChanged="ListBoxProgramlar_SelectionChanged">
 
-                  <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                      <StackPanel />
-                    </ItemsPanelTemplate>
-                  </ListBox.ItemsPanel>
+                <ListBox.ItemsPanel>
+                  <ItemsPanelTemplate>
+                    <StackPanel/>
+                  </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
 
-                  <ListBox.ItemContainerStyle>
-                    <Style TargetType="ListBoxItem">
-                      <Setter Property="Margin" Value="0,0,0,20"/>
-                      <Setter Property="Padding" Value="0"/>
-                      <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                      <Setter Property="Cursor" Value="Hand"/>
-                      <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-                      <Setter Property="Template">
-                        <Setter.Value>
-                          <ControlTemplate TargetType="ListBoxItem">
-                            <Border x:Name="ItemBorder"
-                                                                Background="#222222"
-                                                                BorderBrush="#303030"
-                                                                BorderThickness="1"
-                                                                CornerRadius="14"
-                                                                Padding="18,14">
-                              <ContentPresenter HorizontalAlignment="Stretch"
-                                                                              VerticalAlignment="Center"/>
-                            </Border>
+                <ListBox.ItemContainerStyle>
+                  <Style TargetType="ListBoxItem">
+                    <Setter Property="Margin" Value="0,0,0,16"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                    <Setter Property="Template">
+                      <Setter.Value>
+                        <ControlTemplate TargetType="ListBoxItem">
+                          <Border x:Name="ItemBorder"
+                                                            Background="#222222"
+                                                            BorderBrush="#303030"
+                                                            BorderThickness="1"
+                                                            CornerRadius="14"
+                                                            Padding="18,14">
+                            <ContentPresenter HorizontalAlignment="Stretch"
+                                                                          VerticalAlignment="Center"/>
+                          </Border>
 
-                            <ControlTemplate.Triggers>
-                              <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="ItemBorder" Property="Background" Value="#2A2A2A"/>
-                                <Setter TargetName="ItemBorder" Property="BorderBrush" Value="#3A3A3A"/>
-                              </Trigger>
+                          <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                              <Setter TargetName="ItemBorder" Property="Background" Value="#2A2A2A"/>
+                              <Setter TargetName="ItemBorder" Property="BorderBrush" Value="#3A3A3A"/>
+                            </Trigger>
 
-                              <Trigger Property="IsSelected" Value="True">
-                                <Setter TargetName="ItemBorder" Property="Background" Value="#4B5563"/>
-                                <Setter TargetName="ItemBorder" Property="BorderBrush" Value="#9CA3AF"/>
-                              </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                              <Setter TargetName="ItemBorder" Property="Background" Value="#4B5563"/>
+                              <Setter TargetName="ItemBorder" Property="BorderBrush" Value="#9CA3AF"/>
+                            </Trigger>
 
-                              <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="ItemBorder" Property="Opacity" Value="0.6"/>
-                              </Trigger>
-                            </ControlTemplate.Triggers>
-                          </ControlTemplate>
-                        </Setter.Value>
-                      </Setter>
-                    </Style>
-                  </ListBox.ItemContainerStyle>
+                            <Trigger Property="IsEnabled" Value="False">
+                              <Setter TargetName="ItemBorder" Property="Opacity" Value="0.6"/>
+                            </Trigger>
+                          </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                      </Setter.Value>
+                    </Setter>
+                  </Style>
+                </ListBox.ItemContainerStyle>
 
-                  <ListBox.ItemTemplate>
-                    <DataTemplate>
-                      <TextBlock Foreground="White"
-                                                       FontSize="19"
-                                                       FontWeight="SemiBold"
-                                                       Text="{Binding ProgramAdi}"/>
-                    </DataTemplate>
-                  </ListBox.ItemTemplate>
-                </ListBox>
-              </Grid>
-
-              <Grid Grid.Column="1">
-                <StackPanel VerticalAlignment="Top">
-
-
-                  <Button x:Name="BtnProgramSil" FontSize="24"
-                                            Width="240"
-                                            Margin="0,80,0,0"
-                                            Content="{Binding Source='ButtonKey.btnSil',Converter={StaticResource LanguageConverter}}"
-                                            Background="{StaticResource button_background}"
-                                            Style="{StaticResource button_template}" Click="BtnProgramSil_Click"/>
-
-                  <Button x:Name="BtnProgramBaslat" FontSize="24"
-                                            Width="240"
-                                            Margin="0,20,0,0"
-                                            Content="{Binding Source='Program.btnCalistir',Converter={StaticResource LanguageConverter}}"
-                                            Background="{DynamicResource button_backgroundgreen}"
-                                            Style="{StaticResource button_template}" Click="BtnProgramBaslat_Click"/>
-                </StackPanel>
-              </Grid>
+                <ListBox.ItemTemplate>
+                  <DataTemplate>
+                    <TextBlock Foreground="White"
+                                                   FontSize="19"
+                                                   FontWeight="SemiBold"
+                                                   Text="{Binding ProgramAdi}"/>
+                  </DataTemplate>
+                </ListBox.ItemTemplate>
+              </ListBox>
             </Grid>
-          </Border>
-        </Grid>
+
+            <StackPanel Grid.Column="1" VerticalAlignment="Top">
+              <Button x:Name="BtnProgramSil"
+                                    FontSize="22"
+                                    Width="220"
+                                    Margin="0,60,0,0"
+                                    Content="{Binding Source='ButtonKey.btnSil',Converter={StaticResource LanguageConverter}}"
+                                    Background="{StaticResource button_background}"
+                                    Style="{StaticResource button_template}"
+                                    Click="BtnProgramSil_Click"/>
+
+              <Button x:Name="BtnProgramBaslat"
+                                    FontSize="22"
+                                    Width="220"
+                                    Margin="0,18,0,0"
+                                    Content="{Binding Source='Program.btnCalistir',Converter={StaticResource LanguageConverter}}"
+                                    Background="{DynamicResource button_backgroundgreen}"
+                                    Style="{StaticResource button_template}"
+                                    Click="BtnProgramBaslat_Click"/>
+            </StackPanel>
+          </Grid>
+        </Border>
       </Grid>
 
       <!-- SAĞ TARAF -->
-      <Grid Grid.Column="1">
+      <Grid Grid.Column="1" Margin="12,0,0,0">
         <Grid.RowDefinitions>
           <RowDefinition Height="Auto"/>
-          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="14"/>
+          <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!-- Program Bilgi Alanı -->
-        <Grid Grid.Row="0">
-          <Border Width="930"
-                            Height="100"
-                            Margin="10,30,0,0"
-                            CornerRadius="18"
-                            Background="#191919"
-                            BorderBrush="#2B2B2B"
-                            BorderThickness="1"
-                            Padding="28,18">
+        <Border Grid.Row="0"
+                        CornerRadius="18"
+                        Background="#191919"
+                        BorderBrush="#2B2B2B"
+                        BorderThickness="1"
+                        Padding="28,18"
+                        MinHeight="100">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="160"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="24"/>
+              <ColumnDefinition Width="180"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-            <Grid>
-              <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2*"/>
-              </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                                   VerticalAlignment="Center"
+                                   Foreground="#E5E7EB"
+                                   FontSize="22"
+                                   FontWeight="Bold"
+                                   Text="{Binding Source='ProgramKaydetPopup.programAdi',Converter={StaticResource LanguageConverter}}"/>
 
-              <TextBlock Grid.Column="0"
-                                       VerticalAlignment="Center"
-                                       Foreground="#E5E7EB"
-                                       FontSize="24"
-                                       FontWeight="Bold"
-                                       Text="{Binding Source='ProgramKaydetPopup.programAdi',Converter={StaticResource LanguageConverter}}"/>
+            <TextBlock Grid.Column="1"
+                                   x:Name="txtProgramAdi"
+                                   Margin="15,0,0,0"
+                                   Text="{Binding Source='Program.secilmedi',Converter={StaticResource LanguageConverter}}"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"
+                                   FontSize="20"
+                                   FontWeight="Normal"
+                                   TextTrimming="CharacterEllipsis"/>
 
-              <TextBlock Grid.Column="1"
-                                       x:Name="txtProgramAdi"
-                                       Margin="15,01,0,0"
-                                       Text="{Binding Source='Program.secilmedi',Converter={StaticResource LanguageConverter}}"
-                                       VerticalAlignment="Center"
-                                       Foreground="White"
-                                       FontSize="20"
-                                       FontWeight="Normal"
-                                       TextTrimming="CharacterEllipsis"/>
+            <Border Grid.Column="2"
+                                Width="1"
+                                Height="42"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Background="#3F3F46"/>
 
-              <Border Grid.Column="2"
-                                    Width="1"
-                                    Height="42"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    Background="#3F3F46"/>
+            <TextBlock Grid.Column="3"
+                                   VerticalAlignment="Center"
+                                   Foreground="#E5E7EB"
+                                   FontSize="22"
+                                   FontWeight="Bold"
+                                   Text="Program ID"/>
 
-              <Grid Grid.Column="3">
-                <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="180"/>
-                  <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <TextBlock Grid.Column="0"
-                                           VerticalAlignment="Center"
-                                           Foreground="#E5E7EB"
-                                           FontSize="24"
-                                           FontWeight="Bold"
-                                           Text="Program ID "/>
-
-                <TextBlock Grid.Column="1"
-                                           x:Name="txtProgramID"
-                                           VerticalAlignment="Center"
-                                           Foreground="White"
-                                           FontSize="20"
-                                           FontWeight="Normal"
-                                           Text="{Binding Source='Program.secilmedi',Converter={StaticResource LanguageConverter}}"/>
-              </Grid>
-            </Grid>
-          </Border>
-        </Grid>
+            <TextBlock Grid.Column="4"
+                                   x:Name="txtProgramID"
+                                   Margin="15,0,0,0"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"
+                                   FontSize="20"
+                                   FontWeight="Normal"
+                                   Text="{Binding Source='Program.secilmedi',Converter={StaticResource LanguageConverter}}"
+                                   TextTrimming="CharacterEllipsis"/>
+          </Grid>
+        </Border>
 
         <!-- Dizilim Gösterim -->
-        <Grid Grid.Row="1">
-          <Border Style="{StaticResource border_template_urunekle}"
-                            Width="810"
-                            Height="685"
-                            Margin="10,10,0,0">
+        <Grid Grid.Row="2">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="110"/>
+          </Grid.ColumnDefinitions>
+
+          <Border Grid.Column="0"
+                            Background="#191919"
+                            CornerRadius="20"
+                            Padding="18">
             <Grid>
-              <Image Margin="25,5,0,0"
-                                   MaxHeight="120"
-                                   MaxWidth="120"
+              <Image Margin="20,8,0,0"
+                                   MaxHeight="150"
+                                   MaxWidth="150"
                                    HorizontalAlignment="Left"
                                    VerticalAlignment="Top"
                                    Source="pack://application:,,,/Images/DizilimYap/referans_eksenler.png"/>
@@ -416,35 +410,40 @@
             </Grid>
           </Border>
 
-          <Border Style="{StaticResource border_template_urunekle}"
-                            Width="100"
-                            Height="685"
-                            Margin="835,10,0,0">
-            <StackPanel Orientation="Vertical">
-              <TextBlock Margin="0,70,0,0"
+          <Border Grid.Column="1"
+                            Margin="12,0,0,0"
+                            Background="#191919"
+                            CornerRadius="20"
+                            Padding="12">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+              <TextBlock Margin="0,40,0,0"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Foreground="White"
-                                       FontSize="30"
+                                       FontSize="26"
                                        Text="{Binding Source='DizilimYap.txtKat',Converter={StaticResource LanguageConverter}}"/>
 
               <Button x:Name="BtnKatArti"
-                                    Margin="0,120,0,0"
-                                    Style="{StaticResource transparan_button}" Click="BtnKatArti_Click">
+                                    Margin="0,90,0,0"
+                                    Style="{StaticResource transparan_button}"
+                                    Click="BtnKatArti_Click">
                 <Image MaxHeight="50"
                                        MaxWidth="50"
                                        Source="pack://application:,,,/Images/DizilimYap/yukari_icon.png"/>
               </Button>
 
-              <TextBlock x:Name="txtKatValue" Margin="0,20,0,0"
+              <TextBlock x:Name="txtKatValue"
+                                       Margin="0,20,0,0"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"
                                        Foreground="White"
-                                       FontSize="30"
+                                       FontSize="28"
                                        Text="1"/>
 
-              <Button x:Name="BtnKatEksi" Margin="0,20,0,0"
-                                    Style="{StaticResource transparan_button}" Click="BtnKatEksi_Click">
+              <Button x:Name="BtnKatEksi"
+                                    Margin="0,20,0,0"
+                                    Style="{StaticResource transparan_button}"
+                                    Click="BtnKatEksi_Click">
                 <Image MaxHeight="50"
                                        MaxWidth="50"
                                        Source="pack://application:,,,/Images/DizilimYap/asagi_icon.png"/>
@@ -453,13 +452,6 @@
           </Border>
         </Grid>
       </Grid>
-    </Grid>
-
-    <!-- Alt Alan -->
-    <Grid Grid.Row="2">
-      <Border Margin="-260,25,0,0"
-                    Width="1550"
-                    Height="50"/>
     </Grid>
   </Grid>
 </Page>

@@ -28,7 +28,7 @@ namespace Palet_Programlama.UserController
             _sayfalar.Add(new MenuSayfaItem($"4-{LanguageConverter.GetString("UserControl.program")}", "Programlar"));
             _sayfalar.Add(new MenuSayfaItem($"5-{LanguageConverter.GetString("UserControl.hizayar")}", "HizAyarlari"));
             _sayfalar.Add(new MenuSayfaItem($"6-{LanguageConverter.GetString("UserControl.alarm")}", "Alarmlar"));
-            _sayfalar.Add(new MenuSayfaItem($"7-{LanguageConverter.GetString("UserControl.izle")}", "Izleme"));
+            _sayfalar.Add(new MenuSayfaItem($"7-{LanguageConverter.GetString("UserControl.izleme")}", "Izleme"));
             _sayfalar.Add(new MenuSayfaItem($"8-{LanguageConverter.GetString("UserControl.ayarlar")}", "Ayarlar"));
         }
 

@@ -163,7 +163,7 @@
 
   <Style x:Key="AyarMenuItemStyle" TargetType="ListBoxItem">
     <Setter Property="Foreground" Value="White"/>
-    <Setter Property="FontSize" Value="22"/>
+    <Setter Property="FontSize" Value="18"/>
     <Setter Property="FontWeight" Value="SemiBold"/>
     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
     <Setter Property="Margin" Value="0,0,0,10"/>
@@ -191,7 +191,7 @@
 
   <Style x:Key="AyarBaslikStyle" TargetType="TextBlock">
     <Setter Property="Foreground" Value="White"/>
-    <Setter Property="FontSize" Value="28"/>
+    <Setter Property="FontSize" Value="24"/>
     <Setter Property="FontWeight" Value="SemiBold"/>
   </Style>
 

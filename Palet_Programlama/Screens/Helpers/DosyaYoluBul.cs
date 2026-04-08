@@ -7,10 +7,6 @@ namespace Palet_Programlama.Screens.Helpers
     {
         public static string DosyaGetir(string klasorAdi, string dosyaAdi)
         {
-            string outputYolu = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, klasorAdi, dosyaAdi);
-            if (File.Exists(outputYolu))
-                return outputYolu;
-
             DirectoryInfo klasor = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
 
             while (klasor != null)
@@ -22,7 +18,7 @@ namespace Palet_Programlama.Screens.Helpers
                 klasor = klasor.Parent;
             }
 
-            return outputYolu;
+            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, klasorAdi, dosyaAdi);
         }
     }
 }

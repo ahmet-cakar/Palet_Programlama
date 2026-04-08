@@ -6,14 +6,15 @@
       xmlns:controls="clr-namespace:Palet_Programlama.UserController"
       xmlns:language="clr-namespace:Palet_Programlama.Languages"
       mc:Ignorable="d"
-      d:DesignHeight="868" d:DesignWidth="1809.135"
+      d:DesignWidth="1920"
+      d:DesignHeight="1080"
       Title="Dizilim_Yap">
 
   <Page.Resources>
     <language:LanguageConverter x:Key="LanguageConverter"/>
   </Page.Resources>
 
-  <Grid Margin="12">
+  <Grid Margin="24">
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="Auto"/>
@@ -22,53 +23,56 @@
     </Grid.RowDefinitions>
 
     <!-- Header -->
-    <Grid Grid.Row="0" Margin="0,0,0,10">
+    <Grid Grid.Row="0" Margin="0,0,0,18">
       <Border VerticalAlignment="Center">
-        <controls:UstMenu x:Name="UstMenuControl" Margin="0,5,0,0"/>
+        <controls:UstMenu x:Name="UstMenuControl" />
       </Border>
     </Grid>
 
     <!-- Üst bilgi alanı -->
-    <Grid Grid.Row="1" Margin="0,0,0,10">
+    <Grid Grid.Row="1" Margin="0,0,0,18">
       <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="1.14*"/>
-        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="1.20*"/>
+        <ColumnDefinition Width="1.25*"/>
       </Grid.ColumnDefinitions>
 
       <!-- Aynalama ve X/Y -->
       <Border Grid.Column="0"
-                    Margin="0,0,8,0"
-                    Padding="18,10"
-                    CornerRadius="15"
+                    Margin="0,0,10,0"
+                    Padding="20,14"
+                    CornerRadius="18"
                     Background="#191919">
         <Grid>
           <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.4*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
           </Grid.ColumnDefinitions>
 
-          <Grid Grid.Column="0" Margin="0,0,10,0">
+          <!-- Aynalama -->
+          <Grid Grid.Column="0" Margin="0,0,16,0">
             <Grid.ColumnDefinitions>
               <ColumnDefinition Width="*"/>
-              <ColumnDefinition Width="23.853"/>
-              <ColumnDefinition Width="4.84"/>
-              <ColumnDefinition Width="7.827"/>
-              <ColumnDefinition Width="5.48"/>
+              <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0" x:Name="txtAynamala"
+            <TextBlock Grid.Column="0"
+                                   x:Name="txtAynamala"
                                    VerticalAlignment="Center"
                                    Foreground="White"
-                                   FontSize="24"
+                                   FontSize="22"
                                    Text="{Binding Source='DizilimYap.txtAynalama',Converter={StaticResource LanguageConverter}}"/>
-            <CheckBox Grid.Column="1" x:Name="cbXEkseni"
+
+            <CheckBox Grid.Column="1"
+                                  x:Name="cbXEkseni"
                                   Margin="12,0,0,0"
                                   VerticalAlignment="Center"
-                                  Style="{StaticResource checkbox_siyah_aynalama}" Grid.ColumnSpan="4" Click="cbXEkseni_Click" />
+                                  Style="{StaticResource checkbox_siyah_aynalama}"
+                                  Click="cbXEkseni_Click"/>
           </Grid>
 
-          <Grid Grid.Column="1" Margin="0,0,10,0">
+          <!-- X -->
+          <Grid Grid.Column="1" Margin="0,0,16,0">
             <Grid.ColumnDefinitions>
               <ColumnDefinition Width="*"/>
               <ColumnDefinition Width="Auto"/>
@@ -77,14 +81,18 @@
             <TextBlock Grid.Column="0"
                                    VerticalAlignment="Center"
                                    Foreground="White"
-                                   FontSize="24"
+                                   FontSize="22"
                                    Text="{Binding Source='DizilimYap.txtXeksen',Converter={StaticResource LanguageConverter}}"/>
-            <CheckBox Grid.Column="1" x:Name="cbYEkseni"
+
+            <CheckBox Grid.Column="1"
+                                  x:Name="cbYEkseni"
                                   Margin="12,0,0,0"
                                   VerticalAlignment="Center"
-                                  Style="{StaticResource checkbox_siyah_aynalama}" Click="cbYEkseni_Click"/>
+                                  Style="{StaticResource checkbox_siyah_aynalama}"
+                                  Click="cbYEkseni_Click"/>
           </Grid>
 
+          <!-- Y -->
           <Grid Grid.Column="2">
             <Grid.ColumnDefinitions>
               <ColumnDefinition Width="*"/>
@@ -94,84 +102,80 @@
             <TextBlock Grid.Column="0"
                                    VerticalAlignment="Center"
                                    Foreground="White"
-                                   FontSize="24"
+                                   FontSize="22"
                                    Text="{Binding Source='DizilimYap.txtYeksen',Converter={StaticResource LanguageConverter}}"/>
-            <!--<CheckBox Grid.Column="1"
-                                  Margin="12,0,0,0"
-                                  VerticalAlignment="Center"
-                                  Style="{StaticResource checkbox_siyah_aynalama}"/>-->
           </Grid>
         </Grid>
       </Border>
 
       <!-- Ürün / Palet özellikleri -->
       <Border Grid.Column="1"
-                    Margin="8,0,0,0"
-                    Padding="18,10"
-                    CornerRadius="15"
+                    Margin="10,0,0,0"
+                    Padding="20,14"
+                    CornerRadius="18"
                     Background="#191919">
         <Grid>
           <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="12"/>
             <RowDefinition Height="Auto"/>
           </Grid.RowDefinitions>
 
-          <Grid Grid.Row="0" Margin="0,0,0,8">
+          <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
               <ColumnDefinition Width="Auto"/>
               <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0"
-                                   FontSize="20"
+                                   FontSize="19"
                                    Foreground="White"
                                    FontWeight="SemiBold"
                                    Text="{Binding Source='DizilimYap.urunozellik',Converter={StaticResource LanguageConverter}}"/>
 
             <TextBlock Grid.Column="1"
                                    Margin="10,0,0,0"
-                                   FontSize="20"
+                                   FontSize="19"
                                    Foreground="White"
                                    Name="txtUrunOzellikleri"
                                    Text=""
                                    TextWrapping="Wrap"/>
           </Grid>
 
-          <Grid Grid.Row="1">
+          <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
               <ColumnDefinition Width="Auto"/>
-              <ColumnDefinition Width="110*"/>
-              <ColumnDefinition Width="399*"/>
+              <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Column="0"
-                                   FontSize="20"
+                                   FontSize="19"
                                    Foreground="White"
                                    FontWeight="SemiBold"
-                                   Text="{Binding Source='DizilimYap.paletozellik',Converter={StaticResource LanguageConverter}}" Margin="0,0,10,0"/>
+                                   Margin="0,0,10,0"
+                                   Text="{Binding Source='DizilimYap.paletozellik',Converter={StaticResource LanguageConverter}}"/>
 
             <TextBlock Grid.Column="1"
                                    x:Name="txtPaletOzellikleri"
-                                   Margin="2,0,0,0"
-                                   FontSize="20"
+                                   FontSize="19"
                                    Foreground="White"
                                    Text=""
-                                   TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+                                   TextWrapping="Wrap"/>
           </Grid>
         </Grid>
       </Border>
     </Grid>
 
     <!-- Ana orta alan -->
-    <Grid Grid.Row="2" Margin="0,0,0,10">
+    <Grid Grid.Row="2" Margin="0,0,0,18">
       <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="4.5*"/>
-        <ColumnDefinition Width="3.5*"/>
-        <ColumnDefinition Width="90"/>
+        <ColumnDefinition Width="4.2*"/>
+        <ColumnDefinition Width="3.8*"/>
+        <ColumnDefinition Width="120"/>
       </Grid.ColumnDefinitions>
 
       <!-- Sol taraf -->
-      <Grid Grid.Column="0" Margin="0,0,10,0">
+      <Grid Grid.Column="0" Margin="0,0,12,0">
         <Grid.RowDefinitions>
           <RowDefinition Height="Auto"/>
           <RowDefinition Height="Auto"/>
@@ -180,42 +184,43 @@
 
         <!-- Kat kopyala -->
         <Border Grid.Row="0"
-                        Margin="0,0,0,10"
-                        Padding="18,18,18,14"
-                        CornerRadius="15"
+                        Margin="0,0,0,12"
+                        Padding="20,18,20,16"
+                        CornerRadius="18"
                         Background="#191919">
           <StackPanel>
             <TextBlock Foreground="White"
-                                   FontSize="28"
-                                   Margin="0,0,0,14"
+                                   FontSize="26"
+                                   Margin="0,0,0,5"
                                    Text="{Binding Source='DizilimYap.txtKatKopyala',Converter={StaticResource LanguageConverter}}"/>
 
-            <WrapPanel VerticalAlignment="Center">
+            <WrapPanel VerticalAlignment="Center" ItemHeight="44">
               <TextBlock Margin="0,0,14,0"
-                                       FontSize="24"
+                                       FontSize="22"
                                        VerticalAlignment="Center"
                                        Foreground="White"
-                                       Text="{Binding Source='DizilimYap.kopyala',Converter={StaticResource LanguageConverter}}"/>
+                                       Text="{Binding Source='ButtonKey.btnKopyala',Converter={StaticResource LanguageConverter}}"/>
 
-              <Button Width="25"  
-                                    Height="25"
-                                    Margin="0,0,20,0"
+              <Button Width="28"
+                                    Height="28"
+                                    Margin="0,0,18,0"
                                     VerticalAlignment="Center"
                                     Style="{StaticResource transparan_button}">
-                <StackPanel MouseDown="BtnKopyalaArti_MouseDown"  Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel MouseDown="BtnKopyalaArti_MouseDown" Orientation="Horizontal" HorizontalAlignment="Center">
                   <Image Source="pack://application:,,,/Images/DizilimYap/arti.png"/>
                 </StackPanel>
               </Button>
 
-              <TextBlock Width="35"   Name="txtKopyalaValue"
+              <TextBlock Width="35"
+                                       Name="txtKopyalaValue"
                                        VerticalAlignment="Center"
-                                       FontSize="24"
+                                       FontSize="22"
                                        Foreground="White"
                                        Text="1"/>
 
-              <Button Width="30"
-                                    Height="25"
-                                    Margin="0,0,20,0"
+              <Button Width="28"
+                                    Height="28"
+                                    Margin="0,0,18,0"
                                     VerticalAlignment="Center"
                                     Style="{StaticResource transparan_button}">
                 <StackPanel MouseDown="BtnKopyalaEksi_MouseDown" Orientation="Horizontal" HorizontalAlignment="Center">
@@ -224,14 +229,14 @@
               </Button>
 
               <TextBlock Margin="0,0,14,0"
-                                       FontSize="24"
+                                       FontSize="22"
                                        VerticalAlignment="Center"
                                        Foreground="White"
                                        Text="{Binding Source='ButtonKey.btnYapistir',Converter={StaticResource LanguageConverter}}"/>
 
-              <Button Width="30"
-                                    Height="25"
-                                    Margin="0,0,20,0"
+              <Button Width="28"
+                                    Height="28"
+                                    Margin="0,0,18,0"
                                     VerticalAlignment="Center"
                                     Style="{StaticResource transparan_button}">
                 <StackPanel MouseDown="BtnYapistirArti_MouseDown" Orientation="Horizontal" HorizontalAlignment="Center">
@@ -239,15 +244,16 @@
                 </StackPanel>
               </Button>
 
-              <TextBlock Width="35" Name="txtYapisValue"
+              <TextBlock Width="35"
+                                       Name="txtYapisValue"
                                        VerticalAlignment="Center"
-                                       FontSize="24"
+                                       FontSize="22"
                                        Foreground="White"
                                        Text="2"/>
 
-              <Button Width="30" 
-                                    Height="25"
-                                    Margin="0,0,20,0"
+              <Button Width="28"
+                                    Height="28"
+                                    Margin="0,0,24,0"
                                     VerticalAlignment="Center"
                                     Style="{StaticResource transparan_button}">
                 <StackPanel MouseDown="BtnYapistirEksi_MouseDown" Orientation="Horizontal" HorizontalAlignment="Center">
@@ -255,33 +261,35 @@
                 </StackPanel>
               </Button>
 
-              <Button  Margin="60,0,0,0"  Content="{Binding Source='ButtonKey.btnKopyala',Converter={StaticResource LanguageConverter}}"
+              <Button Margin="20,0,0,0"
+                                    Content="{Binding Source='ButtonKey.btnKopyala',Converter={StaticResource LanguageConverter}}"
                                     Width="150"
                                     Background="{StaticResource button_background}"
-                                    Style="{StaticResource button_template}" Click="Btn_KatKopayala_Click" />
+                                    Style="{StaticResource button_template}"
+                                    Click="Btn_KatKopayala_Click"/>
             </WrapPanel>
           </StackPanel>
         </Border>
 
         <!-- Pozisyon seçimi -->
         <Border Grid.Row="1"
-                        Margin="0,0,0,10"
-                        Padding="18"
+                        Margin="0,0,0,12"
+                        Padding="20"
                         CornerRadius="20"
                         Background="#191919">
           <Grid>
             <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="1.2*"/>
+              <ColumnDefinition Width="1.15*"/>
               <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0" Margin="0,0,16,0">
+            <StackPanel Grid.Column="0" Margin="0,0,18,0">
               <TextBlock Foreground="White"
-                                       FontSize="28"
-                                       Margin="0,0,0,16"
+                                       FontSize="26"
+                                       Margin="0,0,0,14"
                                        Text="{Binding Source='DizilimYap.txtPozisyonSecimi',Converter={StaticResource LanguageConverter}}"/>
 
-              <StackPanel Margin="0,20,0,0"
+              <StackPanel Margin="0,18,0,0"
                                         VerticalAlignment="Top"
                                         Orientation="Horizontal">
                 <StackPanel Width="20" Height="20" VerticalAlignment="Top">
@@ -291,15 +299,15 @@
                 <StackPanel Orientation="Vertical" Margin="8,0,0,0">
                   <TextBlock Text="{Binding Source='DizilimYap.txtYazi1',Converter={StaticResource LanguageConverter}}"
                                                Foreground="White"
-                                               FontSize="18"
+                                               FontSize="17"
                                                TextWrapping="Wrap"/>
                   <TextBlock Text="{Binding Source='DizilimYap.txtYazi2',Converter={StaticResource LanguageConverter}}"
                                                Foreground="White"
-                                               FontSize="18"
+                                               FontSize="17"
                                                TextWrapping="Wrap"/>
                   <TextBlock Text="{Binding Source='DizilimYap.txtYazi3',Converter={StaticResource LanguageConverter}}"
                                                Foreground="White"
-                                               FontSize="18"
+                                               FontSize="17"
                                                TextWrapping="Wrap"/>
                 </StackPanel>
               </StackPanel>
@@ -310,16 +318,16 @@
                                     VerticalAlignment="Center">
               <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="{Binding Source='DizilimYap.txtDikey',Converter={StaticResource LanguageConverter}}"
-                                           Width="140"
+                                           Width="130"
                                            Foreground="White"
-                                           FontSize="20"
+                                           FontSize="19"
                                            TextAlignment="Center"/>
 
                 <TextBlock Text="{Binding Source='DizilimYap.txtYatay',Converter={StaticResource LanguageConverter}}"
-                                           Margin="20,0,0,0"
-                                           Width="140"
+                                           Margin="16,0,0,0"
+                                           Width="130"
                                            Foreground="White"
-                                           FontSize="20"
+                                           FontSize="19"
                                            TextAlignment="Center"/>
               </StackPanel>
 
@@ -327,9 +335,9 @@
                                         HorizontalAlignment="Center"
                                         Margin="0,16,0,0">
                 <Rectangle Name="dikeyKutu"
-                                           Width="100"
-                                           Height="150"
-                                           Margin="10,0,20,0"
+                                           Width="92"
+                                           Height="138"
+                                           Margin="8,0,18,0"
                                            MouseDown="dikeyKutu_MouseDown"
                                            Stroke="Transparent"
                                            StrokeThickness="0">
@@ -339,9 +347,9 @@
                 </Rectangle>
 
                 <Rectangle Name="yatayKutu"
-                                           Width="150"
-                                           Height="100"
-                                           Margin="10,25,0,0"
+                                           Width="138"
+                                           Height="92"
+                                           Margin="8,22,0,0"
                                            MouseDown="yatayKutu_MouseDown"
                                            Stroke="Transparent"
                                            StrokeThickness="0">
@@ -357,14 +365,14 @@
         <!-- Alt sol -->
         <Grid Grid.Row="2">
           <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1.4*"/>
+            <ColumnDefinition Width="1.35*"/>
             <ColumnDefinition Width="1*"/>
           </Grid.ColumnDefinitions>
 
           <!-- MOD -->
           <Border Grid.Column="0"
-                            Margin="0,0,10,0"
-                            Padding="18"
+                            Margin="0,0,12,0"
+                            Padding="20"
                             CornerRadius="20"
                             Background="#191919">
             <Grid>
@@ -374,36 +382,40 @@
               </Grid.ColumnDefinitions>
 
               <StackPanel>
-                <TextBlock Margin="0,10,0,0" Name="txtCokluEklemeMod"
+                <TextBlock Margin="0,8,0,0"
+                                           Name="txtCokluEklemeMod"
                                            VerticalAlignment="Center"
                                            Foreground="White"
-                                           FontSize="24"
+                                           FontSize="22"
                                            Text="{Binding Source='DizilimYap.txtCokluEkleMod',Converter={StaticResource LanguageConverter}}"/>
 
-                <TextBlock VerticalAlignment="Center" Name="txtHizalamaMod"
-                                           Margin="0,30,0,0"
+                <TextBlock VerticalAlignment="Center"
+                                           Name="txtHizalamaMod"
+                                           Margin="0,26,0,0"
                                            Foreground="White"
-                                           FontSize="24"
+                                           FontSize="22"
                                            Text="{Binding Source='DizilimYap.txtHizalamaMod',Converter={StaticResource LanguageConverter}}"/>
 
-                <TextBlock VerticalAlignment="Center" Name="txtPaletTasimaMod"
-                                           Margin="0,30,0,0"
+                <TextBlock VerticalAlignment="Center"
+                                           Name="txtPaletTasimaMod"
+                                           Margin="0,26,0,0"
                                            Foreground="White"
-                                           FontSize="24"
+                                           FontSize="22"
                                            Text="{Binding Source='DizilimYap.txtPaletTasimaMod',Converter={StaticResource LanguageConverter}}"/>
 
-                <TextBlock VerticalAlignment="Center" Name="txtKatTasimaMod"
-                                           Margin="0,30,0,0"
+                <TextBlock VerticalAlignment="Center"
+                                           Name="txtKatTasimaMod"
+                                           Margin="0,26,0,0"
                                            Foreground="White"
-                                           FontSize="24"
+                                           FontSize="22"
                                            Text="{Binding Source='DizilimYap.txtKatTasimaMod',Converter={StaticResource LanguageConverter}}"/>
               </StackPanel>
 
-              <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20,6,0,0">
-                <CheckBox  x:Name="cbCokluEkleme" Margin="0,12,0,0" Style="{StaticResource checkbox_siyah_mod}" Click="cbCokluEkleme_Click" />
-                <CheckBox x:Name="cbHizalama" Margin="0,30,0,0" Style="{StaticResource checkbox_siyah_mod}" Click="cbHizalama_Click" />
-                <CheckBox x:Name="cbPaletTasima" Margin="0,30,0,0" Style="{StaticResource checkbox_siyah_mod}" Click="cbPaletTasima_Click" />
-                <CheckBox x:Name="cbKatTasima" Margin="0,30,0,0" Style="{StaticResource checkbox_siyah_mod}" Click="cbKatTasima_Click" />
+              <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20,4,0,0">
+                <CheckBox x:Name="cbCokluEkleme" Margin="0,10,0,0" Style="{StaticResource checkbox_siyah_mod}" Click="cbCokluEkleme_Click"/>
+                <CheckBox x:Name="cbHizalama" Margin="0,28,0,0" Style="{StaticResource checkbox_siyah_mod}" Click="cbHizalama_Click"/>
+                <CheckBox x:Name="cbPaletTasima" Margin="0,28,0,0" Style="{StaticResource checkbox_siyah_mod}" Click="cbPaletTasima_Click"/>
+                <CheckBox x:Name="cbKatTasima" Margin="0,28,0,0" Style="{StaticResource checkbox_siyah_mod}" Click="cbKatTasima_Click"/>
               </StackPanel>
             </Grid>
           </Border>
@@ -417,8 +429,8 @@
 
             <!-- mm alanı -->
             <Border Grid.Row="0"
-                                Margin="0,0,0,10"
-                                Padding="10"
+                                Margin="0,0,0,12"
+                                Padding="12"
                                 CornerRadius="20"
                                 Background="#191919">
               <Grid>
@@ -431,7 +443,7 @@
                 <Button Grid.Column="0"
                                         VerticalAlignment="Center"
                                         Width="30"
-                                        Height="25"
+                                        Height="26"
                                         Style="{StaticResource transparan_button}">
                   <StackPanel MouseDown="BtnHareketMiktariArti_MouseDown" Orientation="Horizontal" HorizontalAlignment="Center">
                     <Image Source="pack://application:,,,/Images/DizilimYap/arti.png"/>
@@ -441,17 +453,18 @@
                 <StackPanel Orientation="Horizontal"
                                             HorizontalAlignment="Center"
                                             Grid.Column="1">
-                  <TextBox Width="55" Name="txtHareketMiktari"
-                                             FontSize="25"
+                  <TextBox Width="55"
+                                             Name="txtHareketMiktari"
+                                             FontSize="23"
                                              VerticalAlignment="Center"
                                              Foreground="White"
                                              Text="10"
                                              TextAlignment="Center"
                                              Background="Transparent"
-                                             BorderThickness="0" />
+                                             BorderThickness="0"/>
 
                   <TextBlock Margin="5,0,0,0"
-                                               FontSize="20"
+                                               FontSize="18"
                                                VerticalAlignment="Center"
                                                Foreground="White"
                                                Text="mm"/>
@@ -460,7 +473,7 @@
                 <Button Grid.Column="2"
                                         VerticalAlignment="Center"
                                         Width="30"
-                                        Height="25"
+                                        Height="26"
                                         Style="{StaticResource transparan_button}">
                   <StackPanel MouseDown="BtnHareketMiktariEksi_MouseDown" Orientation="Horizontal" HorizontalAlignment="Center">
                     <Image Source="pack://application:,,,/Images/DizilimYap/eksi.png"/>
@@ -474,7 +487,7 @@
                                 CornerRadius="20"
                                 Background="#191919">
               <Viewbox Stretch="Uniform">
-                <Grid Width="240" Height="220" Margin="20">
+                <Grid Width="230" Height="210" Margin="18">
                   <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -486,25 +499,25 @@
                     <ColumnDefinition/>
                   </Grid.ColumnDefinitions>
 
-                  <Button x:Name="BtnYukari" Grid.Row="0" Grid.Column="1" Width="60" Height="60" Style="{StaticResource transparan_button}" Click="BtnYukari_Click">
+                  <Button x:Name="BtnYukari" Grid.Row="0" Grid.Column="1" Width="58" Height="58" Style="{StaticResource transparan_button}" Click="BtnYukari_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                       <Image Source="pack://application:,,,/Images/DizilimYap/yukari_ok.png"/>
                     </StackPanel>
                   </Button>
 
-                  <Button x:Name="BtnSol" Grid.Row="1" Grid.Column="0" Width="60" Height="50" Style="{StaticResource transparan_button}" Click="BtnSol_Click">
+                  <Button x:Name="BtnSol" Grid.Row="1" Grid.Column="0" Width="58" Height="48" Style="{StaticResource transparan_button}" Click="BtnSol_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                       <Image Source="pack://application:,,,/Images/DizilimYap/sola_ok.png"/>
                     </StackPanel>
                   </Button>
 
-                  <Button x:Name="BtnSag" Grid.Row="1" Grid.Column="2" Width="60" Height="50" Style="{StaticResource transparan_button}" Click="BtnSag_Click">
+                  <Button x:Name="BtnSag" Grid.Row="1" Grid.Column="2" Width="58" Height="48" Style="{StaticResource transparan_button}" Click="BtnSag_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                       <Image Source="pack://application:,,,/Images/DizilimYap/saga_ok.png"/>
                     </StackPanel>
                   </Button>
 
-                  <Button x:Name="BtnAsagi" Grid.Row="2" Grid.Column="1" Width="60" Height="60" Style="{StaticResource transparan_button}" Click="BtnAsagi_Click">
+                  <Button x:Name="BtnAsagi" Grid.Row="2" Grid.Column="1" Width="58" Height="58" Style="{StaticResource transparan_button}" Click="BtnAsagi_Click">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                       <Image Source="pack://application:,,,/Images/DizilimYap/asagi_ok.png"/>
                     </StackPanel>
@@ -518,8 +531,8 @@
 
       <!-- Palet alanı -->
       <Border Grid.Column="1"
-                    Margin="0,0,10,0"
-                    Padding="14"
+                    Margin="0,0,12,0"
+                    Padding="16"
                     CornerRadius="20"
                     Background="#191919">
         <Grid>
@@ -528,20 +541,19 @@
             <RowDefinition Height="*"/>
           </Grid.RowDefinitions>
           <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="110"/>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="*"/>
           </Grid.ColumnDefinitions>
 
           <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <StackPanel HorizontalAlignment="Left">
-              <Image Margin="20,10,0,0"
-                                   MaxHeight="160"
-                                   MaxWidth="160"
+              <Image Margin="18,8,0,0"
+                                   MaxHeight="140"
+                                   MaxWidth="140"
                                    Source="pack://application:,,,/Images/DizilimYap/referans_eksenler.png"/>
             </StackPanel>
           </Grid>
 
-          <!-- Responsive canvas -->
           <Viewbox Grid.Column="1"
                              Grid.Row="1"
                              Stretch="Uniform"
@@ -556,7 +568,6 @@
                 <ImageBrush ImageSource="pack://application:,,,/Images/DizilimYap/palet.png"/>
               </Canvas.Background>
             </Canvas>
-
           </Viewbox>
         </Grid>
       </Border>
@@ -564,48 +575,48 @@
       <!-- Kat paneli -->
       <Border Grid.Column="2"
                     Margin="8,0,0,0"
-                    Padding="10"
+                    Padding="12"
                     CornerRadius="20"
                     Background="#191919">
-        <Grid Margin="0,20,0,0">
+        <Grid Margin="0,16,0,0">
           <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
           </Grid.RowDefinitions>
 
           <TextBlock Grid.Row="0"
-                               Margin="0,10,0,20"
+                               Margin="0,8,0,18"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
                                Foreground="White"
-                               FontSize="28"
+                               FontSize="24"
                                Text="{Binding Source='DizilimYap.txtKat',Converter={StaticResource LanguageConverter}}"/>
 
           <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center">
-            <Button Margin="0,20,0,0" Style="{StaticResource transparan_button}" x:Name="AnasayfaBtn">
+            <Button Margin="0,16,0,0" Style="{StaticResource transparan_button}" x:Name="AnasayfaBtn">
               <StackPanel>
                 <Image x:Name="btnKatArti"
                                        MouseDown="btnKatArti_MouseDown"
-                                       MaxHeight="50"
-                                       MaxWidth="50"
+                                       MaxHeight="46"
+                                       MaxWidth="46"
                                        Source="pack://application:,,,/Images/DizilimYap/yukari_icon.png"/>
               </StackPanel>
             </Button>
 
             <TextBlock x:Name="txtKat"
-                                   Margin="0,20,0,0"
+                                   Margin="0,18,0,0"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White"
-                                   FontSize="30"
+                                   FontSize="28"
                                    Text="1"/>
 
-            <Button Margin="0,20,0,0" Style="{StaticResource transparan_button}">
+            <Button Margin="0,18,0,0" Style="{StaticResource transparan_button}">
               <StackPanel>
                 <Image x:Name="btnKatEksi"
                                        MouseDown="btnKatEksi_MouseDown"
-                                       MaxHeight="50"
-                                       MaxWidth="50"
+                                       MaxHeight="46"
+                                       MaxWidth="46"
                                        Source="pack://application:,,,/Images/DizilimYap/asagi_icon.png"/>
               </StackPanel>
             </Button>
@@ -617,41 +628,45 @@
     <!-- Footer -->
     <Grid Grid.Row="3">
       <Border CornerRadius="20"
-                    Margin="0,0,0,0"
                     Background="Transparent">
         <WrapPanel>
-          <Button FontSize="24" Click="Dizilimi_Kaydet_Click"
+          <Button FontSize="22"
+                            Click="Dizilimi_Kaydet_Click"
                             Content="{Binding Source='DizilimYap.btnDizilimiKaydet',Converter={StaticResource LanguageConverter}}"
-                            Width="240"
+                            Width="230"
                             Margin="0,0,10,10"
                             x:Name="BtnDizilimKaydet"
                             Background="{StaticResource button_background_green}"
-                            Style="{StaticResource button_template}" />
+                            Style="{StaticResource button_template}"/>
 
-          <Button FontSize="24"  x:Name="BtnKatTemizle"
+          <Button FontSize="22"
+                            x:Name="BtnKatTemizle"
                             Content="{Binding Source='DizilimYap.btnKatTemizle',Converter={StaticResource LanguageConverter}}"
-                            Width="240"
+                            Width="230"
                             Margin="0,0,10,10"
                             Background="{StaticResource button_background}"
-                            Style="{StaticResource button_template}" Click="BtnKatTemizle_Click" />
+                            Style="{StaticResource button_template}"
+                            Click="BtnKatTemizle_Click"/>
 
-          <Button FontSize="24"  x:Name="BtnPaletTemizle"
+          <Button FontSize="22"
+                            x:Name="BtnPaletTemizle"
                             Content="{Binding Source='DizilimYap.btnPaletTemizle',Converter={StaticResource LanguageConverter}}"
-                            Width="240"
+                            Width="230"
                             Margin="0,0,10,10"
-                            Background="{StaticResource button_background_black}"
-                            Style="{StaticResource button_template}" Click="BtnPaletTemizle_Click" />
+                            Background="{DynamicResource button_background_black}"
+                            Style="{StaticResource button_template}"
+                            Click="BtnPaletTemizle_Click"/>
 
-          <Button FontSize="24" x:Name="BtnUrunSil"
+          <Button FontSize="22"
+                            x:Name="BtnUrunSil"
                             Content="{Binding Source='DizilimYap.btnSeciliUrunuSil',Converter={StaticResource LanguageConverter}}"
-                            Width="240"
+                            Width="230"
                             Margin="0,0,10,10"
                             Background="{StaticResource button_background_gray}"
-                            Style="{StaticResource button_template}" Click="BtnUrunSil_Click" />
+                            Style="{StaticResource button_template}"
+                            Click="BtnUrunSil_Click"/>
         </WrapPanel>
       </Border>
     </Grid>
   </Grid>
-
-
 </Page>

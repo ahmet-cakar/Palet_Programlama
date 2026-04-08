@@ -385,6 +385,8 @@ namespace Palet_Programlama.Screens
             else
                 CanvasiTemizle();
         }
+        
+        
         private void CboxDizilimListesi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (_sayfaYukleniyor || CboxDizilimListesi.SelectedItem == null)

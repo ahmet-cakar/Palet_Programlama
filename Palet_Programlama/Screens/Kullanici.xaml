@@ -10,6 +10,71 @@
       Title="Kullanici">
   <Page.Resources>
     <language:LanguageConverter  x:Key="LanguageConverter"/>
+    <Style x:Key="BuyukCheckBoxStili" TargetType="CheckBox">
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="FontSize" Value="18"/>
+      <Setter Property="Cursor" Value="Hand"/>
+      <Setter Property="Padding" Value="10,8"/>
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="CheckBox">
+            <Border Background="{TemplateBinding Background}"
+                        CornerRadius="10"
+                        Padding="{TemplateBinding Padding}">
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="28"/>
+                  <ColumnDefinition Width="10"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border x:Name="Kutucuk"
+                                Width="26"
+                                Height="26"
+                                CornerRadius="6"
+                                BorderBrush="#D9FFFFFF"
+                                BorderThickness="2"
+                                Background="#22FFFFFF"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center">
+                  <Path x:Name="Tik"
+                                  Data="M 4 11 L 9 16 L 18 6"
+                                  Stroke="White"
+                                  StrokeThickness="2.5"
+                                  StrokeStartLineCap="Round"
+                                  StrokeEndLineCap="Round"
+                                  StrokeLineJoin="Round"
+                                  Visibility="Collapsed"/>
+                </Border>
+
+                <ContentPresenter Grid.Column="2"
+                                          VerticalAlignment="Center"
+                                          RecognizesAccessKey="True"/>
+              </Grid>
+            </Border>
+
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsChecked" Value="True">
+                <Setter TargetName="Kutucuk" Property="Background" Value="#3FAE5A"/>
+                <Setter TargetName="Kutucuk" Property="BorderBrush" Value="#3FAE5A"/>
+                <Setter TargetName="Tik" Property="Visibility" Value="Visible"/>
+              </Trigger>
+
+              <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#18FFFFFF"/>
+              </Trigger>
+
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.55"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+
   </Page.Resources>
   <Grid>
         <Image Source="pack://application:,,,/Images/gradient_background.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="UniformToFill"/>
@@ -221,14 +286,14 @@
                 </TextBlock>
 
             </Grid>
-              <CheckBox x:Name="chkBeniHatirla"
-                  Content="{Binding Source='Kullanici.beniHatirla',Converter={StaticResource LanguageConverter}}"
-                  Foreground="White"
-                  FontSize="18"
-                  Margin="10,15,0,0"
-                  HorizontalAlignment="Left"
-                  VerticalAlignment="Center"/>
-              <Grid>
+      <CheckBox x:Name="chkBeniHatirla"
+          Style="{StaticResource BuyukCheckBoxStili}"
+          Content="{Binding Source='Kullanici.beniHatirla',Converter={StaticResource LanguageConverter}}"
+          Margin="0,15,0,0"
+          HorizontalAlignment="Left"
+          VerticalAlignment="Center"
+          MinWidth="200"/>
+      <Grid>
                 <Button x:Name="btnGiris" Style="{StaticResource button_template}"
                         Background="{StaticResource button_background}" Content="Giriş" 
                         Width="170"  Height="40" Margin="0,20,100,0"

@@ -293,7 +293,9 @@
         "kullaniciSilmeBasarisiz": "Kullanıcı silinemedi. Lütfen tekrar deneyiniz.",
         "kullaniciGuncellemeBasarili": "Kullanıcı başarıyla güncellendi.",
         "kullaniciSilmeBasarili": "Kullanıcı başarıyla silindi.",
-        "kullaniciEklemeBasarili": "Kullanıcı başarıyla eklendi."
+        "kullaniciEklemeBasarili": "Kullanıcı başarıyla eklendi.",
+        "kullaniciAdiMin3Karakter": "Kullanıcı adı en az 3 karakter olmalıdır.",
+        "sifreMin4Karakter": "Şifre en az 4 karakter olmalıdır."
     },
 
     "Kullanici": {

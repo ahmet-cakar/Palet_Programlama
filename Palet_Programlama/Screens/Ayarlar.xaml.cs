@@ -128,9 +128,10 @@ namespace Palet_Programlama.Screens
             string sifre = AktifSifreyiAl().Trim();
             string rol = SeciliRoluAl();
 
-            if (!_kullaniciFormServisi.BilgilerGecerliMi(kullaniciAdi, sifre))
+            string? mesajKey = _kullaniciFormServisi.DogrulamaMesajKeyiGetir(kullaniciAdi, sifre);
+            if (mesajKey != null)
             {
-                BildirimGoster("Ayarlar.kullaniciSifreZorunlu");
+                BildirimGoster(mesajKey);
                 return;
             }
 

@@ -278,7 +278,9 @@
         "kullaniciSilmeBasarisiz": "The user could not be deleted. Please try again.",
         "kullaniciGuncellemeBasarili": "The user has been updated successfully.",
         "kullaniciSilmeBasarili": "The user has been deleted successfully.",
-        "kullaniciEklemeBasarili": "User added successfully."
+        "kullaniciEklemeBasarili": "User added successfully.",
+        "kullaniciAdiMin3Karakter": "Username must be at least 3 characters.",
+        "sifreMin4Karakter": "Password must be at least 4 characters."
     },
     "Kullanici": {
         "kullaniciAdiSifreHatali": "Username or password is incorrect, please check.",

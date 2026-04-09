@@ -6,10 +6,38 @@ namespace Palet_Programlama.Services
 {
     public class KullaniciFormServisi
     {
+        private const int MinimumKullaniciAdiUzunlugu = 3;
+        private const int MinimumSifreUzunlugu = 4;
+
         public bool BilgilerGecerliMi(string kullaniciAdi, string sifre)
         {
-            return !string.IsNullOrWhiteSpace(kullaniciAdi)
-                && !string.IsNullOrWhiteSpace(sifre);
+            if (string.IsNullOrWhiteSpace(kullaniciAdi))
+                return false;
+
+            if (string.IsNullOrWhiteSpace(sifre))
+                return false;
+
+            if (kullaniciAdi.Trim().Length < MinimumKullaniciAdiUzunlugu)
+                return false;
+
+            if (sifre.Trim().Length < MinimumSifreUzunlugu)
+                return false;
+
+            return true;
+        }
+
+        public string? DogrulamaMesajKeyiGetir(string kullaniciAdi, string sifre)
+        {
+            if (string.IsNullOrWhiteSpace(kullaniciAdi) || string.IsNullOrWhiteSpace(sifre))
+                return "Ayarlar.kullaniciSifreZorunlu";
+
+            if (kullaniciAdi.Trim().Length < MinimumKullaniciAdiUzunlugu)
+                return "Ayarlar.kullaniciAdiMin3Karakter";
+
+            if (sifre.Trim().Length < MinimumSifreUzunlugu)
+                return "Ayarlar.sifreMin4Karakter";
+
+            return null;
         }
 
         public KullaniciModel YeniKullaniciOlustur(string kullaniciAdi, string sifre, string rol)

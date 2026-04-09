@@ -17,7 +17,7 @@ namespace Palet_Programlama.Screens
         private readonly KullanicilarServisi _kullanicilarServisi;
         private bool _sayfaHazirMi = false;
         private readonly AyarlarServisi _ayarlarServisi;
-
+        private readonly GirisAyarlariServisi _girisAyarlariServisi;
 
         public Kullanici(Frame Main)
         {
@@ -25,7 +25,8 @@ namespace Palet_Programlama.Screens
             _mainFrame = Main;
             _kullanicilarServisi = new KullanicilarServisi();
             _ayarlarServisi = new AyarlarServisi();
-
+            _girisAyarlariServisi = new GirisAyarlariServisi();
+            HatirlananGirisiYukle();
             string seciliDil = _ayarlarServisi.SeciliDiliGetir();
 
             if (seciliDil == "eng")
@@ -68,6 +69,17 @@ namespace Palet_Programlama.Screens
             UpdatePasswordPlaceholder();
         }
 
+        private void HatirlananGirisiYukle()
+        {
+            var ayarlar = _girisAyarlariServisi.AyarlariYukle();
+
+            if (ayarlar == null || !ayarlar.BeniHatirla)
+                return;
+
+            kullanici_textbox.Text = ayarlar.SonGirenKullaniciAdi ?? "";
+            passwordBox.Password = ayarlar.SonGirenSifre ?? "";
+            chkBeniHatirla.IsChecked = true;
+        }
         private void UpdatePasswordPlaceholder()
         {
             if (string.IsNullOrEmpty(passwordBox.Password))
@@ -119,13 +131,18 @@ namespace Palet_Programlama.Screens
 
             var kullanici = kullanicilar.FirstOrDefault(x =>
                 x.KullaniciAdi.Equals(kullaniciAdi, StringComparison.OrdinalIgnoreCase) &&
-                x.Sifre == sifre);
+                x.Sifre == sifre &&
+                x.AktifMi);
 
             if (kullanici == null)
             {
                 BildirimGoster("Kullanici.kullaniciAdiSifreHatali");
                 return;
             }
+
+            bool beniHatirla = chkBeniHatirla.IsChecked == true;
+
+            _girisAyarlariServisi.BasariliGirisiKaydet(kullaniciAdi, sifre, beniHatirla);
 
             _mainFrame.Navigate(new Anasayfa(_mainFrame));
         }

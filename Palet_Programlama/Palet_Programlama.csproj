@@ -107,6 +107,8 @@
     <Compile Include="Screens\HizAyarları.xaml.cs">
       <DependentUpon>HizAyarları.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Kullanici\Models\GirisAyarlariModel.cs" />
+    <Compile Include="Screens\Kullanici\Services\GirisAyarlariServisi.cs" />
     <Compile Include="Screens\Programlar.xaml.cs">
       <DependentUpon>Programlar.xaml</DependentUpon>
     </Compile>
@@ -300,6 +302,7 @@
     <None Include="Data\Dizilimler.json">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Include="Data\GirisAyarlari.json" />
     <None Include="Data\HizAyarlari.json" />
     <None Include="Data\Kullanicilar.json">
       <Generator>MSBuild:Compile</Generator>

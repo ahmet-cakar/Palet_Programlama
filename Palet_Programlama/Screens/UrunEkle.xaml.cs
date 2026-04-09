@@ -361,8 +361,8 @@ namespace Palet_Programlama.Screens
                 switch (name)
                 {
                     case "txtUrunAdi":
-                        Canvas.SetLeft(txtOnizlemeKutu, 111);
-                        Canvas.SetTop(txtOnizlemeKutu, 15);
+                        Canvas.SetLeft(txtOnizlemeKutu, 20);
+                        Canvas.SetTop(txtOnizlemeKutu, 15.5);
                         txtOnizlemeKutu.FontSize = 18;
                         tamMetin = _textblock.Text ?? "";
 
@@ -374,8 +374,8 @@ namespace Palet_Programlama.Screens
                         break;
 
                     case "txtPaletAdi":
-                        Canvas.SetLeft(txtOnizlemeKutu, 111);
-                        Canvas.SetTop(txtOnizlemeKutu,12);
+                        Canvas.SetLeft(txtOnizlemeKutu, 20);
+                        Canvas.SetTop(txtOnizlemeKutu,14.5);
                         txtOnizlemeKutu.FontSize = 18;
                         tamMetin = _textblock.Text ?? "";
 
@@ -387,24 +387,24 @@ namespace Palet_Programlama.Screens
                         break;
 
                     case "txtUrunEn":
-                        Canvas.SetLeft(txtOnizlemeKutu, 280);
-                        Canvas.SetTop(txtOnizlemeKutu, 214);
+                        Canvas.SetLeft(txtOnizlemeKutu, 180);
+                        Canvas.SetTop(txtOnizlemeKutu, 212);
                         txtOnizlemeKutu.FontSize = 18;
                         txtOnizlemeKutu.Text = _textblock.Text;
                         txtOnizlemeKutu.ToolTip = "";
                         txtOnizlemeKutu.Visibility = Visibility.Visible;
                         break;
                     case "txtUrunBoy":
-                        Canvas.SetLeft(txtOnizlemeKutu, 145);
-                        Canvas.SetTop(txtOnizlemeKutu, 214);
+                        Canvas.SetLeft(txtOnizlemeKutu, 48);
+                        Canvas.SetTop(txtOnizlemeKutu, 212);
                         txtOnizlemeKutu.FontSize = 18;
                         txtOnizlemeKutu.Text = _textblock.Text;
                         txtOnizlemeKutu.ToolTip = "";
                         txtOnizlemeKutu.Visibility = Visibility.Visible;
                         break;
                     case "txtUrunYukseklik":
-                        Canvas.SetLeft(txtOnizlemeKutu, 220);
-                        Canvas.SetTop(txtOnizlemeKutu, 110.5);
+                        Canvas.SetLeft(txtOnizlemeKutu, 120);
+                        Canvas.SetTop(txtOnizlemeKutu, 110);
                         txtOnizlemeKutu.FontSize = 18;
                         txtOnizlemeKutu.Text = _textblock.Text;
                         txtOnizlemeKutu.ToolTip = "";
@@ -417,32 +417,32 @@ namespace Palet_Programlama.Screens
                         break;
                     case "txtUrunBasinc":
 
-                        Canvas.SetLeft(txtOnizlemeKutu, 204);
-                        Canvas.SetTop(txtOnizlemeKutu, 134);
+                        Canvas.SetLeft(txtOnizlemeKutu, 115);
+                        Canvas.SetTop(txtOnizlemeKutu, 135);
                         txtOnizlemeKutu.FontSize = 24;
                         txtOnizlemeKutu.Text = _textblock.Text;
                         txtOnizlemeKutu.ToolTip = "";
                         txtOnizlemeKutu.Visibility = Visibility.Visible;
                         break;
                     case "txtPaletEn":
-                        Canvas.SetLeft(txtOnizlemeKutu, 274);
-                        Canvas.SetTop(txtOnizlemeKutu, 205);
+                        Canvas.SetLeft(txtOnizlemeKutu, 180);
+                        Canvas.SetTop(txtOnizlemeKutu, 204);
                         txtOnizlemeKutu.FontSize = 18;
                         txtOnizlemeKutu.Text = _textblock.Text;
                         txtOnizlemeKutu.ToolTip = "";
                         txtOnizlemeKutu.Visibility = Visibility.Visible;
                         break;
                     case "txtPaletBoy":
-                        Canvas.SetLeft(txtOnizlemeKutu, 151);
-                        Canvas.SetTop(txtOnizlemeKutu, 199);
+                        Canvas.SetLeft(txtOnizlemeKutu, 50);
+                        Canvas.SetTop(txtOnizlemeKutu, 198.5);
                         txtOnizlemeKutu.FontSize = 18;
                         txtOnizlemeKutu.Text = _textblock.Text;
                         txtOnizlemeKutu.ToolTip = "";
                         txtOnizlemeKutu.Visibility = Visibility.Visible;
                         break;
                     case "txtPaletYukseklik":
-                        Canvas.SetLeft(txtOnizlemeKutu, 215);
-                        Canvas.SetTop(txtOnizlemeKutu, 125);
+                        Canvas.SetLeft(txtOnizlemeKutu, 118);
+                        Canvas.SetTop(txtOnizlemeKutu, 122);
                         txtOnizlemeKutu.FontSize = 22;
                         txtOnizlemeKutu.Text = _textblock.Text;
                         txtOnizlemeKutu.ToolTip = "";

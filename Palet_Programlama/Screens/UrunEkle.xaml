@@ -1,270 +1,590 @@
 ﻿<Page x:Class="Palet_Programlama.Screens.UrunEkle"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:Palet_Programlama.UserController"
       xmlns:languages="clr-namespace:Palet_Programlama.Languages"
-      mc:Ignorable="d" 
-      d:DesignHeight="1080" d:DesignWidth="1920"
+      mc:Ignorable="d"
+      d:DesignHeight="1080"
+      d:DesignWidth="1920"
       Title="UrunEkle">
+
   <Page.Resources>
     <languages:LanguageConverter x:Key="LanguageConverter"/>
   </Page.Resources>
+
   <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Border VerticalAlignment="Center">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <!-- Üst Menü -->
+    <Grid Grid.Row="0">
+      <Border VerticalAlignment="Center">
         <local:UstMenu x:Name="UstMenuControl" Margin="0,15,0,0"/>
+      </Border>
+    </Grid>
+
+    <!-- Ana İçerik -->
+    <Grid Grid.Row="1" Margin="30,20,30,30">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1.9*"/>
+        <ColumnDefinition Width="1.1*"/>
+      </Grid.ColumnDefinitions>
+
+      <!-- SOL ALAN -->
+      <Grid Grid.Column="0" Margin="0,0,20,0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="25"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Önizleme -->
+        <Grid Grid.Row="0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="250"/>
+          </Grid.RowDefinitions>
+
+          <TextBlock Grid.Row="0"
+                               Text="{Binding Source='UrunEkle.onizle',Converter={StaticResource LanguageConverter}}"
+                               Foreground="White"
+                               Margin="20,0,0,15"
+                               FontSize="24"
+                               FontFamily="Roboto"
+                               FontWeight="Bold"/>
+
+          <Border Grid.Row="1"
+                            Background="#191919"
+                            CornerRadius="10"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"
+                            MaxWidth="1200"
+                            Padding="20,0,20,0">
+
+            <Grid Height="250">
+
+              <TextBlock x:Name="priviewtextblock"
+             Width="150"
+             Text=""
+             Foreground="White"
+             FontSize="22"
+             FontFamily="Roboto"
+             VerticalAlignment="Bottom"
+             HorizontalAlignment="Left"
+             Margin="0,0,0,20"
+             Opacity="1"
+             Panel.ZIndex="2"/>
+
+              <Canvas Width="250"
+          Height="250"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Background="Transparent"
+          IsHitTestVisible="False"
+          Panel.ZIndex="1">
+
+                <Image x:Name="onIzlemeImage"
+           Width="250"
+           Height="250"
+           Stretch="Uniform"
+           Canvas.Left="0"
+           Canvas.Top="0"/>
+
+                <TextBlock x:Name="txtOnizlemeKutu"
+               ToolTip=""
+               Text=""
+               Foreground="White"
+               FontSize="18"
+               FontWeight="Normal"
+               Canvas.Left="0"
+               Canvas.Top="0"/>
+              </Canvas>
+
+            </Grid>
+
+
+
+
+          </Border>
+        </Grid>
+
+        <!-- Alt Kartlar -->
+        <Grid Grid.Row="2">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+
+          <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+          </Grid>
+
+          <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Ürün Bilgileri -->
+
+            <Border Grid.Column="0"
+              Style="{StaticResource border_template_urunekle}"
+              Panel.ZIndex="3">
+              <StackPanel Margin="15,30,0,0">
+
+                <!-- Ürün Adı -->
+                <Grid Margin="0,0,0,22">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
+                  <TextBlock Grid.Column="0"
+                       Text="{Binding Source='UrunEkle.urunad', Converter={StaticResource LanguageConverter}}"
+                       Style="{StaticResource textblock_template_urunekle}"
+                       VerticalAlignment="Center"/>
+
+                  <Grid Grid.Column="1">
+                    <TextBox Name="txtUrunAdi"
+                         Style="{StaticResource TextBox_templete_urunekle}"
+                         Loaded="myTextBox_Loaded"
+                         TextChanged="UrunPalet_Changed"
+                         GotFocus="UrunPalet_GotFocus"
+                         LostFocus="UrunPalet_LostFocus"/>
+
+                    <TextBlock x:Name="phUrunAdi"
+                           Text="{Binding Source='UrunEkle.urunadgir', Converter={StaticResource LanguageConverter}}"
+                           Style="{StaticResource textblock_place_urunekle}"
+                           Margin="12,0,0,0"
+                           VerticalAlignment="Center"
+                           IsHitTestVisible="False"/>
+                  </Grid>
+                </Grid>
+
+                <!-- Ürün En -->
+                <Grid Margin="0,0,0,22">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
+                  <TextBlock Grid.Column="0"
+                       Text="{Binding Source='UrunEkle.genislik', Converter={StaticResource LanguageConverter}}"
+                       Style="{StaticResource textblock_template_urunekle}"
+                       VerticalAlignment="Center"/>
+
+                  <Grid Grid.Column="1">
+                    <TextBox Name="txtUrunEn"
+                         MaxLength="5"
+                         DataObject.Pasting="TextBox_Pasting"
+                         PreviewTextInput="TextBox_PreviewTextInput"
+                         Style="{StaticResource TextBox_templete_urunekle}"
+                         Loaded="myTextBox_Loaded"
+                         TextChanged="UrunPalet_Changed"
+                         GotFocus="UrunPalet_GotFocus"
+                         LostFocus="UrunPalet_LostFocus"/>
+
+                    <TextBlock x:Name="phUrunEn"
+                           Text="{Binding Source='UrunEkle.urungenislikgir', Converter={StaticResource LanguageConverter}}"
+                           Style="{StaticResource textblock_place_urunekle}"
+                           Margin="12,0,0,0"
+                           VerticalAlignment="Center"
+                           IsHitTestVisible="False"/>
+                  </Grid>
+                </Grid>
+
+                <!-- Ürün Boy -->
+                <Grid Margin="0,0,0,22">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
+                  <TextBlock Grid.Column="0"
+                       Text="{Binding Source='UrunEkle.uzunluk',Converter={StaticResource LanguageConverter}}"
+                       Style="{StaticResource textblock_template_urunekle}"
+                       VerticalAlignment="Center"/>
+
+                  <Grid Grid.Column="1">
+                    <TextBox Name="txtUrunBoy"
+                         MaxLength="5"
+                         DataObject.Pasting="TextBox_Pasting"
+                         PreviewTextInput="TextBox_PreviewTextInput"
+                         Style="{StaticResource TextBox_templete_urunekle}"
+                         Loaded="myTextBox_Loaded"
+                         TextChanged="UrunPalet_Changed"
+                         GotFocus="UrunPalet_GotFocus"
+                         LostFocus="UrunPalet_LostFocus"/>
+
+                    <TextBlock x:Name="phUrunBoy"
+                           Text="{Binding Source='UrunEkle.urunuzunlukgir',Converter={StaticResource LanguageConverter}}"
+                           Style="{StaticResource textblock_place_urunekle}"
+                           Margin="12,0,0,0"
+                           VerticalAlignment="Center"
+                           IsHitTestVisible="False"/>
+                  </Grid>
+                </Grid>
+
+                <!-- Ürün Yükseklik -->
+                <Grid Margin="0,0,0,22">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
+                  <TextBlock Grid.Column="0"
+                       Text="{Binding Source='UrunEkle.yukseklik',Converter={StaticResource LanguageConverter}}"
+                       Style="{StaticResource textblock_template_urunekle}"
+                       VerticalAlignment="Center"/>
+
+                  <Grid Grid.Column="1">
+                    <TextBox Name="txtUrunYukseklik"
+                         MaxLength="4"
+                         DataObject.Pasting="TextBox_Pasting"
+                         PreviewTextInput="TextBox_PreviewTextInput"
+                         Style="{StaticResource TextBox_templete_urunekle}"
+                         Loaded="myTextBox_Loaded"
+                         TextChanged="UrunPalet_Changed"
+                         GotFocus="UrunPalet_GotFocus"
+                         LostFocus="UrunPalet_LostFocus"/>
+
+                    <TextBlock x:Name="phUrunYukseklik"
+                           Text="{Binding Source='UrunEkle.urunyukseklikgir',Converter={StaticResource LanguageConverter}}"
+                           Style="{StaticResource textblock_place_urunekle}"
+                           Margin="12,0,0,0"
+                           VerticalAlignment="Center"
+                           IsHitTestVisible="False"/>
+                  </Grid>
+                </Grid>
+
+                <!-- Ürün Ağırlık -->
+                <Grid Margin="0,0,0,22">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
+                  <TextBlock Grid.Column="0"
+                       Text="{Binding Source='UrunEkle.agirlik',Converter={StaticResource LanguageConverter}}"
+                       Style="{StaticResource textblock_template_urunekle}"
+                       VerticalAlignment="Center"/>
+
+                  <Grid Grid.Column="1">
+                    <TextBox Name="txtUrunAgirlik"
+                         MaxLength="3"
+                         DataObject.Pasting="TextBox_Pasting"
+                         PreviewTextInput="TextBox_PreviewTextInput"
+                         Style="{StaticResource TextBox_templete_urunekle}"
+                         Loaded="myTextBox_Loaded"
+                         TextChanged="UrunPalet_Changed"
+                         GotFocus="UrunPalet_GotFocus"
+                         LostFocus="UrunPalet_LostFocus"/>
+
+                    <TextBlock x:Name="phUrunAgirlik"
+                           Text="{Binding Source='UrunEkle.urunagirlikgir',Converter={StaticResource LanguageConverter}}"
+                           Style="{StaticResource textblock_place_urunekle}"
+                           Margin="12,0,0,0"
+                           VerticalAlignment="Center"
+                           IsHitTestVisible="False"/>
+                  </Grid>
+                </Grid>
+
+                <!-- Ürün Basınç -->
+                <Grid Margin="0,0,0,30">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
+                  <TextBlock Grid.Column="0"
+                       Text="{Binding Source='UrunEkle.basinc',Converter={StaticResource LanguageConverter}}"
+                       Style="{StaticResource textblock_template_urunekle}"
+                       VerticalAlignment="Center"/>
+
+                  <Grid Grid.Column="1">
+                    <TextBox Name="txtUrunBasinc"
+                         MaxLength="4"
+                         DataObject.Pasting="TextBox_Pasting"
+                         PreviewTextInput="TextBox_PreviewTextInput"
+                         Style="{StaticResource TextBox_templete_urunekle}"
+                         Loaded="myTextBox_Loaded"
+                         TextChanged="UrunPalet_Changed"
+                         GotFocus="UrunPalet_GotFocus"
+                         LostFocus="UrunPalet_LostFocus"/>
+
+                    <TextBlock x:Name="phUrunBasinc"
+                           Text="{Binding Source='UrunEkle.urunbasincgir',Converter={StaticResource LanguageConverter}}"
+                           Style="{StaticResource textblock_place_urunekle}"
+                           Margin="12,0,0,0"
+                           VerticalAlignment="Center"
+                           IsHitTestVisible="False"/>
+                  </Grid>
+                </Grid>
+
+                <!-- Butonlar -->
+                <StackPanel Orientation="Horizontal">
+                  <Button x:Name="BtnUrunEkle"
+                    Style="{StaticResource button_template}"
+                    Height="45"
+                    Width="150"
+                    Background="{StaticResource button_backgroundgreen}"
+                    Content="{Binding Source='UrunEkle.uruneklebtn',Converter={StaticResource LanguageConverter}}"
+                    Click="UrunEkleBtn_Click"/>
+
+                  <Button x:Name="BtnUrunDuzenle"
+                    Style="{StaticResource button_template}"
+                    Height="45"
+                    Width="150"
+                    Background="{StaticResource button_background}"
+                    Margin="20,0,0,0"
+                    Content="{Binding Source='UrunEkle.urunduzenlebtn',Converter={StaticResource LanguageConverter}}"
+                    Click="BtnUrunDuzenle_Click"/>
+
+                  <Button x:Name="BtnUrunSil"
+                    Style="{StaticResource button_template}"
+                    Height="45"
+                    Width="150"
+                    Background="{StaticResource button_background}"
+                    Margin="20,0,0,0"
+                    Content="{Binding Source='UrunEkle.urunsilbtn',Converter={StaticResource LanguageConverter}}"
+                    Click="UrunSilBtn_Click"/>
+                </StackPanel>
+
+              </StackPanel>
             </Border>
+
+
+
+            <!-- Palet Bilgileri -->
+            <Border Grid.Column="1"
+        Style="{StaticResource border_template_urunekle}"
+        Margin="15,0,0,0">
+              <StackPanel Margin="0,30,0,0">
+
+                <!-- Palet Adı -->
+                <Grid Margin="0,0,0,22">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
+                  <TextBlock Grid.Column="0"
+                       Text="{Binding Source='UrunEkle.paletad',Converter={StaticResource LanguageConverter}}"
+                       Style="{StaticResource textblock_template_urunekle}"
+                       VerticalAlignment="Center"/>
+
+                  <Grid Grid.Column="1">
+                    <TextBox Name="txtPaletAdi"
+                         Style="{StaticResource TextBox_templete_urunekle}"
+                         Loaded="myTextBox_Loaded"
+                         TextChanged="UrunPalet_Changed"
+                         GotFocus="UrunPalet_GotFocus"
+                         LostFocus="UrunPalet_LostFocus"/>
+
+                    <TextBlock x:Name="phPaletAdi"
+                           Text="{Binding Source='UrunEkle.paletadgir',Converter={StaticResource LanguageConverter}}"
+                           Style="{StaticResource textblock_place_urunekle}"
+                           Margin="12,0,0,0"
+                           VerticalAlignment="Center"
+                           IsHitTestVisible="False"/>
+                  </Grid>
+                </Grid>
+
+                <!-- Palet En -->
+                <Grid Margin="0,0,0,22">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
+                  <TextBlock Grid.Column="0"
+                       Text="{Binding Source='UrunEkle.genislik',Converter={StaticResource LanguageConverter}}"
+                       Style="{StaticResource textblock_template_urunekle}"
+                       VerticalAlignment="Center"/>
+
+                  <Grid Grid.Column="1">
+                    <TextBox Name="txtPaletEn"
+                         MaxLength="5"
+                         DataObject.Pasting="TextBox_Pasting"
+                         PreviewTextInput="TextBox_PreviewTextInput"
+                         Style="{StaticResource TextBox_templete_urunekle}"
+                         Loaded="myTextBox_Loaded"
+                         TextChanged="UrunPalet_Changed"
+                         GotFocus="UrunPalet_GotFocus"
+                         LostFocus="UrunPalet_LostFocus"/>
+
+                    <TextBlock x:Name="phPaletEn"
+                           Text="{Binding Source='UrunEkle.paletgenislikgir',Converter={StaticResource LanguageConverter}}"
+                           Style="{StaticResource textblock_place_urunekle}"
+                           Margin="12,0,0,0"
+                           VerticalAlignment="Center"
+                           IsHitTestVisible="False"/>
+                  </Grid>
+                </Grid>
+
+                <!-- Palet Boy -->
+                <Grid Margin="0,0,0,22">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
+                  <TextBlock Grid.Column="0"
+                       Text="{Binding Source='UrunEkle.uzunluk',Converter={StaticResource LanguageConverter}}"
+                       Style="{StaticResource textblock_template_urunekle}"
+                       VerticalAlignment="Center"/>
+
+                  <Grid Grid.Column="1">
+                    <TextBox Name="txtPaletBoy"
+                         MaxLength="5"
+                         DataObject.Pasting="TextBox_Pasting"
+                         PreviewTextInput="TextBox_PreviewTextInput"
+                         Style="{StaticResource TextBox_templete_urunekle}"
+                         Loaded="myTextBox_Loaded"
+                         TextChanged="UrunPalet_Changed"
+                         GotFocus="UrunPalet_GotFocus"
+                         LostFocus="UrunPalet_LostFocus"/>
+
+                    <TextBlock x:Name="phPaletBoy"
+                           Text="{Binding Source='UrunEkle.paletuzunlukgir',Converter={StaticResource LanguageConverter}}"
+                           Style="{StaticResource textblock_place_urunekle}"
+                           Margin="12,0,0,0"
+                           VerticalAlignment="Center"
+                           IsHitTestVisible="False"/>
+                  </Grid>
+                </Grid>
+
+                <!-- Palet Yükseklik -->
+                <Grid Margin="0,0,0,30">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
+                  <TextBlock Grid.Column="0"
+                       Text="{Binding Source='UrunEkle.yukseklik',Converter={StaticResource LanguageConverter}}"
+                       Style="{StaticResource textblock_template_urunekle}"
+                       VerticalAlignment="Center"/>
+
+                  <Grid Grid.Column="1">
+                    <TextBox Name="txtPaletYukseklik"
+                         MaxLength="5"
+                         DataObject.Pasting="TextBox_Pasting"
+                         PreviewTextInput="TextBox_PreviewTextInput"
+                         Style="{StaticResource TextBox_templete_urunekle}"
+                         Loaded="myTextBox_Loaded"
+                         TextChanged="UrunPalet_Changed"
+                         GotFocus="UrunPalet_GotFocus"
+                         LostFocus="UrunPalet_LostFocus"/>
+
+                    <TextBlock x:Name="phPaletYukseklik"
+                           Text="{Binding Source='UrunEkle.paletyukseklikgir',Converter={StaticResource LanguageConverter}}"
+                           Style="{StaticResource textblock_place_urunekle}"
+                           Margin="12,0,0,0"
+                           VerticalAlignment="Center"
+                           IsHitTestVisible="False"/>
+                  </Grid>
+                </Grid>
+
+                <Border Margin="0,0,0,103"/>
+
+
+                <!-- Butonlar -->
+                <StackPanel  Orientation="Horizontal" >
+                  <Button x:Name="BtnPaletEkle"
+                    Style="{StaticResource button_template}"
+                    Height="45"
+                    Width="150"
+                    Background="{StaticResource button_backgroundgreen}"
+                    Content="{Binding Source='UrunEkle.paleteklebtn',Converter={StaticResource LanguageConverter}}"
+                    Click="PaletEkleBtn_Click"/>
+
+                  <Button x:Name="BtnPaletDuzenle"
+                    Style="{StaticResource button_template}"
+                    Height="45"
+                    Width="150"
+                    Background="{StaticResource button_background}"
+                    Margin="20,0,0,0"
+                    Content="{Binding Source='UrunEkle.paletduzenlebtn',Converter={StaticResource LanguageConverter}}"
+                    Click="PaletDuzenleBtn_Click"/>
+
+                  <Button x:Name="BtnPaletSil"
+                    Style="{StaticResource button_template}"
+                    Height="45"
+                    Width="150"
+                    Background="{StaticResource button_background}"
+                    Margin="20,0,0,0"
+                    Content="{Binding Source='UrunEkle.paletsilbtn',Converter={StaticResource LanguageConverter}}"
+                    Click="PaletSilBtn_Click"/>
+                </StackPanel>
+
+              </StackPanel>
+            </Border>
+
+
+          </Grid>
+        </Grid>
+      </Grid>
+
+      <!-- SAĞ ALAN -->
+      <Grid Grid.Column="1">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,0,0,15">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+
+          <TextBlock Grid.Column="0"
+                               Text="{Binding Source='UrunEkle.urunlist',Converter={StaticResource LanguageConverter}}"
+                               Foreground="White"
+                               Margin="15,0,0,0"
+                               FontSize="24"
+                               FontFamily="Roboto"
+                               FontWeight="Bold"/>
+
+          <TextBlock Grid.Column="1"
+                               Text="{Binding Source='UrunEkle.paletlist',Converter={StaticResource LanguageConverter}}"
+                               Foreground="White"
+                               Margin="15,0,0,0"
+                               FontSize="24"
+                               FontFamily="Roboto"
+                               FontWeight="Bold"/>
         </Grid>
 
         <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2.0*"/>
-                <ColumnDefinition Width="1.3*"/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="10"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    
-
-                    <!--Ön İzleme Border-->
-                    <TextBlock Text="{Binding Source='UrunEkle.onizle',Converter={StaticResource LanguageConverter}}" Foreground="White" 
-                    Margin="60,30,0,0" 
-                    Panel.ZIndex="1" 
-                    FontSize="24" 
-                    FontFamily="Roboto" 
-                    FontWeight="Bold">
-                    </TextBlock>
-                    <Border Background="#191919" CornerRadius="10" Width="1100" Height="250" HorizontalAlignment="Left"
-                    Margin="40,20,0,0" VerticalAlignment="Top">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Width="150" x:Name="priviewtextblock" Text="" Foreground="White" FontSize="22" FontFamily="Roboto" 
-                            Margin="20,0,0,20" VerticalAlignment="Bottom" Opacity="1" />
-                            <Canvas Width="650" Height="250" Margin="150,0,0,0">
-                              <Image x:Name="onIzlemeImage"
-                               Width="250"
-                               Canvas.Left="100"
-                               Canvas.Top="0"/>
-
-                              <!-- örnek ölçü yazıları -->
-                            <TextBlock x:Name="txtOnizlemeKutu" 
-                                   ToolTip=""
-                                   Text=""
-                                   Foreground="White"
-                                   FontSize="18"
-                                   FontWeight="Normal"
-                                   Canvas.Left="111"
-                                   Canvas.Top="8"/>
-              </Canvas>
-
-                        </StackPanel>
-                    </Border>
-             </Grid>
-
-                 <Grid Grid.Row="2">
-                    <!--Alt Alan-->
-                    <StackPanel Panel.ZIndex="4">
-                    <TextBlock Text="{Binding Source='UrunEkle.urunblg',Converter={StaticResource LanguageConverter}}" Foreground="White" Margin="60,25,0,0" Panel.ZIndex="1" FontSize="24" FontFamily="Roboto" FontWeight="Bold"/>
-                    </StackPanel>
-                    <StackPanel Panel.ZIndex="4">
-                    <TextBlock Text="{Binding Source='UrunEkle.paletblg',Converter={StaticResource LanguageConverter}}" Foreground="White" Margin="615,25,0,0" Panel.ZIndex="1" FontSize="24" FontFamily="Roboto" FontWeight="Bold"/>
-                    </StackPanel>
-
-
-                    <StackPanel Orientation="Horizontal" Margin="30,0,0,0" Panel.ZIndex="2">
-                        
-                        <!--Ürün Bilgileri Border-->
-                        <Border Style="{StaticResource border_template_urunekle}" Panel.ZIndex="3">
-                            <StackPanel>
-                                <!--Ürün Adı StackPanel-->
-                                <StackPanel Orientation="Horizontal" >
-                                    <TextBlock Text="{Binding Source='UrunEkle.urunad',
-                                    Converter={StaticResource LanguageConverter}}" 
-                                    Style="{StaticResource textblock_template_urunekle}" 
-                                    Margin="0,70,0,0" Width="120"/>
-
-                                    <TextBox Name="txtUrunAdi" 
-                                    Margin="160,65,0,0" 
-                                    Style="{StaticResource TextBox_templete_urunekle}" 
-                                    Loaded="myTextBox_Loaded"
-                                    TextChanged="UrunPalet_Changed" 
-                                    GotFocus="UrunPalet_GotFocus" 
-                                    LostFocus="UrunPalet_LostFocus"/>
-
-                                    <TextBlock x:Name="phUrunAdi" 
-                                    Text="{Binding Source='UrunEkle.urunadgir',
-                                    Converter={StaticResource LanguageConverter}}"
-                                    Style="{StaticResource textblock_place_urunekle}"
-                                    Margin="-150,70,0,0"/>
-                             
-                             </StackPanel>
-                                <!--Ürün Genişlik StackPanel-->
-                                <StackPanel Orientation="Horizontal">
-
-                                    <TextBlock Text="{Binding Source='UrunEkle.genislik',
-                                    Converter={StaticResource LanguageConverter}}" 
-                                    Style="{StaticResource textblock_template_urunekle}"
-                                    Margin="0,40,0,0"
-                                    Width="150"/>
-
-                                    <TextBox Name="txtUrunEn"  
-                                    Margin="130,35,0,0" 
-                                    MaxLength="5"
-                                    DataObject.Pasting="TextBox_Pasting"
-                                    PreviewTextInput="TextBox_PreviewTextInput" 
-                                    Style="{StaticResource TextBox_templete_urunekle}"
-                                    Loaded="myTextBox_Loaded"
-                                    TextChanged="UrunPalet_Changed" 
-                                    GotFocus="UrunPalet_GotFocus" 
-                                    LostFocus="UrunPalet_LostFocus"/>
-
-                                  <TextBlock x:Name="phUrunEn" 
-                                    Text="{Binding Source='UrunEkle.urungenislikgir',
-                                    Converter={StaticResource LanguageConverter}}" 
-                                    Style="{StaticResource textblock_place_urunekle}" 
-                                    Margin="-150,40,0,0"/>
-
-
-                                </StackPanel>
-                                <!--Ürün Uzunluk StackPanel-->
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Source='UrunEkle.uzunluk',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox MaxLength="5" Name="txtUrunBoy"  Margin="202,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
-                                             TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                  <TextBlock x:Name="phUrunBoy" Text="{Binding Source='UrunEkle.urunuzunlukgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="280,-30,0,0"/>
-                                </StackPanel>
-                                <!--Ürün Yükseklik StackPanel-->
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Source='UrunEkle.yukseklik',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox MaxLength="4"  Name="txtUrunYukseklik"  Margin="202 ,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
-                                             TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                  <TextBlock x:Name="phUrunYukseklik" Text="{Binding Source='UrunEkle.urunyukseklikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="280,-30,0,0"/>
-                                </StackPanel>
-                                <!--Ürün Ağırlık StackPanel-->
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Source='UrunEkle.agirlik',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox MaxLength="3" Name="txtUrunAgirlik"  Margin="202,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
-                                             TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                  <TextBlock x:Name="phUrunAgirlik" Text="{Binding Source='UrunEkle.urunagirlikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="280,-30,0,0"/>
-                                </StackPanel>
-                                <!--Ürün Basınç StackPanel-->
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Source='UrunEkle.basinc',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}"  Margin="0,40,0,0"/>
-                                    <TextBox MaxLength="4" Name="txtUrunBasinc"  Margin="202,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
-                                             TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                  <TextBlock x:Name="phUrunBasinc"  Text="{Binding Source='UrunEkle.urunbasincgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="280,-30,0,0"/>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                    <Button x:Name="BtnUrunEkle" Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_backgroundgreen}"
-                                    Margin="0,30,0,0" Content="{Binding Source='UrunEkle.uruneklebtn',Converter={StaticResource LanguageConverter}}" Click="UrunEkleBtn_Click"/>
-                                    <Button x:Name="BtnUrunDuzenle" Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
-                                    Margin="20,30,0,0" Content="{Binding Source='UrunEkle.urunduzenlebtn',Converter={StaticResource LanguageConverter}}" Click="BtnUrunDuzenle_Click"/>
-                                    <Button x:Name="BtnUrunSil" Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
-                                    Margin="20,30,0,0" Content="{Binding Source='UrunEkle.urunsilbtn',Converter={StaticResource LanguageConverter}}" Click="UrunSilBtn_Click"/>
-                                </StackPanel>
-
-                            </StackPanel>
-                            
-                        </Border>
-                        
-                        <!--Palet Bilgileri Border-->
-                        <Border Style="{StaticResource border_template_urunekle}">
-                            <StackPanel>
-                                <!--Palet Adı StackPanel-->
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Source='UrunEkle.paletad',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,60,0,0"/>
-                                    <TextBox Name="txtPaletAdi" Margin="180,-25,0,0" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
-                                             TextChanged="UrunPalet_Changed"  GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                  <TextBlock x:Name="phPaletAdi" Text="{Binding Source='UrunEkle.paletadgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="268,-30,0,0"/>
-                                </StackPanel>
-                                <!--Palet Genişlik StackPanel-->
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Source='UrunEkle.genislik',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox MaxLength="5" Name="txtPaletEn" Margin="180,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
-                                             TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                  <TextBlock x:Name="phPaletEn" Text="{Binding Source='UrunEkle.paletgenislikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="268,-30,0,0"/>
-
-                                </StackPanel>
-                                <!--Palet Uzunluk StackPanel-->
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Source='UrunEkle.uzunluk',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox MaxLength="5" Name="txtPaletBoy" Margin="180,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded"
-                                             TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                  <TextBlock x:Name="phPaletBoy" Text="{Binding Source='UrunEkle.paletuzunlukgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="268,-30,0,0"/>
-
-                                </StackPanel>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Source='UrunEkle.yukseklik',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_template_urunekle}" Margin="0,40,0,0"/>
-                                    <TextBox MaxLength="5" Name="txtPaletYukseklik" Margin="180,-25,0,0" DataObject.Pasting="TextBox_Pasting" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource TextBox_templete_urunekle}" Loaded="myTextBox_Loaded" 
-                                             TextChanged="UrunPalet_Changed" GotFocus="UrunPalet_GotFocus" LostFocus="UrunPalet_LostFocus"/>
-                  <TextBlock  x:Name="phPaletYukseklik" Text="{Binding Source='UrunEkle.paletyukseklikgir',Converter={StaticResource LanguageConverter}}" Style="{StaticResource textblock_place_urunekle}" Margin="268,-30,0,0"/>
-
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                    <Button x:Name="BtnPaletEkle" Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_backgroundgreen}"
-                                    Margin="0,170,0,0" Content="{Binding Source='UrunEkle.paleteklebtn',Converter={StaticResource LanguageConverter}}" Click="PaletEkleBtn_Click"/>
-                                    <Button x:Name="BtnPaletDuzenle" Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
-                                    Margin="20,170,0,0" Content="{Binding Source='UrunEkle.paletduzenlebtn',Converter={StaticResource LanguageConverter}}" Click="PaletDuzenleBtn_Click"/>
-                                    <Button x:Name="BtnPaletSil" Style="{StaticResource button_template}" Height="45" Width="150"  Background="{StaticResource button_background}"
-                                 Margin="20,170,0,0" Content="{Binding Source='UrunEkle.paletsilbtn',Converter={StaticResource LanguageConverter}}" Click="PaletSilBtn_Click"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Border>
-                    </StackPanel>
-                </Grid>
-          
-          </Grid>
-
-        <Grid Grid.Column="1" >
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*"/>
-          <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <!-- Ürün tarafı -->
-        <StackPanel  Grid.Column="0">
-          <TextBlock Text="{Binding Source='UrunEkle.urunlist',Converter={StaticResource LanguageConverter}}"
-                   Foreground="White"
-                   Margin="30,20,0,0"
-                   FontSize="24"
-                   Panel.ZIndex="20"
-                   FontFamily="Roboto"
-                   FontWeight="Bold"/>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
 
           <ListBox x:Name="urunlistbox"
-                 Style="{StaticResource listbox_template_urunekle}"
-                 Panel.ZIndex="5"
-                 SelectionChanged="UrunList_SelectedItem"/>
-        </StackPanel>
+             Grid.Column="0"
+             Margin="0,0,10,0"
+             Style="{StaticResource listbox_template_urunekle}"
+             Panel.ZIndex="5"
+             SelectionChanged="UrunList_SelectedItem"/>
 
-        <!-- Palet tarafı -->
-        <StackPanel Grid.Column="1">
-          <TextBlock Text="{Binding Source='UrunEkle.paletlist',Converter={StaticResource LanguageConverter}}"
-                   Foreground="White"
-                   Panel.ZIndex="20"
-                   Margin="30,20,0,0"
-                   FontSize="24"
-                   FontFamily="Roboto"
-                   FontWeight="Bold"/>
-
-          <ListBox x:Name="paletlistbox"
-                 Style="{StaticResource listbox_template_urunekle}"
-                 Panel.ZIndex="5"
-                 SelectionChanged="PaletList_SelectedItem"/>
-        </StackPanel>
+              <ListBox x:Name="paletlistbox"
+             Grid.Column="1"
+             Margin="10,0,0,0"
+             Style="{StaticResource listbox_template_urunekle}"
+             Panel.ZIndex="5"
+             SelectionChanged="PaletList_SelectedItem"/>
+        </Grid>
       </Grid>
-
     </Grid>
-        
-    </Grid>
+  </Grid>
 </Page>

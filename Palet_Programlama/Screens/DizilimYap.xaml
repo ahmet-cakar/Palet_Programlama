@@ -739,7 +739,7 @@
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
                                Foreground="White"
-                               FontSize="32"
+                               FontSize="26"
                                Text="{Binding Source='DizilimYap.txtKat',Converter={StaticResource LanguageConverter}}"/>
 
                     <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center">

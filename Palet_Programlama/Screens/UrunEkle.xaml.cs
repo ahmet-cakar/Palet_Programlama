@@ -698,7 +698,7 @@ namespace Palet_Programlama.Screens
             PaletFormunuTemizle();
         }
 
-        private void PaletDuzenleBtn_Click(object sender, RoutedEventArgs e)
+        private void BtnPaletDuzenleBtn_Click(object sender, RoutedEventArgs e)
         {
             if (paletlistbox.SelectedItem == null)
             {

@@ -6,12 +6,172 @@
       xmlns:local="clr-namespace:Palet_Programlama.UserController"
       xmlns:languages="clr-namespace:Palet_Programlama.Languages"
       mc:Ignorable="d"
-      d:DesignHeight="1080"
-      d:DesignWidth="1920"
+      d:DesignHeight="768"
+      d:DesignWidth="1366"
       Title="UrunEkle">
 
   <Page.Resources>
     <languages:LanguageConverter x:Key="LanguageConverter"/>
+
+    <Style x:Key="border_template_urunekle" TargetType="Border">
+      <Setter Property="Background">
+        <Setter.Value>
+          <SolidColorBrush Color="Black" Opacity="0.24"/>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="CornerRadius" Value="20"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="BorderBrush" Value="Black"/>
+      <Setter Property="Padding" Value="16"/>
+      <Setter Property="Margin" Value="0"/>
+      <Setter Property="HorizontalAlignment" Value="Stretch"/>
+      <Setter Property="VerticalAlignment" Value="Stretch"/>
+    </Style>
+
+    <Style x:Key="button_template" TargetType="Button">
+      <Setter Property="FontFamily" Value="Roboto"/>
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="FontSize" Value="18"/>
+      <Setter Property="MinHeight" Value="46"/>
+      <Setter Property="Padding" Value="14,10"/>
+      <Setter Property="HorizontalAlignment" Value="Stretch"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="Button">
+            <Border CornerRadius="24"
+                                BorderThickness="0"
+                                Background="{TemplateBinding Background}"
+                                Padding="{TemplateBinding Padding}">
+              <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+            </Border>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+
+      <Style.Triggers>
+        <Trigger Property="IsMouseOver" Value="True">
+          <Setter Property="Cursor" Value="Hand"/>
+          <Setter Property="Opacity" Value="0.92"/>
+        </Trigger>
+      </Style.Triggers>
+    </Style>
+
+    <Style x:Key="textblock_template_urunekle" TargetType="TextBlock">
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="FontSize" Value="18"/>
+      <Setter Property="FontFamily" Value="Roboto"/>
+      
+      <Setter Property="Panel.ZIndex" Value="4"/>
+      <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+
+    <Style x:Key="TextBox_templete_urunekle" TargetType="TextBox">
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+      <Setter Property="Padding" Value="0"/>
+      <Setter Property="TextAlignment" Value="Left"/>
+      <Setter Property="MinHeight" Value="30"/>
+      <Setter Property="FontSize" Value="18"/>
+      <Setter Property="Margin" Value="12,0,0,0"/>
+      <Setter Property="FontFamily" Value="Roboto"/>
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Panel.ZIndex" Value="4"/>
+      <Setter Property="BorderBrush" Value="Transparent"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="Focusable" Value="True"/>
+      <Setter Property="IsHitTestVisible" Value="True"/>
+
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="TextBox">
+            <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+              <ScrollViewer x:Name="PART_ContentHost"
+                                          Margin="0"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+            </Border>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style x:Key="textblock_place_urunekle" TargetType="TextBlock">
+      <Setter Property="IsHitTestVisible" Value="False"/>
+      <Setter Property="Foreground" Value="Gray"/>
+      <Setter Property="FontSize" Value="18"/>
+      <Setter Property="FontFamily" Value="Roboto"/>
+      <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+
+    <Style x:Key="listbox_template_urunekle" TargetType="ListBox">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="FontSize" Value="18"/>
+
+      <Setter Property="FontFamily" Value="Roboto"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="HorizontalAlignment" Value="Stretch"/>
+      <Setter Property="VerticalAlignment" Value="Stretch"/>
+      <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+      <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="ListBox">
+            <Border Background="#191919"
+                                CornerRadius="15"
+                                Padding="8">
+              <ScrollViewer Focusable="False"
+                                          Background="Transparent"
+                                          HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
+                                          VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
+                <ItemsPresenter/>
+              </ScrollViewer>
+            </Border>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+
+      <Setter Property="ItemsPanel">
+        <Setter.Value>
+          <ItemsPanelTemplate>
+            <StackPanel Orientation="Vertical"/>
+          </ItemsPanelTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <RadialGradientBrush x:Key="button_background"
+                             RadiusX="0.55"
+                             RadiusY="5"
+                             GradientOrigin="0.5,0.5"
+                             Center="0.5,0.5">
+      <GradientStop Color="#F09701" Offset="0"/>
+      <GradientStop Color="#FACE00" Offset="1.1"/>
+    </RadialGradientBrush>
+
+    <RadialGradientBrush x:Key="button_backgroundgreen"
+                             RadiusX="0.55"
+                             RadiusY="5"
+                             GradientOrigin="0.5,0.5"
+                             Center="0.5,0.5">
+      <GradientStop Color="#0c9f04" Offset="0"/>
+      <GradientStop Color="#25e432" Offset="1.1"/>
+    </RadialGradientBrush>
+
+    <RadialGradientBrush x:Key="button_backgroundred"
+                             RadiusX="0.55"
+                             RadiusY="5"
+                             GradientOrigin="0.5,0.5"
+                             Center="0.5,0.5">
+      <GradientStop Color="#b92020" Offset="0"/>
+      <GradientStop Color="#ff0000" Offset="1.1"/>
+    </RadialGradientBrush>
   </Page.Resources>
 
   <Grid>
@@ -21,24 +181,22 @@
     </Grid.RowDefinitions>
 
     <!-- Üst Menü -->
-    <Grid Grid.Row="0">
-      <Border VerticalAlignment="Center">
-        <local:UstMenu x:Name="UstMenuControl" Margin="0,15,0,0"/>
-      </Border>
-    </Grid>
+    <Border Grid.Row="0" VerticalAlignment="Center">
+      <local:UstMenu x:Name="UstMenuControl" Margin="0,10,0,0"/>
+    </Border>
 
     <!-- Ana İçerik -->
-    <Grid Grid.Row="1" Margin="30,20,30,30">
+    <Grid Grid.Row="1" Margin="20,14,20,20">
       <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="1.9*"/>
+        <ColumnDefinition Width="1.8*"/>
         <ColumnDefinition Width="1.1*"/>
       </Grid.ColumnDefinitions>
 
       <!-- SOL ALAN -->
-      <Grid Grid.Column="0" Margin="0,0,20,0">
+      <Grid Grid.Column="0" Margin="0,0,16,0">
         <Grid.RowDefinitions>
           <RowDefinition Height="Auto"/>
-          <RowDefinition Height="25"/>
+          <RowDefinition Height="6"/>
           <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -46,14 +204,14 @@
         <Grid Grid.Row="0">
           <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="250"/>
+            <RowDefinition Height="Auto"/>
           </Grid.RowDefinitions>
 
           <TextBlock Grid.Row="0"
                                Text="{Binding Source='UrunEkle.onizle',Converter={StaticResource LanguageConverter}}"
                                Foreground="White"
-                               Margin="20,0,0,15"
-                               FontSize="24"
+                               Margin="20,0,0,4"
+                               FontSize="18"
                                FontFamily="Roboto"
                                FontWeight="Bold"/>
 
@@ -62,25 +220,12 @@
                             CornerRadius="10"
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Top"
-                            MaxWidth="1200"
-                            Padding="20,0,20,0">
+                            Padding="16,10"
+                            MinHeight="210">
+            <Grid>
 
-            <Grid Height="250">
-
-              <TextBlock x:Name="priviewtextblock"
-             Width="150"
-             Text=""
-             Foreground="White"
-             FontSize="22"
-             FontFamily="Roboto"
-             VerticalAlignment="Bottom"
-             HorizontalAlignment="Left"
-             Margin="0,0,0,20"
-             Opacity="1"
-             Panel.ZIndex="2"/>
-
-              <Canvas Width="250"
-          Height="250"
+              <Canvas Width="200"
+          Height="200"
           HorizontalAlignment="Center"
           VerticalAlignment="Center"
           Background="Transparent"
@@ -88,10 +233,10 @@
           Panel.ZIndex="1">
 
                 <Image x:Name="onIzlemeImage"
-           Width="250"
-           Height="250"
-           Stretch="Uniform"
-           Canvas.Left="0"
+                 Width="200"
+                 Height="200"
+                 Stretch="Uniform"
+                 Canvas.Left="0"
            Canvas.Top="0"/>
 
                 <TextBlock x:Name="txtOnizlemeKutu"
@@ -104,444 +249,443 @@
                Canvas.Top="0"/>
               </Canvas>
 
+              <TextBlock x:Name="priviewtextblock"
+             Width="130"
+             Text=""
+             Foreground="White"
+             FontSize="20"
+             FontFamily="Roboto"
+             VerticalAlignment="Bottom"
+             HorizontalAlignment="Left"
+             Margin="0,0,0,18"
+             Opacity="1"
+             Panel.ZIndex="2"
+             TextWrapping="Wrap"/>
+
             </Grid>
-
-
-
 
           </Border>
         </Grid>
 
         <!-- Alt Kartlar -->
-        <Grid Grid.Row="2">
-          <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-          </Grid.RowDefinitions>
+        <Grid Grid.Row="2" Margin="0,0,0,60">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="14"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
 
-          <Grid Grid.Row="0" >
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="*"/>
-              <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-          </Grid>
-
-          <Grid Grid.Row="1" >
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="*"/>
-              <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <!-- Ürün Bilgileri -->
-
-            <Border Grid.Column="0"
-              Style="{StaticResource border_template_urunekle}"
-              Panel.ZIndex="3">
-              <StackPanel Margin="15,30,0,0">
+          <!-- Ürün Bilgileri -->
+          <Border Grid.Column="0"
+                            Style="{StaticResource border_template_urunekle}"
+                            Panel.ZIndex="3">
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                      HorizontalScrollBarVisibility="Disabled">
+              <StackPanel Margin="0,6,0,0">
 
                 <!-- Ürün Adı -->
-                <Grid Margin="0,0,0,22">
+                <Grid Margin="0,0,0,10">
                   <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="*"/>
                   </Grid.ColumnDefinitions>
 
                   <TextBlock Grid.Column="0"
-                       Text="{Binding Source='UrunEkle.urunad', Converter={StaticResource LanguageConverter}}"
-                       Style="{StaticResource textblock_template_urunekle}"
-                       VerticalAlignment="Center"/>
+                                               Text="{Binding Source='UrunEkle.urunad', Converter={StaticResource LanguageConverter}}"
+                                               Style="{StaticResource textblock_template_urunekle}"
+                                               VerticalAlignment="Center"/>
 
                   <Grid Grid.Column="1">
                     <TextBox Name="txtUrunAdi"
-                         Style="{StaticResource TextBox_templete_urunekle}"
-                         Loaded="myTextBox_Loaded"
-                         TextChanged="UrunPalet_Changed"
-                         GotFocus="UrunPalet_GotFocus"
-                         LostFocus="UrunPalet_LostFocus"/>
+                                                 Style="{StaticResource TextBox_templete_urunekle}"
+                                                 Loaded="myTextBox_Loaded"
+                                                 TextChanged="UrunPalet_Changed"
+                                                 GotFocus="UrunPalet_GotFocus"
+                                                 LostFocus="UrunPalet_LostFocus"/>
 
                     <TextBlock x:Name="phUrunAdi"
-                           Text="{Binding Source='UrunEkle.urunadgir', Converter={StaticResource LanguageConverter}}"
-                           Style="{StaticResource textblock_place_urunekle}"
-                           Margin="12,0,0,0"
-                           VerticalAlignment="Center"
-                           IsHitTestVisible="False"/>
+                                                   Text="{Binding Source='UrunEkle.urunadgir', Converter={StaticResource LanguageConverter}}"
+                                                   Style="{StaticResource textblock_place_urunekle}"
+                                                   Margin="12,0,0,0"
+                                                   VerticalAlignment="Center"
+                                                   IsHitTestVisible="False"/>
                   </Grid>
                 </Grid>
 
                 <!-- Ürün En -->
-                <Grid Margin="0,0,0,22">
+                <Grid Margin="0,0,0,10">
                   <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="*"/>
                   </Grid.ColumnDefinitions>
 
                   <TextBlock Grid.Column="0"
-                       Text="{Binding Source='UrunEkle.genislik', Converter={StaticResource LanguageConverter}}"
-                       Style="{StaticResource textblock_template_urunekle}"
-                       VerticalAlignment="Center"/>
+                                               Text="{Binding Source='UrunEkle.genislik', Converter={StaticResource LanguageConverter}}"
+                                               Style="{StaticResource textblock_template_urunekle}"
+                                               VerticalAlignment="Center"/>
 
                   <Grid Grid.Column="1">
                     <TextBox Name="txtUrunEn"
-                         MaxLength="5"
-                         DataObject.Pasting="TextBox_Pasting"
-                         PreviewTextInput="TextBox_PreviewTextInput"
-                         Style="{StaticResource TextBox_templete_urunekle}"
-                         Loaded="myTextBox_Loaded"
-                         TextChanged="UrunPalet_Changed"
-                         GotFocus="UrunPalet_GotFocus"
-                         LostFocus="UrunPalet_LostFocus"/>
+                                                 MaxLength="5"
+                                                 DataObject.Pasting="TextBox_Pasting"
+                                                 PreviewTextInput="TextBox_PreviewTextInput"
+                                                 Style="{StaticResource TextBox_templete_urunekle}"
+                                                 Loaded="myTextBox_Loaded"
+                                                 TextChanged="UrunPalet_Changed"
+                                                 GotFocus="UrunPalet_GotFocus"
+                                                 LostFocus="UrunPalet_LostFocus"/>
 
                     <TextBlock x:Name="phUrunEn"
-                           Text="{Binding Source='UrunEkle.urungenislikgir', Converter={StaticResource LanguageConverter}}"
-                           Style="{StaticResource textblock_place_urunekle}"
-                           Margin="12,0,0,0"
-                           VerticalAlignment="Center"
-                           IsHitTestVisible="False"/>
+                                                   Text="{Binding Source='UrunEkle.urungenislikgir', Converter={StaticResource LanguageConverter}}"
+                                                   Style="{StaticResource textblock_place_urunekle}"
+                                                   Margin="12,0,0,0"
+                                                   VerticalAlignment="Center"
+                                                   IsHitTestVisible="False"/>
                   </Grid>
                 </Grid>
 
                 <!-- Ürün Boy -->
-                <Grid Margin="0,0,0,22">
+                <Grid Margin="0,0,0,10">
                   <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="*"/>
                   </Grid.ColumnDefinitions>
 
                   <TextBlock Grid.Column="0"
-                       Text="{Binding Source='UrunEkle.uzunluk',Converter={StaticResource LanguageConverter}}"
-                       Style="{StaticResource textblock_template_urunekle}"
-                       VerticalAlignment="Center"/>
+                                               Text="{Binding Source='UrunEkle.uzunluk',Converter={StaticResource LanguageConverter}}"
+                                               Style="{StaticResource textblock_template_urunekle}"
+                                               VerticalAlignment="Center"/>
 
                   <Grid Grid.Column="1">
                     <TextBox Name="txtUrunBoy"
-                         MaxLength="5"
-                         DataObject.Pasting="TextBox_Pasting"
-                         PreviewTextInput="TextBox_PreviewTextInput"
-                         Style="{StaticResource TextBox_templete_urunekle}"
-                         Loaded="myTextBox_Loaded"
-                         TextChanged="UrunPalet_Changed"
-                         GotFocus="UrunPalet_GotFocus"
-                         LostFocus="UrunPalet_LostFocus"/>
+                                                 MaxLength="5"
+                                                 DataObject.Pasting="TextBox_Pasting"
+                                                 PreviewTextInput="TextBox_PreviewTextInput"
+                                                 Style="{StaticResource TextBox_templete_urunekle}"
+                                                 Loaded="myTextBox_Loaded"
+                                                 TextChanged="UrunPalet_Changed"
+                                                 GotFocus="UrunPalet_GotFocus"
+                                                 LostFocus="UrunPalet_LostFocus"/>
 
                     <TextBlock x:Name="phUrunBoy"
-                           Text="{Binding Source='UrunEkle.urunuzunlukgir',Converter={StaticResource LanguageConverter}}"
-                           Style="{StaticResource textblock_place_urunekle}"
-                           Margin="12,0,0,0"
-                           VerticalAlignment="Center"
-                           IsHitTestVisible="False"/>
+                                                   Text="{Binding Source='UrunEkle.urunuzunlukgir',Converter={StaticResource LanguageConverter}}"
+                                                   Style="{StaticResource textblock_place_urunekle}"
+                                                   Margin="12,0,0,0"
+                                                   VerticalAlignment="Center"
+                                                   IsHitTestVisible="False"/>
                   </Grid>
                 </Grid>
 
                 <!-- Ürün Yükseklik -->
-                <Grid Margin="0,0,0,22">
+                <Grid Margin="0,0,0,10">
                   <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="*"/>
                   </Grid.ColumnDefinitions>
 
                   <TextBlock Grid.Column="0"
-                       Text="{Binding Source='UrunEkle.yukseklik',Converter={StaticResource LanguageConverter}}"
-                       Style="{StaticResource textblock_template_urunekle}"
-                       VerticalAlignment="Center"/>
+                                               Text="{Binding Source='UrunEkle.yukseklik',Converter={StaticResource LanguageConverter}}"
+                                               Style="{StaticResource textblock_template_urunekle}"
+                                               VerticalAlignment="Center"/>
 
                   <Grid Grid.Column="1">
                     <TextBox Name="txtUrunYukseklik"
-                         MaxLength="4"
-                         DataObject.Pasting="TextBox_Pasting"
-                         PreviewTextInput="TextBox_PreviewTextInput"
-                         Style="{StaticResource TextBox_templete_urunekle}"
-                         Loaded="myTextBox_Loaded"
-                         TextChanged="UrunPalet_Changed"
-                         GotFocus="UrunPalet_GotFocus"
-                         LostFocus="UrunPalet_LostFocus"/>
+                                                 MaxLength="4"
+                                                 DataObject.Pasting="TextBox_Pasting"
+                                                 PreviewTextInput="TextBox_PreviewTextInput"
+                                                 Style="{StaticResource TextBox_templete_urunekle}"
+                                                 Loaded="myTextBox_Loaded"
+                                                 TextChanged="UrunPalet_Changed"
+                                                 GotFocus="UrunPalet_GotFocus"
+                                                 LostFocus="UrunPalet_LostFocus"/>
 
                     <TextBlock x:Name="phUrunYukseklik"
-                           Text="{Binding Source='UrunEkle.urunyukseklikgir',Converter={StaticResource LanguageConverter}}"
-                           Style="{StaticResource textblock_place_urunekle}"
-                           Margin="12,0,0,0"
-                           VerticalAlignment="Center"
-                           IsHitTestVisible="False"/>
+                                                   Text="{Binding Source='UrunEkle.urunyukseklikgir',Converter={StaticResource LanguageConverter}}"
+                                                   Style="{StaticResource textblock_place_urunekle}"
+                                                   Margin="12,0,0,0"
+                                                   VerticalAlignment="Center"
+                                                   IsHitTestVisible="False"/>
                   </Grid>
                 </Grid>
 
                 <!-- Ürün Ağırlık -->
-                <Grid Margin="0,0,0,22">
+                <Grid Margin="0,0,0,10">
                   <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="*"/>
                   </Grid.ColumnDefinitions>
 
                   <TextBlock Grid.Column="0"
-                       Text="{Binding Source='UrunEkle.agirlik',Converter={StaticResource LanguageConverter}}"
-                       Style="{StaticResource textblock_template_urunekle}"
-                       VerticalAlignment="Center"/>
+                                               Text="{Binding Source='UrunEkle.agirlik',Converter={StaticResource LanguageConverter}}"
+                                               Style="{StaticResource textblock_template_urunekle}"
+                                               VerticalAlignment="Center"/>
 
                   <Grid Grid.Column="1">
                     <TextBox Name="txtUrunAgirlik"
-                         MaxLength="3"
-                         DataObject.Pasting="TextBox_Pasting"
-                         PreviewTextInput="TextBox_PreviewTextInput"
-                         Style="{StaticResource TextBox_templete_urunekle}"
-                         Loaded="myTextBox_Loaded"
-                         TextChanged="UrunPalet_Changed"
-                         GotFocus="UrunPalet_GotFocus"
-                         LostFocus="UrunPalet_LostFocus"/>
+                                                 MaxLength="3"
+                                                 DataObject.Pasting="TextBox_Pasting"
+                                                 PreviewTextInput="TextBox_PreviewTextInput"
+                                                 Style="{StaticResource TextBox_templete_urunekle}"
+                                                 Loaded="myTextBox_Loaded"
+                                                 TextChanged="UrunPalet_Changed"
+                                                 GotFocus="UrunPalet_GotFocus"
+                                                 LostFocus="UrunPalet_LostFocus"/>
 
                     <TextBlock x:Name="phUrunAgirlik"
-                           Text="{Binding Source='UrunEkle.urunagirlikgir',Converter={StaticResource LanguageConverter}}"
-                           Style="{StaticResource textblock_place_urunekle}"
-                           Margin="12,0,0,0"
-                           VerticalAlignment="Center"
-                           IsHitTestVisible="False"/>
+                                                   Text="{Binding Source='UrunEkle.urunagirlikgir',Converter={StaticResource LanguageConverter}}"
+                                                   Style="{StaticResource textblock_place_urunekle}"
+                                                   Margin="12,0,0,0"
+                                                   VerticalAlignment="Center"
+                                                   IsHitTestVisible="False"/>
                   </Grid>
                 </Grid>
 
                 <!-- Ürün Basınç -->
-                <Grid Margin="0,0,0,30">
+                <Grid Margin="0,0,0,22">
                   <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="*"/>
                   </Grid.ColumnDefinitions>
 
                   <TextBlock Grid.Column="0"
-                       Text="{Binding Source='UrunEkle.basinc',Converter={StaticResource LanguageConverter}}"
-                       Style="{StaticResource textblock_template_urunekle}"
-                       VerticalAlignment="Center"/>
+                                               Text="{Binding Source='UrunEkle.basinc',Converter={StaticResource LanguageConverter}}"
+                                               Style="{StaticResource textblock_template_urunekle}"
+                                               VerticalAlignment="Center"/>
 
                   <Grid Grid.Column="1">
                     <TextBox Name="txtUrunBasinc"
-                         MaxLength="4"
-                         DataObject.Pasting="TextBox_Pasting"
-                         PreviewTextInput="TextBox_PreviewTextInput"
-                         Style="{StaticResource TextBox_templete_urunekle}"
-                         Loaded="myTextBox_Loaded"
-                         TextChanged="UrunPalet_Changed"
-                         GotFocus="UrunPalet_GotFocus"
-                         LostFocus="UrunPalet_LostFocus"/>
+                                                 MaxLength="4"
+                                                 DataObject.Pasting="TextBox_Pasting"
+                                                 PreviewTextInput="TextBox_PreviewTextInput"
+                                                 Style="{StaticResource TextBox_templete_urunekle}"
+                                                 Loaded="myTextBox_Loaded"
+                                                 TextChanged="UrunPalet_Changed"
+                                                 GotFocus="UrunPalet_GotFocus"
+                                                 LostFocus="UrunPalet_LostFocus"/>
 
                     <TextBlock x:Name="phUrunBasinc"
-                           Text="{Binding Source='UrunEkle.urunbasincgir',Converter={StaticResource LanguageConverter}}"
-                           Style="{StaticResource textblock_place_urunekle}"
-                           Margin="12,0,0,0"
-                           VerticalAlignment="Center"
-                           IsHitTestVisible="False"/>
+                                                   Text="{Binding Source='UrunEkle.urunbasincgir',Converter={StaticResource LanguageConverter}}"
+                                                   Style="{StaticResource textblock_place_urunekle}"
+                                                   Margin="12,0,0,0"
+                                                   VerticalAlignment="Center"
+                                                   IsHitTestVisible="False"/>
                   </Grid>
                 </Grid>
 
                 <!-- Butonlar -->
-                <StackPanel Orientation="Horizontal">
+                <Grid Margin="0,8,0,0">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
                   <Button x:Name="BtnUrunEkle"
-                    Style="{StaticResource button_template}"
-                    Height="45"
-                    Width="150"
-                    Background="{StaticResource button_backgroundgreen}"
-                    Content="{Binding Source='UrunEkle.uruneklebtn',Converter={StaticResource LanguageConverter}}"
-                    Click="UrunEkleBtn_Click"/>
+                                            Grid.Column="0"
+                                            Margin="4,8"
+                                            Style="{StaticResource button_template}"
+                                            Background="{StaticResource button_backgroundgreen}"
+                                            Content="{Binding Source='UrunEkle.uruneklebtn',Converter={StaticResource LanguageConverter}}"
+                                            Click="UrunEkleBtn_Click"/>
 
                   <Button x:Name="BtnUrunDuzenle"
-                    Style="{StaticResource button_template}"
-                    Height="45"
-                    Width="150"
-                    Background="{StaticResource button_background}"
-                    Margin="20,0,0,0"
-                    Content="{Binding Source='UrunEkle.urunduzenlebtn',Converter={StaticResource LanguageConverter}}"
-                    Click="BtnUrunDuzenle_Click"/>
+                                            Grid.Column="1"
+                                            Margin="4,8"
+                                            Style="{StaticResource button_template}"
+                                            Background="{StaticResource button_background}"
+                                            Content="{Binding Source='UrunEkle.urunduzenlebtn',Converter={StaticResource LanguageConverter}}"
+                                            Click="BtnUrunDuzenle_Click"/>
 
                   <Button x:Name="BtnUrunSil"
-                    Style="{StaticResource button_template}"
-                    Height="45"
-                    Width="150"
-                    Background="{StaticResource button_background}"
-                    Margin="20,0,0,0"
-                    Content="{Binding Source='UrunEkle.urunsilbtn',Converter={StaticResource LanguageConverter}}"
-                    Click="UrunSilBtn_Click"/>
-                </StackPanel>
-
+                                            Grid.Column="2"
+                                            Margin="4,8"
+                                            Style="{StaticResource button_template}"
+                                            Background="{StaticResource button_background}"
+                                            Content="{Binding Source='UrunEkle.urunsilbtn',Converter={StaticResource LanguageConverter}}"
+                                            Click="UrunSilBtn_Click"/>
+                </Grid>
               </StackPanel>
-            </Border>
+            </ScrollViewer>
+          </Border>
 
-
-
-            <!-- Palet Bilgileri -->
-            <Border Grid.Column="1"
-        Style="{StaticResource border_template_urunekle}"
-        Margin="15,0,0,0">
-              <StackPanel Margin="0,30,0,0">
+          <!-- Palet Bilgileri -->
+          <Border Grid.Column="2"
+                            Style="{StaticResource border_template_urunekle}">
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                      HorizontalScrollBarVisibility="Disabled">
+              <StackPanel Margin="0,6,0,0">
 
                 <!-- Palet Adı -->
-                <Grid Margin="0,0,0,22">
+                <Grid Margin="0,0,0,10">
                   <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="*"/>
                   </Grid.ColumnDefinitions>
 
                   <TextBlock Grid.Column="0"
-                       Text="{Binding Source='UrunEkle.paletad',Converter={StaticResource LanguageConverter}}"
-                       Style="{StaticResource textblock_template_urunekle}"
-                       VerticalAlignment="Center"/>
+                                               Text="{Binding Source='UrunEkle.paletad',Converter={StaticResource LanguageConverter}}"
+                                               Style="{StaticResource textblock_template_urunekle}"
+                                               VerticalAlignment="Center"/>
 
                   <Grid Grid.Column="1">
                     <TextBox Name="txtPaletAdi"
-                         Style="{StaticResource TextBox_templete_urunekle}"
-                         Loaded="myTextBox_Loaded"
-                         TextChanged="UrunPalet_Changed"
-                         GotFocus="UrunPalet_GotFocus"
-                         LostFocus="UrunPalet_LostFocus"/>
+                                                 Style="{StaticResource TextBox_templete_urunekle}"
+                                                 Loaded="myTextBox_Loaded"
+                                                 TextChanged="UrunPalet_Changed"
+                                                 GotFocus="UrunPalet_GotFocus"
+                                                 LostFocus="UrunPalet_LostFocus"/>
 
                     <TextBlock x:Name="phPaletAdi"
-                           Text="{Binding Source='UrunEkle.paletadgir',Converter={StaticResource LanguageConverter}}"
-                           Style="{StaticResource textblock_place_urunekle}"
-                           Margin="12,0,0,0"
-                           VerticalAlignment="Center"
-                           IsHitTestVisible="False"/>
+                                                   Text="{Binding Source='UrunEkle.paletadgir',Converter={StaticResource LanguageConverter}}"
+                                                   Style="{StaticResource textblock_place_urunekle}"
+                                                   Margin="12,0,0,0"
+                                                   VerticalAlignment="Center"
+                                                   IsHitTestVisible="False"/>
                   </Grid>
                 </Grid>
 
                 <!-- Palet En -->
-                <Grid Margin="0,0,0,22">
+                <Grid Margin="0,0,0,10">
                   <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="*"/>
                   </Grid.ColumnDefinitions>
 
                   <TextBlock Grid.Column="0"
-                       Text="{Binding Source='UrunEkle.genislik',Converter={StaticResource LanguageConverter}}"
-                       Style="{StaticResource textblock_template_urunekle}"
-                       VerticalAlignment="Center"/>
+                                               Text="{Binding Source='UrunEkle.genislik',Converter={StaticResource LanguageConverter}}"
+                                               Style="{StaticResource textblock_template_urunekle}"
+                                               VerticalAlignment="Center"/>
 
                   <Grid Grid.Column="1">
                     <TextBox Name="txtPaletEn"
-                         MaxLength="5"
-                         DataObject.Pasting="TextBox_Pasting"
-                         PreviewTextInput="TextBox_PreviewTextInput"
-                         Style="{StaticResource TextBox_templete_urunekle}"
-                         Loaded="myTextBox_Loaded"
-                         TextChanged="UrunPalet_Changed"
-                         GotFocus="UrunPalet_GotFocus"
-                         LostFocus="UrunPalet_LostFocus"/>
+                                                 MaxLength="5"
+                                                 DataObject.Pasting="TextBox_Pasting"
+                                                 PreviewTextInput="TextBox_PreviewTextInput"
+                                                 Style="{StaticResource TextBox_templete_urunekle}"
+                                                 Loaded="myTextBox_Loaded"
+                                                 TextChanged="UrunPalet_Changed"
+                                                 GotFocus="UrunPalet_GotFocus"
+                                                 LostFocus="UrunPalet_LostFocus"/>
 
                     <TextBlock x:Name="phPaletEn"
-                           Text="{Binding Source='UrunEkle.paletgenislikgir',Converter={StaticResource LanguageConverter}}"
-                           Style="{StaticResource textblock_place_urunekle}"
-                           Margin="12,0,0,0"
-                           VerticalAlignment="Center"
-                           IsHitTestVisible="False"/>
+                                                   Text="{Binding Source='UrunEkle.paletgenislikgir',Converter={StaticResource LanguageConverter}}"
+                                                   Style="{StaticResource textblock_place_urunekle}"
+                                                   Margin="12,0,0,0"
+                                                   VerticalAlignment="Center"
+                                                   IsHitTestVisible="False"/>
                   </Grid>
                 </Grid>
 
                 <!-- Palet Boy -->
-                <Grid Margin="0,0,0,22">
+                <Grid Margin="0,0,0,18">
                   <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="*"/>
                   </Grid.ColumnDefinitions>
 
                   <TextBlock Grid.Column="0"
-                       Text="{Binding Source='UrunEkle.uzunluk',Converter={StaticResource LanguageConverter}}"
-                       Style="{StaticResource textblock_template_urunekle}"
-                       VerticalAlignment="Center"/>
+                                               Text="{Binding Source='UrunEkle.uzunluk',Converter={StaticResource LanguageConverter}}"
+                                               Style="{StaticResource textblock_template_urunekle}"
+                                               VerticalAlignment="Center"/>
 
                   <Grid Grid.Column="1">
                     <TextBox Name="txtPaletBoy"
-                         MaxLength="5"
-                         DataObject.Pasting="TextBox_Pasting"
-                         PreviewTextInput="TextBox_PreviewTextInput"
-                         Style="{StaticResource TextBox_templete_urunekle}"
-                         Loaded="myTextBox_Loaded"
-                         TextChanged="UrunPalet_Changed"
-                         GotFocus="UrunPalet_GotFocus"
-                         LostFocus="UrunPalet_LostFocus"/>
+                                                 MaxLength="5"
+                                                 DataObject.Pasting="TextBox_Pasting"
+                                                 PreviewTextInput="TextBox_PreviewTextInput"
+                                                 Style="{StaticResource TextBox_templete_urunekle}"
+                                                 Loaded="myTextBox_Loaded"
+                                                 TextChanged="UrunPalet_Changed"
+                                                 GotFocus="UrunPalet_GotFocus"
+                                                 LostFocus="UrunPalet_LostFocus"/>
 
                     <TextBlock x:Name="phPaletBoy"
-                           Text="{Binding Source='UrunEkle.paletuzunlukgir',Converter={StaticResource LanguageConverter}}"
-                           Style="{StaticResource textblock_place_urunekle}"
-                           Margin="12,0,0,0"
-                           VerticalAlignment="Center"
-                           IsHitTestVisible="False"/>
+                                                   Text="{Binding Source='UrunEkle.paletuzunlukgir',Converter={StaticResource LanguageConverter}}"
+                                                   Style="{StaticResource textblock_place_urunekle}"
+                                                   Margin="12,0,0,0"
+                                                   VerticalAlignment="Center"
+                                                   IsHitTestVisible="False"/>
                   </Grid>
                 </Grid>
 
                 <!-- Palet Yükseklik -->
-                <Grid Margin="0,0,0,30">
+                <Grid Margin="0,0,0,22">
                   <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="*"/>
                   </Grid.ColumnDefinitions>
 
                   <TextBlock Grid.Column="0"
-                       Text="{Binding Source='UrunEkle.yukseklik',Converter={StaticResource LanguageConverter}}"
-                       Style="{StaticResource textblock_template_urunekle}"
-                       VerticalAlignment="Center"/>
+                                               Text="{Binding Source='UrunEkle.yukseklik',Converter={StaticResource LanguageConverter}}"
+                                               Style="{StaticResource textblock_template_urunekle}"
+                                               VerticalAlignment="Center"/>
 
                   <Grid Grid.Column="1">
                     <TextBox Name="txtPaletYukseklik"
-                         MaxLength="5"
-                         DataObject.Pasting="TextBox_Pasting"
-                         PreviewTextInput="TextBox_PreviewTextInput"
-                         Style="{StaticResource TextBox_templete_urunekle}"
-                         Loaded="myTextBox_Loaded"
-                         TextChanged="UrunPalet_Changed"
-                         GotFocus="UrunPalet_GotFocus"
-                         LostFocus="UrunPalet_LostFocus"/>
+                                                 MaxLength="5"
+                                                 DataObject.Pasting="TextBox_Pasting"
+                                                 PreviewTextInput="TextBox_PreviewTextInput"
+                                                 Style="{StaticResource TextBox_templete_urunekle}"
+                                                 Loaded="myTextBox_Loaded"
+                                                 TextChanged="UrunPalet_Changed"
+                                                 GotFocus="UrunPalet_GotFocus"
+                                                 LostFocus="UrunPalet_LostFocus"/>
 
                     <TextBlock x:Name="phPaletYukseklik"
-                           Text="{Binding Source='UrunEkle.paletyukseklikgir',Converter={StaticResource LanguageConverter}}"
-                           Style="{StaticResource textblock_place_urunekle}"
-                           Margin="12,0,0,0"
-                           VerticalAlignment="Center"
-                           IsHitTestVisible="False"/>
+                                                   Text="{Binding Source='UrunEkle.paletyukseklikgir',Converter={StaticResource LanguageConverter}}"
+                                                   Style="{StaticResource textblock_place_urunekle}"
+                                                   Margin="12,0,0,0"
+                                                   VerticalAlignment="Center"
+                                                   IsHitTestVisible="False"/>
                   </Grid>
                 </Grid>
 
-                <Border Margin="0,0,0,103"/>
-
-
                 <!-- Butonlar -->
-                <StackPanel  Orientation="Horizontal" >
+                <Grid Margin="0,8,0,0">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
                   <Button x:Name="BtnPaletEkle"
-                    Style="{StaticResource button_template}"
-                    Height="45"
-                    Width="150"
-                    Background="{StaticResource button_backgroundgreen}"
-                    Content="{Binding Source='UrunEkle.paleteklebtn',Converter={StaticResource LanguageConverter}}"
-                    Click="PaletEkleBtn_Click"/>
+                                            Grid.Column="0"
+                                            Margin="4,8"
+                                            Style="{StaticResource button_template}"
+                                            Background="{StaticResource button_backgroundgreen}"
+                                            Content="{Binding Source='UrunEkle.paleteklebtn',Converter={StaticResource LanguageConverter}}"
+                                            Click="PaletEkleBtn_Click"/>
 
                   <Button x:Name="BtnPaletDuzenle"
-                    Style="{StaticResource button_template}"
-                    Height="45"
-                    Width="150"
-                    Background="{StaticResource button_background}"
-                    Margin="20,0,0,0"
-                    Content="{Binding Source='UrunEkle.paletduzenlebtn',Converter={StaticResource LanguageConverter}}"
-                    Click="PaletDuzenleBtn_Click"/>
+                                            Grid.Column="1"
+                                            Margin="4,8"
+                                            Style="{StaticResource button_template}"
+                                            Background="{StaticResource button_background}"
+                                            Content="{Binding Source='UrunEkle.paletduzenlebtn',Converter={StaticResource LanguageConverter}}"
+                                            Click="BtnPaletDuzenleBtn_Click"/>
 
                   <Button x:Name="BtnPaletSil"
-                    Style="{StaticResource button_template}"
-                    Height="45"
-                    Width="150"
-                    Background="{StaticResource button_background}"
-                    Margin="20,0,0,0"
-                    Content="{Binding Source='UrunEkle.paletsilbtn',Converter={StaticResource LanguageConverter}}"
-                    Click="PaletSilBtn_Click"/>
-                </StackPanel>
-
+                                            Grid.Column="2"
+                                            Margin="4,8"
+                                            Style="{StaticResource button_template}"
+                                            Background="{StaticResource button_background}"
+                                            Content="{Binding Source='UrunEkle.paletsilbtn',Converter={StaticResource LanguageConverter}}"
+                                            Click="PaletSilBtn_Click"/>
+                </Grid>
               </StackPanel>
-            </Border>
-
-
-          </Grid>
+            </ScrollViewer>
+          </Border>
         </Grid>
       </Grid>
 
       <!-- SAĞ ALAN -->
-      <Grid Grid.Column="1">
+      <Grid Grid.Column="1" Margin="0,0,0,60">
         <Grid.RowDefinitions>
           <RowDefinition Height="Auto"/>
           <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Margin="0,0,0,15">
+        <Grid Grid.Row="0" Margin="0,0,0,4">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -550,16 +694,16 @@
           <TextBlock Grid.Column="0"
                                Text="{Binding Source='UrunEkle.urunlist',Converter={StaticResource LanguageConverter}}"
                                Foreground="White"
-                               Margin="15,0,0,0"
-                               FontSize="24"
+                               Margin="10,0,0,0"
+                               FontSize="18"
                                FontFamily="Roboto"
                                FontWeight="Bold"/>
 
           <TextBlock Grid.Column="1"
                                Text="{Binding Source='UrunEkle.paletlist',Converter={StaticResource LanguageConverter}}"
                                Foreground="White"
-                               Margin="15,0,0,0"
-                               FontSize="24"
+                               Margin="10,0,0,0"
+                               FontSize="18"
                                FontFamily="Roboto"
                                FontWeight="Bold"/>
         </Grid>
@@ -567,22 +711,21 @@
         <Grid Grid.Row="1">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="12"/>
             <ColumnDefinition Width="*"/>
           </Grid.ColumnDefinitions>
 
           <ListBox x:Name="urunlistbox"
-             Grid.Column="0"
-             Margin="0,0,10,0"
-             Style="{StaticResource listbox_template_urunekle}"
-             Panel.ZIndex="5"
-             SelectionChanged="UrunList_SelectedItem"/>
+                             Grid.Column="0"
+                             Style="{StaticResource listbox_template_urunekle}"
+                             Panel.ZIndex="5"
+                             SelectionChanged="UrunList_SelectedItem"/>
 
-              <ListBox x:Name="paletlistbox"
-             Grid.Column="1"
-             Margin="10,0,0,0"
-             Style="{StaticResource listbox_template_urunekle}"
-             Panel.ZIndex="5"
-             SelectionChanged="PaletList_SelectedItem"/>
+          <ListBox x:Name="paletlistbox"
+                             Grid.Column="2"
+                             Style="{StaticResource listbox_template_urunekle}"
+                             Panel.ZIndex="5"
+                             SelectionChanged="PaletList_SelectedItem"/>
         </Grid>
       </Grid>
     </Grid>

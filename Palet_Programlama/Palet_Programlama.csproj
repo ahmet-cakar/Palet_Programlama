@@ -111,9 +111,6 @@
       <DependentUpon>Programlar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Screens\Program\ProgramListeServisi.cs" />
-    <Compile Include="Screens\ReceteDuzenle.xaml.cs">
-      <DependentUpon>ReceteDuzenle.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Screens\Dizilim\Services\KatYoneticisi.cs" />
     <Compile Include="Screens\Dizilim\Services\MesafeGostergesi.cs" />
     <Compile Include="Screens\Dizilim\Services\YerlesimMotoru.cs" />
@@ -205,10 +202,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Screens\Programlar.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Screens\ReceteDuzenle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

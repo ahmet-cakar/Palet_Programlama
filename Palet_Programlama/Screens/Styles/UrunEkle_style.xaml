@@ -50,6 +50,7 @@
         <Setter Property="Background" Value="Transparent" />
         
     </Style>
+
     <Style x:Key="border_template_urunekle" TargetType="Border">
         <Setter Property="Background">
             <Setter.Value>
@@ -66,6 +67,7 @@
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Top" />
     </Style>
+    
     <Style x:Key="textblock_template_urunekle" TargetType="TextBlock">
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontSize" Value="19"/>
@@ -107,4 +109,5 @@
         <Setter Property="FontFamily" Value="Roboto"/>
         
     </Style>
+
 </ResourceDictionary>

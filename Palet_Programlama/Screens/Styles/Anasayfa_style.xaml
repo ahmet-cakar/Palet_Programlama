@@ -32,8 +32,9 @@
         </Style.Triggers>
   
     </Style>
-        <!-- Button Background Brush -->
-        <RadialGradientBrush x:Key="button_background" 
+
+   <!-- Button Background Brush -->
+    <RadialGradientBrush x:Key="button_background" 
                              RadiusX="0.55" 
                              RadiusY="5"
                              GradientOrigin="0.5,0.5" 

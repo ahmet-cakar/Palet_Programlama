@@ -87,7 +87,7 @@
             <TextBlock VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    Foreground="White"
-                                   FontSize="26"
+                                   FontSize="28"
                                    Text="{Binding Source='GruplamaYap.txtGruplandirma',Converter={StaticResource LanguageConverter}}"/>
           </StackPanel>
 
@@ -102,8 +102,8 @@
                                 Style="{StaticResource transparan_button}"
                                 Click="BtnGruplandirmaEksi_Click">
               <StackPanel>
-                <Image MaxHeight="52"
-                                       MaxWidth="52"
+                <Image MaxHeight="54"
+                                       MaxWidth="54"
                                        Source="pack://application:,,,/Images/UserControlUstMenu/geri_icon.png"/>
               </StackPanel>
             </Button>
@@ -113,7 +113,7 @@
                                    Margin="0,0,28,0"
                                    TextAlignment="Center"
                                    Foreground="White"
-                                   FontSize="32"
+                                   FontSize="40"
                                    Text="1"
                                    Width="57"/>
 
@@ -121,8 +121,8 @@
                                 Style="{StaticResource transparan_button}"
                                 Click="BtnGruplandirmaArti_Click">
               <StackPanel>
-                <Image MaxHeight="52"
-                                       MaxWidth="52"
+                <Image MaxHeight="54"
+                                       MaxWidth="54"
                                        Source="pack://application:,,,/Images/UserControlUstMenu/ileri_icon.png"/>
               </StackPanel>
             </Button>

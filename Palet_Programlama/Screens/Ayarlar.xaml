@@ -43,7 +43,7 @@
       </Grid.ColumnDefinitions>
 
       <!-- Sol Menü -->
-      <Border Grid.Column="0"
+      <Border Grid.Column="0" Margin="0,0,0,55"
                     Background="#191919"
                     CornerRadius="18"
                     Padding="24">
@@ -68,13 +68,13 @@
             <ListBoxItem Content="Kullanıcı Yönetimi"/>
             <ListBoxItem Content="Yetki Ayarı"/>
             <ListBoxItem Content="Varsayılan Sistem Ayarları"/>
-            <ListBoxItem Content="Yedekleme / Geri Yükleme"/>
+            <ListBoxItem Content="Geri Yükleme"/>
           </ListBox>
         </Grid>
       </Border>
 
       <!-- Sağ İçerik -->
-      <Border Grid.Column="2"
+      <Border Grid.Column="2" Margin="0,0,0,55"
                     Background="#191919"
                     CornerRadius="18"
                     Padding="28">

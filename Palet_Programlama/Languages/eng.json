@@ -280,7 +280,8 @@
         "kullaniciSilmeBasarili": "The user has been deleted successfully.",
         "kullaniciEklemeBasarili": "User added successfully.",
         "kullaniciAdiMin3Karakter": "Username must be at least 3 characters.",
-        "sifreMin4Karakter": "Password must be at least 4 characters."
+        "sifreMin4Karakter": "Password must be at least 4 characters.",
+        "rolSeciniz": "Please select role"
     },
     "Kullanici": {
         "kullaniciAdiSifreHatali": "Username or password is incorrect, please check.",

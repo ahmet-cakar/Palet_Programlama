@@ -295,7 +295,8 @@
         "kullaniciSilmeBasarili": "Kullanıcı başarıyla silindi.",
         "kullaniciEklemeBasarili": "Kullanıcı başarıyla eklendi.",
         "kullaniciAdiMin3Karakter": "Kullanıcı adı en az 3 karakter olmalıdır.",
-        "sifreMin4Karakter": "Şifre en az 4 karakter olmalıdır."
+        "sifreMin4Karakter": "Şifre en az 4 karakter olmalıdır.",
+        "rolSeciniz": "Lütfen role seçiniz"
     },
 
     "Kullanici": {

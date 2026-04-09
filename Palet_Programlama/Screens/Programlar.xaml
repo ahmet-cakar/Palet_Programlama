@@ -444,27 +444,46 @@
         <Grid Grid.Row="2" Margin="0,0,0,30">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="92"/>
           </Grid.ColumnDefinitions>
 
+          <!-- Palet alanı -->
           <Border Grid.Column="0"
-                            Background="#191919"
-                            CornerRadius="20"
-                            Padding="18">
+            Background="#191919"
+            CornerRadius="16"
+            BorderBrush="#2B2B2B"
+            BorderThickness="1"
+            Padding="12">
             <Grid>
-              <Image Margin="20,8,0,0"
-                                   MaxHeight="150"
-                                   MaxWidth="150"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Top"
-                                   Source="pack://application:,,,/Images/DizilimYap/referans_eksenler.png"/>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="72"/>
+                <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
 
-              <Viewbox Stretch="Uniform" StretchDirection="DownOnly">
+              <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                <StackPanel HorizontalAlignment="Left">
+                  <Image Margin="10,8,0,0"
+                           MaxHeight="150"
+                           MaxWidth="150"
+                           Source="pack://application:,,,/Images/DizilimYap/referans_eksenler.png"/>
+                </StackPanel>
+              </Grid>
+
+              <Viewbox Grid.Column="1"
+                     Grid.Row="1"
+                     Stretch="Uniform"
+                     StretchDirection="DownOnly"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center">
                 <Canvas x:Name="canvasPalet"
-                                        Width="600"
-                                        Height="400"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Center">
+                        Width="600"
+                        Height="400"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
                   <Canvas.Background>
                     <ImageBrush ImageSource="pack://application:,,,/Images/DizilimYap/palet.png"/>
                   </Canvas.Background>
@@ -473,47 +492,62 @@
             </Grid>
           </Border>
 
+          <!-- Kat paneli -->
           <Border Grid.Column="1"
-                            Margin="12,0,0,0"
-                            Background="#191919"
-                            CornerRadius="20"
-                            Padding="16">
-            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-              <TextBlock Margin="0,40,0,0"
-                                       VerticalAlignment="Center"
-                                       HorizontalAlignment="Center"
-                                       Foreground="White"
-                                       FontSize="26"
-                                       Text="{Binding Source='DizilimYap.txtKat',Converter={StaticResource LanguageConverter}}"/>
+            Margin="10,0,0,0"
+            Padding="10"
+            CornerRadius="16"
+            Background="#191919"
+            BorderBrush="#2B2B2B"
+            BorderThickness="1">
+            <Grid Margin="0,8,0,0">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+              </Grid.RowDefinitions>
 
-              <Button x:Name="BtnKatArti"
-                                    Margin="0,90,0,0"
-                                    Style="{StaticResource transparan_button}"
-                                    Click="BtnKatArti_Click">
-                <Image MaxHeight="50"
-                                       MaxWidth="50"
-                                       Source="pack://application:,,,/Images/DizilimYap/yukari_icon.png"/>
-              </Button>
+              <TextBlock Grid.Row="0"
+                       Margin="0,4,0,12"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="White"
+                       FontSize="28"
+                       Text="{Binding Source='DizilimYap.txtKat',Converter={StaticResource LanguageConverter}}"/>
 
-              <TextBlock x:Name="txtKatValue"
-                                       Margin="0,20,0,0"
-                                       VerticalAlignment="Center"
-                                       HorizontalAlignment="Center"
-                                       Foreground="White"
-                                       FontSize="28"
-                                       Text="1"/>
+              <StackPanel Grid.Row="1"
+                        Orientation="Vertical"
+                        VerticalAlignment="Center">
+                <Button x:Name="BtnKatArti"
+                        Margin="0,6,0,0"
+                        Style="{StaticResource transparan_button}"
+                        Click="BtnKatArti_Click">
+                  <Image MaxHeight="54"
+                           MaxWidth="54"
+                           Source="pack://application:,,,/Images/DizilimYap/yukari_icon.png"/>
+                </Button>
 
-              <Button x:Name="BtnKatEksi"
-                                    Margin="0,20,0,0"
-                                    Style="{StaticResource transparan_button}"
-                                    Click="BtnKatEksi_Click">
-                <Image MaxHeight="50"
-                                       MaxWidth="50"
-                                       Source="pack://application:,,,/Images/DizilimYap/asagi_icon.png"/>
-              </Button>
-            </StackPanel>
+                <TextBlock x:Name="txtKatValue"
+                           Margin="0,10,0,0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="White"
+                           FontSize="28"
+                           Text="1"/>
+
+                <Button x:Name="BtnKatEksi"
+                        Margin="0,10,0,0"
+                        Style="{StaticResource transparan_button}"
+                        Click="BtnKatEksi_Click">
+                  <Image MaxHeight="54"
+                           MaxWidth="54"
+                           Source="pack://application:,,,/Images/DizilimYap/asagi_icon.png"/>
+                </Button>
+              </StackPanel>
+            </Grid>
           </Border>
         </Grid>
+
+
       </Grid>
     </Grid>
   </Grid>

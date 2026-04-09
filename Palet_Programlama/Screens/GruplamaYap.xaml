@@ -138,7 +138,7 @@
         <ColumnDefinition Width="12"/>
         <ColumnDefinition Width="0.95*"/>
         <ColumnDefinition Width="12"/>
-        <ColumnDefinition Width="130"/>
+        <ColumnDefinition Width="92"/>
       </Grid.ColumnDefinitions>
 
       <!-- Sol panel -->
@@ -444,8 +444,8 @@
           <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2">
             <StackPanel HorizontalAlignment="Left">
               <Image Margin="18,12,0,0"
-                                   MaxHeight="180"
-                                   MaxWidth="180"
+                                   MaxHeight="150"
+                                   MaxWidth="150"
                                    Source="pack://application:,,,/Images/DizilimYap/referans_eksenler.png"/>
             </StackPanel>
           </Grid>
@@ -480,11 +480,10 @@
           </Grid.RowDefinitions>
 
           <TextBlock Grid.Row="0"
-                               Margin="0,8,0,18"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
                                Foreground="White"
-                               FontSize="24"
+                               FontSize="32"
                                Text="{Binding Source='DizilimYap.txtKat',Converter={StaticResource LanguageConverter}}"/>
 
           <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center">
@@ -506,7 +505,7 @@
                                    Foreground="White"
                                    FontSize="28"
                                    Text="1"
-                                   Width="46"/>
+                                   />
 
             <Button x:Name="BtnKatEksi"
                                 Margin="0,18,0,0"

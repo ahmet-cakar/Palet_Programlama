@@ -239,14 +239,14 @@
                  Canvas.Left="0"
            Canvas.Top="0"/>
 
-                <TextBlock x:Name="txtOnizlemeKutu"
+               <TextBlock x:Name="txtOnizlemeKutu"
                ToolTip=""
                Text=""
                Foreground="White"
-               FontSize="18"
+               FontSize="20"
                FontWeight="Normal"
-               Canvas.Left="0"
-               Canvas.Top="0"/>
+               Canvas.Left="93"
+               Canvas.Top="96"/>
               </Canvas>
 
               <TextBlock x:Name="priviewtextblock"
